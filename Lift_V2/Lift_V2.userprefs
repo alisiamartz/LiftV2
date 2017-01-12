@@ -1,11 +1,7 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\dialogueDisplay.cs">
+﻿<Properties StartupItem="Lift_V2.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\fakeAI.cs">
     <Files>
-      <File FileName="Assets\Scripts\dialogueDisplay.cs" Line="51" Column="34" />
-      <File FileName="Assets\Scripts\handGestures.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\buttonDoorInteraction.cs" Line="1" Column="1" />
-      <File FileName="Assets\buttonDoorClose.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\fakeAI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
