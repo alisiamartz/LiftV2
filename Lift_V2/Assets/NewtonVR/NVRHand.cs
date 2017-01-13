@@ -82,7 +82,7 @@ namespace NewtonVR
 
         protected virtual void Awake()
         {
-            
+
             CurrentlyHoveringOver = new Dictionary<NVRInteractable, Dictionary<Collider, float>>();
 
             LastPositions = new Vector3[EstimationSamples];
@@ -91,7 +91,7 @@ namespace NewtonVR
             EstimationSampleIndex = 0;
 
             VisibilityLocked = false;
-            
+
             Inputs = new Dictionary<EVRButtonId, NVRButtonInputs>();
             System.Array buttonTypes = System.Enum.GetValues(typeof(EVRButtonId));
             foreach (EVRButtonId buttonType in buttonTypes)
@@ -102,9 +102,10 @@ namespace NewtonVR
                 }
             }
 
-            SteamVR_Utils.Event.Listen("render_model_loaded", RenderModelLoaded);
-            SteamVR_Utils.Event.Listen("new_poses_applied", OnNewPosesApplied);
-        }
+            // SteamVR_Utils.Event.Listen("render_model_loaded", RenderModelLoaded);
+            // SteamVR_Utils.Event.Listen("new_poses_applied", OnNewPosesApplied);
+           // SteamVR_Events.Event<n
+             }
 
         private void OnNewPosesApplied(params object[] args)
         {
@@ -771,8 +772,8 @@ namespace NewtonVR
 
         private void OnDestroy()
         {
-            SteamVR_Utils.Event.Remove("render_model_loaded", RenderModelLoaded);
-            SteamVR_Utils.Event.Remove("new_poses_applied", OnNewPosesApplied);
+          //  SteamVR_Utils.Event.Remove("render_model_loaded", RenderModelLoaded);
+          //  SteamVR_Utils.Event.Remove("new_poses_applied", OnNewPosesApplied);
         }
 
         public void GetDeviceVelocity(out Vector3 velocity, out Vector3 angularVelocity)
