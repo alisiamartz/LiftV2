@@ -6,8 +6,8 @@ namespace NewtonVR.Example
 {
 	public class buttonDoorClose : MonoBehaviour
 	{
-		public NVRButton Button;
-
+		//public NVRButton Button;
+		bool down;
 		public GameObject closedDoor;
 		public GameObject openDoor;
 
@@ -28,7 +28,7 @@ namespace NewtonVR.Example
 		private void Update() {
 			//float distCovered = (Time.time - startTime) * speed;
 			//float fracJourney = distCovered / journeyLength;
-			if (Button.ButtonDown) {
+			if (down) {
 				// When button is pressed
 				// Open door based on button pressed
 				Debug.Log("PRESSED!!!");

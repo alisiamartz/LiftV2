@@ -3,6 +3,7 @@ using System.Collections;
 
 namespace NewtonVR.Example
 {
+    [RequireComponent(typeof(NVRHand))]
     public class NVRExampleTeleporter : MonoBehaviour
     {
         public Color LineColor;
@@ -11,6 +12,8 @@ namespace NewtonVR.Example
         private LineRenderer Line;
 
         private NVRHand Hand;
+
+        private NVRPlayer Player;
 
         private void Awake()
         {
@@ -26,21 +29,26 @@ namespace NewtonVR.Example
             {
                 Line.material = new Material(Shader.Find("Unlit/Color"));
                 Line.material.SetColor("_Color", LineColor);
-                Line.SetColors(LineColor, LineColor);
+                NVRHelpers.LineRendererSetColor(Line, LineColor, LineColor);
             }
 
             Line.useWorldSpace = true;
         }
 
+        private void Start()
+        {
+            Player = Hand.Player;
+        }
+
         private void LateUpdate()
         {
-            Line.enabled = (Hand != null && Hand.Inputs[Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger].SingleAxis > 0.01f);
+            Line.enabled = (Hand != null && Hand.Inputs[NVRButtons.Trigger].SingleAxis > 0.01f);
 
             if (Line.enabled == true)
             {
                 Line.material.SetColor("_Color", LineColor);
-                Line.SetColors(LineColor, LineColor);
-                Line.SetWidth(LineWidth, LineWidth);
+                NVRHelpers.LineRendererSetColor(Line, LineColor, LineColor);
+                NVRHelpers.LineRendererSetWidth(Line, LineWidth, LineWidth);
 
                 RaycastHit hitInfo;
                 bool hit = Physics.Raycast(this.transform.position, this.transform.forward, out hitInfo, 1000);
@@ -50,23 +58,23 @@ namespace NewtonVR.Example
                 {
                     endPoint = hitInfo.point;
 
-                    if (Hand.Inputs[Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger].PressDown == true)
+                    if (Hand.Inputs[NVRButtons.Trigger].PressDown == true)
                     {
-                        NVRInteractable LHandInteractable = NVRPlayer.Instance.LeftHand.CurrentlyInteracting;
-                        NVRInteractable RHandInteractable = NVRPlayer.Instance.RightHand.CurrentlyInteracting;
+                        NVRInteractable LHandInteractable = Player.LeftHand.CurrentlyInteracting;
+                        NVRInteractable RHandInteractable = Player.RightHand.CurrentlyInteracting;
 
 
-                        Vector3 offset = NVRPlayer.Instance.Head.transform.position - NVRPlayer.Instance.transform.position;
+                        Vector3 offset = Player.Head.transform.position - Player.transform.position;
                         offset.y = 0;
 
-                        NVRPlayer.Instance.transform.position = hitInfo.point - offset;
+                        Player.transform.position = hitInfo.point - offset;
                         if (LHandInteractable != null)
                         {
-                            LHandInteractable.transform.position = NVRPlayer.Instance.LeftHand.transform.position;
+                            LHandInteractable.transform.position = Player.LeftHand.transform.position;
                         }
                         if (RHandInteractable != null)
                         {
-                            RHandInteractable.transform.position = NVRPlayer.Instance.RightHand.transform.position;
+                            RHandInteractable.transform.position =Player.RightHand.transform.position;
                         }
                     }
                 }

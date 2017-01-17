@@ -54,7 +54,7 @@ namespace NewtonVR
             ConstrainedPosition = InitialLocalPosition;
 
             InitialLocalRotation = this.transform.localRotation;
-            ConstrainedRotation = this.transform.localRotation;
+            ConstrainedRotation = InitialLocalRotation;
         }
 
         private void FixedUpdate()
@@ -64,7 +64,7 @@ namespace NewtonVR
             CurrentDistance = Vector3.Distance(this.transform.position, InitialPosition.position);
 
             Vector3 PositionDelta = InitialPosition.position - this.transform.position;
-            this.Rigidbody.velocity = PositionDelta * PositionMagic * Time.fixedDeltaTime;
+            this.Rigidbody.velocity = PositionDelta * PositionMagic * Time.deltaTime;
         }
 
         private void Update()

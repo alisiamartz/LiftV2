@@ -10,7 +10,7 @@ namespace Edwon.VR
         public int playerID = 0;
 
         public Handedness handType;
-        InputOptions.Button selectButton;
+        public InputOptions.Button selectButton;
 
         VRGestureRig rig;
         public IInput input;
