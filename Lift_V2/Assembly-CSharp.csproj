@@ -142,8 +142,10 @@
      <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRInputDevice.cs" />
      <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRIntegration.cs" />
      <Compile Include="Assets\Scripts\Lever.cs" />
+     <Compile Include="Assets\Scripts\buttonDoorClose.cs" />
      <Compile Include="Assets\Scripts\buttonDoorInteraction.cs" />
      <Compile Include="Assets\Scripts\dialogueDisplay.cs" />
+     <Compile Include="Assets\Scripts\doorInteraction.cs" />
      <Compile Include="Assets\Scripts\fakeAI.cs" />
      <Compile Include="Assets\Scripts\handGestures.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
@@ -426,8 +428,6 @@
      <Compile Include="Assets\VRTK\Scripts\Utilities\VRTK_SDKManager.cs" />
      <Compile Include="Assets\VRTK\Scripts\Utilities\VRTK_SharedMethods.cs" />
      <Compile Include="Assets\VRTK\Scripts\Utilities\VRTK_Simulator.cs" />
-     <Compile Include="Assets\buttonDoorClose.cs" />
-     <Compile Include="Assets\doorInteraction.cs" />
      <None Include="Assets\VRTK\Version.txt" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\Edwon\VR\Gesture\Examples\ReadMe.txt" />
