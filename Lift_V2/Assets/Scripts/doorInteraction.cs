@@ -28,8 +28,7 @@ public class doorInteraction : MonoBehaviour {
 	float initY;
 	float initZ;
 
-	public Vector3 controllerTip;
-
+	public GameObject grabPoint;
 
 
 	[SerializeField]
@@ -63,6 +62,9 @@ public class doorInteraction : MonoBehaviour {
 		initX = door.transform.position.x;
 		initY = door.transform.position.y;
 		initZ = door.transform.position.z;
+
+		if (!grabPoint)
+			grabPoint = GameObject.FindGameObjectWithTag ("grabPoint");
 	}
 	
 	// Update is called once per frame
@@ -70,37 +72,32 @@ public class doorInteraction : MonoBehaviour {
 
 		currY = door.transform.position.y;
 
-		controllerTip = trackedObj.transform.position - trackedObj.transform.up * .11f + trackedObj.transform.forward.normalized * .06f;
+		//controllerTip = trackedObj.transform.position - trackedObj.transform.up * .11f + trackedObj.transform.forward.normalized * .06f;
 
-		if ((device.GetPress (Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger)|| device2.GetPress (Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger)) && collided) {
+		if (device.GetPress (Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) && collided) {
 			foreach (GameObject hold in holds) {
-				if (Vector3.Distance (hold.transform.position, controllerTip) < hold.transform.localScale.x) {
+				if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x) {
 					Debug.Log ("hell yeah get ready to lift");
 					lifting = true;
+				
+					//door.transform.SetParent (trackedObj.transform);
 					// Move the door according to the current y position of the controller
-					door.transform.position = new Vector3 (initX, trackedObj.transform.position.y, initZ);
+					door.transform.position = new Vector3 (initX, (door.transform.position.y - hold.transform.position.y)+trackedObj.transform.position.y, initZ);
 					// Once the door reaches a certain height
 					// it goes all the way up automatically
-					if (door.transform.position.y > 3f) {
-						door.transform.position = Vector3.Lerp(door.transform.position, doorOpen.transform.position,Time.deltaTime);
-					}
+
+
 				}
 			}
 		}
 
-		//if (lifting && (device.GetPress (Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) || device2.GetPress (Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))) {
-			// this means the door is going up
-			//door.transform.SetParent (trackedObj.transform);
-
-			//door.transform.Translate (Vector3.up);
-			//currY = transform.parent.position.y;
-			//currY = trackedObj.transform.position.y;
-			//trackedObj.transform.GetChild().position.y = trackedObj.transform.position.y;
-			//door.transform.position = new Vector3 (initX, trackedObj.transform.position.y , initZ);
-
-	//	} else {
-			//door.transform.SetParent (null);
-		//}
+		if (lifting) {
+			// if past certain point
+			if (door.transform.position.y > 2f) {
+				door.transform.position = Vector3.Lerp (door.transform.position, doorOpen.transform.position, Time.deltaTime);
+				Debug.Log ("Attempt to lerP");
+			}
+		}
 	}
 
 	void OnTriggerEnter(Collider col) {

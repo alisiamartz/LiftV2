@@ -33,13 +33,12 @@ public class Lever : MonoBehaviour {
 
 		currValue = handle.GetComponent<NVRLever> ().CurrentValue;
 
-		if (currValue < .5f) {
+		if (currValue < .4f) {
 			// value is going down
 			Debug.Log("Going down! " + currValue);
-		} else if (currValue > .5f) {
+		} else if (currValue > .6f) {
 			// value is going up
 			Debug.Log("Going up! " + currValue);
-
 		} else {
 			Debug.Log("Stopped! " + currValue);
 
@@ -47,3 +46,4 @@ public class Lever : MonoBehaviour {
 
 	}
 }
+

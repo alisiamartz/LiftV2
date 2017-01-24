@@ -88,6 +88,8 @@
      <Compile Include="Assets\Edwon\VR\Gesture\VRUI\Scripts\VRGestureGalleryGrid.cs" />
      <Compile Include="Assets\Edwon\VR\Gesture\VRUI\Scripts\VRGestureUI.cs" />
      <Compile Include="Assets\Edwon\VR\Gesture\VRUI\Scripts\VRGestureUIPanelManager.cs" />
+     <Compile Include="Assets\FloorRotation.cs" />
+     <Compile Include="Assets\Manager.cs" />
      <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundController.cs" />
      <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundMaterials.cs" />
      <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundObject.cs" />
@@ -147,6 +149,7 @@
      <Compile Include="Assets\Scripts\dialogueDisplay.cs" />
      <Compile Include="Assets\Scripts\doorInteraction.cs" />
      <Compile Include="Assets\Scripts\fakeAI.cs" />
+     <Compile Include="Assets\Scripts\gameClock.cs" />
      <Compile Include="Assets\Scripts\handGestures.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />

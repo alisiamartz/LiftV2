@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: c401dc422b8ac5b4c90497e76d5dbe74
-timeCreated: 1484941714
+guid: 68ebbebd60088ed4290b3f5e460ab8ee
+timeCreated: 1485242089
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cube
+    100000: elevatorLever
     100002: //RootNode
-    100004: Sphere
-    400000: Cube
+    100004: elevatorWallMount
+    400000: elevatorLever
     400002: //RootNode
-    400004: Sphere
-    2300000: Cube
-    2300002: Sphere
-    3300000: Cube
-    3300002: Sphere
-    4300000: Sphere
-    4300002: Cube
+    400004: elevatorWallMount
+    2300000: elevatorLever
+    2300002: elevatorWallMount
+    3300000: elevatorLever
+    3300002: elevatorWallMount
+    4300000: elevatorLever
+    4300002: elevatorWallMount
     7400000: Default Take
     9500000: //RootNode
   materials:
