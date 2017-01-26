@@ -17,7 +17,16 @@ public class Lever : MonoBehaviour {
 	public GameObject lever;
 	public GameObject handle;
 
+	bool raising;
 
+	[SerializeField]
+	SteamVR_TrackedObject trackedObj;
+
+	private SteamVR_Controller.Device device { 
+		get { 
+			return SteamVR_Controller.Input((int)trackedObj.index); 
+		} 
+	}
 
 	public float currValue;
 
@@ -25,7 +34,6 @@ public class Lever : MonoBehaviour {
 	void Start () {
 		if (!lever) lever = GameObject.FindGameObjectWithTag ("lever");
 		if (!handle) handle = GameObject.FindGameObjectWithTag ("handle");
-
 	}
 	
 	// Update is called once per frame
@@ -41,9 +49,21 @@ public class Lever : MonoBehaviour {
 			Debug.Log("Going up! " + currValue);
 		} else {
 			Debug.Log("Stopped! " + currValue);
-
 		}
 
+		if (device.GetPress (Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) && collided) {
+			foreach (GameObject hold in holds) {
+				if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x) {
+					Debug.Log ("hell yeah get ready to lift");
+					raising = true;
+
+					// Move the door according to the current y position of the controller
+					//door.transform.position = new Vector3 (initX, (door.transform.position.y - hold.transform.position.y)+trackedObj.transform.position.y, initZ);
+
+
+				}
+			}
+		}
 	}
 }
 
