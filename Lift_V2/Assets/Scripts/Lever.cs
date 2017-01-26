@@ -51,19 +51,19 @@ public class Lever : MonoBehaviour {
 			Debug.Log("Stopped! " + currValue);
 		}
 
-		if (device.GetPress (Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) && collided) {
-			foreach (GameObject hold in holds) {
-				if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x) {
-					Debug.Log ("hell yeah get ready to lift");
-					raising = true;
+		//if (device.GetPress (Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) && collided) {
+			//foreach (GameObject hold in holds) {
+		//		if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x) {
+		//			Debug.Log ("hell yeah get ready to lift");
+		//			raising = true;
 
 					// Move the door according to the current y position of the controller
 					//door.transform.position = new Vector3 (initX, (door.transform.position.y - hold.transform.position.y)+trackedObj.transform.position.y, initZ);
 
 
-				}
-			}
-		}
+			//	}
+		//	}
+		//}
 	}
 }
 
