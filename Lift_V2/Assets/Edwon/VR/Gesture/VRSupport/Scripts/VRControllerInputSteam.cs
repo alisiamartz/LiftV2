@@ -45,15 +45,20 @@ namespace Edwon.VR.Input
 
         void OnEnable()
         {
-            SteamVR_Utils.Event.Listen("device_connected", OnDeviceConnected);
-            SteamVR_Utils.Event.Listen("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
+           // SteamVR_Utils.Event.Listen("device_connected", OnDeviceConnected);
+           // SteamVR_Utils.Event.Listen("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
+			SteamVR_Events.System("device_connected").Listen(OnDeviceConnected);
+			SteamVR_Events.System("TrackedDeviceRoleChanged").Listen(OnTrackedDeviceRoleChanged);
+
         }
 
         void OnDestroy()
         {
             //Debug.Log("I am being destroyed");
-            SteamVR_Utils.Event.Remove("device_connected", OnDeviceConnected);
-            SteamVR_Utils.Event.Remove("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
+            //SteamVR_Utils.Event.Remove("device_connected", OnDeviceConnected);
+            //SteamVR_Utils.Event.Remove("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
+			SteamVR_Events.System("device_connected").Remove(OnDeviceConnected);
+			SteamVR_Events.System ("TrackedDeviceRoleChanged").Remove (OnTrackedDeviceRoleChanged);
         }
 
         void LateUpdate()
@@ -78,11 +83,8 @@ namespace Edwon.VR.Input
         }
 
 
-
-
-
-
-        private void OnTrackedDeviceRoleChanged(params object[] args)
+		//private void OnTrackedDeviceRoleChanged(params object[] args)
+		private void OnTrackedDeviceRoleChanged(VREvent_t args)
         {
             
             //Debug.Log("TRACKED DEVICE ROLE CHANGE");
@@ -90,7 +92,7 @@ namespace Edwon.VR.Input
         }
 
 
-        private void OnDeviceConnected(params object[] args)
+		private void OnDeviceConnected(VREvent_t args)
         {
 
             //Debug.Log("THIS DEVICE DONE GOT CONNECTED!");

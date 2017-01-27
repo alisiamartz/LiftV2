@@ -1,0 +1,16 @@
+{
+    "gestures": [
+        {
+            "name": "RWave1",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 14
+        },
+        {
+            "name": "LWave1",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 0
+        }
+    ]
+}

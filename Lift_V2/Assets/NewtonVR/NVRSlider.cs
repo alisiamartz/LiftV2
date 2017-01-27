@@ -36,16 +36,19 @@ namespace NewtonVR
             SliderPath = EndPoint.position - StartPoint.position;
         }
 
-        public override void OnNewPosesApplied()
+        protected virtual void FixedUpdate()
         {
-            base.OnNewPosesApplied();
-
             if (IsAttached == true)
             {
-                Vector3 PositionDelta = (PickupTransform.position - this.transform.position);
+                bool dropped = CheckForDrop();
 
-                Vector3 velocity = PositionDelta * AttachedPositionMagic * deltaPoses;
-                this.Rigidbody.velocity = ProjectVelocityOnPath(velocity, SliderPath);
+                if (dropped == false)
+                {
+                    Vector3 PositionDelta = (PickupTransform.position - this.transform.position);
+
+                    Vector3 velocity = PositionDelta * AttachedPositionMagic * Time.deltaTime;
+                    this.Rigidbody.velocity = ProjectVelocityOnPath(velocity, SliderPath);
+                }
             }
 
             if (this.transform.hasChanged == true)
@@ -61,20 +64,6 @@ namespace NewtonVR
         public override void BeginInteraction(NVRHand hand)
         {
             base.BeginInteraction(hand);
-
-            Vector3 closestPoint = Vector3.zero;
-            float shortestDistance = float.MaxValue;
-            for (int index = 0; index < Colliders.Length; index++)
-            {
-                Vector3 closest = Colliders[index].bounds.ClosestPoint(AttachedHand.transform.position);
-                float distance = Vector3.Distance(AttachedHand.transform.position, closest);
-
-                if (distance < shortestDistance)
-                {
-                    shortestDistance = distance;
-                    closestPoint = closest;
-                }
-            }
 
             PickupTransform = new GameObject(string.Format("[{0}] PickupTransform", this.gameObject.name)).transform;
             PickupTransform.parent = hand.transform;
