@@ -144,6 +144,12 @@
      <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRInputDevice.cs" />
      <Compile Include="Assets\NewtonVR\SteamVR\NVRSteamVRIntegration.cs" />
      <Compile Include="Assets\Scripts\Lever.cs" />
+     <Compile Include="Assets\Scripts\VRButton.cs" />
+     <Compile Include="Assets\Scripts\VRGrippedButton.cs" />
+     <Compile Include="Assets\Scripts\VRGripper.cs" />
+     <Compile Include="Assets\Scripts\VRHandle.cs" />
+     <Compile Include="Assets\Scripts\VRInteractable.cs" />
+     <Compile Include="Assets\Scripts\VRLever.cs" />
      <Compile Include="Assets\Scripts\buttonDoorClose.cs" />
      <Compile Include="Assets\Scripts\buttonDoorInteraction.cs" />
      <Compile Include="Assets\Scripts\dialogueDisplay.cs" />
