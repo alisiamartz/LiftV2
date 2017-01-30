@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BossEvents : MonoBehaviour {
 
-    delegate bool Event();
+    //something something accessability
+    public delegate bool Event();
+    
+    public List<Event> events = new List<Event>();
 
-    List<Event> events = new List<Event>();
-
-    BossActions action = new BossActions();
+    //for debugging -- should just create its own
+    public BossActions action;
+    //BossActions action = new BossActions();
 
     float wait = 0;
 
-    int step = 0;
+    public int step = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +27,8 @@ public class BossEvents : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (events[step]()) step++;
+        //moved to agent controller
+        //if (events[step]()) step++;
 	}
 
     public bool Hello()
