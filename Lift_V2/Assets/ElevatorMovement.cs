@@ -18,6 +18,8 @@ public class ElevatorMovement : MonoBehaviour {
     private bool magnet;
     public float magnetForce;
 
+    public int maxVibration;
+
 	// Use this for initialization
 	void Start () {
         floorPos = 0f;
@@ -37,6 +39,14 @@ public class ElevatorMovement : MonoBehaviour {
         }
         else {
             //We've hit the top or the bottom
+            liftSpeedCurrent = 0;
+        }
+        //If Elevator is moving
+        if (liftSpeedCurrent != 0)
+        {
+            //Haptic Feedback
+            var deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+            SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort) Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
         }
         if (magnet) {
             if (Mathf.Abs(floorPos - Mathf.Round(floorPos)) <= magnetForce) {
