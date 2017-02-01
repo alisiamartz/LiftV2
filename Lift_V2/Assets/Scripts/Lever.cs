@@ -63,10 +63,11 @@ public class Lever : MonoBehaviour {
 		leverRotation = lever.transform.rotation;
 		//currValue = handle.GetComponent<NVRLever> ().CurrentValue;
 
+		lookDir = -(grabPoint.transform.position - lever.transform.position); //handle.transform.position - grabPoint.transform.position;
 		leverRotation = Quaternion.LookRotation(lookDir);
 
 
-		lookDir = grabPoint.transform.position-handle.transform.position;
+
 
 		if (grabbing) {
 
@@ -84,8 +85,16 @@ public class Lever : MonoBehaviour {
 			//leverRotation.z = 0f;
 			Debug.Log ("leverrotations "+leverRotation);
 
-			lever.transform.rotation = new Quaternion(0.0f, leverRotation.y, 0.0f, leverRotation.z);
-			//lever.transform.rotation = Quaternion.Slerp(lever.transform.rotation, leverRotation, Time.deltaTime);
+
+			//
+			//lever.transform.LookAt (grabPoint.transform.position);
+			lever.transform.forward = grabPoint.transform.position - handle.transform.position;
+			//lever.transform.LookAt (grabPoint.transform.position);
+			//lever.transform.rotation = new Quaternion (lever.transform.rotation.x, 90, -90, lever.transform.rotation.w);
+			//lever.transform.rotation *= Quaternion.Euler (1, 1, -90);
+
+			//lever.transform.rotation = leverRotation;//new Quaternion(leverRotation.x, 90, -90, lever.transform.rotation.w);
+			//lever.transform.localRotation = leverRotation;//Quaternion.Slerp(lever.transform.rotation, new Quaternion(leverRotation.x, 90, -90, leverRotation.w), Time.deltaTime);
 
 
 			//Debug.Log (lever.transform.localEulerAngles.y);
