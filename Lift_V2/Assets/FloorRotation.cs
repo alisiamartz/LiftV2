@@ -16,10 +16,10 @@ public class FloorRotation : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         //If Floor has been changed and dial not updated
-        if(dialFloorPos != Manager.GetComponent<Manager>().floorPos)
+        if(dialFloorPos != Manager.GetComponent<ElevatorMovement>().floorPos)
         {
             //90 is floor 0 and -90 is max floor (4)
-            transform.rotation = Quaternion.Euler(0, 0, 90 - Manager.GetComponent<Manager>().floorPos * 36);
+            transform.rotation = Quaternion.Euler(-Manager.GetComponent<ElevatorMovement>().floorPos * 36, 180, 0);
         }
 
 	}
