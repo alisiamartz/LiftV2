@@ -28,7 +28,7 @@ public class Lever : MonoBehaviour {
 	public Quaternion leverRotation;
 
 	bool raising;
-	bool collided;
+	public static bool collided;
 	bool grabbing;
 
 	public Rigidbody rb;
@@ -63,14 +63,10 @@ public class Lever : MonoBehaviour {
 		leverRotation = lever.transform.rotation;
 		//currValue = handle.GetComponent<NVRLever> ().CurrentValue;
 
-		lookDir = -(grabPoint.transform.position - lever.transform.position); //handle.transform.position - grabPoint.transform.position;
-		leverRotation = Quaternion.LookRotation(lookDir);
-
-
-
+		//lookDir = -(grabPoint.transform.position - lever.transform.position); //handle.transform.position - grabPoint.transform.position;
+		//leverRotation = Quaternion.LookRotation(lookDir);
 
 		if (grabbing) {
-
 			//lever.transform.LookAt(trackedObj.transform);
 			//lookDir = grabPoint.transform.position-handle.transform.position;
 			//Debug.Log ("grab point "+grabPoint.transform.position);
@@ -86,9 +82,13 @@ public class Lever : MonoBehaviour {
 			Debug.Log ("leverrotations "+leverRotation);
 
 
+
+
+
+
 			//
 			//lever.transform.LookAt (grabPoint.transform.position);
-			lever.transform.forward = grabPoint.transform.position - handle.transform.position;
+			//lever.transform.forward = grabPoint.transform.position - handle.transform.position;
 			//lever.transform.LookAt (grabPoint.transform.position);
 			//lever.transform.rotation = new Quaternion (lever.transform.rotation.x, 90, -90, lever.transform.rotation.w);
 			//lever.transform.rotation *= Quaternion.Euler (1, 1, -90);
@@ -129,23 +129,8 @@ public class Lever : MonoBehaviour {
 			grabbing = false;
 		}
 
-		//		if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x) {
+//		if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x) {
 
-	}
-
-	void OnTriggerEnter(Collider col) {
-		if (col.gameObject.tag == "grabPoint") {
-			collided = true;
-			Debug.Log (collided);
-		}
-	}
-
-	void OnTriggerExit(Collider col) {
-		if (col.gameObject.tag == "grabPoint") {
-			collided = false;			
-			Debug.Log (collided);
-
-		}
 	}
 }
 
