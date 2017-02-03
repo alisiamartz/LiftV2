@@ -48,7 +48,10 @@ public class Lever : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (!lever) lever = GameObject.FindGameObjectWithTag ("lever");
+
+        collided = false;
+
+        if (!lever) lever = GameObject.FindGameObjectWithTag ("lever");
 		if (!handle) handle = GameObject.FindGameObjectWithTag ("handle");
 
 
@@ -81,12 +84,6 @@ public class Lever : MonoBehaviour {
 			//leverRotation.z = 0f;
 			Debug.Log ("leverrotations "+leverRotation);
 
-
-
-
-
-
-			//
 			//lever.transform.LookAt (grabPoint.transform.position);
 			//lever.transform.forward = grabPoint.transform.position - handle.transform.position;
 			//lever.transform.LookAt (grabPoint.transform.position);
@@ -95,7 +92,6 @@ public class Lever : MonoBehaviour {
 
 			//lever.transform.rotation = leverRotation;//new Quaternion(leverRotation.x, 90, -90, lever.transform.rotation.w);
 			//lever.transform.localRotation = leverRotation;//Quaternion.Slerp(lever.transform.rotation, new Quaternion(leverRotation.x, 90, -90, leverRotation.w), Time.deltaTime);
-
 
 			//Debug.Log (lever.transform.localEulerAngles.y);
 			//Debug.Log (lever.transform.localRotation.eulerAngles.y);

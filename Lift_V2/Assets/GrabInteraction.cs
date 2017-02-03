@@ -21,13 +21,17 @@ public class GrabInteraction : MonoBehaviour {
 		// if collided with doorHold
 		switch(col.gameObject.tag) {
 			case "doorHold":
-				doorInteraction.collided = true;
-				Debug.Log ("should be true/door " +doorInteraction.collided);
+				doorInteraction.holdCollide = true;
+				Debug.Log ("should be true/door " + doorInteraction.holdCollide);
 				break;
 			case "handle":
 				Lever.collided = true;
 				Debug.Log ("should be true/handle " +Lever.collided);
 				break;
+            case "rope":
+                doorInteraction.ropeCollide = true;
+                Debug.Log("should be true/rope " + doorInteraction.ropeCollide);
+                break;
 			default:
 				break;
 		}
@@ -37,14 +41,18 @@ public class GrabInteraction : MonoBehaviour {
 		// no longer touching doorhold
 		switch(col.gameObject.tag) {
 			case "doorHold":
-				doorInteraction.collided = false;
-				Debug.Log ("should be false/door " +doorInteraction.collided);
+				doorInteraction.holdCollide = false;
+				Debug.Log ("should be false/door " +doorInteraction.holdCollide);
 				break;
 			case "handle":
-				Lever.collided = true;
+				Lever.collided = false;
 				Debug.Log ("should be false/handle " +Lever.collided);
 				break;
-			default:
+            case "rope":
+                doorInteraction.ropeCollide = false;
+                Debug.Log("should be false/rope " + doorInteraction.ropeCollide);
+                break;
+            default:
 				break;
 		}
 	}
