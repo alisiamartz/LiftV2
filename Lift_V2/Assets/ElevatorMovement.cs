@@ -8,27 +8,30 @@ public class ElevatorMovement : MonoBehaviour {
     public float floorRounding;                         //How close to the floor the elevator must be for it to round
     public float maxSpeedToRound;                       //The maximum speed the elevator can be moving for it to round
     public float liftSpeedMax;                          //The maximum speed to elevator can reach
-    public float timeToMax;                             //The time it takes to reach max speed
+    public float maxIter;                             //The maximum acceleration the elevator can take. (When the lever is at max or min)
     public float timeToStop;                            //The time it takes to halt to a complete stop
     private float liftSpeedCurrent;    //The current speed of the elevator
     private float liftSpeedIter;       //The current rate of speed increase for the elevator
     private float liftSpeedWinder;     //The current rate of speed decrease for the elevator
-    private bool windingDown;                           //Whether or not elevator is winding down to a halt
+    public bool windingDown;                           //Whether or not elevator is winding down to a halt
 
     private bool magnet;
     public float magnetForce;
 
     public int maxVibration;
 
+    private GameObject lever;
+
 	// Use this for initialization
 	void Start () {
         floorPos = 0f;
         liftSpeedCurrent = 0f;
-        liftSpeedIter = liftSpeedMax / timeToMax;
         liftSpeedWinder = liftSpeedMax / timeToStop;
         windingDown = false;
 
         magnet = false;
+
+        lever = GameObject.FindGameObjectWithTag("lever");
 	}
 	
 	// Update is called once per frame
@@ -61,21 +64,22 @@ public class ElevatorMovement : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey("d")){
+        if (lever.GetComponent<LeverRotation>().decensionRate != 0){
             windingDown = false;
             if (liftSpeedCurrent < liftSpeedMax)
             {
-                liftSpeedCurrent += liftSpeedIter;
+                liftSpeedCurrent += maxIter * lever.GetComponent<LeverRotation>().decensionRate;
             }
         }
-        if (Input.GetKey("a")){
+        if (lever.GetComponent<LeverRotation>().ascensionRate != 0){
             windingDown = false;
             if (liftSpeedCurrent < liftSpeedMax)
             {
-                liftSpeedCurrent -= liftSpeedIter;
+                liftSpeedCurrent -= maxIter * lever.GetComponent<LeverRotation>().ascensionRate;
             }
         }
-        if (Input.GetKeyUp("d") || Input.GetKeyUp("a")) {
+    
+        if (lever.GetComponent<LeverRotation>().ascensionRate == 0 && lever.GetComponent<LeverRotation>().decensionRate == 0) {
             windingDown = true;
         }
         if (windingDown && (Mathf.Abs(liftSpeedCurrent) > liftSpeedWinder)) {
