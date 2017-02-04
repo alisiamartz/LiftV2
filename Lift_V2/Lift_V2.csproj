@@ -119,6 +119,9 @@
     <Compile Include="Assets\Edwon\VR\Gesture\VRUI\Scripts\VRGestureUIPanelManager.cs" />
     <Compile Include="Assets\FloorRotation.cs" />
     <Compile Include="Assets\GrabInteraction.cs" />
+    <Compile Include="Assets\LeverGrab.cs" />
+    <Compile Include="Assets\LeverRange.cs" />
+    <Compile Include="Assets\LeverRotation.cs" />
     <Compile Include="Assets\Manager.cs" />
     <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundController.cs" />
     <Compile Include="Assets\NewtonVR\CollisionSoundFramework\NVRCollisionSoundMaterials.cs" />
