@@ -16,7 +16,7 @@ public class LeverRange : MonoBehaviour {
 	void Update () {
         if(inRange == false)
         {
-            //GetComponent<LeverRotation>().grabbed = false;
+            GetComponent<LeverRotation>().grabbed = false;
         }
 	}
 

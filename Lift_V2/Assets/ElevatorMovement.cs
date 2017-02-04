@@ -66,17 +66,13 @@ public class ElevatorMovement : MonoBehaviour {
 
         if (lever.GetComponent<LeverRotation>().decensionRate != 0){
             windingDown = false;
-            if (liftSpeedCurrent < liftSpeedMax)
-            {
-                liftSpeedCurrent += maxIter * lever.GetComponent<LeverRotation>().decensionRate;
-            }
+            liftSpeedCurrent = -liftSpeedMax * lever.GetComponent<LeverRotation>().decensionRate;
+            Debug.Log(lever.GetComponent<LeverRotation>().decensionRate);
         }
         if (lever.GetComponent<LeverRotation>().ascensionRate != 0){
             windingDown = false;
-            if (liftSpeedCurrent < liftSpeedMax)
-            {
-                liftSpeedCurrent -= maxIter * lever.GetComponent<LeverRotation>().ascensionRate;
-            }
+            liftSpeedCurrent = liftSpeedMax * lever.GetComponent<LeverRotation>().ascensionRate;
+            Debug.Log(lever.GetComponent<LeverRotation>().ascensionRate);
         }
     
         if (lever.GetComponent<LeverRotation>().ascensionRate == 0 && lever.GetComponent<LeverRotation>().decensionRate == 0) {

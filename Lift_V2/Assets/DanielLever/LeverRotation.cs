@@ -78,19 +78,19 @@ public class LeverRotation : MonoBehaviour {
         {
             if (leverRotation > neutralRotation + neutralRadius)
             {
-                ascensionRate = Mathf.Abs((leverRotation - (neutralRotation + neutralRadius)) / maxRotation);
-            }
-            else
-            {
-                ascensionRate = 0;
-            }
-            if (leverRotation < neutralRotation - neutralRadius)
-            {
-                decensionRate = Mathf.Abs((leverRotation - (neutralRotation + neutralRadius)) / minRotation);
+                decensionRate = Mathf.Abs((leverRotation - (neutralRotation + neutralRadius)) / (maxRotation - (neutralRotation + neutralRadius)));
             }
             else
             {
                 decensionRate = 0;
+            }
+            if (leverRotation < neutralRotation - neutralRadius)
+            {
+                ascensionRate = Mathf.Abs((leverRotation - (neutralRotation - neutralRadius)) / (minRotation - (neutralRotation - neutralRadius)));
+            }
+            else
+            {
+                ascensionRate = 0;
             }
         }
         else
