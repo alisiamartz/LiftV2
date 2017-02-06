@@ -1,0 +1,27 @@
+{
+  "init": [
+    {
+      "type": "init",
+      "utility":  [1, 2, 3, 4]
+    },
+    {
+      "type": "action",
+      "wait": 2,
+      "dialogue": [ "Hello, are you ready?" ]
+    },
+    {
+      "type": "listen",
+      "wait": 5,
+      "listen": [ "yes", "no" ],
+      "dialogue": [ "Good!", "That's not good." ],
+      "defaultDialogue": "The silent type I guess."
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "happiness", "sadness", "confusion" ],
+      "dialogue": [ "Well let's get started.", "I hope you will be after this.", "I guess we'll start training." ],
+      "defaultDialogue":  "something something"
+    }
+  ]
+}
