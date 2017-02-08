@@ -8,33 +8,67 @@ public class JsonParser : MonoBehaviour {
 
     string path;
     string jsonString;
+    Dictionary<string, string> dict = new Dictionary<string, string>();
 
-    string[] test = { "hello", "there" };
+    public BossEvents bossEvents = new BossEvents();
 
 	// Use this for initialization
 	void Start () {
+
+        dict.Add("1", "one");
+        dict.Add("2", "two");
+
+        Debug.Log(dict["2"]);
+
         path = Application.streamingAssetsPath + "/../Scripts/ai/BossInfo.json";
         jsonString = File.ReadAllText(path);
 
         parser x = JsonUtility.FromJson<parser>(jsonString);
 
-        for (int i = 0; i < x.init.Length; i++)
-        {
-            x.init[i].print();
-        }
-
+        parseEvents(x.eventList);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void parseEvents(events[] eventsList)
+    {
+        for (int i = 0; i < eventsList.Length; i++)
+        {
+            events e = eventsList[i];
+            switch(e.type)
+            {
+                case "init":
+                    //do something
+                    Debug.Log("init");
+                    break;
+                case "action":
+                    //do something
+                    Debug.Log("action");
+                    break;
+                case "listen":
+                    //do something
+                    Debug.Log("listen");
+                    break;
+                case "utility":
+                    //do something
+                    Debug.Log("utility");
+                    break;
+                default:
+                    Debug.Log("Error: something wrong with json type at element " + i);
+                    return;
+            }
+        }
+    }
 }
 
 [System.Serializable]
 public class parser
 {
-    public events[] init;
+    public events[] eventList;
+
 }
 
 [System.Serializable]
@@ -45,11 +79,7 @@ public class events
     public int wait;
     public List<string> dialogue;
     public List<string> listen;
-    public string defaultDialogue;
+    public string defaultDialogue; //unused
     public List<string> utilReponse;
-
-    public void print()
-    {
-        Debug.Log(this.dialogue.Count);
-    }
+    public string neutralDialogue;
 }

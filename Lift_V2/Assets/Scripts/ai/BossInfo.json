@@ -1,27 +1,32 @@
 {
-  "init": [
+  "eventList": [
     {
       "type": "init",
-      "utility":  [1, 2, 3, 4]
+      "utility": [ 0, 0, 0, 0 ]
     },
     {
       "type": "action",
-      "wait": 2,
-      "dialogue": [ "Hello, are you ready?" ]
+      "dialogue": [ "Say, would ya mind holding the door for me?" ]
     },
     {
       "type": "listen",
-      "wait": 5,
-      "listen": [ "yes", "no" ],
-      "dialogue": [ "Good!", "That's not good." ],
-      "defaultDialogue": "The silent type I guess."
+      "wait": 3,
+      "listen": [ "pat", "hit", "agree", "disagree" ],
+      "action": [ "" ]
     },
     {
       "type": "utility",
-      "wait": 0,
-      "utilResponse": [ "happiness", "sadness", "confusion" ],
-      "dialogue": [ "Well let's get started.", "I hope you will be after this.", "I guess we'll start training." ],
-      "defaultDialogue":  "something something"
+      "utilResponse": [ "happiness", "anger" ],
+      "dialogue": [
+        "You remind me of the fella who working the elevator around twenty years back. good to know they've kept up the high standards since then. Floor five please",
+        "Boy, looks like they fire any damn body off the street now. Shame. Take me to floor five. That's the one after four."
+      ],
+      "neutralDialogue": "You remind me of the fella who worked the elevator twenty years ago, looks like our dear owner's got a type. Floor five."
+    }
+  ],
+  "actionList": [
+    {
+      "name": ""
     }
   ]
 }
