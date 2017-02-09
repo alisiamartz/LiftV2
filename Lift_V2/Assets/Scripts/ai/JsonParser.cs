@@ -68,6 +68,7 @@ public class JsonParser : MonoBehaviour {
 public class parser
 {
     public events[] eventList;
+    public actions[] actionList;
 
 }
 
@@ -75,11 +76,27 @@ public class parser
 public class events
 {
     public string type;
-    public int[] utility;
+    public int[] utility; //happiness, sadness, confusion, anger
     public int wait;
     public List<string> dialogue;
     public List<string> listen;
-    public string defaultDialogue; //unused
     public List<string> utilReponse;
-    public string neutralDialogue;
+    public string noReponse;
+    public string otherReponse;
+}
+
+[System.Serializable]
+public class actions
+{
+    public string name;
+    public change change;
+}
+
+[System.Serializable]
+public class change
+{
+    public int happiness;
+    public int sadness;
+    public int confusion;
+    public int anger;
 }

@@ -11,22 +11,50 @@
     {
       "type": "listen",
       "wait": 3,
-      "listen": [ "pat", "hit", "agree", "disagree" ],
-      "action": [ "" ]
+      "listen": [ "yes", "no" ],
+      "action": [ "getHappy", "getAngry" ],
+      "noReponse": "doNothing",
+      "otherResponse": "getConfused"
     },
     {
       "type": "utility",
-      "utilResponse": [ "happiness", "anger" ],
+      "utilResponse": [ "happiness", "anger", "neutral" ],
       "dialogue": [
         "You remind me of the fella who working the elevator around twenty years back. good to know they've kept up the high standards since then. Floor five please",
-        "Boy, looks like they fire any damn body off the street now. Shame. Take me to floor five. That's the one after four."
-      ],
-      "neutralDialogue": "You remind me of the fella who worked the elevator twenty years ago, looks like our dear owner's got a type. Floor five."
+        "Boy, looks like they fire any damn body off the street now. Shame. Take me to floor five. That's the one after four.",
+        "You remind me of the fella who worked the elevator twenty years ago, looks like our dear owner's got a type. Floor five."
+      ]
+    },
+    {
+      "type": "listen",
+      "wait": 10,
+      "listen": [ "yes", "flipoff" ],
+      "action": [ "getHappy", "getAngry" ]
     }
   ],
   "actionList": [
     {
-      "name": ""
+      "name": "getHappy",
+      "change": {
+        "happiness": 5
+      }
+    },
+    {
+      "name": "getAngry",
+      "change": {
+        "happiness": -7,
+        "anger": 5
+      }
+    },
+    {
+      "name": "doNothing",
+      "change": { }
+    },
+    {
+      "name": "getConfused",
+      "change": {
+        "confusion": 2
+      }
     }
   ]
 }
