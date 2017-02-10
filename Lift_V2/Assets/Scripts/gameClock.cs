@@ -7,6 +7,7 @@ public class gameClock : MonoBehaviour {
 
     public Text timeLeft;
     private double timeFunc;
+    public double GameTimer;
     private double dayLength;
     private double timer;
     private int mins;
@@ -16,10 +17,11 @@ public class gameClock : MonoBehaviour {
     public Text dayNum;
     private int dayCount;
     private bool isDay;
+    public bool displayed;
 
 	// Use this for initialization
 	void Start () {
-        dayLength = 300.0; // set the desired value of time per day here in seconds
+        dayLength = GameTimer; // set the desired value of time per day in Manager/GameClcok script/ "Game Timer" field
         timer = 0.0;
         dayCount = 1;
         isDay = true;
@@ -53,6 +55,7 @@ public class gameClock : MonoBehaviour {
             displaySec = "0" + sec.ToString("f0");
         } else { displaySec = sec.ToString("f0"); }
 
-        timeLeft.text = displayMin + " : " + displaySec;
+        if (displayed == true) {timeLeft.text = displayMin + " : " + displaySec;}
+        else { timeLeft.text = ""; }
     }
 }
