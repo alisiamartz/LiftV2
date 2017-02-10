@@ -26,6 +26,7 @@ public class doorInteraction : MonoBehaviour
     bool lifting;
     bool closing;
     bool open;
+    public string doorSFX;
 
     float currY;
     float initX;
@@ -145,6 +146,8 @@ public class doorInteraction : MonoBehaviour
                     lifting = false;
                     open = true;
                     slidingDoor2.openSlidingDoor();
+                    // TODO: MAKE NOISE PLAY WHEN ANIMATED DOOR IS OPEN
+                    doorSFX.PlaySound(transform.position);
                 }
             }
         }
