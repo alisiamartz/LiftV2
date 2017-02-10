@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 9a8d51c67ba447f4fab31c35376c62b8
-timeCreated: 1485467606
+guid: 55b1ef6d04c625a43935cde8920db8ee
+timeCreated: 1486760989
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: Camera
-    100002: //RootNode
-    100004: elevatorWallDoor
+    100002: elevatorWallDoor
+    100004: //RootNode
     100006: Lamp
     400000: Camera
-    400002: //RootNode
-    400004: elevatorWallDoor
+    400002: elevatorWallDoor
+    400004: //RootNode
     400006: Lamp
     2300000: elevatorWallDoor
     3300000: elevatorWallDoor
