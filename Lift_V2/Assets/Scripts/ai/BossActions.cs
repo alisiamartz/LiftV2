@@ -8,6 +8,7 @@ public class BossActions : MonoBehaviour {
     public float happiness;
     public float sadness;
     public float confusion;
+    public float anger;
 
 	// Use this for initialization
 	void Start () {

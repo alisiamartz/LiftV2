@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class AgentController : MonoBehaviour {
 
-    //for debugging purposes, we will add classes here
-    public BossActions actions;
-    public BossEvents events;
+    public string filename; //with .json
 
+    string path;
+    string jsonString;
+    JsonParser jp = new JsonParser();
+    CreateCharacters cc = new CreateCharacters();
 
     // Use this for initialization
     void Start () {
-        events.action = actions;
+        jp.parse(filename);
+        cc.create(jp.parsedJson, "Business Man");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (events.events[events.step]()) events.step++;
 
     }
+
+    //
 }

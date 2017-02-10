@@ -8,30 +8,26 @@ public class JsonParser : MonoBehaviour {
 
     string path;
     string jsonString;
-    Dictionary<string, string> dict = new Dictionary<string, string>();
+    public parser parsedJson;
 
-    public BossEvents bossEvents = new BossEvents();
+    BossEvents bossEvents = new BossEvents();
 
 	// Use this for initialization
 	void Start () {
 
-        dict.Add("1", "one");
-        dict.Add("2", "two");
-
-        Debug.Log(dict["2"]);
-
-        path = Application.streamingAssetsPath + "/../Scripts/ai/BossInfo.json";
-        jsonString = File.ReadAllText(path);
-
-        parser x = JsonUtility.FromJson<parser>(jsonString);
-
-        parseEvents(x.eventList);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void parse(string filename)
+    {
+        path = Application.streamingAssetsPath + "/../Scripts/ai/" + filename;
+        jsonString = File.ReadAllText(path);
+        parsedJson = JsonUtility.FromJson<parser>(jsonString);
+    }
 
     public void parseEvents(events[] eventsList)
     {

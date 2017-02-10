@@ -31,6 +31,10 @@ public class BossEvents : MonoBehaviour {
         //if (events[step]()) step++;
 	}
 
+    //////////
+    //Legacy//
+    //////////
+
     public bool Hello()
     {
         action.Hello();
