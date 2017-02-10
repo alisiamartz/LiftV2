@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateCharacters : MonoBehaviour {
+    //hold step of timeline
+    delegate bool step();
+    //sequence of events
+    List<step> timeline = new List<step>();
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +28,19 @@ public class CreateCharacters : MonoBehaviour {
         {
             var t = actionList[i];
             actionDict.Add(t.name, t.change);
+        }
+
+        for (int i = 0; i < eventList.Length; i++)
+        {
+            switch (eventList[i].type)
+            {
+                case "init":
+                    init t = new init();
+                    break;
+                default:
+                    Debug.Log("Something went wrong, check json eventList type at index " + i);
+                    return;
+            }
         }
     }
 }
