@@ -14,7 +14,7 @@
       "wait": 3,
       "listen": [ "yes", "no" ],
       "action": [ "getHappy", "getAngry" ],
-      "noReponse": "doNothing",
+      "noResponse": "doNothing",
       "otherResponse": "getConfused"
     },
     {
@@ -30,8 +30,8 @@
     {
       "type": "listen",
       "wait": 7,
-      "listen": [ "yes" ],
-      "action": [ "getHappy" ],
+      "listen": [ "yes", "no" ],
+      "action": [ "getHappy", "getAngry" ],
       "noResponse": "doNothing",
       "otherResponse": "getConfused"
     },
@@ -40,9 +40,9 @@
       "wait": 0,
       "utilResponse": [ "happiness", "anger", "neutral" ],
       "dialogue": [
-        "You'd probably be better off not knowing, but there was a young guy garroted in one of these rooms back then. No one knew who he was, hadn’t checked in or anything.",
-        "I hope you know twenty years back some goon knocked off an unfortunate fella in one a these rooms. Thinkin’ about it now, he was the lucky one.",
-        "You probably don't know, it’s always been violent around here. Case about twenty years back, young man found garroted in one of these rooms. He hadn’t even checked in, no one saw him enter."
+        "You'd probably be better off not knowing, but there was a young guy garroted in one of these rooms back then. No one knew who he was, hadn't checked in or anything.",
+        "I hope you know twenty years back some goon knocked off an unfortunate fella in one a these rooms. Thinkin' about it now, he was the lucky one.",
+        "You probably don't know, it's always been violent around here. Case about twenty years back, young man found garroted in one of these rooms. He hadn't even checked in, no one saw him enter."
       ]
     },
     {
@@ -56,9 +56,9 @@
     {
       "type": "utility",
       "wait": 0,
-      "utilReponse": [ "happiness", "anger", "neutral" ],
+      "utilResponse": [ "happiness", "anger", "neutral" ],
       "dialogue": [
-        "Be glad you weren’t the unlucky fella who smelled it first. Me, I had just got promoted to the homicide beat, had a few easy collars.",
+        "Be glad you weren't the unlucky fella who smelled it first. Me, I had just got promoted to the homicide beat, had a few easy collars.",
         "Smelled a bit like you after a few days, got called in after someone noticed. Me, I was the golden-boy, making a name for myself on the homicide beat.",
         "Poor guests next door called it in when it started to smell. I was new on the homicide beat, had a few high-profile cases under my belt."
       ]

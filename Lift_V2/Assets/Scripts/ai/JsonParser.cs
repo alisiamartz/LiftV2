@@ -76,8 +76,9 @@ public class events
     public int wait;
     public List<string> dialogue;
     public List<string> listen;
-    public List<string> utilReponse;
-    public string noReponse;
+    public List<string> utilResponse; //"neutral" is always last
+    public List<string> action;
+    public string noResponse;
     public string otherReponse;
 }
 

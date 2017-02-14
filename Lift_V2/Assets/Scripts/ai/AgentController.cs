@@ -10,16 +10,24 @@ public class AgentController : MonoBehaviour {
     string jsonString;
     JsonParser jp = new JsonParser();
     CreateCharacters cc = new CreateCharacters();
+    Agent agent;
+
+    int step = 0;
 
     // Use this for initialization
     void Start () {
         jp.parse(filename);
-        cc.create(jp.parsedJson, "Business Man");
+        cc.create(jp.parsedJson);
+        agent = cc.agent;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (agent.timeline[step]())
+        {
+            agent.flag = true;
+            step++;
+        }
     }
 
     //
