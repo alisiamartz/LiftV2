@@ -1,0 +1,138 @@
+{
+  "eventList": [
+    {
+      "type": "init",
+      "utility": [ 0, 0, 0, 0 ]
+    },
+    {
+      "type": "action",
+      "wait": 0,
+      "dialogue": [ "Say, would ya mind holding the door for me?" ]
+    },
+    {
+      "type": "listen",
+      "wait": 3,
+      "listen": [ "yes", "no" ],
+      "action": [ "getHappy", "getAngry" ],
+      "noResponse": "doNothing",
+      "otherResponse": "getConfused"
+    },
+    {
+      "type": "utility",
+      "utilResponse": [ "happiness", "anger", "neutral" ],
+      "wait": 0,
+      "dialogue": [
+        "You remind me of the fella who working the elevator around twenty years back. good to know they've kept up the high standards since then. Floor five please",
+        "Boy, looks like they fire any damn body off the street now. Shame. Take me to floor five. That's the one after four.",
+        "You remind me of the fella who worked the elevator twenty years ago, looks like our dear owner's got a type. Floor five."
+      ]
+    },
+    {
+      "type": "listen",
+      "wait": 7,
+      "listen": [ "yes", "no" ],
+      "action": [ "getHappy", "getAngry" ],
+      "noResponse": "doNothing",
+      "otherResponse": "getConfused"
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "happiness", "anger", "neutral" ],
+      "dialogue": [
+        "You'd probably be better off not knowing, but there was a young guy garroted in one of these rooms back then. No one knew who he was, hadn't checked in or anything.",
+        "I hope you know twenty years back some goon knocked off an unfortunate fella in one a these rooms. Thinkin' about it now, he was the lucky one.",
+        "You probably don't know, it's always been violent around here. Case about twenty years back, young man found garroted in one of these rooms. He hadn't even checked in, no one saw him enter."
+      ]
+    },
+    {
+      "type": "listen",
+      "wait": 7,
+      "listen": [ "yes" , "no"],
+      "action": [ "getHappy", "getAngry"],
+      "noResponse": "doNothing",
+      "otherRespone": "getConfused"
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "happiness", "anger", "neutral" ],
+      "dialogue": [
+        "Be glad you weren't the unlucky fella who smelled it first. Me, I had just got promoted to the homicide beat, had a few easy collars.",
+        "Smelled a bit like you after a few days, got called in after someone noticed. Me, I was the golden-boy, making a name for myself on the homicide beat.",
+        "Poor guests next door called it in when it started to smell. I was new on the homicide beat, had a few high-profile cases under my belt."
+      ]
+    },
+    {
+      "type": "listen",
+      "wait": 7,
+      "listen": [ "yes", "no" ],
+      "action": [ "getHappy", "getAngry" ],
+      "noResponse": "doNothing",
+      "otherRespone": "getConfused"
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "happiness", "anger", "neutral" ],
+      "dialogue": [
+        "I don't talk about it much, but that's the case that drove me off the force.",
+        "Like most things, it turned out to be much more miserable than it appeared. Never quite figured it.",
+        "They told me it'd be a quick collar. Turned out to be the last case of my career on the force."
+      ]
+    },
+    {
+      "type": "listen",
+      "wait": 7,
+      "listen": [ "no" ],
+      "action": [ "getHappy" ],
+      "noResponse": "doNothing",
+      "otherRespone": "getConfused"
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "happiness", "anger", "neutral" ],
+      "dialogue": [
+        "So here I am, returning to the scene. Wish me luck.",
+        "If I knew I'd have to deal with you, I wouldn't-a come back for one last go at it.",
+        "Figured I'd take one last crack at it."
+      ]
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "anger", "happiness", "neutral" ],
+      "dialogue": [
+        "Buzz off, pal.",
+        "Thanks, pal.",
+        "Thanks."
+      ]
+    }
+  ],
+  "actionList": [
+    {
+      "name": "getHappy",
+      "change": {
+        "happiness": 5
+      }
+    },
+    {
+      "name": "getAngry",
+      "change": {
+        "happiness": -7,
+        "anger": 5
+      }
+    },
+    {
+      "name": "doNothing",
+      "change": { }
+    },
+    {
+      "name": "getConfused",
+      "change": {
+        "confusion": 2
+      }
+    }
+  ]
+}
