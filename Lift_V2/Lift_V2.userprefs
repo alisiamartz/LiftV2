@@ -1,9 +1,10 @@
-﻿<Properties StartupItem="Lift_V2.csproj">
+﻿<Properties StartupItem="Lift_V2.CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ai\BossEvents.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ai\BossInfo.json">
     <Files>
       <File FileName="Assets\Scripts\fakeAI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ai\BossEvents.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ai\BossInfo.json" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

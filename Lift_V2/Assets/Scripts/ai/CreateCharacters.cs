@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateCharacters : MonoBehaviour {
+    //hold step of timeline
+    delegate bool step();
+    //sequence of events
+    List<step> timeline = new List<step>();
 
     public Agent agent = new Agent();
 
