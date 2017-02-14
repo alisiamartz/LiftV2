@@ -23,17 +23,6 @@ public class Agent : MonoBehaviour {
     public Dictionary<string, change> actionDict;
     public Dictionary<string, KeyCode> listenDict;
 
-
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void doChange(change c)
     {
         happiness += c.happiness;
@@ -121,7 +110,7 @@ public class Agent : MonoBehaviour {
             int urgent2 = util.ToList().IndexOf(util.Max()); //second most urgent
 
             //get correct utility response
-            if (Mathf.Abs(urgent1 - urgent2) <= 2)
+            if (Mathf.Abs(util[urgent1] - util[urgent2]) <= 2)
             {
                 Debug.Log(e.dialogue[e.dialogue.Count - 1]);
             }

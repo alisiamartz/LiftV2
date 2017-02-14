@@ -48,8 +48,8 @@
     {
       "type": "listen",
       "wait": 7,
-      "listen": [ "yes" ],
-      "action": [ "getHappy" ],
+      "listen": [ "yes" , "no"],
+      "action": [ "getHappy", "getAngry"],
       "noResponse": "doNothing",
       "otherRespone": "getConfused"
     },
@@ -61,6 +61,52 @@
         "Be glad you weren't the unlucky fella who smelled it first. Me, I had just got promoted to the homicide beat, had a few easy collars.",
         "Smelled a bit like you after a few days, got called in after someone noticed. Me, I was the golden-boy, making a name for myself on the homicide beat.",
         "Poor guests next door called it in when it started to smell. I was new on the homicide beat, had a few high-profile cases under my belt."
+      ]
+    },
+    {
+      "type": "listen",
+      "wait": 7,
+      "listen": [ "yes", "no" ],
+      "action": [ "getHappy", "getAngry" ],
+      "noResponse": "doNothing",
+      "otherRespone": "getConfused"
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "happiness", "anger", "neutral" ],
+      "dialogue": [
+        "I don't talk about it much, but that's the case that drove me off the force.",
+        "Like most things, it turned out to be much more miserable than it appeared. Never quite figured it.",
+        "They told me it'd be a quick collar. Turned out to be the last case of my career on the force."
+      ]
+    },
+    {
+      "type": "listen",
+      "wait": 7,
+      "listen": [ "no" ],
+      "action": [ "getHappy" ],
+      "noResponse": "doNothing",
+      "otherRespone": "getConfused"
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "happiness", "anger", "neutral" ],
+      "dialogue": [
+        "So here I am, returning to the scene. Wish me luck.",
+        "If I knew I'd have to deal with you, I wouldn't-a come back for one last go at it.",
+        "Figured I'd take one last crack at it."
+      ]
+    },
+    {
+      "type": "utility",
+      "wait": 0,
+      "utilResponse": [ "anger", "happiness", "neutral" ],
+      "dialogue": [
+        "Buzz off, pal.",
+        "Thanks, pal.",
+        "Thanks."
       ]
     }
   ],
