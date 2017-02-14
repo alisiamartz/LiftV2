@@ -6,62 +6,21 @@ using System.IO;
 
 public class JsonParser : MonoBehaviour {
 
-    string path;
-    string jsonString;
-    public parser parsedJson;
+    private string path;
+    private string jsonString;
+    private jsonClass parsedJson;
 
-    BossEvents bossEvents = new BossEvents();
-
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void parse(string filename)
+    public jsonClass parse(string filename)
     {
         path = Application.streamingAssetsPath + "/../Scripts/ai/" + filename;
         jsonString = File.ReadAllText(path);
-        parsedJson = JsonUtility.FromJson<parser>(jsonString);
-    }
-
-    public void parseEvents(events[] eventsList)
-    {
-        for (int i = 0; i < eventsList.Length; i++)
-        {
-            events e = eventsList[i];
-            switch(e.type)
-            {
-                case "init":
-                    //do something
-                    Debug.Log("init");
-                    break;
-                case "action":
-                    //do something
-                    Debug.Log("action");
-                    break;
-                case "listen":
-                    //do something
-                    Debug.Log("listen");
-                    break;
-                case "utility":
-                    //do something
-                    Debug.Log("utility");
-                    break;
-                default:
-                    Debug.Log("Error: something wrong with json type at element " + i);
-                    return;
-            }
-        }
+        parsedJson = JsonUtility.FromJson<jsonClass>(jsonString);
+        return parsedJson;
     }
 }
 
 [System.Serializable]
-public class parser
+public class jsonClass
 {
     public events[] eventList;
     public actions[] actionList;

@@ -3,24 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateCharacters : MonoBehaviour {
-    //hold step of timeline
-    delegate bool step();
-    //sequence of events
-    List<step> timeline = new List<step>();
+    private delegate bool step();
+    private List<step> timeline = new List<step>();
+    private Agent agent = new Agent();
 
-    public Agent agent = new Agent();
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void create(parser p)
+    public Agent create(jsonClass p)
     {
         events[] eventList = p.eventList;
         actions[] actionList = p.actionList;
@@ -65,6 +52,8 @@ public class CreateCharacters : MonoBehaviour {
             }
         }
         agent.timeline.Add(() => agent.end());
+
+        return agent;
     }
 
     private void init(events e)

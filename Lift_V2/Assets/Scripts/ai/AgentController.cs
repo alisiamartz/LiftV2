@@ -6,19 +6,18 @@ public class AgentController : MonoBehaviour {
 
     public string filename; //with .json
 
-    string path;
-    string jsonString;
-    JsonParser jp = new JsonParser();
-    CreateCharacters cc = new CreateCharacters();
-    Agent agent;
+    private JsonParser jp = new JsonParser();
+    private CreateCharacters cc = new CreateCharacters();
+    private Agent agent;
 
-    int step = 0;
+    private int step = 0;
+
+    private jsonClass agentClass;
 
     // Use this for initialization
     void Start () {
-        jp.parse(filename);
-        cc.create(jp.parsedJson);
-        agent = cc.agent;
+        agentClass = jp.parse(filename);
+        agent = cc.create(agentClass);
 	}
 	
 	// Update is called once per frame
@@ -29,6 +28,4 @@ public class AgentController : MonoBehaviour {
             step++;
         }
     }
-
-    //
 }
