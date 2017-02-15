@@ -39,7 +39,7 @@ public class Lever : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		currValue = handle.GetComponent<NVRLever> ().CurrentValue;
+//		currValue = handle.GetComponent<NVRLever> ().CurrentValue;
 
 		if (currValue < .4f) {
 			// value is going down
