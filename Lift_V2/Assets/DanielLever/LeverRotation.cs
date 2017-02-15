@@ -22,6 +22,8 @@ public class LeverRotation : MonoBehaviour {
     public float ascensionRate = 0f;
     public float decensionRate = 0f;
 
+    public string leverResetSound;
+
     //5 Unity units between top rotation and bottom rotation. Helper objects in scene
 
 	// Use this for initialization
@@ -56,6 +58,9 @@ public class LeverRotation : MonoBehaviour {
         }
         else
         {
+            if(reset == false) {
+                leverResetSound.PlaySound(transform.position);
+            }
             //return to neutral position
             leverRotation = neutralRotation;
             reset = true;

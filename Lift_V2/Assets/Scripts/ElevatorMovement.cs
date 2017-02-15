@@ -10,7 +10,7 @@ public class ElevatorMovement : MonoBehaviour {
     public float liftSpeedMax;                          //The maximum speed to elevator can reach
     public float maxIter;                             //The maximum acceleration the elevator can take. (When the lever is at max or min)
     public float timeToStop;                            //The time it takes to halt to a complete stop
-    private float liftSpeedCurrent;    //The current speed of the elevator
+    public float liftSpeedCurrent;    //The current speed of the elevator
     private float liftSpeedIter;       //The current rate of speed increase for the elevator
     private float liftSpeedWinder;     //The current rate of speed decrease for the elevator
     public bool windingDown;                           //Whether or not elevator is winding down to a halt
@@ -105,6 +105,7 @@ public class ElevatorMovement : MonoBehaviour {
         else if (windingDown && magnet == false) {
             windingDown = false;
             liftSpeedCurrent = 0f;
+            //lastPassedFloor = -1;
         }
 
         previousFloorPos = floorPos;

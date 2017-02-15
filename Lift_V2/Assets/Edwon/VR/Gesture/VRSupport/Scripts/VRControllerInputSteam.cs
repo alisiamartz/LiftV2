@@ -12,6 +12,12 @@ namespace Edwon.VR.Input
         [Header("SteamVR Options")]
         public int deviceIndex;
         public GameObject _hand;
+        SteamVR_Events.Action trackedDeviceRoleChangedAction;
+
+        void Awake()
+        {
+            trackedDeviceRoleChangedAction = SteamVR_Events.SystemAction("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
+        }
 
         public IInput Init(Handedness handy, GameObject hand)
         {
@@ -45,20 +51,12 @@ namespace Edwon.VR.Input
 
         void OnEnable()
         {
-           // SteamVR_Utils.Event.Listen("device_connected", OnDeviceConnected);
-           // SteamVR_Utils.Event.Listen("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
-			SteamVR_Events.System("device_connected").Listen(OnDeviceConnected);
-			SteamVR_Events.System("TrackedDeviceRoleChanged").Listen(OnTrackedDeviceRoleChanged);
-
+            SteamVR_Events.DeviceConnected.Listen(OnDeviceConnected);
         }
 
         void OnDestroy()
         {
-            //Debug.Log("I am being destroyed");
-            //SteamVR_Utils.Event.Remove("device_connected", OnDeviceConnected);
-            //SteamVR_Utils.Event.Remove("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
-			SteamVR_Events.System("device_connected").Remove(OnDeviceConnected);
-			SteamVR_Events.System ("TrackedDeviceRoleChanged").Remove (OnTrackedDeviceRoleChanged);
+            SteamVR_Events.DeviceConnected.Remove(OnDeviceConnected);
         }
 
         void LateUpdate()
@@ -82,19 +80,14 @@ namespace Edwon.VR.Input
 
         }
 
-
-		//private void OnTrackedDeviceRoleChanged(params object[] args)
-		private void OnTrackedDeviceRoleChanged(VREvent_t args)
+        private void OnTrackedDeviceRoleChanged(VREvent_t vrEvent)
         {
-            
             //Debug.Log("TRACKED DEVICE ROLE CHANGE");
             Refresh();
         }
 
-
-		private void OnDeviceConnected(VREvent_t args)
+        private void OnDeviceConnected(int index, bool connected)
         {
-
             //Debug.Log("THIS DEVICE DONE GOT CONNECTED!");
             Refresh();
         }
