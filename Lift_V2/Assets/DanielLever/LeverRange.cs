@@ -21,6 +21,7 @@ public class LeverRange : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider collider){
+        Debug.Log("Hi");
         if(collider.gameObject.tag == "grabPoint")
         {
             inRange = true;
