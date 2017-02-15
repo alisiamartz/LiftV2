@@ -15,6 +15,9 @@ public class ElevatorMovement : MonoBehaviour {
     private float liftSpeedWinder;     //The current rate of speed decrease for the elevator
     public bool windingDown;                           //Whether or not elevator is winding down to a halt
 
+    private float previousFloorPos;
+    private float lastPassedFloor;
+
     private bool magnet;
     public float magnetForce;
 
@@ -22,8 +25,10 @@ public class ElevatorMovement : MonoBehaviour {
 
     private GameObject lever;
 
-	// Use this for initialization
-	void Start () {
+    public string floorPassingSound;
+
+    // Use this for initialization
+    void Start () {
         floorPos = 0f;
         liftSpeedCurrent = 0f;
         liftSpeedWinder = liftSpeedMax / timeToStop;
@@ -50,6 +55,14 @@ public class ElevatorMovement : MonoBehaviour {
             //Haptic Feedback
             var deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
             SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort) Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
+
+            //Check for passing floors
+            if ((floorPos == Mathf.Round(floorPos) || (floorPos - Mathf.Round(floorPos) * previousFloorPos - Mathf.Round(floorPos) < 0)) && Mathf.Round(floorPos) != lastPassedFloor){
+                //We're passing a floor
+                Debug.Log("passing floor");
+                floorPassingSound.PlaySound(transform.position);
+                lastPassedFloor = Mathf.Round(floorPos);
+            }
         }
         if (magnet) {
             if (Mathf.Abs(floorPos - Mathf.Round(floorPos)) <= magnetForce) {
@@ -67,12 +80,12 @@ public class ElevatorMovement : MonoBehaviour {
         if (lever.GetComponent<LeverRotation>().decensionRate != 0){
             windingDown = false;
             liftSpeedCurrent = -liftSpeedMax * lever.GetComponent<LeverRotation>().decensionRate;
-            Debug.Log(lever.GetComponent<LeverRotation>().decensionRate);
+            
         }
         if (lever.GetComponent<LeverRotation>().ascensionRate != 0){
             windingDown = false;
             liftSpeedCurrent = liftSpeedMax * lever.GetComponent<LeverRotation>().ascensionRate;
-            Debug.Log(lever.GetComponent<LeverRotation>().ascensionRate);
+            
         }
     
         if (lever.GetComponent<LeverRotation>().ascensionRate == 0 && lever.GetComponent<LeverRotation>().decensionRate == 0) {
@@ -93,5 +106,7 @@ public class ElevatorMovement : MonoBehaviour {
             windingDown = false;
             liftSpeedCurrent = 0f;
         }
+
+        previousFloorPos = floorPos;
     }
 }
