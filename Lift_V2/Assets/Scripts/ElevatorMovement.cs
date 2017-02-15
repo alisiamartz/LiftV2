@@ -57,7 +57,7 @@ public class ElevatorMovement : MonoBehaviour {
             SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort) Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
 
             //Check for passing floors
-            if ((floorPos == Mathf.Round(floorPos) || (floorPos - Mathf.Round(floorPos) * previousFloorPos - Mathf.Round(floorPos) < 0)) && Mathf.Round(floorPos) != lastPassedFloor){
+            if ((floorPos == Mathf.Round(floorPos) || ((floorPos - Mathf.Round(floorPos)) * (previousFloorPos - Mathf.Round(floorPos)) < 0)) && Mathf.Round(floorPos) != lastPassedFloor){
                 //We're passing a floor
                 Debug.Log("passing floor");
                 floorPassingSound.PlaySound(transform.position);
