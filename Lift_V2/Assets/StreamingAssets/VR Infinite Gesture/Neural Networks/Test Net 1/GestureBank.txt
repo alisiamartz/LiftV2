@@ -1,18 +1,6 @@
 {
     "gestures": [
         {
-            "name": "Yes",
-            "hand": 1,
-            "isSynchronous": false,
-            "exampleCount": 50
-        },
-        {
-            "name": "No",
-            "hand": 1,
-            "isSynchronous": false,
-            "exampleCount": 45
-        },
-        {
             "name": "Pat",
             "hand": 1,
             "isSynchronous": false,
@@ -23,6 +11,18 @@
             "hand": 1,
             "isSynchronous": false,
             "exampleCount": 50
+        },
+        {
+            "name": "yes",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 23
+        },
+        {
+            "name": "no",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 27
         }
     ]
 }

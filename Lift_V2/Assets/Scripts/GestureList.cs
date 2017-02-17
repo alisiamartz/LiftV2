@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Edwon.VR.Input;
+using Edwon.VR.Gesture;
 
 namespace Edwon.VR.Gesture
 {
@@ -13,6 +14,8 @@ namespace Edwon.VR.Gesture
         Transform playerHead;
         Transform playerHandL;
         Transform playerHandR;
+
+        private string lastGesture;
 
         void Start()
         {
@@ -29,11 +32,6 @@ namespace Edwon.VR.Gesture
             input = rig.GetInput(rig.mainHand);
         }
 
-        void Update()
-        {
-
-        }
-
         void OnEnable()
         {
             Debug.Log("now working");
@@ -46,10 +44,27 @@ namespace Edwon.VR.Gesture
             GestureRecognizer.GestureDetectedEvent -= OnGestureDetected;
         }
 
+        public void resetGesture()
+        {
+            lastGesture = null;
+        }
+
+        public string getGesture()
+        {
+            return lastGesture;
+        }
+
         void OnGestureDetected(string gestureName, double confidence, Handedness hand, bool isDouble)
         {
             string confidenceString = confidence.ToString().Substring(0, 4);
             //Debug.Log("detected gesture: " + gestureName + " with confidence: " + confidenceString);
+            if (gestureName == "yes" || gestureName == "no")
+            {
+                lastGesture = gestureName;
+            }
+            return;
+
+            Debug.Log(lastGesture);
 
             switch (gestureName)
             {

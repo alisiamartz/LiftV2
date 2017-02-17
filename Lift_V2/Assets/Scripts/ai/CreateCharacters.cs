@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateCharacters : MonoBehaviour {
+public class CreateCharacters{
 
     public Agent create(jsonClass j)
     {
