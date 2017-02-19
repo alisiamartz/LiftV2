@@ -44,7 +44,10 @@ public class SoundGroup : MonoBehaviour {
     public string identifier;
     [HideInInspector]
     public AudioSource mAudio;
-	
+
+	public bool ceaseloop = false;
+    
+
 	void Awake() {
         mAudio = GetComponent<AudioSource>();
 
@@ -180,7 +183,10 @@ public class SoundGroup : MonoBehaviour {
         //and then check again if audio is still playing.
         while (mAudio.isPlaying)
         {
+            if ((ceaseloop) && (!SoundManager.instance.currentMusic == this && enabled))
+                SoundManager.RecycleSoundToPool(this);
             yield return new WaitForSeconds(0.05f);
+            
         }
 
         //Audio isn't playing anymore if we got to this point.
