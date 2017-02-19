@@ -18,6 +18,7 @@ public class LeverRotation : MonoBehaviour {
     public GameObject grabHand;
 
     private bool reset;
+    public float resetSpeed = 30;
 
     public float ascensionRate = 0f;
     public float decensionRate = 0f;
@@ -56,14 +57,26 @@ public class LeverRotation : MonoBehaviour {
                 previousHandPosition = grabHand.transform.position.y;
             }
         }
-        else
+        else if(reset == false)
         {
-            if(reset == false) {
+            if (Mathf.Abs(leverRotation - neutralRotation) < 20)
+            {
+                leverRotation = neutralRotation;
+                reset = true;
                 leverResetSound.PlaySound(transform.position);
             }
-            //return to neutral position
-            leverRotation = neutralRotation;
-            reset = true;
+            else
+            {
+                //return to neutral position
+                if (leverRotation > neutralRotation)
+                {
+                    leverRotation -= resetSpeed;
+                }
+                if (leverRotation < neutralRotation)
+                {
+                    leverRotation += resetSpeed;
+                }
+            }
         }
         //Bounds checks
         if(leverRotation > maxRotation)

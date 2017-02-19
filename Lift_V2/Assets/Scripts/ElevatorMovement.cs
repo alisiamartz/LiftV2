@@ -16,7 +16,7 @@ public class ElevatorMovement : MonoBehaviour {
     public bool windingDown;                           //Whether or not elevator is winding down to a halt
 
     private float previousFloorPos;
-    private float lastPassedFloor;
+    private float lastPassedFloor = -1;
 
     private bool magnet;
     public float magnetForce;
@@ -26,6 +26,9 @@ public class ElevatorMovement : MonoBehaviour {
     private GameObject lever;
 
     public string floorPassingSound;
+
+    //Used for hitting the max or min of the elevator bounds
+    private bool firstHit = false;
 
     // Use this for initialization
     void Start () {
@@ -44,17 +47,29 @@ public class ElevatorMovement : MonoBehaviour {
         //If within bounds of elevator
         if ((floorPos > -0.2 || liftSpeedCurrent > 0) && (floorPos < 5.2 || liftSpeedCurrent < 0)) {
             floorPos += liftSpeedCurrent;
+            if (firstHit)
+            {
+                firstHit = false;
+            }
         }
         else {
             //We've hit the top or the bottom
             liftSpeedCurrent = 0;
+            if (firstHit == false)
+            {
+                //TO DO ADD A SOUND EFFECT HERE --------------------------------------------------------------------------------------------------------------------
+                GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(20, 2);
+                firstHit = true;
+            }
         }
         //If Elevator is moving
         if (liftSpeedCurrent != 0)
         {
             //Haptic Feedback
-            var deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
-            SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort) Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
+            var deviceIndex1 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+            SteamVR_Controller.Input(deviceIndex1).TriggerHapticPulse((ushort) Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
+            var deviceIndex2 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
+            SteamVR_Controller.Input(deviceIndex2).TriggerHapticPulse((ushort)Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
 
             //Check for passing floors
             if ((floorPos == Mathf.Round(floorPos) || ((floorPos - Mathf.Round(floorPos)) * (previousFloorPos - Mathf.Round(floorPos)) < 0)) && Mathf.Round(floorPos) != lastPassedFloor){
@@ -64,6 +79,7 @@ public class ElevatorMovement : MonoBehaviour {
                 lastPassedFloor = Mathf.Round(floorPos);
             }
         }
+        //When magnetizing to floor
         if (magnet) {
             if (Mathf.Abs(floorPos - Mathf.Round(floorPos)) <= magnetForce) {
                 magnet = false;
@@ -105,7 +121,14 @@ public class ElevatorMovement : MonoBehaviour {
         else if (windingDown && magnet == false) {
             windingDown = false;
             liftSpeedCurrent = 0f;
-            //lastPassedFloor = -1;
+            if(floorPos == Mathf.Round(floorPos))
+            {
+                lastPassedFloor = floorPos;
+            }
+            else
+            {
+                lastPassedFloor = -1;
+            }
         }
 
         previousFloorPos = floorPos;
