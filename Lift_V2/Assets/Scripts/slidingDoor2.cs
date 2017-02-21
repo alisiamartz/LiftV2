@@ -8,7 +8,8 @@ public class slidingDoor2 : MonoBehaviour
 
     Animator slidingDoor;
     bool doorOpen;
-    public string doorSFX;
+    public string doorCloseSFX;
+    public string doorOpenSFX;
     void Start()
     {
         doorOpen = false;
@@ -21,6 +22,7 @@ public class slidingDoor2 : MonoBehaviour
         {
             doorOpen = true;
             DoorControl("open");
+            doorOpenSFX.PlaySound(transform.position);
         }
     }
 
@@ -30,6 +32,7 @@ public class slidingDoor2 : MonoBehaviour
         {
             doorOpen = false;
             DoorControl("closed");
+            doorCloseSFX.PlaySound(transform.position);
         }
     }
 
@@ -53,8 +56,8 @@ public class slidingDoor2 : MonoBehaviour
          * create a variable for the object creating the sound <doorSFX> and in the inspector set that field to the same name as the prefab you want from SoundGroups
          * some additional sounds are in the googledrive*/
 
-        if (Input.GetKey("j"))
-            doorSFX.PlaySound(transform.position);
+       
+            
     }//----------------------------------------
 
 }

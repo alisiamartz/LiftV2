@@ -44,7 +44,10 @@ public class SoundGroup : MonoBehaviour {
     public string identifier;
     [HideInInspector]
     public AudioSource mAudio;
-	
+    public int count = 0;
+	public bool ceaseloop = false;
+    
+
 	void Awake() {
         mAudio = GetComponent<AudioSource>();
 
@@ -169,6 +172,11 @@ public class SoundGroup : MonoBehaviour {
         }
     }
 
+    public void pingSound()
+    {
+        ceaseloop = true;
+    }
+
     /// <summary>
     /// This coroutine waits until the sound stops playing to recycle it or
     /// in the case of Music Soundgroup, go to the next music in the list.
@@ -180,6 +188,11 @@ public class SoundGroup : MonoBehaviour {
         //and then check again if audio is still playing.
         while (mAudio.isPlaying)
         {
+            if (ceaseloop)
+            {
+                SoundManager.RecycleSoundToPool(this);
+                Destroy(this);
+            }
             yield return new WaitForSeconds(0.05f);
         }
 

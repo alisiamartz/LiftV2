@@ -28,6 +28,9 @@ public class doorInteraction : MonoBehaviour
     bool open;
     public string doorSFX;
 
+    private bool grabbingUp = false;
+    private bool grabbingDown = false;
+
     float currY;
     float initX;
     float initY;
@@ -39,7 +42,6 @@ public class doorInteraction : MonoBehaviour
 
     public GameObject grabPoint;
     public slidingDoor2 slidingDoor2;
-
 
     [SerializeField]
     SteamVR_TrackedObject trackedObj;
@@ -109,6 +111,13 @@ public class doorInteraction : MonoBehaviour
             Debug.Log("hell yeah get ready to lift");
             lifting = true;
 
+            if (grabbingUp == false)
+            {
+                //Trigger Haptic pulse
+                GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);
+                grabbingUp = true;
+            }
+
             // Move the door according to the current y position of the controller
             door.transform.position = new Vector3(initX, (door.transform.position.y - hold.transform.position.y) + trackedObj.transform.position.y, initZ);
             // Once the door reaches a certain height
@@ -118,10 +127,11 @@ public class doorInteraction : MonoBehaviour
         else if (device.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))
         {
             // if the door gets unhooked, lerp up just a bit 
-
+            
         }
         else
         {
+            grabbingUp = false;
             // if door not at a certain point yet
             // it goes down
             if (door.transform.position.y < 2.5f && lifting)
@@ -162,6 +172,14 @@ public class doorInteraction : MonoBehaviour
                 closing = true;
                 // Move the door according to the current y position of the controller
                 door.transform.position = new Vector3(initX, (door.transform.position.y - rope.transform.position.y) + trackedObj.transform.position.y, initZ);
+
+                if (grabbingDown == false)
+                {
+                    //Trigger Haptic pulse
+                    GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);
+                    grabbingDown = true;
+                }
+
             } // condition about where the door goes when the user stops interacting w it in some way?
             else
             {
@@ -169,6 +187,8 @@ public class doorInteraction : MonoBehaviour
                 {
                     door.transform.position = Vector3.MoveTowards(door.transform.position, doorOpen.transform.position, 2f * Time.deltaTime);
                 }
+
+                grabbingDown = false;
             }
         }
 
