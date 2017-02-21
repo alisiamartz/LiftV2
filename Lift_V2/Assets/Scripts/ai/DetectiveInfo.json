@@ -11,7 +11,7 @@
     },
     {
       "type": "listen",
-      "wait": 3,
+      "wait": 10,
       "listen": [ "yes", "no" ],
       "action": [ "getHappy", "getAngry" ],
       "noResponse": "doNothing",
@@ -29,7 +29,7 @@
     },
     {
       "type": "listen",
-      "wait": 7,
+      "wait": 10,
       "listen": [ "yes", "no" ],
       "action": [ "getHappy", "getAngry" ],
       "noResponse": "doNothing",
@@ -47,7 +47,7 @@
     },
     {
       "type": "listen",
-      "wait": 7,
+      "wait": 10,
       "listen": [ "yes" , "no"],
       "action": [ "getHappy", "getAngry"],
       "noResponse": "doNothing",
@@ -65,7 +65,7 @@
     },
     {
       "type": "listen",
-      "wait": 7,
+      "wait": 10,
       "listen": [ "yes", "no" ],
       "action": [ "getHappy", "getAngry" ],
       "noResponse": "doNothing",
@@ -83,7 +83,7 @@
     },
     {
       "type": "listen",
-      "wait": 7,
+      "wait": 10,
       "listen": [ "no" ],
       "action": [ "getHappy" ],
       "noResponse": "doNothing",
@@ -91,7 +91,7 @@
     },
     {
       "type": "utility",
-      "wait": 0,
+      "wait": 5,
       "utilResponse": [ "happiness", "anger", "neutral" ],
       "dialogue": [
         "So here I am, returning to the scene. Wish me luck.",
