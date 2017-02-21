@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 //for parsing lists
 using System.Linq;
+using Edwon.VR.Gesture;
+//ui
+using UnityEngine.UI;
+
 
 public class Agent : MonoBehaviour {
 
@@ -21,7 +25,20 @@ public class Agent : MonoBehaviour {
 
     //dictionaries
     public Dictionary<string, change> actionDict;
-    public Dictionary<string, KeyCode> listenDict;
+
+    //set by agent controller
+    public GestureList gl;
+    public Text bubble;
+
+    public void setGestureList(ref GestureList gl)
+    {
+        this.gl = gl;
+    }
+
+    public void setBubble(ref Text b)
+    {
+        this.bubble = b;
+    }
 
     public void doChange(change c)
     {
@@ -35,7 +52,8 @@ public class Agent : MonoBehaviour {
     {
         if (flag)
         {
-            Debug.Log(e.dialogue[0]);
+            //Debug.Log(e.dialogue[0]);\
+            bubble.text = (e.dialogue[0]);
             wait = e.wait;
             flag = false;
         }
@@ -49,6 +67,7 @@ public class Agent : MonoBehaviour {
     {
         if (flag)
         {
+            gl.resetGesture();
             wait = e.wait;
             flag = false;
         }
@@ -57,7 +76,7 @@ public class Agent : MonoBehaviour {
         //check listened responses
         for (int i = 0; i < e.listen.Count; i++)
         {
-            if (Input.GetKeyDown(listenDict[e.listen[i]]))
+            if (gl.getGesture() == e.listen[i])
             {
                 doChange(actionDict[e.action[i]]);
                 return true;
@@ -105,18 +124,22 @@ public class Agent : MonoBehaviour {
                         break;
                 }
             }
-            int urgent1 = util.ToList().IndexOf(util.Max()); //most urgent
-            util[urgent1] = float.MinValue;
-            int urgent2 = util.ToList().IndexOf(util.Max()); //second most urgent
+            int urgentIndex1 = util.ToList().IndexOf(util.Max()); //most urgent index
+            float urgent1 = util[urgentIndex1]; //value of most urgent
+            util[urgentIndex1] = float.MinValue;
+            int urgentIndex2 = util.ToList().IndexOf(util.Max()); //second most urgent index
+            float urgent2 = util[urgentIndex2]; //value of secxond most urgent
 
             //get correct utility response
-            if (Mathf.Abs(util[urgent1] - util[urgent2]) <= 2)
+            if (Mathf.Abs(urgent1 - urgent2) <= 2)
             {
-                Debug.Log(e.dialogue[e.dialogue.Count - 1]);
+                //Debug.Log(e.dialogue[e.dialogue.Count - 1]);
+                bubble.text = e.dialogue[e.dialogue.Count - 1];
             }
             else
             {
-                Debug.Log(e.dialogue[urgent1]);
+                //Debug.Log(e.dialogue[urgentIndex1]);
+                bubble.text = e.dialogue[urgentIndex1];
             }
 
             wait = e.wait;

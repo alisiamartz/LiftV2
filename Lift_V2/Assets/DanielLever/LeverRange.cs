@@ -20,8 +20,8 @@ public class LeverRange : MonoBehaviour {
         }
 	}
 
-    private void OnTriggerEnter(Collider collider){
-        if(collider.gameObject.tag == "grabPoint")
+    private void OnTriggerEnter(Collider other){
+        if(other.gameObject.tag == "grabPoint")
         {
             inRange = true;
         }
@@ -39,6 +39,9 @@ public class LeverRange : MonoBehaviour {
         {
             GetComponent<LeverRotation>().grabbed = true;
             GetComponent<LeverRotation>().grabHand = hand;
+
+            //Trigger Haptic pulse
+            GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);
         }
     }
 

@@ -18,9 +18,12 @@ public class LeverRotation : MonoBehaviour {
     public GameObject grabHand;
 
     private bool reset;
+    public float resetSpeed = 30;
 
     public float ascensionRate = 0f;
     public float decensionRate = 0f;
+
+    public string leverResetSound;
 
     //5 Unity units between top rotation and bottom rotation. Helper objects in scene
 
@@ -54,11 +57,26 @@ public class LeverRotation : MonoBehaviour {
                 previousHandPosition = grabHand.transform.position.y;
             }
         }
-        else
+        else if(reset == false)
         {
-            //return to neutral position
-            leverRotation = neutralRotation;
-            reset = true;
+            if (Mathf.Abs(leverRotation - neutralRotation) < 20)
+            {
+                leverRotation = neutralRotation;
+                reset = true;
+                leverResetSound.PlaySound(transform.position);
+            }
+            else
+            {
+                //return to neutral position
+                if (leverRotation > neutralRotation)
+                {
+                    leverRotation -= resetSpeed;
+                }
+                if (leverRotation < neutralRotation)
+                {
+                    leverRotation += resetSpeed;
+                }
+            }
         }
         //Bounds checks
         if(leverRotation > maxRotation)

@@ -398,6 +398,7 @@ public class SoundManager : MonoBehaviour
         {
             //Destroy the object oldschool way, it wasn't pooled :(
             Destroy(obj.gameObject);
+            Debug.Log("here");
             return;
         }
 
