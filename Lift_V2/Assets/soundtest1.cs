@@ -10,8 +10,8 @@ public class soundtest1 : MonoBehaviour {
     public string loopsound2;
     public bool playing = true;
     bool playagain = true;
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update() {
         /*//testing purposes only
         if (playing)
         {
@@ -21,27 +21,19 @@ public class soundtest1 : MonoBehaviour {
             playing = false;
         }
         if (Input.GetKey("m")) {
-
             //searches for playing the sound by name (I wish there was another way to do this, but this is the best that I could come up with) and then calls
             //pingSound (which essentially kills the loop)
             GameObject myObject = GameObject.Find("_SFX_loopsoundprefab");
             myObject.GetComponent<SoundGroup>().pingSound();
-
-
-
             //Things that did not work (ignore this)
             //loopedSound.pingSound();
             //SoundManager.RecycleSoundToPool(loopedSound);
             //SoundGroup SndToPlay = null;
             //SoundManager.instance.SoundGroupsDictionary.TryGetValue(loopedSound, out SndToPlay);
             //SoundManager.RecycleSoundToPool(SndToPlay);
-
             //GameObject myObject = GameObject.Find("loopsoundprefab");
             //myObject.GetComponent<SoundGroup>().pingSound();
-
             //SoundManager.instance.currentMusic.ForceStop();
-
-
             
         }
         //starts the sound again (plays the looped sound again, to test if it is still working)
@@ -49,7 +41,6 @@ public class soundtest1 : MonoBehaviour {
             loopsound.PlaySound(transform.position);
             playagain = false;
         }
-
     */
     }
 }
