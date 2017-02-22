@@ -62,9 +62,10 @@ namespace Edwon.VR.Gesture
             {
                 lastGesture = gestureName;
             }
-            return;
 
-            Debug.Log(lastGesture);
+            //Debug.Log(lastGesture);
+
+            return;
 
             switch (gestureName)
             {

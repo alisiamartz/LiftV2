@@ -4,6 +4,8 @@ using UnityEngine;
 //for parsing lists
 using System.Linq;
 using Edwon.VR.Gesture;
+//ui
+using UnityEngine.UI;
 
 
 public class Agent : MonoBehaviour {
@@ -23,14 +25,19 @@ public class Agent : MonoBehaviour {
 
     //dictionaries
     public Dictionary<string, change> actionDict;
-    public Dictionary<string, KeyCode> listenDict;
-    
+
     //set by agent controller
     public GestureList gl;
+    public Text bubble;
 
     public void setGestureList(ref GestureList gl)
     {
         this.gl = gl;
+    }
+
+    public void setBubble(ref Text b)
+    {
+        this.bubble = b;
     }
 
     public void doChange(change c)
@@ -45,7 +52,8 @@ public class Agent : MonoBehaviour {
     {
         if (flag)
         {
-            Debug.Log(e.dialogue[0]);
+            //Debug.Log(e.dialogue[0]);\
+            bubble.text = (e.dialogue[0]);
             wait = e.wait;
             flag = false;
         }
@@ -125,11 +133,13 @@ public class Agent : MonoBehaviour {
             //get correct utility response
             if (Mathf.Abs(urgent1 - urgent2) <= 2)
             {
-                Debug.Log(e.dialogue[e.dialogue.Count - 1]);
+                //Debug.Log(e.dialogue[e.dialogue.Count - 1]);
+                bubble.text = e.dialogue[e.dialogue.Count - 1];
             }
             else
             {
-                Debug.Log(e.dialogue[urgentIndex1]);
+                //Debug.Log(e.dialogue[urgentIndex1]);
+                bubble.text = e.dialogue[urgentIndex1];
             }
 
             wait = e.wait;

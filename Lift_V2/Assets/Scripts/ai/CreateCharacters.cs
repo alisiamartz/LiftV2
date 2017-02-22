@@ -20,12 +20,6 @@ public class CreateCharacters{
         }
         agent.actionDict = actionDict;
 
-        //dictionary of possible things to listen too -- manually inputed for now
-        Dictionary<string, KeyCode> listenDict = new Dictionary<string, KeyCode>();
-        listenDict.Add("yes", KeyCode.Y);
-        listenDict.Add("no", KeyCode.N);
-        agent.listenDict = listenDict;
-
         //build timeline
         for (int i = 0; i < eventList.Length; i++)
         {
