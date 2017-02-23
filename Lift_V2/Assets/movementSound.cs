@@ -20,8 +20,9 @@ public class movementSound : MonoBehaviour {
             elevatorStopped = false;
         }
         else if(GetComponent<ElevatorMovement>().liftSpeedCurrent == 0 && elevatorStopped == false) {
+            Debug.Log("Wow");
             //Stop playing the elevator engine sound
-            GameObject myObject = GameObject.Find("ElevatorMovement");
+            GameObject myObject = GameObject.Find("_SFX_ElevatorMovement");
             myObject.GetComponent<SoundGroup>().pingSound();
             elevatorStopped = true;
         }
