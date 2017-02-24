@@ -8,6 +8,7 @@ public class slidingDoor2 : MonoBehaviour
 
     Animator slidingDoor;
     bool doorOpen;
+    public string bellSFX;
     public string doorCloseSFX;
     public string doorOpenSFX;
     void Start()
@@ -23,6 +24,7 @@ public class slidingDoor2 : MonoBehaviour
             doorOpen = true;
             DoorControl("open");
             doorOpenSFX.PlaySound(transform.position);
+            bellSFX.PlaySound(transform.position);
         }
     }
 
@@ -33,6 +35,7 @@ public class slidingDoor2 : MonoBehaviour
             doorOpen = false;
             DoorControl("closed");
             doorCloseSFX.PlaySound(transform.position);
+            bellSFX.PlaySound(transform.position);
         }
     }
 
