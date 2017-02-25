@@ -1,28 +1,64 @@
 {
     "gestures": [
         {
-            "name": "Pat",
+            "name": "agree",
             "hand": 1,
             "isSynchronous": false,
-            "exampleCount": 50
-        },
-        {
-            "name": "Rude",
-            "hand": 1,
-            "isSynchronous": false,
-            "exampleCount": 50
+            "exampleCount": 30
         },
         {
             "name": "yes",
             "hand": 1,
             "isSynchronous": false,
-            "exampleCount": 23
+            "exampleCount": 30
+        },
+        {
+            "name": "disagree",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 30
         },
         {
             "name": "no",
             "hand": 1,
             "isSynchronous": false,
-            "exampleCount": 27
+            "exampleCount": 30
+        },
+        {
+            "name": "maybe",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 30
+        },
+        {
+            "name": "confused",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 30
+        },
+        {
+            "name": "continue",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 30
+        },
+        {
+            "name": "pat",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 30
+        },
+        {
+            "name": "salute",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 30
+        },
+        {
+            "name": "rude",
+            "hand": 1,
+            "isSynchronous": false,
+            "exampleCount": 30
         }
     ]
 }

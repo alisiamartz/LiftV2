@@ -58,28 +58,43 @@ namespace Edwon.VR.Gesture
         {
             string confidenceString = confidence.ToString().Substring(0, 4);
             //Debug.Log("detected gesture: " + gestureName + " with confidence: " + confidenceString);
-            if (gestureName == "yes" || gestureName == "no")
-            {
-                lastGesture = gestureName;
-            }
+         
+            lastGesture = gestureName;
+           
 
             //Debug.Log(lastGesture);
 
-            return;
-
-            switch (gestureName)
+            switch (lastGesture)
             {
-                case "Yes":
+                case "yes":
                     Debug.Log("Yes Works!");
                     break;
-                case "No":
+                case "no":
                     Debug.Log("No Works!");
                     break;
-                case "Pat":
+                case "pat":
                     Debug.Log("Pat Works!");
                     break;
-                case "Rude":
+                case "rude":
                     Debug.Log("Rude Works!");
+                    break;
+                case "agree":
+                    Debug.Log("agree Works!");
+                    break;
+                case "disagree":
+                    Debug.Log("disagree Works!");
+                    break;
+                case "salute":
+                    Debug.Log("salute Works!");
+                    break;
+                case "maybe":
+                    Debug.Log("maybe Works!");
+                    break;
+                case "confused":
+                    Debug.Log("confused Works!");
+                    break;
+                case "continue":
+                    Debug.Log("continue Works!");
                     break;
             }
         }
