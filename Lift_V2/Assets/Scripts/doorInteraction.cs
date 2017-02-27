@@ -48,6 +48,7 @@ public class doorInteraction : MonoBehaviour
     [SerializeField]
     SteamVR_TrackedObject trackedObj2;
 
+    public GameObject manager;
 
     private SteamVR_Controller.Device device
     {
@@ -158,6 +159,7 @@ public class doorInteraction : MonoBehaviour
                     slidingDoor2.openSlidingDoor();
                     // TODO: MAKE NOISE PLAY WHEN ANIMATED DOOR IS OPEN
                     doorSFX.PlaySound(transform.position);
+                    manager.GetComponent<FloorManager>().doorOpen = true;
                 }
             }
         }
@@ -204,7 +206,7 @@ public class doorInteraction : MonoBehaviour
                     closing = false;
                     open = false;
                     slidingDoor2.closeSlidingDoor();
-
+                    manager.GetComponent<FloorManager>().doorOpen = false;
                 }
             }
         }

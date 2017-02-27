@@ -82,10 +82,17 @@ public class ElevatorMovement : MonoBehaviour {
         //When magnetizing to floor
         if (magnet) {
             if (Mathf.Abs(floorPos - Mathf.Round(floorPos)) <= magnetForce) {
+                //We've stopped exactly at a floor
                 magnet = false;
                 windingDown = false;
                 liftSpeedCurrent = 0f;
                 floorPos = Mathf.Round(floorPos);
+
+                //Play the floor ding
+                floorPassingSound.PlaySound(transform.position);
+
+                //Load in the floor stopped at
+                GetComponent<FloorManager>().loadNewFloor((int) floorPos);
             }
             else {
                 if (floorPos > Mathf.Round(floorPos)) { floorPos -= magnetForce; }

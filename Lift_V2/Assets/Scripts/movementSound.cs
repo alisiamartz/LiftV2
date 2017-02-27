@@ -11,6 +11,7 @@ public class movementSound : MonoBehaviour {
 
     public string elevatorStartSound;
     public string elevatorEngineSound;
+    public string elevatorStopSound;
 
     // Update is called once per frame
     void Update () {
@@ -21,6 +22,9 @@ public class movementSound : MonoBehaviour {
         }
         else if(GetComponent<ElevatorMovement>().liftSpeedCurrent == 0 && elevatorStopped == false) {
             Debug.Log("Wow");
+            //Play the stopping sound
+            elevatorStopSound.PlaySound();
+
             //Stop playing the elevator engine sound
             GameObject myObject = GameObject.Find("_SFX_ElevatorMovement");
             myObject.GetComponent<SoundGroup>().pingSound();
