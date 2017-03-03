@@ -25,7 +25,7 @@ public class doorInteraction : MonoBehaviour
     public static bool ropeCollide;
     bool lifting;
     bool closing;
-    bool open;
+    public bool open;
     public string doorSFX;
 
     private bool grabbingUp = false;
@@ -212,6 +212,12 @@ public class doorInteraction : MonoBehaviour
         }
 
     } // end of update
+
+    //used in LeverGrab script to stop the lever from moving if door is open
+    public bool doorStatus()
+    {
+        return open;
+    }
 
 }   // eof
 

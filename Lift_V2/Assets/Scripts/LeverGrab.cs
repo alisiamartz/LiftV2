@@ -11,21 +11,27 @@ public class LeverGrab : MonoBehaviour {
 
     private GameObject lever;
 
+    private GameObject objDoor;
+
     // Use this for initialization
     void Start () {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
 
         lever = GameObject.FindGameObjectWithTag("lever");
+
+        objDoor = GameObject.FindGameObjectWithTag("door");
     }
 	
 	// Update is called once per frame
 	void Update () {
+        //checks if door is open
+        doorInteraction door = objDoor.GetComponent<doorInteraction>();
         if (controller == null)
         {
             return;
         }
 
-        if (controller.GetPressDown(triggerButton))
+        if ((controller.GetPressDown(triggerButton) && !door.open))
         {
             lever.GetComponent<LeverRange>().attemptGrab(this.gameObject);
         }
