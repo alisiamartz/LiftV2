@@ -729,8 +729,9 @@ namespace VRTK
         [RuntimeInitializeOnLoadMethod]
         private void Initialise()
         {
-          //  SteamVR_Utils.Event.Listen("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
-			SteamVR_Events.System("TrackedDeviceRoleChanged").Listen(OnTrackedDeviceRoleChanged);
+			//SteamVR_Events.System("TrackedDeviceRoleChanged").Listen(OnTrackedDeviceRoleChanged);
+			SteamVR_Events.System(EVREventType.VREvent_TrackedDeviceRoleChanged).Listen(OnTrackedDeviceRoleChanged);
+
             SetTrackedControllerCaches(true);
         }
 
