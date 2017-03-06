@@ -29,6 +29,9 @@ public class LeverRotation : MonoBehaviour {
     private bool jiggling = false;
     private int jiggleTimer = 0;
     public int jiggleLength = 50;
+    [Range(1, 10)]
+    public int jiggleSpeed = 6;
+    private int jiggleDivisor;
 
     [Header("Sounds")]
     public string leverResetSound;
@@ -41,6 +44,7 @@ public class LeverRotation : MonoBehaviour {
         leverRotation = neutralRotation;
 
         positionToRotation = Mathf.Abs(maxRotation - minRotation) / 0.5f;
+        jiggleDivisor = 10 - jiggleSpeed;
 	}
 	
 	// Update is called once per frame
@@ -130,7 +134,7 @@ public class LeverRotation : MonoBehaviour {
             Debug.Log("Jiggling");
             if(jiggleTimer < jiggleLength)
             {
-                if (jiggleTimer % 5 == 0)
+                if (jiggleTimer % jiggleDivisor == 0)
                 {
                     leverRotation = neutralRotation + jiggleStrength * Mathf.Sin(jiggleTimer);
                 }

@@ -31,7 +31,7 @@ public class LeverGrab : MonoBehaviour {
             return;
         }
 
-        if ((controller.GetPressDown(triggerButton) && !door.open))
+        if (controller.GetPressDown(triggerButton))
         {
             if (!door.open)
             {
