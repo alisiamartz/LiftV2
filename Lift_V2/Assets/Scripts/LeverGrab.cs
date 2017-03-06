@@ -33,7 +33,15 @@ public class LeverGrab : MonoBehaviour {
 
         if ((controller.GetPressDown(triggerButton) && !door.open))
         {
-            lever.GetComponent<LeverRange>().attemptGrab(this.gameObject);
+            if (!door.open)
+            {
+                lever.GetComponent<LeverRange>().attemptGrab(this.gameObject);
+            }
+            //If lever cannot move because door is open
+            else
+            {
+                lever.GetComponent<LeverRotation>().jiggleResponse();
+            }
         }
         else if (controller.GetPressUp(triggerButton))
         {
