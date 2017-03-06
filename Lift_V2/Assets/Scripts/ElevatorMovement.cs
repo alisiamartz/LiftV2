@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class ElevatorMovement : MonoBehaviour {
 
+    [Header("Global Variables")]
     public float floorPos;                              //The number floor the elevator is on. 
-    public float floorRounding;                         //How close to the floor the elevator must be for it to round
+    public float liftSpeedCurrent;                      //The current speed of the elevator
+
+    [Header("Movement Variables")]
     public float maxSpeedToRound;                       //The maximum speed the elevator can be moving for it to round
     public float liftSpeedMax;                          //The maximum speed to elevator can reach
-    public float maxIter;                             //The maximum acceleration the elevator can take. (When the lever is at max or min)
+    public float maxIter;                              //The maximum acceleration the elevator can take. (When the lever is at max or min)
     public float timeToStop;                            //The time it takes to halt to a complete stop
-    public float liftSpeedCurrent;    //The current speed of the elevator
-    private float liftSpeedIter;       //The current rate of speed increase for the elevator
-    private float liftSpeedWinder;     //The current rate of speed decrease for the elevator
+    private float liftSpeedIter;                       //The current rate of speed increase for the elevator
+    private float liftSpeedWinder;                    //The current rate of speed decrease for the elevator
+    [HideInInspector]
     public bool windingDown;                           //Whether or not elevator is winding down to a halt
 
+    [Header("Magnet Variables")]
+    public float floorRounding;                         //How close to the floor the elevator must be for it to round
     private float previousFloorPos;
     private float lastPassedFloor = -1;
-
     private bool magnet;
     public float magnetForce;
 
+    [Header("Effects Variables")]
     public int maxVibration;
 
     private GameObject lever;
 
+    [Header("Sounds")]
     public string floorPassingSound;
 
     //Used for hitting the max or min of the elevator bounds
@@ -62,6 +68,11 @@ public class ElevatorMovement : MonoBehaviour {
                 firstHit = true;
             }
         }
+
+        //Send the elevator speed to the movementSound Script
+        GetComponent<movementSound>().liftSpeed = liftSpeedCurrent;
+
+
         //If Elevator is moving
         if (liftSpeedCurrent != 0)
         {

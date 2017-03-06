@@ -9,25 +9,50 @@ public class movementSound : MonoBehaviour {
     private bool elevatorStopped = true;
     private float timer = 0.0f;
 
+    public float liftSpeed = 0f;
+    private float liftSpeedMax;
+
     public string elevatorStartSound;
     public string elevatorEngineSound;
     public string elevatorStopSound;
 
+    [Range(0f, 1f)]
+    public float minEngineVolume;
+
+    [Range(0f, 1f)]
+    public float maxEngineVolume;
+
+    private GameObject activeMoveSound;
+
+    void Start(){
+        liftSpeedMax = GetComponent<ElevatorMovement>().liftSpeedMax;
+    }
+
     // Update is called once per frame
     void Update () {
-        if(GetComponent<ElevatorMovement>().liftSpeedCurrent != 0 && elevatorStopped == true) {
-            elevatorStartSound.PlaySound();
-            revvingUp = true;
-            elevatorStopped = false;
+
+        if (liftSpeed != 0) {
+            //If elevator has just started moving
+            if (elevatorStopped) {
+                elevatorStartSound.PlaySound();
+                revvingUp = true;
+                elevatorStopped = false;
+            }
+
+            //If elevator is currently moving
+            if (revvingUp == false)
+            {
+                //Adjust volume of movement sound based on elevator speed
+                activeMoveSound.GetComponent<AudioSource>().volume = minEngineVolume + ((maxEngineVolume - minEngineVolume) * (Mathf.Abs(liftSpeed) / liftSpeedMax));
+            }
         }
-        else if(GetComponent<ElevatorMovement>().liftSpeedCurrent == 0 && elevatorStopped == false) {
+        else if(liftSpeed == 0 && elevatorStopped == false) {
             Debug.Log("Wow");
             //Play the stopping sound
             elevatorStopSound.PlaySound();
 
             //Stop playing the elevator engine sound
-            GameObject myObject = GameObject.Find("_SFX_ElevatorMovementSound");
-            myObject.GetComponent<SoundGroup>().pingSound();
+            activeMoveSound.GetComponent<SoundGroup>().pingSound();
             elevatorStopped = true;
         }
 
@@ -37,6 +62,7 @@ public class movementSound : MonoBehaviour {
             }
             else {
                 elevatorEngineSound.PlaySound();
+                activeMoveSound = GameObject.Find("_SFX_ElevatorMovementSound");
                 revvingUp = false;
             }
         }
