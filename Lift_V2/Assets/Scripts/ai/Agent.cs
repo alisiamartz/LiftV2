@@ -37,7 +37,7 @@ public class Agent : MonoBehaviour {
 
     public void setBubble(ref Text b)
     {
-        this.bubble = b;
+        bubble = b;
     }
 
     public void doChange(change c)

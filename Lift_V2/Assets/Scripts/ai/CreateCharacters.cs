@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateCharacters{
-
+    /*
     public Agent create(jsonClass j)
     {
         Agent agent = new Agent();
@@ -57,4 +57,5 @@ public class CreateCharacters{
         a.confusion = e.utility[2];
         a.anger = e.utility[3];
     }
+    */
 }

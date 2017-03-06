@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 
 public class AgentController : MonoBehaviour {
+    /*
 
     public string filename; //with .json
 
@@ -39,4 +40,5 @@ public class AgentController : MonoBehaviour {
             step++;
         }
     }
+    */
 }
