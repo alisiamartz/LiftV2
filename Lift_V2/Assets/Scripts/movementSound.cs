@@ -26,7 +26,7 @@ public class movementSound : MonoBehaviour {
             elevatorStopSound.PlaySound();
 
             //Stop playing the elevator engine sound
-            GameObject myObject = GameObject.Find("_SFX_ElevatorMovement");
+            GameObject myObject = GameObject.Find("_SFX_ElevatorMovementSound");
             myObject.GetComponent<SoundGroup>().pingSound();
             elevatorStopped = true;
         }
