@@ -34,6 +34,9 @@ public class ElevatorMovement : MonoBehaviour {
     [Header("Sounds")]
     public string floorPassingSound;
 
+    [SerializeField]
+    private GameObject hotelManager;
+
     //Used for hitting the max or min of the elevator bounds
     private bool firstHit = false;
 
@@ -104,7 +107,7 @@ public class ElevatorMovement : MonoBehaviour {
                 floorPassingSound.PlaySound(transform.position);
 
                 //Load in the floor stopped at
-                GetComponent<FloorManager>().loadNewFloor((int) floorPos);
+                hotelManager.GetComponent<FloorManager>().loadNewFloor((int) floorPos);
 
                 //Tell the hotel manager we've arrived at a floor
 

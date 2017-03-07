@@ -10,7 +10,7 @@ public class PatronManager : MonoBehaviour {
     [SerializeField]
     private GameObject hotelManager;
 
-    public float destinationFloor;
+    public int destinationFloor;
 
     public string status = "waiting";
 	
@@ -21,11 +21,13 @@ public class PatronManager : MonoBehaviour {
         {
             GetComponent<PatronMovement>().enterElevator(hotelManager.GetComponent<Waypoints>().elevatorWaypoint);
             status = "movingIn";
+            transform.parent = null;
         }
         if(status == "riding" && destinationFloor == elevatorManager.GetComponent<ElevatorMovement>().floorPos && doorOpen)
         {
-            GetComponent<PatronMovement>().leaveElevator(hotelManager.GetComponent<Waypoints>().floorWaypoints[(int) destinationFloor]);
+            GetComponent<PatronMovement>().leaveElevator(hotelManager.GetComponent<Waypoints>().floorWaypoints[destinationFloor]);
             status = "movingOut";
+            transform.parent = hotelManager.GetComponent<FloorManager>().floors[destinationFloor].transform;
         }
 
 	}

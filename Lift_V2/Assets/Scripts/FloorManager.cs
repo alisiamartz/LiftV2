@@ -7,7 +7,7 @@ public class FloorManager : MonoBehaviour {
     public bool doorOpen;
     public int floorPos;
 
-    public GameObject[]floors;
+    public GameObject[] floors;                  //[][0] is the gameObject floor holder       [][1] is the int of the number of patrons waiting
     private int activeFloorIndex;
 
 	// Use this for initialization
