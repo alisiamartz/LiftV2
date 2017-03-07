@@ -5,6 +5,7 @@ using UnityEngine;
 public class FloorManager : MonoBehaviour {
 
     public bool doorOpen;
+    public int floorPos;
 
     public GameObject[]floors;
     private int activeFloorIndex;

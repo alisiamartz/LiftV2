@@ -7,6 +7,7 @@ public class ElevatorMovement : MonoBehaviour {
     [Header("Global Variables")]
     public float floorPos;                              //The number floor the elevator is on. 
     public float liftSpeedCurrent;                      //The current speed of the elevator
+    public bool doorOpen;                               //If the elevator door is open, TRUE is open FALSE is closed
 
     [Header("Movement Variables")]
     public float maxSpeedToRound;                       //The maximum speed the elevator can be moving for it to round
@@ -104,6 +105,9 @@ public class ElevatorMovement : MonoBehaviour {
 
                 //Load in the floor stopped at
                 GetComponent<FloorManager>().loadNewFloor((int) floorPos);
+
+                //Tell the hotel manager we've arrived at a floor
+
             }
             else {
                 if (floorPos > Mathf.Round(floorPos)) { floorPos -= magnetForce; }
@@ -150,5 +154,15 @@ public class ElevatorMovement : MonoBehaviour {
         }
 
         previousFloorPos = floorPos;
+    }
+
+    public void doorOpened()
+    {
+        doorOpen = true;
+    }
+
+    public void doorClosed()
+    {
+        doorOpen = false;
     }
 }

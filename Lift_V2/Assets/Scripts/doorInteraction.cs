@@ -115,7 +115,7 @@ public class doorInteraction : MonoBehaviour
             if (grabbingUp == false)
             {
                 //Trigger Haptic pulse
-                GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);
+                manager.GetComponent<grabHaptic>().triggerBurst(5, 2);
                 grabbingUp = true;
             }
 
@@ -159,7 +159,9 @@ public class doorInteraction : MonoBehaviour
                     slidingDoor2.openSlidingDoor();
                     // TODO: MAKE NOISE PLAY WHEN ANIMATED DOOR IS OPEN
                     doorSFX.PlaySound(transform.position);
-                    manager.GetComponent<FloorManager>().doorOpen = true;
+
+                    //Tell the elevator manager that door is open
+                    manager.GetComponent<ElevatorMovement>().doorOpened();
                 }
             }
         }
@@ -178,7 +180,7 @@ public class doorInteraction : MonoBehaviour
                 if (grabbingDown == false)
                 {
                     //Trigger Haptic pulse
-                    GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);
+                    manager.GetComponent<grabHaptic>().triggerBurst(5, 2);
                     grabbingDown = true;
                 }
 
@@ -206,7 +208,7 @@ public class doorInteraction : MonoBehaviour
                     closing = false;
                     open = false;
                     slidingDoor2.closeSlidingDoor();
-                    manager.GetComponent<FloorManager>().doorOpen = false;
+                    manager.GetComponent<ElevatorMovement>().doorClosed();
                 }
             }
         }
