@@ -9,9 +9,9 @@ public class LeverGrab : MonoBehaviour {
     private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
     private SteamVR_TrackedObject trackedObj;
 
-    private GameObject lever;
+    public GameObject lever;
 
-    private GameObject objDoor;
+    public GameObject objDoor;
 
     // Use this for initialization
     void Start () {
@@ -33,15 +33,7 @@ public class LeverGrab : MonoBehaviour {
 
         if (controller.GetPressDown(triggerButton))
         {
-            if (!door.open)
-            {
-                lever.GetComponent<LeverRange>().attemptGrab(this.gameObject);
-            }
-            //If lever cannot move because door is open
-            else
-            {
-                lever.GetComponent<LeverRotation>().jiggleResponse();
-            }
+            lever.GetComponent<LeverRange>().attemptGrab(this.gameObject, door.open);
         }
         else if (controller.GetPressUp(triggerButton))
         {
