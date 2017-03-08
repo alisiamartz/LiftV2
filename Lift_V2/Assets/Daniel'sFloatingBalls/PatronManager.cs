@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class PatronManager : MonoBehaviour {
 
-    [SerializeField]
     private GameObject elevatorManager;
-
-    [SerializeField]
     private GameObject hotelManager;
 
     public int destinationFloor;
 
     public string status = "waiting";
+
+    public GameObject floorRequest;
+
+    void Start()
+    {
+        elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
+        hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        floorRequest.GetComponent<TextMesh>().text = destinationFloor.ToString();
+
         var doorOpen = elevatorManager.GetComponent<ElevatorMovement>().doorOpen;
         if (status == "waiting" && doorOpen)
         {

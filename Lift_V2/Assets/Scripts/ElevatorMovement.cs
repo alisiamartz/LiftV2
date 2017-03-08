@@ -109,8 +109,6 @@ public class ElevatorMovement : MonoBehaviour {
                 //Load in the floor stopped at
                 hotelManager.GetComponent<FloorManager>().loadNewFloor((int) floorPos);
 
-                //Tell the hotel manager we've arrived at a floor
-
             }
             else {
                 if (floorPos > Mathf.Round(floorPos)) { floorPos -= magnetForce; }

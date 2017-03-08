@@ -7,7 +7,10 @@ public class FloorManager : MonoBehaviour {
     public bool doorOpen;
     public int floorPos;
 
-    public GameObject[] floors;                  //[][0] is the gameObject floor holder       [][1] is the int of the number of patrons waiting
+    public GameObject floorPanel;
+
+    public GameObject[] floors;                  //[] is the gameObject floor holder
+    public int[] patrons;                        //is the number of patrons waiting at each floor
     private int activeFloorIndex;
 
 	// Use this for initialization
@@ -31,5 +34,8 @@ public class FloorManager : MonoBehaviour {
         }
 
         activeFloorIndex = targetFloor;
+
+        //Tell the hotel manager we've arrived at a floor
+        floorPanel.GetComponent<FloorsPanel>().lightOff(targetFloor);
     }
 }
