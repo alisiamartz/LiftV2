@@ -25,10 +25,13 @@ public class PatronSpawner : MonoBehaviour
     }
 
     //Spawn a patron on a floor and set their target
-    public void spawnPatron(GameObject spawnFloor, Vector3 startLoc, int startFloor, int targetFloor)
+    public void spawnPatron(int startFloor, int targetFloor)
     {
-        var newPatron = Instantiate(patronPrefab, startLoc, Quaternion.identity);
-        newPatron.transform.parent = spawnFloor.transform;
+        var manager = GetComponent<FloorManager>();
+
+        var newPatron = Instantiate(patronPrefab, GetComponent<Waypoints>().floorWaypoints[startFloor].transform.position, Quaternion.identity);
+        newPatron.transform.parent = manager.floors[startFloor].transform;
+
         newPatron.GetComponent<PatronManager>().destinationFloor = targetFloor;
         floorPanel.GetComponent<FloorsPanel>().lightOn(startFloor);
         GetComponent<FloorManager>().patrons[startFloor] += 1;
@@ -51,7 +54,7 @@ public class PatronSpawner : MonoBehaviour
             {
                 targetFloor = Random.Range(0, currentPatrons.Length / 2);
             }
-            spawnPatron(manager.floors[spawnFloor], GetComponent<Waypoints>().floorWaypoints[spawnFloor].transform.position, spawnFloor, targetFloor);
+            spawnPatron(spawnFloor, targetFloor);
         }
         else
         {
