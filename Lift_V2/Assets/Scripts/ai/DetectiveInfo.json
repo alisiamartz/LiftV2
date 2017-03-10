@@ -3,36 +3,22 @@
     "utility": [ 0, 0, 0, 0 ],
     "goal":  5
 },
-  "storyBeats": [
+  "nodes": [
     {
-      "listen": false,
-      "wait": 1,
-      "negative": "Uh-huh, yeah.",
-      "neutral": "Uh-huh, yeah.",
-      "positive": "Mm-hm. Yes."
+      "name": "Start",
+      "wait": 10,
+      "dialogue": "Good morning. I trust everything is in order? Ah right I do remember your oath to serve in silence. Very well, I'd like to discuss a few matters with you. Are you ready?",
+      "listen": [ "yes", "no" ],
+      "toNode": [ "Day to day operations", "Out of Line" ],
+      "noResponse": "Under pressure"
     },
     {
-      "listen": false,
-      "wait": 5,
-      "negative": "Mm. Yes. I’d deal with it, if you’d just let me get on with it. I’m hanging up now.",
-      "neutral": "Yeah, no, we’ll deal with it. I know. Uh-huh. Okay.",
-      "positive": "I’ll look into it, sir. Yes, I understand that you’re worried. I’ll get back to you as soon as I figure out what’s going on."
-    },
-    {
-      "listen": false,
-      "wait": 2,
-      "negative": "What’re you looking at? 10th floor.",
-      "neutral": "Business. Anyways, 10th floor?",
-      "positive": "Sorry about that, business call. 10th floor please?"
-    },
-    {
-      "listen": true,
-      "gesture": [ "yes", "no" ],
-      "change": [ "getHappy", "getAngry" ],
-      "noGesture": "doNothing",
-      "negative": "God, what is it with these old hotel owners? Buncha hardasses don’t get that the world doesn’t need them anymore.",
-      "neutral": "Yeah, it was another client worrying about the price he’ll get when his place shuts down.",
-      "positive": "I don’t blame these guys for being worried, it’s a different world out there, especially after your business gets sold."
+      "name": "Out of Line",
+      "wait": 10,
+      "dialogue": "No? Then I'd suggest drinking caffine before reporting for duty. I need employees who are prepared for any situation at a moment's notice. So with that in mind, let's begin. As you've probably noticed, our mechanisms are a bit outdated but here at _________, we value our roots. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now.",
+      "listen": [ "Operate lever" ],
+      "toNode": [ "The Guests" ],
+      "noResponse": "Under Pressure"
     }
   ],
   "changeList": [
