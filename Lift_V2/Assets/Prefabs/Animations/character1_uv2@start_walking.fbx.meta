@@ -1,166 +1,100 @@
 fileFormatVersion: 2
-guid: f6318b42b8f247b479c003c3d2abce8e
-timeCreated: 1487835383
+guid: 7213d0bba6db3fd4fb81f5eaf3d5e822
+timeCreated: 1489108170
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: boss:Head
-    100002: boss:HeadTop_End
-    100004: boss:Hips
-    100006: boss:LeftArm
-    100008: boss:LeftFoot
-    100010: boss:LeftFootToeBase_End
-    100012: boss:LeftForeArm
-    100014: boss:LeftHand
-    100016: boss:LeftHandIndex1
-    100018: boss:LeftHandIndex2
-    100020: boss:LeftHandIndex3
-    100022: boss:LeftHandIndex4
-    100024: boss:LeftHandIndex5
-    100026: boss:LeftHandMiddle1
-    100028: boss:LeftHandMiddle2
-    100030: boss:LeftHandMiddle3
-    100032: boss:LeftHandMiddle4
-    100034: boss:LeftHandMiddle5
-    100036: boss:LeftHandPinky1
-    100038: boss:LeftHandPinky2
-    100040: boss:LeftHandPinky3
-    100042: boss:LeftHandPinky4
-    100044: boss:LeftHandPinky5
-    100046: boss:LeftHandRing1
-    100048: boss:LeftHandRing2
-    100050: boss:LeftHandRing3
-    100052: boss:LeftHandRing4
-    100054: boss:LeftHandRing5
-    100056: boss:LeftHandThumb1
-    100058: boss:LeftHandThumb2
-    100060: boss:LeftHandThumb3
-    100062: boss:LeftHandThumb4
-    100064: boss:LeftHandThumb5
-    100066: boss:LeftLeg
-    100068: boss:LeftShoulder
-    100070: boss:LeftToeBase
-    100072: boss:LeftUpLeg
-    100074: boss:Neck
-    100076: boss:Neck1
-    100078: boss:RightArm
-    100080: boss:RightFoot
-    100082: boss:RightFootToeBase_End
-    100084: boss:RightForeArm
-    100086: boss:RightHand
-    100088: boss:RightHandIndex1
-    100090: boss:RightHandIndex2
-    100092: boss:RightHandIndex3
-    100094: boss:RightHandIndex4
-    100096: boss:RightHandIndex5
-    100098: boss:RightHandMiddle1
-    100100: boss:RightHandMiddle2
-    100102: boss:RightHandMiddle3
-    100104: boss:RightHandMiddle4
-    100106: boss:RightHandMiddle5
-    100108: boss:RightHandPinky1
-    100110: boss:RightHandPinky2
-    100112: boss:RightHandPinky3
-    100114: boss:RightHandPinky4
-    100116: boss:RightHandPinky5
-    100118: boss:RightHandRing1
-    100120: boss:RightHandRing2
-    100122: boss:RightHandRing3
-    100124: boss:RightHandRing4
-    100126: boss:RightHandRing5
-    100128: boss:RightHandThumb1
-    100130: boss:RightHandThumb2
-    100132: boss:RightHandThumb3
-    100134: boss:RightHandThumb4
-    100136: boss:RightHandThumb5
-    100138: boss:RightLeg
-    100140: boss:RightShoulder
-    100142: boss:RightToeBase
-    100144: boss:RightUpLeg
-    100146: boss:Spine
-    100148: boss:Spine1
-    100150: boss:Spine2
-    100152: //RootNode
-    400000: boss:Head
-    400002: boss:HeadTop_End
-    400004: boss:Hips
-    400006: boss:LeftArm
-    400008: boss:LeftFoot
-    400010: boss:LeftFootToeBase_End
-    400012: boss:LeftForeArm
-    400014: boss:LeftHand
-    400016: boss:LeftHandIndex1
-    400018: boss:LeftHandIndex2
-    400020: boss:LeftHandIndex3
-    400022: boss:LeftHandIndex4
-    400024: boss:LeftHandIndex5
-    400026: boss:LeftHandMiddle1
-    400028: boss:LeftHandMiddle2
-    400030: boss:LeftHandMiddle3
-    400032: boss:LeftHandMiddle4
-    400034: boss:LeftHandMiddle5
-    400036: boss:LeftHandPinky1
-    400038: boss:LeftHandPinky2
-    400040: boss:LeftHandPinky3
-    400042: boss:LeftHandPinky4
-    400044: boss:LeftHandPinky5
-    400046: boss:LeftHandRing1
-    400048: boss:LeftHandRing2
-    400050: boss:LeftHandRing3
-    400052: boss:LeftHandRing4
-    400054: boss:LeftHandRing5
-    400056: boss:LeftHandThumb1
-    400058: boss:LeftHandThumb2
-    400060: boss:LeftHandThumb3
-    400062: boss:LeftHandThumb4
-    400064: boss:LeftHandThumb5
-    400066: boss:LeftLeg
-    400068: boss:LeftShoulder
-    400070: boss:LeftToeBase
-    400072: boss:LeftUpLeg
-    400074: boss:Neck
-    400076: boss:Neck1
-    400078: boss:RightArm
-    400080: boss:RightFoot
-    400082: boss:RightFootToeBase_End
-    400084: boss:RightForeArm
-    400086: boss:RightHand
-    400088: boss:RightHandIndex1
-    400090: boss:RightHandIndex2
-    400092: boss:RightHandIndex3
-    400094: boss:RightHandIndex4
-    400096: boss:RightHandIndex5
-    400098: boss:RightHandMiddle1
-    400100: boss:RightHandMiddle2
-    400102: boss:RightHandMiddle3
-    400104: boss:RightHandMiddle4
-    400106: boss:RightHandMiddle5
-    400108: boss:RightHandPinky1
-    400110: boss:RightHandPinky2
-    400112: boss:RightHandPinky3
-    400114: boss:RightHandPinky4
-    400116: boss:RightHandPinky5
-    400118: boss:RightHandRing1
-    400120: boss:RightHandRing2
-    400122: boss:RightHandRing3
-    400124: boss:RightHandRing4
-    400126: boss:RightHandRing5
-    400128: boss:RightHandThumb1
-    400130: boss:RightHandThumb2
-    400132: boss:RightHandThumb3
-    400134: boss:RightHandThumb4
-    400136: boss:RightHandThumb5
-    400138: boss:RightLeg
-    400140: boss:RightShoulder
-    400142: boss:RightToeBase
-    400144: boss:RightUpLeg
-    400146: boss:Spine
-    400148: boss:Spine1
-    400150: boss:Spine2
-    400152: //RootNode
-    7400000: breathing_idle
+    100000: Body
+    100002: //RootNode
+    100004: mixamorig:Head
+    100006: mixamorig:HeadTop_End
+    100008: mixamorig:Hips
+    100010: mixamorig:LeftArm
+    100012: mixamorig:LeftFoot
+    100014: mixamorig:LeftForeArm
+    100016: mixamorig:LeftHand
+    100018: mixamorig:LeftHandIndex1
+    100020: mixamorig:LeftHandIndex2
+    100022: mixamorig:LeftHandIndex3
+    100024: mixamorig:LeftHandIndex4
+    100026: mixamorig:LeftHandThumb1
+    100028: mixamorig:LeftHandThumb2
+    100030: mixamorig:LeftHandThumb3
+    100032: mixamorig:LeftHandThumb4
+    100034: mixamorig:LeftLeg
+    100036: mixamorig:LeftShoulder
+    100038: mixamorig:LeftToe_End
+    100040: mixamorig:LeftToeBase
+    100042: mixamorig:LeftUpLeg
+    100044: mixamorig:Neck
+    100046: mixamorig:RightArm
+    100048: mixamorig:RightFoot
+    100050: mixamorig:RightForeArm
+    100052: mixamorig:RightHand
+    100054: mixamorig:RightHandIndex1
+    100056: mixamorig:RightHandIndex2
+    100058: mixamorig:RightHandIndex3
+    100060: mixamorig:RightHandIndex4
+    100062: mixamorig:RightHandThumb1
+    100064: mixamorig:RightHandThumb2
+    100066: mixamorig:RightHandThumb3
+    100068: mixamorig:RightHandThumb4
+    100070: mixamorig:RightLeg
+    100072: mixamorig:RightShoulder
+    100074: mixamorig:RightToe_End
+    100076: mixamorig:RightToeBase
+    100078: mixamorig:RightUpLeg
+    100080: mixamorig:Spine
+    100082: mixamorig:Spine1
+    100084: mixamorig:Spine2
+    400000: Body
+    400002: //RootNode
+    400004: mixamorig:Head
+    400006: mixamorig:HeadTop_End
+    400008: mixamorig:Hips
+    400010: mixamorig:LeftArm
+    400012: mixamorig:LeftFoot
+    400014: mixamorig:LeftForeArm
+    400016: mixamorig:LeftHand
+    400018: mixamorig:LeftHandIndex1
+    400020: mixamorig:LeftHandIndex2
+    400022: mixamorig:LeftHandIndex3
+    400024: mixamorig:LeftHandIndex4
+    400026: mixamorig:LeftHandThumb1
+    400028: mixamorig:LeftHandThumb2
+    400030: mixamorig:LeftHandThumb3
+    400032: mixamorig:LeftHandThumb4
+    400034: mixamorig:LeftLeg
+    400036: mixamorig:LeftShoulder
+    400038: mixamorig:LeftToe_End
+    400040: mixamorig:LeftToeBase
+    400042: mixamorig:LeftUpLeg
+    400044: mixamorig:Neck
+    400046: mixamorig:RightArm
+    400048: mixamorig:RightFoot
+    400050: mixamorig:RightForeArm
+    400052: mixamorig:RightHand
+    400054: mixamorig:RightHandIndex1
+    400056: mixamorig:RightHandIndex2
+    400058: mixamorig:RightHandIndex3
+    400060: mixamorig:RightHandIndex4
+    400062: mixamorig:RightHandThumb1
+    400064: mixamorig:RightHandThumb2
+    400066: mixamorig:RightHandThumb3
+    400068: mixamorig:RightHandThumb4
+    400070: mixamorig:RightLeg
+    400072: mixamorig:RightShoulder
+    400074: mixamorig:RightToe_End
+    400076: mixamorig:RightToeBase
+    400078: mixamorig:RightUpLeg
+    400080: mixamorig:Spine
+    400082: mixamorig:Spine1
+    400084: mixamorig:Spine2
+    4300000: Body
+    7400000: mixamo.com
     9500000: //RootNode
+    13700000: Body
   materials:
     importMaterials: 1
     materialName: 0
@@ -172,201 +106,16 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'boss:Spine2' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: breathing_idle
-      takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 298
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: boss:Hips
-        weight: 1
-      - path: boss:Hips/boss:LeftUpLeg
-        weight: 1
-      - path: boss:Hips/boss:LeftUpLeg/boss:LeftLeg
-        weight: 1
-      - path: boss:Hips/boss:LeftUpLeg/boss:LeftLeg/boss:LeftFoot
-        weight: 1
-      - path: boss:Hips/boss:LeftUpLeg/boss:LeftLeg/boss:LeftFoot/boss:LeftToeBase
-        weight: 1
-      - path: boss:Hips/boss:LeftUpLeg/boss:LeftLeg/boss:LeftFoot/boss:LeftToeBase/boss:LeftFootToeBase_End
-        weight: 1
-      - path: boss:Hips/boss:RightUpLeg
-        weight: 1
-      - path: boss:Hips/boss:RightUpLeg/boss:RightLeg
-        weight: 1
-      - path: boss:Hips/boss:RightUpLeg/boss:RightLeg/boss:RightFoot
-        weight: 1
-      - path: boss:Hips/boss:RightUpLeg/boss:RightLeg/boss:RightFoot/boss:RightToeBase
-        weight: 1
-      - path: boss:Hips/boss:RightUpLeg/boss:RightLeg/boss:RightFoot/boss:RightToeBase/boss:RightFootToeBase_End
-        weight: 1
-      - path: boss:Hips/boss:Spine
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandIndex1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandIndex1/boss:LeftHandIndex2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandIndex1/boss:LeftHandIndex2/boss:LeftHandIndex3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandIndex1/boss:LeftHandIndex2/boss:LeftHandIndex3/boss:LeftHandIndex4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandIndex1/boss:LeftHandIndex2/boss:LeftHandIndex3/boss:LeftHandIndex5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandMiddle1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandMiddle1/boss:LeftHandMiddle2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandMiddle1/boss:LeftHandMiddle2/boss:LeftHandMiddle3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandMiddle1/boss:LeftHandMiddle2/boss:LeftHandMiddle3/boss:LeftHandMiddle4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandMiddle1/boss:LeftHandMiddle2/boss:LeftHandMiddle3/boss:LeftHandMiddle5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandPinky1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandPinky1/boss:LeftHandPinky2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandPinky1/boss:LeftHandPinky2/boss:LeftHandPinky3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandPinky1/boss:LeftHandPinky2/boss:LeftHandPinky3/boss:LeftHandPinky4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandPinky1/boss:LeftHandPinky2/boss:LeftHandPinky3/boss:LeftHandPinky5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandRing1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandRing1/boss:LeftHandRing2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandRing1/boss:LeftHandRing2/boss:LeftHandRing3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandRing1/boss:LeftHandRing2/boss:LeftHandRing3/boss:LeftHandRing4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandRing1/boss:LeftHandRing2/boss:LeftHandRing3/boss:LeftHandRing5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandThumb1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandThumb1/boss:LeftHandThumb2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandThumb1/boss:LeftHandThumb2/boss:LeftHandThumb3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandThumb1/boss:LeftHandThumb2/boss:LeftHandThumb3/boss:LeftHandThumb4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:LeftShoulder/boss:LeftArm/boss:LeftForeArm/boss:LeftHand/boss:LeftHandThumb1/boss:LeftHandThumb2/boss:LeftHandThumb3/boss:LeftHandThumb5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:Neck
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:Neck/boss:Neck1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:Neck/boss:Neck1/boss:Head
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:Neck/boss:Neck1/boss:Head/boss:HeadTop_End
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandIndex1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandIndex1/boss:RightHandIndex2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandIndex1/boss:RightHandIndex2/boss:RightHandIndex3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandIndex1/boss:RightHandIndex2/boss:RightHandIndex3/boss:RightHandIndex4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandIndex1/boss:RightHandIndex2/boss:RightHandIndex3/boss:RightHandIndex5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandMiddle1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandMiddle1/boss:RightHandMiddle2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandMiddle1/boss:RightHandMiddle2/boss:RightHandMiddle3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandMiddle1/boss:RightHandMiddle2/boss:RightHandMiddle3/boss:RightHandMiddle4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandMiddle1/boss:RightHandMiddle2/boss:RightHandMiddle3/boss:RightHandMiddle5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandPinky1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandPinky1/boss:RightHandPinky2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandPinky1/boss:RightHandPinky2/boss:RightHandPinky3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandPinky1/boss:RightHandPinky2/boss:RightHandPinky3/boss:RightHandPinky4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandPinky1/boss:RightHandPinky2/boss:RightHandPinky3/boss:RightHandPinky5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandRing1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandRing1/boss:RightHandRing2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandRing1/boss:RightHandRing2/boss:RightHandRing3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandRing1/boss:RightHandRing2/boss:RightHandRing3/boss:RightHandRing4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandRing1/boss:RightHandRing2/boss:RightHandRing3/boss:RightHandRing5
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandThumb1
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandThumb1/boss:RightHandThumb2
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandThumb1/boss:RightHandThumb2/boss:RightHandThumb3
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandThumb1/boss:RightHandThumb2/boss:RightHandThumb3/boss:RightHandThumb4
-        weight: 1
-      - path: boss:Hips/boss:Spine/boss:Spine1/boss:Spine2/boss:RightShoulder/boss:RightArm/boss:RightForeArm/boss:RightHand/boss:RightHandThumb1/boss:RightHandThumb2/boss:RightHandThumb3/boss:RightHandThumb5
-        weight: 1
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
