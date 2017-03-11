@@ -106,7 +106,7 @@ public class doorInteraction : MonoBehaviour
         //}
 
 
-        if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) && (holdCollide || Vector3.Distance(hold.transform.position, grabPoint.transform.position) < (hold.transform.localScale.x * 10f)))
+        if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (holdCollide || Vector3.Distance(hold.transform.position, grabPoint.transform.position) < (hold.transform.localScale.x * 10f)))
         {
             //if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x * 2f) {
             Debug.Log("hell yeah get ready to lift");
@@ -126,7 +126,7 @@ public class doorInteraction : MonoBehaviour
         //    Debug.Log("door y " + door.transform.position.y);
 
         }
-        else if (device.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))
+        else if (device.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad))
         {
             // if the door gets unhooked, lerp up just a bit 
             
@@ -170,7 +170,7 @@ public class doorInteraction : MonoBehaviour
         {
             // if door is at the top (open) 
             // if trigger is pressed on rope and it is collided
-            if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) && (ropeCollide || Vector3.Distance(rope.transform.position, grabPoint.transform.position) < (rope.transform.localScale.x * 10f)))
+            if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (ropeCollide || Vector3.Distance(rope.transform.position, grabPoint.transform.position) < (rope.transform.localScale.x * 10f)))
             {
                 Debug.Log("hell yeah get ready to close this shit");
                 closing = true;
