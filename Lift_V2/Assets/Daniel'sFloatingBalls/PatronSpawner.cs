@@ -15,7 +15,10 @@ public class PatronSpawner : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("thinkPatron", 5.0f, spawnDelay);
+        if (spawnDelay != 0)
+        {
+            InvokeRepeating("thinkPatron", 5.0f, spawnDelay);
+        }
     }
 
     // Update is called once per frame
@@ -29,7 +32,7 @@ public class PatronSpawner : MonoBehaviour
     {
         var manager = GetComponent<FloorManager>();
 
-        var newPatron = Instantiate(patronPrefab, GetComponent<Waypoints>().floorWaypoints[startFloor].transform.position, Quaternion.identity);
+        var newPatron = Instantiate(patronPrefab, GetComponent<FloorManager>().fetchFloorWaypoint(startFloor).transform.position, Quaternion.identity);
         newPatron.transform.parent = manager.floors[startFloor].transform;
 
         newPatron.GetComponent<PatronManager>().destinationFloor = targetFloor;

@@ -14,6 +14,7 @@ public class LeverRotation : MonoBehaviour {
     private float previousHandPosition;
 
     public bool grabbed;
+    [HideInInspector]
     public GameObject grabHand;
 
     private bool reset;

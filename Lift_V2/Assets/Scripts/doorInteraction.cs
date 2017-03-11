@@ -202,7 +202,8 @@ public class doorInteraction : MonoBehaviour
             {   
                 door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, initY, initZ), Time.deltaTime);
                 Debug.Log("Attempt to lerP down to close");
-                if (door.transform.localPosition.y <= 1.1f)  
+                Debug.Log(door.transform.localPosition.y);
+                if (door.transform.localPosition.y <= 1.17f)  
                 {
                     Debug.Log("Door is closed");
                     closing = false;

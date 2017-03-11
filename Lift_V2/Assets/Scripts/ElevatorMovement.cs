@@ -29,12 +29,10 @@ public class ElevatorMovement : MonoBehaviour {
     [Header("Effects Variables")]
     public int maxVibration;
 
-    private GameObject lever;
-
     [Header("Sounds")]
     public string floorPassingSound;
 
-    [SerializeField]
+    private GameObject lever;
     private GameObject hotelManager;
 
     //Used for hitting the max or min of the elevator bounds
@@ -50,6 +48,7 @@ public class ElevatorMovement : MonoBehaviour {
         magnet = false;
 
         lever = GameObject.FindGameObjectWithTag("lever");
+        hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
 	}
 	
 	// Update is called once per frame

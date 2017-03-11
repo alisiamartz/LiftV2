@@ -28,13 +28,13 @@ public class PatronManager : MonoBehaviour
         var doorOpen = elevatorManager.GetComponent<ElevatorMovement>().doorOpen;
         if (status == "waiting" && doorOpen)
         {
-            GetComponent<PatronMovement>().enterElevator(hotelManager.GetComponent<Waypoints>().elevatorWaypoint);
+            GetComponent<PatronMovement>().enterElevator();
             status = "movingIn";
             transform.parent = null;
         }
         if (status == "riding" && destinationFloor == elevatorManager.GetComponent<ElevatorMovement>().floorPos && doorOpen)
         {
-            GetComponent<PatronMovement>().leaveElevator(hotelManager.GetComponent<Waypoints>().floorWaypoints[destinationFloor]);
+            GetComponent<PatronMovement>().leaveElevator(destinationFloor);
             status = "movingOut";
             transform.parent = hotelManager.GetComponent<FloorManager>().floors[destinationFloor].transform;
         }
@@ -51,6 +51,9 @@ public class PatronManager : MonoBehaviour
         if (status == "movingOut")
         {
             status = "finished";
+
+            //Tell the patron manager to start the next event
+            hotelManager.GetComponent<DayTimeline>().nextEvent();
         }
     }
 }

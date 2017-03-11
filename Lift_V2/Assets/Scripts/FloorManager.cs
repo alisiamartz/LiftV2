@@ -10,9 +10,13 @@ public class FloorManager : MonoBehaviour
 
     public GameObject floorPanel;
 
-    public GameObject[] floors;                  //[] is the gameObject floor holder
-    public int[] patrons;                        //is the number of patrons waiting at each floor
+    public GameObject[] floors;                             //[] is the gameObject floor holder
+    [HideInInspector]
+    public int[] patrons = new int[6];                      //is the number of patrons waiting at each floor
     private int activeFloorIndex;
+
+    [SerializeField]
+    private GameObject elevatorWaypoint;
 
     // Use this for initialization
     void Start()
@@ -41,5 +45,15 @@ public class FloorManager : MonoBehaviour
 
         //Tell the hotel manager we've arrived at a floor
         floorPanel.GetComponent<FloorsPanel>().lightOff(targetFloor);
+    }
+
+    public GameObject fetchElevatorWaypoint()
+    {
+        return elevatorWaypoint;
+    }
+
+    public GameObject fetchFloorWaypoint(int floorNumber)
+    {
+        return floors[floorNumber].transform.Find("Waypoint").gameObject;
     }
 }
