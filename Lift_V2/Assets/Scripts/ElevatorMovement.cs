@@ -29,12 +29,10 @@ public class ElevatorMovement : MonoBehaviour {
     [Header("Effects Variables")]
     public int maxVibration;
 
-    private GameObject lever;
-
     [Header("Sounds")]
     public string floorPassingSound;
 
-    [SerializeField]
+    private GameObject lever;
     private GameObject hotelManager;
 
     //Used for hitting the max or min of the elevator bounds
@@ -50,10 +48,14 @@ public class ElevatorMovement : MonoBehaviour {
         magnet = false;
 
         lever = GameObject.FindGameObjectWithTag("lever");
+        hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        //Get Unity Components
+        var leverRotation = lever.GetComponent<LeverRotation>();
+
         //If within bounds of elevator
         if ((floorPos > -0.2 || liftSpeedCurrent > 0) && (floorPos < 5.2 || liftSpeedCurrent < 0)) {
             floorPos += liftSpeedCurrent;
@@ -118,18 +120,18 @@ public class ElevatorMovement : MonoBehaviour {
             }
         }
 
-        if (lever.GetComponent<LeverRotation>().decensionRate != 0){
+        if (leverRotation.decensionRate != 0){
             windingDown = false;
-            liftSpeedCurrent = -liftSpeedMax * lever.GetComponent<LeverRotation>().decensionRate;
+            liftSpeedCurrent = -liftSpeedMax * leverRotation.decensionRate;
             
         }
-        if (lever.GetComponent<LeverRotation>().ascensionRate != 0){
+        if (leverRotation.ascensionRate != 0){
             windingDown = false;
-            liftSpeedCurrent = liftSpeedMax * lever.GetComponent<LeverRotation>().ascensionRate;
+            liftSpeedCurrent = liftSpeedMax * leverRotation.ascensionRate;
             
         }
     
-        if (lever.GetComponent<LeverRotation>().ascensionRate == 0 && lever.GetComponent<LeverRotation>().decensionRate == 0) {
+        if (leverRotation.ascensionRate == 0 && leverRotation.decensionRate == 0) {
             windingDown = true;
         }
         if (windingDown && (Mathf.Abs(liftSpeedCurrent) > liftSpeedWinder)) {

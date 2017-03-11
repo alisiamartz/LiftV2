@@ -57,7 +57,7 @@ namespace Edwon.VR.Gesture
         void OnGestureDetected(string gestureName, double confidence, Handedness hand, bool isDouble)
         {
             string confidenceString = confidence.ToString().Substring(0, 4);
-            //Debug.Log("detected gesture: " + gestureName + " with confidence: " + confidenceString);
+            Debug.Log("detected gesture: " + gestureName + " with confidence: " + confidenceString);
          
             lastGesture = gestureName;
            
@@ -66,34 +66,34 @@ namespace Edwon.VR.Gesture
 
             switch (lastGesture)
             {
-                case "yes":
+                case "Yes":
                     Debug.Log("Yes Works!");
                     break;
-                case "no":
+                case "No":
                     Debug.Log("No Works!");
                     break;
-                case "pat":
+                case "Pat":
                     Debug.Log("Pat Works!");
                     break;
-                case "rude":
+                case "Rude":
                     Debug.Log("Rude Works!");
                     break;
-                case "agree":
+                case "Agree":
                     Debug.Log("agree Works!");
                     break;
-                case "disagree":
+                case "Disagree":
                     Debug.Log("disagree Works!");
                     break;
-                case "salute":
+                case "Salute":
                     Debug.Log("salute Works!");
                     break;
-                case "maybe":
+                case "Maybe":
                     Debug.Log("maybe Works!");
                     break;
-                case "confused":
+                case "Confused":
                     Debug.Log("confused Works!");
                     break;
-                case "continue":
+                case "Continue":
                     Debug.Log("continue Works!");
                     break;
             }

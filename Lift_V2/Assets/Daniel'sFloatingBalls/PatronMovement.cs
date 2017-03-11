@@ -5,6 +5,7 @@ using UnityEngine;
 public class PatronMovement : MonoBehaviour {
 
     private GameObject targetWaypoint;
+    private GameObject hotelManager;
 
     [Range(0.5f, 5)]
     public float walkSpeed = 10f;
@@ -13,8 +14,8 @@ public class PatronMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
-	}
+        hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,15 +33,15 @@ public class PatronMovement : MonoBehaviour {
         }
     }
 
-    public void enterElevator(GameObject elevatorWaypoint)
+    public void enterElevator()
     {
-        targetWaypoint = elevatorWaypoint;
+        targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
         moving = true;
     }
 
-    public void leaveElevator(GameObject hotelWaypoint)
+    public void leaveElevator(int currentFloor)
     {
-        targetWaypoint = hotelWaypoint;
+        targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint(currentFloor);
         moving = true;
     }
 

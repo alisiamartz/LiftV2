@@ -39,10 +39,10 @@ public class LeverRange : MonoBehaviour {
         }
     }
 
-    public void attemptGrab(GameObject hand, bool doorOpen){
+    public void attemptGrab(GameObject hand, bool doorOpen, float timer){
         if (inRange)
         {
-            if (!doorOpen)
+            if (!doorOpen && timer <= 0.0f)
             {
                 GetComponent<LeverRotation>().grabbed = true;
                 GetComponent<LeverRotation>().grabHand = hand;

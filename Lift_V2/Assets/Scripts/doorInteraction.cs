@@ -84,9 +84,9 @@ public class doorInteraction : MonoBehaviour
 
         rope = GameObject.FindGameObjectWithTag("rope");
 
-        initX = door.transform.position.x;
-        initY = door.transform.position.y;
-        initZ = door.transform.position.z;
+        initX = door.transform.localPosition.x;
+        initY = door.transform.localPosition.y;
+        initZ = door.transform.localPosition.z;
 
         if (!grabPoint)
             grabPoint = GameObject.FindGameObjectWithTag("grabPoint");
@@ -106,7 +106,7 @@ public class doorInteraction : MonoBehaviour
         //}
 
 
-        if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) && (holdCollide || Vector3.Distance(hold.transform.position, grabPoint.transform.position) < (hold.transform.localScale.x * 10f)))
+        if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (holdCollide || Vector3.Distance(hold.transform.position, grabPoint.transform.position) < (hold.transform.localScale.x * 10f)))
         {
             //if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x * 2f) {
             Debug.Log("hell yeah get ready to lift");
@@ -123,9 +123,10 @@ public class doorInteraction : MonoBehaviour
             door.transform.position = new Vector3(initX, (door.transform.position.y - hold.transform.position.y) + trackedObj.transform.position.y, initZ);
             // Once the door reaches a certain height
             // it goes all the way up automatically
+        //    Debug.Log("door y " + door.transform.position.y);
 
         }
-        else if (device.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))
+        else if (device.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad))
         {
             // if the door gets unhooked, lerp up just a bit 
             
@@ -137,9 +138,8 @@ public class doorInteraction : MonoBehaviour
             // it goes down
             if (door.transform.position.y < 2.5f && lifting)
             {
-                //if (door.transform.position.y >= initY) { // while the door position is greater than the y position
-                door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, initY, initZ), 2f * Time.deltaTime);
-                //}
+              // while the door position is greater than the y position
+                door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, 1.1f, initZ), 2f * Time.deltaTime);
             }
 
         }
@@ -151,7 +151,7 @@ public class doorInteraction : MonoBehaviour
             {
                 door.transform.position = Vector3.MoveTowards(door.transform.position, doorOpen.transform.position, Time.deltaTime);
                 Debug.Log("Attempt to lerP");
-                if (door.transform.localPosition.y >= 5.8f)
+                if (door.transform.position.y >= 3.2f)
                 {
                     Debug.Log("I WANT THIS");
                     lifting = false;
@@ -170,7 +170,7 @@ public class doorInteraction : MonoBehaviour
         {
             // if door is at the top (open) 
             // if trigger is pressed on rope and it is collided
-            if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger) && (ropeCollide || Vector3.Distance(rope.transform.position, grabPoint.transform.position) < (rope.transform.localScale.x * 10f)))
+            if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (ropeCollide || Vector3.Distance(rope.transform.position, grabPoint.transform.position) < (rope.transform.localScale.x * 10f)))
             {
                 Debug.Log("hell yeah get ready to close this shit");
                 closing = true;
@@ -202,7 +202,8 @@ public class doorInteraction : MonoBehaviour
             {   
                 door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, initY, initZ), Time.deltaTime);
                 Debug.Log("Attempt to lerP down to close");
-                if (door.transform.localPosition.y <= 0.1f)  
+                Debug.Log(door.transform.localPosition.y);
+                if (door.transform.localPosition.y <= 1.17f)  
                 {
                     Debug.Log("Door is closed");
                     closing = false;

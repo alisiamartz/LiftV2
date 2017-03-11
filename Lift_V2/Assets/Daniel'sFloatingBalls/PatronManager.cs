@@ -2,46 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatronManager : MonoBehaviour {
+public class PatronManager : MonoBehaviour
+{
 
-    [SerializeField]
     private GameObject elevatorManager;
-
-    [SerializeField]
     private GameObject hotelManager;
 
     public int destinationFloor;
 
     public string status = "waiting";
-	
-	// Update is called once per frame
-	void Update () {
+
+    public GameObject floorRequest;
+
+    void Start()
+    {
+        elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
+        hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        floorRequest.GetComponent<TextMesh>().text = destinationFloor.ToString();
+
         var doorOpen = elevatorManager.GetComponent<ElevatorMovement>().doorOpen;
         if (status == "waiting" && doorOpen)
         {
-            GetComponent<PatronMovement>().enterElevator(hotelManager.GetComponent<Waypoints>().elevatorWaypoint);
+            GetComponent<PatronMovement>().enterElevator();
             status = "movingIn";
             transform.parent = null;
         }
-        if(status == "riding" && destinationFloor == elevatorManager.GetComponent<ElevatorMovement>().floorPos && doorOpen)
+        if (status == "riding" && destinationFloor == elevatorManager.GetComponent<ElevatorMovement>().floorPos && doorOpen)
         {
-            GetComponent<PatronMovement>().leaveElevator(hotelManager.GetComponent<Waypoints>().floorWaypoints[destinationFloor]);
+            GetComponent<PatronMovement>().leaveElevator(destinationFloor);
             status = "movingOut";
             transform.parent = hotelManager.GetComponent<FloorManager>().floors[destinationFloor].transform;
         }
 
-	}
+    }
 
     public void destinationReached()
     {
         //We were moving in, so now we're riding
-        if(status == "movingIn")
+        if (status == "movingIn")
         {
             status = "riding";
         }
-        if(status == "movingOut")
+        if (status == "movingOut")
         {
             status = "finished";
+
+            //Tell the patron manager to start the next event
+            hotelManager.GetComponent<DayTimeline>().nextEvent();
         }
     }
 }
