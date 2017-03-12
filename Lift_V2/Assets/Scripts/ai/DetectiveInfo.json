@@ -8,17 +8,52 @@
       "name": "Start",
       "wait": 10,
       "dialogue": "Good morning. I trust everything is in order? Ah right I do remember your oath to serve in silence. Very well, I'd like to discuss a few matters with you. Are you ready?",
-      "listen": [ "yes", "no" ],
+      "listen": [ "Yes", "No" ],
+      "change": ["getHappy", "getAngry"],
       "toNode": [ "Day to day operations", "Out of Line" ],
-      "noResponse": "Under pressure"
+      "noResponse": "Under pressure",
+      "noResponseChange":  "getAnnoyed"
     },
     {
       "name": "Out of Line",
       "wait": 10,
       "dialogue": "No? Then I'd suggest drinking caffine before reporting for duty. I need employees who are prepared for any situation at a moment's notice. So with that in mind, let's begin. As you've probably noticed, our mechanisms are a bit outdated but here at _________, we value our roots. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now.",
-      "listen": [ "Operate lever" ],
+      "listen": [ "Yes" ],
+      "change": [ "doNothing" ],
       "toNode": [ "The Guests" ],
-      "noResponse": "Under Pressure"
+      "noResponse": "Under pressure",
+      "noResponseChange": "doNothing"
+    },
+    {
+      "name": "Under pressure",
+      "wait": 10,
+      "dialogue": "Alright it hasn't even been a whole day yet and you seem to be catching cold feet or just not comphrending my instuctions. So let me try again and start from the beginning. Are you ready to begin?",
+      "listen": [ "Yes", "No" ],
+      "change": [ "doNothing", "getAnnoyed" ],
+      "toNode": [ "Day to day operations", "Out of Line" ],
+      "noResponse": "Under pressure",
+      "noResponseChange": "doNothing"
+    },
+    {
+      "name": "Day to day operations",
+      "wait": 10,
+      "dialogue": "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at _________, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now.",
+      "listen": [ "Yes" ],
+      "change": [ "getHappy" ],
+      "toNode": [ "The Guests" ],
+      "noResponse": "Under pressure",
+      "noResponseChange": "getAnnoyed"
+    },
+    {
+
+      "name": "The Guests",
+      "wait": 10,
+      "dialogue": "Now throughout the day you'll interact with various guests and employees. Be polite and engage these individuals. Give em' a pat on the should, perhaps provide a salute, or encourage them to tell their stories. Remember that our business depends entirely on customer satisfaction and ravishing reviews is always good for business. So quick, show me how you'd engage the next person to walk in that door.",
+      "listen": [ "Pat", "Rude" ],
+      "change": [ "getHappy", "getAngry" ],
+      "toNode": [ "Emergency Provisions", "Judgement Calls" ],
+      "noReponse": "Judgement Calls",
+      "noReponseChange": "getAngry"
     }
   ],
   "changeList": [
@@ -34,6 +69,10 @@
     },
     {
       "name": "doNothing"
+    },
+    {
+      "name": "getAnnoyed",
+      "anger": 1
     }
   ]
 }
