@@ -6,10 +6,6 @@ public class LeverRange : MonoBehaviour {
 
     private bool inRange;
 
-    public GameObject lever;
-
-    public GameObject objDoor;
-
     // Use this for initialization
     void Start () {
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FloorManager : MonoBehaviour
 {
-
     public bool doorOpen;
     public int floorPos;
 
@@ -17,18 +16,6 @@ public class FloorManager : MonoBehaviour
 
     [SerializeField]
     private GameObject elevatorWaypoint;
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     //Called from elevator movement when new floor is reached
     public void loadNewFloor(int targetFloor)

@@ -16,16 +16,16 @@ using UnityEngine;
 public class doorInteraction : MonoBehaviour
 {
 
-    public GameObject door;
-    public GameObject hold;
-    public GameObject doorOpen;
-    public GameObject rope;
+    private GameObject door;
+    private GameObject hold;
+    private GameObject doorOpen;
+    private GameObject rope;
 
     public static bool holdCollide;
     public static bool ropeCollide;
     bool lifting;
     bool closing;
-    public bool open;
+    public bool open = false;
     public string doorSFX;
 
     private bool grabbingUp = false;
@@ -48,7 +48,7 @@ public class doorInteraction : MonoBehaviour
     [SerializeField]
     SteamVR_TrackedObject trackedObj2;
 
-    public GameObject manager;
+    private GameObject manager;
 
     private SteamVR_Controller.Device device
     {
@@ -70,18 +70,12 @@ public class doorInteraction : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        open = false;
-
         holdCollide = false; //setting false cause its static
         ropeCollide = false;
 
-        if (!door)
-            door = GameObject.FindGameObjectWithTag("door");
-
+        door = GameObject.FindGameObjectWithTag("door");
         hold = GameObject.FindGameObjectWithTag("doorHold");
-
         doorOpen = GameObject.FindGameObjectWithTag("openDoor");
-
         rope = GameObject.FindGameObjectWithTag("rope");
 
         initX = door.transform.localPosition.x;
@@ -90,6 +84,8 @@ public class doorInteraction : MonoBehaviour
 
         if (!grabPoint)
             grabPoint = GameObject.FindGameObjectWithTag("grabPoint");
+
+        manager = GameObject.FindGameObjectWithTag("ElevatorManager");
     }
 
     // Update is called once per frame
@@ -123,7 +119,6 @@ public class doorInteraction : MonoBehaviour
             door.transform.position = new Vector3(initX, (door.transform.position.y - hold.transform.position.y) + trackedObj.transform.position.y, initZ);
             // Once the door reaches a certain height
             // it goes all the way up automatically
-        //    Debug.Log("door y " + door.transform.position.y);
 
         }
         else if (device.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad))
@@ -157,7 +152,7 @@ public class doorInteraction : MonoBehaviour
                     lifting = false;
                     open = true;
                     slidingDoor2.openSlidingDoor();
-                    // TODO: MAKE NOISE PLAY WHEN ANIMATED DOOR IS OPEN
+                    //Play sound when door is opened
                     doorSFX.PlaySound(transform.position);
 
                     //Tell the elevator manager that door is open

@@ -10,7 +10,6 @@ public class FloorRotation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Manager = GameObject.FindGameObjectWithTag("ElevatorManager");
-
     }
 
     // Update is called once per frame
