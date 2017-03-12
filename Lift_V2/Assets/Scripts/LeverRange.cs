@@ -6,6 +6,10 @@ public class LeverRange : MonoBehaviour {
 
     private bool inRange;
 
+    public GameObject lever;
+
+    public GameObject objDoor;
+
     // Use this for initialization
     void Start () {
 
@@ -14,6 +18,7 @@ public class LeverRange : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if(inRange == false)
         {
             GetComponent<LeverRotation>().grabbed = false;
@@ -34,11 +39,18 @@ public class LeverRange : MonoBehaviour {
         }
     }
 
-    public void attemptGrab(GameObject hand){
+    public void attemptGrab(GameObject hand, bool doorOpen, float timer){
         if (inRange)
         {
-            GetComponent<LeverRotation>().grabbed = true;
-            GetComponent<LeverRotation>().grabHand = hand;
+            if (!doorOpen && timer <= 0.0f)
+            {
+                GetComponent<LeverRotation>().grabbed = true;
+                GetComponent<LeverRotation>().grabHand = hand;
+            }
+            else
+            {
+                GetComponent<LeverRotation>().jiggleResponse();
+            }
 
             //Trigger Haptic pulse
             GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);

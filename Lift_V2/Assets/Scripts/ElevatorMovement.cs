@@ -4,28 +4,36 @@ using UnityEngine;
 
 public class ElevatorMovement : MonoBehaviour {
 
+    [Header("Global Variables")]
     public float floorPos;                              //The number floor the elevator is on. 
-    public float floorRounding;                         //How close to the floor the elevator must be for it to round
+    public float liftSpeedCurrent;                      //The current speed of the elevator
+    public bool doorOpen;                               //If the elevator door is open, TRUE is open FALSE is closed
+
+    [Header("Movement Variables")]
     public float maxSpeedToRound;                       //The maximum speed the elevator can be moving for it to round
     public float liftSpeedMax;                          //The maximum speed to elevator can reach
-    public float maxIter;                             //The maximum acceleration the elevator can take. (When the lever is at max or min)
+    public float maxIter;                              //The maximum acceleration the elevator can take. (When the lever is at max or min)
     public float timeToStop;                            //The time it takes to halt to a complete stop
-    public float liftSpeedCurrent;    //The current speed of the elevator
-    private float liftSpeedIter;       //The current rate of speed increase for the elevator
-    private float liftSpeedWinder;     //The current rate of speed decrease for the elevator
+    private float liftSpeedIter;                       //The current rate of speed increase for the elevator
+    private float liftSpeedWinder;                    //The current rate of speed decrease for the elevator
+    [HideInInspector]
     public bool windingDown;                           //Whether or not elevator is winding down to a halt
 
+    [Header("Magnet Variables")]
+    public float floorRounding;                         //How close to the floor the elevator must be for it to round
     private float previousFloorPos;
     private float lastPassedFloor = -1;
-
     private bool magnet;
     public float magnetForce;
 
+    [Header("Effects Variables")]
     public int maxVibration;
 
-    private GameObject lever;
-
+    [Header("Sounds")]
     public string floorPassingSound;
+
+    private GameObject lever;
+    private GameObject hotelManager;
 
     //Used for hitting the max or min of the elevator bounds
     private bool firstHit = false;
@@ -40,10 +48,14 @@ public class ElevatorMovement : MonoBehaviour {
         magnet = false;
 
         lever = GameObject.FindGameObjectWithTag("lever");
+        hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        //Get Unity Components
+        var leverRotation = lever.GetComponent<LeverRotation>();
+
         //If within bounds of elevator
         if ((floorPos > -0.2 || liftSpeedCurrent > 0) && (floorPos < 5.2 || liftSpeedCurrent < 0)) {
             floorPos += liftSpeedCurrent;
@@ -62,6 +74,11 @@ public class ElevatorMovement : MonoBehaviour {
                 firstHit = true;
             }
         }
+
+        //Send the elevator speed to the movementSound Script
+        GetComponent<movementSound>().liftSpeed = liftSpeedCurrent;
+
+
         //If Elevator is moving
         if (liftSpeedCurrent != 0)
         {
@@ -92,7 +109,10 @@ public class ElevatorMovement : MonoBehaviour {
                 floorPassingSound.PlaySound(transform.position);
 
                 //Load in the floor stopped at
-                GetComponent<FloorManager>().loadNewFloor((int) floorPos);
+                hotelManager.GetComponent<FloorManager>().loadNewFloor((int) floorPos);
+
+                //Tell the hotel manager we've arrived at a floor
+
             }
             else {
                 if (floorPos > Mathf.Round(floorPos)) { floorPos -= magnetForce; }
@@ -100,18 +120,18 @@ public class ElevatorMovement : MonoBehaviour {
             }
         }
 
-        if (lever.GetComponent<LeverRotation>().decensionRate != 0){
+        if (leverRotation.decensionRate != 0){
             windingDown = false;
-            liftSpeedCurrent = -liftSpeedMax * lever.GetComponent<LeverRotation>().decensionRate;
+            liftSpeedCurrent = -liftSpeedMax * leverRotation.decensionRate;
             
         }
-        if (lever.GetComponent<LeverRotation>().ascensionRate != 0){
+        if (leverRotation.ascensionRate != 0){
             windingDown = false;
-            liftSpeedCurrent = liftSpeedMax * lever.GetComponent<LeverRotation>().ascensionRate;
+            liftSpeedCurrent = liftSpeedMax * leverRotation.ascensionRate;
             
         }
     
-        if (lever.GetComponent<LeverRotation>().ascensionRate == 0 && lever.GetComponent<LeverRotation>().decensionRate == 0) {
+        if (leverRotation.ascensionRate == 0 && leverRotation.decensionRate == 0) {
             windingDown = true;
         }
         if (windingDown && (Mathf.Abs(liftSpeedCurrent) > liftSpeedWinder)) {
@@ -139,5 +159,15 @@ public class ElevatorMovement : MonoBehaviour {
         }
 
         previousFloorPos = floorPos;
+    }
+
+    public void doorOpened()
+    {
+        doorOpen = true;
+    }
+
+    public void doorClosed()
+    {
+        doorOpen = false;
     }
 }

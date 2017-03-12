@@ -16,7 +16,9 @@ namespace Edwon.VR.Input
 
         void Awake()
         {
-            trackedDeviceRoleChangedAction = SteamVR_Events.SystemAction("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
+            //trackedDeviceRoleChangedAction = SteamVR_Events.SystemAction("TrackedDeviceRoleChanged", OnTrackedDeviceRoleChanged);
+			SteamVR_Events.SystemAction(EVREventType.VREvent_TrackedDeviceRoleChanged, OnTrackedDeviceRoleChanged).Enable(true);
+
         }
 
         public IInput Init(Handedness handy, GameObject hand)

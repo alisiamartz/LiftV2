@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class LeverGrab : MonoBehaviour {
 
-    private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
+    private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad;
 
     private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
     private SteamVR_TrackedObject trackedObj;
 
-    private GameObject lever;
+    public GameObject lever;
+
+    public GameObject objDoor;
+
+    private float leverTimer;
 
     // Use this for initialization
     void Start () {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
 
         lever = GameObject.FindGameObjectWithTag("lever");
+
+        objDoor = GameObject.FindGameObjectWithTag("door");
+
+        leverTimer = 3.0f;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        //checks if door is open
+        doorInteraction door = objDoor.GetComponent<doorInteraction>();
+        if (door.open == true) { leverTimer = 3.0f; }
+        else { leverTimer -= Time.deltaTime; }
         if (controller == null)
         {
             return;
@@ -27,7 +39,7 @@ public class LeverGrab : MonoBehaviour {
 
         if (controller.GetPressDown(triggerButton))
         {
-            lever.GetComponent<LeverRange>().attemptGrab(this.gameObject);
+            lever.GetComponent<LeverRange>().attemptGrab(this.gameObject, door.open, leverTimer);
         }
         else if (controller.GetPressUp(triggerButton))
         {

@@ -12,17 +12,29 @@ public class LeverRotation : MonoBehaviour {
 
     private float positionToRotation;
     private float previousHandPosition;
-    public float handRange = 0.5f;
 
     public bool grabbed;
+    [HideInInspector]
     public GameObject grabHand;
 
     private bool reset;
     public float resetSpeed = 30;
 
+    [HideInInspector]
     public float ascensionRate = 0f;
+    [HideInInspector]
     public float decensionRate = 0f;
 
+    [Header("Jiggle Effect")]
+    public float jiggleStrength = 10;
+    private bool jiggling = false;
+    private int jiggleTimer = 0;
+    public int jiggleLength = 50;
+    [Range(1, 10)]
+    public int jiggleSpeed = 6;
+    private int jiggleDivisor;
+
+    [Header("Sounds")]
     public string leverResetSound;
 
     //5 Unity units between top rotation and bottom rotation. Helper objects in scene
@@ -33,6 +45,7 @@ public class LeverRotation : MonoBehaviour {
         leverRotation = neutralRotation;
 
         positionToRotation = Mathf.Abs(maxRotation - minRotation) / 0.5f;
+        jiggleDivisor = 10 - jiggleSpeed;
 	}
 	
 	// Update is called once per frame
@@ -92,7 +105,7 @@ public class LeverRotation : MonoBehaviour {
         transform.rotation = Quaternion.Euler(0, 180, leverRotation);
 
         //Check for elevator control
-        if (leverRotation != neutralRotation)
+        if (leverRotation != neutralRotation && jiggling == false)
         {
             if (leverRotation > neutralRotation + neutralRadius)
             {
@@ -116,5 +129,29 @@ public class LeverRotation : MonoBehaviour {
             ascensionRate = 0;
             decensionRate = 0;
         }
+
+        if (jiggling)
+        {
+            Debug.Log("Jiggling");
+            if(jiggleTimer < jiggleLength)
+            {
+                if (jiggleTimer % jiggleDivisor == 0)
+                {
+                    leverRotation = neutralRotation + jiggleStrength * Mathf.Sin(jiggleTimer);
+                }
+                jiggleTimer++;
+            }
+            else
+            {
+                jiggling = false;
+                jiggleTimer = 0;
+                leverRotation = neutralRotation;
+            }
+        }
+    }
+
+    public void jiggleResponse()
+    {
+        jiggling = true;
     }
 }
