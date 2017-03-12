@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverGrab : MonoBehaviour {
+public class Grabbing : MonoBehaviour {
 
     private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad;
 
@@ -40,10 +40,12 @@ public class LeverGrab : MonoBehaviour {
         if (controller.GetPressDown(triggerButton))
         {
             lever.GetComponent<LeverRange>().attemptGrab(this.gameObject, door.open, leverTimer);
+            objDoor.GetComponent<doorInteraction>().attemptGrab(this.gameObject);
         }
         else if (controller.GetPressUp(triggerButton))
         {
             lever.GetComponent<LeverRange>().attemptRelease();
+            objDoor.GetComponent<doorInteraction>().attemptRelease();
         }  
     }
 }

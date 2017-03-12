@@ -21,12 +21,9 @@ public class doorInteraction : MonoBehaviour
     private GameObject doorOpen;
     private GameObject rope;
 
-    public static bool holdCollide;
-    public static bool ropeCollide;
     bool lifting;
     bool closing;
     public bool open = false;
-    public string doorSFX;
 
     private bool grabbingUp = false;
     private bool grabbingDown = false;
@@ -48,6 +45,11 @@ public class doorInteraction : MonoBehaviour
     SteamVR_TrackedObject trackedObj;
     [SerializeField]
     SteamVR_TrackedObject trackedObj2;
+
+    [HideInInspector]
+    public bool handInRange = false;
+    private bool grabbed = false;
+    private GameObject grabbingHand;
 
     private GameObject manager;
 
@@ -71,9 +73,6 @@ public class doorInteraction : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        holdCollide = false; //setting false cause its static
-        ropeCollide = false;
-
         door = GameObject.FindGameObjectWithTag("door");
         hold = GameObject.FindGameObjectWithTag("doorHold");
         doorOpen = GameObject.FindGameObjectWithTag("openDoor");
@@ -83,27 +82,28 @@ public class doorInteraction : MonoBehaviour
         initY = door.transform.localPosition.y;
         initZ = door.transform.localPosition.z;
 
-        grabPointL = GameObject.FindGameObjectWithTag("grabPointL");
-        grabPointR = GameObject.FindGameObjectWithTag("grabPointR");
-
         manager = GameObject.FindGameObjectWithTag("ElevatorManager");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!grabPointL)
+        {
+            grabPointL = GameObject.FindGameObjectWithTag("grabPointL");
+        }
+        if (!grabPointR)
+        {
+            grabPointR = GameObject.FindGameObjectWithTag("grabPointR");
+        }
 
-        // all actions are tracked by whether the door is open or not 
-        //switch (open)
-        //{
-        //    case true:
-        //        break;
-        //    case false:
-        //        break;
-        //}
+        if(handInRange == false)
+        {
+            //grabbed = false;
+        }
 
 
-        if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (holdCollide || Vector3.Distance(hold.transform.position, grabPointL.transform.position) < (hold.transform.localScale.x * 10f) || Vector3.Distance(hold.transform.position, grabPointR.transform.position) < (hold.transform.localScale.x * 10f)))
+        if (grabbed)
         {
             Debug.Log("hell yeah get ready to lift");
             lifting = true;
@@ -116,16 +116,12 @@ public class doorInteraction : MonoBehaviour
             }
 
             // Move the door according to the current y position of the controller
-            door.transform.position = new Vector3(initX, (door.transform.position.y - hold.transform.position.y) + trackedObj.transform.position.y, initZ);
+            door.transform.position = new Vector3(initX, (door.transform.position.y - hold.transform.position.y) + grabbingHand.transform.position.y, initZ);
             // Once the door reaches a certain height
             // it goes all the way up automatically
 
         }
-        else if (device.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad))
-        {
-            // if the door gets unhooked, lerp up just a bit 
-            
-        }
+     
         else
         {
             grabbingUp = false;
@@ -152,8 +148,6 @@ public class doorInteraction : MonoBehaviour
                     lifting = false;
                     open = true;
                     slidingDoor2.openSlidingDoor();
-                    //Play sound when door is opened
-                    doorSFX.PlaySound(transform.position);
 
                     //Tell the elevator manager that door is open
                     manager.GetComponent<ElevatorMovement>().doorOpened();
@@ -165,12 +159,12 @@ public class doorInteraction : MonoBehaviour
         {
             // if door is at the top (open) 
             // if trigger is pressed on rope and it is collided
-            if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (ropeCollide || Vector3.Distance(rope.transform.position, grabPointL.transform.position) < (rope.transform.localScale.x * 10f) || Vector3.Distance(rope.transform.position, grabPointR.transform.position) < (rope.transform.localScale.x * 10f)))
+            if (grabbed)
             {
                 Debug.Log("hell yeah get ready to close this shit");
                 closing = true;
                 // Move the door according to the current y position of the controller
-                door.transform.position = new Vector3(initX, (door.transform.position.y - rope.transform.position.y) + trackedObj.transform.position.y, initZ);
+                door.transform.position = new Vector3(initX, (door.transform.position.y - rope.transform.position.y) + grabbingHand.transform.position.y, initZ);
 
                 if (grabbingDown == false)
                 {
@@ -210,6 +204,20 @@ public class doorInteraction : MonoBehaviour
         }
 
     } // end of update
+
+    public void attemptGrab(GameObject hand)
+    {
+        if (handInRange)
+        {
+            grabbed = true;
+            grabbingHand = hand;
+        }
+    }
+
+    public void attemptRelease()
+    {
+        grabbed = false;
+    }
 
     //used in LeverGrab script to stop the lever from moving if door is open
     public bool doorStatus()
