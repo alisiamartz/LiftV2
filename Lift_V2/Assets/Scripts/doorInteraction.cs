@@ -40,7 +40,8 @@ public class doorInteraction : MonoBehaviour
     Vector3 frame2;
     Vector3 frame3;
 
-    public GameObject grabPoint;
+    private GameObject grabPointL;
+    private GameObject grabPointR;
     public slidingDoor2 slidingDoor2;
 
     [SerializeField]
@@ -82,8 +83,8 @@ public class doorInteraction : MonoBehaviour
         initY = door.transform.localPosition.y;
         initZ = door.transform.localPosition.z;
 
-        if (!grabPoint)
-            grabPoint = GameObject.FindGameObjectWithTag("grabPoint");
+        grabPointL = GameObject.FindGameObjectWithTag("grabPointL");
+        grabPointR = GameObject.FindGameObjectWithTag("grabPointR");
 
         manager = GameObject.FindGameObjectWithTag("ElevatorManager");
     }
@@ -102,9 +103,8 @@ public class doorInteraction : MonoBehaviour
         //}
 
 
-        if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (holdCollide || Vector3.Distance(hold.transform.position, grabPoint.transform.position) < (hold.transform.localScale.x * 10f)))
+        if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (holdCollide || Vector3.Distance(hold.transform.position, grabPointL.transform.position) < (hold.transform.localScale.x * 10f) || Vector3.Distance(hold.transform.position, grabPointR.transform.position) < (hold.transform.localScale.x * 10f)))
         {
-            //if (Vector3.Distance (hold.transform.position, grabPoint.transform.position) < hold.transform.localScale.x * 2f) {
             Debug.Log("hell yeah get ready to lift");
             lifting = true;
 
@@ -165,7 +165,7 @@ public class doorInteraction : MonoBehaviour
         {
             // if door is at the top (open) 
             // if trigger is pressed on rope and it is collided
-            if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (ropeCollide || Vector3.Distance(rope.transform.position, grabPoint.transform.position) < (rope.transform.localScale.x * 10f)))
+            if (device.GetPress(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && (ropeCollide || Vector3.Distance(rope.transform.position, grabPointL.transform.position) < (rope.transform.localScale.x * 10f) || Vector3.Distance(rope.transform.position, grabPointR.transform.position) < (rope.transform.localScale.x * 10f)))
             {
                 Debug.Log("hell yeah get ready to close this shit");
                 closing = true;
