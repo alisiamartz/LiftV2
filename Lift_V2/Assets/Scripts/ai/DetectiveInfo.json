@@ -54,6 +54,71 @@
       "toNode": [ "Emergency Provisions", "Judgement Calls" ],
       "noReponse": "Judgement Calls",
       "noReponseChange": "getAngry"
+    },
+    {
+      "name": "Emergency Provisions",
+      "wait": 10,
+      "dialogue": "Excellent. One more thing. That self over there, it contains all kinds of emergency provisions to handle any unforseen situation. Please go over and ensure everything is inside.",
+      "listen": [ "Yes" ],
+      "change": [ "getHappy" ],
+      "toNode": [ "The first day" ],
+      "noResponse": "Liability",
+      "noResponseChange": "getAnnoyed"
+    },
+    {
+      "name": "Judgement Calls",
+      "wait": 10,
+      "dialogue": "Now I understand not everyone abides to common courtesy but I cannot condone this behavior. However I will say the unspoken rule around here; it's not an issue if it doesn't leave the confines of these walls. In other words, if you're sure you won't upset someone to the point they'll report you, then by all means do as you please. Do you understand?",
+      "listen": [ "Yes", "No" ],
+      "change": [ "doNothing", "getAngry" ],
+      "toNode": [ "Emergency Provisions", "Under pressure" ],
+      "noResponse": "Under pressure",
+      "noResponseChange": "getAngry"
+    },
+    {
+      "name": "The first day",
+      "wait": 10,
+      "dialogue": "And that's about everything you'll need for the first day. I do firmly believe you'll provide excellent service here. If there's anything I'm particularly known for, it's my judgment of character. Do you agree?",
+      "listen": [ "Agree", "Disagree", "Maybe" ],
+      "change": [ "getHappy", "getAnoyed", "doNothing" ],
+      "toNode": [ "Exit1", "Exit2", "Exit3" ],
+      "noResponse": "Exit3",
+      "noResponseChange": "doNothing"
+    },
+    {
+      "name": "Liability",
+      "wait": 10,
+      "dialogue": "At this point, I'm not sure if you'll be an asset or a liability. Anyway, I'll check the kit later myself. Now please open the door for me.",
+      "listen": [ "Yes" ],
+      "change": [ "doNothing" ],
+      "toNode": [ "Rough Start1" ],
+      "noResponse": "Rough Start2",
+      "noResponseChange": "getAngry"
+    },
+    {
+      "name": "Exit1",
+      "wait": 10,
+      "dialogue": "Ah I knew it. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and have an excellent first day."
+    },
+    {
+      "name": "Exit2",
+      "wait": 10,
+      "dialogue": "I'm rather surprised you're selling yourself short. I'm a bit disappointed to be honest with you. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and try to have a decent first day."
+    },
+    {
+      "name": "Exit3",
+      "wait": 10,
+      "dialogue": " *laughs* Ah you seem to be quite a jokester. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and have a good first day."
+    },
+    {
+      "name": "Rough Start1",
+      "wait": 10,
+      "dialogue": "Ah thank you. Oh and make sure the door is closed while operating the elevator door. Despite a rough start, I wish you the best of luck and have a nice first day."
+    },
+    {
+      "name": "Rough Start2",
+      "wait": 10,
+      "dialogue": "Alright I'll do it myself then. Make sure the door is closed while operating the elevator door. Good luck to you...you're clearly going to need it."
     }
   ],
   "changeList": [

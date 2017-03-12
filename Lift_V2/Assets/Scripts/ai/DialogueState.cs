@@ -36,7 +36,5 @@ public class DialogueState : IAgentState {
 
     public void talk()
     {
-        Debug.Log(agent.jsondata.storyBeats[agent.beat].neutral);
-        agent.beat++;
     }
 }

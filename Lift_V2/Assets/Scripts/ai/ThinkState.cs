@@ -16,14 +16,7 @@ public class ThinkState : IAgentState {
 
     public void UpdateState()
     {
-        if (agent.jsondata.storyBeats[agent.beat].listen == false)
-        {
-            toMoveState();
-        }
-        else
-        {
-            getUrgency();
-        }
+        toMoveState();
     }
 
     public void toThinkState()

@@ -22,27 +22,28 @@ public class JsonParser {
 public class jsonClass
 {
     public agentAttr agentAttr;
-    public List<storyBeat> storyBeats;
+    public List<node> nodes;
+    public List<change> changeList;
 }
 
 [System.Serializable]
 public class agentAttr
 {
-    public int[] utility; //happyniess sadness confusion anger
+    public int[] utility; //happiness sadness confusion anger
     public int goal;
 }
 
 [System.Serializable]
-public class storyBeat
+public class node
 {
-    public bool listen;
+    public string name;
     public int wait;
-    public List<string> gesture;
+    public string dialogue;
+    public List<string> listen;
     public List<string> change;
-    public string noGesture;
-    public string negative;
-    public string neutral;
-    public string positive;
+    public List<string> toNode;
+    public string noResponse;
+    public string noResopnseChange;
 }
 
 [System.Serializable]
