@@ -9,7 +9,7 @@ public class StopWalkingHere : StateMachineBehaviour {
 
 	// 1st iteration: Just getting the business man walking in and maybe out on his floor
 
-	public PatronMovement pm;
+	PatronMovement pm;
 
 
 
@@ -19,8 +19,10 @@ public class StopWalkingHere : StateMachineBehaviour {
 	//}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-//	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+	//override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		// now I've started walking, but when do i stop 
+		// check to see if isWalking has been adjusted
+		//if (animator.parameters.
 
 		//if (animator.transform.position == animator.GetComponent<AnimationMovement>().targetWaypoint.transform.position) {
 
