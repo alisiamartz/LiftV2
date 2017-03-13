@@ -14,7 +14,14 @@ public class DialogueState : IAgentState {
 
     public void UpdateState()
     {
-        talk();
+        agent.atNode = agent.nextNode;
+        agent.nextNode = null;
+
+        agent.say(agent.atNode);
+        agent.timerFlag = true;
+
+        agent.gl.resetGesture();
+
         toThinkState();
     }
 
@@ -32,9 +39,5 @@ public class DialogueState : IAgentState {
     {
         //should never be called
         Debug.Log("Cannot change to same state");
-    }
-
-    public void talk()
-    {
     }
 }

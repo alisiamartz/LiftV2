@@ -43,7 +43,7 @@ public class node
     public List<string> change;
     public List<string> toNode;
     public string noResponse;
-    public string noResopnseChange;
+    public string noResponseChange;
 }
 
 [System.Serializable]
