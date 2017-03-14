@@ -17,7 +17,8 @@ public class DialogueState : IAgentState {
         agent.atNode = agent.nextNode;
         agent.nextNode = null;
 
-        agent.say(agent.atNode);
+        agent.say(agent.atNode, agent.mood);
+
         agent.timerFlag = true;
 
         agent.gl.resetGesture();

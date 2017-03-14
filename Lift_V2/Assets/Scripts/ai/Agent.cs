@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class Agent : MonoBehaviour {
 
+    /*
     public float happiness = 0;
     public float sadness = 0;
     public float confusion = 0;
@@ -157,5 +158,5 @@ public class Agent : MonoBehaviour {
         return false;
     }
 
-
+    */
 }

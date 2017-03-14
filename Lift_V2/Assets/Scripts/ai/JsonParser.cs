@@ -38,7 +38,8 @@ public class node
 {
     public string name;
     public int wait;
-    public string dialogue;
+    public List<string> choose;
+    public List<string> dialogue;
     public List<string> listen;
     public List<string> change;
     public List<string> toNode;
@@ -54,27 +55,4 @@ public class change
     public int sadness;
     public int confusion;
     public int anger;
-}
-
-//legacy
-
-[System.Serializable]
-public class events
-{
-    public string type;
-    public int[] utility; //happiness, sadness, confusion, anger
-    public int wait;
-    public List<string> dialogue;
-    public List<string> listen;
-    public List<string> utilResponse; //"neutral" is always last
-    public List<string> action;
-    public string noResponse;
-    public string otherReponse;
-}
-
-[System.Serializable]
-public class actions
-{
-    public string name;
-    public change change;
 }

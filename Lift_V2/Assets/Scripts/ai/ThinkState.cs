@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using System;
 
 using Edwon.VR.Gesture;
 
@@ -23,6 +22,11 @@ public class ThinkState : IAgentState {
         {
             agent.timer = agent.atNode.wait;
             agent.timerFlag = false;
+        }
+
+        if (agent.atNode.listen.Count < 1)
+        {
+            return;
         }
 
         //
@@ -51,6 +55,8 @@ public class ThinkState : IAgentState {
 
     public void toMoveState()
     {
+        //update mood
+        updateMood();
         agent.currentState = agent.moveState;
     }
 
@@ -59,16 +65,71 @@ public class ThinkState : IAgentState {
         agent.currentState = agent.dialogueState;
     }
 
-    public void getUrgency()
-    {
-        toMoveState();
-    }
-
     void updateUtil(change c)
     {
         agent.attributes.utility[0] += c.happiness;
         agent.attributes.utility[1] += c.sadness;
         agent.attributes.utility[2] += c.confusion;
         agent.attributes.utility[3] += c.anger;
+    }
+
+    void updateMood()
+    {
+        int[] util = agent.attributes.utility;
+        int max_value = util.Max();
+        int max_index = util.ToList().IndexOf(max_value);
+
+        int curr_index = -1;
+        switch (agent.mood)
+        {
+            case "happy":
+                curr_index = 0;
+                break;
+            case "sad":
+                curr_index = 1;
+                break;
+            case "confused":
+                curr_index = 2;
+                break;
+            case "angry":
+                curr_index = 3;
+                break;
+            default:
+                break;
+        }
+
+        bool is_threshold = max_value > 7;
+        bool is_same = curr_index == max_index; 
+
+        if (!is_threshold)
+        {
+            agent.mood = null;
+            return;
+        } else if (is_same)
+        {
+            return;
+        }
+        else
+        {
+            switch (max_index)
+            {
+                case 0:
+                    agent.mood = "happy";
+                    break;
+                case 1:
+                    agent.mood = "sad";
+                    break;
+                case 2:
+                    agent.mood = "confused";
+                    break;
+                case 3:
+                    agent.mood = "angry";
+                    break;
+                default:
+                    Debug.Log("Update Mood went wrong");
+                    break;
+            }
+            return;
+        }
     }
 }

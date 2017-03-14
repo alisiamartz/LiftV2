@@ -1,0 +1,14 @@
+{
+  "agentAttr": {
+    "utility": [ 0, 0, 0, 0 ],
+    "goal": 3
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 5,
+      "change": [],
+      "dialogue": []
+    }
+  ]
+}

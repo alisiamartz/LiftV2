@@ -1,13 +1,14 @@
 {
   "agentAttr": {
     "utility": [ 0, 0, 0, 0 ],
-    "goal":  5
-},
+    "goal": 5
+  },
   "nodes": [
     {
       "name": "Start",
-      "wait": 10,
-      "dialogue": "Good morning. I trust everything is in order? Ah right I do remember your oath to serve in silence. Very well, I'd like to discuss a few matters with you. Are you ready?",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Good morning. I trust everything is in order? Ah right I do remember your oath to serve in silence. Very well, I'd like to discuss a few matters with you. Are you ready?" ],
       "listen": [ "yes", "no" ],
       "change": ["getHappy", "getAngry"],
       "toNode": [ "Day to day operations", "Out of Line" ],
@@ -16,8 +17,9 @@
     },
     {
       "name": "Out of Line",
-      "wait": 10,
-      "dialogue": "No? Then I'd suggest drinking caffine before reporting for duty. I need employees who are prepared for any situation at a moment's notice. So with that in mind, let's begin. As you've probably noticed, our mechanisms are a bit outdated but here at _________, we value our roots. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now.",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "No? Then I'd suggest drinking caffine before reporting for duty. I need employees who are prepared for any situation at a moment's notice. So with that in mind, let's begin. As you've probably noticed, our mechanisms are a bit outdated but here at _________, we value our roots. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now." ],
       "listen": [ "yes" ],
       "change": [ "doNothing" ],
       "toNode": [ "The Guests" ],
@@ -26,8 +28,9 @@
     },
     {
       "name": "Under pressure",
-      "wait": 10,
-      "dialogue": "Alright it hasn't even been a whole day yet and you seem to be catching cold feet or just not comphrending my instuctions. So let me try again and start from the beginning. Are you ready to begin?",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Alright it hasn't even been a whole day yet and you seem to be catching cold feet or just not comphrending my instuctions. So let me try again and start from the beginning. Are you ready to begin?" ],
       "listen": [ "yes", "no" ],
       "change": [ "doNothing", "getAnnoyed" ],
       "toNode": [ "Day to day operations", "Out of Line" ],
@@ -36,8 +39,9 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 10,
-      "dialogue": "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at _________, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now.",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at _________, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now." ],
       "listen": [ "yes" ],
       "change": [ "getHappy" ],
       "toNode": [ "The Guests" ],
@@ -47,8 +51,9 @@
     {
 
       "name": "The Guests",
-      "wait": 10,
-      "dialogue": "Now throughout the day you'll interact with various guests and employees. Be polite and engage these individuals. Give em' a pat on the should, perhaps provide a salute, or encourage them to tell their stories. Remember that our business depends entirely on customer satisfaction and ravishing reviews is always good for business. So quick, show me how you'd engage the next person to walk in that door.",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Now throughout the day you'll interact with various guests and employees. Be polite and engage these individuals. Give em' a pat on the should, perhaps provide a salute, or encourage them to tell their stories. Remember that our business depends entirely on customer satisfaction and ravishing reviews is always good for business. So quick, show me how you'd engage the next person to walk in that door." ],
       "listen": [ "pat", "rude" ],
       "change": [ "getHappy", "getAngry" ],
       "toNode": [ "Emergency Provisions", "Judgement Calls" ],
@@ -57,8 +62,9 @@
     },
     {
       "name": "Emergency Provisions",
-      "wait": 10,
-      "dialogue": "Excellent. One more thing. That self over there, it contains all kinds of emergency provisions to handle any unforseen situation. Please go over and ensure everything is inside.",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Excellent. One more thing. That self over there, it contains all kinds of emergency provisions to handle any unforseen situation. Please go over and ensure everything is inside." ],
       "listen": [ "yes" ],
       "change": [ "getHappy" ],
       "toNode": [ "The first day" ],
@@ -67,8 +73,9 @@
     },
     {
       "name": "Judgement Calls",
-      "wait": 10,
-      "dialogue": "Now I understand not everyone abides to common courtesy but I cannot condone this behavior. However I will say the unspoken rule around here; it's not an issue if it doesn't leave the confines of these walls. In other words, if you're sure you won't upset someone to the point they'll report you, then by all means do as you please. Do you understand?",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Now I understand not everyone abides to common courtesy but I cannot condone this behavior. However I will say the unspoken rule around here; it's not an issue if it doesn't leave the confines of these walls. In other words, if you're sure you won't upset someone to the point they'll report you, then by all means do as you please. Do you understand?" ],
       "listen": [ "yes", "no" ],
       "change": [ "doNothing", "getAngry" ],
       "toNode": [ "Emergency Provisions", "Under pressure" ],
@@ -77,9 +84,10 @@
     },
     {
       "name": "The first day",
-      "wait": 10,
-      "dialogue": "And that's about everything you'll need for the first day. I do firmly believe you'll provide excellent service here. If there's anything I'm particularly known for, it's my judgment of character. Do you agree?",
-      "listen": [ "agree", "disagree", "maybe" ],
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "And that's about everything you'll need for the first day. I do firmly believe you'll provide excellent service here. If there's anything I'm particularly known for, it's my judgment of character. Do you agree?" ],
+      "listen": [ "yes", "no", "maybe" ],
       "change": [ "getHappy", "getAnoyed", "doNothing" ],
       "toNode": [ "Exit1", "Exit2", "Exit3" ],
       "noResponse": "Exit3",
@@ -87,8 +95,9 @@
     },
     {
       "name": "Liability",
-      "wait": 10,
-      "dialogue": "At this point, I'm not sure if you'll be an asset or a liability. Anyway, I'll check the kit later myself. Now please open the door for me.",
+      "wait": 30,
+      "choose": [ "deafult" ],
+      "dialogue": [ "At this point, I'm not sure if you'll be an asset or a liability. Anyway, I'll check the kit later myself. Now please open the door for me." ],
       "listen": [ "yes" ],
       "change": [ "doNothing" ],
       "toNode": [ "Rough Start1" ],
@@ -98,27 +107,32 @@
     {
       "name": "Exit1",
       "wait": 10,
-      "dialogue": "Ah I knew it. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and have an excellent first day."
+      "choose": [ "default" ],
+      "dialogue": [ "Ah I knew it. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and have an excellent first day." ]
     },
     {
       "name": "Exit2",
       "wait": 10,
-      "dialogue": "I'm rather surprised you're selling yourself short. I'm a bit disappointed to be honest with you. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and try to have a decent first day."
+      "choose": [ "default" ],
+      "dialogue": [ "I'm rather surprised you're selling yourself short. I'm a bit disappointed to be honest with you. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and try to have a decent first day." ]
     },
     {
       "name": "Exit3",
       "wait": 10,
-      "dialogue": " *laughs* Ah you seem to be quite a jokester. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and have a good first day."
+      "choose": [ "default" ],
+      "dialogue": [ " *laughs* Ah you seem to be quite a jokester. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and have a good first day." ]
     },
     {
       "name": "Rough Start1",
       "wait": 10,
-      "dialogue": "Ah thank you. Oh and make sure the door is closed while operating the elevator door. Despite a rough start, I wish you the best of luck and have a nice first day."
+      "choose": [ "default" ],
+      "dialogue": [ "Ah thank you. Oh and make sure the door is closed while operating the elevator door. Despite a rough start, I wish you the best of luck and have a nice first day." ]
     },
     {
       "name": "Rough Start2",
       "wait": 10,
-      "dialogue": "Alright I'll do it myself then. Make sure the door is closed while operating the elevator door. Good luck to you...you're clearly going to need it."
+      "choose": [ "default" ],
+      "dialogue": [ "Alright I'll do it myself then. Make sure the door is closed while operating the elevator door. Good luck to you...you're clearly going to need it." ]
     }
   ],
   "changeList": [
