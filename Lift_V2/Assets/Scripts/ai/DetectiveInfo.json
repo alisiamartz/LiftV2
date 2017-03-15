@@ -1,138 +1,157 @@
 {
-  "eventList": [
+  "agentAttr": {
+    "utility": [ 0, 0, 0, 0 ],
+    "goal": 5
+  },
+  "nodes": [
     {
-      "type": "init",
-      "utility": [ 0, 0, 0, 0 ]
-    },
-    {
-      "type": "action",
-      "wait": 0,
-      "dialogue": [ "Say, would ya mind holding the door for me?" ]
-    },
-    {
-      "type": "listen",
-      "wait": 10,
+      "name": "Start",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Good morning. I trust everything is in order? Ah right I do remember your oath to serve in silence. Very well, I'd like to discuss a few matters with you. Are you ready?" ],
       "listen": [ "yes", "no" ],
-      "action": [ "getHappy", "getAngry" ],
-      "noResponse": "doNothing",
-      "otherResponse": "getConfused"
+      "change": ["getHappy", "getAngry"],
+      "toNode": [ "Day to day operations", "Out of Line" ],
+      "noResponse": "Under pressure",
+      "noResponseChange":  "getAnnoyed"
     },
     {
-      "type": "utility",
-      "utilResponse": [ "happiness", "anger", "neutral" ],
-      "wait": 0,
-      "dialogue": [
-        "You remind me of the fella who working the elevator around twenty years back. good to know they've kept up the high standards since then. Floor five please",
-        "Boy, looks like they fire any damn body off the street now. Shame. Take me to floor five. That's the one after four.",
-        "You remind me of the fella who worked the elevator twenty years ago, looks like our dear owner's got a type. Floor five."
-      ]
+      "name": "Out of Line",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "No? Then I'd suggest drinking caffine before reporting for duty. I need employees who are prepared for any situation at a moment's notice. So with that in mind, let's begin. As you've probably noticed, our mechanisms are a bit outdated but here at _________, we value our roots. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now." ],
+      "listen": [ "yes" ],
+      "change": [ "doNothing" ],
+      "toNode": [ "The Guests" ],
+      "noResponse": "Under pressure",
+      "noResponseChange": "doNothing"
     },
     {
-      "type": "listen",
-      "wait": 10,
+      "name": "Under pressure",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Alright it hasn't even been a whole day yet and you seem to be catching cold feet or just not comphrending my instuctions. So let me try again and start from the beginning. Are you ready to begin?" ],
       "listen": [ "yes", "no" ],
-      "action": [ "getHappy", "getAngry" ],
-      "noResponse": "doNothing",
-      "otherResponse": "getConfused"
+      "change": [ "doNothing", "getAnnoyed" ],
+      "toNode": [ "Day to day operations", "Out of Line" ],
+      "noResponse": "Under pressure",
+      "noResponseChange": "doNothing"
     },
     {
-      "type": "utility",
-      "wait": 0,
-      "utilResponse": [ "happiness", "anger", "neutral" ],
-      "dialogue": [
-        "You'd probably be better off not knowing, but there was a young guy garroted in one of these rooms back then. No one knew who he was, hadn't checked in or anything.",
-        "I hope you know twenty years back some goon knocked off an unfortunate fella in one a these rooms. Thinkin' about it now, he was the lucky one.",
-        "You probably don't know, it's always been violent around here. Case about twenty years back, young man found garroted in one of these rooms. He hadn't even checked in, no one saw him enter."
-      ]
+      "name": "Day to day operations",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at _________, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Go ahead and operate that lever now." ],
+      "listen": [ "yes" ],
+      "change": [ "getHappy" ],
+      "toNode": [ "The Guests" ],
+      "noResponse": "Under pressure",
+      "noResponseChange": "getAnnoyed"
     },
     {
-      "type": "listen",
-      "wait": 10,
-      "listen": [ "yes" , "no"],
-      "action": [ "getHappy", "getAngry"],
-      "noResponse": "doNothing",
-      "otherRespone": "getConfused"
+
+      "name": "The Guests",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Now throughout the day you'll interact with various guests and employees. Be polite and engage these individuals. Give em' a pat on the should, perhaps provide a salute, or encourage them to tell their stories. Remember that our business depends entirely on customer satisfaction and ravishing reviews is always good for business. So quick, show me how you'd engage the next person to walk in that door." ],
+      "listen": [ "pat", "rude" ],
+      "change": [ "getHappy", "getAngry" ],
+      "toNode": [ "Emergency Provisions", "Judgement Calls" ],
+      "noResponse": "Judgement Calls",
+      "noResponseChange": "getAngry"
     },
     {
-      "type": "utility",
-      "wait": 0,
-      "utilResponse": [ "happiness", "anger", "neutral" ],
-      "dialogue": [
-        "Be glad you weren't the unlucky fella who smelled it first. Me, I had just got promoted to the homicide beat, had a few easy collars.",
-        "Smelled a bit like you after a few days, got called in after someone noticed. Me, I was the golden-boy, making a name for myself on the homicide beat.",
-        "Poor guests next door called it in when it started to smell. I was new on the homicide beat, had a few high-profile cases under my belt."
-      ]
+      "name": "Emergency Provisions",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Excellent. One more thing. That self over there, it contains all kinds of emergency provisions to handle any unforseen situation. Please go over and ensure everything is inside." ],
+      "listen": [ "yes" ],
+      "change": [ "getHappy" ],
+      "toNode": [ "The first day" ],
+      "noResponse": "Liability",
+      "noResponseChange": "getAnnoyed"
     },
     {
-      "type": "listen",
-      "wait": 10,
+      "name": "Judgement Calls",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Now I understand not everyone abides to common courtesy but I cannot condone this behavior. However I will say the unspoken rule around here; it's not an issue if it doesn't leave the confines of these walls. In other words, if you're sure you won't upset someone to the point they'll report you, then by all means do as you please. Do you understand?" ],
       "listen": [ "yes", "no" ],
-      "action": [ "getHappy", "getAngry" ],
-      "noResponse": "doNothing",
-      "otherRespone": "getConfused"
+      "change": [ "doNothing", "getAngry" ],
+      "toNode": [ "Emergency Provisions", "Under pressure" ],
+      "noResponse": "Under pressure",
+      "noResponseChange": "getAngry"
     },
     {
-      "type": "utility",
-      "wait": 0,
-      "utilResponse": [ "happiness", "anger", "neutral" ],
-      "dialogue": [
-        "I don't talk about it much, but that's the case that drove me off the force.",
-        "Like most things, it turned out to be much more miserable than it appeared. Never quite figured it.",
-        "They told me it'd be a quick collar. Turned out to be the last case of my career on the force."
-      ]
+      "name": "The first day",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "And that's about everything you'll need for the first day. I do firmly believe you'll provide excellent service here. If there's anything I'm particularly known for, it's my judgment of character. Do you agree?" ],
+      "listen": [ "yes", "no", "maybe" ],
+      "change": [ "getHappy", "getAnoyed", "doNothing" ],
+      "toNode": [ "Exit1", "Exit2", "Exit3" ],
+      "noResponse": "Exit3",
+      "noResponseChange": "doNothing"
     },
     {
-      "type": "listen",
+      "name": "Liability",
+      "wait": 30,
+      "choose": [ "deafult" ],
+      "dialogue": [ "At this point, I'm not sure if you'll be an asset or a liability. Anyway, I'll check the kit later myself. Now please open the door for me." ],
+      "listen": [ "yes" ],
+      "change": [ "doNothing" ],
+      "toNode": [ "Rough Start1" ],
+      "noResponse": "Rough Start2",
+      "noResponseChange": "getAngry"
+    },
+    {
+      "name": "Exit1",
       "wait": 10,
-      "listen": [ "no" ],
-      "action": [ "getHappy" ],
-      "noResponse": "doNothing",
-      "otherRespone": "getConfused"
+      "choose": [ "default" ],
+      "dialogue": [ "Ah I knew it. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and have an excellent first day." ]
     },
     {
-      "type": "utility",
-      "wait": 5,
-      "utilResponse": [ "happiness", "anger", "neutral" ],
-      "dialogue": [
-        "So here I am, returning to the scene. Wish me luck.",
-        "If I knew I'd have to deal with you, I wouldn't-a come back for one last go at it.",
-        "Figured I'd take one last crack at it."
-      ]
+      "name": "Exit2",
+      "wait": 10,
+      "choose": [ "default" ],
+      "dialogue": [ "I'm rather surprised you're selling yourself short. I'm a bit disappointed to be honest with you. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and try to have a decent first day." ]
     },
     {
-      "type": "utility",
-      "wait": 0,
-      "utilResponse": [ "anger", "happiness", "neutral" ],
-      "dialogue": [
-        "Buzz off, pal.",
-        "Thanks, pal.",
-        "Thanks."
-      ]
+      "name": "Exit3",
+      "wait": 10,
+      "choose": [ "default" ],
+      "dialogue": [ " *laughs* Ah you seem to be quite a jokester. Alright, open up the door for me and close it before operating the lever. Again I wish you the best and have a good first day." ]
+    },
+    {
+      "name": "Rough Start1",
+      "wait": 10,
+      "choose": [ "default" ],
+      "dialogue": [ "Ah thank you. Oh and make sure the door is closed while operating the elevator door. Despite a rough start, I wish you the best of luck and have a nice first day." ]
+    },
+    {
+      "name": "Rough Start2",
+      "wait": 10,
+      "choose": [ "default" ],
+      "dialogue": [ "Alright I'll do it myself then. Make sure the door is closed while operating the elevator door. Good luck to you...you're clearly going to need it." ]
     }
   ],
-  "actionList": [
+  "changeList": [
     {
       "name": "getHappy",
-      "change": {
-        "happiness": 5
-      }
+      "happiness": 5,
+      "anger": -1
     },
     {
       "name": "getAngry",
-      "change": {
-        "happiness": -7,
-        "anger": 5
-      }
+      "happiness": -1,
+      "anger": 5
     },
     {
-      "name": "doNothing",
-      "change": { }
+      "name": "doNothing"
     },
     {
-      "name": "getConfused",
-      "change": {
-        "confusion": 2
-      }
+      "name": "getAnnoyed",
+      "anger": 1
     }
   ]
 }

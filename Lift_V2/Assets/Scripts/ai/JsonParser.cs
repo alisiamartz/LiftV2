@@ -21,35 +21,36 @@ public class JsonParser {
 [System.Serializable]
 public class jsonClass
 {
-    public events[] eventList;
-    public actions[] actionList;
-
+    public agentAttr agentAttr;
+    public List<node> nodes;
+    public List<change> changeList;
 }
 
 [System.Serializable]
-public class events
+public class agentAttr
 {
-    public string type;
-    public int[] utility; //happiness, sadness, confusion, anger
-    public int wait;
-    public List<string> dialogue;
-    public List<string> listen;
-    public List<string> utilResponse; //"neutral" is always last
-    public List<string> action;
-    public string noResponse;
-    public string otherReponse;
+    public int[] utility; //happiness sadness confusion anger
+    public int goal;
 }
 
 [System.Serializable]
-public class actions
+public class node
 {
     public string name;
-    public change change;
+    public int wait;
+    public List<string> choose;
+    public List<string> dialogue;
+    public List<string> listen;
+    public List<string> change;
+    public List<string> toNode;
+    public string noResponse;
+    public string noResponseChange;
 }
 
 [System.Serializable]
 public class change
 {
+    public string name;
     public int happiness;
     public int sadness;
     public int confusion;
