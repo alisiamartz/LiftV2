@@ -98,7 +98,7 @@ public class ThinkState : IAgentState {
                 break;
         }
 
-        bool is_threshold = max_value > 7;
+        bool is_threshold = max_value > 5;
         bool is_same = curr_index == max_index; 
 
         if (!is_threshold)

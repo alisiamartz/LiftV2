@@ -15,7 +15,7 @@ public class StatePatternAgent : MonoBehaviour {
     public Dictionary<string, change> changeDict = new Dictionary<string, change>();
     public string mood = null;
     /* determines what mood agent is in. null is neutral. can be "happy" "sad" "confused" "angry" coropponds to each attribute.
-     * attributes will be limited to 100 to 0. think state will handle changing this. attribute must reach at least a threshold of 7 to change it, else it will stay null.
+     * attributes will be limited to 100 to 0. think state will handle changing this. attribute must reach at least a threshold of 5 to change it, else it will stay null.
      * will change mood change values to balance this later
      */
 

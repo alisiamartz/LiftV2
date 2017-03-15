@@ -1,0 +1,51 @@
+{
+  "agentAttr": {
+    "utility": [ 0, 0, 0, 0 ],
+    "goal": 5
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Take me to floor 5." ],
+      "listen": [ "yes", "no" ],
+      "change": [ "getHappy2", "getAngry1" ],
+      "toNode": [ "Your Occupation", "Shutting down the place" ],
+      "noResponse": "Asking Twice",
+      "noResponseChange": "getAngry2"
+    },
+    {
+      "name": "Your Occupation",
+      "wait": 30,
+      "choose": [ "default" ],
+      "dialogue": [ "Thanks. You know, you do the same thing every day, right? You enjoy that?" ],
+      "listen": [ "yes", "no" ],
+      "change": [ "doNothing", "getHappy2" ],
+      "toNode": ["Some people will never amount to anything"]
+    }
+  ],
+  "changeList": [
+    {
+      "name": "getHappy1",
+      "happiness": 5,
+      "anger": -1
+    },
+    {
+      "name": "getHappy2",
+      "happiness": 3
+    },
+    {
+      "name": "getAngry1",
+      "happiness": -1,
+      "anger": 5
+    },
+    {
+      "name": "getAngry2",
+      "anger": 3
+    },
+    {
+      "name": "doNothing"
+    }
+  ]
+}
