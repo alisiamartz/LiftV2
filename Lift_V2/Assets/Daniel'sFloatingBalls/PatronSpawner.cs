@@ -32,7 +32,10 @@ public class PatronSpawner : MonoBehaviour
     {
         var manager = GetComponent<FloorManager>();
 
-        var newPatron = Instantiate(patronPrefab, GetComponent<FloorManager>().fetchFloorWaypoint(startFloor).transform.position, Quaternion.identity);
+        //TO DO adjust rotation of patrons
+        Quaternion basePatronRotation = patronPrefab.transform.rotation;
+
+        var newPatron = Instantiate(patronPrefab, GetComponent<FloorManager>().fetchFloorWaypoint(startFloor).transform.position, basePatronRotation);
         newPatron.transform.parent = manager.floors[startFloor].transform;
 
         newPatron.GetComponent<PatronManager>().destinationFloor = targetFloor;
