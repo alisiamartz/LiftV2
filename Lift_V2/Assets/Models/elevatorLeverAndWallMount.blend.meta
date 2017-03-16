@@ -1,28 +1,24 @@
 fileFormatVersion: 2
-guid: 94ffcd20f7d08b340a9f2cadb0d0235d
-timeCreated: 1485483065
+guid: 67a84a8d76f87e54e89a63338abf360c
+timeCreated: 1489603173
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Camera
-    100002: elevatorLever
-    100004: //RootNode
-    100006: elevatorWallMount
-    100008: Lamp
-    100010: Lamp.001
-    400000: Camera
-    400002: elevatorLever
-    400004: //RootNode
-    400006: elevatorWallMount
-    400008: Lamp
-    400010: Lamp.001
+    100000: elevatorLever
+    100002: //RootNode
+    100004: elevatorWallMount
+    400000: elevatorLever
+    400002: //RootNode
+    400004: elevatorWallMount
     2300000: elevatorLever
     2300002: elevatorWallMount
     3300000: elevatorLever
     3300002: elevatorWallMount
     4300000: elevatorLever
     4300002: elevatorWallMount
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -85,7 +81,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -17,7 +17,7 @@ public class DialogueState : IAgentState {
         agent.atNode = agent.nextNode;
         agent.nextNode = null;
 
-        agent.say(agent.atNode, agent.mood);
+        agent.say(agent.atNode);
 
         agent.timerFlag = true;
 

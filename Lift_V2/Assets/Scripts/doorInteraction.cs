@@ -41,6 +41,9 @@ public class doorInteraction : MonoBehaviour
     private GameObject grabPointR;
     public slidingDoor2 slidingDoor2;
 
+    public string doorLoopSFX;
+    bool playing = false;
+
     [SerializeField]
     SteamVR_TrackedObject trackedObj;
     [SerializeField]
@@ -202,6 +205,27 @@ public class doorInteraction : MonoBehaviour
                 }
             }
         }
+
+        if (door.transform.position.y > 1.2f && door.transform.position.y < 3.15)
+        {
+            if (!playing)
+            {
+                //start sound
+                doorLoopSFX.PlaySound(transform.position);
+                playing = true;
+            }
+        }
+        else
+        {
+            if (playing)
+            {
+                //stop sound
+                GameObject myObject = GameObject.Find("_SFX_doorLoopSFX");
+                myObject.GetComponent<SoundGroup>().pingSound();
+                playing = false;
+            }
+        }
+
 
     } // end of update
 

@@ -13,11 +13,6 @@ public class StatePatternAgent : MonoBehaviour {
     public agentAttr attributes;
     public Dictionary<string, node> nodeDict = new Dictionary<string, node>();
     public Dictionary<string, change> changeDict = new Dictionary<string, change>();
-    public string mood = null;
-    /* determines what mood agent is in. null is neutral. can be "happy" "sad" "confused" "angry" coropponds to each attribute.
-     * attributes will be limited to 100 to 0. think state will handle changing this. attribute must reach at least a threshold of 5 to change it, else it will stay null.
-     * will change mood change values to balance this later
-     */
 
     //tree data
     public node atNode;
@@ -49,10 +44,6 @@ public class StatePatternAgent : MonoBehaviour {
         {
             nodeDict.Add(jsondata.nodes[i].name, jsondata.nodes[i]);
         }
-        for (int i = 0; i < jsondata.changeList.Count; i++)
-        {
-            changeDict.Add(jsondata.changeList[i].name, jsondata.changeList[i]);
-        }
 
         //get util
         gl = GameObject.FindWithTag("Player").GetComponent<GestureList>();
@@ -64,7 +55,7 @@ public class StatePatternAgent : MonoBehaviour {
         currentState = thinkState;
         atNode = nodeDict["Start"];
         timer = atNode.wait;
-        say(nodeDict["Start"], null);
+        say(nodeDict["Start"]);
         timerFlag = false;
 	}
 	
@@ -74,10 +65,11 @@ public class StatePatternAgent : MonoBehaviour {
         timer -= Time.deltaTime;
 	}
 
-    public void say(node n, string mood)
+    public void say(node n)
     {
-        int index = n.choose.IndexOf(mood);
-        if (index < 0) index = n.choose.IndexOf("default");
+        int index = 1;
+        if (attributes.mood < -3) index = 2;
+        else if (attributes.mood > 3) index = 0;
         bubble.text = n.dialogue[index];
     }
 }
