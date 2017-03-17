@@ -13,7 +13,7 @@
         "(neg) Good morning. I trust everything is in order? Ah right I do remember your oath to serve in silence. Very well, I'd like to discuss a few matters with you. Are you ready?"
       ],
       "listen": [ "yes", "no" ],
-      "change": [1, -2],
+      "change": [ 1, -2 ],
       "toNode": [ "Day to day operations", "Out of Line" ],
       "noResponse": "Under pressure",
       "noResponseChange": -1

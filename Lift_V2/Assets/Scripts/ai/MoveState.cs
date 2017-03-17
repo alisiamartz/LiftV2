@@ -14,6 +14,10 @@ public class MoveState : IAgentState {
 
     public void UpdateState()
     {
+        if (agent.move != null)
+        {
+            moveAgent();
+        }
         toDialogueState();
     }
 
@@ -31,5 +35,11 @@ public class MoveState : IAgentState {
     public void toDialogueState()
     {
         agent.currentState = agent.dialogueState;
+    }
+
+    public void moveAgent()
+    {
+        agent.movementDict[agent.move]();
+        agent.move = null;
     }
 }

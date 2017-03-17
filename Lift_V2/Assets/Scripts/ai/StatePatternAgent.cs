@@ -14,6 +14,11 @@ public class StatePatternAgent : MonoBehaviour {
     public Dictionary<string, node> nodeDict = new Dictionary<string, node>();
     public Dictionary<string, change> changeDict = new Dictionary<string, change>();
 
+    //
+    public delegate void movement();
+    public Dictionary<string, movement> movementDict;
+    public string move;
+
     //tree data
     public node atNode;
     public node nextNode;
@@ -28,6 +33,7 @@ public class StatePatternAgent : MonoBehaviour {
     public Text bubble;
     public float timer;
     public bool timerFlag;
+    public PatronMovement pm;
 
     private void Awake()
     {
@@ -48,6 +54,12 @@ public class StatePatternAgent : MonoBehaviour {
         //get util
         gl = GameObject.FindWithTag("Player").GetComponent<GestureList>();
         bubble = GetComponentInChildren<Text>();
+        pm = GetComponent<PatronMovement>();
+
+        //test
+        movementDict = new Dictionary<string, movement>();
+        movementDict.Add("enter", () => pm.enterElevator());
+        movementDict.Add("exit", () => pm.leaveElevator());
     }
 
     // Use this for initialization
@@ -57,6 +69,10 @@ public class StatePatternAgent : MonoBehaviour {
         timer = atNode.wait;
         say(nodeDict["Start"]);
         timerFlag = false;
+
+        //test
+        move = null;
+        movementDict["enter"]();
 	}
 	
 	// Update is called once per frame
@@ -67,9 +83,9 @@ public class StatePatternAgent : MonoBehaviour {
 
     public void say(node n)
     {
-        int index = 1;
-        if (attributes.mood < -3) index = 2;
-        else if (attributes.mood > 3) index = 0;
+        int index = 1; //neu
+        if (attributes.mood < -3) index = 2; //neg
+        else if (attributes.mood > 3) index = 0; //pos
         bubble.text = n.dialogue[index];
     }
 }

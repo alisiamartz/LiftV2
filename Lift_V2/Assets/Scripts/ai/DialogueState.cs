@@ -15,6 +15,14 @@ public class DialogueState : IAgentState {
     public void UpdateState()
     {
         agent.atNode = agent.nextNode;
+
+        if (agent.nextNode == null)
+        {
+            toThinkState();
+            Debug.Log("never called ERROR!!!!!!");
+            return;
+        }
+
         agent.nextNode = null;
 
         agent.say(agent.atNode);

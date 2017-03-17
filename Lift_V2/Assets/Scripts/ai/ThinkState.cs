@@ -17,6 +17,7 @@ public class ThinkState : IAgentState {
 
     public void UpdateState()
     {
+
         //set wait timer
         if (agent.timerFlag)
         {
@@ -27,6 +28,8 @@ public class ThinkState : IAgentState {
         //do nothing if at exit node
         if (agent.atNode.listen.Count < 1)
         {
+            agent.move = "exit";
+            toMoveState();
             return;
         }
 

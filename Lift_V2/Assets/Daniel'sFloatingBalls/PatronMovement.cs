@@ -60,8 +60,9 @@ public class PatronMovement : MonoBehaviour {
         moving = true;
     }
 
-    public void leaveElevator(int currentFloor)
+    public void leaveElevator()
     {
+        var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
         targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint(currentFloor);
         moving = true;
 

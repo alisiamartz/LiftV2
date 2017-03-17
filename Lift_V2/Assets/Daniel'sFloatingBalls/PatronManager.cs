@@ -53,7 +53,7 @@ public class PatronManager : MonoBehaviour
         }
         if (status == "riding" && destinationFloor == elevatorManager.GetComponent<ElevatorMovement>().floorPos && doorOpen)
         {
-            GetComponent<PatronMovement>().leaveElevator(destinationFloor);
+            GetComponent<PatronMovement>().leaveElevator();
             status = "movingOut";
             transform.parent = hotelManager.GetComponent<FloorManager>().floors[destinationFloor].transform;
 

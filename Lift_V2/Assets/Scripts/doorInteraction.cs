@@ -194,7 +194,7 @@ public class doorInteraction : MonoBehaviour
             {   
                 door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, initY, initZ), Time.deltaTime);
                 Debug.Log("Attempt to lerP down to close");
-                Debug.Log(door.transform.localPosition.y);
+                //Debug.Log(door.transform.localPosition.y);//flooding console
                 if (door.transform.localPosition.y <= 1.17f)  
                 {
                     Debug.Log("Door is closed");
@@ -221,7 +221,7 @@ public class doorInteraction : MonoBehaviour
             {
                 //stop sound
                 GameObject myObject = GameObject.Find("_SFX_doorLoopSFX");
-                myObject.GetComponent<SoundGroup>().pingSound();
+                //myObject.GetComponent<SoundGroup>().pingSound();
                 playing = false;
             }
         }
