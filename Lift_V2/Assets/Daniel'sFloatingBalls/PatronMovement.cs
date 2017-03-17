@@ -62,6 +62,7 @@ public class PatronMovement : MonoBehaviour {
     {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
+            Debug.Log("yes yes yes ");
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
             moving = true;
 
