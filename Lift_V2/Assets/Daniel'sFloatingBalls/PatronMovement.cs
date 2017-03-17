@@ -15,6 +15,7 @@ public class PatronMovement : MonoBehaviour {
 
     public bool moving = false;
     public bool rotating = false;
+    public bool waiting = false;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,7 @@ public class PatronMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if (moving)
         {
             float step = walkSpeed * Time.deltaTime;
@@ -56,27 +58,46 @@ public class PatronMovement : MonoBehaviour {
         }
     }
 
-    public void enterElevator()
+    public bool enterElevator()
     {
-        targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
-        moving = true;
+        if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
+        {
+            targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
+            moving = true;
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 
-    public void leaveElevator()
+    public bool leaveElevator()
     {
-        var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
-        targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint(currentFloor);
-        moving = true;
+        if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
+        {
+            var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
+            targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint(currentFloor);
+            moving = true;
 
-        rotating = false;
+            rotating = false;
 
-        transform.parent = hotelManager.GetComponent<FloorManager>().floors[currentFloor].transform;
-        GetComponent<Animator>().SetBool("reachedWaypoint", false);
+            transform.parent = hotelManager.GetComponent<FloorManager>().floors[currentFloor].transform;
+            GetComponent<Animator>().SetBool("reachedWaypoint", false);
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void wait()
     {
-
+        waiting = true;
     }
 
     public void turnTowardsPlayer()

@@ -26,6 +26,7 @@ public class FloorManager : MonoBehaviour
             floors[activeFloorIndex].SetActive(false);
             //Turn on the next floor
             floors[targetFloor].SetActive(true);
+            floorPos = targetFloor;
         }
 
         activeFloorIndex = targetFloor;

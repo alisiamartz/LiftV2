@@ -221,7 +221,7 @@ public class doorInteraction : MonoBehaviour
             {
                 //stop sound
                 GameObject myObject = GameObject.Find("_SFX_doorLoopSFX");
-                //myObject.GetComponent<SoundGroup>().pingSound();
+                myObject.GetComponent<SoundGroup>().pingSound();
                 playing = false;
             }
         }

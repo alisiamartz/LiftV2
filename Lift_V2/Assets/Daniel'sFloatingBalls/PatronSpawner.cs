@@ -38,7 +38,6 @@ public class PatronSpawner : MonoBehaviour
         var newPatron = Instantiate(patronPrefab, GetComponent<FloorManager>().fetchFloorWaypoint(startFloor).transform.position, basePatronRotation);
         newPatron.transform.parent = manager.floors[startFloor].transform;
 
-        newPatron.GetComponent<PatronManager>().destinationFloor = targetFloor;
         floorPanel.GetComponent<FloorsPanel>().lightOn(startFloor);
         GetComponent<FloorManager>().patrons[startFloor] += 1;
     }

@@ -164,10 +164,12 @@ public class ElevatorMovement : MonoBehaviour {
     public void doorOpened()
     {
         doorOpen = true;
+        hotelManager.GetComponent<FloorManager>().doorOpen = true;
     }
 
     public void doorClosed()
     {
         doorOpen = false;
+        hotelManager.GetComponent<FloorManager>().doorOpen = false;
     }
 }
