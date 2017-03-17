@@ -6,7 +6,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 5,
+      "wait": 30,
       "dialogue": [
         "Take me to floor 5.",
         "Take me to floor 5.",
@@ -34,7 +34,7 @@
     },
     {
       "name": "Shutting down the place",
-      "wait": 10,
+      "wait": 30,
       "dialogue": [
         "Huh, and people wonder why this place is shutting down. Newsflash: people like good service.",
         "Huh, and people wonder why this place is shutting down. Newsflash: people like good service.",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Asking Twice",
-      "wait": 5,
+      "wait": 30,
       "dialogue": [
         "Hey- Hey! You there? Earth to bellhop! I don't like asking twice, friend. Fifth floor. Can you take me there?",
         "Hey- Hey! You there? Earth to bellhop! I don't like asking twice, friend. Fifth floor. Can you take me there?",

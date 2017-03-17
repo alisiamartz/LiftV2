@@ -32,8 +32,10 @@ public class PatronMovement : MonoBehaviour {
             if (transform.position == targetWaypoint.transform.position)
             {
                 //We've reached our destination
-                GetComponent<PatronManager>().destinationReached();
                 moving = false;
+
+                GetComponent<Animator>().SetBool("reachedWaypoint", true);
+                turnTowardsPlayer();
             }
         }
 
@@ -67,6 +69,9 @@ public class PatronMovement : MonoBehaviour {
         moving = true;
 
         rotating = false;
+
+        transform.parent = hotelManager.GetComponent<FloorManager>().floors[currentFloor].transform;
+        GetComponent<Animator>().SetBool("reachedWaypoint", false);
     }
 
     public void wait()
