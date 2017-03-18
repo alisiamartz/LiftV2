@@ -39,7 +39,7 @@ public class MoveState : IAgentState {
 
     public void moveAgent()
     {
-        agent.movementDict[agent.move]();
+        bool x = agent.movementDict[agent.move]();
         agent.move = null;
     }
 }

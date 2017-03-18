@@ -14,14 +14,16 @@ public class DialogueState : IAgentState {
 
     public void UpdateState()
     {
-        agent.atNode = agent.nextNode;
-
         if (agent.nextNode == null)
         {
+            Debug.Log("at exit node");
             toThinkState();
-            Debug.Log("never called ERROR!!!!!!");
             return;
         }
+
+        Debug.Log(agent.atNode.name + "update to" + agent.nextNode.name);
+
+        agent.atNode = agent.nextNode;
 
         agent.nextNode = null;
 

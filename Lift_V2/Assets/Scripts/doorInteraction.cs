@@ -42,6 +42,8 @@ public class doorInteraction : MonoBehaviour
     public slidingDoor2 slidingDoor2;
 
     public string doorLoopSFX;
+    public string startSoundSFX;
+    public string stopSoundSFX;
     bool playing = false;
 
     [SerializeField]
@@ -210,7 +212,7 @@ public class doorInteraction : MonoBehaviour
         {
             if (!playing)
             {
-                //start sound
+                //stopSFX.PlaySound(transform.position);
                 doorLoopSFX.PlaySound(transform.position);
                 playing = true;
             }
@@ -219,8 +221,8 @@ public class doorInteraction : MonoBehaviour
         {
             if (playing)
             {
-                //stop sound
-                GameObject myObject = GameObject.Find("_SFX_doorLoopSFX");
+                //startSoundSFX.PlaySound(transform.position);
+                GameObject myObject = GameObject.Find("_SFX_"+doorLoopSFX);
                 myObject.GetComponent<SoundGroup>().pingSound();
                 playing = false;
             }

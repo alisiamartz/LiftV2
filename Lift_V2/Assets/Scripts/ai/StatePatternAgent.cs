@@ -15,7 +15,7 @@ public class StatePatternAgent : MonoBehaviour {
     public Dictionary<string, change> changeDict = new Dictionary<string, change>();
 
     //
-    public delegate void movement();
+    public delegate bool movement();
     public Dictionary<string, movement> movementDict;
     public string move;
 
@@ -34,6 +34,7 @@ public class StatePatternAgent : MonoBehaviour {
     public float timer;
     public bool timerFlag;
     public PatronMovement pm;
+    public bool isStart;
 
     private void Awake()
     {
@@ -56,7 +57,7 @@ public class StatePatternAgent : MonoBehaviour {
         bubble = GetComponentInChildren<Text>();
         pm = GetComponent<PatronMovement>();
 
-        //test
+        //create movement dict
         movementDict = new Dictionary<string, movement>();
         movementDict.Add("enter", () => pm.enterElevator());
         movementDict.Add("exit", () => pm.leaveElevator());
@@ -64,6 +65,8 @@ public class StatePatternAgent : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        isStart = false;
+        /*
         currentState = thinkState;
         atNode = nodeDict["Start"];
         timer = atNode.wait;
@@ -73,13 +76,36 @@ public class StatePatternAgent : MonoBehaviour {
         //test
         move = null;
         movementDict["enter"]();
+        */
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        //init
+        if (!isStart)
+        {
+            isStart = movementDict["enter"]();
+            if (isStart)
+            {
+                startAgent();
+            }
+        }
+        else
+        {
         currentState.UpdateState();
         timer -= Time.deltaTime;
+        }
 	}
+
+    public void startAgent()
+    {
+        move = null;
+        currentState = thinkState;
+        atNode = nodeDict["Start"];
+        timer = atNode.wait;
+        say(nodeDict["Start"]);
+        timerFlag = false;
+    }
 
     public void say(node n)
     {
