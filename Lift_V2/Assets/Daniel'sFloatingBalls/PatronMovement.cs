@@ -18,10 +18,14 @@ public class PatronMovement : MonoBehaviour {
     public bool waiting = false;
     public string state = "";
 
+	Animator anim;
+
 	// Use this for initialization
 	void Start () {
         hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
         playerHead = GameObject.FindGameObjectWithTag("MainCamera");
+
+		anim = GetComponent<Animator> ();
     }
 	
 	// Update is called once per frame
@@ -38,7 +42,13 @@ public class PatronMovement : MonoBehaviour {
                 if(state == "entering"){
                     moving = false;
 
-                    GetComponent<Animator>().SetBool("reachedWaypoint", true);
+					// if the NPC hasnt already reached the waypoint in the elevator
+					// aka walked inside
+					if (!anim.GetBool ("reachedWaypoint")) {
+						anim.SetBool("reachedWaypoint", true);
+					} else {	// this means they are now going to the waypoint outside of the elevator
+						anim.SetBool("reachedWaypoint2", true);
+					}
                     turnTowardsPlayer();
                 }
 
@@ -47,6 +57,7 @@ public class PatronMovement : MonoBehaviour {
                     //Move to a second waypoint and then despawn
                     var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
                     targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor);
+					GetComponent<Animator>().SetBool("walkOut", true);
 
                     state = "leaving2";
                 }
@@ -83,6 +94,7 @@ public class PatronMovement : MonoBehaviour {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
             Debug.Log("yes yes yes ");
+			anim.SetBool ("elevatorHere", true);
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
             moving = true;
             state = "entering";
@@ -108,7 +120,7 @@ public class PatronMovement : MonoBehaviour {
             rotating = false;
 
             transform.parent = hotelManager.GetComponent<FloorManager>().floors[currentFloor].transform;
-            GetComponent<Animator>().SetBool("reachedWaypoint", false);
+           // GetComponent<Animator>().SetBool("reachedWaypoint", false);
 
             return true;
         }
