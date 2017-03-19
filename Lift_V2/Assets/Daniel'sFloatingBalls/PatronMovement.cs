@@ -16,6 +16,7 @@ public class PatronMovement : MonoBehaviour {
     public bool moving = false;
     public bool rotating = false;
     public bool waiting = false;
+    public string state = "";
 
 	// Use this for initialization
 	void Start () {
@@ -34,10 +35,26 @@ public class PatronMovement : MonoBehaviour {
             if (transform.position == targetWaypoint.transform.position)
             {
                 //We've reached our destination
-                moving = false;
+                if(state == "entering"){
+                    moving = false;
 
-                GetComponent<Animator>().SetBool("reachedWaypoint", true);
-                turnTowardsPlayer();
+                    GetComponent<Animator>().SetBool("reachedWaypoint", true);
+                    turnTowardsPlayer();
+                }
+
+                else if (state == "leaving")
+                {
+                    //Move to a second waypoint and then despawn
+                    var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
+                    targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor);
+
+                    state = "leaving2";
+                }
+                else if(state == "leaving2")
+                {
+                    //Basic Despawmn
+                    Destroy(this.gameObject);
+                }
             }
         }
 
@@ -65,6 +82,7 @@ public class PatronMovement : MonoBehaviour {
             Debug.Log("yes yes yes ");
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
             moving = true;
+            state = "entering";
 
             return true;
         }
@@ -82,6 +100,7 @@ public class PatronMovement : MonoBehaviour {
             var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint(currentFloor);
             moving = true;
+            state = "leaving";
 
             rotating = false;
 
