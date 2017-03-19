@@ -53,6 +53,9 @@ public class PatronMovement : MonoBehaviour {
                 else if(state == "leaving2")
                 {
                     //Basic Despawmn
+
+                    //Tell the manager that we've finished a character
+
                     Destroy(this.gameObject);
                 }
             }
