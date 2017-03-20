@@ -26,12 +26,34 @@ public class ThinkState : IAgentState {
         }
 
         //do nothing if at exit node
-        if (agent.atNode.listen.Count < 1)
+        if (agent.atNode.wait < 1)
         {
             agent.move = "exit";
             toMoveState();
             return;
         }
+
+        //check if floor is correct
+        if (agent.fm.doorOpen == true)
+        {
+            //not floor
+            if (agent.fm.floorPos != agent.attributes.goal)
+            {
+                agent.say(agent.nodeDict["notFloor"]);
+                return;
+            } else
+            {
+                Debug.Log("LEAVE THE FUCKING ROOM U ON RIGHT FLOOR");
+                agent.nextNode = agent.nodeDict["End"];
+                toMoveState();
+                return;
+            }
+        } else
+        {
+            agent.say(agent.atNode);
+        }
+
+        agent.timer -= Time.deltaTime;
 
         //determine next node and update mood
         if (agent.atNode.listen.Contains(agent.gl.getGesture()))

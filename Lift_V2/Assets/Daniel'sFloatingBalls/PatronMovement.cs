@@ -8,6 +8,8 @@ public class PatronMovement : MonoBehaviour {
     private GameObject hotelManager;
     private GameObject playerHead;
 
+    private GameObject rotateTarget;
+
     [Range(0.5f, 5)]
     public float walkSpeed = 0.5f;
     [Range(1, 5)]
@@ -57,8 +59,7 @@ public class PatronMovement : MonoBehaviour {
                     //Move to a second waypoint and then despawn
                     var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
                     targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor);
-					GetComponent<Animator>().SetBool("walkOut", true);
-
+                    turnTowardsWaypoint(targetWaypoint);
                     state = "leaving2";
                 }
                 else if(state == "leaving2")
@@ -66,7 +67,8 @@ public class PatronMovement : MonoBehaviour {
                     //Basic Despawmn
 
                     //Tell the manager that we've finished a character
-
+                    hotelManager.GetComponent<DemoSpawner>().nextPatron();
+                    Debug.Log("Called despawn");
                     Destroy(this.gameObject);
                 }
             }
@@ -74,7 +76,7 @@ public class PatronMovement : MonoBehaviour {
 
         if (rotating)
         {
-            var targetRotation = Quaternion.LookRotation(playerHead.transform.position - transform.position);
+            var targetRotation = Quaternion.LookRotation(rotateTarget.transform.position - transform.position);
             targetRotation.x = transform.rotation.x;
             targetRotation.z = transform.rotation.z;
             var str = Mathf.Min(rotationSpeed * Time.deltaTime, 1);
@@ -99,6 +101,8 @@ public class PatronMovement : MonoBehaviour {
             moving = true;
             state = "entering";
 
+            transform.parent = null;
+
             return true;
         }
         else
@@ -112,12 +116,16 @@ public class PatronMovement : MonoBehaviour {
     {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
+            anim.SetBool("walkOut", true);
+
             var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint(currentFloor);
             moving = true;
+
             state = "leaving";
 
-            rotating = false;
+
+            turnTowardsWaypoint(targetWaypoint);
 
             transform.parent = hotelManager.GetComponent<FloorManager>().floors[currentFloor].transform;
            // GetComponent<Animator>().SetBool("reachedWaypoint", false);
@@ -137,6 +145,12 @@ public class PatronMovement : MonoBehaviour {
 
     public void turnTowardsPlayer()
     {
+        rotateTarget = playerHead;
+        rotating = true;
+    }
+    public void turnTowardsWaypoint(GameObject waypoint)
+    {
+        rotateTarget = waypoint;
         rotating = true;
     }
 }

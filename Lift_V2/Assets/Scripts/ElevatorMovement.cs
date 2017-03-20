@@ -67,6 +67,7 @@ public class ElevatorMovement : MonoBehaviour {
         else {
             //We've hit the top or the bottom
             liftSpeedCurrent = 0;
+
             if (firstHit == false)
             {
                 //TO DO ADD A SOUND EFFECT HERE --------------------------------------------------------------------------------------------------------------------
@@ -95,6 +96,9 @@ public class ElevatorMovement : MonoBehaviour {
                 floorPassingSound.PlaySound(transform.position);
                 lastPassedFloor = Mathf.Round(floorPos);
             }
+
+            //Change this SSSSSSSSSSSSSSSSSSSSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIITTTTTTTTTTTTTTTTTTTTTTTTTTTTTT <-
+            hotelManager.GetComponent<FloorManager>().floorPos = -1;
         }
         //When magnetizing to floor
         if (magnet) {

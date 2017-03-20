@@ -6,7 +6,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 5,
+      "wait": 20,
       "dialogue": [
         "Take me to floor 5.",
         "Take me to floor 5.",
@@ -34,16 +34,18 @@
     },
     {
       "name": "Shutting down the place",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "Huh, and people wonder why this place is shutting down. Newsflash: people like good service.",
         "Huh, and people wonder why this place is shutting down. Newsflash: people like good service.",
         "Huh, and people wonder why this place is shutting down. Newsflash: people like good service."
-      ]
+      ],
+      "noResponse": "Shutting down the place",
+      "noResponseChange": 0
     },
     {
       "name": "Asking Twice",
-      "wait": 5,
+      "wait": 20,
       "dialogue": [
         "Hey- Hey! You there? Earth to bellhop! I don't like asking twice, friend. Fifth floor. Can you take me there?",
         "Hey- Hey! You there? Earth to bellhop! I don't like asking twice, friend. Fifth floor. Can you take me there?",
@@ -57,7 +59,7 @@
     },
     {
       "name": "Taking the initiative",
-      "wait": 20,
+      "wait": 30,
       "dialogue": [
         "You know, you seem like a smart guy. If you want, I could put you in contact with some folks that might be looking for assistants.",
         "There's more work out there, you know. More satisfying work. Might be worth looking into.",
@@ -113,7 +115,9 @@
         "Huh. Well. I always dreamt big. Not sure about you.",
         "Huh. Well. I always dreamt big. Not sure about you.",
         "Yeah, you keep believin' that pal. Tell me all about it in my private jet."
-      ]
+      ],
+      "noResponse": "Once a commoner, Always a commoner",
+      "neResponseChange": 0
     },
     {
       "name": "Future job oppurtunity",
@@ -122,6 +126,26 @@
         "Hey, when you find yourself out of work when this place finally bites it, come see me. I might have something.",
         "Ah I see you're inspired now. If you ever want to be a success like me, hit me up.",
         "Ah I see you're inspired now. If you ever want to be a success like me, hit me up."
+      ],
+      "noResponse": "Future job oppurtunity",
+      "noResponseChange": 0
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "Thanks",
+        "",
+        "Thank god it's over"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 10,
+      "dialogue": [
+        "Oh what a jokester, this is not my floor. I'm going to floor 5",
+        "I am going to floor 5",
+        "Hey genius, this is not floor 5"
       ]
     }
   ]

@@ -50,7 +50,7 @@ public class DemoSpawner : MonoBehaviour {
             spawnPatron(0, 5);
             currentPatron++;
         }
-        if(currentPatron == 1)
+        else if(currentPatron == 1)
         {
             patronPrefab = boss;
             spawnPatron(4, 1);

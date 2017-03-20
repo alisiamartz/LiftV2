@@ -21,7 +21,7 @@ public class StatePatternAgent : MonoBehaviour {
 
     //tree data
     public node atNode;
-    public node nextNode;
+    [HideInInspector]public node nextNode;
 
     public IAgentState currentState;
     public ThinkState thinkState;
@@ -35,6 +35,8 @@ public class StatePatternAgent : MonoBehaviour {
     public bool timerFlag;
     public PatronMovement pm;
     public bool isStart;
+    public bool isDone;
+    public FloorManager fm;
 
     private void Awake()
     {
@@ -56,11 +58,15 @@ public class StatePatternAgent : MonoBehaviour {
         gl = GameObject.FindWithTag("Player").GetComponent<GestureList>();
         bubble = GetComponentInChildren<Text>();
         pm = GetComponent<PatronMovement>();
+        fm = GameObject.FindWithTag("HotelManager").GetComponent<FloorManager>();
 
         //create movement dict
         movementDict = new Dictionary<string, movement>();
         movementDict.Add("enter", () => pm.enterElevator());
         movementDict.Add("exit", () => pm.leaveElevator());
+
+        //
+        isDone = false;
     }
 
     // Use this for initialization
@@ -93,7 +99,6 @@ public class StatePatternAgent : MonoBehaviour {
         else
         {
         currentState.UpdateState();
-        timer -= Time.deltaTime;
         }
 	}
 

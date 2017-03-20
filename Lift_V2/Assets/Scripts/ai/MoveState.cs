@@ -14,7 +14,7 @@ public class MoveState : IAgentState {
 
     public void UpdateState()
     {
-        if (agent.move != null)
+        if (agent.move != null && !agent.isDone)
         {
             moveAgent();
         }

@@ -16,7 +16,7 @@ public class DialogueState : IAgentState {
     {
         if (agent.nextNode == null)
         {
-            Debug.Log("at exit node");
+            agent.isDone = true;
             toThinkState();
             return;
         }
