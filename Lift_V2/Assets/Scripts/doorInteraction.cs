@@ -58,6 +58,15 @@ public class doorInteraction : MonoBehaviour
 
     private GameObject manager;
 
+    [Header("Jiggle Effect")]
+    public float jiggleStrength = 10;
+    private bool jiggling = false;
+    private int jiggleTimer = 0;
+    public int jiggleLength = 50;
+    [Range(1, 10)]
+    public int jiggleSpeed = 6;
+    private int jiggleDivisor;
+
     private SteamVR_Controller.Device device
     {
         get
@@ -88,6 +97,8 @@ public class doorInteraction : MonoBehaviour
         initZ = door.transform.localPosition.z;
 
         manager = GameObject.FindGameObjectWithTag("ElevatorManager");
+
+        jiggleDivisor = 10 - jiggleSpeed;
     }
 
     // Update is called once per frame
@@ -228,6 +239,21 @@ public class doorInteraction : MonoBehaviour
             }
         }
 
+        if (jiggling) {
+            Debug.Log("Jiggling");
+            if (jiggleTimer < jiggleLength) {
+                if (jiggleTimer % jiggleDivisor == 0) {
+                    door.transform.position = new Vector3(door.transform.position.x, 1.2f + jiggleStrength * Mathf.Sin(jiggleTimer), door.transform.position.z);
+                }
+                jiggleTimer++;
+            }
+            else {
+                jiggling = false;
+                jiggleTimer = 0;
+                door.transform.position = new Vector3(door.transform.position.x, 1.2f, door.transform.position.z);
+            }
+        }
+
 
     } // end of update
 
@@ -235,8 +261,15 @@ public class doorInteraction : MonoBehaviour
     {
         if (handInRange)
         {
-            grabbed = true;
-            grabbingHand = hand;
+            //If Door Open
+            if (manager.GetComponent<ElevatorMovement>().floorPos == Mathf.Round(manager.GetComponent<ElevatorMovement>().floorPos)) {
+                grabbed = true;
+                grabbingHand = hand;
+            }
+            else {
+                //Trigger the jiggle
+                jiggling = true;
+            }
         }
     }
 
