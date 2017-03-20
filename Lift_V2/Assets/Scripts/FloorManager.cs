@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FloorManager : MonoBehaviour
 {
@@ -48,5 +49,13 @@ public class FloorManager : MonoBehaviour
     public GameObject fetchFloorWaypoint2(int floorNumber)
     {
         return floors[floorNumber].transform.Find("Waypoint2").gameObject;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("main");
+        }
     }
 }
