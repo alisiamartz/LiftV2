@@ -43,7 +43,6 @@ public class ThinkState : IAgentState {
                 return;
             } else
             {
-                Debug.Log("LEAVE THE FUCKING ROOM U ON RIGHT FLOOR");
                 agent.nextNode = agent.nodeDict["End"];
                 toMoveState();
                 return;

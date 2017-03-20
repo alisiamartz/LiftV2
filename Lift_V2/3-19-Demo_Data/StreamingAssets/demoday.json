@@ -1,0 +1,65 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 2
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 20,
+      "dialogue": [
+        "Second floor please",
+        "Second floor please",
+        "Second floor please"
+      ],
+      "listen": [ "yes" ],
+      "change": [ 0 ],
+      "toNode": [ "are you?" ],
+      "noResponse": "okay",
+      "noResponseChange": 0
+    },
+    {
+      "name": "are you?",
+      "wait": 30,
+      "dialogue": [
+        "Are you doing well?",
+        "Are you doing well?",
+        "Are you doing well?"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 8, -8 ],
+      "toNode": [ "okay", "okay" ],
+      "noResponse": "okay",
+      "noResponseChange": 0
+    },
+    {
+      "name": "okay",
+      "wait": 10,
+      "dialogue": [
+        "Good",
+        "Not much of a talker huh? teehee",
+        "Aww, too bad"
+      ],
+      "noResponse": "okay",
+      "noRespnseChange": 0
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "Thanks",
+        "Thanks",
+        "Thanks"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 10,
+      "dialogue": [
+        "Hey, wrong floor. Floor 2",
+        "Floor 2",
+        "Hey, wrong floor. Floor 2"
+      ]
+    }
+  ]
+}

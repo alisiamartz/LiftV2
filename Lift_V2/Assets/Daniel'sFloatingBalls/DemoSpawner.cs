@@ -53,7 +53,7 @@ public class DemoSpawner : MonoBehaviour {
         else if(currentPatron == 1)
         {
             patronPrefab = boss;
-            spawnPatron(4, 1);
+            spawnPatron(5, 1);
             currentPatron++;
         }
     }
