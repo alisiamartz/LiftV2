@@ -37,6 +37,8 @@ public class StatePatternAgent : MonoBehaviour {
     public bool isStart;
     public bool isDone;
     public FloorManager fm;
+    string current = null;
+    string previous = null;
 
     private void Awake()
     {
@@ -118,5 +120,19 @@ public class StatePatternAgent : MonoBehaviour {
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
         bubble.text = n.dialogue[index];
+
+        //audio dialogue, should be moved so seperate object to better reflect positional audio
+        current = n.dialogue[index];
+        //Debug.Log(current);
+        if (current != previous)
+        {
+            GameObject myObject = GameObject.Find("_SFX_" + previous);
+            if (myObject != null)
+                myObject.GetComponent<SoundGroup>().pingSound();
+            previous = current;
+            previous.PlaySound(transform.position);
+        }
+
+
     }
 }

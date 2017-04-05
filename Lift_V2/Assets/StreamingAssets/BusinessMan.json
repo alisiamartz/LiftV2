@@ -47,9 +47,9 @@
       "name": "Asking Twice",
       "wait": 20,
       "dialogue": [
-        "Hey- Hey! You there? Earth to bellhop! I don't like asking twice, friend. Fifth floor. Can you take me there?",
-        "Hey- Hey! You there? Earth to bellhop! I don't like asking twice, friend. Fifth floor. Can you take me there?",
-        "Hey- Hey! You there? Earth to bellhop! I don't like asking twice, friend. Fifth floor. Can you take me there?"
+        "bm11h",
+        "bm11n",
+        "bm11a"
       ],
       "listen": [ "no", "yes" ],
       "change": [ -6, 1 ],
