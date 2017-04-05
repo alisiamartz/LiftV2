@@ -46,11 +46,6 @@ public class doorInteraction : MonoBehaviour
     public string stopSoundSFX;
     bool playing = false;
 
-    [SerializeField]
-    SteamVR_TrackedObject trackedObj;
-    [SerializeField]
-    SteamVR_TrackedObject trackedObj2;
-
     [HideInInspector]
     public bool handInRange = false;
     private bool grabbed = false;
@@ -67,21 +62,7 @@ public class doorInteraction : MonoBehaviour
     public int jiggleSpeed = 6;
     private int jiggleDivisor;
 
-    private SteamVR_Controller.Device device
-    {
-        get
-        {
-            return SteamVR_Controller.Input((int)trackedObj.index);
-        }
-    }
-
-    private SteamVR_Controller.Device device2
-    {
-        get
-        {
-            return SteamVR_Controller.Input((int)trackedObj2.index);
-        }
-    }
+    public string jiggleSound;
 
 
     // Use this for initialization
@@ -243,14 +224,14 @@ public class doorInteraction : MonoBehaviour
             Debug.Log("Jiggling");
             if (jiggleTimer < jiggleLength) {
                 if (jiggleTimer % jiggleDivisor == 0) {
-                    door.transform.position = new Vector3(door.transform.position.x, 1.2f + jiggleStrength * Mathf.Sin(jiggleTimer), door.transform.position.z);
+                    door.transform.position = new Vector3(door.transform.position.x, 1.17f + jiggleStrength * Mathf.Sin(jiggleTimer), door.transform.position.z);
                 }
                 jiggleTimer++;
             }
             else {
                 jiggling = false;
                 jiggleTimer = 0;
-                door.transform.position = new Vector3(door.transform.position.x, 1.2f, door.transform.position.z);
+                door.transform.position = new Vector3(door.transform.position.x, 1.17f, door.transform.position.z);
             }
         }
 
@@ -268,6 +249,7 @@ public class doorInteraction : MonoBehaviour
             }
             else {
                 //Trigger the jiggle
+                jiggleSound.PlaySound(transform.position);
                 jiggling = true;
             }
         }

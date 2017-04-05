@@ -57,7 +57,7 @@ public class ElevatorMovement : MonoBehaviour {
         var leverRotation = lever.GetComponent<LeverRotation>();
 
         //If within bounds of elevator
-        if ((floorPos > -0.2 || liftSpeedCurrent > 0) && (floorPos < 5.2 || liftSpeedCurrent < 0)) {
+        if ((floorPos > 0 || liftSpeedCurrent > 0) && (floorPos < 5 || liftSpeedCurrent < 0)) {
             floorPos += liftSpeedCurrent;
             if (firstHit)
             {
@@ -70,6 +70,17 @@ public class ElevatorMovement : MonoBehaviour {
 
             if (firstHit == false)
             {
+                if(floorPos > 5)
+                {
+                    floorPos = 5;
+                    hotelManager.GetComponent<FloorManager>().loadNewFloor((int)floorPos);
+                }
+                else if(floorPos < 0)
+                {
+                    floorPos = 0;
+                    hotelManager.GetComponent<FloorManager>().loadNewFloor((int)floorPos);
+                }
+
                 //TO DO ADD A SOUND EFFECT HERE --------------------------------------------------------------------------------------------------------------------
                 GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(20, 2);
                 firstHit = true;

@@ -36,6 +36,7 @@ public class LeverRotation : MonoBehaviour {
 
     [Header("Sounds")]
     public string leverResetSound;
+    public string jiggleSound;
 
     //5 Unity units between top rotation and bottom rotation. Helper objects in scene
 
@@ -152,6 +153,7 @@ public class LeverRotation : MonoBehaviour {
 
     public void jiggleResponse()
     {
+        jiggleSound.PlaySound(transform.position);
         jiggling = true;
     }
 }
