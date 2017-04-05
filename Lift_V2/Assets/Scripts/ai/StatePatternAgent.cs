@@ -12,7 +12,7 @@ public class StatePatternAgent : MonoBehaviour {
     //agent data
     public agentAttr attributes;
     public Dictionary<string, node> nodeDict = new Dictionary<string, node>();
-    public Dictionary<string, change> changeDict = new Dictionary<string, change>();
+    //public Dictionary<string, change> changeDict = new Dictionary<string, change>();
 
     //
     public delegate bool movement();

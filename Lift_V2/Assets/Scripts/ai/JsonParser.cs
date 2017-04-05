@@ -11,7 +11,7 @@ public class JsonParser {
 
     public jsonClass parse(string filename)
     {
-        path = Application.streamingAssetsPath + "/" + filename;
+        path = Application.streamingAssetsPath + "/json/" + filename;
         jsonString = File.ReadAllText(path);
         parsedJson = JsonUtility.FromJson<jsonClass>(jsonString);
         return parsedJson;
