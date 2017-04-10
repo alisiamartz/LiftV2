@@ -26,11 +26,11 @@ public class ObjectHighlight : MonoBehaviour {
 	void withinInteract(Vector3 center, float radius) {
 		// Collider[] controllerColliders;
 		controllerColliders = Physics.OverlapSphere(center, rad); 
-		Debug.Log ("radius "+ rad + " center " + center);
+		//Debug.Log ("radius "+ rad + " center " + center);
 		foreach (Collider obj in controllerColliders) {
 			if (obj.gameObject.tag == "grabPoint") {
 				// set the color of the object
-				Debug.Log ("changed tho");
+				//Debug.Log ("changed tho");
 			}
 		}
 		// this is where we set the color back to normal

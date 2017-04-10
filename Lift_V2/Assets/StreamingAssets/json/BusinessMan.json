@@ -146,7 +146,7 @@
       "wait": 10,
       "dialogue": [
         "Oh what a jokester, this is not my floor. I'm going to floor 5",
-        "I am going to floor 5",
+        "I am going to floor 5...",
         "Hey genius, this is not floor 5"
       ]
     }
