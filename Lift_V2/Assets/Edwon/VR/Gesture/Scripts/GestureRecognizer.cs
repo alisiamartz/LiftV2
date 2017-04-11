@@ -5,9 +5,9 @@ using System;
 
 namespace Edwon.VR.Gesture
 {
-    public class GestureRecognizer
+    public class GestureRecognizer : MonoBehaviour
     {
-        public delegate void GestureDetected(string gestureName, double confidence, Handedness hand, bool isDouble=false);
+        public delegate void GestureDetected(string gestureName, double confidence, Handedness hand, bool isDouble = false);
         public static event GestureDetected GestureDetectedEvent;
         public delegate void GestureRejected(string error, string gestureName = null, double confidence = 0);
         public static event GestureRejected GestureRejectedEvent;
@@ -21,9 +21,14 @@ namespace Edwon.VR.Gesture
         double lastRightConfidenceValue;
         DateTime lastRightDetected;
 
-        public double confidenceThreshold = 0.9;
-        public double currentConfidenceValue;
-        public double minimumGestureAxisLength = 0.1;
+        //******Made these private
+        private double confidenceThreshold = 0.8;
+        private double currentConfidenceValue;
+        private double minimumGestureAxisLength = 0.1;
+
+        //******Added these 2 variables
+        private static bool confident = true;
+        public bool isConfident;
 
         string LeftHandSyncPrefix = Handedness.Left + "--";
         string RightHandSyncPrefix = Handedness.Right + "--";
@@ -31,6 +36,20 @@ namespace Edwon.VR.Gesture
         List<Gesture> outputs;
         Dictionary<int, string> outputDict;
         NeuralNetwork neuralNet;
+
+        //******Added this function to update whether or not it detected a gesture
+        private void Update()
+        {
+            if (confident == true)
+            {
+                isConfident = true;
+            }
+            else
+            {
+                isConfident = false;
+            }
+        }
+
         //save the array of gestures
         //This should always require a name to load.
         public GestureRecognizer(string filename)
@@ -52,12 +71,12 @@ namespace Edwon.VR.Gesture
         public void BuildOutputDictionary()
         {
             List<string> outputCount = new List<string>();
-            foreach(Gesture g in outputs)
+            foreach (Gesture g in outputs)
             {
                 if (g.isSynchronous)
                 {
-                    outputCount.Add(LeftHandSyncPrefix+g.name);
-                    outputCount.Add(RightHandSyncPrefix+g.name);
+                    outputCount.Add(LeftHandSyncPrefix + g.name);
+                    outputCount.Add(RightHandSyncPrefix + g.name);
                 }
                 else
                 {
@@ -89,6 +108,10 @@ namespace Edwon.VR.Gesture
                 {
                     if (GestureDetectedEvent != null)
                     {
+                        //******Added these 2 lines
+                        confident = true;
+                        //Debug.Log(gesture + currentConfidenceValue);
+
                         GestureDetectedEvent(gesture, currentConfidenceValue, hand);
                         //Check if the other hand has recently caught a gesture.
                         //CheckForSyncGestures(gesture, hand);
@@ -111,19 +134,25 @@ namespace Edwon.VR.Gesture
                         if (CheckForSync(gesture))
                         {
                             gesture = lastLeftGesture.Substring(LeftHandSyncPrefix.Length);
-                            GestureDetectedEvent(gesture, (lastLeftConfidenceValue+lastRightConfidenceValue)/2, hand, true);
+                            GestureDetectedEvent(gesture, (lastLeftConfidenceValue + lastRightConfidenceValue) / 2, hand, true);
                         }
                     }
 
                 }
                 else
                 {
+                    //*******Added this line
+                    confident = false;
+
                     if (GestureRejectedEvent != null)
                         GestureRejectedEvent("Confidence Too Low", gesture, currentConfidenceValue);
                 }
             }
             else
             {
+                //*******Added this line
+                confident = false;
+
                 //broadcast that a gesture is too small??
                 if (GestureRejectedEvent != null)
                     GestureRejectedEvent("Gesture is too small");

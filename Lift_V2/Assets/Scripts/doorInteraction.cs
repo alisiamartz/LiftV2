@@ -102,7 +102,7 @@ public class doorInteraction : MonoBehaviour
 
         if (grabbed)
         {
-            Debug.Log("hell yeah get ready to lift");
+            //Debug.Log("hell yeah get ready to lift");
             lifting = true;
 
             if (grabbingUp == false)

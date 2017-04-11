@@ -1,0 +1,165 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 5
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 20,
+      "dialogue": [
+        "bm11",
+        "bm11",
+        "bm11"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 6, -6 ],
+      "toNode": [ "Your Occupation", "Shutting down the place" ],
+      "noResponse": "Asking Twice",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Your Occupation",
+      "wait": 30,
+      "dialogue": [
+        "bm21",
+        "bm21",
+        "bm21"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ -1, 1 ],
+      "toNode": [ "Some people will never amount to anything", "Taking the initiative" ],
+      "noResponse": "Shutting down the place",
+      "noResponseChange": -12
+    },
+    {
+      "name": "Shutting down the place",
+      "wait": 10,
+      "dialogue": [
+        "bm22",
+        "bm22",
+        "bm22"
+      ],
+      "noResponse": "Shutting down the place",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Asking Twice",
+      "wait": 20,
+      "dialogue": [
+        "bm23",
+        "bm23",
+        "bm23"
+      ],
+      "listen": [ "no", "yes" ],
+      "change": [ -6, 1 ],
+      "toNode": [ "Shutting down the place", "Some people will never amount to anything" ],
+      "noResponse": "Shutting down the place",
+      "noResponseChange": -6
+    },
+    {
+      "name": "Taking the initiative",
+      "wait": 30,
+      "dialogue": [
+        "bm31p",
+        "bm31n",
+        "bm31a"
+      ],
+      "noResponse": "Taking the initiative",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Some people will never amount to anything",
+      "wait": 30,
+      "dialogue": [
+        "bm32p",
+        "bm32n",
+        "bm32n"
+      ],
+      "listen": [ "continue" ],
+      "change": [ 3 ],
+      "toNode": [ "The origin of the businessman" ],
+      "noResponse": "What success truly means",
+      "noResponseChange": "-3"
+    },
+    {
+      "name": "What success truly means",
+      "wait": 30,
+      "dialogue": [
+        "bm41p",
+        "bm41p",
+        "bm41a"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ -1, 0 ],
+      "toNode": [ "Once a commoner, Always a commoner", "Taking the initiative" ],
+      "noResponse": "Taking the initiative",
+      "noResponseChange": 0
+    },
+    {
+      "name": "The origin of the businessman",
+      "wait": 30,
+      "dialogue": [
+        "bm42p",
+        "bm42n",
+        "bm42n"
+      ],
+      "listen": [ "continue" ],
+      "change": [ 2 ],
+      "toNode": [ "Future job oppurtunity" ],
+      "noResponse": "Being put on watch",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Once a commoner, Always a commoner",
+      "wait": 10,
+      "dialogue": [
+        "bm51n",
+        "bm51n",
+        "bm51a"
+      ],
+      "noResponse": "Once a commoner, Always a commoner",
+      "neResponseChange": 0
+    },
+    {
+      "name": "Future job oppurtunity",
+      "wait": 10,
+      "dialogue": [
+        "bm52p",
+        "bm52n",
+        "bm52n"
+      ],
+      "noResponse": "Future job oppurtunity",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Being put on watch",
+      "wait": 10,
+      "dialogue": [
+        "bm53p",
+        "bm53p",
+        "bm53a"
+      ],
+      "noResponse": "Being put on watch",
+      "noResponseChange": 0
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "bm62p",
+        "bm62n",
+        "bm62a"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 10,
+      "dialogue": [
+        "bm61p",
+        "bm61n",
+        "bm61a"
+      ]
+    }
+  ]
+}
