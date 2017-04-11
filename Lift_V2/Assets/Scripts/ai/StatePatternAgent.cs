@@ -37,8 +37,10 @@ public class StatePatternAgent : MonoBehaviour {
     public bool isStart;
     public bool isDone;
     public FloorManager fm;
-    string current = null;
-    string previous = null;
+
+    //used to push string dialogue to dialoguesource
+    public static string dialogueString = null;
+    //public dialogueSource dialogueSource;
 
     private void Awake()
     {
@@ -59,6 +61,8 @@ public class StatePatternAgent : MonoBehaviour {
         //get util
         gl = GameObject.FindWithTag("Player").GetComponent<GestureList>();
         bubble = GetComponentInChildren<Text>();
+       
+        
         pm = GetComponent<PatronMovement>();
         fm = GameObject.FindWithTag("HotelManager").GetComponent<FloorManager>();
 
@@ -120,19 +124,7 @@ public class StatePatternAgent : MonoBehaviour {
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
         bubble.text = n.dialogue[index];
-
-        //audio dialogue, should be moved so seperate object to better reflect positional audio
-        current = n.dialogue[index];
-        //Debug.Log(current);
-        if (current != previous)
-        {
-            GameObject myObject = GameObject.Find("_SFX_" + previous);
-            if (myObject != null)
-                myObject.GetComponent<SoundGroup>().pingSound();
-            previous = current;
-            previous.PlaySound(transform.position);
-        }
-
+        dialogueString = n.dialogue[index];
 
     }
 }
