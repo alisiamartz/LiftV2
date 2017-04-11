@@ -23,9 +23,10 @@ public class Tree1 : Agent {
         // build leafs first, then work your way up to root
         // ^ ignore that kuz scripting amirite?
 
-
         root.Add(() => sequence(checkStart));
         root.Add(() => sequence(checkDoorOpen));
+        root.Add(() => sequence(checkGesture));
+        root.Add(() => sequence(checkTimer));
 
         checkStart.Add(() => isStart());
         checkStart.Add(() => startAction());
@@ -39,16 +40,21 @@ public class Tree1 : Agent {
         checkRightFloor.Add(() => isRightFloor());
         checkRightFloor.Add(() => exitElevator());
 
+        checkGesture.Add(() => isRightGesture());
+        checkGesture.Add(() => updateAgent());
+
+        checkTimer.Add(() => isTimerUp());
+        checkTimer.Add(() => updateAgent(true));
     }
 
     //decoratives in tree
-    List<decorative> root = new List<decorative>();
-    List<decorative> checkStart = new List<decorative>();
-    List<decorative> checkDoorOpen = new List<decorative>();
-    List<decorative> checkFloor = new List<decorative>();
-    List<decorative> checkRightFloor = new List<decorative>();
-    List<decorative> checkGesture = new List<decorative>();
-    List<decorative> checkTimer = new List<decorative>();
+    private List<decorative> root = new List<decorative>();
+    private List<decorative> checkStart = new List<decorative>();
+    private List<decorative> checkDoorOpen = new List<decorative>();
+    private List<decorative> checkFloor = new List<decorative>();
+    private List<decorative> checkRightFloor = new List<decorative>();
+    private List<decorative> checkGesture = new List<decorative>();
+    private List<decorative> checkTimer = new List<decorative>();
 
     //tree leafs
     private bool isStart()
@@ -95,10 +101,49 @@ public class Tree1 : Agent {
         return true;
     }
 
+    ////////////////////////////////
+    //HERE IS THE WRONG FLOOR PART//
+    ////////////////////////////////
+
     private bool wrongFloor()
     {
         say(nodeDict["notFloor"]);
 
         return true;
     }
+
+    private bool isRightGesture()
+    {
+        if (currentNode.listen.Contains(getGesture())) return true;
+
+        return false;
+    }
+
+    private bool updateAgent(bool noResponse = false)
+    {
+        if (noResponse)
+        {
+            updateMood(currentNode.noResponseChange);
+            currentNode = nodeDict[currentNode.noResponse];
+        } else
+        {
+            int index = currentNode.listen.IndexOf(getGesture());
+            updateMood(currentNode.change[index]);
+            currentNode = nodeDict[currentNode.toNode[index]];
+        }
+
+        say(currentNode);
+        timer = currentNode.wait;
+
+        return true;
+    }
+
+    private bool isTimerUp()
+    {
+        if (timer < 0) return true;
+        timer -= Time.deltaTime;
+
+        return false;
+    }
+
 }

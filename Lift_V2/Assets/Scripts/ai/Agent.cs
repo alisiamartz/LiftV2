@@ -24,6 +24,7 @@ public abstract class Agent : MonoBehaviour {
     //util
     protected GestureList gl;
     protected Text bubble;
+    protected float patience;
     protected float timer;
     protected bool timerFlag;
     protected PatronMovement pm;
@@ -32,7 +33,7 @@ public abstract class Agent : MonoBehaviour {
     protected bool isExit;
 
     //useful stuff
-    protected string lastGesture() { return gl.getGesture(); }
+    protected string getGesture() { return gl.getGesture(); }
     protected void resetGesture() { gl.resetGesture(); }
     protected bool isDoorOpen() { return fm.doorOpen; }
     protected bool enter() { return pm.enterElevator(); }
@@ -60,6 +61,9 @@ public abstract class Agent : MonoBehaviour {
         //move start to here
         isStarted = false;
         isExit = false;
+        timer = nodeDict["Start"].wait;
+        patience = nodeDict["notFloor"].wait;
+        Debug.Log("timer: " + timer + " patience: " + patience);
     }
 
     //decorative stuff
@@ -90,5 +94,13 @@ public abstract class Agent : MonoBehaviour {
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
         bubble.text = n.dialogue[index];
+    }
+
+    protected void updateMood(short i)
+    {
+        attributes.mood += i;
+
+        if (attributes.mood > 10) attributes.mood = 10;
+        if (attributes.mood < -10) attributes.mood = -10;
     }
 }
