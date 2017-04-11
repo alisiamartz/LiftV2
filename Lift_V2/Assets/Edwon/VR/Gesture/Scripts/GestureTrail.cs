@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Edwon.VR.Gesture
 {
-    
+
     public class GestureTrail : MonoBehaviour
     {
         CaptureHand registeredHand;
@@ -16,17 +16,41 @@ namespace Edwon.VR.Gesture
 
         bool currentlyInUse = false;
 
+        //*******Added these 3 variables
+        public GameObject objConfidence;
+        private static bool confidence;
+        private string color;
+
         // Use this for initialization
         void Start()
         {
             currentlyInUse = true;
             displayLine = new List<Vector3>();
             currentRenderer = CreateLineRenderer(Color.magenta, Color.magenta);
+
+            //********Added these 2 lines
+            color = "purple";
+            objConfidence = GameObject.FindGameObjectWithTag("ElevatorManager");
+        }
+
+        //******Added this function to update the color of the line properly
+        private void Update()
+        {
+            if (objConfidence.GetComponent<GestureRecognizer>().isConfident == true)
+            {
+                confidence = true;
+            }
+            else
+            {
+                confidence = false;
+            }
+            if (confidence == true && color == "red") { currentRenderer.SetColors(Color.blue, Color.cyan); }
+            if (confidence == false && color == "blue") { currentRenderer.SetColors(Color.red, Color.red); }
         }
 
         void OnEnable()
         {
-            if(registeredHand != null)
+            if (registeredHand != null)
             {
                 SubscribeToEvents();
             }
@@ -56,7 +80,7 @@ namespace Edwon.VR.Gesture
 
         void UnsubscribeAll()
         {
-            
+
         }
 
         void OnDestroy()
@@ -90,6 +114,10 @@ namespace Edwon.VR.Gesture
         public void StartTrail()
         {
             currentRenderer.SetColors(Color.magenta, Color.magenta);
+
+            //*****Added this line
+            color = "purple";
+
             displayLine.Clear();
             listening = true;
         }
@@ -112,7 +140,17 @@ namespace Edwon.VR.Gesture
 
         public void StopTrail()
         {
-            currentRenderer.SetColors(Color.blue, Color.cyan);
+            //*****Added the if else part
+            if (confidence == true)
+            {
+                currentRenderer.SetColors(Color.blue, Color.cyan);
+                color = "blue";
+            }
+            else
+            {
+                currentRenderer.SetColors(Color.red, Color.red);
+                color = "red";
+            }
             listening = false;
         }
 
