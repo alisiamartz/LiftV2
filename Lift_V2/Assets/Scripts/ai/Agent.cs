@@ -9,28 +9,29 @@ using Edwon.VR.Gesture;
 
 public abstract class Agent : MonoBehaviour {
 
+    //exanple.json
     public string filename;
 
     //agent data
     protected agentAttr attributes;
     protected Dictionary<string, node> nodeDict = new Dictionary<string, node>();
 
-    //movement
-
     //node data
     protected node currentNode;
-    protected node nextNode;
+    protected node notFloorNode;
+    protected node endNode;
 
     //util
     protected GestureList gl;
     protected Text bubble;
     protected float patience;
     protected float timer;
-    protected bool timerFlag;
+    protected float graceTimer;
     protected PatronMovement pm;
     protected bool isStarted;
     protected FloorManager fm;
     protected bool isExit;
+    protected string lastSound;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -63,7 +64,9 @@ public abstract class Agent : MonoBehaviour {
         isExit = false;
         timer = nodeDict["Start"].wait;
         patience = nodeDict["notFloor"].wait;
-        Debug.Log("timer: " + timer + " patience: " + patience);
+        notFloorNode = nodeDict["notFloor"];
+        endNode = nodeDict["End"];
+        graceTimer = 10; //seconds grace time before telling you that you are in the wrong floor
     }
 
     //decorative stuff
@@ -87,16 +90,26 @@ public abstract class Agent : MonoBehaviour {
         return true;
     }
 
-    //
+    //agent util
     protected void say(node n)
     {
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
         bubble.text = n.dialogue[index];
+
+        string dialogue = n.dialogue[index];
+
+        if (lastSound != dialogue)
+        {
+            GameObject myObject = GameObject.Find("_SFX_" + lastSound);
+            if (myObject != null) myObject.GetComponent<SoundGroup>().pingSound();
+            dialogue.PlaySound(transform.position);
+            lastSound = dialogue;
+        }
     }
 
-    protected void updateMood(short i)
+    protected void changeMood(short i)
     {
         attributes.mood += i;
 

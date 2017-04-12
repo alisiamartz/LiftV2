@@ -61,8 +61,9 @@ public class Tree1 : Agent {
     {
         //isStarted = has agent entered elevator? if so, stop here
         if (isStarted) return false;
-        if (enter())
+        if (isDoorOpen())
         {
+            enter();
             isStarted = true;
             return true;
         }
@@ -72,17 +73,18 @@ public class Tree1 : Agent {
     
     private bool startAction()
     {
-        currentNode = nodeDict["Start"];
-        timer = currentNode.wait;
-        say(currentNode);
-        timerFlag = false;
+        if (isStarted)
+        {
+            currentNode = nodeDict["Start"];
+            timer = currentNode.wait;
+            say(currentNode);
+        }
 
         return true;
     }
 
     private bool isRightFloor()
     {
-        Debug.Log("made it here " + attributes.goal + " " + getFloorNumber() + " " + isStarted);
         if (attributes.goal == getFloorNumber()) return true;
 
 
@@ -91,9 +93,9 @@ public class Tree1 : Agent {
 
     private bool exitElevator()
     {
-        currentNode = nodeDict["End"];
         if (!isExit)
         {
+            say(endNode);
             exit();
             isExit = true;
         }
@@ -101,13 +103,15 @@ public class Tree1 : Agent {
         return true;
     }
 
-    ////////////////////////////////
-    //HERE IS THE WRONG FLOOR PART//
-    ////////////////////////////////
-
     private bool wrongFloor()
     {
-        say(nodeDict["notFloor"]);
+        patience -= Time.deltaTime;
+        if (patience < 0)
+        {
+            changeMood(notFloorNode.noResponseChange);
+            patience = notFloorNode.wait;
+        }
+        say(notFloorNode);
 
         return true;
     }
@@ -123,15 +127,16 @@ public class Tree1 : Agent {
     {
         if (noResponse)
         {
-            updateMood(currentNode.noResponseChange);
+            changeMood(currentNode.noResponseChange);
             currentNode = nodeDict[currentNode.noResponse];
         } else
         {
             int index = currentNode.listen.IndexOf(getGesture());
-            updateMood(currentNode.change[index]);
+            changeMood(currentNode.change[index]);
             currentNode = nodeDict[currentNode.toNode[index]];
         }
 
+        resetGesture();
         say(currentNode);
         timer = currentNode.wait;
 
