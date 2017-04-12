@@ -36,7 +36,7 @@ public class ObjectHighlight : MonoBehaviour {
 		Material[] intMaterials;
 		// Collider[] controllerColliders;
 		controllerColliders = Physics.OverlapSphere (center, rad); 
-		Debug.Log ("radius " + rad + " center " + center);
+	//	Debug.Log ("radius " + rad + " center " + center);
 		bool inRange = false;
 
 		foreach (Collider obj in controllerColliders) {

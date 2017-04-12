@@ -40,6 +40,7 @@ public class doorInteraction : MonoBehaviour
     private GameObject grabPointL;
     private GameObject grabPointR;
     public slidingDoor2 slidingDoor2;
+	public DisableGesture disableGesture;
 
     public string doorLoopSFX;
     public string startSoundSFX;
@@ -62,6 +63,7 @@ public class doorInteraction : MonoBehaviour
     public int jiggleSpeed = 6;
     private int jiggleDivisor;
 
+	public GameObject camRig;
     public string jiggleSound;
 
 
@@ -72,6 +74,7 @@ public class doorInteraction : MonoBehaviour
         hold = GameObject.FindGameObjectWithTag("doorHold");
         doorOpen = GameObject.FindGameObjectWithTag("openDoor");
         rope = GameObject.FindGameObjectWithTag("rope");
+		camRig = GameObject.FindGameObjectWithTag("Player");
 
         initX = door.transform.localPosition.x;
         initY = door.transform.localPosition.y;
@@ -117,30 +120,22 @@ public class doorInteraction : MonoBehaviour
             // Once the door reaches a certain height
             // it goes all the way up automatically
 
-        }
-     
-        else
-        {
+        } else {
             grabbingUp = false;
             // if door not at a certain point yet
             // it goes down
-            if (door.transform.position.y < 2.5f && lifting)
-            {
+            if (door.transform.position.y < 2.5f && lifting) {
               // while the door position is greater than the y position
                 door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, 1.1f, initZ), 2f * Time.deltaTime);
             }
-
         }
 
-        if (lifting)
-        {
+        if (lifting) {
             // if past certain point
-            if (door.transform.position.y > 2.5f)
-            {
+            if (door.transform.position.y > 2.5f) {
                 door.transform.position = Vector3.MoveTowards(door.transform.position, doorOpen.transform.position, Time.deltaTime);
                 Debug.Log("Attempt to lerP");
-                if (door.transform.position.y >= 3.2f)
-                {
+                if (door.transform.position.y >= 3.2f) {
                     Debug.Log("I WANT THIS");
                     lifting = false;
                     open = true;
@@ -240,19 +235,23 @@ public class doorInteraction : MonoBehaviour
 
     public void attemptGrab(GameObject hand)
     {
-        if (handInRange)
-        {
-            //If Door Open
-            if (manager.GetComponent<ElevatorMovement>().floorPos == Mathf.Round(manager.GetComponent<ElevatorMovement>().floorPos)) {
-                grabbed = true;
-                grabbingHand = hand;
-            }
-            else {
-                //Trigger the jiggle
-                jiggleSound.PlaySound(transform.position);
-                jiggling = true;
-            }
-        }
+		if (handInRange) {
+			DisableGesture.turnOff (camRig);
+
+			//If Door Open
+			if (manager.GetComponent<ElevatorMovement> ().floorPos == Mathf.Round (manager.GetComponent<ElevatorMovement> ().floorPos)) {
+				grabbed = true;
+				grabbingHand = hand;
+			} else {
+				//Trigger the jiggle
+				jiggleSound.PlaySound (transform.position);
+				jiggling = true;
+			}
+		} else {
+			if (!DisableGesture.isComponentEnabled (camRig)) {
+				DisableGesture.turnOn (camRig);
+			}
+		}
     }
 
     public void attemptRelease()

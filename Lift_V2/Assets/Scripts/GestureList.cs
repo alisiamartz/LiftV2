@@ -40,7 +40,7 @@ namespace Edwon.VR.Gesture
 
         void OnDisable()
         {
-            Debug.Log("now not working");
+            Debug.Log("not working");
             GestureRecognizer.GestureDetectedEvent -= OnGestureDetected;
         }
 
