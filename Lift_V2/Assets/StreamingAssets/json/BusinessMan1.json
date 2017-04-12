@@ -154,12 +154,14 @@
     },
     {
       "name": "notFloor",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "bm61p",
         "bm61n",
         "bm61a"
-      ]
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
     }
   ]
 }
