@@ -30,7 +30,7 @@ public class grabHaptic : MonoBehaviour {
             {
                 if (handsAffected == 0 || handsAffected == 2)
                 {
-                    var deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+                    var deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost); 
                     SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse(pulseMag);
                 }
                 if (handsAffected == 1 || handsAffected == 2)

@@ -10,9 +10,9 @@ public class Grabbing : MonoBehaviour {
     private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
     private SteamVR_TrackedObject trackedObj;
 
-    public GameObject lever;
+    private GameObject lever;
 
-    public GameObject objDoor;
+    private GameObject objDoor;
 
     private float leverTimer;
 

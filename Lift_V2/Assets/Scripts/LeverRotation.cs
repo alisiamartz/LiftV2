@@ -28,6 +28,7 @@ public class LeverRotation : MonoBehaviour {
     [Header("Floors")]
     public float[] floors;
     public bool setToFloor = false;
+    public int holdingVibration;
     private GameObject elevatorManager;
 
     [Header("Jiggle Effect")]
@@ -59,7 +60,7 @@ public class LeverRotation : MonoBehaviour {
                 Debug.Log(previousHandPosition);
             }
 
-            Debug.Log("previous: " + previousHandPosition + " and current: " + grabHand.transform.position.z);
+            //Debug.Log("previous: " + previousHandPosition + " and current: " + grabHand.transform.position.z);
             if (previousHandPosition != grabHand.transform.position.z) {
                 //if lever has been moved 
                 setToFloor = false;
@@ -76,7 +77,17 @@ public class LeverRotation : MonoBehaviour {
             previousHandPosition = grabHand.transform.position.z;
 
             //Small haptic vibration while holding lever
-            elevatorManager.GetComponent<grabHaptic>().triggerBurst(40, 2);
+
+            //What hand is holding the lever
+            var deviceIndex = 0;
+            if(grabHand.gameObject.tag == "rightControl") {
+                deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
+            }
+            else {
+                deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+            }
+
+            SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)holdingVibration);
         }
         else {
             reset = true;
