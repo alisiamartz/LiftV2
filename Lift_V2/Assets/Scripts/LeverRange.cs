@@ -45,7 +45,7 @@ public class LeverRange : MonoBehaviour {
             }
             else
             {
-                GetComponent<LeverRotation>().jiggleResponse();
+                //GetComponent<LeverRotation>().jiggleResponse();
             }
 
             //Trigger Haptic pulse

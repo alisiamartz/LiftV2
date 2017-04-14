@@ -25,6 +25,11 @@ public class LeverRotation : MonoBehaviour {
     [HideInInspector]
     public float decensionRate = 0f;
 
+    [Header("Floors")]
+    public float[] floors;
+    public bool setToFloor = false;
+    private ElevatorMovement movementScript;
+
     [Header("Jiggle Effect")]
     public float jiggleStrength = 10;
     private bool jiggling = false;
@@ -38,6 +43,62 @@ public class LeverRotation : MonoBehaviour {
     public string leverResetSound;
     public string jiggleSound;
 
+    void Start(){
+        leverRotation = -90;                                                                                      //Rotation of starting floor
+        positionToRotation = Mathf.Abs(maxRotation - minRotation) / 0.6f;
+
+        movementScript = GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<ElevatorMovement>();
+    }
+
+    void Update(){
+        if (grabbed){
+            if (previousHandPosition != grabHand.transform.position.z) {
+                //if lever has been moved 
+                setToFloor = false;
+
+                //What direction the lever is being moved in
+                if (previousHandPosition - grabHand.transform.position.z < 0) {
+                    leverRotation += Mathf.Abs(previousHandPosition - grabHand.transform.position.z) * positionToRotation;
+                }
+                else {
+                    leverRotation -= Mathf.Abs(previousHandPosition - grabHand.transform.position.z) * positionToRotation;
+                }
+            }
+
+            previousHandPosition = grabHand.transform.position.z;
+        }
+
+        //Bounds checks
+        if (leverRotation > maxRotation) {
+            leverRotation = maxRotation;
+        }
+        else if (leverRotation < minRotation) {
+            leverRotation = minRotation;
+        }
+
+        //Check if rotation is on a floor
+        if (!setToFloor && !grabbed) {
+            var lowestDistance = 999f;
+            var lowestIndex = -1;
+
+            for (var i = 0; i < floors.Length; i++) {
+                if(Mathf.Abs(floors[i] - leverRotation) < lowestDistance) {
+                    lowestDistance = Mathf.Abs(floors[i] - leverRotation);
+                    lowestIndex = i;
+                }
+            }
+            //We've identified a new target floor
+            leverRotation = floors[lowestIndex];
+            setToFloor = true;
+            movementScript.newDoorTarget(lowestIndex);
+        }
+
+        transform.rotation = Quaternion.Euler(leverRotation, -0, 0);
+    }
+
+
+
+    /*
     //5 Unity units between top rotation and bottom rotation. Helper objects in scene
 
 	// Use this for initialization
@@ -156,4 +217,5 @@ public class LeverRotation : MonoBehaviour {
         jiggleSound.PlaySound(transform.position);
         jiggling = true;
     }
+    */
 }

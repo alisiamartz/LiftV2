@@ -32,6 +32,9 @@ public class ElevatorMovement : MonoBehaviour {
     [Header("Sounds")]
     public string floorPassingSound;
 
+    [Header("New Lever")]
+    private int targetFloor;
+
     private GameObject lever;
     private GameObject hotelManager;
 
@@ -53,9 +56,51 @@ public class ElevatorMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Get Unity Components
-        var leverRotation = lever.GetComponent<LeverRotation>();
 
+        //Add current speed
+        floorPos += liftSpeedCurrent;
+
+        //If not a target destination
+        if(floorPos != targetFloor) {
+            if (Mathf.Abs(floorPos - targetFloor) > liftSpeedMax * 1.5) {
+                if (floorPos < targetFloor) {
+                    liftSpeedCurrent = liftSpeedMax;
+                }
+                else {
+                    liftSpeedCurrent = -liftSpeedMax;
+                }
+            }
+            else {
+                floorPos = targetFloor;
+                liftSpeedCurrent = 0;
+            }
+        }
+
+
+        //If elevator is moving
+        if (liftSpeedCurrent != 0) {
+            //Haptic Feedback
+            var deviceIndex1 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+            SteamVR_Controller.Input(deviceIndex1).TriggerHapticPulse((ushort)Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
+            var deviceIndex2 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
+            SteamVR_Controller.Input(deviceIndex2).TriggerHapticPulse((ushort)Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
+
+            //Check for passing floors
+            if ((floorPos == Mathf.Round(floorPos) || ((floorPos - Mathf.Round(floorPos)) * (previousFloorPos - Mathf.Round(floorPos)) < 0)) && Mathf.Round(floorPos) != lastPassedFloor) {
+                //We're passing a floor
+                Debug.Log("passing floor");
+                floorPassingSound.PlaySound(transform.position);
+                lastPassedFloor = Mathf.Round(floorPos);
+            }
+
+            //Change this SSSSSSSSSSSSSSSSSSSSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIITTTTTTTTTTTTTTTTTTTTTTTTTTTTTT <-
+            hotelManager.GetComponent<FloorManager>().floorPos = -1;
+        }
+
+        //Send the elevator speed to the movementSound Script
+        GetComponent<movementSound>().liftSpeed = liftSpeedCurrent;
+
+        /*
         //If within bounds of elevator
         if ((floorPos > 0 || liftSpeedCurrent > 0) && (floorPos < 5 || liftSpeedCurrent < 0)) {
             floorPos += liftSpeedCurrent;
@@ -82,7 +127,7 @@ public class ElevatorMovement : MonoBehaviour {
                 }
 
                 //TO DO ADD A SOUND EFFECT HERE --------------------------------------------------------------------------------------------------------------------
-                GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(20, 2);
+                GetComponent<grabHaptic>().triggerBurst(20, 2);
                 firstHit = true;
             }
         }
@@ -174,6 +219,17 @@ public class ElevatorMovement : MonoBehaviour {
         }
 
         previousFloorPos = floorPos;
+        */
+
+    }
+
+
+    public void newDoorTarget(int target) {
+        Debug.Log("New target floor: " + target);
+        //Called from lever rotation when set to a different floor
+        if (target != targetFloor) {
+            targetFloor = target;
+        }
     }
 
     public void doorOpened()
