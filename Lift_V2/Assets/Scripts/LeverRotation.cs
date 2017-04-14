@@ -28,7 +28,7 @@ public class LeverRotation : MonoBehaviour {
     [Header("Floors")]
     public float[] floors;
     public bool setToFloor = false;
-    private ElevatorMovement movementScript;
+    private GameObject elevatorManager;
 
     [Header("Jiggle Effect")]
     public float jiggleStrength = 10;
@@ -44,14 +44,22 @@ public class LeverRotation : MonoBehaviour {
     public string jiggleSound;
 
     void Start(){
-        leverRotation = -90;                                                                                      //Rotation of starting floor
         positionToRotation = Mathf.Abs(maxRotation - minRotation) / 0.6f;
+        reset = true;
 
-        movementScript = GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<ElevatorMovement>();
+        elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
+        leverRotation = floors[(int)elevatorManager.GetComponent<ElevatorMovement>().floorPos];
     }
 
     void Update(){
         if (grabbed){
+            if (reset) {
+                previousHandPosition = grabHand.transform.position.z;
+                reset = false;
+                Debug.Log(previousHandPosition);
+            }
+
+            Debug.Log("previous: " + previousHandPosition + " and current: " + grabHand.transform.position.z);
             if (previousHandPosition != grabHand.transform.position.z) {
                 //if lever has been moved 
                 setToFloor = false;
@@ -66,6 +74,12 @@ public class LeverRotation : MonoBehaviour {
             }
 
             previousHandPosition = grabHand.transform.position.z;
+
+            //Small haptic vibration while holding lever
+            elevatorManager.GetComponent<grabHaptic>().triggerBurst(40, 2);
+        }
+        else {
+            reset = true;
         }
 
         //Bounds checks
@@ -90,7 +104,7 @@ public class LeverRotation : MonoBehaviour {
             //We've identified a new target floor
             leverRotation = floors[lowestIndex];
             setToFloor = true;
-            movementScript.newDoorTarget(lowestIndex);
+            elevatorManager.GetComponent<ElevatorMovement>().newDoorTarget(lowestIndex);
         }
 
         transform.rotation = Quaternion.Euler(leverRotation, -0, 0);
