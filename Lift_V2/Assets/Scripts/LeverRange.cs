@@ -5,15 +5,18 @@ using UnityEngine;
 public class LeverRange : MonoBehaviour {
 
     private bool inRange;
+    public GameObject camRig;
 
     // Use this for initialization
     void Start () {
 
         inRange = false;
+        camRig = GameObject.FindGameObjectWithTag("Player");
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         if(inRange == false)
         {
@@ -35,9 +38,11 @@ public class LeverRange : MonoBehaviour {
         }
     }
 
-    public void attemptGrab(GameObject hand, bool doorOpen, float timer){
+    public void attemptGrab(GameObject hand, bool doorOpen, float timer)
+    {
         if (inRange)
         {
+            DisableGesture.turnOff(camRig);
             if (!doorOpen && timer <= 0.0f)
             {
                 GetComponent<LeverRotation>().grabbed = true;
@@ -50,6 +55,13 @@ public class LeverRange : MonoBehaviour {
 
             //Trigger Haptic pulse
             GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);
+        }
+        else
+        {
+            if (!DisableGesture.isComponentEnabled(camRig))
+            {
+                DisableGesture.turnOn(camRig);
+            }
         }
     }
 
