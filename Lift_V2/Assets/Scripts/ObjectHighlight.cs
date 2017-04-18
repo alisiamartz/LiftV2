@@ -13,6 +13,8 @@ public class ObjectHighlight : MonoBehaviour {
 	public Collider[] controllerColliders;
 	Material init;
 	Material highlight;
+	public static bool nearDoor;
+	public static bool nearLever;
 
 	// Use this for initialization
 	void Start () {
@@ -47,6 +49,7 @@ public class ObjectHighlight : MonoBehaviour {
 				case "DoorHandle":
 					Debug.Log ("doorHandle");
 					//this.GetComponent<MeshRenderer> ().materials [1] = highlight;
+					nearDoor = true;
 					intMaterials = new Material[this.GetComponent<MeshRenderer> ().materials.Length];
 					if (intMaterials != null) {
 						for (int i = 0; i < intMaterials.Length; i++) {
@@ -73,6 +76,8 @@ public class ObjectHighlight : MonoBehaviour {
 			// this is where we set the color back to normal
 		}
 		if (!inRange) {
+			nearDoor = false;
+			nearLever = false;
 			intMaterials = new Material[this.GetComponent<MeshRenderer> ().materials.Length];
 			if (intMaterials != null) {
 				for (int i = 0; i < intMaterials.Length; i++) {
