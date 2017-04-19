@@ -20,31 +20,13 @@ public class Tree1 : Agent {
     //build tree
     public void build()
     {
-        // build leafs first, then work your way up to root
-        // ^ ignore that kuz scripting amirite?
-
-        root.Add(() => sequence(checkStart));
-        root.Add(() => sequence(checkDoorOpen));
-        root.Add(() => sequence(checkGesture));
-        root.Add(() => sequence(checkTimer));
-
-        checkStart.Add(() => isStart());
-        checkStart.Add(() => startAction());
-
-        checkDoorOpen.Add(() => isDoorOpen());
-        checkDoorOpen.Add(() => selector(checkFloor));
-
-        checkFloor.Add(() => sequence(checkRightFloor));
-        checkFloor.Add(() => wrongFloor());
-
-        checkRightFloor.Add(() => isRightFloor());
-        checkRightFloor.Add(() => exitElevator());
-
-        checkGesture.Add(() => isRightGesture());
-        checkGesture.Add(() => updateAgent());
-
-        checkTimer.Add(() => isTimerUp());
-        checkTimer.Add(() => updateAgent(true));
+        root = new List<decorative>(new decorative[] { () => sequence(checkStart), () => sequence(checkDoorOpen), () => sequence(checkGesture), () => sequence(checkTimer) });
+        checkStart = new List<decorative>(new decorative[] { () => isStart(), () => startAction() });
+        checkDoorOpen = new List<decorative>(new decorative[] { () => isDoorOpen(), () => selector(checkFloor) });
+        checkFloor = new List<decorative>(new decorative[] { () => sequence(checkRightFloor), () => wrongFloor() });
+        checkRightFloor = new List<decorative>(new decorative[] { () => isRightFloor(), () => exitElevator() });
+        checkGesture = new List<decorative>(new decorative[] { () => isRightGesture(), () => updateAgent() });
+        checkTimer = new List<decorative>(new decorative[] { () => isTimerUp(), () => updateAgent(true) });
     }
 
     //decoratives in tree
@@ -137,7 +119,6 @@ public class Tree1 : Agent {
         }
 
         resetGesture();
-        say(currentNode);
         timer = currentNode.wait;
 
         return true;
@@ -147,6 +128,7 @@ public class Tree1 : Agent {
     {
         if (timer < 0) return true;
         timer -= Time.deltaTime;
+        say(currentNode);
 
         return false;
     }

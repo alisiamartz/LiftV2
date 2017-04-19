@@ -32,6 +32,7 @@ public abstract class Agent : MonoBehaviour {
     protected FloorManager fm;
     protected bool isExit;
     protected string lastSound;
+    public bool isEndNode;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -67,6 +68,7 @@ public abstract class Agent : MonoBehaviour {
         notFloorNode = nodeDict["notFloor"];
         endNode = nodeDict["End"];
         graceTimer = 10; //seconds grace time before telling you that you are in the wrong floor
+        isEndNode = false;
     }
 
     //decorative stuff
@@ -99,6 +101,10 @@ public abstract class Agent : MonoBehaviour {
         bubble.text = n.dialogue[index];
 
         string dialogue = n.dialogue[index];
+
+        if (isEndNode && !(n == endNode || n== notFloorNode)) return;
+
+        if (n.name == n.noResponse && n != notFloorNode) isEndNode = true;
 
         if (lastSound != dialogue)
         {
