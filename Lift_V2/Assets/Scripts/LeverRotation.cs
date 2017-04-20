@@ -118,7 +118,7 @@ public class LeverRotation : MonoBehaviour {
             elevatorManager.GetComponent<ElevatorMovement>().newDoorTarget(lowestIndex);
         }
 
-        transform.rotation = Quaternion.Euler(leverRotation, -0, 0);
+        transform.rotation = Quaternion.Euler(0, 91.95f, leverRotation);
     }
 
 
