@@ -67,7 +67,7 @@ public class PatronMovement : MonoBehaviour {
                     //Basic Despawmn
 
                     //Tell the manager that we've finished a character
-                    hotelManager.GetComponent<DemoSpawner>().nextPatron();
+                    hotelManager.GetComponent<DayManager>().nextPatron();
                     Debug.Log("Called despawn");
                     Destroy(this.gameObject);
                 }
