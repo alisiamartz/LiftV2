@@ -18,6 +18,7 @@ public class ElevatorMovement : MonoBehaviour {
     private float liftSpeedWinder;                    //The current rate of speed decrease for the elevator
     [HideInInspector]
     public bool windingDown;                           //Whether or not elevator is winding down to a halt
+    private bool initialArrival;
 
     [Header("Magnet Variables")]
     public float floorRounding;                         //How close to the floor the elevator must be for it to round
@@ -47,6 +48,7 @@ public class ElevatorMovement : MonoBehaviour {
         liftSpeedCurrent = 0f;
         liftSpeedWinder = liftSpeedMax / timeToStop;
         windingDown = false;
+        initialArrival = false;
 
         magnet = false;
 
@@ -74,6 +76,16 @@ public class ElevatorMovement : MonoBehaviour {
                 floorPos = targetFloor;
                 liftSpeedCurrent = 0;
             }
+            initialArrival = true;
+        }
+        else if(initialArrival){
+            //We're at the target floor
+            floorPassingSound.PlaySound(transform.position);
+
+            //Load in the floor stopped at
+            hotelManager.GetComponent<FloorManager>().loadNewFloor((int)floorPos);
+
+            initialArrival = false;
         }
 
 
