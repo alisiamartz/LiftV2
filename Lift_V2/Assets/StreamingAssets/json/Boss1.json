@@ -12,8 +12,6 @@
         "Good morning. I am currently waiting on a floor for you. Can you please get here and open the door for me? I'd like to discuss a few matters with you.",
         "Good morning. I am currently waiting on a floor for you. Can you please get here and open the door for me? I'd like to discuss a few matters with you."
       ],
-      "listen": [],
-      "change": [],
       "toNode": [ "First order" ],
       "noResponse": "Still waiting",
       "noResponseChange": 0
@@ -26,8 +24,6 @@
         "Hurry I don't have all day; the light on the lever panel will tell you which floor I'm on. Just come meet me here and open the door.",
         "Hurry I don't have all day; the light on the lever panel will tell you which floor I'm on. Just come meet me here and open the door."
       ],
-      "listen": [],
-      "change": [],
       "toNode": [ "First order" ],
       "noResponse": "Still waiting",
       "noResponseChange": 0
@@ -40,8 +36,6 @@
         "Why thank you. Now take me to my office on floor 2.",
         "Why thank you. Now take me to my office on floor 2."
       ],
-      "listen": [],
-      "change": [],
       "toNode": [ "Day to day operations" ],
       "noResponse": "Ancient mechanism",
       "noResponseChange": 0
@@ -54,8 +48,6 @@
         "You have to close the door first and then operate the elevator. Come on we don't have all day.",
         "You have to close the door first and then operate the elevator. Come on we don't have all day."
       ],
-      "listen": [],
-      "change": [],
       "toNode": [ "Day to day operations" ],
       "noResponse": "Ancient mechanism",
       "noResponseChange": 0
@@ -68,9 +60,6 @@
         "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at our establishment, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Understand so far?",
         "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at our establishment, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Understand so far?"
       ],
-      "listen": [],
-      "change": [],
-      "toNode": [],
       "noResponse": "Under pressure",
       "noResponseChange": 0
     },
@@ -82,9 +71,6 @@
         "Ah, I'm sure you will figure it out- everything is pretty straight forward.",
         "Ah, I'm sure you will figure it out- everything is pretty straight forward."
       ],
-      "listen": [],
-      "change": [],
-      "toNode": [],
       "noResponse": "The Guests",
       "noResponseChange": 0
     },
@@ -96,9 +82,6 @@
         "Now, throughout the day you'll interact with various guests and employees. Be polite and engage these individuals. Be sure to remember your oath of silence so just give them a visual indications that you're interested in their small talks. Remember that our business depends entirely on customer satisfaction and ravishing reviews is always good for business. Even if they're being uncooperative, I want you to hold it in and provide excellent serivice. Are we in agreeance?",
         "Now, throughout the day you'll interact with various guests and employees. Be polite and engage these individuals. Be sure to remember your oath of silence so just give them a visual indications that you're interested in their small talks. Remember that our business depends entirely on customer satisfaction and ravishing reviews is always good for business. Even if they're being uncooperative, I want you to hold it in and provide excellent serivice. Are we in agreeance?"
       ],
-      "listen": [],
-      "change": [],
-      "toNode": [],
       "noResponse": "The first day",
       "noResponseChange": 0
     },
@@ -110,9 +93,6 @@
         "Ah, of course you are. Lastly, use this (points to panel) to know who needs a lift and which floor they're on. And that's about everything you'll need for the first day. I do firmly believe you'll provide excellent service here. If there's anything I'm particularly known for, it's my judgment of character. Now take your ID and hat and you are ready to start your first day. ",
         "Ah, of course you are. Lastly, use this (points to panel) to know who needs a lift and which floor they're on. And that's about everything you'll need for the first day. I do firmly believe you'll provide excellent service here. If there's anything I'm particularly known for, it's my judgment of character. Now take your ID and hat and you are ready to start your first day. "
       ],
-	  "listen": [],
-      "change": [],
-      "toNode": [],
       "noResponse": "Good start",
       "noResponseChange": 0
     },
@@ -124,9 +104,6 @@
         "Alright, now open up the door for me and I'll be on my way. Again I wish you the best and have an excellent first day. ",
         "Alright, now open up the door for me and I'll be on my way. Again I wish you the best and have an excellent first day. "
       ],
-	  "listen": [],
-      "change": [],
-      "toNode": [],
       "noResponse": "End",
       "noResponseChange": 0
     },
