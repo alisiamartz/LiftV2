@@ -134,9 +134,9 @@ public class doorInteraction : MonoBehaviour
             // if past certain point
             if (door.transform.position.y > 2.5f) {
                 door.transform.position = Vector3.MoveTowards(door.transform.position, doorOpen.transform.position, Time.deltaTime);
-                Debug.Log("Attempt to lerP");
+                //Debug.Log("Attempt to lerP");
                 if (door.transform.position.y >= 3.2f) {
-                    Debug.Log("I WANT THIS");
+                    //Debug.Log("I WANT THIS");
                     lifting = false;
                     open = true;
                     slidingDoor2.openSlidingDoor();
@@ -153,7 +153,7 @@ public class doorInteraction : MonoBehaviour
             // if trigger is pressed on rope and it is collided
             if (grabbed)
             {
-                Debug.Log("hell yeah get ready to close this shit");
+                //Debug.Log("hell yeah get ready to close this shit");
                 closing = true;
                 // Move the door according to the current y position of the controller
                 door.transform.position = new Vector3(initX, (door.transform.position.y - rope.transform.position.y) + grabbingHand.transform.position.y, initZ);
@@ -182,11 +182,11 @@ public class doorInteraction : MonoBehaviour
             if (door.transform.position.y < 2.5f)
             {   
                 door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, initY, initZ), Time.deltaTime);
-                Debug.Log("Attempt to lerP down to close");
+                //Debug.Log("Attempt to lerP down to close");
                 //Debug.Log(door.transform.localPosition.y);//flooding console
                 if (door.transform.localPosition.y <= 1.17f)  
                 {
-                    Debug.Log("Door is closed");
+                    //Debug.Log("Door is closed");
                     closing = false;
                     open = false;
                     slidingDoor2.closeSlidingDoor();
@@ -216,7 +216,7 @@ public class doorInteraction : MonoBehaviour
         }
 
         if (jiggling) {
-            Debug.Log("Jiggling");
+            //Debug.Log("Jiggling");
             if (jiggleTimer < jiggleLength) {
                 if (jiggleTimer % jiggleDivisor == 0) {
                     door.transform.position = new Vector3(door.transform.position.x, 1.17f + jiggleStrength * Mathf.Sin(jiggleTimer), door.transform.position.z);

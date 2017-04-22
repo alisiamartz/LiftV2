@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Tree1 : Agent {
 
-    private Tree1 btree;
+    //private Tree1 btree;
 
     void Start () {
-        btree = new Tree1();
+        //btree = new Tree1();
         Init();
         build();
 	}
