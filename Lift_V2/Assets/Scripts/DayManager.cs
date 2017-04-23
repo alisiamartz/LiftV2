@@ -47,7 +47,7 @@ public class DayManager : MonoBehaviour {
 
             var patronObject = GetComponent<Patrons>().fetchPatron(days[day - 1][patronNumber - 1]);
             var patronPrefab = patronObject.prefab;
-            var startFloor = patronObject.startFloor + 1;
+            var startFloor = patronObject.startFloor;
 
             Quaternion basePatronRotation = patronPrefab.transform.rotation;
 
