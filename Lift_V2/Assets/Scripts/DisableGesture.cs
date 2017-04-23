@@ -9,11 +9,11 @@ public class DisableGesture : MonoBehaviour {
 	// Enable and disable component
 
 	public static void turnOff(GameObject camRig) {
-		Debug.Log ("turned off?");
+		//Debug.Log ("turned off?");
 		camRig.GetComponent<VRGestureRig> ().enabled = false;
 	}
 	public static void turnOn(GameObject camRig) {
-		Debug.Log ("turned on?");
+		//Debug.Log ("turned on?");
 		camRig.GetComponent<VRGestureRig> ().enabled = true;
 	}
 	public static bool isComponentEnabled(GameObject camRig) {

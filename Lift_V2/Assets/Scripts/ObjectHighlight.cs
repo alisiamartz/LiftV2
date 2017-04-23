@@ -19,7 +19,8 @@ public class ObjectHighlight : MonoBehaviour {
 		// 
 		if (this.name =="DoorHandle") 
 			init = this.GetComponent<MeshRenderer>().materials [1];
-
+		if(this.name == "Rotator") 
+			init = this.GetComponent<MeshRenderer>().materials[2];
 	}
 	
 	// Update is called once per frame
