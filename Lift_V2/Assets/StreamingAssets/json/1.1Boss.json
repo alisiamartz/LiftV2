@@ -54,7 +54,7 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "boss31",
         "boss31",
@@ -76,7 +76,7 @@
     },
     {
       "name": "The Guests",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "boss51",
         "boss51",

@@ -18,7 +18,7 @@ public class FloorRotation : MonoBehaviour {
         if(dialFloorPos != Manager.GetComponent<ElevatorMovement>().floorPos)
         {
             //90 is floor 0 and -90 is max floor (4)
-            transform.rotation = Quaternion.Euler(-Manager.GetComponent<ElevatorMovement>().floorPos * 36, 180, 0);
+            transform.rotation = Quaternion.Euler(-Manager.GetComponent<ElevatorMovement>().floorPos * 30, 180, 0);
         }
 
 	}

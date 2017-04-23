@@ -8,8 +8,6 @@ public class FloorManager : MonoBehaviour
     public bool doorOpen;
     public int floorPos = -1;
 
-    public GameObject floorPanel;
-
     public GameObject[] floors;                             //[] is the gameObject floor holder
     [HideInInspector]
     public int[] patrons = new int[6];                      //is the number of patrons waiting at each floor
@@ -31,9 +29,6 @@ public class FloorManager : MonoBehaviour
         }
 
         activeFloorIndex = targetFloor;
-
-        //Tell the hotel manager we've arrived at a floor
-        floorPanel.GetComponent<FloorsPanel>().lightOff(targetFloor);
     }
 
     public GameObject fetchElevatorWaypoint()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss1AI : Agent {
 
 	void Start () {
-        filename = "Boss1.json";
+        filename = "1.1Boss.json";
         Init();
         timer = nodeDict["Start"].wait;
         currentNode = nodeDict["Start"];
