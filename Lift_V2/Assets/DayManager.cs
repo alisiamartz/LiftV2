@@ -20,8 +20,16 @@ public class DayManager : MonoBehaviour {
     //[Range(1, 4)]
     public int patronNumber = 1;
 
+    [Header("Day Reset")]
+    public int fadeToBlackTime;
+    public int timeInBlack;
+    public int unFadeTime;
+    private GameObject elevatorManager;
+
+
     // Use this for initialization
     void Start () {
+        elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
 
         days[0] = day1; days[1] = day2; days[2] = day3; days[3] = day4; days[4] = day5;
         SteamVR_Fade.Start(Color.black, 0);
@@ -58,12 +66,10 @@ public class DayManager : MonoBehaviour {
             patronNumber = 0;
             day += 1;
 
-            nextPatron();
-
             SteamVR_Fade.Start(Color.clear, 0);
-            SteamVR_Fade.Start(Color.black, 5);
+            SteamVR_Fade.Start(Color.black, fadeToBlackTime);
 
-            //dayReset();
+            StartCoroutine(ExecuteAfterTime(5f + timeInBlack));
         }
         //We've reached the end of the game timeline
         else {
@@ -73,7 +79,20 @@ public class DayManager : MonoBehaviour {
 
 
     public void dayReset() {
-        SteamVR_Fade.Start(Color.black, 5);
-        SteamVR_Fade.Start(Color.clear, 5);
+        //Close the elevator door
+        //Reset elevator position etc.
+        //elevatorManager.GetComponent<ElevatorMovement>()
+
+        nextPatron();
+
+        SteamVR_Fade.Start(Color.black, 0);
+        SteamVR_Fade.Start(Color.clear, unFadeTime);
+    }
+
+    IEnumerator ExecuteAfterTime(float time) {
+        yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+        dayReset();
     }
 }
