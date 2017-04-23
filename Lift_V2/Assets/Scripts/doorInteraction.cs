@@ -20,6 +20,7 @@ public class doorInteraction : MonoBehaviour
     private GameObject hold;
     private GameObject doorOpen;
     private GameObject rope;
+	public static bool nearDoor;
 
     bool lifting;
     bool closing;
@@ -236,6 +237,7 @@ public class doorInteraction : MonoBehaviour
     public void attemptGrab(GameObject hand)
     {
 		if (handInRange) {
+			nearDoor = true;
 			DisableGesture.turnOff (camRig);
 
 			//If Door Open
@@ -248,6 +250,7 @@ public class doorInteraction : MonoBehaviour
 				jiggling = true;
 			}
 		} else {
+			nearDoor = false;
 			if (!DisableGesture.isComponentEnabled (camRig)) {
 				DisableGesture.turnOn (camRig);
 			}

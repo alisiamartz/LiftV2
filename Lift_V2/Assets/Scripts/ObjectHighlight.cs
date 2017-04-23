@@ -13,8 +13,6 @@ public class ObjectHighlight : MonoBehaviour {
 	public Collider[] controllerColliders;
 	Material init;
 	Material highlight;
-	public static bool nearDoor;
-	public static bool nearLever;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +34,6 @@ public class ObjectHighlight : MonoBehaviour {
 	void withinInteract(Vector3 center, float radius) {
 		MeshRenderer cachedRenderer;
 		Material[] intMaterials;
-		// Collider[] controllerColliders;
 		controllerColliders = Physics.OverlapSphere (center, rad); 
 	//	Debug.Log ("radius " + rad + " center " + center);
 		bool inRange = false;
@@ -47,16 +44,13 @@ public class ObjectHighlight : MonoBehaviour {
 				// set the color of the object
 				switch (this.name) {
 				case "DoorHandle":
-					Debug.Log ("doorHandle");
-					//this.GetComponent<MeshRenderer> ().materials [1] = highlight;
-					nearDoor = true;
+					//Debug.Log ("doorHandle");
 					intMaterials = new Material[this.GetComponent<MeshRenderer> ().materials.Length];
 					if (intMaterials != null) {
 						for (int i = 0; i < intMaterials.Length; i++) {
 							intMaterials [i] = this.GetComponent<MeshRenderer> ().materials [i];
 						}
 						for (int i = 0; i < intMaterials.Length; i++) {
-							//Debug.Log (intMaterials [i].name);
 							if (intMaterials [i].name == "eLiftHandle3 (Instance)") {
 								intMaterials [i] = highlight;
 							}
@@ -64,20 +58,31 @@ public class ObjectHighlight : MonoBehaviour {
 						this.GetComponent<MeshRenderer> ().materials = intMaterials;
 					}
 					break;
-				//case "LeverHandle":
-				//	break;
+				case "Rotator":
+					intMaterials = new Material[this.GetComponent<MeshRenderer> ().materials.Length];
+					if (intMaterials != null) {
+						for (int i = 0; i < intMaterials.Length; i++) {
+							intMaterials [i] = this.GetComponent<MeshRenderer> ().materials [i];
+						}
+						for (int i = 0; i < intMaterials.Length; i++) {
+							//Debug.Log (intMaterials [i].name);
+							if (intMaterials [i].name == "newLever2 (Instance)") {
+								intMaterials [i] = highlight;
+							}
+						}
+						this.GetComponent<MeshRenderer> ().materials = intMaterials;
+					}
+					break;
 				default:
 					break;
 				}
-				Debug.Log ("changed tho");
 			} else {
 
 			}
-			// this is where we set the color back to normal
 		}
+
+		// this is where we set the color back to normal
 		if (!inRange) {
-			nearDoor = false;
-			nearLever = false;
 			intMaterials = new Material[this.GetComponent<MeshRenderer> ().materials.Length];
 			if (intMaterials != null) {
 				for (int i = 0; i < intMaterials.Length; i++) {

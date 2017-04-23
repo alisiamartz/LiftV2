@@ -6,6 +6,7 @@ public class LeverRange : MonoBehaviour {
 
     private bool inRange;
     public GameObject camRig;
+	public static bool nearLever;
 
     // Use this for initialization
     void Start () {
@@ -42,7 +43,9 @@ public class LeverRange : MonoBehaviour {
     {
         if (inRange)
         {
+			nearLever = true;
             DisableGesture.turnOff(camRig);
+
             if (!doorOpen && timer <= 0.0f)
             {
                 GetComponent<LeverRotation>().grabbed = true;
@@ -58,6 +61,7 @@ public class LeverRange : MonoBehaviour {
         }
         else
         {
+			nearLever = false;
             if (!DisableGesture.isComponentEnabled(camRig))
             {
                 DisableGesture.turnOn(camRig);
