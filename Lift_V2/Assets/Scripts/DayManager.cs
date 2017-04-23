@@ -5,14 +5,14 @@ using UnityEngine;
 public class DayManager : MonoBehaviour {
 
     [Header("Patrons")]
-    public GameObject[] day1;
-    public GameObject[] day2;
-    public GameObject[] day3;
-    public GameObject[] day4;
-    public GameObject[] day5;
+    public string[] day1;
+    public string[] day2;
+    public string[] day3;
+    public string[] day4;
+    public string[] day5;
 
     //In the days array 
-    private GameObject[][] days = new GameObject[5][];
+    private string[][] days = new string[5][];
 
     [Header("Timeline")]
     [Range(1, 5)]
@@ -45,8 +45,9 @@ public class DayManager : MonoBehaviour {
 
             patronNumber += 1;
 
-            var patronPrefab = days[day-1][patronNumber-1];
-            var startFloor = 0;
+            var patronObject = GetComponent<Patrons>().fetchPatron(days[day - 1][patronNumber - 1]);
+            var patronPrefab = patronObject.prefab;
+            var startFloor = patronObject.startFloor;
 
             Quaternion basePatronRotation = patronPrefab.transform.rotation;
 
