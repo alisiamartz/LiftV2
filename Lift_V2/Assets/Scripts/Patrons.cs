@@ -18,115 +18,116 @@ public class Patrons : MonoBehaviour {
 
         if(patronName == "Boss1") {
             var startFloor = -1;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = Resources.Load("Assets/Patrons/Boss1.prefab") as GameObject;
+            Debug.Log(prefab.gameObject.name);
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Boss2") {
             var startFloor = 0;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Boss3") {
             var startFloor = 5;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Business1") {
             var startFloor = 0;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/Business1");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Business2") {
             var startFloor = 2;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Business3") {
             var startFloor = 2;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Tourist1") {
             var startFloor = 5;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Tourist2") {
             var startFloor = 3;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Tourist3") {
             var startFloor = 3;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Adultress1") {
             var startFloor = 0;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Adultress2") {
             var startFloor = 0;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Adultress3") {
             var startFloor = 3;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Artist1") {
             var startFloor = 1;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Artist2") {
             var startFloor = 4;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Artist3") {
             var startFloor = 1;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Server1") {
             var startFloor = 5;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Server2") {
             var startFloor = 5;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Server3") {
             var startFloor = 5;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
         if (patronName == "Server4") {
             var startFloor = 5;
-            var prefab = (GameObject)Resources.Load("/Patrons/yourPrefab");
+            var prefab = (GameObject)Resources.Load("Assets/Patrons/yourPrefab");
             return new Patron(prefab, startFloor);
         }
 
