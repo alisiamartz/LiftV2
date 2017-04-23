@@ -1,0 +1,131 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 2
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 30,
+      "dialogue": [
+        "boss11",
+        "boss11",
+        "boss11"
+      ],
+      "toNode": [ "First order" ],
+      "noResponse": "Still waiting",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Still waiting",
+      "wait": 30,
+      "dialogue": [
+        "boss21",
+        "boss21",
+        "boss21"
+      ],
+      "toNode": [ "First order" ],
+      "noResponse": "Still waiting",
+      "noResponseChange": 0
+    },
+    {
+      "name": "First order",
+      "wait": 30,
+      "dialogue": [
+        "boss22",
+        "boss22",
+        "boss22"
+      ],
+      "toNode": [ "Day to day operations" ],
+      "noResponse": "Ancient mechanism",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Ancient mechanism",
+      "wait": 30,
+      "dialogue": [
+        "boss23",
+        "boss23",
+        "boss23"
+      ],
+      "toNode": [ "Day to day operations" ],
+      "noResponse": "Ancient mechanism",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Day to day operations",
+      "wait": 30,
+      "dialogue": [
+        "boss31",
+        "boss31",
+        "boss31"
+      ],
+      "noResponse": "Under pressure",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Under pressure",
+      "wait": 10,
+      "dialogue": [
+        "boss41",
+        "boss41",
+        "boss41"
+      ],
+      "noResponse": "The Guests",
+      "noResponseChange": 0
+    },
+    {
+      "name": "The Guests",
+      "wait": 30,
+      "dialogue": [
+        "boss51",
+        "boss51",
+        "boss51"
+      ],
+      "noResponse": "The first day",
+      "noResponseChange": 0
+    },
+    {
+      "name": "The first day",
+      "wait": 10,
+      "dialogue": [
+        "boss61",
+        "boss61",
+        "boss61"
+      ],
+      "noResponse": "Good start",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Good start",
+      "wait": 10,
+      "dialogue": [
+        "boss71",
+        "boss71",
+        "boss71"
+      ],
+      "noResponse": "End",
+      "noResponseChange": 0
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "boss81",
+        "boss81",
+        "boss81"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 10,
+      "dialogue": [
+        "boss82",
+        "boss82",
+        "boss82"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    }
+  ]
+}

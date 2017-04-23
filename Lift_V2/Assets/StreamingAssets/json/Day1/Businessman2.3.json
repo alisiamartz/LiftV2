@@ -1,0 +1,148 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 5
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 30,
+      "dialogue": [
+        "Yeah, I'm gonna need you to take me to floor two.",
+        "Yeah, I'm gonna need you to take me to floor two.",
+        "Yeah, I'm gonna need you to take me to floor two."
+      ],
+	  "listen": [ "yes", "confused", "rude" ],
+      "change": [ 2, -2, -2 ],
+      "toNode": [ "Proposition", "Better Service", "Better Service" ],
+      "noResponse": "Proposition",
+      "noResponseChange": 2
+    },
+    {
+      "name": "Proposition",
+      "wait": 30,
+      "dialogue": [
+        "Got a big meeting with the boss-man today. Well, your boss-man, my client. I'm not supposed to say anything but, a word of advice: might want to start looking for alternative employment. Speaking of which, I hope you've got skills outside of 'elevator-operating.' Last time I saw a hotel without an automatic elevator was, uh, I don't know, I Love Lucy? I mean, talk about out-dated, do you think this place is even up to code?",
+        "Got a big meeting with the boss-man today. Well, your boss-man, my client. I'm not supposed to say anything but, a word of advice: might want to start looking for alternative employment. Speaking of which, I hope you've got skills outside of 'elevator-operating.' Last time I saw a hotel without an automatic elevator was, uh, I don't know, I Love Lucy? I mean, talk about out-dated, do you think this place is even up to code?",
+        "Got a big meeting with the boss-man today. Well, your boss-man, my client. I'm not supposed to say anything but, a word of advice: might want to start looking for alternative employment. Speaking of which, I hope you've got skills outside of 'elevator-operating.' Last time I saw a hotel without an automatic elevator was, uh, I don't know, I Love Lucy? I mean, talk about out-dated, do you think this place is even up to code?"
+      ],
+	  "listen": [ "yes", "no" ],
+      "change": [ -4, 3 ],
+      "toNode": [ "Worker's bias", "Outdated" ],
+      "noResponse": "Cat got your tongue",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Better Service",
+      "wait": 30,
+      "dialogue": [
+        "Looks like the service here should be the first on the chopping block. Gonna prove me wrong?",
+        "Looks like the service here should be the first on the chopping block. Gonna prove me wrong?",
+        "Looks like the service here should be the first on the chopping block. Gonna prove me wrong?"
+      ],
+	   "listen": [ "yes", "no" ],
+      "change": [ 5, -3 ],
+      "toNode": [ "New guy", "Everyone's a critic" ],
+      "noResponse": "Cat got your tongue",
+      "noResponseChange": 1
+    },
+    {
+      "name": "Worker's bias",
+      "wait": 30,
+      "dialogue": [
+        "Huh, what else could I have expected from one of the Westwind's loyal cronies? Your boss has got you hypnotized, none of you seem to get what's actually going on here; this place is falling apart. By refusing to update, your boss is driving this place into the ground, it's hurting the hotel and all of its employees. You get it?",
+        "Huh, what else could I have expected from one of the Westwind's loyal cronies? Your boss has got you hypnotized, none of you seem to get what's actually going on here; this place is falling apart. By refusing to update, your boss is driving this place into the ground, it's hurting the hotel and all of its employees. You get it?",
+        "Huh, what else could I have expected from one of the Westwind's loyal cronies? Your boss has got you hypnotized, none of you seem to get what's actually going on here; this place is falling apart. By refusing to update, your boss is driving this place into the ground, it's hurting the hotel and all of its employees. You get it?"
+      ],
+	  "listen": [ "yes", "no" ],
+      "change": [ 1, -1 ],
+      "toNode": [ "Simple response", "Clarification" ],
+      "noResponse": "Sign Language",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Day to day operations",
+      "wait": 30,
+      "dialogue": [
+        "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at our establishment, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Understand so far?",
+        "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at our establishment, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Understand so far?",
+        "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at our establishment, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Understand so far?"
+      ],
+	  "listen": [ "continue", "confused" ],
+      "change": [ 1, 1 ],
+	  "toNode": [ "Conversation starter", "Conversation starter" ],
+      "noResponse": "Awkward encounter",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Clarification",
+      "wait": 10,
+      "dialogue": [
+        "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're confused about there.",
+        "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're confused about there.",
+        "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're confused about there."
+      ],
+	  "listen": [ "continue", "confused" ],
+      "change": [ 1, 1 ],
+	  "toNode": [ "Conversation starter", "Conversation starter" ],
+      "noResponse": "Awkward encounter",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Big day",
+      "wait": 30,
+      "dialogue": [
+        "Ah, jeez, I've been talkin' too much again, haven't I? I tend to do that. How's your day been?",
+        "Ah, jeez, I've been talkin' too much again, haven't I? I tend to do that. How's your day been?",
+        "Ah, jeez, I've been talkin' too much again, haven't I? I tend to do that. How's your day been?"
+      ],
+	  "listen": [ "continue", "confused" ],
+      "change": [ 1, 1 ],
+	  "toNode": [ "Work night", "Work night" ],
+      "noResponse": "Awkward encounter",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Awkward encounter",
+      "wait": 20,
+      "dialogue": [
+        "Ah, ya know, I never considered ya may be deaf too. Heck, that's real insensitive of me. I'll just sit over here, then.",
+        "Ah, ya know, I never considered ya may be deaf too. Heck, that's real insensitive of me. I'll just sit over here, then.",
+        "Ah, ya know, I never considered ya may be deaf too. Heck, that's real insensitive of me. I'll just sit over here, then."
+      ],
+      "noResponse": "Awkward encounter",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Work night",
+      "wait": 10,
+      "dialogue": [
+        "Ah jeez, I totally forgot about the bread museum. Didja know they've got a whole museum dedicated to bread around here? It seems museum variety is the yeast of their problems! Get it? Yeast? 'Cause, uh, bread and all? Ya know, that plays off better when ya can laugh.",
+        "Ah jeez, I totally forgot about the bread museum. Didja know they've got a whole museum dedicated to bread around here? It seems museum variety is the yeast of their problems! Get it? Yeast? 'Cause, uh, bread and all? Ya know, that plays off better when ya can laugh.",
+        "Ah jeez, I totally forgot about the bread museum. Didja know they've got a whole museum dedicated to bread around here? It seems museum variety is the yeast of their problems! Get it? Yeast? 'Cause, uh, bread and all? Ya know, that plays off better when ya can laugh."
+      ],
+      "noResponse": "Work night",
+      "noResponseChange": 0
+    },
+    {
+      "name": "End",
+      "wait": 10,
+      "dialogue": [
+        "Hey, ya know, I really like fellas like you! Gives me time to get a word in edge-wise, ya know? Maybe I'll pick up a souvenir for ya if I pass by again!",
+        "Hey, ya know, I really like fellas like you! Gives me time to get a word in edge-wise, ya know? Maybe I'll pick up a souvenir for ya if I pass by again!",
+        "Hey, ya know, I really like fellas like you! Gives me time to get a word in edge-wise, ya know? Maybe I'll pick up a souvenir for ya if I pass by again!"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 15,
+      "dialogue": [
+        "Ah! Good one! Ya sure got me this time! A ha! Yah! This is'nt floor 5!",
+        "Oh, sorry ta bother you and all, but I don't think this is the right floor. I mean, I sure as heck don't see any food out there, so I'm just thinkin', ya know, this may not be the restaurant. But hey! I don't mind a good detour!",
+        "Oh, sorry ta bother you and all, but I don't think this is the right floor. I mean, I sure as heck don't see any food out there, so I'm just thinkin', ya know, this may not be the restaurant. But hey! I don't mind a good detour!"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    }
+  ]
+}

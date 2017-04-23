@@ -59,9 +59,7 @@ public abstract class Agent : MonoBehaviour {
         //get util
         gl = GameObject.FindWithTag("Player").GetComponent<GestureList>();
         bubble = GetComponentInChildren<Text>();
-        Debug.Log("HERERERERE LOOK AT ME: " + bubble);
         pm = GetComponent<PatronMovement>();
-        Debug.Log(pm);
         fm = GameObject.FindWithTag("HotelManager").GetComponent<FloorManager>();
         sf = GameObject.FindWithTag("Player").GetComponent<StateFetch>();
     }
