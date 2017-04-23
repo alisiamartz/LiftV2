@@ -9,7 +9,7 @@ using Edwon.VR.Gesture;
 
 public abstract class Agent : MonoBehaviour {
 
-    //exanple.json
+    //example.json
     public string filename;
 
     //agent data
@@ -32,7 +32,8 @@ public abstract class Agent : MonoBehaviour {
     protected FloorManager fm;
     protected bool isExit;
     protected string lastSound;
-    public bool isEndNode;
+    protected bool isEndNode;
+    protected StateFetch sf;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -41,8 +42,10 @@ public abstract class Agent : MonoBehaviour {
     protected bool enter() { return pm.enterElevator(); }
     protected bool exit() { return pm.leaveElevator(); }
     protected int getFloorNumber() { return fm.floorPos; }
+    protected bool isNearLever() { return sf.nearLever(); }
+    protected bool isNearDoor() { return sf.nearDoor(); }
     
-    protected void Init()
+    protected virtual void Init()
     {
         //get json data
         JsonParser jp = new JsonParser();
@@ -56,20 +59,27 @@ public abstract class Agent : MonoBehaviour {
         //get util
         gl = GameObject.FindWithTag("Player").GetComponent<GestureList>();
         bubble = GetComponentInChildren<Text>();
+        Debug.Log("HERERERERE LOOK AT ME: " + bubble);
         pm = GetComponent<PatronMovement>();
         Debug.Log(pm);
         fm = GameObject.FindWithTag("HotelManager").GetComponent<FloorManager>();
-
-        //move start to here
-        isStarted = false;
-        isExit = false;
-        timer = nodeDict["Start"].wait;
-        patience = nodeDict["notFloor"].wait;
-        notFloorNode = nodeDict["notFloor"];
-        endNode = nodeDict["End"];
-        graceTimer = 10; //seconds grace time before telling you that you are in the wrong floor
-        isEndNode = false;
+        sf = GameObject.FindWithTag("Player").GetComponent<StateFetch>();
     }
+
+
+    /*
+    
+    //FOR BASE TREE LOGIC
+     
+    isStarted = false;
+    isExit = false;
+    timer = nodeDict["Start"].wait;
+    patience = nodeDict["notFloor"].wait;
+    notFloorNode = nodeDict["notFloor"];
+    endNode = nodeDict["End"];
+    graceTimer = 10; //seconds grace time before telling you that you are in the wrong floor
+    isEndNode = false;
+    */
 
     //decorative stuff
     protected delegate bool decorative();
@@ -93,7 +103,7 @@ public abstract class Agent : MonoBehaviour {
     }
 
     //agent util
-    protected void say(node n)
+    protected virtual void say(node n)
     {
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg
@@ -121,5 +131,9 @@ public abstract class Agent : MonoBehaviour {
 
         if (attributes.mood > 10) attributes.mood = 10;
         if (attributes.mood < -10) attributes.mood = -10;
+    }
+
+    protected void setMood(short i) {
+        attributes.mood = i;
     }
 }

@@ -13,14 +13,16 @@ public class StateFetch : MonoBehaviour {
 		
 	}
 		
+	// player has collided hand with lever
 	public bool nearLever() {
-		if (ObjectHighlight.nearLever)
+		if (LeverRange.nearLever)
 			return true;
 		return false;
 	}
 
+	// player has collided hand with door handle
 	public bool nearDoor() {
-		if (ObjectHighlight.nearDoor)
+		if (doorInteraction.nearDoor)
 			return true;
 		return false;
 	}
