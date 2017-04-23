@@ -18,7 +18,7 @@ public class Patrons : MonoBehaviour {
 
         if(patronName == "Boss1") {
             var startFloor = -1;
-            var prefab = Resources.Load("Assets/Patrons/Boss1.prefab") as GameObject;
+            var prefab = Resources.Load("Patrons/Boss1") as GameObject;
             Debug.Log(prefab.gameObject.name);
             return new Patron(prefab, startFloor);
         }
