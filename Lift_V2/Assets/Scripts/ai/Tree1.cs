@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tree1 : Agent {
 
+    //FOR REFERENCE!!! BROKEN, DO NOT USE
+
     //private Tree1 btree;
 
     void Start () {

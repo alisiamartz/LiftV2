@@ -8,10 +8,6 @@ public class Boss1AI : Agent {
         filename = "1.1Boss.json";
         Init();
         timer = nodeDict["Start"].wait;
-        currentNode = nodeDict["Start"];
-        notFloorNode = nodeDict["notFloor"];
-        endNode = nodeDict["End"];
-        isExit = false;
         Build();
 	}
 
@@ -25,18 +21,11 @@ public class Boss1AI : Agent {
             isPlayed = false;
             playedFirst = false;
             setup = false;
-
-            //never be called
-            if (listIndex >= list.Count) {
-                Debug.Log("ERROR AI DUN GOOFED");
-                listIndex = list.Count - 1;
-            }
         }
 
         if (timer <= 0) {
             timer = currentNode.wait;
             isPlayed = false;
-            Debug.Log("TIMER OUT");
         }
     }
 
@@ -62,7 +51,6 @@ public class Boss1AI : Agent {
     private delegate bool bossEvent();
     private bool isPlayed = false;
     private List<bossEvent> list = new List<bossEvent>();
-    private bool isInEle = false;
     private bool playedFirst = false;
     private bool setup = false;
     private int listIndex = 0;
@@ -169,8 +157,6 @@ public class Boss1AI : Agent {
 
     private void say() {
         if (isPlayed) return;
-
-        Debug.Log("I SAID SOMETHING");
 
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg

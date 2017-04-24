@@ -17,6 +17,9 @@ public abstract class Agent : MonoBehaviour {
     protected Dictionary<string, node> nodeDict = new Dictionary<string, node>();
 
     //node data
+    [SerializeField]
+    protected node onNode; //experimental: does not affect other scripts
+    [SerializeField]
     protected node currentNode;
     protected node notFloorNode;
     protected node endNode;
@@ -25,6 +28,7 @@ public abstract class Agent : MonoBehaviour {
     protected GestureList gl;
     protected Text bubble;
     protected float patience;
+    [SerializeField]
     protected float timer;
     protected float graceTimer;
     protected PatronMovement pm;
@@ -62,12 +66,17 @@ public abstract class Agent : MonoBehaviour {
         pm = GetComponent<PatronMovement>();
         fm = GameObject.FindWithTag("HotelManager").GetComponent<FloorManager>();
         sf = GameObject.FindWithTag("Player").GetComponent<StateFetch>();
+
+        //key nodes
+        currentNode = nodeDict["Start"];
+        notFloorNode = nodeDict["notFloor"];
+        endNode = nodeDict["End"];
     }
 
 
     /*
     
-    //FOR BASE TREE LOGIC
+    //LEGACY
      
     isStarted = false;
     isExit = false;
@@ -133,5 +142,9 @@ public abstract class Agent : MonoBehaviour {
 
     protected void setMood(short i) {
         attributes.mood = i;
+    }
+
+    public void setFilename(string s) {
+        filename = s;
     }
 }
