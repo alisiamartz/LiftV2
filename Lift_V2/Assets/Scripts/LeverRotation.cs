@@ -16,6 +16,7 @@ public class LeverRotation : MonoBehaviour {
     public GameObject grabHand;
 
     private bool reset;
+    public float resetSpeed = 0.1f;
 
     [Header("Floors")]
     public float[] floors;
@@ -107,9 +108,20 @@ public class LeverRotation : MonoBehaviour {
                 }
             }
             //We've identified a new target floor
-            leverRotation = floors[lowestIndex];
-            setToFloor = true;
-            elevatorManager.GetComponent<ElevatorMovement>().newDoorTarget(lowestIndex);
+            //Lerp to the new rotation
+            if (leverRotation > floors[lowestIndex] - resetSpeed && leverRotation < floors[lowestIndex] + resetSpeed) {
+                leverRotation = floors[lowestIndex];
+                setToFloor = true;
+                elevatorManager.GetComponent<ElevatorMovement>().newDoorTarget(lowestIndex);
+            }
+            else {
+                if (leverRotation < floors[lowestIndex]) {
+                    leverRotation += resetSpeed;
+                }
+                else {
+                    leverRotation -= resetSpeed;
+                }
+            }
         }
 
         //Jiggle
