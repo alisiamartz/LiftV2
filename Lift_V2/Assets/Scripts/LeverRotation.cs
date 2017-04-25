@@ -148,4 +148,8 @@ public class LeverRotation : MonoBehaviour {
         jiggleSound.PlaySound(transform.position);
         jiggling = true;
     }
+
+    public void resetLever() {
+        leverRotation = minRotation;
+    }
 }

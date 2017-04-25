@@ -25,6 +25,8 @@ public class DayManager : MonoBehaviour {
     public int timeInBlack;
     public int unFadeTime;
     private GameObject elevatorManager;
+    public doorInteraction liftableDoor;
+    public LeverRotation leverRotation;
 
 
     // Use this for initialization
@@ -82,7 +84,9 @@ public class DayManager : MonoBehaviour {
     public void dayReset() {
         //Close the elevator door
         //Reset elevator position etc.
-        //elevatorManager.GetComponent<ElevatorMovement>()
+        leverRotation.resetLever();
+        elevatorManager.GetComponent<ElevatorMovement>().arriveAtFloor(0);
+        liftableDoor.closeDoor();
 
         nextPatron();
 

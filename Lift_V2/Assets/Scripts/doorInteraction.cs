@@ -38,8 +38,6 @@ public class doorInteraction : MonoBehaviour
     Vector3 frame2;
     Vector3 frame3;
 
-    private GameObject grabPointL;
-    private GameObject grabPointR;
     public slidingDoor2 slidingDoor2;
 	public DisableGesture disableGesture;
 
@@ -89,15 +87,6 @@ public class doorInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!grabPointL)
-        {
-            grabPointL = GameObject.FindGameObjectWithTag("grabPointL");
-        }
-        if (!grabPointR)
-        {
-            grabPointR = GameObject.FindGameObjectWithTag("grabPointR");
-        }
-
         if(handInRange == false)
         {
             //grabbed = false;
@@ -183,11 +172,7 @@ public class doorInteraction : MonoBehaviour
                 //Debug.Log(door.transform.localPosition.y);//flooding console
                 if (door.transform.localPosition.y <= 1.17f)  
                 {
-                    //Debug.Log("Door is closed");
-                    closing = false;
-                    open = false;
-                    slidingDoor2.closeSlidingDoor();
-                    manager.GetComponent<ElevatorMovement>().doorClosed();
+                    closeDoor();
                 }
             }
         }
@@ -236,7 +221,8 @@ public class doorInteraction : MonoBehaviour
 			DisableGesture.turnOff (camRig);
 
 			//If Door Open
-			if (manager.GetComponent<ElevatorMovement> ().floorPos == Mathf.Round (manager.GetComponent<ElevatorMovement> ().floorPos)) {
+			if (manager.GetComponent<ElevatorMovement>().floorPos == Mathf.Round (manager.GetComponent<ElevatorMovement> ().floorPos)) {
+                Debug.Log("Grabbing because " + manager.GetComponent<ElevatorMovement>().floorPos);
 				grabbed = true;
 				grabbingHand = hand;
 			} else {
@@ -261,6 +247,13 @@ public class doorInteraction : MonoBehaviour
     public bool doorStatus()
     {
         return open;
+    }
+
+    public void closeDoor() {
+        closing = false;
+        open = false;
+        slidingDoor2.closeSlidingDoor();
+        manager.GetComponent<ElevatorMovement>().doorClosed();
     }
 
 }   // eof

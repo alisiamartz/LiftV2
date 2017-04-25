@@ -80,12 +80,7 @@ public class ElevatorMovement : MonoBehaviour {
         }
         else if(initialArrival){
             //We're at the target floor
-            floorPassingSound.PlaySound(transform.position);
-
-            //Load in the floor stopped at
-            hotelManager.GetComponent<FloorManager>().loadNewFloor((int)floorPos);
-
-            initialArrival = false;
+            arriveAtFloor(targetFloor);
         }
 
 
@@ -130,5 +125,15 @@ public class ElevatorMovement : MonoBehaviour {
     {
         doorOpen = false;
         hotelManager.GetComponent<FloorManager>().doorOpen = false;
+    }
+
+    public void arriveAtFloor(int floor) {
+        floorPassingSound.PlaySound(transform.position);
+        floorPos = floor;
+
+        //Load in the floor stopped at
+        hotelManager.GetComponent<FloorManager>().loadNewFloor(floor);
+
+        initialArrival = false;
     }
 }
