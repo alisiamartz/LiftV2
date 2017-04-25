@@ -39,38 +39,30 @@ public class LeverRange : MonoBehaviour {
         }
     }
 
-    public void attemptGrab(GameObject hand, bool doorOpen, float timer)
-    {
+    public void attemptGrab(GameObject hand, bool doorOpen, float timer) {
         if (inRange)
         {
 			nearLever = true;
             DisableGesture.turnOff(camRig);
 
-            if (!doorOpen && timer <= 0.0f)
-            {
+            if (!doorOpen && timer <= 0.0f) {
                 GetComponent<LeverRotation>().grabbed = true;
                 GetComponent<LeverRotation>().grabHand = hand;
-            }
-            else
-            {
+            } else {
                 GetComponent<LeverRotation>().jiggleResponse();
             }
 
             //Trigger Haptic pulse
             GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);
-        }
-        else
-        {
+        } else {
 			nearLever = false;
-            if (!DisableGesture.isComponentEnabled(camRig))
-            {
+            if (!DisableGesture.isComponentEnabled(camRig)) {
                 DisableGesture.turnOn(camRig);
             }
         }
     }
 
-    public void attemptRelease()
-    {
+    public void attemptRelease()  {
         GetComponent<LeverRotation>().grabbed = false;
     }
 }

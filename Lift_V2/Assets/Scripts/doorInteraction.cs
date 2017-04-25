@@ -148,27 +148,23 @@ public class doorInteraction : MonoBehaviour
             }
         }
 
-        if (open)
-        {
+        if (open) {
             // if door is at the top (open) 
             // if trigger is pressed on rope and it is collided
-            if (grabbed)
-            {
+            if (grabbed) {
                 //Debug.Log("hell yeah get ready to close this shit");
                 closing = true;
                 // Move the door according to the current y position of the controller
                 door.transform.position = new Vector3(initX, (door.transform.position.y - rope.transform.position.y) + grabbingHand.transform.position.y, initZ);
 
-                if (grabbingDown == false)
-                {
+                if (grabbingDown == false) {
                     //Trigger Haptic pulse
                     manager.GetComponent<grabHaptic>().triggerBurst(5, 2);
                     grabbingDown = true;
                 }
 
             } // condition about where the door goes when the user stops interacting w it in some way?
-            else
-            {
+            else {
                 if (door.transform.position.y > 2.5f && closing)
                 {
                     door.transform.position = Vector3.MoveTowards(door.transform.position, doorOpen.transform.position, 2f * Time.deltaTime);
@@ -234,8 +230,7 @@ public class doorInteraction : MonoBehaviour
 
     } // end of update
 
-    public void attemptGrab(GameObject hand)
-    {
+    public void attemptGrab(GameObject hand) {
 		if (handInRange) {
 			nearDoor = true;
 			DisableGesture.turnOff (camRig);

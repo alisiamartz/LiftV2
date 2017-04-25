@@ -30,6 +30,9 @@ public class Interactable : MonoBehaviour {
 	public GameObject glassesHolder;
 	public GameObject idHolder;
 
+	public GameObject camRig;
+
+
 	// Use this for initialization
 	void Start () {
 		//trackedObj = GetComponent<SteamVR_TrackedObject>();
@@ -37,23 +40,33 @@ public class Interactable : MonoBehaviour {
 		hatHolder = GameObject.FindGameObjectWithTag("hatHolder");
 		glassesHolder = GameObject.FindGameObjectWithTag("glassesHolder");
 		idHolder = GameObject.FindGameObjectWithTag("idHolder");
+
+		camRig = GameObject.FindGameObjectWithTag("Player");
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// pcik up when trigger is pressed
-		if (device.GetPressDown(triggerButton) && (inRange || Vector3.Distance(trackedObj.transform.position, this.transform.position)<.1f)) {
+		if (device.GetPressDown (triggerButton) && (inRange || Vector3.Distance (trackedObj.transform.position, this.transform.position) < .1f)) {
 			// parent object to controller
-			this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-			this.transform.SetParent(trackedObj.transform);
+			DisableGesture.turnOff (camRig);
+			this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
+			this.transform.SetParent (trackedObj.transform);
 			holding = true;
-		}
+		} //else if (!inRange || !(Vector3.Distance (trackedObj.transform.position, this.transform.position) < .1f)) {
+		//	if (!DisableGesture.isComponentEnabled (camRig)) {
+			//	DisableGesture.turnOn (camRig);
+		//	}
+		//}
+
 
 		// if you are holding it and the trigger is released
 		// check where the object is
 		// if near end point, then go there
 
 		if (holding && device.GetPressUp(triggerButton)) { // || near the end location??)
+
 			// unless it is near the intended location,
 			// the object will fall on the ground 
 			switch (slot) {
@@ -81,10 +94,8 @@ public class Interactable : MonoBehaviour {
 				break;
 			default:
 				break;
-
 			}
 		}
-
 	}
 
 	private void OnTriggerEnter(Collider other){
