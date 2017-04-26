@@ -1,0 +1,250 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 1
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 30,
+      "dialogue": [
+        "Uh-huh... yeah. Yeah, uh-huh. No, yeah. Yeah, no, I understand. Uh-huh. Yeah.",
+        "Uh-huh... yeah. Yeah, uh-huh. No, yeah. Yeah, no, I understand. Uh-huh. Yeah.",
+        "Uh-huh... yeah. Yeah, uh-huh. No, yeah. Yeah, no, I understand. Uh-huh. Yeah."
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Start1",
+      "wait": 30,
+      "dialogue": [
+        "Take me to the Lobby.",
+        "Lobby.",
+        "Lobby, and make it fast."
+      ],
+      "noResponse": "----------------------------------------change------------------------------------------",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Positive start",
+      "wait": 30,
+      "dialogue": [
+        "Yeah, the meeting went great. Yeah, I'm happy too. Uh-huh. Uh-huh. We're all- we're all happy here. Everyone was very cooperative. Uh-huh. Yeah. Yeah.",
+        "Yeah, the meeting went great. Yeah, I'm happy too. Uh-huh. Uh-huh. We're all- we're all happy here. Everyone was very cooperative. Uh-huh. Yeah. Yeah.",
+        "Yeah, the meeting went great. Yeah, I'm happy too. Uh-huh. Uh-huh. We're all- we're all happy here. Everyone was very cooperative. Uh-huh. Yeah. Yeah."
+      ],
+	  "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 2, 2 ],
+      "toNode": [ "Call back", "Call back", "Phase 2", "Phase 2" ],
+      "noResponse": "Phase 2",
+      "noResponseChange": 2
+    },
+	{
+      "name": "Neutral start",
+      "wait": 30,
+      "dialogue": [
+        "Yeah, no. Yeah, it didn't go great. He's a stubborn one, it'll take a couple more meetings to lock it down. I still think I got a shot, though. Yeah. Yeah. No. Don't worry, don't worry, it'll be fine. Hopefully.",
+        "Yeah, no. Yeah, it didn't go great. He's a stubborn one, it'll take a couple more meetings to lock it down. I still think I got a shot, though. Yeah. Yeah. No. Don't worry, don't worry, it'll be fine. Hopefully.",
+        "Yeah, no. Yeah, it didn't go great. He's a stubborn one, it'll take a couple more meetings to lock it down. I still think I got a shot, though. Yeah. Yeah. No. Don't worry, don't worry, it'll be fine. Hopefully."
+      ],
+	  "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 2, 2 ],
+      "toNode": [ "Ignored", "Ignored", "Fallout", "Fallout" ],
+      "noResponse": "Fallout",
+      "noResponseChange": 2
+    },
+	{
+      "name": "Negative start",
+      "wait": 30,
+      "dialogue": [
+        "You wouldn't even *believe* how stubborn this guy is. He's not giving me an inch, he won't make any compromises, it's like he doesn't even want this deal to go through. Uh-huh. Uh-huh. Yeah. Seriously! I'll get this deal done my way, no matter what.",
+        "You wouldn't even *believe* how stubborn this guy is. He's not giving me an inch, he won't make any compromises, it's like he doesn't even want this deal to go through. Uh-huh. Uh-huh. Yeah. Seriously! I'll get this deal done my way, no matter what.",
+        "You wouldn't even *believe* how stubborn this guy is. He's not giving me an inch, he won't make any compromises, it's like he doesn't even want this deal to go through. Uh-huh. Uh-huh. Yeah. Seriously! I'll get this deal done my way, no matter what."
+      ],
+	  "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 0, 0 ],
+      "toNode": [ "Eavesdropper", "Eavesdropper", "Massive fallout", "Massive fallout" ],
+      "noResponse": "Massive fallout",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Call back",
+      "wait": 30,
+      "dialogue": [
+        "I'll call you back. *hangs up* Hey, it went well! I was really nervous, it being my first major deal, but it went well! I think I really, uh, synergized. Synergized so hard.",
+        "Uh, yeah. I'll call you in a bit, okay? *hangs up* Still kinda shaky, I hope I didn't let on how nervous I was. They seemed to be receptive, though, so-",
+        "Uh, yeah. I'll call you in a bit, okay? *hangs up* Still kinda shaky, I hope I didn't let on how nervous I was. They seemed to be receptive, though, so-"
+      ],
+	   "listen": [ "salute", "rude" ],
+      "change": [ 2, -4 ],
+      "toNode": [ "Rookie of the year", "Backlash" ],
+      "noResponse": "Backlash",
+      "noResponseChange": -4
+    },
+    {
+      "name": "Phase 2",
+      "wait": 30,
+      "dialogue": [
+        "Yeah, it's definitely time to start moving forward. Definitely, yeah. Yeah, you said that earlier. Yeah. I'm gonna make some changes to start. Yeah, you said it: that artist is gone!",
+        "Yeah, it's definitely time to start moving forward. Definitely, yeah. Yeah, you said that earlier. Yeah. I'm gonna make some changes to start. Yeah, you said it: that artist is gone!",
+        "Yeah, it's definitely time to start moving forward. Definitely, yeah. Yeah, you said that earlier. Yeah. I'm gonna make some changes to start. Yeah, you said it: that artist is gone!"
+      ],
+	  "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 2, 2 ],
+      "toNode": [ "Call back", "Call back", "Contract signing", "Contract signing" ],
+      "noResponse": "Contract signing",
+      "noResponseChange": 2
+    },
+    {
+      "name": "Fallout",
+      "wait": 30,
+      "dialogue": [
+        "Yeah, he wants to keep a bunch of the old stuff. It told him it's going to be all new, it's gotta be all new. He even wants to keep the artist on contract; have you seen the art around here? It'll scare everyone away!",
+        "I can't believe the guy; he wants us to keep his favorite artist around. That guy's poison! His last exposition accidentally got tossed into a dumpster by accident, it wasn't even found art!",
+        "I can't believe the guy; he wants us to keep his favorite artist around. That guy's poison! His last exposition accidentally got tossed into a dumpster by accident, it wasn't even found art!"
+      ],
+      "noResponse": "Trying again",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Ignored",
+      "wait": 30,
+      "dialogue": [
+        "Not in the mood, pal.",
+        "Hey, screw off asswipe.",
+        "Hey, screw off asswipe."
+      ],
+      "noResponse": "Trying again",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Massive fallout",
+      "wait": 30,
+      "dialogue": [
+        "The dick didn't even shake my hand. I know, what a jerk! I mean, maybe I called him a delusional prick, but *I* was entirely justified! Then he tried to get me to hire on that gaudy artist who did all the paintings, can you believe this guy!? That artist hasn't made an impressive painting since preschool!",
+        "The dick didn't even shake my hand. I know, what a jerk! I mean, maybe I called him a delusional prick, but *I* was entirely justified! Then he tried to get me to hire on that gaudy artist who did all the paintings, can you believe this guy!? That artist hasn't made an impressive painting since preschool!",
+        "The dick didn't even shake my hand. I know, what a jerk! I mean, maybe I called him a delusional prick, but *I* was entirely justified! Then he tried to get me to hire on that gaudy artist who did all the paintings, can you believe this guy!? That artist hasn't made an impressive painting since preschool!"
+      ],
+	  "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 0, 0 ],
+      "toNode": [ "Eavesdropper", "Eavesdropper", "Plan b", "Plan b" ],
+      "noResponse": "Plan b",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Eavesdropper",
+      "wait": 30,
+      "dialogue": [
+        "I mean, look at this place! Look at it! I had to step over a puddle in the lobby! It's garbage! I swear to God, if I don't fix it it'll be condemned in a year! Trying to save this place is like sending a firetruck to an Olive Garden.",
+        "I mean, look at this place! Look at it! I had to step over a puddle in the lobby! It's garbage! I swear to God, if I don't fix it it'll be condemned in a year! Trying to save this place is like sending a firetruck to an Olive Garden.",
+        "I mean, look at this place! Look at it! I had to step over a puddle in the lobby! It's garbage! I swear to God, if I don't fix it it'll be condemned in a year! Trying to save this place is like sending a firetruck to an Olive Garden."
+      ],
+	  "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 0, 0 ],
+      "toNode": [ "Ignored again", "Ignored again", "Plan b", "Plan b" ],
+      "noResponse": "Plan b",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Backlash",
+      "wait": 30,
+      "dialogue": [
+        "Hah, yeah, you probably don't care, do you? Just magical business-words.",
+        "What, are you jealous? Hey, maybe you'll be successful some day too!",
+        "What, are you jealous? Hey, maybe you'll be successful some day too!"
+      ],
+      "noResponse": "Success 2",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Rookie of the year",
+      "wait": 30,
+      "dialogue": [
+        "If I can lock this down, I'm set. This is a big deal, showing that I can handle it... Well, I'd be business-ing into the forseeable future.",
+        "If I can lock this down, I'm set. This is a big deal, showing that I can handle it... Well, I'd be business-ing into the forseeable future.",
+        "If I can lock this down, I'm set. This is a big deal, showing that I can handle it... Well, I'd be business-ing into the forseeable future."
+      ],
+      "noResponse": "Success 2",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Contract signing",
+      "wait": 30,
+      "dialogue": [
+        "Yeah, later- later this week. Yeah, it's all set up. No-... no you don't have to do anything. I've got it all under control.",
+        "Yeah, later- later this week. Yeah, it's all set up. No-... no you don't have to do anything. I've got it all under control.",
+        "Yeah, later- later this week. Yeah, it's all set up. No-... no you don't have to do anything. I've got it all under control."
+      ],
+      "noResponse": "Success",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Plan b",
+      "wait": 30,
+      "dialogue": [
+        "Oh, no, we're not done here. If that stuck-up, geriatric shit-magnet thinks he can scare me off, he's got another thing coming. I've got ways to make him crack, he's got no idea.",
+        "Oh, no, we're not done here. If that stuck-up, geriatric shit-magnet thinks he can scare me off, he's got another thing coming. I've got ways to make him crack, he's got no idea.",
+        "Oh, no, we're not done here. If that stuck-up, geriatric shit-magnet thinks he can scare me off, he's got another thing coming. I've got ways to make him crack, he's got no idea."
+      ],
+      "noResponse": "Trying again",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Ignored again",
+      "wait": 30,
+      "dialogue": [
+        "I'm sorry, and the help here?! I've been served better at the DMV! And God, that artist. That artist. I just, I can't get over him. Did you know that he once painted a portrait of the wrong President? How do you do even that?",
+        "I'm sorry, and the help here?! I've been served better at the DMV! And God, that artist. That artist. I just, I can't get over him. Did you know that he once painted a portrait of the wrong President? How do you do even that?",
+        "I'm sorry, and the help here?! I've been served better at the DMV! And God, that artist. That artist. I just, I can't get over him. Did you know that he once painted a portrait of the wrong President? How do you do even that?"
+      ],
+    },
+	{
+      "name": "Success 2",
+      "wait": 30,
+      "dialogue": [
+        "Deals, deals, all sorts of deals. I just can't stop!",
+        "I am just knocking these deals down today! I mean, it's only one deal, but still...",
+        "I am just knocking these deals down today! I mean, it's only one deal, but still..."
+      ],
+    },
+	{
+      "name": "Success",
+      "wait": 30,
+      "dialogue": [
+        "Yeah, okay. Talk to you later. *hangs up* Sorry about that; moms, you know? Thanks for taking me to the lobby, I'll be back soon to sign the contract.",
+        "Yeah, talk to you later. *hangs up* I'll be back in a bit; got a contract to sign.",
+        "Yeah, talk to you later. *hangs up* I'll be back in a bit; got a contract to sign."
+      ],
+    },
+	{
+      "name": "Trying again",
+      "wait": 30,
+      "dialogue": [
+        "Hey, don't worry, don't worry. I'll get it all sorted, it'll work out. Gotta go.",
+        "No, no... it's not over yet. We'll see how this all shakes out, not time to give up just yet. Talk to you later.",
+        "I'll get this damn hotel if I have to pry it from their cold dead hands. Okay, that's an exaggeration... But I'm not gonna give up. This is my one shot. Bye."
+      ],
+    },
+    {
+      "name": "End",
+      "wait": 10,
+      "dialogue": [
+        "Be seeing you.",
+        "Right- well then.",
+        "Well, I just cant wait until next time, you- you insufferable, unhelpful, piece of wawlking trash"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 15,
+      "dialogue": [
+        "Yeah, no. I know. Yeah. Sorry, gimme a second; lobby. This isn't the lobby.",
+        "Yeah. You got it. Yep. Yeah. Actually, gimme a minute here; this is the wrong floor, I said lobby. We're back.",
+        "obviously can't count, because this sure as hell isn't my floor. Are you sure that you work here?"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    }
+  ]
+}
