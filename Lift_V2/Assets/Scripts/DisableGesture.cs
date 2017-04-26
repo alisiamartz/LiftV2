@@ -5,6 +5,7 @@ using Edwon.VR;
 
 public class DisableGesture : MonoBehaviour {
 
+
 	// Get the VR Gesture Settings component on camera rig
 	// Enable and disable component
 
@@ -15,7 +16,9 @@ public class DisableGesture : MonoBehaviour {
 
 	public static void turnOn(GameObject camRig) {
 		//Debug.Log ("turned on?");
-		camRig.GetComponent<VRGestureRig> ().enabled = true;
+		if (!LeverRange.inRange && !doorInteraction.handInRange && !Interactable.inRange) {
+			camRig.GetComponent<VRGestureRig> ().enabled = true;
+		}
 	}
 
 	public static bool isComponentEnabled(GameObject camRig) {

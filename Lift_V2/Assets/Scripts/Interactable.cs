@@ -9,14 +9,13 @@ public class Interactable : MonoBehaviour {
 	// - set them down in correct place depending on object
 
 	// Placed on objects that are interactable
-	private Valve.VR.EVRButtonId touchpadButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad;
 	private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
 	 
 	[SerializeField]
 	private SteamVR_TrackedObject trackedObj;
 	private SteamVR_Controller.Device device { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
 
-	private bool inRange;
+	public static bool inRange;
 	bool holding;
 
 	public ItemSlot slot;
@@ -31,6 +30,8 @@ public class Interactable : MonoBehaviour {
 	public GameObject idHolder;
 
 	public GameObject camRig;
+
+	private bool nearObj;
 
 
 	// Use this for initialization
@@ -48,17 +49,36 @@ public class Interactable : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// pcik up when trigger is pressed
+
+	//	if (device.GetPressDown (triggerButton)) {
+	//		this.attemptGrab ();
+	//	} else if (device.GetPressUp(triggerButton)) {
+			
+	//	}  
+
+
+
+
+
+
+
+
+
+
+
+
 		if (device.GetPressDown (triggerButton) && (inRange || Vector3.Distance (trackedObj.transform.position, this.transform.position) < .1f)) {
 			// parent object to controller
 			DisableGesture.turnOff (camRig);
 			this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 			this.transform.SetParent (trackedObj.transform);
 			holding = true;
-		} //else if (!inRange || !(Vector3.Distance (trackedObj.transform.position, this.transform.position) < .1f)) {
-		//	if (!DisableGesture.isComponentEnabled (camRig)) {
-			//	DisableGesture.turnOn (camRig);
-		//	}
-		//}
+		} else if (!inRange || !(Vector3.Distance (trackedObj.transform.position, this.transform.position) < .1f)) {
+			if (!DisableGesture.isComponentEnabled (camRig)) {
+				print ("yeah????");
+				DisableGesture.turnOn (camRig);
+			}
+		}
 
 
 		// if you are holding it and the trigger is released
@@ -98,6 +118,24 @@ public class Interactable : MonoBehaviour {
 		}
 	}
 
+	public void attemptGrab() {
+		if (inRange) {
+			nearObj = true;
+			DisableGesture.turnOff (camRig);
+			holding = true;
+
+		} else {
+			nearObj = false;
+			if (!DisableGesture.isComponentEnabled (camRig)) {
+				DisableGesture.turnOn (camRig);
+			}
+		}
+	}
+
+	public void attemptRelease() {
+		holding = false;
+	}
+
 	private void OnTriggerEnter(Collider other){
 		if(other.gameObject.tag == "grabPoint"){
 			inRange = true;
@@ -113,7 +151,6 @@ public class Interactable : MonoBehaviour {
 	void dropObj(GameObject item) {
 		// de parent from controller
 		this.transform.parent = null;
-
 		// turn on gravity
 		this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 	}
