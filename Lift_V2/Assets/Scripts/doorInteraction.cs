@@ -47,7 +47,7 @@ public class doorInteraction : MonoBehaviour
     bool playing = false;
 
     [HideInInspector]
-    public bool handInRange = false;
+    public static bool handInRange = false;
     private bool grabbed = false;
     private GameObject grabbingHand;
 

@@ -22,6 +22,10 @@ public class PatronMovement : MonoBehaviour {
 
 	Animator anim;
 
+    //TIMER
+    private float timer = 0;
+
+
 	// Use this for initialization
 	void Start () {
         hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
@@ -32,6 +36,15 @@ public class PatronMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //TIMER
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        } else
+        {
+            anim.SetBool("talking", false);
+        }
 
         if (moving)
         {
@@ -95,7 +108,7 @@ public class PatronMovement : MonoBehaviour {
     {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
-            Debug.Log("yes yes yes ");
+            //Debug.Log("yes yes yes ");
 			anim.SetBool ("elevatorHere", true);
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
             moving = true;
@@ -153,4 +166,11 @@ public class PatronMovement : MonoBehaviour {
         rotateTarget = waypoint;
         rotating = true;
     }
+
+    public void talk()
+    {
+        timer = 10;
+        anim.SetBool("talking", true);
+    }
+    
 }

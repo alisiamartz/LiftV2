@@ -36,8 +36,6 @@ public class Boss1AI : Agent {
 
         list.Add(() => playNormal(nodeDict["Day to day operations"]));
 
-        list.Add(() => playNormal(nodeDict["Under pressure"]));
-
         list.Add(() => playNormal(nodeDict["The Guests"]));
 
         list.Add(() => playNormal(nodeDict["The first day"]));
@@ -164,6 +162,9 @@ public class Boss1AI : Agent {
         bubble.text = currentNode.dialogue[index];
 
         string dialogue = currentNode.dialogue[index];
+
+        //animation
+        talk();
 
         GameObject myObject = GameObject.Find("_SFX_" + lastSound);
         if (myObject != null) myObject.GetComponent<SoundGroup>().pingSound();

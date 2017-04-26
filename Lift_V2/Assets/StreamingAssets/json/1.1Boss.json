@@ -1,7 +1,8 @@
 {
   "agentAttr": {
     "mood": 0,
-    "goal": 2
+    "goal": 2,
+    "patience": 10
   },
   "nodes": [
     {
@@ -61,17 +62,6 @@
         "boss31"
       ],
       "noResponse": "Under pressure",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Under pressure",
-      "wait": 10,
-      "dialogue": [
-        "boss41",
-        "boss41",
-        "boss41"
-      ],
-      "noResponse": "The Guests",
       "noResponseChange": 0
     },
     {

@@ -21,7 +21,7 @@ public class liftableRange : MonoBehaviour {
         if (other.gameObject.tag == "grabPoint")
         {
             Debug.Log(other.gameObject.name + " entered");
-            doorManager.handInRange = true;
+            doorInteraction.handInRange = true;
         }
     }
 
@@ -30,7 +30,7 @@ public class liftableRange : MonoBehaviour {
         if (other.gameObject.tag == "grabPoint")
         {
             Debug.Log(other.gameObject.name + " EXITED");
-            doorManager.handInRange = false;
+            doorInteraction.handInRange = false;
         }
     }
 }

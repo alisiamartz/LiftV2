@@ -1,7 +1,8 @@
 {
   "agentAttr": {
     "mood": 6,
-    "goal": 5
+    "goal": 6,
+    "patience": 5
   },
   "nodes": [
     {

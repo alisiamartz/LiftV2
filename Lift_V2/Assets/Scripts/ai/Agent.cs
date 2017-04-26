@@ -38,6 +38,7 @@ public abstract class Agent : MonoBehaviour {
     protected string lastSound;
     protected bool isEndNode;
     protected StateFetch sf;
+    protected float patTimer;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -48,6 +49,7 @@ public abstract class Agent : MonoBehaviour {
     protected int getFloorNumber() { return fm.floorPos; }
     protected bool isNearLever() { return sf.nearLever(); }
     protected bool isNearDoor() { return sf.nearDoor(); }
+    protected void talk() { pm.talk(); }
     
     protected virtual void Init()
     {

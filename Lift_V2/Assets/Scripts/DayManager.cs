@@ -54,6 +54,10 @@ public class DayManager : MonoBehaviour {
             Quaternion basePatronRotation = patronPrefab.transform.rotation;
 
             var newPatron = Instantiate(patronPrefab, GetComponent<FloorManager>().fetchFloorWaypoint(startFloor).transform.position, basePatronRotation);
+
+            //sets script
+            GetComponent<Patrons>().configPatron(ref newPatron, days[day - 1][patronNumber - 1]);
+
             newPatron.transform.parent = GetComponent<FloorManager>().floors[startFloor].transform;
 
             //floorPanel.GetComponent<FloorsPanel>().lightOn(startFloor);

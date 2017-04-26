@@ -31,6 +31,7 @@ public class agentAttr
 {
     public short mood; //range -10 <-> 10 neutral -3 <=> 3
     public int goal;
+    public float patience;
 }
 
 [System.Serializable]
