@@ -172,6 +172,7 @@ public class GenericAI : Agent {
                 if (!isExit)
                 {
                     exit();
+                    (GameObject.FindWithTag("HotelManager").GetComponent(typeof (AIInfo)) as AIInfo).setMood(name, attributes.mood);
                     isExit = true;
                 }
                 return false;

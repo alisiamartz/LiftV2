@@ -30,7 +30,6 @@ public class DayManager : MonoBehaviour {
 
     private Patrons patron = new Patrons();
 
-
     // Use this for initialization
     void Start () {
         elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
