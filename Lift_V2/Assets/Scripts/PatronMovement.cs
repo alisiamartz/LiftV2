@@ -48,6 +48,11 @@ public class PatronMovement : MonoBehaviour {
 
         if (moving)
         {
+            //If the floor has changed since getting off the elevator
+            if(targetWaypoint.transform.parent.gameObject.activeSelf == false) {
+                despawnPatron();
+            }
+
             float step = walkSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.transform.position, step);
 
@@ -78,11 +83,7 @@ public class PatronMovement : MonoBehaviour {
                 else if(state == "leaving2")
                 {
                     //Basic Despawmn
-
-                    //Tell the manager that we've finished a character
-                    hotelManager.GetComponent<DayManager>().nextPatron();
-                    Debug.Log("Called despawn");
-                    Destroy(this.gameObject);
+                    despawnPatron();
                 }
             }
         }
@@ -140,7 +141,7 @@ public class PatronMovement : MonoBehaviour {
 
             turnTowardsWaypoint(targetWaypoint);
 
-            transform.parent = hotelManager.GetComponent<FloorManager>().floors[currentFloor].transform;
+            //transform.parent = hotelManager.GetComponent<FloorManager>().floors[currentFloor].transform;
            // GetComponent<Animator>().SetBool("reachedWaypoint", false);
 
             return true;
@@ -149,6 +150,12 @@ public class PatronMovement : MonoBehaviour {
         {
             return false;
         }
+    }
+
+    public void despawnPatron() {
+        hotelManager.GetComponent<DayManager>().nextPatron();
+        Debug.Log("Called despawn");
+        Destroy(this.gameObject);
     }
 
     public void wait()

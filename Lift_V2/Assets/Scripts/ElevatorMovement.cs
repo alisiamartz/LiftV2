@@ -135,5 +135,9 @@ public class ElevatorMovement : MonoBehaviour {
         hotelManager.GetComponent<FloorManager>().loadNewFloor(floor);
 
         initialArrival = false;
+
+        if(targetFloor != floor) {
+            targetFloor = floor;
+        }
     }
 }

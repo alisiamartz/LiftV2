@@ -254,6 +254,7 @@ public class doorInteraction : MonoBehaviour
         open = false;
         slidingDoor2.closeSlidingDoor();
         manager.GetComponent<ElevatorMovement>().doorClosed();
+        door.transform.position = new Vector3(initX, initY, initZ);
     }
 
 }   // eof

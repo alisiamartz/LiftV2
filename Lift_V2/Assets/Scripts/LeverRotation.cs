@@ -151,5 +151,7 @@ public class LeverRotation : MonoBehaviour {
 
     public void resetLever() {
         leverRotation = minRotation;
+        //Impliment lever rotation changes
+        transform.rotation = Quaternion.Euler(0, 91.95f, leverRotation);
     }
 }
