@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Grabbing : MonoBehaviour {
 
@@ -14,6 +15,8 @@ public class Grabbing : MonoBehaviour {
 
     private GameObject objDoor;
 
+    private GameObject menu;
+
     private float leverTimer;
 
     // Use this for initialization
@@ -23,6 +26,8 @@ public class Grabbing : MonoBehaviour {
         lever = GameObject.FindGameObjectWithTag("lever");
 
         objDoor = GameObject.FindGameObjectWithTag("door");
+
+        menu = GameObject.FindGameObjectWithTag("Menu");
 
         leverTimer = 3.0f;
     }
@@ -40,13 +45,21 @@ public class Grabbing : MonoBehaviour {
 
         if (controller.GetPressDown(triggerButton))
         {
-            lever.GetComponent<LeverRange>().attemptGrab(this.gameObject, door.open, leverTimer);
-            objDoor.GetComponent<doorInteraction>().attemptGrab(this.gameObject);
+            if (SceneManager.GetActiveScene().name == "main") {
+                lever.GetComponent<LeverRange>().attemptGrab(this.gameObject, door.open, leverTimer);
+                objDoor.GetComponent<doorInteraction>().attemptGrab(this.gameObject);
+            }
+
+            if (SceneManager.GetActiveScene().name == "menu") {
+                menu.GetComponent<menuButtonController>().attemptGrab();
+            }
         }
         else if (controller.GetPressUp(triggerButton))
         {
-            lever.GetComponent<LeverRange>().attemptRelease();
-            objDoor.GetComponent<doorInteraction>().attemptRelease();
+            if (SceneManager.GetActiveScene().name == "main") {
+                lever.GetComponent<LeverRange>().attemptRelease();
+                objDoor.GetComponent<doorInteraction>().attemptRelease();
+            }
         }  
     }
 }
