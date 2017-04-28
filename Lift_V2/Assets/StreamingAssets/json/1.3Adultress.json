@@ -1,0 +1,185 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 4
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 40,
+      "dialogue": [
+        "Date: I didn't think you'd be taking me somewhere so... expensive. Adultress: Well, I'm only in town for a few days, hon, so I figured: why not live big? Besides, I hear their beds are... (quieter) quite comfortable. Date: I guess we'll have to see for ourselves. Adultress: Floor three, doorman! Erh, floor... man?",
+        "Date: I didn't think you'd be taking me somewhere so... expensive. Adultress: Well, I'm only in town for a few days, hon, so I figured: why not live big? Besides, I hear their beds are... (quieter) quite comfortable. Date: I guess we'll have to see for ourselves. Adultress: Floor three, doorman! Erh, floor... man?",
+        "Date: I didn't think you'd be taking me somewhere so... expensive. Adultress: Well, I'm only in town for a few days, hon, so I figured: why not live big? Besides, I hear their beds are... (quieter) quite comfortable. Date: I guess we'll have to see for ourselves. Adultress: Floor three, doorman! Erh, floor... man?"
+      ],
+      "listen": [ "salute", "rude" ],
+      "change": [ 4, -4 ],
+      "toNode": [ "Nice date", "How to ruin a day in 30 seconds" ],
+      "noResponse": "Employee of the month",
+      "noResponseChange": 0
+    },
+    {
+      "name": "How to ruin a day in 30 seconds",
+      "wait": 40,
+      "dialogue": [
+        "Date: Are you sure this was worth the expense? Adultress: They didn't exactly advertise 'rude waitstaff.' I shoulda checked Yelp. Date: That certainly puts the kibosh on that loving feeling. Adultress: Hey, no, we'll get it going again, hon. First this asswipe's gotta apologize. Are you sorry?",
+        "Date: Are you sure this was worth the expense? Adultress: They didn't exactly advertise 'rude waitstaff.' I shoulda checked Yelp. Date: That certainly puts the kibosh on that loving feeling. Adultress: Hey, no, we'll get it going again, hon. First this asswipe's gotta apologize. Are you sorry?",
+        "Date: Are you sure this was worth the expense? Adultress: They didn't exactly advertise 'rude waitstaff.' I shoulda checked Yelp. Date: That certainly puts the kibosh on that loving feeling. Adultress: Hey, no, we'll get it going again, hon. First this asswipe's gotta apologize. Are you sorry?"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 2, -4 ],
+      "toNode": [ "Mixed signals", "Black eye" ],
+      "noResponse": "Black eye",
+      "noResponseChange": -4
+    },
+    {
+      "name": "Nice date",
+      "wait": 40,
+      "dialogue": [
+        "Adultress: Well, thank you! We are a fine-looking couple if I do say so myself. Date: I've never felt more perfectly matched, it feels like we're a 1:1 ratio. Adultress: (Sarcastic) Poetic. Date: How about you, do you think we're the one-to-one?",
+        "Adultress: Well, thank you! We are a fine-looking couple if I do say so myself. Date: I've never felt more perfectly matched, it feels like we're a 1:1 ratio. Adultress: (Sarcastic) Poetic. Date: How about you, do you think we're the one-to-one?",
+        "Adultress: Well, thank you! We are a fine-looking couple if I do say so myself. Date: I've never felt more perfectly matched, it feels like we're a 1:1 ratio. Adultress: (Sarcastic) Poetic. Date: How about you, do you think we're the one-to-one?"
+      ],
+      "listen": [ "yes", "salute", "no", "rude" ],
+      "change": [ 2, 2, -2, -2 ],
+      "toNode": [ "Cinderella Story", "Cinderella Story", "Jealous", "Jealous" ],
+      "noResponse": "Mixed signals",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Employee of the month",
+      "wait": 60,
+      "dialogue": [
+        "Date: It's kinda creepy how they just stare, isn't it? Adultress: It's part of the code. They can't say anything when within the confines of the elevator. It's a sort of sacred space. Weird, huh? Date: Yeah. How do you know so much about this place anyway? Adultress: Oh, they... uh, put little guidebooks in the room. History and stuff. Read it while trying to get to sleep last night. Date: I'd like to take a look. Adultress: Well, I don't think you'll have much time for reading tonight. Besides, I may have thrown it out.",
+        "Date: It's kinda creepy how they just stare, isn't it? Adultress: It's part of the code. They can't say anything when within the confines of the elevator. It's a sort of sacred space. Weird, huh? Date: Yeah. How do you know so much about this place anyway? Adultress: Oh, they... uh, put little guidebooks in the room. History and stuff. Read it while trying to get to sleep last night. Date: I'd like to take a look. Adultress: Well, I don't think you'll have much time for reading tonight. Besides, I may have thrown it out.",
+        "Date: It's kinda creepy how they just stare, isn't it? Adultress: It's part of the code. They can't say anything when within the confines of the elevator. It's a sort of sacred space. Weird, huh? Date: Yeah. How do you know so much about this place anyway? Adultress: Oh, they... uh, put little guidebooks in the room. History and stuff. Read it while trying to get to sleep last night. Date: I'd like to take a look. Adultress: Well, I don't think you'll have much time for reading tonight. Besides, I may have thrown it out."
+      ],
+      "listen": [ "rude", "salute" ],
+      "change": [ -2, 4 ],
+      "toNode": [ "Mixed signals", "Nice date" ],
+      "noResponse": "Perfect employee",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Black eye",
+      "wait": 40,
+      "dialogue": [
+        "Date: You'd treat a lady like that? Why, I've got half a mind to sock you good, maybe that'll teach you some respect. Adultress: No need for that. I know the manager, I'll just tell him he accidentally hired a moron. Date: Why d'you know the manager? Adultress: Uh... family friend? Let's just get off here. Date: Fine.",
+        "Date: You'd treat a lady like that? Why, I've got half a mind to sock you good, maybe that'll teach you some respect. Adultress: No need for that. I know the manager, I'll just tell him he accidentally hired a moron. Date: Why d'you know the manager? Adultress: Uh... family friend? Let's just get off here. Date: Fine.",
+        "Date: You'd treat a lady like that? Why, I've got half a mind to sock you good, maybe that'll teach you some respect. Adultress: No need for that. I know the manager, I'll just tell him he accidentally hired a moron. Date: Why d'you know the manager? Adultress: Uh... family friend? Let's just get off here. Date: Fine."
+      ]
+    },
+    {
+      "name": "Mixed signals",
+      "wait": 40,
+      "dialogue": [
+        "Adultress: Givin' us worse mixed signals than bent rabbit ears. Date: And she knows a thing or two about mixed signals. Adultress: What's that supposed to mean? Date: Aren't you a broadcast technician? Adultress: Oh, yeah. Right. Just take us to the third floor.",
+        "Adultress: Givin' us worse mixed signals than bent rabbit ears. Date: And she knows a thing or two about mixed signals. Adultress: What's that supposed to mean? Date: Aren't you a broadcast technician? Adultress: Oh, yeah. Right. Just take us to the third floor.",
+        "Adultress: Givin' us worse mixed signals than bent rabbit ears. Date: And she knows a thing or two about mixed signals. Adultress: What's that supposed to mean? Date: Aren't you a broadcast technician? Adultress: Oh, yeah. Right. Just take us to the third floor."
+      ],
+      "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "Friendly" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Perfect employee",
+      "wait": 40,
+      "dialogue": [
+        "Date: You know, if I just don't look directly at them they kinda disappear in the peripheral vision. Adultress: I think that's how it's supposed to work. Date: Ephemeral. Ghosts whose sole purpose is to transport you between realms. Adultress: You mean floors? Date: I was thinking more a River Styx type situation, but yes.",
+        "Date: You know, if I just don't look directly at them they kinda disappear in the peripheral vision. Adultress: I think that's how it's supposed to work. Date: Ephemeral. Ghosts whose sole purpose is to transport you between realms. Adultress: You mean floors? Date: I was thinking more a River Styx type situation, but yes.",
+        "Date: You know, if I just don't look directly at them they kinda disappear in the peripheral vision. Adultress: I think that's how it's supposed to work. Date: Ephemeral. Ghosts whose sole purpose is to transport you between realms. Adultress: You mean floors? Date: I was thinking more a River Styx type situation, but yes."
+      ],
+      "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "Ideal worker" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Cinderella Story",
+      "wait": 40,
+      "dialogue": [
+        "Adultress: Well, it certainly has been a good date. Date: The lobster brisque was particularly exquisite. Adultress: Lobster bisque. Date: That too. Adultress: And your service has been exemplary. I'll put a good word in with the manager. Date: You know him? Adultress: ...We're penpals.",
+        "Adultress: Well, it certainly has been a good date. Date: The lobster brisque was particularly exquisite. Adultress: Lobster bisque. Date: That too. Adultress: And your service has been exemplary. I'll put a good word in with the manager. Date: You know him? Adultress: ...We're penpals.",
+        "Adultress: Well, it certainly has been a good date. Date: The lobster brisque was particularly exquisite. Adultress: Lobster bisque. Date: That too. Adultress: And your service has been exemplary. I'll put a good word in with the manager. Date: You know him? Adultress: ...We're penpals."
+      ],
+      "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "Wedding invitation" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Jealous",
+      "wait": 40,
+      "dialogue": [
+        "Date: Now why would you go and say something like that? Adultress: I've got a hunch. Date: And I love you all the same. Adultress: What? I mean about why. Date: Er, right. Adultress: You're just jealous aren't you? You'll never be happy so no one else can, huh?",
+        "Date: Now why would you go and say something like that? Adultress: I've got a hunch. Date: And I love you all the same. Adultress: What? I mean about why. Date: Er, right. Adultress: You're just jealous aren't you? You'll never be happy so no one else can, huh?", 
+        "Date: Now why would you go and say something like that? Adultress: I've got a hunch. Date: And I love you all the same. Adultress: What? I mean about why. Date: Er, right. Adultress: You're just jealous aren't you? You'll never be happy so no one else can, huh?"
+      ],
+      "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "Overreacted" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -6
+    },
+    {
+      "name": "Friendly",
+      "wait": 60,
+      "dialogue": [
+        "Adultress: Hey, I get it, everyone has their off days. Sorry we came along at the wrong time, thanks for taking us to our floor. Date: Yeah, I guess when it comes down to it, you get the job done. Adultress: Well, that job is just moving a lever, so... Date: Don't we all just move levers in the machine of life? Adultress: Oh, you're so deep! Let's plumb some of those depths, in private. Date: Au revoir!",
+        "Adultress: Glad we got that misunderstanding dealt with. Date: It can be hard to parse your hand wiggles. I'm not fluent in... hand language. Adultress: Let's get off here, I can give you some lessons.",
+        "Adultress: Glad we got that misunderstanding dealt with. Date: It can be hard to parse your hand wiggles. I'm not fluent in... hand language. Adultress: Let's get off here, I can give you some lessons."
+      ]
+    },
+	{
+      "name": "Ideal worker",
+      "wait": 40,
+      "dialogue": [
+        "Date: Is there anyone even here? Or is it only an automaton guiding us? Adultress: I think it's just a really good employee. Date: I feel as if we've crossed through a boundary of some sort. The world seems different somehow. Adultress: Right, okay. Let's just get to the room, yeah?",
+        "Date: Is there anyone even here? Or is it only an automaton guiding us? Adultress: I think it's just a really good employee. Date: I feel as if we've crossed through a boundary of some sort. The world seems different somehow. Adultress: Right, okay. Let's just get to the room, yeah?",
+        "Date: Is there anyone even here? Or is it only an automaton guiding us? Adultress: I think it's just a really good employee. Date: I feel as if we've crossed through a boundary of some sort. The world seems different somehow. Adultress: Right, okay. Let's just get to the room, yeah?"
+      ]
+    },
+	{
+      "name": "Wedding invitation",
+      "wait": 40,
+      "dialogue": [
+        "Date: Hey, keep up the good work and maybe you'll get an invite to the wedding! Adultress: Don't you think we might be getting a bit ahead of ourselves? Date: Right, sorry, I'm just excited. Adultress: Thank you, though.",
+        "Date: Hey, keep up the good work and maybe you'll get an invite to the wedding! Adultress: Don't you think we might be getting a bit ahead of ourselves? Date: Right, sorry, I'm just excited. Adultress: Thank you, though.",
+        "Date: Hey, keep up the good work and maybe you'll get an invite to the wedding! Adultress: Don't you think we might be getting a bit ahead of ourselves? Date: Right, sorry, I'm just excited. Adultress: Thank you, though."
+      ]
+    },
+	{
+      "name": "Overreacted",
+      "wait": 40,
+      "dialogue": [
+        "Adultress: I'm sorry, I may have been a bit harsh. Date: Yeah, maybe a bit. Adultress: Thanks for taking us to our floor.",
+        "Adultress: I'm sorry, I may have been a bit harsh. Date: Yeah, maybe a bit. Adultress: Thanks for taking us to our floor.",
+        "Adultress: I'm sorry, I may have been a bit harsh. Date: Yeah, maybe a bit. Adultress: Thanks for taking us to our floor."
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}
