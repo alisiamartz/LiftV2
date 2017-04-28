@@ -1,0 +1,182 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 0,
+    "patience": 6
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no", "confused" ],
+      "change": [ 4, -4, -1 ],
+      "toNode": [ "The Server", "One and the Same", "Clarity"  ],
+      "noResponse": "Clarity",
+      "noResponseChange": -1
+    },
+    {
+      "name": "The Server",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 3, -2 ],
+      "toNode": [ "Workers United", "Different Viewpoints" ],
+      "noResponse": "Habits",
+      "noResponseChange": -1
+    },
+    {
+      "name": "One and the Same",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 4, -2 ],
+      "toNode": [ "Aquaintances", "Terrible day" ],
+      "noResponse": "Terrible day",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Clarity",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 4, -4 ],
+      "toNode": [ "The Server", "One and the Same" ],
+      "noResponse": "One and the Same",
+      "noResponseChange": -4
+    },
+    {
+      "name": "Workers United",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 3 ],
+      "toNode": [ "First Day First Friend" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Different Viewpoints",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 3 ],
+      "toNode": [ "First Day First Friend" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Habits",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 3 ],
+      "toNode": [ "Aquaintances...for now" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Terrible day",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "out" ],
+      "change": [ 4 ],
+      "toNode": [ "Not even aquaintances" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    },
+    {
+      "name": "Aquaintances",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 3 ],
+      "toNode": [ "Aquaintances...for now" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    },
+    {
+      "name": "First Day First Friend",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Not even aquaintances",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+    {
+      "name": "Aquaintances...for now",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neu"
+      ]
+    },
+     {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}
