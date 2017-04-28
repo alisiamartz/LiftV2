@@ -23,6 +23,7 @@ public class FloorManager : MonoBehaviour
         {
             //Turn off the previously active floor
             floors[activeFloorIndex].SetActive(false);
+
             //Turn on the next floor
             floors[targetFloor].SetActive(true);
             floorPos = targetFloor;
