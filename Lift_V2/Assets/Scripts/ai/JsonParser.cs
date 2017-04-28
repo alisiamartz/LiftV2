@@ -23,7 +23,6 @@ public class jsonClass
 {
     public agentAttr agentAttr;
     public List<node> nodes;
-    //public List<change> changeList; //no longer used
 }
 
 [System.Serializable]
@@ -39,23 +38,11 @@ public class node
 {
     public string name;
     public int wait;
-    //public List<string> choose; //no longer used
     public List<string> dialogue;
+    public List<string> animation;
     public List<string> listen;
     public List<short> change;
     public List<string> toNode;
     public string noResponse;
     public short noResponseChange;
-}
-
-//legacy
-
-[System.Serializable]
-public class change
-{
-    public string name;
-    public int happiness;
-    public int sadness;
-    public int confusion;
-    public int anger;
 }

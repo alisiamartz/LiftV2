@@ -28,6 +28,8 @@ public class DayManager : MonoBehaviour {
     public doorInteraction liftableDoor;
     public LeverRotation leverRotation;
 
+    private Patrons patron = new Patrons();
+
 
     // Use this for initialization
     void Start () {
@@ -47,7 +49,7 @@ public class DayManager : MonoBehaviour {
 
             patronNumber += 1;
 
-            var patronObject = GetComponent<Patrons>().fetchPatron(days[day - 1][patronNumber - 1]);
+            var patronObject = patron.fetchPatron(days[day - 1][patronNumber - 1]);
             var patronPrefab = patronObject.prefab;
             var startFloor = patronObject.startFloor;
 
@@ -56,7 +58,7 @@ public class DayManager : MonoBehaviour {
             var newPatron = Instantiate(patronPrefab, GetComponent<FloorManager>().fetchFloorWaypoint(startFloor).transform.position, basePatronRotation);
 
             //sets script
-            GetComponent<Patrons>().configPatron(ref newPatron, days[day - 1][patronNumber - 1]);
+            patron.configPatron(ref newPatron, days[day - 1][patronNumber - 1]);
 
             newPatron.transform.parent = GetComponent<FloorManager>().floors[startFloor].transform;
 

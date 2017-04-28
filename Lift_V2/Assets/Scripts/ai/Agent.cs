@@ -27,10 +27,8 @@ public abstract class Agent : MonoBehaviour {
     //util
     protected GestureList gl;
     protected Text bubble;
-    protected float patience;
     [SerializeField]
     protected float timer;
-    protected float graceTimer;
     protected PatronMovement pm;
     protected bool isStarted;
     protected FloorManager fm;
@@ -49,7 +47,7 @@ public abstract class Agent : MonoBehaviour {
     protected int getFloorNumber() { return fm.floorPos; }
     protected bool isNearLever() { return sf.nearLever(); }
     protected bool isNearDoor() { return sf.nearDoor(); }
-    protected void talk() { pm.talk(); }
+    protected void animate(string s) { pm.Invoke(s, 0); }
     
     protected virtual void Init()
     {
@@ -73,6 +71,7 @@ public abstract class Agent : MonoBehaviour {
         currentNode = nodeDict["Start"];
         notFloorNode = nodeDict["notFloor"];
         endNode = nodeDict["End"];
+        onNode = currentNode;
     }
 
 

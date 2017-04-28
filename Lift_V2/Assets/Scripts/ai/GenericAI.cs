@@ -8,7 +8,7 @@ public class GenericAI : Agent {
     void Start()
     {
         Regex regex = new Regex(@"(\.json)$");
-        if (!regex.IsMatch(filename)) throw new System.ArgumentNullException("Invalid Filename");
+        if (!regex.IsMatch(filename)) throw new System.ArgumentNullException("Invalid Filename: " + filename);
         Init();
         isEndNode = false;
         isExit = false;
@@ -60,7 +60,7 @@ public class GenericAI : Agent {
             return true;
         }
 
-        say(true);
+        say();
 
         if (timer <= 0)
         {
@@ -125,6 +125,9 @@ public class GenericAI : Agent {
                 {
                     onNode = currentNode;
                     return 0;
+                } else if (attributes.patience <= 0) {
+                    onNode = endNode;
+                    return 2;
                 }
                 else return 1;
             case 2:
@@ -156,6 +159,9 @@ public class GenericAI : Agent {
                 }
                 return false;
             case 1:
+                if (attributes.mood < -3) {
+                    attributes.patience -= Time.deltaTime;
+                }
                 if (timer <= 0)
                 {
                     changeMood(onNode.noResponseChange);
@@ -174,26 +180,21 @@ public class GenericAI : Agent {
         }
     }
 
-    private void say(bool start = false)
+    private void say()
     {
         if (isPlayed) return;
 
         node play = onNode;
 
-        if (start) play = currentNode;
-
-        //talking animation
-        talk();
-
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
 
+        //talking animation
+        if (onNode.name != endNode.name) animate(play.animation[index]);
+
         //text
         bubble.text = play.dialogue[index];
-
-        //animation script mockup (not working)
-        //aniTalk(play.animation[index]);
 
         string dialogue = play.dialogue[index];
 

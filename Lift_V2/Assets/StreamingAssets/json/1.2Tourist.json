@@ -1,8 +1,8 @@
 {
   "agentAttr": {
-    "mood": 6,
+    "mood": -2,
     "goal": 6,
-    "patience": 5
+    "patience": 15
   },
   "nodes": [
     {
@@ -12,6 +12,11 @@
         "ya mind takin' me ta floor five? I hear there's some great food there.",
         "ya mind takin' me ta floor five? I hear there's some great food there.",
         "ya mind takin' me ta floor five? I hear there's some great food there."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "Start1",
       "noResponseChange": 0
@@ -23,6 +28,11 @@
         "Oh, ya, this is so charming! I love it! You're so darn cute with your little hat and all! Stand still, stand still, let me take a picture! Ya know, I says to my friends, I tell 'em I was going to a hotel for vacation, and they says \"Isn't that what most people do on vacation?\" so I says \"No, I mean, the hotel's the destination,\" and they says \"Okay, then. Whatever you say,\" but they didn't say it in a supportive way, ya know, more like a \"*Whatever you say!*\" All sarcastic and all. Anyways, ya mind takin' me ta floor five? I hear there's some great food there.",
         "Oh, ya, this is so charming! I love it! You're so darn cute with your little hat and all! Stand still, stand still, let me take a picture! Ya know, I says to my friends, I tell 'em I was going to a hotel for vacation, and they says \"Isn't that what most people do on vacation?\" so I says \"No, I mean, the hotel's the destination,\" and they says \"Okay, then. Whatever you say,\" but they didn't say it in a supportive way, ya know, more like a \"*Whatever you say!*\" All sarcastic and all. Anyways, ya mind takin' me ta floor five? I hear there's some great food there.",
         "Oh, ya, this is so charming! I love it! You're so darn cute with your little hat and all! Stand still, stand still, let me take a picture! Ya know, I says to my friends, I tell 'em I was going to a hotel for vacation, and they says \"Isn't that what most people do on vacation?\" so I says \"No, I mean, the hotel's the destination,\" and they says \"Okay, then. Whatever you say,\" but they didn't say it in a supportive way, ya know, more like a \"*Whatever you say!*\" All sarcastic and all. Anyways, ya mind takin' me ta floor five? I hear there's some great food there."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "salute", "rude" ],
       "change": [ 1, -1 ],
@@ -38,6 +48,11 @@
         "Oh, you're one of them jokers then? I keep runnin' into those all around. I joke that maybe they've got a whole, ya know, conspiracy and all. I think, uh, I think maybe people just don't like me.",
         "Oh, you're one of them jokers then? I keep runnin' into those all around. I joke that maybe they've got a whole, ya know, conspiracy and all. I think, uh, I think maybe people just don't like me."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Big day",
       "noResponseChange": 1
     },
@@ -49,6 +64,11 @@
         "So I've already made quite a run around the town so far. I saw the, uh, what's it, the boating museum, and the aeronautics museum, that one too. Oh, and the boating aeronautics museum too. Seemed a bit redundant, but hey! Now the plan's to see what I can in this hotel today, before moving on to the subnautics museum.",
         "So I've already made quite a run around the town so far. I saw the, uh, what's it, the boating museum, and the aeronautics museum, that one too. Oh, and the boating aeronautics museum too. Seemed a bit redundant, but hey! Now the plan's to see what I can in this hotel today, before moving on to the subnautics museum."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Big day",
       "noResponseChange": 1
     },
@@ -59,6 +79,11 @@
         "Oh, can't talk can ya? Yah, I have a cousin like that, ya know. Here, I got an idea: how about we talk with our hands? Ya know, like a, whaddaya call, a rudimentary sorta sign-language. I can get kinda carried away with talking, so if ya want me ta keep goin', just make a this type a movement. And if ya don't understand what the heck I'm tryin' to say, make a this type a motion. Yah?",
         "Oh, can't talk can ya? Yah, I have a cousin like that, ya know. Here, I got an idea: how about we talk with our hands? Ya know, like a, whaddaya call, a rudimentary sorta sign-language. I can get kinda carried away with talking, so if ya want me ta keep goin', just make a this type a movement. And if ya don't understand what the heck I'm tryin' to say, make a this type a motion. Yah?",
         "Oh, can't talk can ya? Yah, I have a cousin like that, ya know. Here, I got an idea: how about we talk with our hands? Ya know, like a, whaddaya call, a rudimentary sorta sign-language. I can get kinda carried away with talking, so if ya want me ta keep goin', just make a this type a movement. And if ya don't understand what the heck I'm tryin' to say, make a this type a motion. Yah?"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no" ],
       "change": [ 1, -1 ],
@@ -74,6 +99,11 @@
         "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at our establishment, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Understand so far?",
         "Ah good. Now you've probably noticed the traditional mechanisms of this elevator. Yes we understand the design is outdated but here at our establishment, we value our roots and the history behind every piece of architecture. Your job will be to maneuver this lever and take guests to their designated floors. Understand so far?"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "listen": [ "yes", "no" ],
       "change": [ 1, 1 ],
       "toNode": [ "Conversation starter", "Conversation starter" ],
@@ -87,6 +117,11 @@
         "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're no about there.",
         "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're no about there.",
         "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're no about there."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no" ],
       "change": [ 1, 1 ],
@@ -102,6 +137,11 @@
         "Ah, jeez, I've been talkin' too much again, haven't I? I tend to do that. How's your day been?",
         "Ah, jeez, I've been talkin' too much again, haven't I? I tend to do that. How's your day been?"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "listen": [ "yes", "no" ],
       "change": [ 1, 1 ],
       "toNode": [ "Work night", "Work night" ],
@@ -116,6 +156,11 @@
         "Ah, ya know, I never considered ya may be deaf too. Heck, that's real insensitive of me. I'll just sit over here, then.",
         "Ah, ya know, I never considered ya may be deaf too. Heck, that's real insensitive of me. I'll just sit over here, then."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Awkward encounter",
       "noResponseChange": 0
     },
@@ -127,6 +172,11 @@
         "Ah jeez, I totally forgot about the bread museum. Didja know they've got a whole museum dedicated to bread around here? It seems museum variety is the yeast of their problems! Get it? Yeast? 'Cause, uh, bread and all? Ya know, that plays off better when ya can laugh.",
         "Ah jeez, I totally forgot about the bread museum. Didja know they've got a whole museum dedicated to bread around here? It seems museum variety is the yeast of their problems! Get it? Yeast? 'Cause, uh, bread and all? Ya know, that plays off better when ya can laugh."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Work night",
       "noResponseChange": 0
     },
@@ -137,6 +187,11 @@
         "Heck! You sure learn quick, doncha? Gee, I'm real outta practice, but this sure is fun, yah?",
         "Heck! You sure learn quick, doncha? Gee, I'm real outta practice, but this sure is fun, yah?",
         "Heck! You sure learn quick, doncha? Gee, I'm real outta practice, but this sure is fun, yah?"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "maybe", "confused", "continue", "pat", "salute", "rude" ],
       "change": [0, 0, 0, 0, 0, 0, 0, 0],
@@ -150,7 +205,12 @@
       "dialogue": [
         "Hey, ya know, I really like fellas like you! Gives me time to get a word in edge-wise, ya know? Maybe I'll pick up a souvenir for ya if I pass by again!",
         "Hey, ya know, I really like fellas like you! Gives me time to get a word in edge-wise, ya know? Maybe I'll pick up a souvenir for ya if I pass by again!",
-        "Hey, ya know, I really like fellas like you! Gives me time to get a word in edge-wise, ya know? Maybe I'll pick up a souvenir for ya if I pass by again!"
+        "I AM NOT HAPPY AND AM LEAVING THE ELEVATOR RIGHT NOW. WATCH ME WALK OUT."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -161,8 +221,13 @@
         "Oh, sorry ta bother you and all, but I don't think this is the right floor. I mean, I sure as heck don't see any food out there, so I'm just thinkin', ya know, this may not be the restaurant. But hey! I don't mind a good detour!",
         "Oh, sorry ta bother you and all, but I don't think this is the right floor. I mean, I sure as heck don't see any food out there, so I'm just thinkin', ya know, this may not be the restaurant. But hey! I don't mind a good detour!"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "notFloor",
-      "noResponseChange": 0
+      "noResponseChange": -2
     }
   ]
 }

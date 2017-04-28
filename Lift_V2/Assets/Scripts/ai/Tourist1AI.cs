@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+LEAVE FOR JUAN TESTING. USE GENERIC FOR REST OF AI
+*/
+
 public class Tourist1AI : Agent {
 
 	// Use this for initialization
@@ -154,12 +158,13 @@ public class Tourist1AI : Agent {
 
         if (start) play = currentNode;
 
-        talk();
-
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
         bubble.text = play.dialogue[index];
+
+        //animation
+        animate("talk");
 
         string dialogue = play.dialogue[index];
 
