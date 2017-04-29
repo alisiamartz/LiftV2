@@ -13,6 +13,11 @@
         "boss11",
         "boss11"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "toNode": [ "First order" ],
       "noResponse": "Still waiting",
       "noResponseChange": 0
@@ -24,6 +29,11 @@
         "boss21",
         "boss21",
         "boss21"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "toNode": [ "First order" ],
       "noResponse": "Still waiting",
@@ -37,6 +47,11 @@
         "boss22",
         "boss22"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "toNode": [ "Day to day operations" ],
       "noResponse": "Ancient mechanism",
       "noResponseChange": 0
@@ -48,6 +63,11 @@
         "boss23",
         "boss23",
         "boss23"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "toNode": [ "Day to day operations" ],
       "noResponse": "Ancient mechanism",
@@ -61,6 +81,11 @@
         "boss31",
         "boss31"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Under pressure",
       "noResponseChange": 0
     },
@@ -71,6 +96,11 @@
         "boss51",
         "boss51",
         "boss51"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "The first day",
       "noResponseChange": 0
@@ -83,6 +113,11 @@
         "boss61",
         "boss61"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Good start",
       "noResponseChange": 0
     },
@@ -94,6 +129,11 @@
         "boss71",
         "boss71"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "End",
       "noResponseChange": 0
     },
@@ -104,6 +144,11 @@
         "boss81",
         "boss81",
         "boss81"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
@@ -113,6 +158,11 @@
         "boss82",
         "boss82",
         "boss82"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": 0

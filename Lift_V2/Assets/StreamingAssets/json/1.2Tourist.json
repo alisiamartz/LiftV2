@@ -1,6 +1,6 @@
 {
   "agentAttr": {
-    "mood": -2,
+    "mood": 6,
     "goal": 6,
     "patience": 15
   },
@@ -189,9 +189,9 @@
         "I AM NOT HAPPY AND AM LEAVING THE ELEVATOR RIGHT NOW. WATCH ME WALK OUT."
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "",
+        "",
+        ""
       ]
     },
     {

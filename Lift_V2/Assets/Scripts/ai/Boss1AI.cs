@@ -164,7 +164,7 @@ public class Boss1AI : Agent {
         string dialogue = currentNode.dialogue[index];
 
         //animation
-        animate("talk");
+        if (currentNode.name != "End") animate(currentNode.animation[index]);
 
         GameObject myObject = GameObject.Find("_SFX_" + lastSound);
         if (myObject != null) myObject.GetComponent<SoundGroup>().pingSound();

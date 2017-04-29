@@ -12,7 +12,12 @@
         "Yeah, I'm gonna need you to take me to floor two.",
         "Yeah, I'm gonna need you to take me to floor two."
       ],
-	  "listen": [ "yes", "confused", "rude" ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "yes", "confused", "rude" ],
       "change": [ 2, -2, -2 ],
       "toNode": [ "Proposition", "Better Service", "Better Service" ],
       "noResponse": "Proposition",
@@ -26,7 +31,12 @@
         "Got a big meeting with the boss-man today. Well, your boss-man, my client. I'm not supposed to say anything but, a word of advice: might want to start looking for alternative employment. Speaking of which, I hope you've got skills outside of 'elevator-operating.' Last time I saw a hotel without an automatic elevator was, uh, I don't know, I Love Lucy? I mean, talk about out-dated, do you think this place is even up to code?",
         "Got a big meeting with the boss-man today. Well, your boss-man, my client. I'm not supposed to say anything but, a word of advice: might want to start looking for alternative employment. Speaking of which, I hope you've got skills outside of 'elevator-operating.' Last time I saw a hotel without an automatic elevator was, uh, I don't know, I Love Lucy? I mean, talk about out-dated, do you think this place is even up to code?"
       ],
-	  "listen": [ "yes", "no" ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "no" ],
       "change": [ -4, 3 ],
       "toNode": [ "Worker's bias", "Outdated" ],
       "noResponse": "Cat got your tongue",
@@ -40,7 +50,12 @@
         "Looks like the service here should be the first on the chopping block. Gonna prove me wrong?",
         "Looks like the service here should be the first on the chopping block. Gonna prove me wrong?"
       ],
-	   "listen": [ "yes", "no" ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "yes", "no" ],
       "change": [ 5, -3 ],
       "toNode": [ "New guy", "Everyone's a critic" ],
       "noResponse": "Cat got your tongue",
@@ -54,7 +69,12 @@
         "Huh, what else could I have expected from one of the Westwind's loyal cronies? Your boss has got you hypnotized, none of you seem to get what's actually going on here; this place is falling apart. By refusing to update, your boss is driving this place into the ground, it's hurting the hotel and all of its employees. You get it?",
         "Huh, what else could I have expected from one of the Westwind's loyal cronies? Your boss has got you hypnotized, none of you seem to get what's actually going on here; this place is falling apart. By refusing to update, your boss is driving this place into the ground, it's hurting the hotel and all of its employees. You get it?"
       ],
-	  "listen": [ "yes", "no" ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "yes", "no" ],
       "change": [ 1, -1 ],
       "toNode": [ "Eye for business", "Stubborn pride" ],
       "noResponse": "Stubborn pride",
@@ -68,9 +88,14 @@
         "That's why we've got to fix it up. Make it better, so everyone wins.",
         "That's why we've got to fix it up. Make it better, so everyone wins."
       ],
-	  "listen": [ "salute", "rude" ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "salute", "rude" ],
       "change": [ 3, -5 ],
-	  "toNode": [ "Eye for business", "Everyone's a critic" ],
+	    "toNode": [ "Eye for business", "Everyone's a critic" ],
       "noResponse": "Everyone's a critic",
       "noResponseChange": -5
     },
@@ -81,6 +106,11 @@
         "Well, looks like you're no company.",
         "Well, looks like you're no company.",
         "Silent, eh? Good, didn't want to talk to you anyway."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "Uneventful",
       "noResponseChange": -1
@@ -93,6 +123,11 @@
         "Sure, you're not listening either. No one here seems to listen, they're all wrapped up in the Westin's majesty and mystique. I guess I just don't see it.",
         "Right, right, just be a dick. Everyone here seems to be an ass to me just because I'm trying to fix this place. I get no respect."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Business card",
       "noResponseChange": -1
     },
@@ -103,6 +138,11 @@
         "Hey, sorry if I've been a bit of a dick. This is my first big deal, you know, just want to be calm. Sorry.",
         "Hey, sorry if I've been a bit of a dick. This is my first big deal, you know, just want to be calm. Sorry.",
         "Hey, sorry if I've been a bit of a dick. This is my first big deal, you know, just want to be calm. Sorry."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "New guy",
       "noResponseChange": -1
@@ -115,6 +155,11 @@
         "Right, right. I'm always wrong and your boss is always right. I'm the obstructive asshole who's come to take your love away. Sorry to break it to you, but this isn't a young-adult novel adapted into a hit-but-quickly-forgotten-Hollywood movie and you're not Disney's kid-of-the-week-who-will-inevitably-get-caught-in-a-cycle-of-addiction-and-rehabilitation-fueled-by-interminable-media-attention. This is the real world, pal.",
         "Right, right. I'm always wrong and your boss is always right. I'm the obstructive asshole who's come to take your love away. Sorry to break it to you, but this isn't a young-adult novel adapted into a hit-but-quickly-forgotten-Hollywood movie and you're not Disney's kid-of-the-week-who-will-inevitably-get-caught-in-a-cycle-of-addiction-and-rehabilitation-fueled-by-interminable-media-attention. This is the real world, pal."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Financial mistake",
       "noResponseChange": -1
     },
@@ -125,6 +170,11 @@
         "Well, good. You're the first person with half a brain I've run into around here. Maybe you do got a future ahead of you. More of one than this hotel, at least.",
         "Well, good. You're the first person with half a brain I've run into around here. Maybe you do got a future ahead of you. More of one than this hotel, at least.",
         "Well, good. You're the first person with half a brain I've run into around here. Maybe you do got a future ahead of you. More of one than this hotel, at least."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "Eye for business",
       "noResponseChange": -1
@@ -137,6 +187,11 @@
         "Maybe you'll come around eventually. Hopefully someone will see sense around here.",
         "Something's eventually going to get this through your thick skull."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Financial mistake",
       "noResponseChange": -1
     },
@@ -147,6 +202,11 @@
         "Hey, take this business card. I'll keep an eye on you.",
         "Might as well take my business card.",
         "Take this business card, you dick."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "Business card",
       "noResponseChange": -1
@@ -159,6 +219,11 @@
         "Jesus, you're the worst elevator operator I've ever had. And that's saying something, because I've never had an elevator operator before. I should get the boss to keep an eye on you.",
         "Jesus, you're the worst elevator operator I've ever had. And that's saying something, because I've never had an elevator operator before. I should get the boss to keep an eye on you."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "24/7 watch",
       "noResponseChange": -1
     },
@@ -170,6 +235,11 @@
         "Yawn, boring.",
         "Yawn, boring."
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "24/7 watch",
       "noResponseChange": -1
     },
@@ -180,6 +250,11 @@
         "Be seeing you.",
         "Right- well then.",
         "Ass."
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -189,6 +264,11 @@
         "Hey, uh, you know this is the wrong floor, right? Floor two, please.",
         "This isn't the right floor. Take me to floor two.",
         "Wrong floor dumbass! Floor two! Between one and three!"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": 0

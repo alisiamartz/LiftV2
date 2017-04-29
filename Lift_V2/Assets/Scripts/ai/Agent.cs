@@ -47,7 +47,7 @@ public abstract class Agent : MonoBehaviour {
     protected int getFloorNumber() { return fm.floorPos; }
     protected bool isNearLever() { return sf.nearLever(); }
     protected bool isNearDoor() { return sf.nearDoor(); }
-    protected void animate(string s) { pm.Invoke(s, 0); }
+    protected void animate(string s) { if (s != "") pm.Invoke(s, 0); }
     
     protected virtual void Init()
     {
