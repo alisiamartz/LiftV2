@@ -192,7 +192,6 @@ public class GenericAI : Agent {
         else if (attributes.mood > 3) index = 0; //pos
 
         //talking animation
-        if (onNode.name != endNode.name) { }
         animate(play.animation[index]);
 
         //text

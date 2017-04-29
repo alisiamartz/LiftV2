@@ -34,19 +34,19 @@ public class Patrons {
 
         if (patronName == "Boss1") return new Patron(prefab, 0);
 
-        if (patronName == "Boss2") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Boss2") return new Patron(prefab, 1);
 
-        if (patronName == "Boss3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Boss3") return new Patron(prefab, 6);
 
-        if (patronName == "Business1") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Business1") return new Patron(prefab, 1);
 
-        if (patronName == "Business2") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Business2") return new Patron(prefab, 3);
 
         if (patronName == "Business3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
         if (patronName == "Tourist1") return new Patron(prefab, 1);
 
-        if (patronName == "Tourist2") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Tourist2") return new Patron(prefab, 2);
 
         if (patronName == "Tourist3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
@@ -83,7 +83,8 @@ public class Patrons {
 
         else if (patronName == "Boss2")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAI>();
+            patronObject.GetComponent<GenericAI>().setFilename("2.2Boss.json");
         }
 
         else if (patronName == "Boss3")
@@ -93,7 +94,8 @@ public class Patrons {
 
         else if (patronName == "Business1")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAI>();
+            patronObject.GetComponent<GenericAI>().setFilename("2.1Business.json");
         }
 
         else if (patronName == "Business2")
@@ -110,7 +112,6 @@ public class Patrons {
         {
             patronObject.AddComponent<GenericAI>();
             patronObject.GetComponent<GenericAI>().setFilename("1.2Tourist.json");
-            return;
         }
 
         else if (patronName == "Tourist2")
