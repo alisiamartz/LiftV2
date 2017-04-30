@@ -110,8 +110,8 @@ public class Patrons {
 
         else if (patronName == "Tourist1")
         {
-            patronObject.AddComponent<GenericAI>();
-            patronObject.GetComponent<GenericAI>().setFilename("1.2Tourist.json");
+            patronObject.AddComponent<Tourist1AI>();
+            patronObject.GetComponent<Tourist1AI>().setFilename("1.2Tourist.json");
         }
 
         else if (patronName == "Tourist2")

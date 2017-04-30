@@ -8,18 +8,23 @@ LEAVE FOR JUAN TESTING. USE GENERIC FOR REST OF AI
 
 public class Tourist1AI : Agent {
 
-	// Use this for initialization
-	void Start () {
+    public GameObject objLine;
+
+    // Use this for initialization
+    void Start() {
+        objLine = GameObject.FindGameObjectWithTag("tutorialLine");
         filename = "1.2Tourist.json";
         Init();
         isEndNode = false;
         isExit = false;
         timer = currentNode.wait;
         Build();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (currentNode.name == "Sign Language") { objLine.GetComponent<Animator>().enabled = true; }
+        else { objLine.GetComponent<Animator>().enabled = false; }
         timer -= Time.deltaTime;
         if (list[listIndex]()) {
             listIndex += 1;
@@ -29,7 +34,7 @@ public class Tourist1AI : Agent {
 
             if (listIndex >= list.Count) listIndex = list.Count - 1;
         }
-	}
+    }
 
     private void Build() {
         list.Add(() => waitStart());
@@ -73,7 +78,8 @@ public class Tourist1AI : Agent {
             //stops repeat at an end node
             if (isEndNode && state == 0) {
                 isPlayed = true;
-            } else {
+            }
+            else {
                 say();
             }
             if (onNode.noResponse == onNode.name && onNode != notFloorNode && onNode.listen.Count < 1) isEndNode = true;
@@ -127,7 +133,8 @@ public class Tourist1AI : Agent {
                     currentNode = nodeDict[onNode.toNode[index]];
                     onNode = currentNode;
                     return true;
-                } else if (timer <= 0) {
+                }
+                else if (timer <= 0) {
                     changeMood(onNode.noResponseChange);
                     currentNode = nodeDict[onNode.noResponse];
                     onNode = currentNode;
