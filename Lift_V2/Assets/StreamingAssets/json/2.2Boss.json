@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "Why hello there! Would you take me to the business floor? Oh, that's the second one, in case you've forgotten.",
-        "Why hello there! Would you take me to the business floor? Oh, that's the second one, in case you've forgotten.",
-        "Why hello there! Would you take me to the business floor? Oh, that's the second one, in case you've forgotten."
+        "2boss1.1h",
+        "2boss1.1n",
+        "2boss1.1a"
       ],
       "animation": [
         "talk",
@@ -25,9 +25,9 @@
       "name": "Start1",
       "wait": 30,
       "dialogue": [
-        "How are you liking the job? Not too exciting, I know, but there's a simple joy to it. I think so at least. Can't talk, I know, but you can always try to speak with your hands!",
-        "How are you liking the job? Not too exciting, I know, but there's a simple joy to it. I think so at least. Can't talk, I know, but you can always try to speak with your hands!",
-        "How are you liking the job? Not too exciting, I know, but there's a simple joy to it. I think so at least. Can't talk, I know, but you can always try to speak with your hands!"
+        "2boss1.2h",
+        "2boss1.2n",
+        "2boss1.2p"
       ],
       "animation": [
         "talk",
@@ -44,9 +44,9 @@
       "name": "Important meeting",
       "wait": 30,
       "dialogue": [
-        "It's a big day for me today. Well, I guess it applies to you now as well! Got a meeting. Can't say I'm looking forward to it, but it is what it is. This place, I know you haven't been here long, but do you think it should just be tossed aside? Ripped apart by the amoral dogs of capitalism?",
-        "It's a big day for me today. Well, I guess it applies to you now as well! Got a meeting. Can't say I'm looking forward to it, but it is what it is. This place, I know you haven't been here long, but do you think it should just be tossed aside? Ripped apart by the amoral dogs of capitalism?",
-        "It's a big day for me today. Well, I guess it applies to you now as well! Got a meeting. Can't say I'm looking forward to it, but it is what it is. This place, I know you haven't been here long, but do you think it should just be tossed aside? Ripped apart by the amoral dogs of capitalism?"
+        "2boss2.1h",
+        "2boss2.1n",
+        "2boss2.1a"
       ],
       "animation": [
         "talk",
@@ -63,28 +63,25 @@
       "name": "Cold feet",
       "wait": 30,
       "dialogue": [
-        "Ah, I see. Not much of a hand-talker, then? Too committed to the job, ha! Well, you'll grow into it.",
-        "Ah, I see. Not much of a hand-talker, then? Too committed to the job, ha! Well, you'll grow into it.",
-        "Ah, I see. Not much of a hand-talker, then? Too committed to the job, ha! Well, you'll grow into it."
+        "2boss2.2h",
+        "2boss2.2n",
+        "2boss2.2a"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-      "listen": [ "continue", "confused" ],
-      "change": [ 1, 1 ],
-      "toNode": [ "Listener", "Listener" ],
       "noResponse": "Quiet trip",
-      "noResponseChange": -2
+      "noResponseChange": 0
     },
     {
       "name": "Ungrateful",
       "wait": 30,
       "dialogue": [
-        "Pah! That's just like this generation, nothing's sacred to you! You just want the newest, the shiniest thing! You just toss everything else away without a second thought! Not even taking a moment to realize that maybe, maybe something old is something worth keeping! Next thing I know I'll be tossed aside. If I haven't been already.... I'm sorry, I lost my temper there for a bit. It's hard growing old, the world moves on. That's just how it goes. This place, well, it's the last friend I have. Forgive me.",
-        "Pah! That's just like this generation, nothing's sacred to you! You just want the newest, the shiniest thing! You just toss everything else away without a second thought! Not even taking a moment to realize that maybe, maybe something old is something worth keeping! Next thing I know I'll be tossed aside. If I haven't been already.... I'm sorry, I lost my temper there for a bit. It's hard growing old, the world moves on. That's just how it goes. This place, well, it's the last friend I have. Forgive me.",
-        "Pah! That's just like this generation, nothing's sacred to you! You just want the newest, the shiniest thing! You just toss everything else away without a second thought! Not even taking a moment to realize that maybe, maybe something old is something worth keeping! Next thing I know I'll be tossed aside. If I haven't been already.... I'm sorry, I lost my temper there for a bit. It's hard growing old, the world moves on. That's just how it goes. This place, well, it's the last friend I have. Forgive me."
+        "2boss3.1h",
+        "2boss3.1n",
+        "2boss3.1a"
       ],
       "animation": [
         "talk",
@@ -101,9 +98,9 @@
       "name": "Professional negotiator",
       "wait": 30,
       "dialogue": [
-        "Hah! Good! Good. You know, this isn't the first time someone's tried to buy this old place. Back in the sixties they tried turning it into a casino. Here, a casino, could you believe that! Of course, that didn't work. Then about ten years back, someone wanted to change the name of the place! To their own, even! I told them I'd die before I saw some pig's name above the door.... That threat's not quite so effective now.",
-        "Hah! Good! Good. You know, this isn't the first time someone's tried to buy this old place. Back in the sixties they tried turning it into a casino. Here, a casino, could you believe that! Of course, that didn't work. Then about ten years back, someone wanted to change the name of the place! To their own, even! I told them I'd die before I saw some pig's name above the door.... That threat's not quite so effective now.",
-        "Hah! Good! Good. You know, this isn't the first time someone's tried to buy this old place. Back in the sixties they tried turning it into a casino. Here, a casino, could you believe that! Of course, that didn't work. Then about ten years back, someone wanted to change the name of the place! To their own, even! I told them I'd die before I saw some pig's name above the door.... That threat's not quite so effective now."
+        "2boss3.2h",
+        "2boss3.2n",
+        "2boss3.2a"
       ],
       "animation": [
         "talk",
@@ -114,31 +111,12 @@
       "noResponseChange": 0
     },
     {
-      "name": "Listener",
-      "wait": 30,
-      "dialogue": [
-        "-no dialogue-",
-        "-no dialogue-",
-        "-no dialogue-"
-      ],
-      "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "listen": [ "yes", "no" ],
-      "change": [ 1, -1 ],
-      "toNode": [ "Important meeting", "Quiet trip" ],
-      "noResponse": "Quiet trip",
-      "noResponseChange": -1
-    },
-    {
       "name": "Sour mood",
       "wait": 30,
       "dialogue": [
-        "Well, just get me to my floor already. I'll be getting enough guff in the meeting, don't need you adding to it.",
-        "Well, just get me to my floor already. I'll be getting enough guff in the meeting, don't need you adding to it.",
-        "Why, you ungrateful, miserable cad! You know the only reason I got you this job was because I felt bad for you! Oh, just take me to my floor so we can end this conversation."
+        "2boss4.1h",
+        "2boss4.1n",
+        "2boss4.1a"
       ],
       "animation": [
         "talk",
@@ -152,9 +130,9 @@
       "name": "Financial burden",
       "wait": 30,
       "dialogue": [
-        "I know we haven't been doing as well for the last few years, well... the last ten years. But it's survived through worse! It will make it... it has to.",
-        "We'll get this place off the ground, I know we will. We've just got to get profits up again. I don't know how, but we will.",
-        "We'll get this place off the ground, I know we will. We've just got to get profits up again. I don't know how, but we will."
+        "2boss4.2h",
+        "2boss4.2n",
+        "2boss4.2a"
       ],
       "animation": [
         "talk",
@@ -168,9 +146,9 @@
       "name": "Quiet trip",
       "wait": 30,
       "dialogue": [
-        "Well. That's that then.",
-        "Well. That's that then.",
-        "Well. That's that then."
+        "2boss4.3h",
+        "2boss4.3n",
+        "2boss4.1a"
       ],
       "animation": [
         "talk",
@@ -184,9 +162,9 @@
       "name": "End",
       "wait": 10,
       "dialogue": [
-        "I promise you, I'll defend this place to my dying breath. There's something worth saving here. And it's my duty to protect that.",
-        "That businessman is all talk, I'll keep this place. I know I will.",
-        "Well, despite what you might thing, I'll protect this place. You may not see why it's worth it, but I do. And others do too."
+        "2boss5.1h",
+        "2boss5.1n",
+        "2boss5.1a"
       ],
       "animation": [
         "talk",
@@ -198,9 +176,9 @@
       "name": "notFloor",
       "wait": 15,
       "dialogue": [
-        "This is the wrong floor. Could you take me to floor two, the business floor?",
-        "The business floor is floor two. You can look at the lights to tell where that is.",
-        "Floor two is the business floor. This is not the business floor. Take me to the business floor."
+        "2boss5.2h",
+        "2boss5.1n",
+        "2boss5.1a"
       ],
       "animation": [
         "talk",
@@ -208,7 +186,7 @@
         "talk"
       ],
       "noResponse": "notFloor",
-      "noResponseChange": 0
+      "noResponseChange": -2
     }
   ]
 }

@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "",
-        "",
-        ""
+        "3boss1.1h",
+        "3boss1.1h",
+        "3boss1.1h"
       ],
       "animation": [
         "talk",
@@ -25,9 +25,25 @@
       "name": "Start1",
       "wait": 30,
       "dialogue": [
-        "",
-        "",
-        ""
+        "3boss1.2h",
+        "3boss1.2h",
+        "3boss1.2h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "first",
+      "noResponseChange": 0
+    },
+	{
+      "name": "first",
+      "wait": 30,
+      "dialogue": [
+        "3boss2.1h",
+        "3boss2.1h",
+        "3boss2.1a"
       ],
       "animation": [
         "talk",
@@ -44,9 +60,9 @@
       "name": "pos",
       "wait": 30,
       "dialogue": [
-        "",
-        "",
-        ""
+        "3boss3.1h",
+        "3boss3.1h",
+        "3boss3.1h"
       ],
       "animation": [
         "talk",
@@ -60,9 +76,9 @@
       "name": "neg",
       "wait": 30,
       "dialogue": [
-        "",
-        "",
-        ""
+        "3boss3.2h",
+        "3boss3.2h",
+        "3boss3.2h"
       ],
       "animation": [
         "talk",
@@ -77,23 +93,23 @@
       "name": "End",
       "wait": 10,
       "dialogue": [
+        "3boss4.1h",
+        "3boss4.1h",
+        "3boss4.1h"
+      ],
+      "animation": [
         "",
         "",
         ""
-      ],
-      "animation": [
-        "talk",
-        "talk",
-        "talk"
       ]
     },
     {
       "name": "notFloor",
       "wait": 15,
       "dialogue": [
-        "",
-        "",
-        ""
+        "3boss4.2h",
+        "3boss4.2h",
+        "3boss4.2a"
       ],
       "animation": [
         "talk",
@@ -101,7 +117,7 @@
         "talk"
       ],
       "noResponse": "notFloor",
-      "noResponseChange": 0
+      "noResponseChange": -2
     }
   ]
 }
