@@ -7,23 +7,23 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 15,
+      "wait": 20,
       "dialogue": [
         "2t1.1h",
         "2t1.1n",
         "2t1.1a"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "",
+        "",
+        ""
       ],
       "noResponse": "Start1",
       "noResponseChange": 0
     },
     {
       "name": "Start1",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "2t1.2h",
         "2t1.2n",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Around the world",
-      "wait": 30,
+      "wait": 40,
       "dialogue": [
         "2t2.1h",
         "2t2.1h",
@@ -54,14 +54,14 @@
         "talk"
       ],
       "listen": [ "yes", "continue", "no"],
-      "change": [ 1, 1, -1, ],
+      "change": [ 1, 1, -1 ],
       "toNode": [ "Today's agenda", "Today's agenda", "Rambling" ],
       "noResponse": "Rambling",
       "noResponseChange": -1
     },
     {
       "name": "Double checking",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "2t2.2h",
         "2t2.2n",
@@ -73,14 +73,14 @@
         "talk"
       ],
       "listen": [ "yes", "rude", "no"],
-      "change": [ -1, -1, 2, ],
+      "change": [ -1, -1, 2 ],
       "toNode": [ "Pause", "Pause", "Around the world" ],
       "noResponse": "Around the world",
       "noResponseChange": 2
     },
     {
       "name": "Rambling",
-      "wait": 30,
+      "wait": 19,
       "dialogue": [
         "2t3.1h",
         "2t3.1n",
@@ -96,7 +96,7 @@
     },
     {
       "name": "Today's agenda",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "2t3.2h",
         "2t3.2n",
@@ -112,7 +112,7 @@
     },
     {
       "name": "Pause",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "2t3.3h",
         "2t3.3n",
@@ -131,7 +131,7 @@
     },
     {
       "name": "Cracking",
-      "wait": 30,
+      "wait": 20,
       "dialogue": [
         "2t4.1h",
         "2t4.1n",
@@ -150,7 +150,7 @@
     },
     {
       "name": "Divorce",
-      "wait": 30,
+      "wait": 40,
       "dialogue": [
         "2t5.1h",
         "2t5.1n",
@@ -166,7 +166,7 @@
     },
     {
       "name": "Silence",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "2t5.2h",
         "2t5.2n",
@@ -182,7 +182,7 @@
     },
     {
       "name": "No comment",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "2t5.3h",
         "2t5.3n",
@@ -212,7 +212,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 10,
       "dialogue": [
         "2t6.2h",
         "2t6.2n",

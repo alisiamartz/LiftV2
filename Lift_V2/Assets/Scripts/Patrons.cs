@@ -40,13 +40,13 @@ public class Patrons {
 
         if (patronName == "Business1") return new Patron(prefab, 1);
 
-        if (patronName == "Business2") return new Patron(prefab, 3);
+        if (patronName == "Business2") return new Patron(prefab, 2);
 
         if (patronName == "Business3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
         if (patronName == "Tourist1") return new Patron(prefab, 1);
 
-        if (patronName == "Tourist2") return new Patron(prefab, 2);
+        if (patronName == "Tourist2") return new Patron(prefab, 3);
 
         if (patronName == "Tourist3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
@@ -85,11 +85,14 @@ public class Patrons {
         {
             patronObject.AddComponent<GenericAI>();
             patronObject.GetComponent<GenericAI>().setFilename("2.2Boss.json");
+            patronObject.GetComponent<GenericAI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
         }
 
         else if (patronName == "Boss3")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAI>();
+            patronObject.GetComponent<GenericAI>().setFilename("3.2Boss.json");
+            patronObject.GetComponent<GenericAI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
         }
 
         else if (patronName == "Business1")
@@ -100,7 +103,13 @@ public class Patrons {
 
         else if (patronName == "Business2")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAI>();
+            string[] s = { "3.1BusinessmanH.json", "3.1BusinessmanN.json", "3.1BusinessmanA.json" };
+            short mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
+            patronObject.GetComponent<GenericAI>().setMood(mood);
+            if (mood > 3) patronObject.GetComponent<GenericAI>().setFilename(s[0]);
+            else if (mood < -3) patronObject.GetComponent<GenericAI>().setFilename(s[2]);
+            else patronObject.GetComponent<GenericAI>().setFilename(s[1]);
         }
 
         else if (patronName == "Business3")
@@ -116,7 +125,9 @@ public class Patrons {
 
         else if (patronName == "Tourist2")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAI>();
+            patronObject.GetComponent<GenericAI>().setFilename("3.1Tourist.json");
+            patronObject.GetComponent<GenericAI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
         }
 
         else if (patronName == "Tourist3")

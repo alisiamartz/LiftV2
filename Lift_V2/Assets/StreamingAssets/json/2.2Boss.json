@@ -7,23 +7,23 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 15,
+      "wait": 20,
       "dialogue": [
         "2boss1.1h",
         "2boss1.1n",
         "2boss1.1a"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "",
+        "",
+        ""
       ],
       "noResponse": "Start1",
       "noResponseChange": 0
     },
     {
       "name": "Start1",
-      "wait": 30,
+      "wait": 20,
       "dialogue": [
         "2boss1.2h",
         "2boss1.2n",
@@ -34,9 +34,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "continue" ],
-      "change": [ 1 ],
-      "toNode": [ "Important meeting" ],
+      "listen": [ "yes", "no"],
+      "change": [ 2, 2 ],
+      "toNode": [ "Important meeting", "Important meeting" ],
       "noResponse": "Cold feet",
       "noResponseChange": -2
     },
@@ -61,7 +61,7 @@
     },
     {
       "name": "Cold feet",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "2boss2.2h",
         "2boss2.2n",
@@ -77,7 +77,7 @@
     },
     {
       "name": "Ungrateful",
-      "wait": 30,
+      "wait": 40,
       "dialogue": [
         "2boss3.1h",
         "2boss3.1n",
@@ -96,7 +96,7 @@
     },
     {
       "name": "Professional negotiator",
-      "wait": 30,
+      "wait": 20,
       "dialogue": [
         "2boss3.2h",
         "2boss3.2n",
@@ -112,7 +112,7 @@
     },
     {
       "name": "Sour mood",
-      "wait": 30,
+      "wait": 13,
       "dialogue": [
         "2boss4.1h",
         "2boss4.1n",
@@ -128,7 +128,7 @@
     },
     {
       "name": "Financial burden",
-      "wait": 30,
+      "wait": 13,
       "dialogue": [
         "2boss4.2h",
         "2boss4.2n",
@@ -144,7 +144,7 @@
     },
     {
       "name": "Quiet trip",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "2boss4.3h",
         "2boss4.3n",
@@ -167,9 +167,9 @@
         "2boss5.1a"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "",
+        "",
+        ""
       ]
     },
     {
@@ -177,8 +177,8 @@
       "wait": 15,
       "dialogue": [
         "2boss5.2h",
-        "2boss5.1n",
-        "2boss5.1a"
+        "2boss5.2n",
+        "2boss5.2a"
       ],
       "animation": [
         "talk",

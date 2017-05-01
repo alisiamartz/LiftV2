@@ -1,0 +1,364 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 1,
+    "patience": 15
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "2bm1.1h",
+        "2bm1.1n",
+        "2bm1.1a"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 4,
+      "dialogue": [
+        "2bm1.2h",
+        "2bm1.2n",
+        "2bm1.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Positive start",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Positive start",
+      "wait": 15,
+      "dialogue": [
+        "2bm2.1h",
+        "2bm2.1n",
+        "2bm2.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 2, 2 ],
+      "toNode": [ "Call back", "Call back", "Phase 2", "Phase 2" ],
+      "noResponse": "Phase 2",
+      "noResponseChange": 2
+    },
+    {
+      "name": "Neutral start",
+      "wait": 20,
+      "dialogue": [
+        "2bm2.2h.",
+        "2bm2.2n",
+        "2bm2.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 2, 2 ],
+      "toNode": [ "Ignored", "Ignored", "Fallout", "Fallout" ],
+      "noResponse": "Fallout",
+      "noResponseChange": 2
+    },
+    {
+      "name": "Negative start",
+      "wait": 23,
+      "dialogue": [
+        "2bm2.3h",
+        "2bm2.3n",
+        "2bm2.3a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 0, 0 ],
+      "toNode": [ "Eavesdropper", "Eavesdropper", "Massive fallout", "Massive fallout" ],
+      "noResponse": "Massive fallout",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Call back",
+      "wait": 15,
+      "dialogue": [
+        "2bm3.1h",
+        "2bm3.1n",
+        "2bm3.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "salute", "rude" ],
+      "change": [ 2, -4 ],
+      "toNode": [ "Rookie of the year", "Backlash" ],
+      "noResponse": "Backlash",
+      "noResponseChange": -4
+    },
+    {
+      "name": "Phase 2",
+      "wait": 15,
+      "dialogue": [
+        "2bm3.2h",
+        "2bm3.2n",
+        "2bm3.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 2, 2 ],
+      "toNode": [ "Call back", "Call back", "Contract signing", "Contract signing" ],
+      "noResponse": "Contract signing",
+      "noResponseChange": 2
+    },
+    {
+      "name": "Fallout",
+      "wait": 15,
+      "dialogue": [
+        "2bm3.3h",
+        "2bm3.3n",
+        "2bm3.3a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Trying again",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Ignored",
+      "wait": 3,
+      "dialogue": [
+        "2bm3.4h",
+        "2bm3.4n",
+        "2bm3.4a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Trying again",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Massive fallout",
+      "wait": 21,
+      "dialogue": [
+        "2bm3.5h",
+        "2bm3.5n",
+        "2bm3.3a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 0, 0 ],
+      "toNode": [ "Eavesdropper", "Eavesdropper", "Plan b", "Plan b" ],
+      "noResponse": "Plan b",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Eavesdropper",
+      "wait": 21,
+      "dialogue": [
+        "2bm3.6h",
+        "2bm3.6n",
+        "2bm3.6a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, 0, 0 ],
+      "toNode": [ "Ignored again", "Ignored again", "Plan b", "Plan b" ],
+      "noResponse": "Plan b",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Backlash",
+      "wait": 5,
+      "dialogue": [
+        "2bm3.7h",
+        "2bm3.7n",
+        "2bm3.7a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Success 2",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Rookie of the year",
+      "wait": 7,
+      "dialogue": [
+        "2bm3.8h",
+        "2bm3.8n",
+        "2bm3.8a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Success 2",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Contract signing",
+      "wait": 8,
+      "dialogue": [
+        "2bm4.1h",
+        "2bm4.1n",
+        "2bm4.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Success",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Plan b",
+      "wait": 15,
+      "dialogue": [
+        "2bm4.2h",
+        "2bm4.2n",
+        "2bm4.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Trying again",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Ignored again",
+      "wait": 15,
+      "dialogue": [
+        "2bm4.3h",
+        "2bm4.3n",
+        "2bm4.3a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Ignored again",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Success 2",
+      "wait": 15,
+      "dialogue": [
+        "2bm4.4h",
+        "2bm4.4n",
+        "2bm4.4a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Success 2",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Success",
+      "wait": 15,
+      "dialogue": [
+        "2bm4.5h",
+        "2bm4.5n",
+        "2bm4.5a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Success",
+      "noReponseChange": 0
+    },
+    {
+      "name": "Trying again",
+      "wait": 15,
+      "dialogue": [
+        "2bm4.6h",
+        "2bm4.6n",
+        "2bm4.6a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Trying again",
+      "noResponseChange": 0
+    },
+    {
+      "name": "End",
+      "wait": 10,
+      "dialogue": [
+        "2bm5.1h",
+        "2bm5.1n",
+        "2bm5.1a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 15,
+      "dialogue": [
+        "2bm5.2h",
+        "2bm5.2n",
+        "2bm5.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    }
+  ]
+}

@@ -37,6 +37,8 @@ public abstract class Agent : MonoBehaviour {
     protected bool isEndNode;
     protected StateFetch sf;
     protected float patTimer;
+    private bool isSetMood = false;
+    private short mood;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -48,6 +50,7 @@ public abstract class Agent : MonoBehaviour {
     protected bool isNearLever() { return sf.nearLever(); }
     protected bool isNearDoor() { return sf.nearDoor(); }
     protected void animate(string s) { if (s != "") pm.Invoke(s, 0); }
+    protected void stopTalking() { pm.stopTalking(); }
     
     protected virtual void Init()
     {
@@ -72,6 +75,9 @@ public abstract class Agent : MonoBehaviour {
         notFloorNode = nodeDict["notFloor"];
         endNode = nodeDict["End"];
         onNode = currentNode;
+
+        //mood setting
+        if (isSetMood) attributes.mood = mood;
     }
 
 
@@ -141,8 +147,9 @@ public abstract class Agent : MonoBehaviour {
         if (attributes.mood < -10) attributes.mood = -10;
     }
 
-    protected void setMood(short i) {
-        attributes.mood = i;
+    public void setMood(short i) {
+        mood = i;
+        isSetMood = true;
     }
 
     public void setFilename(string s) {

@@ -67,7 +67,7 @@ public class DayManager : MonoBehaviour {
 
             //floorPanel.GetComponent<FloorsPanel>().lightOn(startFloor);
 
-            GetComponent<FloorManager>().patrons[startFloor] += 1;
+            //GetComponent<FloorManager>().patrons[startFloor] += 1;
         }
         else {
             nextDay();

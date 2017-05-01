@@ -198,4 +198,8 @@ public class PatronMovement : MonoBehaviour {
         anim.SetBool("talking", true);
     }
     
+    public void stopTalking() {
+        anim.SetBool("talking", false);
+    }
+
 }

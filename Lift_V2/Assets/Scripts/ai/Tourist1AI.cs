@@ -159,6 +159,8 @@ public class Tourist1AI : Agent {
                 return false;
             case 2:
                 if (!isExit) {
+                    objLine.GetComponent<Animator>().enabled = false;
+                    stopTalking();
                     exit();
                     isExit = true;
                 }
@@ -181,7 +183,7 @@ public class Tourist1AI : Agent {
         bubble.text = play.dialogue[index];
 
         //animation
-        animate("talk");
+        animate(play.animation[index]);
 
         string dialogue = play.dialogue[index];
 

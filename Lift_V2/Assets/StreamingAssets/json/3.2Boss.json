@@ -7,23 +7,23 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 15,
+      "wait": 30,
       "dialogue": [
         "3boss1.1h",
         "3boss1.1h",
         "3boss1.1h"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "",
+        "",
+        ""
       ],
       "noResponse": "Start1",
       "noResponseChange": 0
     },
     {
       "name": "Start1",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "3boss1.2h",
         "3boss1.2h",
@@ -39,7 +39,7 @@
     },
 	{
       "name": "first",
-      "wait": 30,
+      "wait": 20,
       "dialogue": [
         "3boss2.1h",
         "3boss2.1h",
@@ -58,7 +58,7 @@
     },
     {
       "name": "pos",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "3boss3.1h",
         "3boss3.1h",
@@ -74,7 +74,7 @@
     },
     {
       "name": "neg",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "3boss3.2h",
         "3boss3.2h",
@@ -85,7 +85,6 @@
         "talk",
         "talk"
       ],
-
       "noResponse": "neg",
       "noResponseChange": 0
     },
@@ -105,7 +104,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 20,
       "dialogue": [
         "3boss4.2h",
         "3boss4.2h",
@@ -117,7 +116,7 @@
         "talk"
       ],
       "noResponse": "notFloor",
-      "noResponseChange": -2
+      "noResponseChange": -3
     }
   ]
 }

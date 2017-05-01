@@ -2,28 +2,12 @@
   "agentAttr": {
     "mood": 0,
     "goal": 2,
-    "patience": 30
+    "patience": 15
   },
   "nodes": [
     {
       "name": "Start",
-      "wait": 30,
-      "dialogue": [
-        "bm1.1h",
-        "bm1.1n",
-        "bm1.1a"
-      ],
-      "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-	{
-      "name": "Start1",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "bm1.2h",
         "bm1.2n",
@@ -34,7 +18,23 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "yes", "confused", "rude" ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 1,
+      "dialogue": [
+        "bm1.1h",
+        "bm1.1n",
+        "bm1.1a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
+      ],
+      "listen": [ "yes", "confused", "rude" ],
       "change": [ 2, -2, -2 ],
       "toNode": [ "Proposition", "Better Service", "Better Service" ],
       "noResponse": "Proposition",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Proposition",
-      "wait": 30,
+      "wait": 35,
       "dialogue": [
         "bm2.1h",
         "bm2.1n",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Better Service",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "bm2.2h",
         "bm2.2n",
@@ -80,7 +80,7 @@
     },
     {
       "name": "Worker's bias",
-      "wait": 30,
+      "wait": 26,
       "dialogue": [
         "bm3.1h",
         "bm3.1n",
@@ -99,7 +99,7 @@
     },
     {
       "name": "Outdated",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "bm3.2h",
         "bm3.2n",
@@ -110,7 +110,7 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "salute", "rude" ],
+	    "listen": [ "yes", "no" ],
       "change": [ 3, -5 ],
 	    "toNode": [ "Eye for business", "Everyone's a critic" ],
       "noResponse": "Everyone's a critic",
@@ -118,7 +118,7 @@
     },
     {
       "name": "Cat got your tongue",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "bm3.3h",
         "bm3.3n",
@@ -134,7 +134,7 @@
     },
     {
       "name": "Everyone's a critic",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "bm3.4h",
         "bm3.4n",
@@ -150,7 +150,7 @@
     },
     {
       "name": "New guy",
-      "wait": 20,
+      "wait": 12,
       "dialogue": [
         "bm3.5h",
         "bm3.5n",
@@ -166,7 +166,7 @@
     },
 	{
       "name": "Stubborn pride",
-      "wait": 10,
+      "wait": 20,
       "dialogue": [
         "bm4.1h",
         "bm4.1n",
@@ -182,7 +182,7 @@
     },
 	{
       "name": "Eye for business",
-      "wait": 30,
+      "wait": 10,
       "dialogue": [
         "bm4.2h",
         "bm4.2n",
@@ -198,7 +198,7 @@
     },
 	{
       "name": "Financial mistake",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "bm5.1h",
         "bm5.1n",
@@ -214,7 +214,7 @@
     },
 	{
       "name": "Business card",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "bm5.2h",
         "bm5.2n",
@@ -230,7 +230,7 @@
     },
 	{
       "name": "24/7 watch",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "bm5.3h",
         "bm5.3n",
@@ -246,7 +246,7 @@
     },
 	{
       "name": "Uneventful",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "bm5.4h",
         "bm5.4n",
@@ -269,9 +269,9 @@
         "bm6.1a"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "",
+        "",
+        ""
       ]
     },
     {

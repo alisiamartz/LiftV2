@@ -10,7 +10,7 @@ public class FloorManager : MonoBehaviour
 
     public GameObject[] floors;                             //[] is the gameObject floor holder
     [HideInInspector]
-    public int[] patrons = new int[6];                      //is the number of patrons waiting at each floor
+    public int[] patrons = new int[7];                      //is the number of patrons waiting at each floor
     private int activeFloorIndex;
 
     [SerializeField]

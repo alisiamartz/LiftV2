@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 15,
+      "wait": 10,
       "dialogue": [
         "t1.1h",
         "t1.1n",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 30,
+      "wait": 31,
       "dialogue": [
         "t1.2h",
         "t1.2n",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Jokester",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "t2.1h",
         "t2.1n",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Conversation starter",
-      "wait": 30,
+      "wait": 17,
       "dialogue": [
         "t2.2h",
         "t2.2n",
@@ -74,7 +74,7 @@
     },
     {
       "name": "Sign Language",
-      "wait": 30,
+      "wait": 25,
       "dialogue": [
         "t2.3h",
         "t2.3n",
@@ -93,7 +93,7 @@
     },
 	{
       "name": "Simple response",
-      "wait": 30,
+      "wait": 15,
       "dialogue": [
         "t3.1h",
         "t3.1n",
@@ -131,7 +131,7 @@
     },
     {
       "name": "Big day",
-      "wait": 30,
+      "wait": 12,
       "dialogue": [
         "t4.1h",
         "t4.1n",
