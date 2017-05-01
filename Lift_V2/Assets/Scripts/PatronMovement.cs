@@ -10,6 +10,8 @@ public class PatronMovement : MonoBehaviour {
 
     private GameObject rotateTarget;
 
+    private GameObject leverRotator;
+
     [Range(0.5f, 5)]
     public float walkSpeed = 0.5f;
     [Range(1, 5)]
@@ -30,6 +32,7 @@ public class PatronMovement : MonoBehaviour {
 	void Start () {
         hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
         playerHead = GameObject.FindGameObjectWithTag("MainCamera");
+        leverRotator = GameObject.FindGameObjectWithTag("lever");
 
 		anim = GetComponent<Animator> ();
     }
@@ -110,6 +113,10 @@ public class PatronMovement : MonoBehaviour {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
             //Debug.Log("yes yes yes ");
+
+            //Turn off light here
+            leverRotator.GetComponent<patronWaiting>().lightOff(hotelManager.GetComponent<FloorManager>().floorPos);
+
 			anim.SetBool ("elevatorHere", true);
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
             moving = true;
