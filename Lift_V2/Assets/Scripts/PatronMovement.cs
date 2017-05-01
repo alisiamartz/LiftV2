@@ -14,6 +14,9 @@ public class PatronMovement : MonoBehaviour {
 
     private GameObject musicSource;
 
+    //For new waypoint system
+    private int waypointNumber = 2;
+
     [Range(0.5f, 5)]
     public float walkSpeed = 0.5f;
     [Range(1, 5)]
@@ -82,14 +85,15 @@ public class PatronMovement : MonoBehaviour {
                 {
                     //Move to a second waypoint and then despawn
                     var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
-                    targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor);
-                    turnTowardsWaypoint(targetWaypoint);
-                    state = "leaving2";
-                }
-                else if(state == "leaving2")
-                {
-                    //Basic Despawmn
-                    despawnPatron();
+                    //Check if there's another waypoint in the path
+                    if (hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor, waypointNumber) != null) {
+                        targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor, waypointNumber);
+                        turnTowardsWaypoint(targetWaypoint);
+                        waypointNumber++;
+                    }
+                    else {
+                        despawnPatron();
+                    }
                 }
             }
         }

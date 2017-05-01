@@ -42,9 +42,14 @@ public class FloorManager : MonoBehaviour
         return floors[floorNumber].transform.Find("Waypoint").gameObject;
     }
 
-    public GameObject fetchFloorWaypoint2(int floorNumber)
+    public GameObject fetchFloorWaypoint2(int floorNumber, int waypointIter)
     {
-        return floors[floorNumber].transform.Find("Waypoint2").gameObject;
+        if (floors[floorNumber].transform.Find("Waypoint" + waypointIter.ToString()).gameObject != null) {
+            return floors[floorNumber].transform.Find("Waypoint" + waypointIter.ToString()).gameObject;
+        }
+        else {
+            return null;
+        }
     }
 
     void Update()
