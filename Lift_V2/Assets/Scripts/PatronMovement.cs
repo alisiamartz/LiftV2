@@ -12,6 +12,8 @@ public class PatronMovement : MonoBehaviour {
 
     private GameObject leverRotator;
 
+    private GameObject musicSource;
+
     [Range(0.5f, 5)]
     public float walkSpeed = 0.5f;
     [Range(1, 5)]
@@ -33,6 +35,7 @@ public class PatronMovement : MonoBehaviour {
         hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
         playerHead = GameObject.FindGameObjectWithTag("MainCamera");
         leverRotator = GameObject.FindGameObjectWithTag("lever");
+        musicSource = GameObject.FindGameObjectWithTag("musicControl");
 
 		anim = GetComponent<Animator> ();
     }
@@ -116,6 +119,9 @@ public class PatronMovement : MonoBehaviour {
 
             //Turn off light here
             leverRotator.GetComponent<patronWaiting>().lightOff(hotelManager.GetComponent<FloorManager>().floorPos);
+
+            //Turn on theme music
+            musicSource.GetComponent<musicController>().playCharacterTheme(1);
 
 			anim.SetBool ("elevatorHere", true);
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
