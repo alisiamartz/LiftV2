@@ -26,13 +26,14 @@ public class DayManager : MonoBehaviour {
     public int unFadeTime;
     private GameObject elevatorManager;
     public doorInteraction liftableDoor;
-    public LeverRotation leverRotation;
+    private GameObject leverRotator;
 
     private Patrons patron = new Patrons();
 
     // Use this for initialization
     void Start () {
         elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
+        leverRotator = GameObject.FindGameObjectWithTag("lever");
 
         days[0] = day1; days[1] = day2; days[2] = day3; days[3] = day4; days[4] = day5;
         SteamVR_Fade.Start(Color.black, 0);
@@ -61,7 +62,11 @@ public class DayManager : MonoBehaviour {
 
             newPatron.transform.parent = GetComponent<FloorManager>().floors[startFloor].transform;
 
+            //Set the light on the elevator
+            leverRotator.GetComponent<patronWaiting>().lightOn(startFloor);
+
             //floorPanel.GetComponent<FloorsPanel>().lightOn(startFloor);
+
             GetComponent<FloorManager>().patrons[startFloor] += 1;
         }
         else {
@@ -89,7 +94,7 @@ public class DayManager : MonoBehaviour {
     public void dayReset() {
         //Close the elevator door
         //Reset elevator position etc.
-        leverRotation.resetLever();
+        leverRotator.GetComponent<LeverRotation>().resetLever();
         elevatorManager.GetComponent<ElevatorMovement>().arriveAtFloor(0);
         liftableDoor.closeDoor();
 
