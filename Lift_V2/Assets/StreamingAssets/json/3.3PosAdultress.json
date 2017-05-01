@@ -1,0 +1,230 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 4
+  },
+  "nodes": [
+  {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+		"neu",
+		"neg"
+      ],
+      "noResponse": "Third Wheeler",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Third Wheeler",
+      "wait": 40,
+      "dialogue": [
+        "pos",
+		"pos",
+		"pos"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 1, -3 ],
+      "toNode": [ "Third Party", "Alone time" ],
+      "noResponse": "Alone time",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Unwanted Attention",
+      "wait": 40,
+      "dialogue": [
+        "neu",
+		"neu",
+		"neg"
+      ],
+      "listen": [ "rude", "continue" ],
+      "change": [ -1, -1 ],
+      "toNode": [ "Pervert", "Pervert" ],
+      "noResponse": "Nuisance",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Third Party",
+      "wait": 60,
+      "dialogue": [
+        "pos",
+		"pos",
+		"pos"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ -12, 1 ],
+      "toNode": [ "Affair", "paranoid" ],
+      "noResponse": "paranoid",
+      "noResponseChange": 1
+    },
+    {
+      "name": "Alone time",
+      "wait": 40,
+      "dialogue": [
+        "pos",
+		"neu",
+		"neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 1 ],
+      "toNode": [ "Mediocre" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Pervert",
+      "wait": 40,
+      "dialogue": [
+        "neu",
+		"neu",
+		"neg"
+      ],
+      "listen": [ "salute", "rude", "no" ],
+      "change": [ 0, -2, -2 ],
+      "toNode": [ "Alone time", "Envy", "Envy" ],
+      "noResponse": "Alone time",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Nuisance",
+      "wait": 40,
+      "dialogue": [
+        "neu",
+		"neu",
+		"neg"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 0, -2 ],
+      "toNode": [ "Envy", "Just a Hater" ],
+      "noResponse": "Just a Hater",
+      "noResponseChange": -3
+    },
+    {
+      "name": "Affair",
+      "wait": 40,
+      "dialogue": [
+        "neg",
+		"neg",
+		"neg"
+      ],
+      "listen": [ "yes", "no", "confused" ],
+      "change": [ -4, 12, 12 ],
+      "toNode": [ "Breakup", "Second Chance", "Second Chance" ],
+      "noResponse": "Second Chance",
+      "noResponseChange": 12
+    },
+    {
+      "name": "paranoid",
+      "wait": 40,
+      "dialogue": [
+        "pos",
+		"pos",
+		"pos"
+      ],
+      "listen": [ "out" ],
+      "change": [ 3 ],
+      "toNode": [ "Good Terms" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Good Terms",
+      "wait": 60,
+      "dialogue": [
+        "pos",
+		"neu",
+		"neg"
+      ]
+    },
+	{
+      "name": "Envy",
+      "wait": 40,
+      "dialogue": [
+        "neu",
+		"neu",
+		"neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "Incompetent" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+	{
+      "name": "Just a Hater",
+      "wait": 40,
+      "dialogue": [
+        "neu",
+		"neu",
+		"neg"
+      ]
+    },
+	{
+      "name": "Breakup",
+      "wait": 40,
+      "dialogue": [
+        "neg",
+		"neg",
+		"neg"
+      ]
+    },
+	{
+      "name": "Second Chance",
+      "wait": 40,
+      "dialogue": [
+        "pos",
+		"pos",
+		"pos"
+      ]
+    },
+	{
+      "name": "Good Terms",
+      "wait": 40,
+      "dialogue": [
+        "pos",
+		"pos",
+		"pos"
+      ]
+    },
+	{
+      "name": "Incompetent",
+      "wait": 40,
+      "dialogue": [
+        "pos",
+		"neu",
+		"neg"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}

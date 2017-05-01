@@ -9,10 +9,13 @@ LEAVE FOR JUAN TESTING. USE GENERIC FOR REST OF AI
 public class Tourist1AI : Agent {
 
     public GameObject objLine;
+    private bool startOver;
 
     // Use this for initialization
     void Start() {
         objLine = GameObject.FindGameObjectWithTag("tutorialLine");
+        startOver = false;
+        objLine.GetComponent<Animator>().SetBool("startOver", startOver);
         filename = "1.2Tourist.json";
         Init();
         isEndNode = false;
@@ -23,8 +26,15 @@ public class Tourist1AI : Agent {
 
     // Update is called once per frame
     void Update() {
-        if (currentNode.name == "Sign Language") { objLine.GetComponent<Animator>().enabled = true; }
-        else { objLine.GetComponent<Animator>().enabled = false; }
+        if (currentNode.name == "Sign Language") {
+            objLine.GetComponent<Animator>().enabled = true;
+            objLine.GetComponent<Animator>().SetBool("startOver", true);
+        }
+        else {
+            objLine.GetComponent<Animator>().enabled = false;
+             objLine.GetComponent<Animator>().SetBool("startOver", false);
+       
+        }
         timer -= Time.deltaTime;
         if (list[listIndex]()) {
             listIndex += 1;
