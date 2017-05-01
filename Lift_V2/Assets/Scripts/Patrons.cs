@@ -95,7 +95,7 @@ public class Patrons {
         else if (patronName == "Business1")
         {
             patronObject.AddComponent<GenericAI>();
-            patronObject.GetComponent<GenericAI>().setFilename("2.1Business.json");
+            patronObject.GetComponent<GenericAI>().setFilename("2.1Businessman.json");
         }
 
         else if (patronName == "Business2")
