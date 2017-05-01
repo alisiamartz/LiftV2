@@ -141,9 +141,9 @@
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "boss5.2p",
-        "boss5.2n",
-        "boss5.2a"
+        "boss5.1p",
+        "boss5.1n",
+        "boss5.1a"
       ],
       "animation": [
         "",

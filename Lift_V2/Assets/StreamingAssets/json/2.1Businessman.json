@@ -8,9 +8,25 @@
       "name": "Start",
       "wait": 30,
       "dialogue": [
-        "Yeah, I'm gonna need you to take me to floor two.",
-        "Yeah, I'm gonna need you to take me to floor two.",
-        "Yeah, I'm gonna need you to take me to floor two."
+        "bm1.1h",
+        "bm1.1n",
+        "bm1.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Start1",
+      "wait": 30,
+      "dialogue": [
+        "bm1.2h",
+        "bm1.2n",
+        "bm1.2a"
       ],
       "animation": [
         "talk",
@@ -27,9 +43,9 @@
       "name": "Proposition",
       "wait": 30,
       "dialogue": [
-        "Got a big meeting with the boss-man today. Well, your boss-man, my client. I'm not supposed to say anything but, a word of advice: might want to start looking for alternative employment. Speaking of which, I hope you've got skills outside of 'elevator-operating.' Last time I saw a hotel without an automatic elevator was, uh, I don't know, I Love Lucy? I mean, talk about out-dated, do you think this place is even up to code?",
-        "Got a big meeting with the boss-man today. Well, your boss-man, my client. I'm not supposed to say anything but, a word of advice: might want to start looking for alternative employment. Speaking of which, I hope you've got skills outside of 'elevator-operating.' Last time I saw a hotel without an automatic elevator was, uh, I don't know, I Love Lucy? I mean, talk about out-dated, do you think this place is even up to code?",
-        "Got a big meeting with the boss-man today. Well, your boss-man, my client. I'm not supposed to say anything but, a word of advice: might want to start looking for alternative employment. Speaking of which, I hope you've got skills outside of 'elevator-operating.' Last time I saw a hotel without an automatic elevator was, uh, I don't know, I Love Lucy? I mean, talk about out-dated, do you think this place is even up to code?"
+        "bm2.1h",
+        "bm2.1n",
+        "bm2.1a"
       ],
       "animation": [
         "talk",
@@ -46,9 +62,9 @@
       "name": "Better Service",
       "wait": 30,
       "dialogue": [
-        "Looks like the service here should be the first on the chopping block. Gonna prove me wrong?",
-        "Looks like the service here should be the first on the chopping block. Gonna prove me wrong?",
-        "Looks like the service here should be the first on the chopping block. Gonna prove me wrong?"
+        "bm2.2h",
+        "bm2.2n",
+        "bm2.2a"
       ],
       "animation": [
         "talk",
@@ -65,9 +81,9 @@
       "name": "Worker's bias",
       "wait": 30,
       "dialogue": [
-        "Huh, what else could I have expected from one of the Westwind's loyal cronies? Your boss has got you hypnotized, none of you seem to get what's actually going on here; this place is falling apart. By refusing to update, your boss is driving this place into the ground, it's hurting the hotel and all of its employees. You get it?",
-        "Huh, what else could I have expected from one of the Westwind's loyal cronies? Your boss has got you hypnotized, none of you seem to get what's actually going on here; this place is falling apart. By refusing to update, your boss is driving this place into the ground, it's hurting the hotel and all of its employees. You get it?",
-        "Huh, what else could I have expected from one of the Westwind's loyal cronies? Your boss has got you hypnotized, none of you seem to get what's actually going on here; this place is falling apart. By refusing to update, your boss is driving this place into the ground, it's hurting the hotel and all of its employees. You get it?"
+        "bm3.1h",
+        "bm3.1n",
+        "bm3.1a"
       ],
       "animation": [
         "talk",
@@ -84,9 +100,9 @@
       "name": "Outdated",
       "wait": 30,
       "dialogue": [
-        "That's why we've got to fix it up. Make it better, so everyone wins.",
-        "That's why we've got to fix it up. Make it better, so everyone wins.",
-        "That's why we've got to fix it up. Make it better, so everyone wins."
+        "bm3.2h",
+        "bm3.2n",
+        "bm3.2a"
       ],
       "animation": [
         "talk",
@@ -103,9 +119,9 @@
       "name": "Cat got your tongue",
       "wait": 30,
       "dialogue": [
-        "Well, looks like you're no company.",
-        "Well, looks like you're no company.",
-        "Silent, eh? Good, didn't want to talk to you anyway."
+        "bm3.3h",
+        "bm3.3n",
+        "bm3.3a"
       ],
       "animation": [
         "talk",
@@ -119,9 +135,9 @@
       "name": "Everyone's a critic",
       "wait": 30,
       "dialogue": [
-        "Sure, you're not listening either. No one here seems to listen, they're all wrapped up in the Westin's majesty and mystique. I guess I just don't see it.",
-        "Sure, you're not listening either. No one here seems to listen, they're all wrapped up in the Westin's majesty and mystique. I guess I just don't see it.",
-        "Right, right, just be a dick. Everyone here seems to be an ass to me just because I'm trying to fix this place. I get no respect."
+        "bm3.4h",
+        "bm3.4n",
+        "bm3.4a"
       ],
       "animation": [
         "talk",
@@ -135,9 +151,9 @@
       "name": "New guy",
       "wait": 20,
       "dialogue": [
-        "Hey, sorry if I've been a bit of a dick. This is my first big deal, you know, just want to be calm. Sorry.",
-        "Hey, sorry if I've been a bit of a dick. This is my first big deal, you know, just want to be calm. Sorry.",
-        "Hey, sorry if I've been a bit of a dick. This is my first big deal, you know, just want to be calm. Sorry."
+        "bm3.5h",
+        "bm3.5n",
+        "bm3.5a"
       ],
       "animation": [
         "talk",
@@ -151,9 +167,9 @@
       "name": "Stubborn pride",
       "wait": 10,
       "dialogue": [
-        "Right, right. I'm always wrong and your boss is always right. I'm the obstructive asshole who's come to take your love away. Sorry to break it to you, but this isn't a young-adult novel adapted into a hit-but-quickly-forgotten-Hollywood movie and you're not Disney's kid-of-the-week-who-will-inevitably-get-caught-in-a-cycle-of-addiction-and-rehabilitation-fueled-by-interminable-media-attention. This is the real world, pal.",
-        "Right, right. I'm always wrong and your boss is always right. I'm the obstructive asshole who's come to take your love away. Sorry to break it to you, but this isn't a young-adult novel adapted into a hit-but-quickly-forgotten-Hollywood movie and you're not Disney's kid-of-the-week-who-will-inevitably-get-caught-in-a-cycle-of-addiction-and-rehabilitation-fueled-by-interminable-media-attention. This is the real world, pal.",
-        "Right, right. I'm always wrong and your boss is always right. I'm the obstructive asshole who's come to take your love away. Sorry to break it to you, but this isn't a young-adult novel adapted into a hit-but-quickly-forgotten-Hollywood movie and you're not Disney's kid-of-the-week-who-will-inevitably-get-caught-in-a-cycle-of-addiction-and-rehabilitation-fueled-by-interminable-media-attention. This is the real world, pal."
+        "bm4.1h",
+        "bm4.1n",
+        "bm4.1a"
       ],
       "animation": [
         "talk",
@@ -167,9 +183,9 @@
       "name": "Eye for business",
       "wait": 30,
       "dialogue": [
-        "Well, good. You're the first person with half a brain I've run into around here. Maybe you do got a future ahead of you. More of one than this hotel, at least.",
-        "Well, good. You're the first person with half a brain I've run into around here. Maybe you do got a future ahead of you. More of one than this hotel, at least.",
-        "Well, good. You're the first person with half a brain I've run into around here. Maybe you do got a future ahead of you. More of one than this hotel, at least."
+        "bm4.2h",
+        "bm4.2n",
+        "bm4.2a"
       ],
       "animation": [
         "talk",
@@ -183,9 +199,9 @@
       "name": "Financial mistake",
       "wait": 30,
       "dialogue": [
-        "Maybe you'll come around eventually. Hopefully someone will see sense around here.",
-        "Maybe you'll come around eventually. Hopefully someone will see sense around here.",
-        "Something's eventually going to get this through your thick skull."
+        "bm5.1h",
+        "bm5.1n",
+        "bm5.1a"
       ],
       "animation": [
         "talk",
@@ -199,9 +215,9 @@
       "name": "Business card",
       "wait": 30,
       "dialogue": [
-        "Hey, take this business card. I'll keep an eye on you.",
-        "Might as well take my business card.",
-        "Take this business card, you dick."
+        "bm5.2h",
+        "bm5.2n",
+        "bm5.2a"
       ],
       "animation": [
         "talk",
@@ -215,9 +231,9 @@
       "name": "24/7 watch",
       "wait": 30,
       "dialogue": [
-        "Jesus, you're the worst elevator operator I've ever had. And that's saying something, because I've never had an elevator operator before. I should get the boss to keep an eye on you.",
-        "Jesus, you're the worst elevator operator I've ever had. And that's saying something, because I've never had an elevator operator before. I should get the boss to keep an eye on you.",
-        "Jesus, you're the worst elevator operator I've ever had. And that's saying something, because I've never had an elevator operator before. I should get the boss to keep an eye on you."
+        "bm5.3h",
+        "bm5.3n",
+        "bm5.3a"
       ],
       "animation": [
         "talk",
@@ -231,9 +247,9 @@
       "name": "Uneventful",
       "wait": 30,
       "dialogue": [
-        "Well, okay then.",
-        "Yawn, boring.",
-        "Yawn, boring."
+        "bm5.4h",
+        "bm5.4n",
+        "bm5.4a"
       ],
       "animation": [
         "talk",
@@ -247,9 +263,9 @@
       "name": "End",
       "wait": 10,
       "dialogue": [
-        "Be seeing you.",
-        "Right- well then.",
-        "Ass."
+        "bm6.1h",
+        "bm6.1n",
+        "bm6.1a"
       ],
       "animation": [
         "talk",
@@ -261,9 +277,9 @@
       "name": "notFloor",
       "wait": 15,
       "dialogue": [
-        "Hey, uh, you know this is the wrong floor, right? Floor two, please.",
-        "This isn't the right floor. Take me to floor two.",
-        "Wrong floor dumbass! Floor two! Between one and three!"
+        "bm6.2h",
+        "bm6.2n",
+        "bm6.2a"
       ],
       "animation": [
         "talk",
