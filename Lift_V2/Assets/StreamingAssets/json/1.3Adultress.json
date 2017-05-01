@@ -6,6 +6,17 @@
   "nodes": [
     {
       "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
       "wait": 40,
       "dialogue": [
         "Date: I didn't think you'd be taking me somewhere so... expensive. Adultress: Well, I'm only in town for a few days, hon, so I figured: why not live big? Besides, I hear their beds are... (quieter) quite comfortable. Date: I guess we'll have to see for ourselves. Adultress: Floor three, doorman! Erh, floor... man?",
@@ -116,7 +127,7 @@
       "wait": 40,
       "dialogue": [
         "Date: Now why would you go and say something like that? Adultress: I've got a hunch. Date: And I love you all the same. Adultress: What? I mean about why. Date: Er, right. Adultress: You're just jealous aren't you? You'll never be happy so no one else can, huh?",
-        "Date: Now why would you go and say something like that? Adultress: I've got a hunch. Date: And I love you all the same. Adultress: What? I mean about why. Date: Er, right. Adultress: You're just jealous aren't you? You'll never be happy so no one else can, huh?", 
+        "Date: Now why would you go and say something like that? Adultress: I've got a hunch. Date: And I love you all the same. Adultress: What? I mean about why. Date: Er, right. Adultress: You're just jealous aren't you? You'll never be happy so no one else can, huh?",
         "Date: Now why would you go and say something like that? Adultress: I've got a hunch. Date: And I love you all the same. Adultress: What? I mean about why. Date: Er, right. Adultress: You're just jealous aren't you? You'll never be happy so no one else can, huh?"
       ],
       "listen": [ "out" ],
@@ -134,7 +145,7 @@
         "Adultress: Glad we got that misunderstanding dealt with. Date: It can be hard to parse your hand wiggles. I'm not fluent in... hand language. Adultress: Let's get off here, I can give you some lessons."
       ]
     },
-	{
+    {
       "name": "Ideal worker",
       "wait": 40,
       "dialogue": [
@@ -143,7 +154,7 @@
         "Date: Is there anyone even here? Or is it only an automaton guiding us? Adultress: I think it's just a really good employee. Date: I feel as if we've crossed through a boundary of some sort. The world seems different somehow. Adultress: Right, okay. Let's just get to the room, yeah?"
       ]
     },
-	{
+    {
       "name": "Wedding invitation",
       "wait": 40,
       "dialogue": [
@@ -152,7 +163,7 @@
         "Date: Hey, keep up the good work and maybe you'll get an invite to the wedding! Adultress: Don't you think we might be getting a bit ahead of ourselves? Date: Right, sorry, I'm just excited. Adultress: Thank you, though."
       ]
     },
-	{
+    {
       "name": "Overreacted",
       "wait": 40,
       "dialogue": [

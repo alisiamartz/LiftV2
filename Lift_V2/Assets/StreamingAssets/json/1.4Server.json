@@ -7,6 +7,17 @@
   "nodes": [
     {
       "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
       "wait": 30,
       "dialogue": [
         "neu",
@@ -15,7 +26,7 @@
       ],
       "listen": [ "yes", "no", "confused" ],
       "change": [ 4, -4, -1 ],
-      "toNode": [ "The Server", "One and the Same", "Clarity"  ],
+      "toNode": [ "The Server", "One and the Same", "Clarity" ],
       "noResponse": "Clarity",
       "noResponseChange": -1
     },
@@ -69,7 +80,7 @@
         "pos",
         "pos"
       ],
-	  "listen": [ "out" ],
+      "listen": [ "out" ],
       "change": [ 3 ],
       "toNode": [ "First Day First Friend" ],
       "noResponse": "notFloor",
@@ -140,7 +151,7 @@
         "neu"
       ]
     },
-	{
+    {
       "name": "Not even aquaintances",
       "wait": 30,
       "dialogue": [
@@ -158,7 +169,7 @@
         "neu"
       ]
     },
-     {
+    {
       "name": "End",
       "wait": 0,
       "dialogue": [

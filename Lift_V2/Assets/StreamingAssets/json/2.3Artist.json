@@ -7,6 +7,17 @@
   "nodes": [
     {
       "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
       "wait": 30,
       "dialogue": [
         "neu",
@@ -15,7 +26,7 @@
       ],
       "listen": [ "yes", "no", "confused" ],
       "change": [ 2, -3, -3 ],
-      "toNode": [ "Hotel's artist", "Critics and haters alike", "Critics and haters alike"  ],
+      "toNode": [ "Hotel's artist", "Critics and haters alike", "Critics and haters alike" ],
       "noResponse": "Critics and haters alike",
       "noResponseChange": -3
     },
@@ -69,7 +80,7 @@
         "neu",
         "neg"
       ],
-	  "listen": [ "out" ],
+      "listen": [ "out" ],
       "change": [ 2 ],
       "toNode": [ "Blue season" ],
       "noResponse": "notFloor",
@@ -116,7 +127,7 @@
         "neu"
       ]
     },
-     {
+    {
       "name": "End",
       "wait": 0,
       "dialogue": [
