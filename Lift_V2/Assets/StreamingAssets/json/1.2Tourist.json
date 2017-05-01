@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "ya mind takin' me ta floor five? I hear there's some great food there.",
-        "ya mind takin' me ta floor five? I hear there's some great food there.",
-        "ya mind takin' me ta floor five? I hear there's some great food there."
+        "t1.1h",
+        "t1.1n",
+        "t1.1a"
       ],
       "animation": [
         "talk",
@@ -25,9 +25,9 @@
       "name": "Start1",
       "wait": 30,
       "dialogue": [
-        "Oh, ya, this is so charming! I love it! You're so darn cute with your little hat and all! Stand still, stand still, let me take a picture! Ya know, I says to my friends, I tell 'em I was going to a hotel for vacation, and they says \"Isn't that what most people do on vacation?\" so I says \"No, I mean, the hotel's the destination,\" and they says \"Okay, then. Whatever you say,\" but they didn't say it in a supportive way, ya know, more like a \"*Whatever you say!*\" All sarcastic and all. Anyways, ya mind takin' me ta floor five? I hear there's some great food there.",
-        "Oh, ya, this is so charming! I love it! You're so darn cute with your little hat and all! Stand still, stand still, let me take a picture! Ya know, I says to my friends, I tell 'em I was going to a hotel for vacation, and they says \"Isn't that what most people do on vacation?\" so I says \"No, I mean, the hotel's the destination,\" and they says \"Okay, then. Whatever you say,\" but they didn't say it in a supportive way, ya know, more like a \"*Whatever you say!*\" All sarcastic and all. Anyways, ya mind takin' me ta floor five? I hear there's some great food there.",
-        "Oh, ya, this is so charming! I love it! You're so darn cute with your little hat and all! Stand still, stand still, let me take a picture! Ya know, I says to my friends, I tell 'em I was going to a hotel for vacation, and they says \"Isn't that what most people do on vacation?\" so I says \"No, I mean, the hotel's the destination,\" and they says \"Okay, then. Whatever you say,\" but they didn't say it in a supportive way, ya know, more like a \"*Whatever you say!*\" All sarcastic and all. Anyways, ya mind takin' me ta floor five? I hear there's some great food there."
+        "t1.2h",
+        "t1.2n",
+        "t1.2a"
       ],
       "animation": [
         "talk",
@@ -44,9 +44,9 @@
       "name": "Jokester",
       "wait": 30,
       "dialogue": [
-        "Oh, you're one of them jokers then? I keep runnin' into those all around. I joke that maybe they've got a whole, ya know, conspiracy and all. I think, uh, I think maybe people just don't like me.",
-        "Oh, you're one of them jokers then? I keep runnin' into those all around. I joke that maybe they've got a whole, ya know, conspiracy and all. I think, uh, I think maybe people just don't like me.",
-        "Oh, you're one of them jokers then? I keep runnin' into those all around. I joke that maybe they've got a whole, ya know, conspiracy and all. I think, uh, I think maybe people just don't like me."
+        "t2.1h",
+        "t2.1n",
+        "t2.1a"
       ],
       "animation": [
         "talk",
@@ -60,9 +60,9 @@
       "name": "Conversation starter",
       "wait": 30,
       "dialogue": [
-        "So I've already made quite a run around the town so far. I saw the, uh, what's it, the boating museum, and the aeronautics museum, that one too. Oh, and the boating aeronautics museum too. Seemed a bit redundant, but hey! Now the plan's to see what I can in this hotel today, before moving on to the subnautics museum.",
-        "So I've already made quite a run around the town so far. I saw the, uh, what's it, the boating museum, and the aeronautics museum, that one too. Oh, and the boating aeronautics museum too. Seemed a bit redundant, but hey! Now the plan's to see what I can in this hotel today, before moving on to the subnautics museum.",
-        "So I've already made quite a run around the town so far. I saw the, uh, what's it, the boating museum, and the aeronautics museum, that one too. Oh, and the boating aeronautics museum too. Seemed a bit redundant, but hey! Now the plan's to see what I can in this hotel today, before moving on to the subnautics museum."
+        "t2.2h",
+        "t2.2n",
+        "t2.2a"
       ],
       "animation": [
         "talk",
@@ -76,9 +76,9 @@
       "name": "Sign Language",
       "wait": 30,
       "dialogue": [
-        "Oh, can't talk can ya? Yah, I have a cousin like that, ya know. Here, I got an idea: how about we talk with our hands? Ya know, like a, whaddaya call, a rudimentary sorta sign-language. So, if you want to say yes, do something like this- Oh, and for no do this",
-        "Oh, can't talk can ya? Yah, I have a cousin like that, ya know. Here, I got an idea: how about we talk with our hands? Ya know, like a, whaddaya call, a rudimentary sorta sign-language. So, if you want to say yes, do something like this- Oh, and for no do this",
-        "Oh, can't talk can ya? Yah, I have a cousin like that, ya know. Here, I got an idea: how about we talk with our hands? Ya know, like a, whaddaya call, a rudimentary sorta sign-language. So, if you want to say yes, do something like this- Oh, and for no do this"
+        "t2.3h",
+        "t2.3n",
+        "t2.3a"
       ],
       "animation": [
         "talk",
@@ -91,13 +91,32 @@
       "noResponse": "Sign Language",
       "noResponseChange": 0
     },
+	{
+      "name": "Simple response",
+      "wait": 30,
+      "dialogue": [
+        "t3.1h",
+        "t3.1n",
+        "t3.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "no", "maybe", "confused", "continue", "pat", "salute", "rude" ],
+      "change": [0, 0, 0, 0, 0, 0, 0, 0],
+      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter" ],
+      "noResponse": "Awkward encounter",
+      "noResponseChange": 0
+    },
     {
       "name": "Clarification",
       "wait": 10,
       "dialogue": [
-        "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're no about there.",
-        "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're no about there.",
-        "Ah, okay then. Well, ya seem to get it in concept, seein' as ya just did one of my motions. So, ya know, not real sure what you're no about there."
+        "t3.2h",
+        "t3.2n",
+        "t3.2a"
       ],
       "animation": [
         "talk",
@@ -114,9 +133,9 @@
       "name": "Big day",
       "wait": 30,
       "dialogue": [
-        "Ah, jeez, I've been talkin' too much again, haven't I? I tend to do that. How's your day been?",
-        "Ah, jeez, I've been talkin' too much again, haven't I? I tend to do that. How's your day been?",
-        "Ah, jeez, I've been talkin' too much again, haven't I? I tend to do that. How's your day been?"
+        "t4.1h",
+        "t4.1n",
+        "t4.1a"
       ],
       "animation": [
         "talk",
@@ -129,32 +148,13 @@
       "noResponse": "Awkward encounter",
       "noResponseChange": -1
     },
-	{
-      "name": "Simple response",
-      "wait": 30,
-      "dialogue": [
-        "Heck! You sure learn quick, doncha? Gee, I'm real outta practice, but this sure is fun, yah?",
-        "Heck! You sure learn quick, doncha? Gee, I'm real outta practice, but this sure is fun, yah?",
-        "Heck! You sure learn quick, doncha? Gee, I'm real outta practice, but this sure is fun, yah?"
-      ],
-      "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "listen": [ "yes", "no", "maybe", "confused", "continue", "pat", "salute", "rude" ],
-      "change": [0, 0, 0, 0, 0, 0, 0, 0],
-      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter" ],
-      "noResponse": "Awkward encounter",
-      "noResponseChange": 0
-    },
     {
       "name": "Awkward encounter",
       "wait": 20,
       "dialogue": [
-        "Ah, ya know, I never considered ya may be deaf too. Heck, that's real insensitive of me. I'll just sit over here, then.",
-        "Ah, ya know, I never considered ya may be deaf too. Heck, that's real insensitive of me. I'll just sit over here, then.",
-        "Ah, ya know, I never considered ya may be deaf too. Heck, that's real insensitive of me. I'll just sit over here, then."
+        "t4.2h",
+        "t4.2n",
+        "t4.2a"
       ],
       "animation": [
         "talk",
@@ -168,9 +168,9 @@
       "name": "Work night",
       "wait": 10,
       "dialogue": [
-        "Ah jeez, I totally forgot about the bread museum. Didja know they've got a whole museum dedicated to bread around here? It seems museum variety is the yeast of their problems! Get it? Yeast? 'Cause, uh, bread and all? Ya know, that plays off better when ya can laugh.",
-        "Ah jeez, I totally forgot about the bread museum. Didja know they've got a whole museum dedicated to bread around here? It seems museum variety is the yeast of their problems! Get it? Yeast? 'Cause, uh, bread and all? Ya know, that plays off better when ya can laugh.",
-        "Ah jeez, I totally forgot about the bread museum. Didja know they've got a whole museum dedicated to bread around here? It seems museum variety is the yeast of their problems! Get it? Yeast? 'Cause, uh, bread and all? Ya know, that plays off better when ya can laugh."
+        "t5.1h",
+        "t5.1n",
+        "t5.1a"
       ],
       "animation": [
         "talk",
@@ -184,9 +184,9 @@
       "name": "End",
       "wait": 10,
       "dialogue": [
-        "Hey, ya know, I really like fellas like you! Gives me time to get a word in edge-wise, ya know? Maybe I'll pick up a souvenir for ya if I pass by again!",
-        "Hey, ya know, I really like fellas like you! Gives me time to get a word in edge-wise, ya know? Maybe I'll pick up a souvenir for ya if I pass by again!",
-        "I AM NOT HAPPY AND AM LEAVING THE ELEVATOR RIGHT NOW. WATCH ME WALK OUT."
+        "t6.1h",
+        "t6.1n",
+        "t6.1a"
       ],
       "animation": [
         "",
@@ -198,9 +198,9 @@
       "name": "notFloor",
       "wait": 15,
       "dialogue": [
-        "Ah! Good one! Ya sure got me this time! A ha! Yah! This is'nt floor 5!",
-        "Oh, sorry ta bother you and all, but I don't think this is the right floor. I mean, I sure as heck don't see any food out there, so I'm just thinkin', ya know, this may not be the restaurant. But hey! I don't mind a good detour!",
-        "Oh, sorry ta bother you and all, but I don't think this is the right floor. I mean, I sure as heck don't see any food out there, so I'm just thinkin', ya know, this may not be the restaurant. But hey! I don't mind a good detour!"
+        "t6.2h",
+        "t6.2n",
+        "t6.2a"
       ],
       "animation": [
         "talk",
