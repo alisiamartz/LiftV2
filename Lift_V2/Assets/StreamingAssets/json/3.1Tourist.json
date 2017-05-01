@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "Yah, hey! Kinda strange runnin' into you again, come here often? Eh? Ehh? Oh, ya know, I'm just jokin' around. Anyways, take me to floor 4.",
-        "Yah, hey! Kinda strange runnin' into you again, come here often? Eh? Ehh? Oh, ya know, I'm just jokin' around. Anyways, take me to floor 4.",
-        "Yah, hey! Kinda strange runnin' into you again, come here often? Eh? Ehh? Oh, ya know, I'm just jokin' around. Anyways, take me to floor 4."
+        "2t1.1h",
+        "2t1.1n",
+        "2t1.1a"
       ],
       "animation": [
         "talk",
@@ -25,9 +25,9 @@
       "name": "Start1",
       "wait": 30,
       "dialogue": [
-        "Hey, ya want to hear what I ended up doin' yesterday?",
-        "Hey, ya want to hear what I ended up doin' yesterday?",
-        "Hey, ya want to hear what I ended up doin' yesterday?"
+        "2t1.2h",
+        "2t1.2n",
+        "2t1.1a"
       ],
       "animation": [
         "talk",
@@ -44,9 +44,9 @@
       "name": "Around the world",
       "wait": 30,
       "dialogue": [
-        "Oh, I thought ya would. Yah, so, ya know, I was sittin' around yesterday, and I was wonderin', I was askin' myself, "What am I doin'?" I'm all the way out here, and, heck, I'm just sittin' in a room! So, I just started walkin', ya know? Just headin' out there, the vast unknown! And ya wouldn't even guess what I saw. Did ya know there's a whole market under the bridge on north side? There's just a buncha people down there! I never seen such a thing! I bought some movies and a couple bags of cinnamon, though I think it's cut with some brown sugar. It was cheap, so not that big a problem.",
-        "Oh, I thought ya would. Yah, so, ya know, I was sittin' around yesterday, and I was wonderin', I was askin' myself, "What am I doin'?" I'm all the way out here, and, heck, I'm just sittin' in a room! So, I just started walkin', ya know? Just headin' out there, the vast unknown! And ya wouldn't even guess what I saw. Did ya know there's a whole market under the bridge on north side? There's just a buncha people down there! I never seen such a thing! I bought some movies and a couple bags of cinnamon, though I think it's cut with some brown sugar. It was cheap, so not that big a problem.",
-        "Oh, I thought ya would. Yah, so, ya know, I was sittin' around yesterday, and I was wonderin', I was askin' myself, "What am I doin'?" I'm all the way out here, and, heck, I'm just sittin' in a room! So, I just started walkin', ya know? Just headin' out there, the vast unknown! And ya wouldn't even guess what I saw. Did ya know there's a whole market under the bridge on north side? There's just a buncha people down there! I never seen such a thing! I bought some movies and a couple bags of cinnamon, though I think it's cut with some brown sugar. It was cheap, so not that big a problem."
+        "2t2.1h",
+        "2t2.1h",
+        "2t2.1h"
       ],
       "animation": [
         "talk",
@@ -63,9 +63,9 @@
       "name": "Double checking",
       "wait": 30,
       "dialogue": [
-        "Uh, are ya sure? It's real exciting now.",
-        "Uh, are ya sure? It's real exciting now.",
-        "Uh, are ya sure? It's real exciting now."
+        "2t2.2h",
+        "2t2.2n",
+        "2t2.2a"
       ],
       "animation": [
         "talk",
@@ -82,9 +82,9 @@
       "name": "Rambling",
       "wait": 30,
       "dialogue": [
-        "Ya know, I've had such a great time here, I figured it's probably a good time to start planning my next vacation! I've been bouncing around a couple of ideas. I can't seem to decide between Bosnia and Herzegovina. Tough choices, ya know?",
-        "Ya know, I've had such a great time here, I figured it's probably a good time to start planning my next vacation! I've been bouncing around a couple of ideas. I can't seem to decide between Bosnia and Herzegovina. Tough choices, ya know?",
-        "Ya know, I've had such a great time here, I figured it's probably a good time to start planning my next vacation! I've been bouncing around a couple of ideas. I can't seem to decide between Bosnia and Herzegovina. Tough choices, ya know?"
+        "2t3.1h",
+        "2t3.1n",
+        "2t3.1a"
       ],
       "animation": [
         "talk",
@@ -98,9 +98,9 @@
       "name": "Today's agenda",
       "wait": 30,
       "dialogue": [
-        "I figure today I'm gonna take a look around the hotel some more. Somethin' about this place, I don't know, it just makes me wanna stick around. Have you seen the art? Real crazy stuff! Especially around the restaurant! I figure there's got to be some more hidden around here somewhere.",
-        "I, ah, I can't seem to figure out what I'm gonna do today. I'm thinkin', maybe, go to a museum or something? There's gotta be more museums, yah?",
-        "I, ah, I can't seem to figure out what I'm gonna do today. I'm thinkin', maybe, go to a museum or something? There's gotta be more museums, yah?"
+        "2t3.2h",
+        "2t3.2n",
+        "2t3.2a"
       ],
       "animation": [
         "talk",
@@ -114,9 +114,9 @@
       "name": "Pause",
       "wait": 30,
       "dialogue": [
-        "I mean, I figure maybe you'd want to know what's up. Want to hear it?",
-        "I, uh, well you're not contributin' much so I figure one of us has got to talk. Yah?",
-        "I, uh, well you're not contributin' much so I figure one of us has got to talk. Yah?"
+        "2t3.3h",
+        "2t3.3n",
+        "2t3.3a"
       ],
       "animation": [
         "talk",
@@ -133,9 +133,9 @@
       "name": "Cracking",
       "wait": 30,
       "dialogue": [
-        "Yah, uh, ya see, the thing is, ya know, I, uh, I've not been feelin' on top of it recently, and I figure, ya know, if I'm not talkin', I'm thinkin'. And I, uh, I don't really want to be thinkin' about the way things are right now. Could ya do me a favor and listen for a bit?",
-        "I'm, uh, well, heck. I'm not feelin' too great about some stuff right now, uh, it's personal, uh, personal stuff, there, so I figure I can ignore that for a bit if I can just talk a bit, yah? Sound reasonable?",
-        "I'm, uh, well, heck. I'm not feelin' too great about some stuff right now, uh, it's personal, uh, personal stuff, there, so I figure I can ignore that for a bit if I can just talk a bit, yah? Sound reasonable?"
+        "2t4.1h",
+        "2t4.1n",
+        "2t4.1a"
       ],
       "animation": [
         "talk",
@@ -152,9 +152,9 @@
       "name": "Divorce",
       "wait": 30,
       "dialogue": [
-        "My, ah, you know, ah heck, I usually don't talk about this with anyone, but, ah jeez, I figure you can't say much about it anyway. This vacation, well, it's not really much of a vacation. My husband, well, we had some disagreements on how to raise the kids and all, and, well, I love the guy and all, but, I, ah, I think our marriage might be, what's it, on the rocks. And, I-, I, ah, heck. I just don't really want to deal with that, so I went on vacation. And this is the only thing keepin' me sane, right now, I think. So, thanks for, ah, lettin' me get that off my chest.",
-        "My, ah, you know, ah heck, I usually don't talk about this with anyone, but, ah jeez, I figure you can't say much about it anyway. This vacation, well, it's not really much of a vacation. My husband, well, we had some disagreements on how to raise the kids and all, and, well, I love the guy and all, but, I, ah, I think our marriage might be, what's it, on the rocks. And, I-, I, ah, heck. I just don't really want to deal with that, so I went on vacation. And this is the only thing keepin' me sane, right now, I think. So, thanks for, ah, lettin' me get that off my chest.",
-        "My, ah, you know, ah heck, I usually don't talk about this with anyone, but, ah jeez, I figure you can't say much about it anyway. This vacation, well, it's not really much of a vacation. My husband, well, we had some disagreements on how to raise the kids and all, and, well, I love the guy and all, but, I, ah, I think our marriage might be, what's it, on the rocks. And, I-, I, ah, heck. I just don't really want to deal with that, so I went on vacation. And this is the only thing keepin' me sane, right now, I think. So, thanks for, ah, lettin' me get that off my chest."
+        "2t5.1h",
+        "2t5.1n",
+        "2t5.1a"
       ],
       "animation": [
         "talk",
@@ -168,9 +168,9 @@
       "name": "Silence",
       "wait": 30,
       "dialogue": [
-        "Uh... Okay, then.",
-        "Yah. Yah, that's okay.",
-        "Yah. Yah, that's okay."
+        "2t5.2h",
+        "2t5.2n",
+        "2t5.2a"
       ],
       "animation": [
         "talk",
@@ -184,9 +184,9 @@
       "name": "No comment",
       "wait": 30,
       "dialogue": [
-        "",
-        "",
-        ""
+        "2t5.3h",
+        "2t5.3n",
+        "2t5.3a"
       ],
       "animation": [
         "talk",
@@ -200,23 +200,23 @@
       "name": "End",
       "wait": 10,
       "dialogue": [
-        "Ya never let me down! Thanks, friend!",
-        "Ya never let me down! Thanks, friend!",
-        ""
+        "2t6.1h",
+        "2t6.1n",
+        "2t6.1a"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "",
+        "",
+        ""
       ]
     },
     {
       "name": "notFloor",
       "wait": 15,
       "dialogue": [
-        "Hey, you know me! It's not a trip if it doesn't have a detour!",
-        "Oh, well, wouldja, well... This isn't floor 4, ya know.",
-        "Uh... great. Who doesn't love a detour."
+        "2t6.2h",
+        "2t6.2n",
+        "2t6.2a"
       ],
       "animation": [
         "talk",
@@ -224,7 +224,7 @@
         "talk"
       ],
       "noResponse": "notFloor",
-      "noResponseChange": 0
+      "noResponseChange": -2
     }
   ]
 }
