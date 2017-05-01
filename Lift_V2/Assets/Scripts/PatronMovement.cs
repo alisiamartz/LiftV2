@@ -125,7 +125,8 @@ public class PatronMovement : MonoBehaviour {
             leverRotator.GetComponent<patronWaiting>().lightOff(hotelManager.GetComponent<FloorManager>().floorPos);
 
             //Turn on theme music
-            musicSource.GetComponent<musicController>().playCharacterTheme(1);
+
+            //musicSource.GetComponent<musicController>().playCharacterTheme(1);
 
 			anim.SetBool ("elevatorHere", true);
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
