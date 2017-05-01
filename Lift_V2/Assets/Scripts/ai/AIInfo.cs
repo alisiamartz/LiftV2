@@ -9,7 +9,9 @@ public class AIInfo : MonoBehaviour {
     Regex bossRegex = new Regex(@"Boss");
     Regex businessRegex = new Regex(@"Business");
 
+    [SerializeField]
     private int bossMood;
+    [SerializeField]
     private int businessMood;
     [SerializeField]
     private int touristMood;

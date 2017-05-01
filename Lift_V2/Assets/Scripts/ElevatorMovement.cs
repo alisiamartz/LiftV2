@@ -10,14 +10,8 @@ public class ElevatorMovement : MonoBehaviour {
     public bool doorOpen;                               //If the elevator door is open, TRUE is open FALSE is closed
 
     [Header("Movement Variables")]
-    public float maxSpeedToRound;                       //The maximum speed the elevator can be moving for it to round
+    
     public float liftSpeedMax;                          //The maximum speed to elevator can reach
-    public float maxIter;                              //The maximum acceleration the elevator can take. (When the lever is at max or min)
-    public float timeToStop;                            //The time it takes to halt to a complete stop
-    private float liftSpeedIter;                       //The current rate of speed increase for the elevator
-    private float liftSpeedWinder;                    //The current rate of speed decrease for the elevator
-    [HideInInspector]
-    public bool windingDown;                           //Whether or not elevator is winding down to a halt
     private bool initialArrival;
 
     [Header("Magnet Variables")]
@@ -46,8 +40,6 @@ public class ElevatorMovement : MonoBehaviour {
     void Start () {
         floorPos = 0f;
         liftSpeedCurrent = 0f;
-        liftSpeedWinder = liftSpeedMax / timeToStop;
-        windingDown = false;
         initialArrival = false;
 
         magnet = false;

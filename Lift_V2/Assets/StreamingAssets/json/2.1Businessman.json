@@ -1,7 +1,8 @@
 {
   "agentAttr": {
     "mood": 0,
-    "goal": 2
+    "goal": 2,
+    "patience": 30
   },
   "nodes": [
     {
@@ -287,7 +288,7 @@
         "talk"
       ],
       "noResponse": "notFloor",
-      "noResponseChange": 0
+      "noResponseChange": -2
     }
   ]
 }
