@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 1,
+      "wait": 10,
       "dialogue": [
         "bm1.1h",
         "bm1.1n",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Proposition",
-      "wait": 35,
+      "wait": 25,
       "dialogue": [
         "bm2.1h",
         "bm2.1n",
@@ -55,7 +55,7 @@
       ],
       "listen": [ "yes", "no" ],
       "change": [ -4, 3 ],
-      "toNode": [ "Worker's bias", "Outdated" ],
+      "toNode": [ "New guy", "Worker's bias" ],
       "noResponse": "Cat got your tongue",
       "noResponseChange": -2
     },
