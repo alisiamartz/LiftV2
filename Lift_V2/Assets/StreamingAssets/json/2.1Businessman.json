@@ -38,7 +38,7 @@
       "change": [ 2, -2, -2 ],
       "toNode": [ "Proposition", "Better Service", "Better Service" ],
       "noResponse": "Proposition",
-      "noResponseChange": 2
+      "noResponseChange": 0
     },
     {
       "name": "Proposition",
