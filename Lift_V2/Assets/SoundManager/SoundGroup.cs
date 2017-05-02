@@ -38,6 +38,8 @@ public class SoundGroup : MonoBehaviour {
 	public bool RandomPitch=false;
     public float RandomPitchMin = 0.9f;
     public float RandomPitchMax = 1.1f;
+    [Range(0, 1f)]
+    public float volume = 1f;
 	private float startingvolume;
 	private int played=0;
     [HideInInspector]
@@ -99,10 +101,14 @@ public class SoundGroup : MonoBehaviour {
     /// for this specific prefab.
     /// </summary>
     public void SetVolume() {
+
+        mAudio.volume = volume;
+        /*
 		if(Music)
 			mAudio.volume=SoundManager.instance.MusicVolume*startingvolume;
 		else
 			mAudio.volume=SoundManager.instance.SFXVolume*startingvolume;
+        */
 	}
 	
     /// <summary>

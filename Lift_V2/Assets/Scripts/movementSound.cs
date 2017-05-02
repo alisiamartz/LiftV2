@@ -38,13 +38,6 @@ public class movementSound : MonoBehaviour {
                 revvingUp = true;
                 elevatorStopped = false;
             }
-
-            //If elevator is currently moving
-            if (revvingUp == false)
-            {
-                //Adjust volume of movement sound based on elevator speed
-                activeMoveSound.GetComponent<AudioSource>().volume = minEngineVolume + ((maxEngineVolume - minEngineVolume) * (Mathf.Abs(liftSpeed) / liftSpeedMax));
-            }
         }
         else if(liftSpeed == 0 && elevatorStopped == false) {
             Debug.Log("Wow");

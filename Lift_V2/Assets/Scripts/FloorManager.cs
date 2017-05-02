@@ -44,7 +44,7 @@ public class FloorManager : MonoBehaviour
 
     public GameObject fetchFloorWaypoint2(int floorNumber, int waypointIter)
     {
-        if (floors[floorNumber].transform.Find("Waypoint" + waypointIter.ToString()).gameObject != null) {
+        if (floors[floorNumber].transform.Find("Waypoint" + waypointIter.ToString()) != null) {
             return floors[floorNumber].transform.Find("Waypoint" + waypointIter.ToString()).gameObject;
         }
         else {

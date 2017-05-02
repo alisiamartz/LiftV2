@@ -26,6 +26,7 @@ public class musicController : MonoBehaviour {
         if(character == 3) { newClip = touristTheme; }
 
         GetComponent<AudioSource>().clip = newClip;
+        GetComponent<AudioSource>().Play();
 
         StartCoroutine(ExecuteAfterTime(newClip.length));
     }
@@ -35,5 +36,6 @@ public class musicController : MonoBehaviour {
 
         //Set the audio clip back to the elevator music
         GetComponent<AudioSource>().clip = elevatorMusic;
+        GetComponent<AudioSource>().Play();
     }
 }
