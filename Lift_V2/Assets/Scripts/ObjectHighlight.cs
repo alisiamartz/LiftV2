@@ -9,7 +9,7 @@ public class ObjectHighlight : MonoBehaviour {
 	 * 
 	 * 
 	 */ 
-	public float rad; 
+	public float rad = .2f; 
 	public Collider[] controllerColliders;
 	Material init;
 	Material highlight;
@@ -74,7 +74,22 @@ public class ObjectHighlight : MonoBehaviour {
 						this.GetComponent<MeshRenderer> ().materials = intMaterials;
 					}
 					break;
-				default:
+               case "rope": 
+                        intMaterials = new Material[this.GetComponent<MeshRenderer>().materials.Length];
+                        if (intMaterials != null) {
+                            for (int i = 0; i < intMaterials.Length; i++) {
+                                intMaterials[i] = this.GetComponent<MeshRenderer>().materials[i];
+                            }
+                            for (int i = 0; i < intMaterials.Length; i++) {
+                                //Debug.Log (intMaterials [i].name);
+                                if (intMaterials[i].name == "eDoorHalf2") {
+                                    intMaterials[i] = highlight;
+                                }
+                            }
+                            this.GetComponent<MeshRenderer>().materials = intMaterials;
+                        }
+                        break;
+                    default:
 					break;
 				}
 			} else {

@@ -202,4 +202,9 @@ public class PatronMovement : MonoBehaviour {
         anim.SetBool("talking", false);
     }
 
+    //Called from AI to tell the player that now is the time for a gesture
+    public void waitingForGesture() {
+
+    }
+
 }

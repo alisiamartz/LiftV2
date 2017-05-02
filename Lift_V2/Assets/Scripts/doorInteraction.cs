@@ -64,7 +64,8 @@ public class doorInteraction : MonoBehaviour
 
 	public GameObject camRig;
     public string jiggleSound;
-
+    public float midPoint = 2.4f;
+    public float highPoint = 3.2f;
 
     // Use this for initialization
     void Start()
@@ -114,7 +115,7 @@ public class doorInteraction : MonoBehaviour
             grabbingUp = false;
             // if door not at a certain point yet
             // it goes down
-            if (door.transform.position.y < 2.5f && lifting) {
+            if (door.transform.position.y < midPoint && lifting) {
               // while the door position is greater than the y position
                 door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, 1.1f, initZ), 2f * Time.deltaTime);
             }
@@ -122,10 +123,10 @@ public class doorInteraction : MonoBehaviour
 
         if (lifting) {
             // if past certain point
-            if (door.transform.position.y > 2.5f) {
+            if (door.transform.position.y > midPoint) {
                 door.transform.position = Vector3.MoveTowards(door.transform.position, doorOpen.transform.position, Time.deltaTime);
                 //Debug.Log("Attempt to lerP");
-                if (door.transform.position.y >= 3.2f) {
+                if (door.transform.position.y >= highPoint) {
                     //Debug.Log("I WANT THIS");
                     lifting = false;
                     open = true;
@@ -154,7 +155,7 @@ public class doorInteraction : MonoBehaviour
 
             } // condition about where the door goes when the user stops interacting w it in some way?
             else {
-                if (door.transform.position.y > 2.5f && closing)
+                if (door.transform.position.y > midPoint && closing)
                 {
                     door.transform.position = Vector3.MoveTowards(door.transform.position, doorOpen.transform.position, 2f * Time.deltaTime);
                 }
@@ -165,7 +166,7 @@ public class doorInteraction : MonoBehaviour
 
         if (closing)
         {
-            if (door.transform.position.y < 2.5f)
+            if (door.transform.position.y < midPoint)
             {   
                 door.transform.position = Vector3.MoveTowards(door.transform.position, new Vector3(initX, initY, initZ), Time.deltaTime);
                 //Debug.Log("Attempt to lerP down to close");
