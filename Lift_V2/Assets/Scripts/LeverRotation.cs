@@ -38,7 +38,7 @@ public class LeverRotation : MonoBehaviour {
     public string jiggleSound;
 
     void Start(){
-        positionToRotation = Mathf.Abs(maxRotation - minRotation) / 0.6f;
+        positionToRotation = Mathf.Abs(maxRotation - minRotation) / 0.31f;
         reset = true;
 
         elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");

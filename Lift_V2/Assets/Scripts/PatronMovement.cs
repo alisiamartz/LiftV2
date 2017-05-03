@@ -128,8 +128,11 @@ public class PatronMovement : MonoBehaviour {
 
 
             //Turn on theme music
-
-            musicSource.GetComponent<musicController>().playCharacterTheme(3);
+            var musicID = 3;
+            if(gameObject.tag == "Boss") { musicID = 1; }
+            if(gameObject.tag == "Business") { musicID = 2; }
+            if(gameObject.tag == "Tourist") { musicID = 3; }
+            musicSource.GetComponent<musicController>().playCharacterTheme(musicID);
 
 			anim.SetBool ("elevatorHere", true);
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchElevatorWaypoint();
