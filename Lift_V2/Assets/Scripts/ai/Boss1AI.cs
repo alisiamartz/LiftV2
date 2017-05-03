@@ -160,7 +160,9 @@ public class Boss1AI : Agent {
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
-        bubble.text = currentNode.dialogue[index];
+
+        //text
+        //bubble.text = currentNode.dialogue[index];
 
         string dialogue = currentNode.dialogue[index];
 

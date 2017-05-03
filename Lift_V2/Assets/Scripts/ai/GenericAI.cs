@@ -196,7 +196,7 @@ public class GenericAI : Agent {
         animate(play.animation[index]);
 
         //text
-        bubble.text = play.dialogue[index];
+        //bubble.text = play.dialogue[index];
 
         string dialogue = play.dialogue[index];
 
