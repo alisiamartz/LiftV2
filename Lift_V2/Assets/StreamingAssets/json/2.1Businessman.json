@@ -18,7 +18,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Start1",
+      "noResponse": "Proposition",
       "noResponseChange": 0
     },
     {
@@ -54,8 +54,8 @@
         "talk"
       ],
       "listen": [ "yes", "no" ],
-      "change": [ -4, 3 ],
-      "toNode": [ "New guy", "Worker's bias" ],
+      "change": [ 3, -4 ],
+      "toNode": [ "Better Service", "Worker's bias" ],
       "noResponse": "Cat got your tongue",
       "noResponseChange": -2
     },
@@ -145,7 +145,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Business card",
+      "noResponse": "Everyone's a critic",
       "noResponseChange": -1
     },
     {
@@ -193,7 +193,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Eye for business",
+      "noResponse": "Business card",
       "noResponseChange": -1
     },
 	{
@@ -226,7 +226,7 @@
         "talk"
       ],
       "noResponse": "Business card",
-      "noResponseChange": -1
+      "noResponseChange": 2
     },
 	{
       "name": "24/7 watch",

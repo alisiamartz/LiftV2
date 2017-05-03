@@ -147,6 +147,7 @@ public class Boss1AI : Agent {
         if (!playedFirst) {
             say();
             playedFirst = true;
+            stopTalking();
             exit();
         }
 

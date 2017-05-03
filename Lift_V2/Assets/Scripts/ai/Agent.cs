@@ -155,4 +155,8 @@ public abstract class Agent : MonoBehaviour {
     public void setFilename(string s) {
         filename = s;
     }
+
+    public int getGoal() {
+        return attributes.goal;
+    }
 }

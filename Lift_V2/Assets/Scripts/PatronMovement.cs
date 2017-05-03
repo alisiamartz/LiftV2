@@ -123,6 +123,9 @@ public class PatronMovement : MonoBehaviour {
 
             //Turn off light here
             leverRotator.GetComponent<patronWaiting>().lightOff(hotelManager.GetComponent<FloorManager>().floorPos);
+            // turn on floor goal light here
+            leverRotator.GetComponent<patronWaiting>().lightGoal(this.gameObject.GetComponent<Agent>().getGoal());    // goal of json 
+
 
             //Turn on theme music
 
@@ -149,6 +152,9 @@ public class PatronMovement : MonoBehaviour {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
             anim.SetBool("walkOut", true);
+
+            // turn off light goal light
+             leverRotator.GetComponent<patronWaiting>().lightOff(hotelManager.GetComponent<FloorManager>().floorPos);
 
             var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint(currentFloor);
@@ -204,6 +210,9 @@ public class PatronMovement : MonoBehaviour {
 
     //Called from AI to tell the player that now is the time for a gesture
     public void waitingForGesture() {
+        // turn on hand haptic 
+
+        // play a tiny particle system?
 
     }
 
