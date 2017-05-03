@@ -75,7 +75,7 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 32,
+      "wait": 29,
       "dialogue": [
         "boss2.3p",
         "boss2.3n",
@@ -86,6 +86,9 @@
         "talk",
         "talk"
       ],
+      "listen": [ "yes" ],
+      "change": [ 0 ],
+      "toNode": [ "The Guests" ],
       "noResponse": "The Guests",
       "noResponseChange": 0
     },

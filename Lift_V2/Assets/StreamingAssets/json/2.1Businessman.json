@@ -34,9 +34,9 @@
         "",
         ""
       ],
-      "listen": [ "yes", "confused", "rude" ],
-      "change": [ 2, -2, -2 ],
-      "toNode": [ "Proposition", "Better Service", "Better Service" ],
+      "listen": [ "yes", "confused", "rude", "no" ],
+      "change": [ 2, -2, -2, -2 ],
+      "toNode": [ "Proposition", "Better Service", "Better Service", "Better Service" ],
       "noResponse": "Proposition",
       "noResponseChange": 0
     },

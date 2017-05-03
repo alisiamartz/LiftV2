@@ -53,7 +53,7 @@
       "listen": [ "yes", "no" ],
       "change": [ 0, 0 ],
       "toNode": [ "pos", "neg" ],
-      "noResponse": "neg",
+      "noResponse": "pos",
       "noResponseChange": 0
     },
     {

@@ -56,7 +56,7 @@ public class FloorManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("main");
+            SceneManager.LoadScene("menu");
         }
     }
 }

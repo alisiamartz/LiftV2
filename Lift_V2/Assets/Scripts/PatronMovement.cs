@@ -169,7 +169,10 @@ public class PatronMovement : MonoBehaviour {
             turnTowardsWaypoint(targetWaypoint);
 
             //transform.parent = hotelManager.GetComponent<FloorManager>().floors[currentFloor].transform;
-           // GetComponent<Animator>().SetBool("reachedWaypoint", false);
+            // GetComponent<Animator>().SetBool("reachedWaypoint", false);
+
+            //Resume the elevator music
+            musicSource.GetComponent<musicController>().characterExit();
 
             return true;
         }

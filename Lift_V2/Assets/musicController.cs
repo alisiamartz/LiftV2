@@ -28,13 +28,18 @@ public class musicController : MonoBehaviour {
         GetComponent<AudioSource>().clip = newClip;
         GetComponent<AudioSource>().Play();
 
-        StartCoroutine(ExecuteAfterTime(newClip.length));
+        //StartCoroutine(ExecuteAfterTime(newClip.length));
     }
 
     IEnumerator ExecuteAfterTime(float time) {
         yield return new WaitForSeconds(time);
 
         //Set the audio clip back to the elevator music
+        GetComponent<AudioSource>().clip = elevatorMusic;
+        GetComponent<AudioSource>().Play();
+    }
+
+    public void characterExit() {
         GetComponent<AudioSource>().clip = elevatorMusic;
         GetComponent<AudioSource>().Play();
     }
