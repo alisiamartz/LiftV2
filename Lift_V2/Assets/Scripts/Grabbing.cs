@@ -11,6 +11,9 @@ public class Grabbing : MonoBehaviour {
     private SteamVR_Controller.Device controller { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
     private SteamVR_TrackedObject trackedObj;
 
+    //For Permanant Haptic Guidance
+    private SteamVR_ControllerManager CameraHead;
+
     private GameObject lever;
 
     private GameObject objDoor;
@@ -30,6 +33,15 @@ public class Grabbing : MonoBehaviour {
         menu = GameObject.FindGameObjectWithTag("Menu");
 
         leverTimer = 3.0f;
+
+        CameraHead = GameObject.FindGameObjectWithTag("Player").GetComponent<SteamVR_ControllerManager>();
+        Debug.Log(gameObject.tag + controller.index);
+        if(gameObject.tag == "leftControl") {
+            CameraHead.leftControlIndex = (int)controller.index;
+        }
+        else {
+            CameraHead.rightControlIndex = (int)controller.index;
+        }
     }
 	
 	// Update is called once per frame

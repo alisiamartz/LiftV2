@@ -11,6 +11,7 @@ using Valve.VR;
 public class SteamVR_ControllerManager : MonoBehaviour
 {
 	public GameObject left, right;
+    public int leftControlIndex, rightControlIndex;
 	public GameObject[] objects; // populate with objects you want to assign to additional controllers
 
 	public bool assignAllBeforeIdentified; // set to true if you want objects arbitrarily assigned to controllers before their role (left vs right) is identified

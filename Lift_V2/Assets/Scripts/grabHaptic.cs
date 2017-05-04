@@ -14,26 +14,30 @@ public class grabHaptic : MonoBehaviour {
     private int handsAffected = 2;
 
 
-    public void Start() {
-        //Find which device is left and which is right
-        var deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
-        Debug.Log(SteamVR_Controller.Input(deviceIndex));
+    void RumbleController(float duration, float strength, string whichHand) {
+        if (whichHand != "left" || whichHand != "right" || whichHand != "both") {
+            Debug.LogError("RumbleController requires a third argument of 'left', 'right' or 'both'. Set to both instead");
+            StartCoroutine(RumbleControllerRoutine(duration, strength, "both"));
+        }
+        else {
+            StartCoroutine(RumbleControllerRoutine(duration, strength, whichHand));
+        }
     }
 
-
-    void RumbleController(float duration, float strength) {
-        StartCoroutine(RumbleControllerRoutine(duration, strength));
-    }
-
-    IEnumerator RumbleControllerRoutine(float duration, float strength) {
+    IEnumerator RumbleControllerRoutine(float duration, float strength, string whichHand) {
         strength = Mathf.Clamp01(strength);
         float startTime = Time.realtimeSinceStartup;
 
         while (Time.realtimeSinceStartup - startTime <= duration) {
             int valveStrength = Mathf.RoundToInt(Mathf.Lerp(0, 3999, strength));
-
-            var deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
-            SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)valveStrength);
+            if(whichHand == "left" || whichHand == "both") {
+                var deviceIndex = GameObject.FindGameObjectWithTag("Player").GetComponent<SteamVR_ControllerManager>().leftControlIndex;
+                SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)valveStrength);
+            }
+            if(whichHand == "right" || whichHand == "both") {
+                var deviceIndex = GameObject.FindGameObjectWithTag("Player").GetComponent<SteamVR_ControllerManager>().rightControlIndex;
+                SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)valveStrength);
+            }
 
             yield return null;
         }
