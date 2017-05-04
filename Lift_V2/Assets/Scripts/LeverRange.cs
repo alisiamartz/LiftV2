@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeverRange : MonoBehaviour {
 
     public static bool inRange;
-    public GameObject camRig;
+    private GameObject camRig;
 	public static bool nearLever;
 
     // Use this for initialization

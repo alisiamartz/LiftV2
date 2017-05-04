@@ -18,10 +18,16 @@ public class LeverRotation : MonoBehaviour {
     private bool reset;
     public float resetSpeed = 0.1f;
 
+    [Tooltip("The Degrees of Each Floor for the Lever")]
     [Header("Floors")]
     public float[] floors;
     public bool setToFloor = false;
-    public int holdingVibration;
+
+    [Space]
+    public int holdingVibrationMin;
+    public int holdingVibrationMax;
+    private float lastFloor;
+
     private GameObject elevatorManager;
 
     [Header("Jiggle Effect")]
@@ -71,7 +77,13 @@ public class LeverRotation : MonoBehaviour {
 
             previousHandPosition = grabHand.transform.position.z;
 
+            /*
             //Small haptic vibration while holding lever
+            var deviceIndex1 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+            SteamVR_Controller.Input(deviceIndex1).TriggerHapticPulse((ushort)holdingVibration);
+            var deviceIndex2 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
+            SteamVR_Controller.Input(deviceIndex2).TriggerHapticPulse((ushort)holdingVibration);
+            */
 
             //What hand is holding the lever
             var deviceIndex = 0;
@@ -82,7 +94,7 @@ public class LeverRotation : MonoBehaviour {
                 deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
             }
 
-            SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)holdingVibration);
+            SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)holdingVibrationMax);
         }
         else {
             reset = true;
@@ -113,6 +125,7 @@ public class LeverRotation : MonoBehaviour {
                 leverRotation = floors[lowestIndex];
                 setToFloor = true;
                 elevatorManager.GetComponent<ElevatorMovement>().newDoorTarget(lowestIndex);
+                lastFloor = floors[lowestIndex];
             }
             else {
                 if (leverRotation < floors[lowestIndex]) {
