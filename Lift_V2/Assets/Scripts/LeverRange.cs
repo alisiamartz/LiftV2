@@ -52,8 +52,17 @@ public class LeverRange : MonoBehaviour {
                 GetComponent<LeverRotation>().jiggleResponse();
             }
 
+            var whichHand = "both";
             //Trigger Haptic pulse
-            GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<grabHaptic>().triggerBurst(5, 2);
+            if(hand.tag == "leftControl") {
+                whichHand = "left";
+            }
+            else if(hand.tag == "rightControl") {
+                whichHand = "right";
+            }
+
+            Haptic.rumbleController(0.25f, 0.5f, whichHand);
+
         } else {
 			nearLever = false;
             if (!DisableGesture.isComponentEnabled(camRig)) {

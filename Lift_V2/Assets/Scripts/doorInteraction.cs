@@ -102,7 +102,17 @@ public class doorInteraction : MonoBehaviour
             if (grabbingUp == false)
             {
                 //Trigger Haptic pulse
-                manager.GetComponent<grabHaptic>().triggerBurst(5, 2);
+                var whichHand = "both";
+                //Trigger Haptic pulse
+                if (grabbingHand.tag == "leftControl") {
+                    whichHand = "left";
+                }
+                else if (grabbingHand.tag == "rightControl") {
+                    whichHand = "right";
+                }
+
+                Haptic.rumbleController(1, 1, whichHand);
+
                 grabbingUp = true;
             }
 
@@ -149,7 +159,17 @@ public class doorInteraction : MonoBehaviour
 
                 if (grabbingDown == false) {
                     //Trigger Haptic pulse
-                    manager.GetComponent<grabHaptic>().triggerBurst(5, 2);
+                    var whichHand = "both";
+                    //Trigger Haptic pulse
+                    if (grabbingHand.tag == "leftControl") {
+                        whichHand = "left";
+                    }
+                    else if (grabbingHand.tag == "rightControl") {
+                        whichHand = "right";
+                    }
+
+                    Haptic.rumbleController(1, 1, whichHand);
+
                     grabbingDown = true;
                 }
 
