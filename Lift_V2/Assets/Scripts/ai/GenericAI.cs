@@ -207,7 +207,10 @@ public class GenericAI : Agent {
 
         GameObject myObject = GameObject.Find("_SFX_" + lastSound);
         if (myObject != null) myObject.GetComponent<SoundGroup>().pingSound();
-        dialogue.PlaySound(transform.position);
+        //dialogue.PlaySound(transform.position);
+
+        pa.playDialogue(dialogue);
+
         audioTime = GameObject.Find("_SFX_" + dialogue).GetComponent<AudioSource>().clip.length;
         timer = audioTime + play.wait;
         lastSound = dialogue;

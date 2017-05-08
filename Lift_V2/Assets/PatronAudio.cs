@@ -10,7 +10,9 @@ public class PatronAudio : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.LogError(gameObject.name + " does not have a mouth assigned");
+        if (patronMouth == null) {
+            Debug.LogError(gameObject.name + " does not have a mouth assigned");
+        }
     }
 	
 	// Update is called once per frame
