@@ -39,6 +39,9 @@ public abstract class Agent : MonoBehaviour {
     protected float patTimer;
     private bool isSetMood = false;
     private short mood;
+    protected bool isWaitingForGesture;
+    protected float gestureTimer;
+    protected float audioTime;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -51,6 +54,8 @@ public abstract class Agent : MonoBehaviour {
     protected bool isNearDoor() { return sf.nearDoor(); }
     protected void animate(string s) { if (s != "") pm.Invoke(s, 0); }
     protected void stopTalking() { pm.stopTalking(); }
+    protected void startGesture() { pm.waitingForGesture(); }
+    protected void stopGestures() { pm.stopWaitingGesture(); }
     
     protected virtual void Init()
     {

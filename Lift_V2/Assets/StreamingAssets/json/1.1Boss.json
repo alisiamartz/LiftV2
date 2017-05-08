@@ -27,7 +27,7 @@
       "wait": 10,
       "dialogue": [
         "boss1.2p",
-        "boss1.2n",
+        "boss1.2h",
         "boss1.2a"
       ],
       "animation": [
@@ -44,7 +44,7 @@
       "wait": 10,
       "dialogue": [
         "boss2.1p",
-        "boss2.1n",
+        "boss2.1h",
         "boss2.1a"
       ],
       "animation": [
@@ -61,7 +61,7 @@
       "wait": 10,
       "dialogue": [
         "boss2.2p",
-        "boss2.2n",
+        "boss2.2h",
         "boss2.2a"
       ],
       "animation": [
@@ -78,7 +78,7 @@
       "wait": 10,
       "dialogue": [
         "boss2.3p",
-        "boss2.3n",
+        "boss2.3h",
         "boss2.3a"
       ],
       "animation": [
@@ -97,7 +97,7 @@
       "wait": 0,
       "dialogue": [
         "boss3.2p",
-        "boss3.2n",
+        "boss3.2h",
         "boss3.2a"
       ],
       "animation": [
