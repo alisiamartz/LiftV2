@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 10,
+      "wait": 15,
       "dialogue": [
         "boss1.1h",
         "boss1.1h",
@@ -24,7 +24,7 @@
     },
     {
       "name": "Still waiting",
-      "wait": 10,
+      "wait": 15,
       "dialogue": [
         "boss1.2h",
         "boss1.2h",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Ancient mechanism",
-      "wait": 10,
+      "wait": 14,
       "dialogue": [
         "boss2.2h",
         "boss2.2h",
@@ -75,7 +75,7 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 10,
+      "wait": 27,
       "dialogue": [
         "boss2.3h",
         "boss2.3h",
@@ -94,11 +94,11 @@
     },
     {
       "name": "The Guests",
-      "wait": 10,
+      "wait": 18,
       "dialogue": [
-        "boss3.2h",
-        "boss3.2h",
-        "boss3.2h"
+        "boss3.1h",
+        "boss3.1h",
+        "boss3.1h"
       ],
       "animation": [
         "talk",
@@ -110,7 +110,7 @@
     },
     {
       "name": "The first day",
-      "wait": 10,
+      "wait": 16,
       "dialogue": [
         "boss4.1h",
         "boss4.1h",
@@ -126,7 +126,7 @@
     },
 	{
       "name": "Good start",
-      "wait": 10,
+      "wait": 8,
       "dialogue": [
         "boss4.2h",
         "boss4.2n",
@@ -142,7 +142,7 @@
     },
     {
       "name": "End",
-      "wait": 10,
+      "wait": 5,
       "dialogue": [
         "boss5.1h",
         "boss5.1h",
@@ -156,7 +156,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 10,
+      "wait": 15,
       "dialogue": [
         "boss5.2h",
         "boss5.2h",

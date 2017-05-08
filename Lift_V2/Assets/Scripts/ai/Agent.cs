@@ -42,6 +42,7 @@ public abstract class Agent : MonoBehaviour {
     protected bool isWaitingForGesture;
     protected float gestureTimer;
     protected float audioTime;
+    protected PatronAudio pa;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -74,6 +75,7 @@ public abstract class Agent : MonoBehaviour {
         pm = GetComponent<PatronMovement>();
         fm = GameObject.FindWithTag("HotelManager").GetComponent<FloorManager>();
         sf = GameObject.FindWithTag("Player").GetComponent<StateFetch>();
+        pa = GetComponent<PatronAudio>();
 
         //key nodes
         currentNode = nodeDict["Start"];

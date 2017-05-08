@@ -21,5 +21,14 @@ public class PatronAudio : MonoBehaviour {
     public void playDialogue(string dialogue) {
         var path = "Dialogue/" + patronName + "/" + dayName + "/" + dialogue;
         patronMouth.clip = Resources.Load(path) as AudioClip;
+        patronMouth.Play();
+    }
+
+    public void pauseDialogue() {
+        
+    }
+
+    public void resumeDialogue() {
+
     }
 }

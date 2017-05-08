@@ -81,7 +81,7 @@ public class Patrons {
             patronObject.AddComponent<Boss1AI>();
 
             patronObject.GetComponent<PatronAudio>().patronName = "Boss";
-            patronObject.GetComponent<PatronAudio>().patronName = "Day1";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day1";
         }
 
         else if (patronName == "Boss2")
@@ -91,7 +91,7 @@ public class Patrons {
             patronObject.GetComponent<GenericAI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
 
             patronObject.GetComponent<PatronAudio>().patronName = "Boss";
-            patronObject.GetComponent<PatronAudio>().patronName = "Day2";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day2";
         }
 
         else if (patronName == "Boss3")
@@ -101,7 +101,7 @@ public class Patrons {
             patronObject.GetComponent<GenericAI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
 
             patronObject.GetComponent<PatronAudio>().patronName = "Boss";
-            patronObject.GetComponent<PatronAudio>().patronName = "Day3";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day3";
         }
 
         else if (patronName == "Business1")
@@ -110,7 +110,7 @@ public class Patrons {
             patronObject.GetComponent<GenericAI>().setFilename("2.1Businessman.json");
 
             patronObject.GetComponent<PatronAudio>().patronName = "BusinessMan";
-            patronObject.GetComponent<PatronAudio>().patronName = "Day2";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day2";
         }
 
         else if (patronName == "Business2")
@@ -124,7 +124,7 @@ public class Patrons {
             else patronObject.GetComponent<GenericAI>().setFilename(s[1]);
 
             patronObject.GetComponent<PatronAudio>().patronName = "BusinessMan";
-            patronObject.GetComponent<PatronAudio>().patronName = "Day3";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day3";
         }
 
         else if (patronName == "Business3")
@@ -138,7 +138,7 @@ public class Patrons {
             patronObject.GetComponent<Tourist1AI>().setFilename("1.2Tourist.json");
 
             patronObject.GetComponent<PatronAudio>().patronName = "Tourist";
-            patronObject.GetComponent<PatronAudio>().patronName = "Day1";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day1";
         }
 
         else if (patronName == "Tourist2")
@@ -148,7 +148,7 @@ public class Patrons {
             patronObject.GetComponent<GenericAI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
 
             patronObject.GetComponent<PatronAudio>().patronName = "Tourist";
-            patronObject.GetComponent<PatronAudio>().patronName = "Day2";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day2";
         }
 
         else if (patronName == "Tourist3")
