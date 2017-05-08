@@ -229,4 +229,8 @@ public class PatronMovement : MonoBehaviour {
 
     }
 
+    //Called from AI whenever the mood is changed i indicates by how much
+    public void moodChanged(int i) {
+
+    }
 }

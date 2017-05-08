@@ -57,6 +57,7 @@ public abstract class Agent : MonoBehaviour {
     protected void stopTalking() { pm.stopTalking(); }
     protected void startGesture() { pm.waitingForGesture(); }
     protected void stopGestures() { pm.stopWaitingGesture(); }
+    protected void moodParticles(int i) { pm.moodChanged(i); }
     
     protected virtual void Init()
     {
@@ -152,6 +153,8 @@ public abstract class Agent : MonoBehaviour {
 
         if (attributes.mood > 10) attributes.mood = 10;
         if (attributes.mood < -10) attributes.mood = -10;
+
+        moodParticles(i);
     }
 
     public void setMood(short i) {
