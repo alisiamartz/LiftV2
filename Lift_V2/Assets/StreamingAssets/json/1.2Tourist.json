@@ -10,8 +10,8 @@
       "wait": 10,
       "dialogue": [
         "t1.1h",
-        "t1.1n",
-        "t1.1a"
+        "t1.1h",
+        "t1.1h"
       ],
       "animation": [
         "",
@@ -26,8 +26,8 @@
       "wait": 31,
       "dialogue": [
         "t1.2h",
-        "t1.2n",
-        "t1.2a"
+        "t1.2h",
+        "t1.2h"
       ],
       "animation": [
         "talk",
@@ -45,8 +45,8 @@
       "wait": 15,
       "dialogue": [
         "t2.1h",
-        "t2.1n",
-        "t2.1a"
+        "t2.1h",
+        "t2.1h"
       ],
       "animation": [
         "talk",
@@ -61,8 +61,8 @@
       "wait": 17,
       "dialogue": [
         "t2.2h",
-        "t2.2n",
-        "t2.2a"
+        "t2.2h",
+        "t2.2h"
       ],
       "animation": [
         "talk",
@@ -77,8 +77,8 @@
       "wait": 25,
       "dialogue": [
         "t2.3h",
-        "t2.3n",
-        "t2.3a"
+        "t2.3h",
+        "t2.3h"
       ],
       "animation": [
         "talk",
@@ -96,8 +96,8 @@
       "wait": 15,
       "dialogue": [
         "t3.1h",
-        "t3.1n",
-        "t3.1a"
+        "t3.1h",
+        "t3.1h"
       ],
       "animation": [
         "talk",
@@ -115,8 +115,8 @@
       "wait": 10,
       "dialogue": [
         "t3.2h",
-        "t3.2n",
-        "t3.2a"
+        "t3.2h",
+        "t3.2h"
       ],
       "animation": [
         "talk",
@@ -134,8 +134,8 @@
       "wait": 12,
       "dialogue": [
         "t4.1h",
-        "t4.1n",
-        "t4.1a"
+        "t4.1h",
+        "t4.1h"
       ],
       "animation": [
         "talk",
@@ -153,8 +153,8 @@
       "wait": 20,
       "dialogue": [
         "t4.2h",
-        "t4.2n",
-        "t4.2a"
+        "t4.2h",
+        "t4.2h"
       ],
       "animation": [
         "talk",
@@ -169,8 +169,8 @@
       "wait": 10,
       "dialogue": [
         "t5.1h",
-        "t5.1n",
-        "t5.1a"
+        "t5.1h",
+        "t5.1h"
       ],
       "animation": [
         "talk",
@@ -186,7 +186,7 @@
       "dialogue": [
         "t6.1h",
         "t6.1n",
-        "t6.1a"
+        "t6.1n"
       ],
       "animation": [
         "",
