@@ -16,10 +16,13 @@ namespace Edwon.VR.Gesture
 
         bool currentlyInUse = false;
 
-        //*******Added these 3 variables
+        //*******Added these 5 variables
         public GameObject objConfidence;
         private static bool confidence;
         private string color;
+        private double timer;
+        private double time;
+        private double limit;
 
         // Use this for initialization
         void Start()
@@ -28,14 +31,18 @@ namespace Edwon.VR.Gesture
             displayLine = new List<Vector3>();
             currentRenderer = CreateLineRenderer(Color.magenta, Color.magenta);
 
-            //********Added these 2 lines
+            //********Added these 4 lines
             color = "purple";
+            time = 0.0f;
+            timer = 0.0f;
             objConfidence = GameObject.FindGameObjectWithTag("ElevatorManager");
         }
 
         //******Added this function to update the color of the line properly
         private void Update()
         {
+            time += Time.deltaTime;
+            limit = time - timer;
             if (objConfidence.GetComponent<GestureRecognizer>().isConfident == true)
             {
                 confidence = true;
@@ -44,8 +51,9 @@ namespace Edwon.VR.Gesture
             {
                 confidence = false;
             }
-            if (confidence == true && color == "red") { currentRenderer.SetColors(Color.blue, Color.cyan); }
-            if (confidence == false && color == "blue") { currentRenderer.SetColors(Color.red, Color.red); }
+            if (color != "purple" && limit > 10.0f) { currentRenderer.SetColors(Color.black, Color.black); }
+            else if (confidence == true && color == "red") { currentRenderer.SetColors(Color.blue, Color.cyan); }
+            else if (confidence == false && color == "blue") { currentRenderer.SetColors(Color.red, Color.red); }
         }
 
         void OnEnable()
@@ -141,6 +149,7 @@ namespace Edwon.VR.Gesture
         public void StopTrail()
         {
             //*****Added the if else part
+            timer = time;
             if (confidence == true)
             {
                 currentRenderer.SetColors(Color.blue, Color.cyan);
