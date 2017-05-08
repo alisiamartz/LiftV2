@@ -8,6 +8,8 @@ public class LeverRange : MonoBehaviour {
     private GameObject camRig;
 	public static bool nearLever;
 
+    private int handsColliding = 0;
+
     // Use this for initialization
     void Start () {
 
@@ -29,15 +31,20 @@ public class LeverRange : MonoBehaviour {
         if(other.gameObject.tag == "grabPoint")
         {
             inRange = true;
+            handsColliding += 1;
         }
     }
-
+ 
     private void OnTriggerExit(Collider other){
         if(other.gameObject.tag == "grabPoint")
         {
-            inRange = false;
+            handsColliding -= 1;
+            if (handsColliding <= 0) {
+                inRange = false;
+            }
         }
     }
+ 
 
     public void attemptGrab(GameObject hand, bool doorOpen, float timer) {
         if (inRange)
@@ -61,7 +68,8 @@ public class LeverRange : MonoBehaviour {
                 whichHand = "right";
             }
 
-            Haptic.rumbleController(0.25f, 0.5f, whichHand);
+            Debug.Log("Called Rumble");
+            Haptic.rumbleController(0.75f, 0.5f, whichHand);
 
         } else {
 			nearLever = false;
