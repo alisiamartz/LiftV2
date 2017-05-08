@@ -22,11 +22,11 @@ public class grabHaptic : MonoBehaviour {
             int valveStrength = Mathf.RoundToInt(Mathf.Lerp(0, 3999, strength));
             if(whichHand == "left" || whichHand == "both") {
                 var deviceIndex = GameObject.FindGameObjectWithTag("Player").GetComponent<SteamVR_ControllerManager>().leftControlIndex;
-                SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)valveStrength);
+                SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)strength);
             }
             if(whichHand == "right" || whichHand == "both") {
                 var deviceIndex = GameObject.FindGameObjectWithTag("Player").GetComponent<SteamVR_ControllerManager>().rightControlIndex;
-                SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)valveStrength);
+                SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)strength);
             }
 
             yield return null;

@@ -60,6 +60,7 @@ public class PatronMovement : MonoBehaviour {
             //If the floor has changed since getting off the elevator
             if(targetWaypoint.transform.parent.gameObject.activeSelf == false) {
                 despawnPatron();
+                return;
             }
 
             float step = walkSpeed * Time.deltaTime;
@@ -83,16 +84,18 @@ public class PatronMovement : MonoBehaviour {
 
                 else if (state == "leaving")
                 {
-                    //Move to a second waypoint and then despawn
+                    //Move to a second + n waypoint and then despawn
                     var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
                     //Check if there's another waypoint in the path
-                    if (hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor, waypointNumber) != null) {
-                        targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor, waypointNumber);
-                        turnTowardsWaypoint(targetWaypoint);
-                        waypointNumber++;
-                    }
-                    else {
-                        despawnPatron();
+                    if (currentFloor != -1) {
+                        if (hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor, waypointNumber) != null) {
+                            targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint2(currentFloor, waypointNumber);
+                            turnTowardsWaypoint(targetWaypoint);
+                            waypointNumber++;
+                        }
+                        else {
+                            despawnPatron();
+                        }
                     }
                 }
             }
@@ -122,7 +125,7 @@ public class PatronMovement : MonoBehaviour {
             //Debug.Log("yes yes yes ");
 
             //Turn off light here
-            leverRotator.GetComponent<patronWaiting>().lightOff(hotelManager.GetComponent<FloorManager>().floorPos);
+            leverRotator.GetComponent<patronWaiting>().lightOff();
             // turn on floor goal light here
             leverRotator.GetComponent<patronWaiting>().lightGoal(this.gameObject.GetComponent<Agent>().getGoal());    // goal of json 
 
@@ -157,7 +160,7 @@ public class PatronMovement : MonoBehaviour {
             anim.SetBool("walkOut", true);
 
             // turn off light goal light
-             leverRotator.GetComponent<patronWaiting>().lightOff(hotelManager.GetComponent<FloorManager>().floorPos);
+             leverRotator.GetComponent<patronWaiting>().lightOff();
 
             var currentFloor = hotelManager.GetComponent<FloorManager>().floorPos;
             targetWaypoint = hotelManager.GetComponent<FloorManager>().fetchFloorWaypoint(currentFloor);
@@ -222,4 +225,12 @@ public class PatronMovement : MonoBehaviour {
 
     }
 
+    public void stopWaitingGesture() {
+
+    }
+
+    //Called from AI whenever the mood is changed i indicates by how much
+    public void moodChanged(int i) {
+
+    }
 }

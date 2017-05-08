@@ -39,6 +39,10 @@ public abstract class Agent : MonoBehaviour {
     protected float patTimer;
     private bool isSetMood = false;
     private short mood;
+    protected bool isWaitingForGesture;
+    protected float gestureTimer;
+    protected float audioTime;
+    protected PatronAudio pa;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -51,6 +55,9 @@ public abstract class Agent : MonoBehaviour {
     protected bool isNearDoor() { return sf.nearDoor(); }
     protected void animate(string s) { if (s != "") pm.Invoke(s, 0); }
     protected void stopTalking() { pm.stopTalking(); }
+    protected void startGesture() { pm.waitingForGesture(); }
+    protected void stopGestures() { pm.stopWaitingGesture(); }
+    protected void moodParticles(int i) { pm.moodChanged(i); }
     
     protected virtual void Init()
     {
@@ -69,6 +76,7 @@ public abstract class Agent : MonoBehaviour {
         pm = GetComponent<PatronMovement>();
         fm = GameObject.FindWithTag("HotelManager").GetComponent<FloorManager>();
         sf = GameObject.FindWithTag("Player").GetComponent<StateFetch>();
+        pa = GetComponent<PatronAudio>();
 
         //key nodes
         currentNode = nodeDict["Start"];
@@ -145,6 +153,8 @@ public abstract class Agent : MonoBehaviour {
 
         if (attributes.mood > 10) attributes.mood = 10;
         if (attributes.mood < -10) attributes.mood = -10;
+
+        moodParticles(i);
     }
 
     public void setMood(short i) {

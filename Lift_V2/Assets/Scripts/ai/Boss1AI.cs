@@ -171,7 +171,10 @@ public class Boss1AI : Agent {
 
         GameObject myObject = GameObject.Find("_SFX_" + lastSound);
         if (myObject != null) myObject.GetComponent<SoundGroup>().pingSound();
-        dialogue.PlaySound(transform.position);
+        //dialogue.PlaySound(transform.position);
+        pa.playDialogue(dialogue);
+
+        //float test = GameObject.Find("_SFX_" + dialogue).GetComponent<AudioClip>().length;
         lastSound = dialogue;
 
         isPlayed = true;

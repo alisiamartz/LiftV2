@@ -12,10 +12,12 @@ public class patronWaiting : MonoBehaviour {
         FloorLights[floor].transform.Find("lightGoal").gameObject.SetActive(false);
     }
 
-    public void lightOff(int floor) {
-        FloorLights[floor].transform.Find("lightOn").gameObject.SetActive(false);
-        FloorLights[floor].transform.Find("lightOff").gameObject.SetActive(true);
-        FloorLights[floor].transform.Find("lightGoal").gameObject.SetActive(false);
+    public void lightOff() {
+        for(var i = 0; i < FloorLights.Length; i++) {
+            FloorLights[i].transform.Find("lightOn").gameObject.SetActive(false);
+            FloorLights[i].transform.Find("lightOff").gameObject.SetActive(true);
+            FloorLights[i].transform.Find("lightGoal").gameObject.SetActive(false);
+        }
     }
 
     public void lightGoal(int floor) {

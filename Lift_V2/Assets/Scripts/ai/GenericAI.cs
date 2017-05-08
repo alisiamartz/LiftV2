@@ -14,12 +14,14 @@ public class GenericAI : Agent {
         isExit = false;
         timer = currentNode.wait;
         patTimer = attributes.patience;
+        gestureTimer = 0;
         Build();
     }
 
     void Update()
     {
-        timer -= Time.deltaTime;
+        if (listIndex > 0) timer -= Time.deltaTime;
+
         if (list[listIndex]())
         {
             listIndex += 1;
@@ -29,6 +31,9 @@ public class GenericAI : Agent {
 
             if (listIndex >= list.Count) listIndex = list.Count - 1;
         }
+
+        if (timer <= onNode.wait) startGesture();
+        else stopGestures();
     }
 
     private void Build()
@@ -64,7 +69,7 @@ public class GenericAI : Agent {
 
         if (timer <= 0)
         {
-            timer = currentNode.wait;
+            /////////////////////////////timer = currentNode.wait;
             isPlayed = false;
             changeMood(currentNode.noResponseChange);
         }
@@ -76,7 +81,7 @@ public class GenericAI : Agent {
     {
         if (!setup)
         {
-            timer = onNode.wait;
+            //////////////////////////////////timer = onNode.wait;
             //stops repeat at an end node
             if (isEndNode && state == 0)
             {
@@ -202,7 +207,12 @@ public class GenericAI : Agent {
 
         GameObject myObject = GameObject.Find("_SFX_" + lastSound);
         if (myObject != null) myObject.GetComponent<SoundGroup>().pingSound();
-        dialogue.PlaySound(transform.position);
+        //dialogue.PlaySound(transform.position);
+
+        pa.playDialogue(dialogue);
+
+        //audioTime = GameObject.Find("_SFX_" + dialogue).GetComponent<AudioSource>().clip.length;
+        timer = audioTime + play.wait;
         lastSound = dialogue;
 
         isPlayed = true;

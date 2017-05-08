@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 30,
       "dialogue": [
-        "3boss1.1h",
-        "3boss1.1h",
-        "3boss1.1h"
+        "boss1.1h",
+        "boss1.1h",
+        "boss1.1h"
       ],
       "animation": [
         "",
@@ -25,9 +25,9 @@
       "name": "Start1",
       "wait": 5,
       "dialogue": [
-        "3boss1.2h",
-        "3boss1.2h",
-        "3boss1.2h"
+        "boss1.2h",
+        "boss1.2h",
+        "boss1.2h"
       ],
       "animation": [
         "talk",
@@ -41,9 +41,9 @@
       "name": "first",
       "wait": 20,
       "dialogue": [
-        "3boss2.1h",
-        "3boss2.1h",
-        "3boss2.1a"
+        "boss2.1h",
+        "boss2.1h",
+        "boss2.1a"
       ],
       "animation": [
         "talk",
@@ -60,9 +60,9 @@
       "name": "pos",
       "wait": 15,
       "dialogue": [
-        "3boss3.1h",
-        "3boss3.1h",
-        "3boss3.1h"
+        "boss3.1h",
+        "boss3.1h",
+        "boss3.1h"
       ],
       "animation": [
         "talk",
@@ -76,9 +76,9 @@
       "name": "neg",
       "wait": 15,
       "dialogue": [
-        "3boss3.2h",
-        "3boss3.2h",
-        "3boss3.2h"
+        "boss3.2h",
+        "boss3.2h",
+        "boss3.2h"
       ],
       "animation": [
         "talk",
@@ -92,9 +92,9 @@
       "name": "End",
       "wait": 10,
       "dialogue": [
-        "3boss4.1h",
-        "3boss4.1h",
-        "3boss4.1h"
+        "boss4.1h",
+        "boss4.1h",
+        "boss4.1h"
       ],
       "animation": [
         "",
@@ -106,9 +106,9 @@
       "name": "notFloor",
       "wait": 20,
       "dialogue": [
-        "3boss4.2h",
-        "3boss4.2h",
-        "3boss4.2a"
+        "boss4.2h",
+        "boss4.2h",
+        "boss4.2a"
       ],
       "animation": [
         "talk",

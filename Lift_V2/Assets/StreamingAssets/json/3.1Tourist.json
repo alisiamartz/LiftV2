@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 20,
       "dialogue": [
-        "2t1.1h",
-        "2t1.1n",
-        "2t1.1a"
+        "t1.1h",
+        "t1.1h",
+        "t1.1h"
       ],
       "animation": [
         "",
@@ -25,9 +25,9 @@
       "name": "Start1",
       "wait": 10,
       "dialogue": [
-        "2t1.2h",
-        "2t1.2n",
-        "2t1.1a"
+        "t1.2h",
+        "t1.2h",
+        "t1.1h"
       ],
       "animation": [
         "talk",
@@ -44,9 +44,9 @@
       "name": "Around the world",
       "wait": 40,
       "dialogue": [
-        "2t2.1h",
-        "2t2.1h",
-        "2t2.1h"
+        "t2.1h",
+        "t2.1h",
+        "t2.1h"
       ],
       "animation": [
         "talk",
@@ -63,9 +63,9 @@
       "name": "Double checking",
       "wait": 10,
       "dialogue": [
-        "2t2.2h",
-        "2t2.2n",
-        "2t2.2a"
+        "t2.2h",
+        "t2.2h",
+        "t2.2h"
       ],
       "animation": [
         "talk",
@@ -82,9 +82,9 @@
       "name": "Rambling",
       "wait": 19,
       "dialogue": [
-        "2t3.1h",
-        "2t3.1n",
-        "2t3.1a"
+        "t3.1h",
+        "t3.1h",
+        "t3.1h"
       ],
       "animation": [
         "talk",
@@ -98,9 +98,9 @@
       "name": "Today's agenda",
       "wait": 15,
       "dialogue": [
-        "2t3.2h",
-        "2t3.2n",
-        "2t3.2a"
+        "t3.2h",
+        "t3.2n",
+        "t3.2n"
       ],
       "animation": [
         "talk",
@@ -114,9 +114,9 @@
       "name": "Pause",
       "wait": 10,
       "dialogue": [
-        "2t3.3h",
-        "2t3.3n",
-        "2t3.3a"
+        "t3.3h",
+        "t3.3n",
+        "t3.3n"
       ],
       "animation": [
         "talk",
@@ -133,9 +133,9 @@
       "name": "Cracking",
       "wait": 20,
       "dialogue": [
-        "2t4.1h",
-        "2t4.1n",
-        "2t4.1a"
+        "t4.1h",
+        "t4.1n",
+        "t4.1n"
       ],
       "animation": [
         "talk",
@@ -152,9 +152,9 @@
       "name": "Divorce",
       "wait": 40,
       "dialogue": [
-        "2t5.1h",
-        "2t5.1n",
-        "2t5.1a"
+        "t5.1h",
+        "t5.1h",
+        "t5.1h"
       ],
       "animation": [
         "talk",
@@ -168,9 +168,9 @@
       "name": "Silence",
       "wait": 15,
       "dialogue": [
-        "2t5.2h",
-        "2t5.2n",
-        "2t5.2a"
+        "t5.2h",
+        "t5.2n",
+        "t5.2n"
       ],
       "animation": [
         "talk",
@@ -184,9 +184,9 @@
       "name": "No comment",
       "wait": 15,
       "dialogue": [
-        "2t5.3h",
-        "2t5.3n",
-        "2t5.3a"
+        "t5.3h",
+        "t5.3h",
+        "t5.3h"
       ],
       "animation": [
         "talk",
@@ -200,9 +200,9 @@
       "name": "End",
       "wait": 10,
       "dialogue": [
-        "2t6.1h",
-        "2t6.1n",
-        "2t6.1a"
+        "t6.1h",
+        "t6.1n",
+        "t6.1a"
       ],
       "animation": [
         "",
@@ -214,9 +214,9 @@
       "name": "notFloor",
       "wait": 10,
       "dialogue": [
-        "2t6.2h",
-        "2t6.2n",
-        "2t6.2a"
+        "t6.2h",
+        "t6.2n",
+        "t6.2a"
       ],
       "animation": [
         "talk",

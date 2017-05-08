@@ -10,8 +10,8 @@
       "wait": 10,
       "dialogue": [
         "bm1.2h",
-        "bm1.2n",
-        "bm1.2a"
+        "bm1.2h",
+        "bm1.2h"
       ],
       "animation": [
         "talk",
@@ -26,8 +26,8 @@
       "wait": 10,
       "dialogue": [
         "bm1.1h",
-        "bm1.1n",
-        "bm1.1a"
+        "bm1.1h",
+        "bm1.1h"
       ],
       "animation": [
         "",
@@ -45,8 +45,8 @@
       "wait": 25,
       "dialogue": [
         "bm2.1h",
-        "bm2.1n",
-        "bm2.1a"
+        "bm2.1h",
+        "bm2.1h"
       ],
       "animation": [
         "talk",
@@ -64,7 +64,7 @@
       "wait": 10,
       "dialogue": [
         "bm2.2h",
-        "bm2.2n",
+        "bm2.2h",
         "bm2.2a"
       ],
       "animation": [
@@ -103,7 +103,7 @@
       "dialogue": [
         "bm3.2h",
         "bm3.2n",
-        "bm3.2a"
+        "bm3.2n"
       ],
       "animation": [
         "talk",
@@ -121,7 +121,7 @@
       "wait": 10,
       "dialogue": [
         "bm3.3h",
-        "bm3.3n",
+        "bm3.3h",
         "bm3.3a"
       ],
       "animation": [
@@ -154,7 +154,7 @@
       "dialogue": [
         "bm3.5h",
         "bm3.5n",
-        "bm3.5a"
+        "bm3.5n"
       ],
       "animation": [
         "talk",
@@ -169,8 +169,8 @@
       "wait": 20,
       "dialogue": [
         "bm4.1h",
-        "bm4.1n",
-        "bm4.1a"
+        "bm4.1h",
+        "bm4.1h"
       ],
       "animation": [
         "talk",
@@ -185,8 +185,8 @@
       "wait": 10,
       "dialogue": [
         "bm4.2h",
-        "bm4.2n",
-        "bm4.2a"
+        "bm4.2h",
+        "bm4.2h"
       ],
       "animation": [
         "talk",
@@ -201,7 +201,7 @@
       "wait": 15,
       "dialogue": [
         "bm5.1h",
-        "bm5.1n",
+        "bm5.1h",
         "bm5.1a"
       ],
       "animation": [
@@ -234,7 +234,7 @@
       "dialogue": [
         "bm5.3h",
         "bm5.3n",
-        "bm5.3a"
+        "bm5.3n"
       ],
       "animation": [
         "talk",
@@ -250,7 +250,7 @@
       "dialogue": [
         "bm5.4h",
         "bm5.4n",
-        "bm5.4a"
+        "bm5.4n"
       ],
       "animation": [
         "talk",
