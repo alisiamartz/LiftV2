@@ -25,12 +25,4 @@ public class PatronAudio : MonoBehaviour {
         patronMouth.clip = Resources.Load(path) as AudioClip;
         patronMouth.Play();
     }
-
-    public void pauseDialogue() {
-        
-    }
-
-    public void resumeDialogue() {
-
-    }
 }
