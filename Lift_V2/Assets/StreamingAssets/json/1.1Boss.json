@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 10,
       "dialogue": [
-        "boss1.1n",
-        "boss1.1n",
-        "boss1.1n"
+        "boss1.1h",
+        "boss1.1h",
+        "boss1.1h"
       ],
       "animation": [
         "talk",
@@ -26,9 +26,9 @@
       "name": "Still waiting",
       "wait": 10,
       "dialogue": [
-        "boss1.2p",
         "boss1.2h",
-        "boss1.2a"
+        "boss1.2h",
+        "boss1.2h"
       ],
       "animation": [
         "talk",
@@ -43,9 +43,9 @@
       "name": "First order",
       "wait": 10,
       "dialogue": [
-        "boss2.1p",
         "boss2.1h",
-        "boss2.1a"
+        "boss2.1h",
+        "boss2.1h"
       ],
       "animation": [
         "talk",
@@ -60,9 +60,9 @@
       "name": "Ancient mechanism",
       "wait": 10,
       "dialogue": [
-        "boss2.2p",
         "boss2.2h",
-        "boss2.2a"
+        "boss2.2h",
+        "boss2.2h"
       ],
       "animation": [
         "talk",
@@ -77,9 +77,9 @@
       "name": "Day to day operations",
       "wait": 10,
       "dialogue": [
-        "boss2.3p",
         "boss2.3h",
-        "boss2.3a"
+        "boss2.3h",
+        "boss2.3h"
       ],
       "animation": [
         "talk",
@@ -94,11 +94,11 @@
     },
     {
       "name": "The Guests",
-      "wait": 0,
+      "wait": 10,
       "dialogue": [
-        "boss3.2p",
         "boss3.2h",
-        "boss3.2a"
+        "boss3.2h",
+        "boss3.2h"
       ],
       "animation": [
         "talk",
@@ -110,11 +110,11 @@
     },
     {
       "name": "The first day",
-      "wait": 0,
+      "wait": 10,
       "dialogue": [
-        "boss4.1p",
-        "boss4.1n",
-        "boss4.1a"
+        "boss4.1h",
+        "boss4.1h",
+        "boss4.1h"
       ],
       "animation": [
         "talk",
@@ -126,9 +126,9 @@
     },
 	{
       "name": "Good start",
-      "wait": 0,
+      "wait": 10,
       "dialogue": [
-        "boss4.2p",
+        "boss4.2h",
         "boss4.2n",
         "boss4.2a"
       ],
@@ -142,11 +142,11 @@
     },
     {
       "name": "End",
-      "wait": 0,
+      "wait": 10,
       "dialogue": [
-        "boss5.1p",
-        "boss5.1n",
-        "boss5.1a"
+        "boss5.1h",
+        "boss5.1h",
+        "boss5.1h"
       ],
       "animation": [
         "",
@@ -158,9 +158,9 @@
       "name": "notFloor",
       "wait": 10,
       "dialogue": [
-        "boss5.2p",
-        "boss5.2n",
-        "boss5.2a"
+        "boss5.2h",
+        "boss5.2h",
+        "boss5.2h"
       ],
       "animation": [
         "talk",
