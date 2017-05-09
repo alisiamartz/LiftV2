@@ -207,8 +207,7 @@ public class PatronMovement : MonoBehaviour {
         rotating = true;
     }
 
-    public void talk()
-    {
+    public void talk() {
         timer = 10;
         anim.SetBool("talking", true);
     }
@@ -226,6 +225,7 @@ public class PatronMovement : MonoBehaviour {
     }
 
     public void stopWaitingGesture() {
+		// turn off that particle system now!!!!!!! yeah
 
     }
 
@@ -233,4 +233,16 @@ public class PatronMovement : MonoBehaviour {
     public void moodChanged(int i) {
 
     }
+
+	// this is where we spawn the id and hat in the tutorial interaction
+	// boss 1.1 --> spawn when timed 
+	// this spawns the items in the right spot 
+	// TODO: Trigger animation when spawning items 
+	// this triggers after the animation is completed 
+
+	public void spawnBossItems1() {
+
+	}
+
+
 }
