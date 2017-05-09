@@ -1,0 +1,252 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 1,
+    "patience": 12
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "noResponse": "Facing one's fears",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Delusional",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "yes", "no", "rude", "salute", "confused", "continue" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Second visit", "Second visit", "Second visit", "Second visit", "Second visit", "Second visit" ],
+      "noResponse": "Second visit",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Second visit",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "yes", "no", "rude", "salute", "confused", "continue" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Life to the fullest", "Life to the fullest", "Life to the fullest", "Life to the fullest", "Life to the fullest", "Life to the fullest" ],
+      "noResponse": "Life to the fullest",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Life to the fullest",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Ideal attendant" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Ideal attendant",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+    {
+      "name": "Facing one's fears",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "What now?", "Getting Divorced" ],
+      "noResponse": "Getting Divorced",
+      "noResponseChange": 0
+    },
+    {
+      "name": "What now?",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Confrontations", "When the moment is right" ],
+      "noResponse": "When the moment is right",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Getting Divorced",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "noResponse": "What now?",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Confrontations",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Sooner the better", "Private manners" ],
+      "noResponse": "Private manners",
+      "noResponseChange": 0
+    },
+    {
+      "name": "When the moment is right",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "yes", "no" ],
+      "change": [ 0 ],
+      "toNode": [ "Split decision", "Run away" ],
+      "noResponse": "Run away",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Sooner the better",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Reunited" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Private manners",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Somber goodbye" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Split decision",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Somber goodbye" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Run away",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Never looking back" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Reunited",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "Somber goodbye",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Never looking back",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}

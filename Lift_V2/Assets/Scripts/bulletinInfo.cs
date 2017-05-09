@@ -15,7 +15,7 @@ public class bulletinInfo : MonoBehaviour {
     private int sec;
     private string displayMin;
     private string displaySec;
-    public Text gestureList;
+    private Text gestureList;
     private int dayCount;
     private bool isDay;
     private bool displayed;
@@ -84,7 +84,7 @@ public class bulletinInfo : MonoBehaviour {
         }
         if (isDay) { 
             timeFunc = dayLength - timer; // makes timeFunc count down from dayLength in realtime
-            displayTimeCorrectly();
+            //displayTimeCorrectly();
             timer = Time.timeSinceLevelLoad;
             if (timeFunc <= 0) {
                 isDay = false;

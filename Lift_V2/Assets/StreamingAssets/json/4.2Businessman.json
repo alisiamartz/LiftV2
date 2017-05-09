@@ -1,0 +1,206 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 1,
+    "patience": 6
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -1, 0 ],
+      "toNode": [ "Home Value", "Home Value", "Home Value", "No Regrets", "No Regrets", "One Sided" ],
+      "noResponse": "One Sided",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Home Value",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "yes", "no", "rude", "confused" ],
+      "change": [ 1, -1, -1, 0 ],
+      "toNode": [ "Hard workers", "Parasites", "Parasites", "One Sided" ],
+      "noResponse": "One Sided",
+      "noResponseChange": 0
+    },
+    {
+      "name": "One Sided",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Missed opportunity" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "No Regrets",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "out" ],
+      "change": [ 1 ],
+      "toNode": [ "Missed opportunity" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Parasites",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "out" ],
+      "change": [ 1 ],
+      "toNode": [ "Paradox" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Hard workers",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "yes", "no", "confused" ],
+      "change": [ 1, -1, 0 ],
+      "toNode": [ "Diamond in the rough", "Cutthroat" ],
+      "noResponse": "One Sided",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Missed opportunity",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "Paradox",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "Diamond in the rough",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "out", "out" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Server", "Artist" ],
+      "noResponse": "Other",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Cutthroat",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 1 ],
+      "toNode": [ "Perfect for the business" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -1
+    },
+    {
+      "name": "Server",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "Artist",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+	{
+      "name": "Other",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+	{
+      "name": "Perfect for the business",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}

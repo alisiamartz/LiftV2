@@ -1,0 +1,264 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 1,
+    "patience": 12
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "noResponse": "Human nature",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Childhood dream",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "continue", "salute", "confused", "rude" ],
+      "change": [ 0, 0, 0, 0 ],
+      "toNode": [ "Perfect Family & Career", "Perfect Family & Career", "Perfect Family & Career", "Bad time" ],
+      "noResponse": "Perfect Family & Career",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Human nature",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "no", "yes" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Rumors", "Rumors" ],
+      "noResponse": "Plot Twist",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Bad time",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Missing ring" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Perfect Family & Career",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "rude", "salute", "confused", "continue" ],
+      "change": [ 0, 0, 0, 0 ],
+      "toNode": [ "Bad time", "Promising future", "Promising future", "Promising future" ],
+      "noResponse": "Promising future",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Rumors",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "no", "yes" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Insults", "Insults" ],
+      "noResponse": "Plot Twist",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Plot Twist",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Dead lover" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Missing ring",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+    {
+      "name": "Promising future",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0 ],
+      "toNode": [ "Void", "Void", "Void", "Bad time" ],
+      "noResponse": "Void",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Insults",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+	  "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Unwarranted", "Unwarranted" ],
+      "noResponse": "Plot Twist",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Dead lover",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ]
+    },
+    {
+      "name": "Void",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "no", "yes" ],
+      "change": [ 0 ],
+      "toNode": [ "Farewell", "Farewell" ],
+      "noResponse": "A victim in disguise",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Unwarranted",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "out", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Part of the problem", "Plot Twist" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Farewell",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Stuck in the past" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "A victim in disguise",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Blessing in disguise" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Part of the problem",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ]
+    },
+	{
+      "name": "Stuck in the past",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "Blessing in disguise",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}

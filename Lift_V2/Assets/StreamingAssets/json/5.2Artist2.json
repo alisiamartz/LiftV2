@@ -1,0 +1,361 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 2,
+    "patience": 12
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "noResponse": "Into the unknown",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Into the unknown",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "continue", "confused" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Everything will be fine...for now", "Everything will be fine...for now" ],
+      "noResponse": "Own little world",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Permenant complacency",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "salute", "rude" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Recognized Geniusness", "Talentless" ],
+      "noResponse": "Recognized Geniusness",
+      "noResponseChange": 0
+    },
+    {
+      "name": "New Life",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "continue", "salute" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Turned it down", "Turned it down" ],
+      "noResponse": "Known critic",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Falling apart",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "yes", "no", "rude", "salute", "confused", "continue" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Grievances", "Grievances", "Grievances", "Grievances", "Grievances", "Grievances" ],
+      "noResponse": "Grievances",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Own little world",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Uncertain" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Everything will be fine...for now",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Letting go" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Recognized Geniusness",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Someday" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Talentless",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Backfired choice", "Cruel irony" ],
+      "noResponse": "Cruel irony",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Turned it down",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Earned not given", "Noticed contributions" ],
+      "noResponse": "Noticed contributions",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Known critic",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "salute", "rude" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Best for business", "Hard to understand" ],
+      "noResponse": "Hard to understand",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Grievances",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Biggest regret", "Suicide" ],
+      "noResponse": "Suicide",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Uncertain",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "Letting go",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Someday",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Backfired choice",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Someday" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Cruel irony",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Endless cycle" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Noticed contributions",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Real hero" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Earned not given",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "True friend" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Hard to understand",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "New beginning" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Best for business",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "New beginning" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Biggest regret",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ]
+    },
+	{
+      "name": "Endless cycle",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "Real hero",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "True friend",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "New beginning",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}

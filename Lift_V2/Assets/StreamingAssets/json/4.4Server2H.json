@@ -1,0 +1,356 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 0,
+    "patience": 12
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "noResponse": "Friendship",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Brighter future",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "A real goodbye" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Cutting ties",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "New position", "Last straw" ],
+      "noResponse": "Last straw",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Bane of her existence",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Proper goodbye" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Friendship",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Strength in numbers", "Lone wolf" ],
+      "noResponse": "Lone wolf",
+      "noResponseChange": 0
+    },
+    {
+      "name": "A real goodbye",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+    {
+      "name": "New position",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "continue", "confused", "rude" ],
+      "change": [ 0, 0, 0 ],
+      "toNode": [ "Unsupportive", "Unsupportive", "Unsupportive" ],
+      "noResponse": "Indifferent",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Last straw",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Last time" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Proper goodbye",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ]
+    },
+    {
+      "name": "Strength in numbers",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Making changes", "Not worth the risk" ],
+      "noResponse": "Not worth the risk",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Lone wolf",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Different side", "Introverted" ],
+      "noResponse": "Introverted",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Unsupportive",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Backfire", "Cruelest irony" ],
+      "noResponse": "Cruelest irony",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Indifferent",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Last time" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Last time",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Not worth the risk",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Next time" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Making changes",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Best friend" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Introverted",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Wrong place wrong time" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Different side",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "A new perspective" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Cruelest irony",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "For the best" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Backfire",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Friendless" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Next time",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "Best friend",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "Wrong place wrong time",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ]
+    },
+	{
+      "name": "A new perspective",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "For the best",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Friendless",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}

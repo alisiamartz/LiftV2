@@ -1,0 +1,258 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 3,
+    "patience": 6
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "noResponse": "Meh",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Your Choice",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "yes", "salute", "continue", "rude", "no", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Two offers", "Two offers", "Two offers", "Right choice", "Right choice", "Right choice" ],
+      "noResponse": "Two offers",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Meh",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out", "yes", "salute", "continue", "rude", "no", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Does it matter?", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Long time coming",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Last Day" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Right choice",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Another offer" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Two offers",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "Noble sacrifice", "Blinded by greed" ],
+      "noResponse": "Tough choice",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Overlooked",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "salute", "rude" ],
+      "change": [ 0, 0 ],
+      "toNode": [ "workhorse", "resident jerk" ],
+      "noResponse": "Does it matter?",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Does it matter?",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Failure",
+      "wait": 30,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ]
+    },
+	{
+      "name": "Last Day",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Another offer",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+    {
+      "name": "Noble sacrifice",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "out"],
+      "change": [ 0],
+      "toNode": [ "A new beginning" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Blinded by greed",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Gameover" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Tough choice",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 0 ],
+      "toNode": [ "Obvious choice" ],
+      "noResponse": "notFloor",
+      "noResponseChange": 0
+    },
+    {
+      "name": "workhorse",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+    {
+      "name": "resident jerk",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "A new beginning",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "Gameover",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Obvious choice",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}

@@ -35,12 +35,6 @@
             "hand": 1,
             "isSynchronous": false,
             "exampleCount": 20
-        },
-        {
-            "name": "out",
-            "hand": 1,
-            "isSynchronous": true,
-            "exampleCount": 24
         }
     ]
 }

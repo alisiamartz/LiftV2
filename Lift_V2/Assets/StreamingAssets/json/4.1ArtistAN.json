@@ -1,0 +1,222 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 2,
+    "patience": 3
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "noResponse": "Validation",
+      "noResponseChange": 0
+    },
+    {
+      "name": "On the right path",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "yes", "continue", "no" ],
+      "change": [ 1, 1, -4 ],
+      "toNode": [ "Peaked", "Peaked", "Inconvenient timing" ],
+      "noResponse": "Peaked",
+      "noResponseChange": 1
+    },
+    {
+      "name": "Validation",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 2, -2 ],
+      "toNode": [ "Contract in dispute", "Inconvenient timing" ],
+      "noResponse": "Inconvenient timing",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Peaked",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 1, 0 ],
+      "toNode": [ "Biggest critic", "Maturing audience" ],
+      "noResponse": "Biggest critic",
+      "noResponseChange": 1
+    },
+    {
+      "name": "Inconvenient timing",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "listen": [ "out" ],
+      "change": [ -2 ],
+      "toNode": [ "Lost hope" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -6
+    },
+    {
+      "name": "Contract in dispute",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "listen": [ "yes", "no" ],
+      "change": [ 2, -2 ],
+      "toNode": [ "Self Validation", "Defense mechanism" ],
+      "noResponse": "Self Validation",
+      "noResponseChange": 2
+    },
+    {
+      "name": "Maturing audience",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "New door opens" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Biggest critic",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+      "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "Preemptive goodbye" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Lost hope",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "Defense mechanism",
+      "wait": 30,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "No hard feelings" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "Self Validation",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+	  "listen": [ "out" ],
+      "change": [ 2 ],
+      "toNode": [ "Fake confidence" ],
+      "noResponse": "notFloor",
+      "noResponseChange": -2
+    },
+    {
+      "name": "New door opens",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "Preemptive goodbye",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+	{
+      "name": "No hard feelings",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+	{
+      "name": "Fake confidence",
+      "wait": 30,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neu"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}

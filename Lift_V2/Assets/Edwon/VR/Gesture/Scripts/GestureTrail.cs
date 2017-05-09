@@ -51,9 +51,9 @@ namespace Edwon.VR.Gesture
             {
                 confidence = false;
             }
-            if (color != "purple" && limit > 10.0f) { currentRenderer.SetColors(Color.black, Color.black); }
-            else if (confidence == true && color == "red") { currentRenderer.SetColors(Color.blue, Color.cyan); }
-            else if (confidence == false && color == "blue") { currentRenderer.SetColors(Color.red, Color.red); }
+            if (color != "purple" && limit > 7.0f) { ClearTrail(); }
+            if (confidence == true && color == "red") { currentRenderer.SetColors(Color.blue, Color.cyan); }
+            if (confidence == false && color == "blue") { currentRenderer.SetColors(Color.red, Color.red); }
         }
 
         void OnEnable()
@@ -125,7 +125,7 @@ namespace Edwon.VR.Gesture
 
             //*****Added this line
             color = "purple";
-
+          
             displayLine.Clear();
             listening = true;
         }

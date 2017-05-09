@@ -1,0 +1,78 @@
+{
+  "agentAttr": {
+    "mood": 0,
+    "goal": 0,
+    "patience": 12
+  },
+  "nodes": [
+    {
+      "name": "Start",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "Start1",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Start1",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ],
+      "noResponse": "Spirit of the hotel",
+      "noResponseChange": 0
+    },
+    {
+      "name": "What comes around goes around",
+      "wait": 15,
+      "dialogue": [
+        "neg",
+        "neg",
+        "neg"
+      ]
+    },
+	{
+      "name": "Uniquely ordinary",
+      "wait": 15,
+      "dialogue": [
+        "neu",
+        "neu",
+        "neu"
+      ]
+    },
+	{
+      "name": "Spirit of the hotel",
+      "wait": 15,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ]
+    },
+    {
+      "name": "End",
+      "wait": 0,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ]
+    },
+    {
+      "name": "notFloor",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "neu",
+        "neg"
+      ],
+      "noResponse": "notFloor",
+      "noResponseChange": -3
+    }
+  ]
+}
