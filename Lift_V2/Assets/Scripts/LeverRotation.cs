@@ -23,9 +23,10 @@ public class LeverRotation : MonoBehaviour {
     public float[] floors;
     public bool setToFloor = false;
 
-    [Space]
-    public int holdingVibrationMin;
+    [Header("Haptic")]
+    //public int holdingVibrationMin;
     public int holdingVibrationMax;
+
     private float lastFloor;
 
     private GameObject elevatorManager;
@@ -58,10 +59,8 @@ public class LeverRotation : MonoBehaviour {
             if (reset) {
                 previousHandPosition = grabHand.transform.position.z;
                 reset = false;
-                Debug.Log(previousHandPosition);
             }
 
-            //Debug.Log("previous: " + previousHandPosition + " and current: " + grabHand.transform.position.z);
             if (previousHandPosition != grabHand.transform.position.z) {
                 //if lever has been moved 
                 setToFloor = false;
@@ -77,24 +76,16 @@ public class LeverRotation : MonoBehaviour {
 
             previousHandPosition = grabHand.transform.position.z;
 
-            /*
-            //Small haptic vibration while holding lever
-            var deviceIndex1 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
-            SteamVR_Controller.Input(deviceIndex1).TriggerHapticPulse((ushort)holdingVibration);
-            var deviceIndex2 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
-            SteamVR_Controller.Input(deviceIndex2).TriggerHapticPulse((ushort)holdingVibration);
-            */
-
-            //What hand is holding the lever
-            var deviceIndex = 0;
-            if(grabHand.gameObject.tag == "rightControl") {
-                deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
+            var whichHand = "both";
+            //Trigger Haptic pulse
+            if (grabHand.tag == "leftControl") {
+                whichHand = "left";
             }
-            else {
-                deviceIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+            else if (grabHand.tag == "rightControl") {
+                whichHand = "right";
             }
-
-            SteamVR_Controller.Input(deviceIndex).TriggerHapticPulse((ushort)holdingVibrationMax);
+            var strength = (Mathf.Abs(leverRotation - lastFloor) / (maxRotation - minRotation)) * holdingVibrationMax;
+            Haptic.rumbleController(0.1f, strength, whichHand);
         }
         else {
             reset = true;
@@ -125,7 +116,6 @@ public class LeverRotation : MonoBehaviour {
                 leverRotation = floors[lowestIndex];
                 setToFloor = true;
                 elevatorManager.GetComponent<ElevatorMovement>().newDoorTarget(lowestIndex);
-                lastFloor = floors[lowestIndex];
             }
             else {
                 if (leverRotation < floors[lowestIndex]) {
@@ -155,6 +145,12 @@ public class LeverRotation : MonoBehaviour {
 
         //Impliment lever rotation changes
         transform.rotation = Quaternion.Euler(0, 91.95f, leverRotation);
+    }
+
+    public void startGrab(GameObject hand) {
+        grabHand = hand;
+        grabbed = true;
+        lastFloor = leverRotation;
     }
 
     public void jiggleResponse() {

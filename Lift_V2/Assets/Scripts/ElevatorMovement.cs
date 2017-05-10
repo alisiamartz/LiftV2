@@ -79,10 +79,12 @@ public class ElevatorMovement : MonoBehaviour {
         //If elevator is moving
         if (liftSpeedCurrent != 0) {
             //Haptic Feedback
+            /*
             var deviceIndex1 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
             SteamVR_Controller.Input(deviceIndex1).TriggerHapticPulse((ushort)Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
             var deviceIndex2 = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
             SteamVR_Controller.Input(deviceIndex2).TriggerHapticPulse((ushort)Mathf.FloorToInt(Mathf.Abs(liftSpeedCurrent) / liftSpeedMax * maxVibration));
+            */
 
             //Check for passing floors
             if ((floorPos == Mathf.Round(floorPos) || ((floorPos - Mathf.Round(floorPos)) * (previousFloorPos - Mathf.Round(floorPos)) < 0)) && Mathf.Round(floorPos) != lastPassedFloor) {

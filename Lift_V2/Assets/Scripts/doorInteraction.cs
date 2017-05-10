@@ -53,6 +53,10 @@ public class doorInteraction : MonoBehaviour
 
     private GameObject manager;
 
+    [Header("Holding Vibration")]
+    public int holdingVibrationMax;
+    private float previousHeight;
+
     [Header("Jiggle Effect")]
     public float jiggleStrength = 10;
     private bool jiggling = false;
@@ -99,27 +103,22 @@ public class doorInteraction : MonoBehaviour
             //Debug.Log("hell yeah get ready to lift");
             lifting = true;
 
-            if (grabbingUp == false)
-            {
-                //Trigger Haptic pulse
-                var whichHand = "both";
-                //Trigger Haptic pulse
-                if (grabbingHand.tag == "leftControl") {
-                    whichHand = "left";
-                }
-                else if (grabbingHand.tag == "rightControl") {
-                    whichHand = "right";
-                }
-
-                Haptic.rumbleController(1, 1, whichHand);
-
-                grabbingUp = true;
-            }
-
             // Move the door according to the current y position of the controller
             door.transform.position = new Vector3(initX, (door.transform.position.y - hold.transform.position.y) + grabbingHand.transform.position.y, initZ);
             // Once the door reaches a certain height
             // it goes all the way up automatically
+
+            var whichHand = "both";
+            //Trigger Haptic pulse
+            if (grabbingHand.tag == "leftControl") {
+                whichHand = "left";
+            }
+            else if (grabbingHand.tag == "rightControl") {
+                whichHand = "right";
+            }
+            var strength = (Mathf.Abs(door.transform.position.y - previousHeight) / (highPoint - initY)) * holdingVibrationMax;
+            Debug.LogWarning(strength);
+            Haptic.rumbleController(0.1f, strength, whichHand);
 
         } else {
             grabbingUp = false;
@@ -156,22 +155,6 @@ public class doorInteraction : MonoBehaviour
                 closing = true;
                 // Move the door according to the current y position of the controller
                 door.transform.position = new Vector3(initX, (door.transform.position.y - rope.transform.position.y) + grabbingHand.transform.position.y, initZ);
-
-                if (grabbingDown == false) {
-                    //Trigger Haptic pulse
-                    var whichHand = "both";
-                    //Trigger Haptic pulse
-                    if (grabbingHand.tag == "leftControl") {
-                        whichHand = "left";
-                    }
-                    else if (grabbingHand.tag == "rightControl") {
-                        whichHand = "right";
-                    }
-
-                    Haptic.rumbleController(1, 1, whichHand);
-
-                    grabbingDown = true;
-                }
 
             } // condition about where the door goes when the user stops interacting w it in some way?
             else {
@@ -246,7 +229,10 @@ public class doorInteraction : MonoBehaviour
                 Debug.Log("Grabbing because " + manager.GetComponent<ElevatorMovement>().floorPos);
 				grabbed = true;
 				grabbingHand = hand;
-			} else {
+
+                previousHeight = door.transform.position.y;
+
+            } else {
 				//Trigger the jiggle
 				jiggleSound.PlaySound (transform.position);
 				jiggling = true;

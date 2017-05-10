@@ -8,6 +8,12 @@ public class LeverRange : MonoBehaviour {
     private GameObject camRig;
 	public static bool nearLever;
 
+    [Header("Initial Grab")]
+    [Range(0, 10)]
+    public float initialGrabStrength;
+    [Range(0, 1)]
+    public float initialGrabLength;
+
     private int handsColliding = 0;
 
     // Use this for initialization
@@ -53,8 +59,7 @@ public class LeverRange : MonoBehaviour {
             DisableGesture.turnOff(camRig);
 
             if (!doorOpen && timer <= 0.0f) {
-                GetComponent<LeverRotation>().grabbed = true;
-                GetComponent<LeverRotation>().grabHand = hand;
+                GetComponent<LeverRotation>().startGrab(hand);
             } else {
                 GetComponent<LeverRotation>().jiggleResponse();
             }
@@ -67,9 +72,7 @@ public class LeverRange : MonoBehaviour {
             else if(hand.tag == "rightControl") {
                 whichHand = "right";
             }
-
-            Debug.Log("Called Rumble");
-            Haptic.rumbleController(0.75f, 0.5f, whichHand);
+            Haptic.rumbleController(initialGrabLength, initialGrabStrength, whichHand);
 
         } else {
 			nearLever = false;
