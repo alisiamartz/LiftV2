@@ -222,19 +222,6 @@ public class PatronMovement : MonoBehaviour {
         anim.SetBool("talking", false);
     }
 
-    //Called from AI to tell the player that now is the time for a gesture
-    public void waitingForGesture() {
-        // turn on hand haptic 
-
-        // play a tiny particle system?
-
-    }
-
-    public void stopWaitingGesture() {
-		// turn off that particle system now!!!!!!! yeah
-
-    }
-
     //Called from AI whenever the mood is changed i indicates by how much
     public void moodChanged(int i) {
 

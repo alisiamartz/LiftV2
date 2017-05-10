@@ -8,9 +8,11 @@ public class StateFetch : MonoBehaviour {
 	// contains functions used in AI to check the player state
 	// ie. proximity to objects
 
+	public GameObject[] respondings;
+
+
 	// Use this for initialization
 	void Start () {
-		
 	}
 		
 	// player has collided hand with lever
@@ -25,5 +27,35 @@ public class StateFetch : MonoBehaviour {
 		if (doorInteraction.nearDoor)
 			return true;
 		return false;
+	}
+
+	//Called from AI to tell the player that now is the time for a gesture
+	public void waitingForGesture() {
+		// turn on hand haptic 
+		// play a tiny particle system
+		// TODO: make it good i guess
+		foreach (GameObject g in respondings) {
+			g.GetComponent<ParticleSystem> ().Play ();		}
+
+	}
+
+	public void stopWaitingGesture() {
+		// turn off that particle system now!!!!!!! yeah
+		foreach (GameObject g in respondings) {
+			g.GetComponent<ParticleSystem> ().Stop ();
+		}
+	}
+
+	void Update() {
+
+		if (respondings.Length < 2) 
+			respondings = GameObject.FindGameObjectsWithTag ("responding");	
+		
+		// test code to see if it works
+//		if (Input.GetKeyDown (KeyCode.A)) 
+//			waitingForGesture ();
+//		if (Input.GetKeyDown (KeyCode.S))
+//			stopWaitingGesture ();
+
 	}
 }

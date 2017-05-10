@@ -55,8 +55,8 @@ public abstract class Agent : MonoBehaviour {
     protected bool isNearDoor() { return sf.nearDoor(); }
     protected void animate(string s) { if (s != "") pm.Invoke(s, 0); }
     protected void stopTalking() { pm.stopTalking(); }
-    protected void startGesture() { pm.waitingForGesture(); }
-    protected void stopGestures() { pm.stopWaitingGesture(); }
+    protected void startGesture() { sf.waitingForGesture(); }
+    protected void stopGestures() { sf.stopWaitingGesture(); }
     protected void moodParticles(int i) { pm.moodChanged(i); }
     
     protected virtual void Init()
