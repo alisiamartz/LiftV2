@@ -13,6 +13,11 @@
         "bm1.1n",
         "bm1.1a"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Long time coming",
       "noResponseChange": 0
     },
@@ -23,6 +28,11 @@
         "bm2.1hA",
         "bm2.1hA",
         "bm2.1hA"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "salute", "continue", "rude", "no", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -38,6 +48,11 @@
         "bm2.2h",
         "bm2.2h"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "listen": [ "out", "yes", "salute", "continue", "rude", "no", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0, 0 ],
       "toNode": [ "Does it matter?", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked" ],
@@ -51,6 +66,11 @@
         "bm2.3h",
         "bm2.3h",
         "bm2.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "out" ],
       "change": [ 0 ],
@@ -66,6 +86,11 @@
         "bm3.1h",
         "bm3.1h"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
     },
     {
       "name": "Two offers",
@@ -74,6 +99,11 @@
         "bm3.2h",
         "bm3.2h",
         "bm3.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no" ],
       "change": [ 0, 0 ],
@@ -89,6 +119,11 @@
         "bm3.3h",
         "bm3.3h"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "listen": [ "salute", "rude" ],
       "change": [ 0, 0 ],
       "toNode": [ "workhorse", "resident jerk" ],
@@ -102,6 +137,11 @@
         "bm3.4h",
         "bm3.4h",
         "bm3.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
@@ -111,6 +151,11 @@
         "bm3.5h",
         "bm3.5h",
         "bm3.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -120,6 +165,11 @@
         "bm4.1h",
         "bm4.1h",
         "bm4.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "out"],
       "change": [ 0],
@@ -135,6 +185,11 @@
         "bm4.2h",
         "bm4.2h"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
 	  "listen": [ "out" ],
       "change": [ 0 ],
       "toNode": [ "Gameover" ],
@@ -149,6 +204,11 @@
         "bm4.3h",
         "bm4.3h"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
 	  "listen": [ "out" ],
       "change": [ 0 ],
       "toNode": [ "Obvious choice" ],
@@ -162,7 +222,12 @@
         "bm4.4h",
         "bm4.4h",
         "bm4.4h"
-      ]
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
     },
     {
       "name": "resident jerk",
@@ -171,6 +236,11 @@
         "bm4.5h",
         "bm4.5h",
         "bm4.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
@@ -180,6 +250,11 @@
         "bm5.1h",
         "bm5.1h",
         "bm5.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
@@ -189,6 +264,11 @@
         "bm5.3h",
         "bm5.3h",
         "bm5.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
@@ -198,6 +278,11 @@
         "bm5.4h",
         "bm5.4h",
         "bm5.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -207,6 +292,11 @@
         "bm6.1h",
         "bm6.1n",
         "bm6.1n"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -216,6 +306,11 @@
         "bm6.2h",
         "bm6.2n",
         "bm6.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

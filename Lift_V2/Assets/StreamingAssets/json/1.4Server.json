@@ -13,6 +13,11 @@
         "silence",
         "silence"
       ],
+	  "animation": [
+        "",
+        "",
+        ""
+      ],
       "noResponse": "Start1",
       "noResponseChange": 0
     },
@@ -23,6 +28,11 @@
         "s1.1h",
         "s1.1h",
         "s1.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "confused" ],
       "change": [ 4, -4, -1 ],
@@ -38,6 +48,11 @@
         "s2.1n",
         "s2.1n"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "listen": [ "yes", "no" ],
       "change": [ 3, -2 ],
       "toNode": [ "Workers United", "Different Viewpoints" ],
@@ -51,6 +66,11 @@
         "s2.2h",
         "s2.2h",
         "s2.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no" ],
       "change": [ 4, -2 ],
@@ -66,6 +86,11 @@
         "s2.3h",
         "s2.3h"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "listen": [ "yes", "no" ],
       "change": [ 4, -4 ],
       "toNode": [ "The Server", "One and the Same" ],
@@ -80,6 +105,11 @@
         "s3.1h",
         "s3.1h"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "listen": [ "out" ],
       "change": [ 3 ],
       "toNode": [ "First Day First Friend" ],
@@ -93,7 +123,12 @@
         "s3.2h",
         "s3.2h",
         "s3.2h"
-      ]
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
     },
     {
       "name": "Habits",
@@ -102,6 +137,11 @@
         "s3.3h",
         "s3.3h",
         "s3.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -111,6 +151,11 @@
         "s3.4h",
         "s3.4h",
         "s3.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -120,6 +165,11 @@
         "s3.5h",
         "s3.5h",
         "s3.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "out" ],
       "change": [ 3 ],
@@ -134,6 +184,11 @@
         "s4.1h",
         "s4.1n",
         "s4.1a"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
@@ -143,6 +198,11 @@
         "s4.2h",
         "s4.2n",
         "s4.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

@@ -13,6 +13,11 @@
         "s1.1h",
         "s1.1h"
       ],
+	  "animation": [
+        "",
+        "",
+        ""
+      ],
       "noResponse": "Brutal business",
       "noResponseChange": 0
     },
@@ -24,6 +29,11 @@
         "s1.1h",
         "s1.1h"
       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
       "noResponse": "Brutal business",
       "noResponseChange": 0
     },
@@ -34,6 +44,11 @@
         "s2.3h",
         "s2.3h",
         "s2.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "salute", "rude" ],
       "change": [ 0, 0 ],
@@ -48,6 +63,11 @@
         "s3.5h",
         "s3.5h",
         "s3.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -57,6 +77,11 @@
         "s3.6h",
         "s3.6h",
         "s3.6h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -66,6 +91,11 @@
         "s4.6h",
         "s4.6h",
         "s4.6h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -75,6 +105,11 @@
         "s5.1h",
         "s5.1n",
         "s5.1n"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
@@ -84,6 +119,11 @@
         "s5.2h",
         "s5.2n",
         "s5.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

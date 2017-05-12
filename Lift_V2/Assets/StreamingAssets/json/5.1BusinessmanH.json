@@ -9,20 +9,14 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm1.1h",
+        "bm1.1n",
+        "bm1.1a"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 15,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "Your Choice",
       "noResponseChange": 0
@@ -31,9 +25,14 @@
       "name": "Your Choice",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "bm2.1hA",
+        "bm2.1hA",
+        "bm2.1hA"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "salute", "continue", "rude", "no", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -45,9 +44,14 @@
       "name": "Meh",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm2.2h",
+        "bm2.2h",
+        "bm2.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "out", "yes", "salute", "continue", "rude", "no", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0, 0 ],
@@ -59,9 +63,14 @@
       "name": "Long time coming",
       "wait": 30,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "bm2.3h",
+        "bm2.3h",
+        "bm2.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "out" ],
       "change": [ 0 ],
@@ -73,23 +82,28 @@
       "name": "Right choice",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm3.1h",
+        "bm3.1h",
+        "bm3.1h"
       ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Another offer" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
     },
     {
       "name": "Two offers",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm3.2h",
+        "bm3.2h",
+        "bm3.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no" ],
       "change": [ 0, 0 ],
@@ -101,9 +115,14 @@
       "name": "Overlooked",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm3.3h",
+        "bm3.3h",
+        "bm3.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "salute", "rude" ],
       "change": [ 0, 0 ],
@@ -115,45 +134,42 @@
       "name": "Does it matter?",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
-    },
-	{
-      "name": "Failure",
-      "wait": 30,
-      "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "bm3.4h",
+        "bm3.4h",
+        "bm3.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
       "name": "Last Day",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
-    },
-	{
-      "name": "Another offer",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm3.5h",
+        "bm3.5h",
+        "bm3.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "Noble sacrifice",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm4.1h",
+        "bm4.1h",
+        "bm4.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "out"],
       "change": [ 0],
@@ -165,9 +181,14 @@
       "name": "Blinded by greed",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm4.2h",
+        "bm4.2h",
+        "bm4.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
 	  "listen": [ "out" ],
       "change": [ 0 ],
@@ -179,9 +200,14 @@
       "name": "Tough choice",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm4.3h",
+        "bm4.3h",
+        "bm4.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
 	  "listen": [ "out" ],
       "change": [ 0 ],
@@ -193,63 +219,98 @@
       "name": "workhorse",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "bm4.4h",
+        "bm4.4h",
+        "bm4.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
     },
     {
       "name": "resident jerk",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm4.5h",
+        "bm4.5h",
+        "bm4.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
       "name": "A new beginning",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "bm5.1h",
+        "bm5.1h",
+        "bm5.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
       "name": "Gameover",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm5.3h",
+        "bm5.3h",
+        "bm5.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
       "name": "Obvious choice",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm5.4h",
+        "bm5.4h",
+        "bm5.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm6.1h",
+        "bm6.1n",
+        "bm6.1n"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm6.2h",
+        "bm6.2n",
+        "bm6.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3
