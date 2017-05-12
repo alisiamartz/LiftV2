@@ -29,11 +29,6 @@ public class PatronMovement : MonoBehaviour {
 
 	Animator anim;
 
-	// Right hand and left hand of patrons
-	// specifically boss for now tho ahahahahahdefahfueia
-	public GameObject RH;
-	public GameObject LH;
-
     //TIMER
     private float timer = 0;
 
@@ -226,16 +221,5 @@ public class PatronMovement : MonoBehaviour {
     public void moodChanged(int i) {
 
     }
-
-	// this is where we spawn the id and hat in the tutorial interaction
-	// boss 1.1 --> spawn when timed 
-	// this spawns the items in the right spot 
-	// TODO: Trigger animation when spawning items 
-	// this triggers after the animation is completed 
-	public void spawnBossItems1() {
-		GameObject.Instantiate(Resources.Load("Objects/id"), RH.transform);
-
-		GameObject.Instantiate(Resources.Load("Objects/hat"), LH.transform);
-	}
 		
 }

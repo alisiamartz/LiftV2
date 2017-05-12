@@ -9,7 +9,8 @@ public class StateFetch : MonoBehaviour {
 	// ie. proximity to objects
 
 	public GameObject[] respondings;
-
+	public GameObject spawn1;
+	public GameObject spawn2; 
 
 	// Use this for initialization
 	void Start () {
@@ -52,10 +53,19 @@ public class StateFetch : MonoBehaviour {
 			respondings = GameObject.FindGameObjectsWithTag ("responding");	
 		
 		// test code to see if it works
-//		if (Input.GetKeyDown (KeyCode.A)) 
-//			waitingForGesture ();
+		if (Input.GetKeyDown (KeyCode.A))
+			spawnHatId ();
 //		if (Input.GetKeyDown (KeyCode.S))
 //			stopWaitingGesture ();
 
+	}
+
+	// this is where we spawn the id and hat in the tutorial interaction
+	// boss 1.1 --> spawn when timed 
+	// this spawns the items on the shelf
+
+	public void spawnHatId() {
+		GameObject.Instantiate(Resources.Load("Objects/id"), spawn1.transform);
+		GameObject.Instantiate(Resources.Load("Objects/hat"), spawn2.transform );
 	}
 }
