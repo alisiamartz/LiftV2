@@ -9,11 +9,11 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s1.1h",
+        "s1.1h",
+        "s1.1h"
       ],
-      "noResponse": "Start1",
+      "noResponse": "Another day, another dollar",
       "noResponseChange": 0
     },
     {
@@ -31,9 +31,9 @@
       "name": "Another day, another dollar",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "s2.2h",
+        "s2.2h",
+        "s2.2h"
       ],
       "listen": [ "yes", "no" ],
       "change": [ 0, 0 ],
@@ -45,55 +45,36 @@
       "name": "Ordinary",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Dull" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+        "s3.3h",
+        "s3.3h",
+        "s3.3h"
+      ]
     },
     {
       "name": "Unique perspective",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Dull" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Dull",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "s3.4h",
+        "s3.4h",
+        "s3.4h"
       ]
     },
-    {
+	{
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s5.1h",
+        "s5.1n",
+        "s5.1a"
       ]
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s5.2h",
+        "s5.2n",
+        "s5.2a"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3
