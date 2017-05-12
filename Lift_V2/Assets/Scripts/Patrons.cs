@@ -129,7 +129,21 @@ public class Patrons {
 
         else if (patronName == "Business3")
         {
+            //Hard coded interaction
             throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        }
+
+        else if (patronName == "Business4") {
+            patronObject.AddComponent<GenericAI>();
+            string[] s = { "5.1BusinessmanH.json", "5.1BusinessmanN.json", "5.1BusinessmanA.json" };
+            short mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
+            patronObject.GetComponent<GenericAI>().setMood(mood);
+            if (mood > 3) patronObject.GetComponent<GenericAI>().setFilename(s[0]);
+            else if (mood < -3) patronObject.GetComponent<GenericAI>().setFilename(s[2]);
+            else patronObject.GetComponent<GenericAI>().setFilename(s[1]);
+
+            patronObject.GetComponent<PatronAudio>().patronName = "BusinessMan";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day5";
         }
 
         else if (patronName == "Tourist1")
@@ -188,12 +202,26 @@ public class Patrons {
 
         else if (patronName == "Server1")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAI>();
+            patronObject.GetComponent<GenericAI>().setFilename("1.4Server.json");
+            patronObject.GetComponent<GenericAI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Server";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day1";
         }
 
         else if (patronName == "Server2")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAI>();
+            string[] s = { "2.4ServerH.json", "2.4ServerN.json", "2.4ServerA.json" };
+            short mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
+            patronObject.GetComponent<GenericAI>().setMood(mood);
+            if (mood > 3) patronObject.GetComponent<GenericAI>().setFilename(s[0]);
+            else if (mood < -3) patronObject.GetComponent<GenericAI>().setFilename(s[2]);
+            else patronObject.GetComponent<GenericAI>().setFilename(s[1]);
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Server";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day2";
         }
 
         else if (patronName == "Server3")
