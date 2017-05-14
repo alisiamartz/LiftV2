@@ -211,7 +211,7 @@ public class GenericAI : Agent {
 
         pa.playDialogue(dialogue);
 
-        //audioTime = GameObject.Find("_SFX_" + dialogue).GetComponent<AudioSource>().clip.length;
+        float audioTime = GameObject.Find("_SFX_" + dialogue).GetComponent<AudioSource>().clip.length;
         timer = audioTime + play.wait;
         lastSound = dialogue;
 

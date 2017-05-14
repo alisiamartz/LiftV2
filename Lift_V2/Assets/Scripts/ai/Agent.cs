@@ -41,7 +41,6 @@ public abstract class Agent : MonoBehaviour {
     private short mood;
     protected bool isWaitingForGesture;
     protected float gestureTimer;
-    protected float audioTime;
     protected PatronAudio pa;
 
     //useful stuff
@@ -58,6 +57,7 @@ public abstract class Agent : MonoBehaviour {
     protected void startGesture() { sf.waitingForGesture(); }
     protected void stopGestures() { sf.stopWaitingGesture(); }
     protected void moodParticles(int i) { pm.moodChanged(i); }
+    protected void playDialogue(string s) { pa.playDialogue(s); }
     
     protected virtual void Init()
     {
