@@ -34,9 +34,9 @@
         "",
         ""
       ],
-      "listen": [ "yes", "confused", "rude", "no" ],
-      "change": [ 2, -2, -2, -2 ],
-      "toNode": [ "Proposition", "Better Service", "Better Service", "Better Service" ],
+      "listen": [ "yes", "continue", "salute", "confused", "rude", "no" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "Proposition", "Proposition", "Proposition", "Better Service", "Better Service", "Better Service" ],
       "noResponse": "Proposition",
       "noResponseChange": 0
     },
@@ -53,9 +53,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 3, -4 ],
-      "toNode": [ "Better Service", "Worker's bias" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 3, -4, -2, -2, -2, -2 ],
+      "toNode": [ "Better Service", "Worker's bias", "Cat got your tongue", "Cat got your tongue", "Cat got your tongue", "Cat got your tongue", ],
       "noResponse": "Cat got your tongue",
       "noResponseChange": -2
     },
@@ -72,9 +72,9 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "yes", "no" ],
-      "change": [ 5, -3 ],
-      "toNode": [ "New guy", "Everyone's a critic" ],
+	    "listen": ["yes", "no", "continue", "confused", "salute", "rude"  ],
+      "change": [ 5, -3, 1, 1, 1, 1 ],
+      "toNode": [ "New guy", "Everyone's a critic", "Cat got your tongue", "Cat got your tongue", "Cat got your tongue", "Cat got your tongue" ],
       "noResponse": "Cat got your tongue",
       "noResponseChange": 1
     },
@@ -91,9 +91,9 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "yes", "no" ],
-      "change": [ 1, -1 ],
-      "toNode": [ "Eye for business", "Stubborn pride" ],
+	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 1, -1, 1, -1, 1, -1 ],
+      "toNode": [ "Eye for business", "Stubborn pride", "Eye for business", "Stubborn pride", "Eye for business", "Stubborn pride", ],
       "noResponse": "Stubborn pride",
       "noResponseChange": 0
     },
@@ -110,9 +110,9 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "yes", "no" ],
-      "change": [ 3, -5 ],
-	    "toNode": [ "Eye for business", "Everyone's a critic" ],
+	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude"  ],
+      "change": [ 3, -5, 3, -5, 3, -5 ],
+	    "toNode": [ "Eye for business", "Everyone's a critic", "Eye for business", "Everyone's a critic", "Eye for business", "Everyone's a critic" ],
       "noResponse": "Everyone's a critic",
       "noResponseChange": -5
     },

@@ -35,9 +35,9 @@
         "neu",
         "neu"
       ],
-      "listen": [ "continue", "confused" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Everything will be fine...for now", "Everything will be fine...for now" ],
+      "listen": [ "continue", "confused", "yes", "no", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Everything will be fine...for now", "Everything will be fine...for now", "Own little world", "Own little world", "Own little world", "Own little world" ],
       "noResponse": "Own little world",
       "noResponseChange": 0
     },
@@ -49,9 +49,9 @@
         "pos",
         "pos"
       ],
-      "listen": [ "salute", "rude" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Recognized Geniusness", "Talentless" ],
+      "listen": [ "salute", "rude", "yes", "no", "continue", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless", ],
       "noResponse": "Recognized Geniusness",
       "noResponseChange": 0
     },
@@ -63,9 +63,9 @@
         "pos",
         "pos"
       ],
-      "listen": [ "continue", "salute" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Turned it down", "Turned it down" ],
+      "listen": [ "continue", "salute", "yes", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Turned it down", "Turned it down", "Turned it down", "Turned it down", "Known critic", "Turned it down" ],
       "noResponse": "Known critic",
       "noResponseChange": 0
     },
@@ -90,12 +90,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Uncertain" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Everything will be fine...for now",
@@ -104,12 +99,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Letting go" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Recognized Geniusness",
@@ -118,12 +108,7 @@
         "pos",
         "pos",
         "pos"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Someday" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Talentless",
@@ -133,9 +118,9 @@
         "neu",
         "neu"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Backfired choice", "Cruel irony" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Backfired choice", "Cruel irony", "Cruel irony", "Cruel irony", "Cruel irony", "Backfired choice" ],
       "noResponse": "Cruel irony",
       "noResponseChange": 0
     },
@@ -147,9 +132,9 @@
         "pos",
         "pos"
       ],
-	  "listen": [ "yes", "no" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Earned not given", "Noticed contributions" ],
+	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Earned not given", "Noticed contributions", "Earned not given", "Earned not given", "Earned not given", "Noticed contributions" ],
       "noResponse": "Noticed contributions",
       "noResponseChange": 0
     },
@@ -161,9 +146,9 @@
         "neu",
         "neu"
       ],
-	  "listen": [ "salute", "rude" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Best for business", "Hard to understand" ],
+	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Best for business", "Hard to understand", "Best for business", "Hard to understand", "Best for business", "Hard to understand" ],
       "noResponse": "Hard to understand",
       "noResponseChange": 0
     },
@@ -174,38 +159,6 @@
         "neg",
         "neg",
         "neg"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Biggest regret", "Suicide" ],
-      "noResponse": "Suicide",
-      "noResponseChange": 0
-    },
-	{
-      "name": "Uncertain",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "Letting go",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
-    },
-	{
-      "name": "Someday",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
       ]
     },
 	{
@@ -215,12 +168,7 @@
         "neg",
         "neg",
         "neg"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Someday" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Cruel irony",
@@ -229,12 +177,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Endless cycle" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Noticed contributions",
@@ -243,12 +186,7 @@
         "pos",
         "pos",
         "pos"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Real hero" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Earned not given",
@@ -257,12 +195,7 @@
         "pos",
         "pos",
         "pos"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "True friend" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Hard to understand",
@@ -271,65 +204,10 @@
         "neu",
         "neu",
         "neu"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "New beginning" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Best for business",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "New beginning" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
-    },
-	{
-      "name": "Biggest regret",
-      "wait": 30,
-      "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
-    },
-	{
-      "name": "Endless cycle",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "Real hero",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "True friend",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "New beginning",
       "wait": 30,
       "dialogue": [
         "pos",

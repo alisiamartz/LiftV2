@@ -35,9 +35,9 @@
         "pos",
         "pos"
       ],
-      "listen": [ "continue", "salute", "confused", "rude" ],
-      "change": [ 0, 0, 0, 0 ],
-      "toNode": [ "Perfect Family & Career", "Perfect Family & Career", "Perfect Family & Career", "Bad time" ],
+      "listen": [ "continue", "salute", "confused", "rude", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Perfect Family & Career", "Perfect Family & Career", "Perfect Family & Career", "Bad time", "Perfect Family & Career", "Bad time" ],
       "noResponse": "Perfect Family & Career",
       "noResponseChange": 0
     },
@@ -49,9 +49,9 @@
         "neg",
         "neg"
       ],
-      "listen": [ "no", "yes" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Rumors", "Rumors" ],
+      "listen": [ "continue", "salute", "confused", "rude", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Rumors", "Rumors", "Rumors", "Rumors", "Rumors", "Rumors" ],
       "noResponse": "Plot Twist",
       "noResponseChange": 0
     },
@@ -62,12 +62,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Missing ring" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Perfect Family & Career",
@@ -77,9 +72,9 @@
         "pos",
         "pos"
       ],
-      "listen": [ "rude", "salute", "confused", "continue" ],
-      "change": [ 0, 0, 0, 0 ],
-      "toNode": [ "Bad time", "Promising future", "Promising future", "Promising future" ],
+      "listen": [ "rude", "salute", "confused", "continue", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Bad time", "Promising future", "Promising future", "Promising future", "Promising future", "Bad time" ],
       "noResponse": "Promising future",
       "noResponseChange": 0
     },
@@ -91,9 +86,9 @@
         "neg",
         "neg"
       ],
-      "listen": [ "no", "yes" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Insults", "Insults" ],
+      "listen": [ "rude", "salute", "confused", "continue", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Insults", "Insults", "Insults", "Insults", "Insults", "Insults" ],
       "noResponse": "Plot Twist",
       "noResponseChange": 0
     },
@@ -104,20 +99,6 @@
         "neg",
         "neg",
         "neg"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Dead lover" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Missing ring",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
       ]
     },
     {
@@ -128,9 +109,9 @@
         "pos",
         "pos"
       ],
-      "listen": [ "continue", "confused", "salute", "rude" ],
-      "change": [ 0, 0, 0, 0 ],
-      "toNode": [ "Void", "Void", "Void", "Bad time" ],
+      "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Void", "Void", "Void", "Bad time", "Void", "Bad time" ],
       "noResponse": "Void",
       "noResponseChange": 0
     },
@@ -142,20 +123,11 @@
         "neg",
         "neg"
       ],
-	  "listen": [ "yes", "no" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Unwarranted", "Unwarranted" ],
+	    "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Unwarranted", "Unwarranted", "Unwarranted", "Unwarranted", "Unwarranted", "Unwarranted" ],
       "noResponse": "Plot Twist",
       "noResponseChange": 0
-    },
-    {
-      "name": "Dead lover",
-      "wait": 30,
-      "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
     },
     {
       "name": "Void",
@@ -165,9 +137,9 @@
         "pos",
         "pos"
       ],
-	  "listen": [ "no", "yes" ],
-      "change": [ 0 ],
-      "toNode": [ "Farewell", "Farewell" ],
+	    "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Farewell", "Farewell", "Farewell", "Farewell", "Farewell", "Farewell" ],
       "noResponse": "A victim in disguise",
       "noResponseChange": 0
     },
@@ -179,9 +151,9 @@
         "neg",
         "neg"
       ],
-      "listen": [ "out", "no" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Part of the problem", "Plot Twist" ],
+      "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Part of the problem", "Plot Twist", "Plot Twist", "Plot Twist", "Plot Twist", "Plot Twist", "Plot Twist" ],
       "noResponse": "notFloor",
       "noResponseChange": 0
     },
@@ -192,12 +164,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Stuck in the past" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "A victim in disguise",
@@ -206,12 +173,7 @@
         "pos",
         "pos",
         "pos"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Blessing in disguise" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Part of the problem",
@@ -220,24 +182,6 @@
         "neg",
         "neg",
         "neg"
-      ]
-    },
-	{
-      "name": "Stuck in the past",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "Blessing in disguise",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
       ]
     },
     {

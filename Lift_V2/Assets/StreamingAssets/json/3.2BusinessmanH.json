@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "bm1.1h",
-        "bm1.1h",
-        "bm1.1h"
+        "2bm1.1h",
+        "2bm1.1n",
+        "2bm1.1a"
       ],
 	  "animation": [
         "",
@@ -25,9 +25,9 @@
       "name": "Start1",
       "wait": 4,
       "dialogue": [
-        "bm1.2h",
-        "bm1.2n",
-        "bm1.2a"
+        "2bm1.2h",
+        "2bm1.2n",
+        "2bm1.2a"
       ],
       "animation": [
         "talk",
@@ -41,18 +41,18 @@
       "name": "Positive start",
       "wait": 15,
       "dialogue": [
-        "bm2.1h",
-        "bm2.1h",
-        "bm2.1h"
+        "2bm2.1h",
+        "2bm2.1n",
+        "2bm2.1a"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-	  "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 2, 2 ],
-      "toNode": [ "Call back", "Call back", "Phase 2", "Phase 2" ],
+	    "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ 2, 2, -2, -2, 2, 2 ],
+      "toNode": [ "Phase 2", "Phase 2", "Call back", "Call back", "Phase 2", "Phase 2" ],
       "noResponse": "Phase 2",
       "noResponseChange": 2
     },
@@ -60,18 +60,18 @@
       "name": "Neutral start",
       "wait": 20,
       "dialogue": [
-        "bm2.2h.",
-        "bm2.2h",
-        "bm2.2h"
+        "2bm2.2h.",
+        "2bm2.2n",
+        "2bm2.2a"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-      "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 2, 2 ],
-      "toNode": [ "Ignored", "Ignored", "Fallout", "Fallout" ],
+      "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 2, 2 ],
+      "toNode": [ "Ignored", "Ignored", "Ignored", "Ignored", "Fallout", "Fallout" ],
       "noResponse": "Fallout",
       "noResponseChange": 2
     },
@@ -79,18 +79,18 @@
       "name": "Negative start",
       "wait": 23,
       "dialogue": [
-        "bm2.3h",
-        "bm2.3h",
-        "bm2.3h"
+        "2bm2.3h",
+        "2bm2.3n",
+        "2bm2.3a"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-      "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 0, 0 ],
-      "toNode": [ "Eavesdropper", "Eavesdropper", "Massive fallout", "Massive fallout" ],
+      "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 0, 0 ],
+      "toNode": [ "Eavesdropper", "Eavesdropper", "Eavesdropper", "Eavesdropper", "Massive fallout", "Massive fallout" ],
       "noResponse": "Massive fallout",
       "noResponseChange": 0
     },
@@ -98,18 +98,18 @@
       "name": "Call back",
       "wait": 15,
       "dialogue": [
-        "bm3.1h",
-        "bm3.1n",
-        "bm3.1n"
+        "2bm3.1h",
+        "2bm3.1n",
+        "2bm3.1a"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-	    "listen": [ "salute", "rude" ],
-      "change": [ 2, -4 ],
-      "toNode": [ "Rookie of the year", "Backlash" ],
+	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 2, -4, 2, -4, 2, -4 ],
+      "toNode": [ "Rookie of the year", "Backlash", "Rookie of the year", "Backlash", "Rookie of the year", "Backlash" ],
       "noResponse": "Backlash",
       "noResponseChange": -4
     },
@@ -117,18 +117,18 @@
       "name": "Phase 2",
       "wait": 15,
       "dialogue": [
-        "bm3.2h",
-        "bm3.2h",
-        "bm3.2h"
+        "2bm3.2h",
+        "2bm3.2n",
+        "2bm3.2a"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-	    "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 2, 2 ],
-      "toNode": [ "Call back", "Call back", "Contract signing", "Contract signing" ],
+	    "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 2, 2 ],
+      "toNode": [ "Call back", "Call back", "Call back", "Call back", "Contract signing", "Contract signing" ],
       "noResponse": "Contract signing",
       "noResponseChange": 2
     },
@@ -136,9 +136,9 @@
       "name": "Fallout",
       "wait": 15,
       "dialogue": [
-        "bm3.3h",
-        "bm3.3n",
-        "bm3.3n"
+        "2bm3.3h",
+        "2bm3.3n",
+        "2bm3.3a"
       ],
       "animation": [
         "talk",
@@ -152,9 +152,9 @@
       "name": "Ignored",
       "wait": 3,
       "dialogue": [
-        "bm3.4h",
-        "bm3.4n",
-        "bm3.4n"
+        "2bm3.4h",
+        "2bm3.4n",
+        "2bm3.4a"
       ],
       "animation": [
         "talk",
@@ -168,18 +168,18 @@
       "name": "Massive fallout",
       "wait": 21,
       "dialogue": [
-        "bm3.5h",
-        "bm3.5h",
-        "bm3.3h"
+        "2bm3.5h",
+        "2bm3.5n",
+        "2bm3.3a"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-	    "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 0, 0 ],
-      "toNode": [ "Eavesdropper", "Eavesdropper", "Plan b", "Plan b" ],
+	    "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 0, 0 ],
+      "toNode": [ "Eavesdropper", "Eavesdropper", "Eavesdropper", "Eavesdropper", "Plan b", "Plan b" ],
       "noResponse": "Plan b",
       "noResponseChange": 0
     },
@@ -187,18 +187,18 @@
       "name": "Eavesdropper",
       "wait": 21,
       "dialogue": [
-        "bm3.6h",
-        "bm3.6h",
-        "bm3.6h"
+        "2bm3.6h",
+        "2bm3.6n",
+        "2bm3.6a"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-	    "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 0, 0 ],
-      "toNode": [ "Ignored again", "Ignored again", "Plan b", "Plan b" ],
+	    "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 0, 0 ],
+      "toNode": [ "Ignored again", "Ignored again", "Ignored again", "Ignored again", "Plan b", "Plan b" ],
       "noResponse": "Plan b",
       "noResponseChange": 0
     },
@@ -206,9 +206,9 @@
       "name": "Backlash",
       "wait": 5,
       "dialogue": [
-        "bm3.7h",
-        "bm3.7n",
-        "bm3.7n"
+        "2bm3.7h",
+        "2bm3.7n",
+        "2bm3.7a"
       ],
       "animation": [
         "talk",
@@ -222,9 +222,9 @@
       "name": "Rookie of the year",
       "wait": 7,
       "dialogue": [
-        "bm3.8h",
-        "bm3.8n",
-        "bm3.8n"
+        "2bm3.8h",
+        "2bm3.8n",
+        "2bm3.8a"
       ],
       "animation": [
         "talk",
@@ -238,9 +238,9 @@
       "name": "Contract signing",
       "wait": 8,
       "dialogue": [
-        "bm4.1h",
-        "bm4.1h",
-        "bm4.1h"
+        "2bm4.1h",
+        "2bm4.1n",
+        "2bm4.1a"
       ],
       "animation": [
         "talk",
@@ -254,9 +254,9 @@
       "name": "Plan b",
       "wait": 15,
       "dialogue": [
-        "bm4.2h",
-        "bm4.2h",
-        "bm4.2a"
+        "2bm4.2h",
+        "2bm4.2n",
+        "2bm4.2a"
       ],
       "animation": [
         "talk",
@@ -270,9 +270,9 @@
       "name": "Ignored again",
       "wait": 15,
       "dialogue": [
-        "bm4.3h",
-        "bm4.3h",
-        "bm4.3h"
+        "2bm4.3h",
+        "2bm4.3n",
+        "2bm4.3a"
       ],
       "animation": [
         "talk",
@@ -286,9 +286,9 @@
       "name": "Success 2",
       "wait": 15,
       "dialogue": [
-        "bm4.4h",
-        "bm4.4n",
-        "bm4.4n"
+        "2bm4.4h",
+        "2bm4.4n",
+        "2bm4.4a"
       ],
       "animation": [
         "talk",
@@ -302,9 +302,9 @@
       "name": "Success",
       "wait": 15,
       "dialogue": [
-        "bm4.5h",
-        "bm4.5n",
-        "bm4.5n"
+        "2bm4.5h",
+        "2bm4.5n",
+        "2bm4.5a"
       ],
       "animation": [
         "talk",
@@ -318,9 +318,9 @@
       "name": "Trying again",
       "wait": 15,
       "dialogue": [
-        "bm4.6h",
-        "bm4.6n",
-        "bm4.6a"
+        "2bm4.6h",
+        "2bm4.6n",
+        "2bm4.6a"
       ],
       "animation": [
         "talk",
@@ -334,9 +334,9 @@
       "name": "End",
       "wait": 10,
       "dialogue": [
-        "bm5.1h",
-        "bm5.1n",
-        "bm5.1a"
+        "2bm5.1h",
+        "2bm5.1n",
+        "2bm5.1a"
       ],
       "animation": [
         "",
@@ -348,9 +348,9 @@
       "name": "notFloor",
       "wait": 15,
       "dialogue": [
-        "bm5.2h",
-        "bm5.2n",
-        "bm5.2a"
+        "2bm5.2h",
+        "2bm5.2n",
+        "2bm5.2a"
       ],
       "animation": [
         "talk",

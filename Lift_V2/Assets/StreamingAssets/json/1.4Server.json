@@ -34,9 +34,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no", "confused" ],
-      "change": [ 4, -4, -1 ],
-      "toNode": [ "The Server", "One and the Same", "Clarity" ],
+      "listen": [ "yes", "no", "confused", "continue", "rude", "salute" ],
+      "change": [ 4, -4, -1, -1, -4, 4 ],
+      "toNode": [ "The Server", "One and the Same", "Clarity", "Clarity", "One and the Same", "The Server"],
       "noResponse": "Clarity",
       "noResponseChange": -1
     },
@@ -53,9 +53,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 3, -2 ],
-      "toNode": [ "Workers United", "Different Viewpoints" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 3, -2, 3, -2, 3, -2 ],
+      "toNode": [ "Workers United", "Different Viewpoints", "Workers United", "Different Viewpoints", "Workers United", "Different Viewpoints" ],
       "noResponse": "Habits",
       "noResponseChange": -1
     },
@@ -72,9 +72,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 4, -2 ],
-      "toNode": [ "Aquaintances", "Terrible day" ],
+     "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 4, 4, 4, -2, -2, -2 ],
+      "toNode": [ "Aquaintances", "Aquaintances", "Aquaintances", "Terrible day", "Terrible day", "Terrible day" ],
       "noResponse": "Terrible day",
       "noResponseChange": -2
     },
@@ -91,9 +91,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 4, -4 ],
-      "toNode": [ "The Server", "One and the Same" ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused"  ],
+      "change": [ 4, 4, -4, -4, -4, -4 ],
+      "toNode": [ "The Server", "The Server", "One and the Same", "One and the Same", "One and the Same", "One and the Same" ],
       "noResponse": "One and the Same",
       "noResponseChange": -4
     },
@@ -109,12 +109,7 @@
         "talk",
         "talk",
         "talk"
-      ],
-      "listen": [ "out" ],
-      "change": [ 3 ],
-      "toNode": [ "First Day First Friend" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
+      ]
     },
     {
       "name": "Different Viewpoints",
@@ -128,7 +123,7 @@
         "talk",
         "talk",
         "talk"
-      ],
+      ]
     },
     {
       "name": "Habits",
@@ -170,12 +165,7 @@
         "talk",
         "talk",
         "talk"
-      ],
-      "listen": [ "out" ],
-      "change": [ 3 ],
-      "toNode": [ "Aquaintances...for now" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -3
+      ]
     },
     {
       "name": "End",

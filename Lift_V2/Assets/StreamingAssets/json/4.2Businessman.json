@@ -38,9 +38,9 @@
         "neu",
         "neg"
       ],
-      "listen": [ "yes", "no", "rude", "confused" ],
-      "change": [ 1, -1, -1, 0 ],
-      "toNode": [ "Hard workers", "Parasites", "Parasites", "One Sided" ],
+      "listen": [ "yes", "no", "rude", "confused", "salute", "continue" ],
+      "change": [ 1, -1, -1, 0, 1, 1 ],
+      "toNode": [ "Hard workers", "Parasites", "Parasites", "One Sided", "Hard workers", "Hard workers" ],
       "noResponse": "One Sided",
       "noResponseChange": 0
     },
@@ -51,12 +51,7 @@
         "pos",
         "neu",
         "neg"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Missed opportunity" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "No Regrets",
@@ -65,12 +60,7 @@
         "pos",
         "neu",
         "neg"
-      ],
-      "listen": [ "out" ],
-      "change": [ 1 ],
-      "toNode": [ "Missed opportunity" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -1
+      ]
     },
     {
       "name": "Parasites",
@@ -79,12 +69,7 @@
         "pos",
         "neu",
         "neg"
-      ],
-      "listen": [ "out" ],
-      "change": [ 1 ],
-      "toNode": [ "Paradox" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -1
+      ]
     },
     {
       "name": "Hard workers",
@@ -94,9 +79,9 @@
         "neu",
         "neg"
       ],
-      "listen": [ "yes", "no", "confused" ],
-      "change": [ 1, -1, 0 ],
-      "toNode": [ "Diamond in the rough", "Cutthroat" ],
+      "listen": [ "yes", "no", "confused", "continue", "salute", "rude" ],
+      "change": [ 1, -1, 0, 1, 1, -1 ],
+      "toNode": [ "Diamond in the rough", "Cutthroat", "One Sided", "Diamond in the rough", "Diamond in the rough", "Cutthroat" ],
       "noResponse": "One Sided",
       "noResponseChange": 0
     },
@@ -125,12 +110,7 @@
         "pos",
         "neu",
         "neg"
-      ],
-      "listen": [ "out", "out" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Server", "Artist" ],
-      "noResponse": "Other",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Cutthroat",
@@ -139,12 +119,7 @@
         "pos",
         "neu",
         "neg"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 1 ],
-      "toNode": [ "Perfect for the business" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -1
+      ]
     },
     {
       "name": "Server",

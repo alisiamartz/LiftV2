@@ -121,7 +121,7 @@ namespace Edwon.VR.Gesture
 
         public void StartTrail()
         {
-            currentRenderer.SetColors(Color.magenta, Color.magenta);
+            currentRenderer.SetColors(Color.red, Color.yellow);
 
             //*****Added this line
             color = "purple";

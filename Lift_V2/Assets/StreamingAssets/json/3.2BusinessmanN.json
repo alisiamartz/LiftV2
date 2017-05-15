@@ -50,9 +50,9 @@
         "talk",
         "talk"
       ],
-	  "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 2, 2 ],
-      "toNode": [ "Call back", "Call back", "Phase 2", "Phase 2" ],
+	    "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ 2, 2, -2, -2, 2, 2 ],
+      "toNode": [ "Phase 2", "Phase 2", "Call back", "Call back", "Phase 2", "Phase 2" ],
       "noResponse": "Phase 2",
       "noResponseChange": 2
     },
@@ -69,9 +69,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 2, 2 ],
-      "toNode": [ "Ignored", "Ignored", "Fallout", "Fallout" ],
+      "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 2, 2 ],
+      "toNode": [ "Ignored", "Ignored", "Ignored", "Ignored", "Fallout", "Fallout" ],
       "noResponse": "Fallout",
       "noResponseChange": 2
     },
@@ -88,9 +88,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 0, 0 ],
-      "toNode": [ "Eavesdropper", "Eavesdropper", "Massive fallout", "Massive fallout" ],
+      "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 0, 0 ],
+      "toNode": [ "Eavesdropper", "Eavesdropper", "Eavesdropper", "Eavesdropper", "Massive fallout", "Massive fallout" ],
       "noResponse": "Massive fallout",
       "noResponseChange": 0
     },
@@ -107,9 +107,9 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "salute", "rude" ],
-      "change": [ 2, -4 ],
-      "toNode": [ "Rookie of the year", "Backlash" ],
+	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 2, -4, 2, -4, 2, -4 ],
+      "toNode": [ "Rookie of the year", "Backlash", "Rookie of the year", "Backlash", "Rookie of the year", "Backlash" ],
       "noResponse": "Backlash",
       "noResponseChange": -4
     },
@@ -126,9 +126,9 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 2, 2 ],
-      "toNode": [ "Call back", "Call back", "Contract signing", "Contract signing" ],
+	    "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 2, 2 ],
+      "toNode": [ "Call back", "Call back", "Call back", "Call back", "Contract signing", "Contract signing" ],
       "noResponse": "Contract signing",
       "noResponseChange": 2
     },
@@ -177,9 +177,9 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 0, 0 ],
-      "toNode": [ "Eavesdropper", "Eavesdropper", "Plan b", "Plan b" ],
+	    "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 0, 0 ],
+      "toNode": [ "Eavesdropper", "Eavesdropper", "Eavesdropper", "Eavesdropper", "Plan b", "Plan b" ],
       "noResponse": "Plan b",
       "noResponseChange": 0
     },
@@ -196,9 +196,9 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "confused", "rude", "continue", "salute" ],
-      "change": [ -2, -2, 0, 0 ],
-      "toNode": [ "Ignored again", "Ignored again", "Plan b", "Plan b" ],
+	    "listen": [ "yes", "no", "confused", "rude", "continue", "salute" ],
+      "change": [ -2, -2, -2, -2, 0, 0 ],
+      "toNode": [ "Ignored again", "Ignored again", "Ignored again", "Ignored again", "Plan b", "Plan b" ],
       "noResponse": "Plan b",
       "noResponseChange": 0
     },

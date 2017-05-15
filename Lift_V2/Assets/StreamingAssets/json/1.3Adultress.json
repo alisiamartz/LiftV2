@@ -24,9 +24,9 @@
         "adt1.2n",
         "adt1.2a"
       ],
-      "listen": [ "salute", "rude" ],
+      "listen": [ "salute", "confused", "rude", "continue", "yes", "no" ],
       "change": [ 4, -4 ],
-      "toNode": [ "Nice date", "How to ruin a day in 30 seconds" ],
+      "toNode": [ "Nice date", "Nice date", "How to ruin a day in 30 seconds", "How to ruin a day in 30 seconds", "Employee of the month", "Employee of the month" ],
       "noResponse": "Employee of the month",
       "noResponseChange": 0
     },
@@ -38,9 +38,9 @@
         "adt2.1n",
         "adt2.1a"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 2, -4 ],
-      "toNode": [ "Mixed signals", "Black eye" ],
+      "listen": [ "yes", "confused", "salute", "no", "continue", "rude" ],
+      "change": [ 2, 2, 2, -4, -4, -4 ],
+      "toNode": [ "Mixed signals", "Mixed signals", "Mixed signals", "Black eye", "Black eye", "Black eye" ],
       "noResponse": "Black eye",
       "noResponseChange": -4
     },
@@ -52,9 +52,9 @@
         "adt2.2n",
         "adt2.2a"
       ],
-      "listen": [ "rude", "salute" ],
-      "change": [ -2, 4 ],
-      "toNode": [ "Mixed signals", "Nice date" ],
+      "listen": [ "rude", "confused", "salute", "continue", "yes", "no" ],
+      "change": [ -2, -2, 4, 4, 0, 0 ],
+      "toNode": [ "Mixed signals", "Mixed signals", "Nice date", "Nice date", "Perfect employee", "Perfect employee" ],
       "noResponse": "Perfect employee",
       "noResponseChange": 0
     },
@@ -66,9 +66,9 @@
         "adt2.3n",
         "adt2.3a"
       ],
-      "listen": [ "yes", "salute", "no", "rude" ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
       "change": [ 2, 2, -2, -2 ],
-      "toNode": [ "Cinderella Story", "Cinderella Story", "Jealous", "Jealous" ],
+      "toNode": [ "Cinderella Story", "Cinderella Story", "Cinderella Story", "Jealous", "Jealous", "Mixed signals" ],
       "noResponse": "Mixed signals",
       "noResponseChange": -2
     },
@@ -79,12 +79,7 @@
         "adt3.1h",
         "adt3.1n",
         "adt3.1a"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Friendly" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
+      ]
     },
     {
       "name": "Perfect employee",
@@ -93,12 +88,7 @@
         "adt3.2h",
         "adt3.2n",
         "adt3.2a"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Ideal worker" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
+      ]
     },
 	{
       "name": "Black eye",
@@ -116,12 +106,7 @@
         "adt3.4h",
         "adt3.4n",
         "adt3.4a"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Wedding invitation" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Jealous",
@@ -130,47 +115,6 @@
         "adt3.5h",
         "adt3.5n",
         "adt3.5a"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Overreacted" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -6
-    },
-    {
-      "name": "Friendly",
-      "wait": 60,
-      "dialogue": [
-        "adt4.1h",
-        "adt4.1n",
-        "adt4.1a"
-      ]
-    },
-    {
-      "name": "Ideal worker",
-      "wait": 40,
-      "dialogue": [
-        "adt4.2h",
-        "adt4.2n",
-        "adt4.2a"
-      ]
-    },
-    {
-      "name": "Wedding invitation",
-      "wait": 40,
-      "dialogue": [
-        "adt4.3h",
-        "adt4.3n",
-        "adt4.3a"
-      ]
-    },
-    {
-      "name": "Overreacted",
-      "wait": 40,
-      "dialogue": [
-        "adt4.4h",
-        "adt4.4n",
-        "adt4.4a"
       ]
     },
     {

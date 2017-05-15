@@ -34,9 +34,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no"],
-      "change": [ 2, 2 ],
-      "toNode": [ "Important meeting", "Important meeting" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 2, 2, 2, 2, 2, 2 ],
+      "toNode": [ "Important meeting", "Important meeting", "Important meeting", "Important meeting", "Important meeting", "Important meeting", ],
       "noResponse": "Cold feet",
       "noResponseChange": -2
     },
@@ -53,9 +53,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no"],
-      "change": [ -3, 2 ],
-      "toNode": [ "Ungrateful", "Professional negotiator" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude"],
+      "change": [ -3, 2, 2, 2, 2, -3 ],
+      "toNode": [ "Ungrateful", "Professional negotiator", "Professional negotiator", "Professional negotiator", "Professional negotiator", "Ungrateful" ],
       "noResponse": "Professional negotiator",
       "noResponseChange": 2
     },
@@ -88,9 +88,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "salute", "no", "rude" ],
-      "change": [ 2, 2, -5, -5 ],
-      "toNode": [ "Financial burden", "Financial burden", "Sour mood", "Sour mood" ],
+      "listen": [ "yes", "salute", "no", "rude", "continue", "confused" ],
+      "change": [ 2, 2, -5, -7, 2, 2 ],
+      "toNode": [ "Financial burden", "Financial burden", "Sour mood", "Sour mood", "Financial burden", "Financial burden" ],
       "noResponse": "Sour mood",
       "noResponseChange": -5
     },

@@ -24,9 +24,9 @@
         "neu",
         "neu"
       ],
-      "listen": [ "yes", "no", "confused" ],
-      "change": [ 2, -3, -3 ],
-      "toNode": [ "Hotel's artist", "Critics and haters alike", "Critics and haters alike" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 2, -3, 2, -3, 2, -3 ],
+      "toNode": [ "Hotel's artist", "Critics and haters alike", "Hotel's artist", "Critics and haters alike", "Hotel's artist", "Critics and haters alike" ],
       "noResponse": "Critics and haters alike",
       "noResponseChange": -3
     },
@@ -38,9 +38,9 @@
         "neu",
         "neu"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 4, -3 ],
-      "toNode": [ "Fan favorite", "Tasteless" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 4, -3, 4, 4, 4, 3 ],
+      "toNode": [ "Fan favorite", "Tasteless", "Fan favorite", "Fan favorite", "Fan favorite", "Tasteless" ],
       "noResponse": "Tasteless",
       "noResponseChange": -3
     },
@@ -52,9 +52,9 @@
         "neg",
         "neg"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ -2, 4 ],
-      "toNode": [ "Tasteless", "Past one's prime" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ -2, 4, -1, 4, 4, -3 ],
+      "toNode": [ "Tasteless", "Past one's prime", "Tasteless", "Past one's prime", "Past one's prime", "Tasteless"],
       "noResponse": "Tasteless",
       "noResponseChange": -2
     },
@@ -65,12 +65,7 @@
         "pos",
         "pos",
         "pos"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Lifted spirit" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
+      ]
     },
     {
       "name": "Tasteless",
@@ -79,47 +74,10 @@
         "neu",
         "neu",
         "neg"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Blue season" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
+      ]
     },
     {
       "name": "Past one's prime",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Glory days" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -3
-    },
-    {
-      "name": "Lifted spirit",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-    {
-      "name": "Blue season",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neg"
-      ]
-    },
-    {
-      "name": "Glory days",
       "wait": 30,
       "dialogue": [
         "neu",

@@ -35,9 +35,9 @@
         "neu",
         "neu"
       ],
-      "listen": [ "yes", "continue", "confused", "no" ],
-      "change": [ 0, 0, 0, 0 ],
-      "toNode": [ "Problems at home", "Problems at home", "Problems at home", "Second job" ],
+      "listen": [ "yes", "continue", "confused", "no", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Problems at home", "Problems at home", "Problems at home", "Second job", "Problems at home", "Second job" ],
       "noResponse": "Second job",
       "noResponseChange": 0
     },
@@ -48,12 +48,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Crashing down" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Second job",
@@ -62,20 +57,6 @@
         "neu",
         "neu",
         "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Crashing down" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Crashing down",
-      "wait": 30,
-      "dialogue": [
-        "neg",
-        "neg",
-        "neg"
       ]
     },
     {

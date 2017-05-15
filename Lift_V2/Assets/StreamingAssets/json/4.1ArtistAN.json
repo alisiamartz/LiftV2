@@ -35,9 +35,9 @@
         "pos",
         "pos"
       ],
-      "listen": [ "yes", "continue", "no" ],
-      "change": [ 1, 1, -4 ],
-      "toNode": [ "Peaked", "Peaked", "Inconvenient timing" ],
+      "listen": [ "yes", "continue", "no", "confused", "salute", "rude" ],
+      "change": [ 1, 1, -4, 1, 1, -4 ],
+      "toNode": [ "Peaked", "Peaked", "Inconvenient timing", "Peaked", "Peaked", "Inconvenient timing" ],
       "noResponse": "Peaked",
       "noResponseChange": 1
     },
@@ -49,9 +49,9 @@
         "neu",
         "neg"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 2, -2 ],
-      "toNode": [ "Contract in dispute", "Inconvenient timing" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 2, -2, 2, -2, 3, -2 ],
+      "toNode": [ "Contract in dispute", "Inconvenient timing", "Contract in dispute", "Inconvenient timing", "Contract in dispute", "Inconvenient timing" ],
       "noResponse": "Inconvenient timing",
       "noResponseChange": -2
     },
@@ -63,9 +63,9 @@
         "pos",
         "pos"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 1, 0 ],
-      "toNode": [ "Biggest critic", "Maturing audience" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 1, 0, 1, 1, 1, 0 ],
+      "toNode": [ "Biggest critic", "Maturing audience", "Biggest critic", "Biggest critic", "Biggest critic", "Maturing audience" ],
       "noResponse": "Biggest critic",
       "noResponseChange": 1
     },
@@ -76,12 +76,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ -2 ],
-      "toNode": [ "Lost hope" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -6
+      ]
     },
     {
       "name": "Contract in dispute",
@@ -91,9 +86,9 @@
         "neu",
         "neg"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 2, -2 ],
-      "toNode": [ "Self Validation", "Defense mechanism" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 2, -2, 3, 3, 4, -2 ],
+      "toNode": [ "Self Validation", "Defense mechanism", "Self Validation", "Self Validation", "Self Validation", "Defense mechanism" ],
       "noResponse": "Self Validation",
       "noResponseChange": 2
     },
@@ -104,12 +99,7 @@
         "pos",
         "pos",
         "pos"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "New door opens" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
+      ]
     },
     {
       "name": "Biggest critic",
@@ -118,20 +108,6 @@
         "pos",
         "pos",
         "pos"
-      ],
-      "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Preemptive goodbye" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
-    },
-    {
-      "name": "Lost hope",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neg"
       ]
     },
     {
@@ -141,12 +117,7 @@
         "neu",
         "neu",
         "neg"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "No hard feelings" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
+      ]
     },
     {
       "name": "Self Validation",
@@ -155,47 +126,6 @@
         "pos",
         "neu",
         "neg"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Fake confidence" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
-    },
-    {
-      "name": "New door opens",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "Preemptive goodbye",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "No hard feelings",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "neu",
-        "neg"
-      ]
-    },
-	{
-      "name": "Fake confidence",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "neu",
-        "neu"
       ]
     },
     {

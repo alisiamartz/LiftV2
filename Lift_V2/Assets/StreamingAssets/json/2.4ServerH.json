@@ -50,9 +50,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "continue", "confused" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Compromise", "Atmosphere" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Compromise", "Atmosphere", "Compromise", "Atmosphere", "Compromise", "Atmosphere" ],
       "noResponse": "Atmosphere",
       "noResponseChange": 0
     },

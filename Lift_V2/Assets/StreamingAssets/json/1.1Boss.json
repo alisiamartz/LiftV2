@@ -86,9 +86,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes" ],
-      "change": [ 0 ],
-      "toNode": [ "The Guests" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "The Guests", "The Guests", "The Guests", "The Guests", "The Guests", "The Guests" ],
       "noResponse": "The Guests",
       "noResponseChange": 0
     },

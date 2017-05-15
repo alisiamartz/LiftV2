@@ -35,9 +35,9 @@
         "neg",
         "neg"
       ],
-      "listen": [ "yes", "continue", "no" ],
-      "change": [ 0, 0, 0 ],
-      "toNode": [ "Since Birth", "Since Birth", "Voiceless" ],
+      "listen": [ "yes", "continue", "no", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Since Birth", "Since Birth", "Voiceless", "Since Birth", "Since Birth", "Voiceless" ],
       "noResponse": "Voiceless",
       "noResponseChange": 0
     },
@@ -48,12 +48,7 @@
         "neg",
         "neg",
         "neg"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "True friend" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Voiceless",
@@ -62,29 +57,6 @@
         "neg",
         "neg",
         "neg"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Dense" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
-    },
-    {
-      "name": "True friend",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
-    },
-    {
-      "name": "Dense",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
       ]
     },
     {

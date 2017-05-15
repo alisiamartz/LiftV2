@@ -50,9 +50,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "salute", "rude" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Rumors", "Spreading like an infection" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude"],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Rumors", "Rumors", "Rumors", "Rumors", "Rumors", "Spreading like an infection" ],
       "noResponse": "Spreading like an infection",
       "noResponseChange": 0
     },

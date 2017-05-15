@@ -34,9 +34,9 @@
 		"pos",
 		"pos"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 1, -3 ],
-      "toNode": [ "Third Party", "Alone time" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 1, -3, 1, -3, 1, -4 ],
+      "toNode": [ "Third Party", "Alone time", "Third Party", "Alone time", "Third Party", "Alone time" ],
       "noResponse": "Alone time",
       "noResponseChange": -1
     },
@@ -48,9 +48,9 @@
 		"neu",
 		"neg"
       ],
-      "listen": [ "rude", "continue" ],
-      "change": [ -1, -1 ],
-      "toNode": [ "Pervert", "Pervert" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, -1, -1, -2, -2 ],
+      "toNode": [ "Nuisance", "Nuisance", "Pervert", "Pervert", "Pervert", "Pervert" ],
       "noResponse": "Nuisance",
       "noResponseChange": 0
     },
@@ -62,9 +62,9 @@
 		"pos",
 		"pos"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ -12, 1 ],
-      "toNode": [ "Affair", "paranoid" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ -12, 1, 1, 1, 1, 1 ],
+      "toNode": [ "Affair", "paranoid", "paranoid", "paranoid", "paranoid", "paranoid" ],
       "noResponse": "paranoid",
       "noResponseChange": 1
     },
@@ -75,12 +75,7 @@
         "pos",
 		"neu",
 		"neg"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 1 ],
-      "toNode": [ "Mediocre" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -1
+      ]
     },
     {
       "name": "Pervert",
@@ -90,9 +85,9 @@
 		"neu",
 		"neg"
       ],
-      "listen": [ "salute", "rude", "no" ],
-      "change": [ 0, -2, -2 ],
-      "toNode": [ "Alone time", "Envy", "Envy" ],
+      "listen": [ "yes", "salute", "continue", "confused", "rude", "no" ],
+      "change": [ 0, 0, 0, -2, -2, -2 ],
+      "toNode": [ "Alone time", "Alone time", "Alone time", "Envy", "Envy", "Envy" ],
       "noResponse": "Alone time",
       "noResponseChange": 0
     },
@@ -104,9 +99,9 @@
 		"neu",
 		"neg"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 0, -2 ],
-      "toNode": [ "Envy", "Just a Hater" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, -2, -4, -2, -1, -4 ],
+      "toNode": [ "Envy", "Just a Hater", "Just a Hater", "Just a Hater", "Just a Hater", "Just a Hater" ],
       "noResponse": "Just a Hater",
       "noResponseChange": -3
     },
@@ -118,9 +113,9 @@
 		"neg",
 		"neg"
       ],
-      "listen": [ "yes", "no", "confused" ],
-      "change": [ -4, 12, 12 ],
-      "toNode": [ "Breakup", "Second Chance", "Second Chance" ],
+      "listen": [ "yes", "no", "confused", "continue", "salute", "rude" ],
+      "change": [ -4, 12, 12, 12, 12, 12 ],
+      "toNode": [ "Breakup", "Second Chance", "Second Chance", "Second Chance", "Second Chance", "Second Chance" ],
       "noResponse": "Second Chance",
       "noResponseChange": 12
     },
@@ -131,20 +126,6 @@
         "pos",
 		"pos",
 		"pos"
-      ],
-      "listen": [ "out" ],
-      "change": [ 3 ],
-      "toNode": [ "Good Terms" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -1
-    },
-    {
-      "name": "Good Terms",
-      "wait": 60,
-      "dialogue": [
-        "pos",
-		"neu",
-		"neg"
       ]
     },
 	{
@@ -154,12 +135,7 @@
         "neu",
 		"neu",
 		"neg"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 2 ],
-      "toNode": [ "Incompetent" ],
-      "noResponse": "notFloor",
-      "noResponseChange": -2
+      ]
     },
 	{
       "name": "Just a Hater",
@@ -186,24 +162,6 @@
         "pos",
 		"pos",
 		"pos"
-      ]
-    },
-	{
-      "name": "Good Terms",
-      "wait": 40,
-      "dialogue": [
-        "pos",
-		"pos",
-		"pos"
-      ]
-    },
-	{
-      "name": "Incompetent",
-      "wait": 40,
-      "dialogue": [
-        "pos",
-		"neu",
-		"neg"
       ]
     },
     {

@@ -62,20 +62,6 @@
         "pos",
         "pos",
         "pos"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Ideal attendant" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Ideal attendant",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
       ]
     },
     {
@@ -86,9 +72,9 @@
         "neu",
         "neu"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "What now?", "Getting Divorced" ],
+      "listen": [ "yes", "no", "rude", "salute", "confused", "continue" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "What now?", "Getting Divorced", "Getting Divorced", "What now?", "Getting Divorced", "What now?" ],
       "noResponse": "Getting Divorced",
       "noResponseChange": 0
     },
@@ -100,9 +86,9 @@
         "neu",
         "neu"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Confrontations", "When the moment is right" ],
+      "listen": [ "yes", "no", "rude", "salute", "confused", "continue"  ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Confrontations", "When the moment is right", "When the moment is right", "Confrontations", "When the moment is right", "Confrontations" ],
       "noResponse": "When the moment is right",
       "noResponseChange": 0
     },
@@ -125,9 +111,9 @@
         "neu",
         "neu"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Sooner the better", "Private manners" ],
+      "listen": [ "yes", "no", "rude", "salute", "confused", "continue"  ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Sooner the better", "Private manners", "Private manners", "Sooner the better", "Private manners", "Sooner the better" ],
       "noResponse": "Private manners",
       "noResponseChange": 0
     },
@@ -139,9 +125,9 @@
         "neu",
         "neu"
       ],
-	  "listen": [ "yes", "no" ],
-      "change": [ 0 ],
-      "toNode": [ "Split decision", "Run away" ],
+	    "listen": [ "yes", "no", "rude", "salute", "confused", "continue"  ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Split decision", "Run away", "Run away", "Split decision", "Run away", "Split decision", ],
       "noResponse": "Run away",
       "noResponseChange": 0
     },
@@ -152,12 +138,7 @@
         "pos",
         "pos",
         "pos"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Reunited" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Private manners",
@@ -166,12 +147,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Somber goodbye" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Split decision",
@@ -180,12 +156,7 @@
         "neu",
         "neu",
         "neu"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Somber goodbye" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Run away",
@@ -194,38 +165,6 @@
         "neg",
         "neg",
         "neg"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Never looking back" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
-    },
-	{
-      "name": "Reunited",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "Somber goodbye",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
-    },
-	{
-      "name": "Never looking back",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
       ]
     },
     {

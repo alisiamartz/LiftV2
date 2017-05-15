@@ -35,9 +35,9 @@
         "pos",
         "pos"
       ],
-      "listen": [ "yes", "continue", "salute", "no", "confused" ],
-      "change": [ 0, 0, 0, 0, 0 ],
-      "toNode": [ "Childhood dream", "Childhood dream", "Childhood dream", "Startup", "Startup", ],
+      "listen": [ "yes", "continue", "salute", "no", "confused", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Childhood dream", "Childhood dream", "Childhood dream", "Startup", "Startup", "Startup" ],
       "noResponse": "Startup",
       "noResponseChange": 0
     },
@@ -48,12 +48,7 @@
         "pos",
         "pos",
         "pos"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "So close" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Startup",
@@ -62,29 +57,6 @@
         "neu",
         "neu",
         "neu"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Investment" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
-    },
-    {
-      "name": "So close",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-    {
-      "name": "Investment",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
       ]
     },
     {

@@ -34,9 +34,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "salute", "rude" ],
-      "change": [ 1, -1 ],
-      "toNode": [ "Conversation starter", "Jokester" ],
+     "listen": [ "yes", "continue", "salute", "no", "confused", "rude" ],
+      "change": [ 1, 1, 1, -1, -1, -1 ],
+      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Jokester", "Jokester", "Jokester" ],
       "noResponse": "Sign Language",
       "noResponseChange": 0
     },
@@ -85,9 +85,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 1, -1 ],
-      "toNode": [ "Simple response", "Clarification" ],
+     "listen": [ "yes", "continue", "salute", "rude", "no", "confused" ],
+      "change": [ 1, 1, 1, 1, -1, -1 ],
+      "toNode": [ "Simple response", "Simple response", "Simple response", "Simple response", "Clarification", "Clarification" ],
       "noResponse": "Sign Language",
       "noResponseChange": 0
     },
@@ -104,9 +104,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no", "maybe", "confused", "continue", "pat", "salute", "rude" ],
-      "change": [0, 0, 0, 0, 0, 0, 0, 0],
-      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter" ],
+      "listen": [ "yes", "no", "confused", "continue", "salute", "rude" ],
+      "change": [0, 0, 0, 0, 0, 0],
+      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter" ],
       "noResponse": "Awkward encounter",
       "noResponseChange": 0
     },
@@ -123,9 +123,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 1, 1 ],
-      "toNode": [ "Conversation starter", "Conversation starter" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 1, 1, 1, 1, 1, 1 ],
+      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter" ],
       "noResponse": "Awkward encounter",
       "noResponseChange": -1
     },
@@ -142,9 +142,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 1, 1 ],
-      "toNode": [ "Work night", "Work night" ],
+     "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 1, 1, 1, 1, 1, 1 ],
+      "toNode": [ "Work night", "Work night", "Work night", "Work night", "Work night", "Work night" ],
       "noResponse": "Awkward encounter",
       "noResponseChange": -1
     },

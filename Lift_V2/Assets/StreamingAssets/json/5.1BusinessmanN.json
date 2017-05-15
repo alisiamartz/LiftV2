@@ -22,7 +22,7 @@
       "noResponseChange": 0
     },
     {
-      "name": "Long time coming",
+      "name": "Your Choice",
       "wait": 30,
       "dialogue": [
         "bm2.1hA",
@@ -53,9 +53,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "out", "yes", "salute", "continue", "rude", "no", "confused" ],
-      "change": [ 0, 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Does it matter?", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked" ],
+      "listen": [ "yes", "salute", "continue", "rude", "no", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked" ],
       "noResponse": "notFloor",
       "noResponseChange": 0
     },
@@ -71,12 +71,7 @@
         "talk",
         "talk",
         "talk"
-      ],
-      "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Last Day" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Right choice",
@@ -105,9 +100,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "Noble sacrifice", "Blinded by greed" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Noble sacrifice", "Blinded by greed", "Tough choice", "Tough choice", "Noble sacrifice", "Blinded by greed" ],
       "noResponse": "Tough choice",
       "noResponseChange": 0
     },
@@ -124,9 +119,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "salute", "rude" ],
-      "change": [ 0, 0 ],
-      "toNode": [ "workhorse", "resident jerk" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Does it matter?", "Does it matter?", "Does it matter?", "Does it matter?", "workhorse", "resident jerk" ],
       "noResponse": "Does it matter?",
       "noResponseChange": 0
     },
@@ -170,12 +165,7 @@
         "talk",
         "talk",
         "talk"
-      ],
-      "listen": [ "out"],
-      "change": [ 0],
-      "toNode": [ "A new beginning" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "Blinded by greed",
@@ -189,12 +179,7 @@
         "talk",
         "talk",
         "talk"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Gameover" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
 	{
       "name": "Tough choice",
@@ -208,12 +193,7 @@
         "talk",
         "talk",
         "talk"
-      ],
-	  "listen": [ "out" ],
-      "change": [ 0 ],
-      "toNode": [ "Obvious choice" ],
-      "noResponse": "notFloor",
-      "noResponseChange": 0
+      ]
     },
     {
       "name": "workhorse",
@@ -227,7 +207,7 @@
         "talk",
         "talk",
         "talk"
-      ],
+      ]
     },
     {
       "name": "resident jerk",

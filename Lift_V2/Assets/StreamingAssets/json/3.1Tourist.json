@@ -34,9 +34,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "continue", "no", "rude" ],
-      "change": [ 2, 2, -1, -1 ],
-      "toNode": [ "Around the world", "Around the world", "Double checking", "Double checking" ],
+      "listen": [ "yes", "continue", "no", "rude", "confused", "salute" ],
+      "change": [ 2, 2, -1, -1, 2, 2 ],
+      "toNode": [ "Around the world", "Around the world", "Double checking", "Double checking", "Around the world", "Around the world" ],
       "noResponse": "Around the world",
       "noResponseChange": 2
     },
@@ -53,9 +53,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "continue", "no"],
-      "change": [ 1, 1, -1 ],
-      "toNode": [ "Today's agenda", "Today's agenda", "Rambling" ],
+      "listen": [ "yes", "continue", "no", "confused", "salute", "rude" ],
+      "change": [ 1, 1, -1, 1, 1, -1 ],
+      "toNode": [ "Today's agenda", "Today's agenda", "Rambling", "Today's agenda", "Today's agenda", "Rambling" ],
       "noResponse": "Rambling",
       "noResponseChange": -1
     },
@@ -72,9 +72,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "rude", "no"],
-      "change": [ -1, -1, 2 ],
-      "toNode": [ "Pause", "Pause", "Around the world" ],
+      "listen": [ "yes", "rude", "no", "salute", "confused", "continue"],
+      "change": [ -1, -1, 2, 2, 2, 2 ],
+      "toNode": [ "Pause", "Pause", "Around the world", "Around the world", "Around the world", "Around the world" ],
       "noResponse": "Around the world",
       "noResponseChange": 2
     },
@@ -123,9 +123,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no" ],
-      "change": [ 1, -2 ],
-      "toNode": [ "Today's agenda", "Cracking" ],
+      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 1, -2, 1, -3, 1, -4 ],
+      "toNode": [ "Today's agenda", "Cracking", "Today's agenda", "Cracking", "Today's agenda", "Cracking" ],
       "noResponse": "Cracking",
       "noResponseChange": -2
     },
@@ -142,9 +142,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "continue", "confused", "no" ],
-      "change": [ -3, -3, -3, -5, -5 ],
-      "toNode": [ "Divorce", "Divorce", "Divorce", "Silence" ],
+      "listen": [ "yes", "continue", "confused", "no", "salute", "rude" ],
+      "change": [ -3, -3, -3, -5, -5, -5 ],
+      "toNode": [ "Divorce", "Divorce", "Divorce", "Silence", "Silence", "Silence" ],
       "noResponse": "Silence",
       "noResponseChange": -5
     },
