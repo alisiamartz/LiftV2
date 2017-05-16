@@ -117,7 +117,6 @@ public class doorInteraction : MonoBehaviour
                 whichHand = "right";
             }
             var strength = (Mathf.Abs(door.transform.position.y - previousHeight) / (highPoint - initY)) * holdingVibrationMax;
-            Debug.LogWarning(strength);
             Haptic.rumbleController(0.1f, strength, whichHand);
 
         } else {

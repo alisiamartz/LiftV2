@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "bm1.2h",
         "bm1.2h",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "bm1.1h",
         "bm1.1h",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Proposition",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
         "bm2.1h",
         "bm2.1h",
@@ -55,13 +55,13 @@
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 3, -4, -2, -2, -2, -2 ],
-      "toNode": [ "Better Service", "Worker's bias", "Cat got your tongue", "Cat got your tongue", "Cat got your tongue", "Cat got your tongue", ],
+      "toNode": [ "Better Service", "Worker's bias", "Cat got your tongue", "Cat got your tongue", "Cat got your tongue", "Cat got your tongue" ],
       "noResponse": "Cat got your tongue",
       "noResponseChange": -2
     },
     {
       "name": "Better Service",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "bm2.2h",
         "bm2.2h",
@@ -80,7 +80,7 @@
     },
     {
       "name": "Worker's bias",
-      "wait": 26,
+      "wait": 7,
       "dialogue": [
         "bm3.1h",
         "bm3.1n",
@@ -93,13 +93,13 @@
       ],
 	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 1, -1, 1, -1, 1, -1 ],
-      "toNode": [ "Eye for business", "Stubborn pride", "Eye for business", "Stubborn pride", "Eye for business", "Stubborn pride", ],
+      "toNode": [ "Eye for business", "Stubborn pride", "Eye for business", "Stubborn pride", "Eye for business", "Stubborn pride" ],
       "noResponse": "Stubborn pride",
       "noResponseChange": 0
     },
     {
       "name": "Outdated",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "bm3.2h",
         "bm3.2n",
@@ -118,7 +118,7 @@
     },
     {
       "name": "Cat got your tongue",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "bm3.3h",
         "bm3.3h",
@@ -134,7 +134,7 @@
     },
     {
       "name": "Everyone's a critic",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm3.4h",
         "bm3.4n",
@@ -150,7 +150,7 @@
     },
     {
       "name": "New guy",
-      "wait": 12,
+      "wait": 7,
       "dialogue": [
         "bm3.5h",
         "bm3.5n",
@@ -166,7 +166,7 @@
     },
 	{
       "name": "Stubborn pride",
-      "wait": 20,
+      "wait": 7,
       "dialogue": [
         "bm4.1h",
         "bm4.1h",
@@ -182,7 +182,7 @@
     },
 	{
       "name": "Eye for business",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "bm4.2h",
         "bm4.2h",
@@ -198,7 +198,7 @@
     },
 	{
       "name": "Financial mistake",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm5.1h",
         "bm5.1h",
@@ -214,7 +214,7 @@
     },
 	{
       "name": "Business card",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm5.2h",
         "bm5.2n",
@@ -230,7 +230,7 @@
     },
 	{
       "name": "24/7 watch",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm5.3h",
         "bm5.3n",
@@ -246,7 +246,7 @@
     },
 	{
       "name": "Uneventful",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm5.4h",
         "bm5.4n",
@@ -262,7 +262,7 @@
     },
     {
       "name": "End",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "bm6.1h",
         "bm6.1n",
@@ -276,7 +276,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm6.2h",
         "bm6.2n",

@@ -32,6 +32,7 @@ public class StateFetch : MonoBehaviour {
 
 	//Called from AI to tell the player that now is the time for a gesture
 	public void waitingForGesture() {
+        Debug.Log("WAITING FOR A GESTURE");
 		// turn on hand haptic 
 		// play a tiny particle system
 		// TODO: make it good i guess
@@ -41,8 +42,9 @@ public class StateFetch : MonoBehaviour {
 	}
 
 	public void stopWaitingGesture() {
-		// turn off that particle system now!!!!!!! yeah
-		foreach (GameObject g in respondings) {
+        Debug.Log("NO GESTURES PLS");
+        // turn off that particle system now!!!!!!! yeah
+        foreach (GameObject g in respondings) {
 			g.GetComponent<ParticleSystem> ().Stop ();
 		}
 	}
