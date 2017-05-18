@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm1.1h",
+        "bm1.1n",
+        "bm1.1a"
       ],
       "noResponse": "Start1",
       "noResponseChange": 0
@@ -20,9 +20,9 @@
       "name": "Start1",
       "wait": 15,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "bm1.2h",
+        "bm1.2n",
+        "bm1.2a"
       ],
       "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
       "change": [ 1, 1, 1, -1, -1, 0 ],
@@ -34,9 +34,9 @@
       "name": "Home Value",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm2.1h",
+        "bm2.1n",
+        "bm2.1a"
       ],
       "listen": [ "yes", "no", "rude", "confused", "salute", "continue" ],
       "change": [ 1, -1, -1, 0, 1, 1 ],
@@ -48,36 +48,36 @@
       "name": "One Sided",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm2.2h",
+        "bm2.2n",
+        "bm2.2a"
       ]
     },
     {
       "name": "No Regrets",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm2.3h",
+        "bm2.3n",
+        "bm2.3a"
       ]
     },
     {
       "name": "Parasites",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm3.1h",
+        "bm3.1n",
+        "bm3.1a"
       ]
     },
     {
       "name": "Hard workers",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm3.2h",
+        "bm3.2n",
+        "bm3.2a"
       ],
       "listen": [ "yes", "no", "confused", "continue", "salute", "rude" ],
       "change": [ 1, -1, 0, 1, 1, -1 ],
@@ -89,90 +89,81 @@
       "name": "Missed opportunity",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
-      ]
-    },
-    {
-      "name": "Paradox",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm3.3h",
+        "bm3.3n",
+        "bm3.3a"
       ]
     },
     {
       "name": "Diamond in the rough",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm4.1h",
+        "bm4.1n",
+        "bm4.1a"
       ]
     },
     {
       "name": "Cutthroat",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm4.2h",
+        "bm4.2n",
+        "bm4.2a"
       ]
     },
     {
       "name": "Server",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm5.1h",
+        "bm5.1n",
+        "bm5.1a"
       ]
     },
     {
-      "name": "Artist",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "neu",
-        "neg"
-      ]
-    },
-	{
       "name": "Other",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm5.2h",
+        "bm5.2n",
+        "bm5.2a"
+      ]
+    },
+	{
+      "name": "Artist",
+      "wait": 30,
+      "dialogue": [
+        "bm5.3h",
+        "bm5.3n",
+        "bm5.3a"
       ]
     },
 	{
       "name": "Perfect for the business",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm5.4h",
+        "bm5.4n",
+        "bm5.4a"
       ]
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm6.1h",
+        "bm6.1n",
+        "bm6.1a"
       ]
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "bm6.2h",
+        "bm6.2n",
+        "bm6.2a"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3
