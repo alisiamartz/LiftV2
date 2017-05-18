@@ -82,7 +82,7 @@ public class BusinessDay4AI : Agent {
             else currentNode = nodeDict[wrong];
             isPlayed = false;
         }
-        else if (timer > 0) isPlayed = false;
+        else if (timer <= 0) isPlayed = false;
     }
 
     private void leaveElevator() {
@@ -93,6 +93,7 @@ public class BusinessDay4AI : Agent {
         }
     }
 
+    /*
     private node getNode() {
         //returns correct state node (onNode without tracking)
         switch (state) {
@@ -107,6 +108,7 @@ public class BusinessDay4AI : Agent {
                 return null;
         }
     }
+    */
 
     private void say() {
 
@@ -114,7 +116,7 @@ public class BusinessDay4AI : Agent {
         if (isPlayed) return;
 
         //get correct dialoge to play (depending on state)
-        node n = getNode();
+        node n = currentNode;
 
         //get modd index
         int index = 1; //neu
