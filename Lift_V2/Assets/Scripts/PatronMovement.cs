@@ -27,6 +27,11 @@ public class PatronMovement : MonoBehaviour {
     public bool waiting = false;
     public string state = "";
 
+    [Header("Footsteps")]
+    public string footstepSound;
+    public float footstepGap;
+    private float footstepTimer;
+
 	Animator anim;
 
     //TIMER
@@ -66,6 +71,13 @@ public class PatronMovement : MonoBehaviour {
 
             float step = walkSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.transform.position, step);
+
+            //Make footstep noise
+            footstepTimer += Time.deltaTime;
+            if(footstepTimer >= footstepGap) {
+                footstepSound.PlaySound(transform.position);
+                footstepTimer = 0;
+            }
 
             if (transform.position == targetWaypoint.transform.position)
             {
