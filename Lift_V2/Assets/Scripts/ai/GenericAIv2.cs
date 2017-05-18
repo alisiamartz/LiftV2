@@ -19,7 +19,6 @@ public class GenericAIv2 : Agent {
         isExit = false;
         timer = currentNode.wait;
         patTimer = attributes.patience;
-        gestureTimer = 0;
     }
 	
 	// Update is called once per frame
@@ -136,7 +135,7 @@ public class GenericAIv2 : Agent {
                     currentNode = nodeDict[n.toNode[index]];
                     isUpdate = true;
                 } else if (timer <= 0) {
-                    changeMood(onNode.noResponseChange);
+                    changeMood(n.noResponseChange);
                     currentNode = nodeDict[n.noResponse];
                     isUpdate = true;
                 } break;

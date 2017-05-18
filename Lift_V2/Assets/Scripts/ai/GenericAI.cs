@@ -14,7 +14,6 @@ public class GenericAI : Agent {
         isExit = false;
         timer = currentNode.wait;
         patTimer = attributes.patience;
-        gestureTimer = 0;
         Build();
     }
 
