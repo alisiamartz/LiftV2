@@ -40,7 +40,6 @@ public abstract class Agent : MonoBehaviour {
     private bool isSetMood = false;
     private short mood;
     protected bool isWaitingForGesture;
-    protected float gestureTimer;
     protected PatronAudio pa;
 
     //useful stuff
