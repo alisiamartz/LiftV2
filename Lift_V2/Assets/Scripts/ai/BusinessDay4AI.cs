@@ -15,10 +15,33 @@ public class BusinessDay4AI : Agent {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (timer > 0 && isEntered) timer -= Time.deltaTime;
+
+        if (!isEntered) {
+            if (enter()) {
+                isEntered = true;
+            }
+        } else if (!isStart) {
+            say();
+            if (!isDoorOpen()) {
+                currentNode = nodeDict["Start1"];
+                isStart = true;
+            } else if (timer <= 0) {
+                isPlayed = false;
+            }
+        } else if (!isSetup) {
+            if (timer < nodeDict["Start"].wait) {
+                isPlayed = false;
+                isSetup = true;
+            }
+        }
+        else doState();
 	}
 
     //declarations
+    private bool isEntered = false;
+    private bool isStart = false;
+    private bool isSetup = false;
     private bool isPlayed = false;
 
     private void doState() {
@@ -37,24 +60,21 @@ public class BusinessDay4AI : Agent {
         string gesture = getGesture();
 
         switch (currentNode.name) {
-            case "Start": case "Home Value": case "Hard workers":
+            case "Start1": case "Home Value": case "Hard workers":
                 normal(n, gesture);
                 break;
-            case "Bad impressions": case "Missed opportunity": case "Paradox": case "Point taken":
-            case "Perfect for the business": case "Last chance": case "Room for one more": case "Questionable decision":
+            case "Missed opportunity": case "Perfect for the business":
+            case "notFloor": case "Server": case "Artist": case "Other":
                 leaveElevator();
                 break;
-            case "No Regrets": case "One Sided":
-                waitForFloor("Missed opportunity", "Bad impressions");
-                break;
-            case "Parasites":
-                waitForFloor("Paradox", "Point taken");
+            case "No Regrets": case "One Sided": case "Parasites":
+                waitForFloor("Missed opportunity", "notFloor");
                 break;
             case "Cutthroat":
-                waitForFloor("Perfect for the business", "Last chance");
+                waitForFloor("Perfect for the business", "notFloor");
                 break;
             case "Diamond in the rough":
-                waitForFloor("Room for one more", "Questionable decision");
+                pickFloor();
                 break;
             default:
                 break;
@@ -87,28 +107,22 @@ public class BusinessDay4AI : Agent {
 
     private void leaveElevator() {
         if (!isExit) {
+            stopTalking();
             exit();
             (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).setMood(name, attributes.mood);
             isExit = true;
         }
     }
-
-    /*
-    private node getNode() {
-        //returns correct state node (onNode without tracking)
-        switch (state) {
-            case 0:
-                return currentNode;
-            case 1:
-                return notFloorNode;
-            case 2:
-                return endNode;
-            default:
-                Debug.LogError("state out of range: " + state);
-                return null;
-        }
+    
+    private void pickFloor() {
+        if (isDoorOpen()) {
+            int i = getFloorNumber();
+            if (i == 6) currentNode = nodeDict["Server"];
+            else if (i == 2) currentNode = nodeDict["Artist"];
+            else currentNode = nodeDict["Other"];
+            isPlayed = false;
+        } else if (timer <= 0) isPlayed = false;
     }
-    */
 
     private void say() {
 

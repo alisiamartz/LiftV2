@@ -42,7 +42,7 @@ public class Patrons {
 
         if (patronName == "Business2") return new Patron(prefab, 2);
 
-        if (patronName == "Business3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Business3") return new Patron(prefab, 3);
 
         if (patronName == "Tourist1") return new Patron(prefab, 1);
 
@@ -130,7 +130,11 @@ public class Patrons {
         else if (patronName == "Business3")
         {
             //Hard coded interaction
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<BusinessDay4AI>();
+            patronObject.GetComponent<BusinessDay4AI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
+
+            patronObject.GetComponent<PatronAudio>().patronName = "BusinessMan";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day4";
         }
 
         else if (patronName == "Business4") {

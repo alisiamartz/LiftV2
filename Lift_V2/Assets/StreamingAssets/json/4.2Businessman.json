@@ -10,19 +10,29 @@
       "wait": 15,
       "dialogue": [
         "bm1.1h",
-        "bm1.1n",
-        "bm1.1a"
+        "bm1.1h",
+        "bm1.1h"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Start1",
       "noResponseChange": 0
     },
     {
       "name": "Start1",
-      "wait": 15,
+      "wait": 5,
       "dialogue": [
         "bm1.2h",
         "bm1.2n",
         "bm1.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
       "change": [ 1, 1, 1, -1, -1, 0 ],
@@ -32,11 +42,16 @@
     },
     {
       "name": "Home Value",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm2.1h",
         "bm2.1n",
         "bm2.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "rude", "confused", "salute", "continue" ],
       "change": [ 1, -1, -1, 0, 1, 1 ],
@@ -46,38 +61,58 @@
     },
     {
       "name": "One Sided",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm2.2h",
         "bm2.2n",
         "bm2.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "No Regrets",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm2.3h",
         "bm2.3n",
         "bm2.3a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "Parasites",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm3.1h",
         "bm3.1n",
         "bm3.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "Hard workers",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm3.2h",
         "bm3.2n",
         "bm3.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "confused", "continue", "salute", "rude" ],
       "change": [ 1, -1, 0, 1, 1, -1 ],
@@ -87,65 +122,100 @@
     },
     {
       "name": "Missed opportunity",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm3.3h",
         "bm3.3n",
         "bm3.3a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
       "name": "Diamond in the rough",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm4.1h",
         "bm4.1n",
         "bm4.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "Cutthroat",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm4.2h",
         "bm4.2n",
         "bm4.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "Server",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm5.1h",
         "bm5.1n",
         "bm5.1a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
       "name": "Other",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm5.2h",
         "bm5.2n",
         "bm5.2a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
 	{
       "name": "Artist",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm5.3h",
         "bm5.3n",
         "bm5.3a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
 	{
       "name": "Perfect for the business",
-      "wait": 30,
+      "wait": 5,
       "dialogue": [
         "bm5.4h",
         "bm5.4n",
         "bm5.4a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
@@ -155,6 +225,11 @@
         "bm6.1h",
         "bm6.1n",
         "bm6.1a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
@@ -164,6 +239,11 @@
         "bm6.2h",
         "bm6.2n",
         "bm6.2a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3
