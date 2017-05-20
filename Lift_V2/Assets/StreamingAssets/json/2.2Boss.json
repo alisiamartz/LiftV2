@@ -36,7 +36,7 @@
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 2, 2, 2, 2, 2, 2 ],
-      "toNode": [ "Important meeting", "Important meeting", "Important meeting", "Important meeting", "Important meeting", "Important meeting", ],
+      "toNode": [ "Important meeting", "Important meeting", "Important meeting", "Important meeting", "Important meeting", "Important meeting" ],
       "noResponse": "Cold feet",
       "noResponseChange": -2
     },

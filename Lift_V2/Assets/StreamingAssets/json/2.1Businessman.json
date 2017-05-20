@@ -2,7 +2,7 @@
   "agentAttr": {
     "mood": 0,
     "goal": 2,
-    "patience": 15
+    "patience": 14
   },
   "nodes": [
     {
@@ -30,9 +30,9 @@
         "bm1.1h"
       ],
       "animation": [
-        "",
-        "",
-        ""
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "continue", "salute", "confused", "rude", "no" ],
       "change": [ 2, 2, 2, -2, -2, -2 ],
@@ -130,7 +130,7 @@
         "talk"
       ],
       "noResponse": "Uneventful",
-      "noResponseChange": -1
+      "noResponseChange": 0
     },
     {
       "name": "Everyone's a critic",
@@ -146,7 +146,7 @@
         "talk"
       ],
       "noResponse": "Everyone's a critic",
-      "noResponseChange": -1
+      "noResponseChange": 0
     },
     {
       "name": "New guy",
@@ -162,7 +162,7 @@
         "talk"
       ],
       "noResponse": "New guy",
-      "noResponseChange": -1
+      "noResponseChange": 0
     },
 	{
       "name": "Stubborn pride",
@@ -178,7 +178,7 @@
         "talk"
       ],
       "noResponse": "Financial mistake",
-      "noResponseChange": -1
+      "noResponseChange": 0
     },
 	{
       "name": "Eye for business",
@@ -194,7 +194,7 @@
         "talk"
       ],
       "noResponse": "Business card",
-      "noResponseChange": -1
+      "noResponseChange": 0
     },
 	{
       "name": "Financial mistake",
@@ -210,7 +210,7 @@
         "talk"
       ],
       "noResponse": "Financial mistake",
-      "noResponseChange": -1
+      "noResponseChange": 0
     },
 	{
       "name": "Business card",
@@ -226,7 +226,7 @@
         "talk"
       ],
       "noResponse": "Business card",
-      "noResponseChange": 2
+      "noResponseChange": 0
     },
 	{
       "name": "24/7 watch",
@@ -242,7 +242,7 @@
         "talk"
       ],
       "noResponse": "24/7 watch",
-      "noResponseChange": -1
+      "noResponseChange": 0
     },
 	{
       "name": "Uneventful",
@@ -258,7 +258,7 @@
         "talk"
       ],
       "noResponse": "24/7 watch",
-      "noResponseChange": -1
+      "noResponseChange": 0
     },
     {
       "name": "End",

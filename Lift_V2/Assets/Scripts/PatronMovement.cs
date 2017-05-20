@@ -214,14 +214,15 @@ public class PatronMovement : MonoBehaviour {
         rotateTarget = playerHead;
         rotating = true;
     }
+
     public void turnTowardsWaypoint(GameObject waypoint)
     {
         rotateTarget = waypoint;
         rotating = true;
     }
 
-    public void talk() {
-        timer = 10;
+    public void talk(float time) {
+        timer = time;
         anim.SetBool("talking", true);
     }
     

@@ -34,7 +34,7 @@ public abstract class Agent : MonoBehaviour {
     protected FloorManager fm;
     protected bool isExit;
     protected string lastSound;
-    protected bool isEndNode;
+    public bool isEndNode;
     protected StateFetch sf;
     protected float patTimer;
     private bool isSetMood = false;
@@ -51,12 +51,20 @@ public abstract class Agent : MonoBehaviour {
     protected int getFloorNumber() { return fm.floorPos; }
     protected bool isNearLever() { return sf.nearLever(); }
     protected bool isNearDoor() { return sf.nearDoor(); }
-    protected void animate(string s) { if (s != "") pm.Invoke(s, 0); }
     protected void stopTalking() { pm.stopTalking(); }
     protected void startGesture() { sf.waitingForGesture(); }
     protected void stopGestures() { sf.stopWaitingGesture(); }
     protected void moodParticles(int i) { pm.moodChanged(i); }
     protected void playDialogue(string s) { pa.playDialogue(s); }
+
+    //animation
+    protected void animate(string s, float time = -1) {
+        if (timer > 0) {
+            pm.talk(time);
+        } else if (s != "") {
+            pm.Invoke(s, 0);
+        }
+    }
     
     protected virtual void Init()
     {

@@ -155,28 +155,38 @@ public class Boss1AI : Agent {
     }
 
     private void say() {
+
+        //do not play if dialog already played
         if (isPlayed) return;
 
+        //get correct dialoge to play (depending on state)
+        node n = currentNode;
+
+        //get mood index
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
 
-        //text
-        //bubble.text = currentNode.dialogue[index];
+        //get sound file
+        string dialogue = n.dialogue[index];
 
-        string dialogue = currentNode.dialogue[index];
+        //play sound
+        playDialogue(dialogue);
 
-        //animation
-        if (currentNode.name != "End") animate(currentNode.animation[index]);
+        //sets up the timer for the next node
+        float audioTime = GetComponent<PatronAudio>().patronMouth.clip.length;
+        timer = audioTime + n.wait;
 
-        GameObject myObject = GameObject.Find("_SFX_" + lastSound);
-        if (myObject != null) myObject.GetComponent<SoundGroup>().pingSound();
-        //dialogue.PlaySound(transform.position);
-        pa.playDialogue(dialogue);
+        //talking animation
+        animate(n.animation[index], audioTime);
 
-        //float test = GameObject.Find("_SFX_" + dialogue).GetComponent<AudioClip>().length;
+        //text bubble
+        bubble.text = n.dialogue[index];
+
+        //update lastSound
         lastSound = dialogue;
 
+        //update isPlayed
         isPlayed = true;
     }
 }

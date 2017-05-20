@@ -88,7 +88,7 @@ public class GenericAIv2 : Agent {
     }
 
     private void updateState() {
-        isPlayed = false;
+        if (!isEndNode || state != 0) isPlayed = false;
         switch (state) {
             case 0:
                 if (isDoorOpen() && getFloorNumber() != attributes.goal) state = 1;
@@ -121,7 +121,7 @@ public class GenericAIv2 : Agent {
             return;
         }
 
-        startGesture(); //for hand stuff
+        if (!isEndNode || state != 0) startGesture(); //for hand stuff
 
         //get gesture
         string gesture = getGesture();
@@ -138,7 +138,9 @@ public class GenericAIv2 : Agent {
                     changeMood(n.noResponseChange);
                     currentNode = nodeDict[n.noResponse];
                     isUpdate = true;
-                } break;
+                } 
+                if (n.listen.Count < 1 && n.noResponse == n.name && n.name != notFloorNode.name) isEndNode = true;
+                break;
             case 1:
                 if (attributes.mood < -3) attributes.patience -= Time.deltaTime;
                 if (timer <= 0) {
@@ -147,7 +149,6 @@ public class GenericAIv2 : Agent {
                 } break;
             case 2:
                 if (!isExit) {
-                    stopTalking();
                     exit();
                     (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).setMood(name, attributes.mood);
                     isExit = true;
@@ -181,35 +182,26 @@ public class GenericAIv2 : Agent {
         //get correct dialoge to play (depending on state)
         node n = getNode();
 
-        //get modd index
+        //get mood index
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
 
-        //talking animation
-        animate(n.animation[index]);
-
-        //text bubble
-        bubble.text = n.dialogue[index];
-
-        //sound file
+        //get sound file
         string dialogue = n.dialogue[index];
-
-        //stop sounds - should only be called on the start to start1 nodes or not at all
-        GameObject soundObject = GameObject.Find("_SFX_" + lastSound);
-        if (soundObject != null) soundObject.GetComponent<SoundGroup>().pingSound();
 
         //play sound
         playDialogue(dialogue);
 
-        //add delay?
-        float i = 1;
-        float total = 0;
-        while (total < i) total += Time.deltaTime;
-
         //sets up the timer for the next node
         float audioTime = GetComponent<PatronAudio>().patronMouth.clip.length;
-        timer = audioTime + n.wait;;
+        timer = audioTime + n.wait;
+
+        //talking animation
+        animate(n.animation[index], audioTime);
+
+        //text bubble
+        bubble.text = n.dialogue[index];
 
         //update lastSound
         lastSound = dialogue;
