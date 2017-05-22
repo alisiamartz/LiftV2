@@ -9,20 +9,14 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "art2.1n",
+        "art2.1n",
+        "art2.1a"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 15,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+      "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Validation",
       "noResponseChange": 0
@@ -31,9 +25,14 @@
       "name": "On the right path",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "art2.3h",
+        "art2.3h",
+        "art2.3h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "continue", "no", "confused", "salute", "rude" ],
       "change": [ 1, 1, -4, 1, 1, -4 ],
@@ -45,9 +44,14 @@
       "name": "Validation",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neg"
+        "art2.2n",
+        "art2.2n",
+        "art2.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 2, -2, 2, -2, 3, -2 ],
@@ -59,9 +63,14 @@
       "name": "Peaked",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "art3.3h",
+        "art3.3h",
+        "art3.3h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 1, 0, 1, 1, 1, 0 ],
@@ -73,18 +82,28 @@
       "name": "Inconvenient timing",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "art3.2h",
+        "art3.2h",
+        "art3.2h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+     ],
+      "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
+      "change": [ -2, -2, -2, -6, -6, -6 ],
+      "toNode": [ "No Respect", "No Respect", "No Respect", "Lost Hope", "Lost Hope", "Lost Hope" ],
+      "noResponse": "Lost Hope",
+      "noResponseChange": -6
     },
     {
       "name": "Contract in dispute",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "art3.1h",
+        "art3.1n",
+        "art3.1a"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 2, -2, 3, 3, 4, -2 ],
@@ -96,54 +115,259 @@
       "name": "Maturing audience",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
+        "art4.6h",
+        "art4.6h",
+        "art4.6h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "New Door Opens", "New Door Opens", "New Door Opens", "Stuck on Technicalities", "Stuck on Technicalities", "Stuck on Technicalities" ],
+      "noResponse": "Stuck on Technicalities",
+      "noResponseChange": -2
     },
     {
       "name": "Biggest critic",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
+        "art4.5h",
+        "art4.5h",
+        "art4.5h"
+      ],
+      "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "Preemptive Goodbye", "Preemptive Goodbye", "Preemptive Goodbye", "Being Grateful", "Being Grateful", "Being Grateful" ],
+      "noResponse": "Being Grateful",
+      "noResponseChange": -2
     },
     {
       "name": "Defense mechanism",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neg"
-      ]
+        "art4.2h",
+        "art4.2h",
+        "art4.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "No Hard Feelings", "No Hard Feelings", "No Hard Feelings", "Being Ungrateful", "Being Ungrateful", "Being Ungrateful" ],
+      "noResponse": "Being Ungrateful",
+      "noResponseChange": -2
     },
     {
       "name": "Self Validation",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
-      ]
+        "art4.1h",
+        "art4.1n",
+        "art4.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "Fake Confidence", "Fake Confidence", "Fake Confidence", "Fake Smile", "Fake Smile", "Fake Smile" ],
+      "noResponse": "Fake Smile",
+      "noResponseChange": -2
+    },
+	 {
+      "name": "No Respect",
+      "wait": 30,
+      "dialogue": [
+        "art4.3h",
+        "art4.3h",
+        "art4.3h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "No Respect",
+      "noResponseChange": 0
+    },
+	 {
+      "name": "Lost Hope",
+      "wait": 30,
+      "dialogue": [
+        "art4.4h",
+        "art4.4h",
+        "art4.4a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Lost Hope",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Fake Confidence",
+      "wait": 30,
+      "dialogue": [
+        "art5.1h",
+        "art5.1n",
+        "art5.1n"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Fake Confidence",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Fake Smile",
+      "wait": 30,
+      "dialogue": [
+        "art5.2h",
+        "art5.2n",
+        "art5.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Fake Smile",
+      "noResponseChange": 0
+    },
+	{
+      "name": "No Hard Feelings",
+      "wait": 30,
+      "dialogue": [
+        "art5.3h",
+        "art5.3n",
+        "art5.3a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "No Hard Feelings",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Being Ungrateful",
+      "wait": 30,
+      "dialogue": [
+        "art5.4h",
+        "art5.4h",
+        "art5.4a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Being Ungrateful",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Preemptive Goodbye",
+      "wait": 30,
+      "dialogue": [
+        "art5.5h",
+        "art5.5h",
+        "art5.5h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Preemptive Goodbye",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Being Grateful",
+      "wait": 30,
+      "dialogue": [
+        "art5.6h",
+        "art5.6h",
+        "art5.6h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Being Grateful",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Stuck on Technicalities",
+      "wait": 30,
+      "dialogue": [
+        "art5.7h",
+        "art5.7h",
+        "art5.7h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Stuck on Technicalities",
+      "noResponseChange": 0
+    },
+	{
+      "name": "New Door Opens",
+      "wait": 30,
+      "dialogue": [
+        "art5.8h",
+        "art5.8h",
+        "art5.8h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "New Door Opens",
+      "noResponseChange": 0
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "art6.1h",
+        "art6.1n",
+        "art6.1a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "art6.2h",
+        "art6.2n",
+        "art6.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

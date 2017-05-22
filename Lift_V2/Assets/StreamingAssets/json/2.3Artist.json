@@ -9,9 +9,14 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "art1.1h",
+        "art1.1h",
+        "art1.1h"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Start1",
       "noResponseChange": 0
@@ -20,9 +25,14 @@
       "name": "Start1",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "art1.2h",
+        "art1.2h",
+        "art1.2h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 2, -3, 2, -3, 2, -3 ],
@@ -34,9 +44,14 @@
       "name": "Hotel's artist",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "art2.1h",
+        "art2.1h",
+        "art2.1h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 4, -3, 4, 4, 4, 3 ],
@@ -48,9 +63,14 @@
       "name": "Critics and haters alike",
       "wait": 30,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "art2.2h",
+        "art2.2h",
+        "art2.2h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ -2, 4, -1, 4, 4, -3 ],
@@ -62,48 +82,184 @@
       "name": "Fan favorite",
       "wait": 30,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
+        "art3.1h",
+        "art3.1h",
+        "art3.1h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "Lifted Spirit", "Lifted Spirit", "Lifted Spirit", "New Inspiration", "New Inspiration", "New Inspiration" ],
+      "noResponse": "New Inspiration",
+      "noResponseChange": -2
     },
     {
       "name": "Tasteless",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neg"
-      ]
+        "art3.2h",
+        "art3.2h",
+        "art3.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "Blue Season", "Blue Season", "Blue Season", "Lost Appreciation", "Lost Appreciation", "Lost Appreciation" ],
+      "noResponse": "Lost Appreciation",
+      "noResponseChange": -2
     },
     {
       "name": "Past one's prime",
       "wait": 30,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "art3.3h",
+        "art3.3h",
+        "art3.3h"
+     ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "Glory Days", "Glory Days", "Glory Days", "Rock Bottom", "Rock Bottom", "Rock Bottom" ],
+      "noResponse": "Rock Bottom",
+      "noResponseChange": -2
+    },
+	{
+      "name": "Lifted Spirit",
+      "wait": 0,
+      "dialogue": [
+        "art4.1h",
+        "art4.1h",
+        "art4.1h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Lifted Spirit",
+      "noResponseChange": 0
+    },
+	{
+      "name": "New Inspiration",
+      "wait": 0,
+      "dialogue": [
+        "art4.2h",
+        "art4.2h",
+        "art4.2h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "New Inspiration",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Blue Season",
+      "wait": 0,
+      "dialogue": [
+        "art4.3h",
+        "art4.3h",
+        "art4.3a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Blue Season",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Lost Appreciation",
+      "wait": 0,
+      "dialogue": [
+        "art4.4h",
+        "art4.4h",
+        "art4.4h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Lost Appreciation",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Glory Days",
+      "wait": 0,
+      "dialogue": [
+        "art4.5h",
+        "art4.5h",
+        "art4.5h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Glory Days",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Rock Bottom",
+      "wait": 0,
+      "dialogue": [
+        "art4.6h",
+        "art4.6h",
+        "art4.6h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Rock Bottom",
+      "noResponseChange": 0
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "art5.1h",
+        "art5.1n",
+        "art5.1a"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "art5.2h",
+        "art5.2n",
+        "art5.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
-      "noResponseChange": -3
+      "noResponseChange": -2
     }
   ]
 }
