@@ -121,7 +121,7 @@ public class GenericAIv2 : Agent {
             return;
         }
 
-        if (!isEndNode || state != 0) startGesture(); //for hand stuff
+        if (n.listen.Count > 0) startGesture(); //for hand stuff
 
         //get gesture
         string gesture = getGesture();
@@ -160,7 +160,7 @@ public class GenericAIv2 : Agent {
     }
 
     private node getNode() {
-        //returns correct state node (onNode without tracking)
+        //returns correct state node (onNode without storing)
         switch (state) {
             case 0:
                 return currentNode;
@@ -175,7 +175,6 @@ public class GenericAIv2 : Agent {
     }
 
     private void say() {
-
         //do not play if dialog already played
         if (isPlayed) return;
 

@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 15,
+      "wait": 3,
       "dialogue": [
         "boss1.1h",
         "boss1.1h",
@@ -24,7 +24,7 @@
     },
     {
       "name": "Still waiting",
-      "wait": 15,
+      "wait": 10,
       "dialogue": [
         "boss1.2h",
         "boss1.2h",
@@ -41,7 +41,7 @@
     },
     {
       "name": "First order",
-      "wait": 10,
+      "wait": 15,
       "dialogue": [
         "boss2.1h",
         "boss2.1h",
@@ -124,7 +124,7 @@
       "noResponse": "Good start",
       "noResponseChange": 0
     },
-	{
+    {
       "name": "Good start",
       "wait": 8,
       "dialogue": [
@@ -138,6 +138,22 @@
         "talk"
       ],
       "noResponse": "End",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Extra",
+      "wait": 10,
+      "dialogue": [
+        "boss4.3h",
+        "boss4.3h",
+        "boss4.3h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Extra",
       "noResponseChange": 0
     },
     {

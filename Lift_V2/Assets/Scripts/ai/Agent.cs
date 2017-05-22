@@ -18,7 +18,7 @@ public abstract class Agent : MonoBehaviour {
 
     //node data
     [SerializeField]
-    protected node onNode; //experimental: does not affect other scripts
+    protected node onNode; //only used in GenericAIv1 NOT v2
     [SerializeField]
     protected node currentNode;
     protected node notFloorNode;
@@ -51,7 +51,7 @@ public abstract class Agent : MonoBehaviour {
     protected int getFloorNumber() { return fm.floorPos; }
     protected bool isNearLever() { return sf.nearLever(); }
     protected bool isNearDoor() { return sf.nearDoor(); }
-    protected void stopTalking() { pm.stopTalking(); }
+    protected void stopTalking() { pm.stopTalking(); } //is needed?
     protected void startGesture() { sf.waitingForGesture(); }
     protected void stopGestures() { sf.stopWaitingGesture(); }
     protected void moodParticles(int i) { pm.moodChanged(i); }
@@ -95,21 +95,6 @@ public abstract class Agent : MonoBehaviour {
         if (isSetMood) attributes.mood = mood;
     }
 
-
-    /*
-    
-    //LEGACY
-     
-    isStarted = false;
-    isExit = false;
-    timer = nodeDict["Start"].wait;
-    patience = nodeDict["notFloor"].wait;
-    notFloorNode = nodeDict["notFloor"];
-    endNode = nodeDict["End"];
-    graceTimer = 10; //seconds grace time before telling you that you are in the wrong floor
-    isEndNode = false;
-    */
-
     //decorative stuff
     protected delegate bool decorative();
 
@@ -132,27 +117,6 @@ public abstract class Agent : MonoBehaviour {
     }
 
     //agent util
-    protected virtual void say(node n)
-    {
-        int index = 1; //neu
-        if (attributes.mood < -3) index = 2; //neg
-        else if (attributes.mood > 3) index = 0; //pos
-        bubble.text = n.dialogue[index];
-
-        string dialogue = n.dialogue[index];
-
-        if (isEndNode && !(n == endNode || n== notFloorNode)) return;
-
-        if (n.name == n.noResponse && n != notFloorNode) isEndNode = true;
-
-        if (lastSound != dialogue)
-        {
-            GameObject myObject = GameObject.Find("_SFX_" + lastSound);
-            if (myObject != null) myObject.GetComponent<SoundGroup>().pingSound();
-            dialogue.PlaySound(transform.position);
-            lastSound = dialogue;
-        }
-    }
 
     protected void changeMood(short i)
     {
