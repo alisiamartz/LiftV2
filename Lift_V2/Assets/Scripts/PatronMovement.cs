@@ -232,7 +232,29 @@ public class PatronMovement : MonoBehaviour {
 
     //Called from AI whenever the mood is changed i indicates by how much
     public void moodChanged(int i) {
-
+        Debug.Log("Mood Changed by: " + i);
+        if(i < 0) {
+            //Play Angry Animation
+            transform.Find("AngryParticle").gameObject.SetActive(true);
+            StartCoroutine(StopParticle(3, "AngryParticle"));
+        }
+        else if(i > 0) {
+            //Play Happy Animation
+            transform.Find("HappyParticle").gameObject.SetActive(true);
+            StartCoroutine(StopParticle(3, "HappyParticle"));
+        }
+        else {
+            //Play Confused Animation
+            transform.Find("ConfuseParticle").gameObject.SetActive(true);
+            StartCoroutine(StopParticle(3, "ConfusionParticle"));
+        }
     }
-		
+
+    IEnumerator StopParticle(float time, string ParticleName) {
+        yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+        transform.Find(ParticleName).gameObject.SetActive(false);
+    }
+
 }
