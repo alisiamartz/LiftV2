@@ -35,10 +35,10 @@
         "talk"
       ],
       "listen": [ "yes", "continue", "no", "rude", "confused", "salute" ],
-      "change": [ 2, 2, -1, -1, 2, 2 ],
-      "toNode": [ "Around the world", "Around the world", "Double checking", "Double checking", "Around the world", "Around the world" ],
-      "noResponse": "Around the world",
-      "noResponseChange": 2
+      "change": [ 2, 0, -1, 0, 0, 0 ],
+      "toNode": [ "Around the world", "Another lesson", "Double checking", "Another lesson", "Another lesson", "Another lesson" ],
+      "noResponse": "Another lesson",
+      "noResponseChange": 0
     },
     {
       "name": "Around the world",
@@ -53,9 +53,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "continue", "no", "confused", "salute", "rude" ],
-      "change": [ 1, 1, -1, 1, 1, -1 ],
-      "toNode": [ "Today's agenda", "Today's agenda", "Rambling", "Today's agenda", "Today's agenda", "Rambling" ],
+      "listen": [ "yes", "continue", "salute", "no", "rude", "confused"],
+      "change": [ 1, 1, 1, -1, -1, -1 ],
+      "toNode": [ "Today's agenda", "Today's agenda", "Today's agenda", "Rambling", "Rambling", "Rambling" ],
       "noResponse": "Rambling",
       "noResponseChange": -1
     },
@@ -72,11 +72,31 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "rude", "no", "salute", "confused", "continue"],
-      "change": [ -1, -1, 2, 2, 2, 2 ],
-      "toNode": [ "Pause", "Pause", "Around the world", "Around the world", "Around the world", "Around the world" ],
+      "listen": [ "yes", "rude", "confused", "continue", "salute", "no"],
+      "change": [ -1, -1, -1, 2, 2, 2 ],
+      "toNode": [ "Pause", "Pause", "Pause", "Around the world", "Around the world", "Around the world" ],
       "noResponse": "Around the world",
       "noResponseChange": 2
+    },
+	{
+	//needs t2.3 dialogue
+      "name": "Another lesson",
+      "wait": 25,
+      "dialogue": [
+        "t2.3h",
+        "t2.3h",
+        "t2.3h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "continue", "confused" ],
+      "change": [ 2, 0 ],
+      "toNode": [ "Attention grabber", "Repeat" ],
+      "noResponse": "Another lesson",
+      "noResponseChange": 0
     },
     {
       "name": "Rambling",
@@ -123,11 +143,51 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
-      "change": [ 1, -2, 1, -3, 1, -4 ],
-      "toNode": [ "Today's agenda", "Cracking", "Today's agenda", "Cracking", "Today's agenda", "Cracking" ],
+      "listen": [ "yes", "continue", "salute", "confused", "rude", "no" ],
+      "change": [ 1, 1, 1, -2, -2, -2 ],
+      "toNode": [ "Today's agenda", "Today's agenda", "Today's agenda", "Cracking", "Cracking", "Cracking" ],
       "noResponse": "Cracking",
       "noResponseChange": -2
+    },
+	{
+	//needs t3.4 dialogue
+      "name": "Repeat",
+      "wait": 25,
+      "dialogue": [
+        "t3.4h",
+        "t3.4h",
+        "t3.4h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "continue", "confused" ],
+      "change": [ 2, 0 ],
+      "toNode": [ "Attention grabber", "Repeat" ],
+      "noResponse": "Attention grabber",
+      "noResponseChange": 0
+    },
+	{
+	//needs t3.5 dialogue
+      "name": "Attention grabber",
+      "wait": 25,
+      "dialogue": [
+        "t3.5h",
+        "t3.5h",
+        "t3.5h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "salute", "rude" ],
+      "change": [ 2, 0 ],
+      "toNode": [ "Courteous", "Naughty" ],
+      "noResponse": "Attention grabber",
+      "noResponseChange": 0
     },
     {
       "name": "Cracking",
@@ -142,9 +202,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "continue", "confused", "no", "salute", "rude" ],
-      "change": [ -3, -3, -3, -5, -5, -5 ],
-      "toNode": [ "Divorce", "Divorce", "Divorce", "Silence", "Silence", "Silence" ],
+      "listen": [ "yes", "continue", "confused", "salute", "rude", "no" ],
+      "change": [ -3, -3, -3, -3, -5, -5 ],
+      "toNode": [ "Divorce", "Divorce", "Divorce", "Divorce", "Silence", "Silence" ],
       "noResponse": "Silence",
       "noResponseChange": -5
     },

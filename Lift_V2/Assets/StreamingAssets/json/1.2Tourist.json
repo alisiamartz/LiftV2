@@ -34,9 +34,9 @@
         "talk",
         "talk"
       ],
-     "listen": [ "yes", "continue", "salute", "no", "confused", "rude" ],
-      "change": [ 1, 1, 1, -1, -1, -1 ],
-      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Jokester", "Jokester", "Jokester" ],
+      "listen": [ "salute", "rude" ],
+      "change": [ 1, -1 ],
+      "toNode": [ "Conversation starter", "Jokester" ],
       "noResponse": "Sign Language",
       "noResponseChange": 0
     },
@@ -85,10 +85,110 @@
         "talk",
         "talk"
       ],
-     "listen": [ "yes", "continue", "salute", "rude", "no", "confused" ],
-      "change": [ 1, 1, 1, 1, -1, -1 ],
-      "toNode": [ "Simple response", "Simple response", "Simple response", "Simple response", "Clarification", "Clarification" ],
-      "noResponse": "Sign Language",
+      "listen": [ "yes" ],
+      "change": [ 1 ],
+      "toNode": [ "Sign Language2" ],
+      "noResponse": "Sign Language...again",
+      "noResponseChange": 0
+    },
+	{
+	//needs t2.4 dialogue
+	"name": "Sign Language...again",
+      "wait": 25,
+      "dialogue": [
+        "t2.4h",
+        "t2.4h",
+        "t2.4h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes" ],
+      "change": [ 1 ],
+      "toNode": [ "Sign Language2" ],
+      "noResponse": "Sign Language...again...and again",
+      "noResponseChange": 0
+    },
+	{
+	//needs t2.5 dialogue
+	"name": "Sign Language...again...and again",
+      "wait": 25,
+      "dialogue": [
+        "t2.5h",
+        "t2.5h",
+        "t2.5h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes" ],
+      "change": [ 1 ],
+      "toNode": [ "Sign Language2" ],
+      "noResponse": "Sign Language...again...and again",
+      "noResponseChange": 0
+    },
+	{
+	//needs t2.6 dialogue
+	"name": "Sign Language2",
+      "wait": 25,
+      "dialogue": [
+        "t2.6h",
+        "t2.6h",
+        "t2.6h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "no" ],
+      "change": [ 1 ],
+      "toNode": [ "Simple response" ],
+      "noResponse": "Sign Language2...again",
+      "noResponseChange": 0
+    },
+	{
+	//needs t2.7 dialogue
+	"name": "Sign Language2...again",
+      "wait": 25,
+      "dialogue": [
+        "t2.7h",
+        "t2.7h",
+        "t2.7h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "no" ],
+      "change": [ 1 ],
+      "toNode": [ "Simple response" ],
+      "noResponse": "Sign Language2...again...and again",
+      "noResponseChange": 0
+    },
+	{
+	//needs t2.8 dialogue
+	"name": "Sign Language2...again...and again",
+      "wait": 25,
+      "dialogue": [
+        "t2.8h",
+        "t2.8h",
+        "t2.8h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "no" ],
+      "change": [ 1 ],
+      "toNode": [ "Simple response" ],
+      "noResponse": "Sign Language2...again...and again",
       "noResponseChange": 0
     },
 	{
@@ -104,9 +204,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no", "confused", "continue", "salute", "rude" ],
-      "change": [0, 0, 0, 0, 0, 0],
-      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter" ],
+      "listen": [ "yes", "no" ],
+      "change": [0, 0],
+      "toNode": [ "Conversation starter", "Conversation starter"],
       "noResponse": "Awkward encounter",
       "noResponseChange": 0
     },
@@ -123,9 +223,9 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
-      "change": [ 1, 1, 1, 1, 1, 1 ],
-      "toNode": [ "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter", "Conversation starter" ],
+      "listen": [ "yes", "no" ],
+      "change": [ 1, 1 ],
+      "toNode": [ "Conversation starter", "Conversation starter" ],
       "noResponse": "Awkward encounter",
       "noResponseChange": -1
     },
@@ -142,9 +242,9 @@
         "talk",
         "talk"
       ],
-     "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
-      "change": [ 1, 1, 1, 1, 1, 1 ],
-      "toNode": [ "Work night", "Work night", "Work night", "Work night", "Work night", "Work night" ],
+      "listen": [ "yes", "no" ],
+      "change": [ 1, 1 ],
+      "toNode": [ "Work night", "Work night" ],
       "noResponse": "Awkward encounter",
       "noResponseChange": -1
     },
