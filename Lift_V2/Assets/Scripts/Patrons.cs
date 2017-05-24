@@ -78,7 +78,7 @@ public class Patrons {
 
         if (patronName == "Boss1")
         {
-            patronObject.AddComponent<Boss1AI>();
+            patronObject.AddComponent<BossDay1AI>();
 
             patronObject.GetComponent<PatronAudio>().patronName = "Boss";
             patronObject.GetComponent<PatronAudio>().dayName = "Day1";

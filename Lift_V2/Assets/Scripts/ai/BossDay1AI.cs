@@ -10,15 +10,36 @@ public class BossDay1AI : Agent {
         Init();
         isEndNode = false;
         isExit = false;
+        Build();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (timer > 0) timer -= Time.deltaTime;
 
-        
+        if (!flag) flag = list[listIndex]();
+
+        if (flag && timer <= 0) {
+            listIndex++;
+            flag = false;
+            playedFirst = false;
+            isPlayed = false;
+        }
 	}
 
+    private void Build() {
+        list.Add(enterElevator);
+        list.Add(firstOrder);
+        list.Add(() => say("Day to day operations"));
+        list.Add(() => say("The Guests"));
+        list.Add(() => say("The first day"));
+        list.Add(() => say("Good start"));
+        list.Add(readyExit);
+        list.Add(playExit);
+        list.Add(() => false);
+    }
+
+    private bool flag = false;
     private bool isPlayed = false;
     private delegate bool bossEvent();
     private List<bossEvent> list = new List<bossEvent>();
@@ -33,7 +54,11 @@ public class BossDay1AI : Agent {
         } else {
             say("Start");
             playedFirst = true;
-        } return false;
+        }
+
+        if (timer <= 0) isPlayed = false;
+
+        return false;
     }
 
     private bool firstOrder() {
@@ -46,16 +71,34 @@ public class BossDay1AI : Agent {
         } else {
             say("First order");
             playedFirst = true;
-        } return false;
+        }
+
+        if (timer <= 0) isPlayed = false;
+
+        return false;
     }
 
     private bool readyExit() {
         if (isDoorOpen()) {
-            if (getFloorNumber() != attributes.goal) {
-                say("notFloor");
-            } else return true;
+            if (getFloorNumber() != attributes.goal) say("notFloor");
+            else return true;
         } else say("Extra");
+
+        if (timer <= 0) isPlayed = false;
+
         return false;
+    }
+
+    private bool playExit() {
+        if (isDoorOpen() && getFloorNumber() == attributes.goal) {
+            say("End");
+            stopTalking();
+            exit();
+            return true;
+        } else {
+            listIndex -= 2;
+            return true;
+        }
     }
 
     private bool say(string name) {

@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 3,
+      "wait": 5,
       "dialogue": [
         "boss1.1h",
         "boss1.1h",
@@ -41,7 +41,7 @@
     },
     {
       "name": "First order",
-      "wait": 15,
+      "wait": 5,
       "dialogue": [
         "boss2.1h",
         "boss2.1h",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Ancient mechanism",
-      "wait": 14,
+      "wait": 10,
       "dialogue": [
         "boss2.2h",
         "boss2.2h",
@@ -75,7 +75,7 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 27,
+      "wait": 0,
       "dialogue": [
         "boss2.3h",
         "boss2.3h",
@@ -94,7 +94,7 @@
     },
     {
       "name": "The Guests",
-      "wait": 18,
+      "wait": 0,
       "dialogue": [
         "boss3.1h",
         "boss3.1h",
@@ -110,7 +110,7 @@
     },
     {
       "name": "The first day",
-      "wait": 16,
+      "wait": 0,
       "dialogue": [
         "boss4.1h",
         "boss4.1h",
@@ -126,7 +126,7 @@
     },
     {
       "name": "Good start",
-      "wait": 8,
+      "wait": 0,
       "dialogue": [
         "boss4.2h",
         "boss4.2n",
