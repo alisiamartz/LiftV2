@@ -45,6 +45,8 @@ public class Interactable : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//trackedObj = GetComponent<SteamVR_TrackedObject>();
+
+
 		hatHolder = GameObject.FindGameObjectWithTag("hatHolder");
 		glassesHolder = GameObject.FindGameObjectWithTag("glassesHolder");
 		idHolder = GameObject.FindGameObjectWithTag("idHolder");
