@@ -34,7 +34,7 @@ public abstract class Agent : MonoBehaviour {
     protected FloorManager fm;
     protected bool isExit;
     protected string lastSound;
-    public bool isEndNode;
+    protected bool isEndNode;
     protected StateFetch sf;
     protected float patTimer;
     private bool isSetMood = false;

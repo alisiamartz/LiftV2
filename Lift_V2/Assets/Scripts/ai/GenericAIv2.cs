@@ -57,8 +57,8 @@ public class GenericAIv2 : Agent {
     private bool doneStart = false;
     private bool doneSetup = false;
     private bool isUpdate = false;
-    private bool isPlayed = false;
-    private int state = 0; //0 = story 1 = notFloor 2 = exit
+    public bool isPlayed = false;
+    public int state = 0; //0 = story 1 = notFloor 2 = exit
 
     private bool playStart() {
         //once entered will check if door is closed, else it'll repeat "take me to x"

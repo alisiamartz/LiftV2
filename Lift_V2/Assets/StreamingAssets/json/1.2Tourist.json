@@ -92,8 +92,7 @@
       "noResponseChange": 0
     },
 	{
-	//needs t2.4 dialogue
-	"name": "Sign Language...again",
+	    "name": "Sign Language...again",
       "wait": 25,
       "dialogue": [
         "t2.4h",
@@ -112,8 +111,7 @@
       "noResponseChange": 0
     },
 	{
-	//needs t2.5 dialogue
-	"name": "Sign Language...again...and again",
+	    "name": "Sign Language...again...and again",
       "wait": 25,
       "dialogue": [
         "t2.5h",
@@ -132,7 +130,7 @@
       "noResponseChange": 0
     },
 	{
-	//needs t2.6 dialogue
+
 	"name": "Sign Language2",
       "wait": 25,
       "dialogue": [
@@ -152,8 +150,7 @@
       "noResponseChange": 0
     },
 	{
-	//needs t2.7 dialogue
-	"name": "Sign Language2...again",
+	    "name": "Sign Language2...again",
       "wait": 25,
       "dialogue": [
         "t2.7h",
@@ -172,8 +169,7 @@
       "noResponseChange": 0
     },
 	{
-	//needs t2.8 dialogue
-	"name": "Sign Language2...again...and again",
+	    "name": "Sign Language2...again...and again",
       "wait": 25,
       "dialogue": [
         "t2.8h",

@@ -233,6 +233,7 @@ public class PatronMovement : MonoBehaviour {
     //Called from AI whenever the mood is changed i indicates by how much
     public void moodChanged(int i) {
         Debug.Log("Mood Changed by: " + i);
+        /*
         if(i < 0) {
             //Play Angry Animation
             transform.Find("AngryParticle").gameObject.SetActive(true);
@@ -248,6 +249,7 @@ public class PatronMovement : MonoBehaviour {
             transform.Find("ConfuseParticle").gameObject.SetActive(true);
             StartCoroutine(StopParticle(3, "ConfusionParticle"));
         }
+        */
     }
 
     IEnumerator StopParticle(float time, string ParticleName) {

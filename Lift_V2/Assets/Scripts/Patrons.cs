@@ -97,11 +97,11 @@ public class Patrons {
         else if (patronName == "Boss3")
         {
             patronObject.AddComponent<GenericAIv2>();
-            patronObject.GetComponent<GenericAIv2>().setFilename("3.2Boss.json");
+            patronObject.GetComponent<GenericAIv2>().setFilename("5.4Boss.json");
             patronObject.GetComponent<GenericAIv2>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
 
             patronObject.GetComponent<PatronAudio>().patronName = "Boss";
-            patronObject.GetComponent<PatronAudio>().dayName = "Day3";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day5";
         }
 
         else if (patronName == "Business1")
@@ -118,9 +118,9 @@ public class Patrons {
             patronObject.AddComponent<GenericAIv2>();
             short mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
             patronObject.GetComponent<GenericAIv2>().setMood(mood);
-            if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("3.1BusinessmanH.json");
-            else if (mood < -3) patronObject.GetComponent<GenericAIv2>().setFilename("3.1BusinessmanA.json");
-            else patronObject.GetComponent<GenericAIv2>().setFilename("3.1BusinessmanN.json");
+            if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("3.2BusinessmanH.json");
+            else if (mood < -3) patronObject.GetComponent<GenericAIv2>().setFilename("3.2BusinessmanA.json");
+            else patronObject.GetComponent<GenericAIv2>().setFilename("3.2BusinessmanN.json");
 
             patronObject.GetComponent<PatronAudio>().patronName = "BusinessMan";
             patronObject.GetComponent<PatronAudio>().dayName = "Day3";
@@ -164,7 +164,7 @@ public class Patrons {
             patronObject.GetComponent<GenericAIv2>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
 
             patronObject.GetComponent<PatronAudio>().patronName = "Tourist";
-            patronObject.GetComponent<PatronAudio>().dayName = "Day2";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day3";
         }
 
         else if (patronName == "Tourist3")
