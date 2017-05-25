@@ -8,14 +8,37 @@ public class StateFetch : MonoBehaviour {
 	// contains functions used in AI to check the player state
 	// ie. proximity to objects
 
-	public GameObject[] respondings;
+//	public GameObject[] respondings;
 	public GameObject spawn1;
 	public GameObject spawn2; 
 
+	public GameObject controller1;
+	public GameObject controller2;
+
 	// Use this for initialization
 	void Start () {
+		controller1 = GameObject.FindGameObjectWithTag ("rightControl");
+		controller2 = GameObject.FindGameObjectWithTag ("leftControl");
 	}
 		
+	void Update() {
+
+		if (controller1 == null)
+			controller1 = GameObject.FindGameObjectWithTag ("rightControl");
+		if (controller2 == null)
+			controller2 = GameObject.FindGameObjectWithTag ("leftControl");
+
+		//if (respondings.Length < 2) 
+		//	respondings = GameObject.FindGameObjectsWithTag ("responding");	
+
+		// test code to see if it works
+		//	if (Input.GetKeyDown (KeyCode.A)) 
+		//		waitingForGesture ();
+		//	if (Input.GetKeyDown (KeyCode.S))
+		//		stopWaitingGesture ();
+
+	}
+
 	// player has collided hand with lever
 	public bool nearLever() {
 		if (LeverRange.nearLever)
@@ -36,31 +59,17 @@ public class StateFetch : MonoBehaviour {
 		// turn on hand haptic 
 		// play a tiny particle system
 		// TODO: make it good i guess
-		foreach (GameObject g in respondings) {
-			g.GetComponent<ParticleSystem> ().Play ();		}
-
+		controller1.GetComponent<ParticleSystem>().Play();
+		controller2.GetComponent<ParticleSystem>().Play();
 	}
 
 	public void stopWaitingGesture() {
         Debug.Log("NO GESTURES PLS");
         // turn off that particle system now!!!!!!! yeah
-        foreach (GameObject g in respondings) {
-			g.GetComponent<ParticleSystem> ().Stop ();
-		}
+		controller1.GetComponent<ParticleSystem>().Stop();
+		controller2.GetComponent<ParticleSystem>().Stop();
 	}
 
-	void Update() {
-
-		if (respondings.Length < 2) 
-			respondings = GameObject.FindGameObjectsWithTag ("responding");	
-		
-		// test code to see if it works
-		if (Input.GetKeyDown (KeyCode.A))
-			spawnHatId ();
-//		if (Input.GetKeyDown (KeyCode.S))
-//			stopWaitingGesture ();
-
-	}
 
 	// this is where we spawn the id and hat in the tutorial interaction
 	// boss 1.1 --> spawn when timed 
