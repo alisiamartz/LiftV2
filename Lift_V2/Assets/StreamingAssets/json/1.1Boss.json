@@ -41,7 +41,7 @@
     },
     {
       "name": "First order",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "boss2.1h",
         "boss2.1h",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Ancient mechanism",
-      "wait": 10,
+      "wait": 0,
       "dialogue": [
         "boss2.2h",
         "boss2.2h",
@@ -86,9 +86,6 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
-      "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "The Guests", "The Guests", "The Guests", "The Guests", "The Guests", "The Guests" ],
       "noResponse": "The Guests",
       "noResponseChange": 0
     },
@@ -137,7 +134,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "End",
+      "noResponse": "Extra",
       "noResponseChange": 0
     },
     {
