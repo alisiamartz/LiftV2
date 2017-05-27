@@ -10,8 +10,13 @@
       "wait": 15,
       "dialogue": [
         "adt1.1h",
-        "adt1.1n",
-        "adt1.1a"
+        "adt1.1h",
+        "adt1.1h"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Start1",
       "noResponseChange": 0
@@ -21,8 +26,13 @@
       "wait": 40,
       "dialogue": [
         "adt1.2h",
-        "adt1.2n",
-        "adt1.2a"
+        "adt1.2h",
+        "adt1.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "salute", "confused", "rude", "continue", "yes", "no" ],
       "change": [ 4, -4 ],
@@ -35,8 +45,13 @@
       "wait": 40,
       "dialogue": [
         "adt2.1h",
-        "adt2.1n",
-        "adt2.1a"
+        "adt2.1h",
+        "adt2.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "confused", "salute", "no", "continue", "rude" ],
       "change": [ 2, 2, 2, -4, -4, -4 ],
@@ -49,8 +64,13 @@
       "wait": 60,
       "dialogue": [
         "adt2.2h",
-        "adt2.2n",
-        "adt2.2a"
+        "adt2.2h",
+        "adt2.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "rude", "confused", "salute", "continue", "yes", "no" ],
       "change": [ -2, -2, 4, 4, 0, 0 ],
@@ -63,8 +83,13 @@
       "wait": 40,
       "dialogue": [
         "adt2.3h",
-        "adt2.3n",
-        "adt2.3a"
+        "adt2.3h",
+        "adt2.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
       "change": [ 2, 2, -2, -2 ],
@@ -77,8 +102,13 @@
       "wait": 40,
       "dialogue": [
         "adt3.1h",
-        "adt3.1n",
-        "adt3.1a"
+        "adt3.1h",
+        "adt3.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -86,8 +116,13 @@
       "wait": 40,
       "dialogue": [
         "adt3.2h",
-        "adt3.2n",
-        "adt3.2a"
+        "adt3.2h",
+        "adt3.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
@@ -95,8 +130,13 @@
       "wait": 40,
       "dialogue": [
         "adt3.3h",
-        "adt3.3n",
-        "adt3.3a"
+        "adt3.3h",
+        "adt3.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -104,8 +144,13 @@
       "wait": 40,
       "dialogue": [
         "adt3.4h",
-        "adt3.4n",
-        "adt3.4a"
+        "adt3.4h",
+        "adt3.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
@@ -113,26 +158,41 @@
       "wait": 40,
       "dialogue": [
         "adt3.5h",
-        "adt3.5n",
-        "adt3.5a"
+        "adt3.5h",
+        "adt3.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "adt5.1h",
-        "adt5.1n",
-        "adt5.1a"
+        "adt4.1h",
+        "adt4.1n",
+        "adt4.1a"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "adt5.2h",
-        "adt5.2n",
-        "adt5.2a"
+        "adt4.2h",
+        "adt4.2n",
+        "adt4.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

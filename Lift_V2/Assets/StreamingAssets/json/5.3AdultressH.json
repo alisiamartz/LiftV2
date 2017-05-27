@@ -9,31 +9,30 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "adt1.1h",
+        "adt1.1a",
+        "adt1.1a"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 15,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+	  "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Childhood dream",
       "noResponseChange": 0
     },
     {
       "name": "Childhood dream",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "adt2.1h",
+        "adt2.1h",
+        "adt2.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "continue", "salute", "confused", "rude", "yes", "no" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -43,11 +42,16 @@
     },
     {
       "name": "Human nature",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "adt2.2h",
+        "adt2.2h",
+        "adt2.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "continue", "salute", "confused", "rude", "yes", "no" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -57,20 +61,35 @@
     },
     {
       "name": "Bad time",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "adt3.1h",
+        "adt3.1h",
+        "adt3.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "continue", "salute", "confused", "rude", "yes", "no" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Missing ring", "Missing ring", "Missing ring", "Lost story", "Lost story", "Missing ring" ],
+      "noResponse": "Lost story",
+      "noResponseChange": 0
     },
     {
       "name": "Perfect Family & Career",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "adt3.2h",
+        "adt3.2h",
+        "adt3.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "rude", "salute", "confused", "continue", "yes", "no" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -82,9 +101,14 @@
       "name": "Rumors",
       "wait": 30,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "adt3.3h",
+        "adt3.3h",
+        "adt3.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "rude", "salute", "confused", "continue", "yes", "no" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -94,20 +118,64 @@
     },
     {
       "name": "Plot Twist",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
+        "adt8.1a",
+        "adt8.1a",
+        "adt8.1a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Dead Lover",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Missing ring",
+      "wait": 0,
+      "dialogue": [
+        "adt4.1h",
+        "adt4.1h",
+        "adt4.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Give Ring",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Lost story",
+      "wait": 0,
+      "dialogue": [
+        "adt4.2h",
+        "adt4.2h",
+        "adt4.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Give Ring",
+      "noResponseChange": 0
     },
     {
       "name": "Promising future",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "adt4.3h",
+        "adt4.3h",
+        "adt4.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -117,25 +185,63 @@
     },
     {
       "name": "Insults",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "adt4.4h",
+        "adt4.4h",
+        "adt4.4h"
       ],
-	    "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
       "toNode": [ "Unwarranted", "Unwarranted", "Unwarranted", "Unwarranted", "Unwarranted", "Unwarranted" ],
       "noResponse": "Plot Twist",
       "noResponseChange": 0
     },
+	{
+      "name": "Dead Lover",
+      "wait":0,
+      "dialogue": [
+        "adt4.5h",
+        "adt4.5h",
+        "adt4.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Give Ring",
+      "wait":0,
+      "dialogue": [
+        "adt5.1h",
+        "adt5.1h",
+        "adt5.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
     {
       "name": "Void",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "adt5.2h",
+        "adt5.2h",
+        "adt5.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
 	    "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -145,11 +251,16 @@
     },
 	{
       "name": "Unwarranted",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "adt5.3h",
+        "adt5.3h",
+        "adt5.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "continue", "confused", "salute", "rude", "yes", "no" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -159,47 +270,121 @@
     },
 	{
       "name": "Farewell",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "adt6.1h",
+        "adt6.1h",
+        "adt6.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "confused", "rude", "no" ],
+      "change": [ 1, 1, 1, -1, -1, -1 ],
+      "toNode": [ "Stuck in the Past", "Stuck in the Past", "Stuck in the Past", "Too Sad to Speak", "Too Sad to Speak", "Too Sad to Speak" ],
+      "noResponse": "Too Sad to Speak",
+      "noResponseChange": -1
     },
 	{
       "name": "A victim in disguise",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
+        "adt6.2h",
+        "adt6.2h",
+        "adt6.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Blessing in disguise",
+      "noResponseChange": -1
     },
 	{
       "name": "Part of the problem",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "adt6.3h",
+        "adt6.3h",
+        "adt6.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Too Sad to Speak",
+      "wait": 0,
+      "dialogue": [
+        "",
+        "",
+        ""
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Stuck in the Past",
+      "wait": 0,
+      "dialogue": [
+        "adt7.2h",
+        "adt7.2h",
+        "adt7.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Blessing in disguise",
+      "wait": 0,
+      "dialogue": [
+        "adt7.3h",
+        "adt7.3h",
+        "adt7.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "adt8.1h",
+        "adt8.1n",
+        "adt8.1a"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
       "name": "notFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "adt8.2h",
+        "adt8.2n",
+        "adt8.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

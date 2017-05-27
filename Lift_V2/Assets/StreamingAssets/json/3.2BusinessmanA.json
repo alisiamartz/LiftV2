@@ -10,8 +10,8 @@
       "wait": 15,
       "dialogue": [
         "bm1.1h",
-        "bm1.1n",
-        "bm1.1a"
+        "bm1.1h",
+        "bm1.1h"
       ],
 	  "animation": [
         "",
@@ -42,8 +42,8 @@
       "wait": 15,
       "dialogue": [
         "bm2.1h",
-        "bm2.1n",
-        "bm2.1a"
+        "bm2.1h",
+        "bm2.1h"
       ],
       "animation": [
         "talk",
@@ -61,8 +61,8 @@
       "wait": 20,
       "dialogue": [
         "bm2.2h.",
-        "bm2.2n",
-        "bm2.2a"
+        "bm2.2h",
+        "bm2.2h"
       ],
       "animation": [
         "talk",
@@ -80,8 +80,8 @@
       "wait": 23,
       "dialogue": [
         "bm2.3h",
-        "bm2.3n",
-        "bm2.3a"
+        "bm2.3h",
+        "bm2.3h"
       ],
       "animation": [
         "talk",
@@ -100,7 +100,7 @@
       "dialogue": [
         "bm3.1h",
         "bm3.1n",
-        "bm3.1a"
+        "bm3.1n"
       ],
       "animation": [
         "talk",
@@ -118,8 +118,8 @@
       "wait": 15,
       "dialogue": [
         "bm3.2h",
-        "bm3.2n",
-        "bm3.2a"
+        "bm3.2h",
+        "bm3.2h"
       ],
       "animation": [
         "talk",
@@ -138,7 +138,7 @@
       "dialogue": [
         "bm3.3h",
         "bm3.3n",
-        "bm3.3a"
+        "bm3.3n"
       ],
       "animation": [
         "talk",
@@ -154,7 +154,7 @@
       "dialogue": [
         "bm3.4h",
         "bm3.4n",
-        "bm3.4a"
+        "bm3.4n"
       ],
       "animation": [
         "talk",
@@ -169,8 +169,8 @@
       "wait": 21,
       "dialogue": [
         "bm3.5h",
-        "bm3.5n",
-        "bm3.3a"
+        "bm3.5h",
+        "bm3.3h"
       ],
       "animation": [
         "talk",
@@ -188,8 +188,8 @@
       "wait": 21,
       "dialogue": [
         "bm3.6h",
-        "bm3.6n",
-        "bm3.6a"
+        "bm3.6h",
+        "bm3.6h"
       ],
       "animation": [
         "talk",
@@ -208,7 +208,7 @@
       "dialogue": [
         "bm3.7h",
         "bm3.7n",
-        "bm3.7a"
+        "bm3.7n"
       ],
       "animation": [
         "talk",
@@ -224,7 +224,7 @@
       "dialogue": [
         "bm3.8h",
         "bm3.8n",
-        "bm3.8a"
+        "bm3.8n"
       ],
       "animation": [
         "talk",
@@ -239,8 +239,8 @@
       "wait": 8,
       "dialogue": [
         "bm4.1h",
-        "bm4.1n",
-        "bm4.1a"
+        "bm4.1h",
+        "bm4.1h"
       ],
       "animation": [
         "talk",
@@ -255,7 +255,7 @@
       "wait": 15,
       "dialogue": [
         "bm4.2h",
-        "bm4.2n",
+        "bm4.2h",
         "bm4.2a"
       ],
       "animation": [
@@ -271,8 +271,8 @@
       "wait": 15,
       "dialogue": [
         "bm4.3h",
-        "bm4.3n",
-        "bm4.3a"
+        "bm4.3h",
+        "bm4.3h"
       ],
       "animation": [
         "talk",
@@ -288,7 +288,7 @@
       "dialogue": [
         "bm4.4h",
         "bm4.4n",
-        "bm4.4a"
+        "bm4.4n"
       ],
       "animation": [
         "talk",
@@ -304,7 +304,7 @@
       "dialogue": [
         "bm4.5h",
         "bm4.5n",
-        "bm4.5a"
+        "bm4.5n"
       ],
       "animation": [
         "talk",

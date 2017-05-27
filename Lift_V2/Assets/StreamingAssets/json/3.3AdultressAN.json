@@ -8,31 +8,30 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "adt1.1h",
+        "adt1.1n",
+        "adt1.1a"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 15,
-      "dialogue": [
-        "pos",
-		"neu",
-		"neg"
+	  "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Unwanted Attention",
       "noResponseChange": 0
     },
     {
       "name": "Third Wheeler",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
-        "pos",
-		"pos",
-		"pos"
+        "adt2.1h",
+		"adt2.1h",
+		"adt2.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 1, -3, 1, -3, 1, -4 ],
@@ -42,11 +41,16 @@
     },
     {
       "name": "Unwanted Attention",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
-        "neu",
-		"neu",
-		"neg"
+        "adt2.2h",
+		"adt2.2h",
+		"adt2.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 0, 0, -1, -1, -2, -2 ],
@@ -56,11 +60,16 @@
     },
     {
       "name": "Third Party",
-      "wait": 60,
+      "wait": 7,
       "dialogue": [
-        "pos",
-		"pos",
-		"pos"
+        "adt3.1h",
+		"adt3.1h",
+		"adt3.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ -12, 1, 1, 1, 1, 1 ],
@@ -70,34 +79,54 @@
     },
     {
       "name": "Alone time",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
-        "pos",
-		"neu",
-		"neg"
-      ]
+        "adt3.2h",
+		"adt3.2n",
+		"adt3.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "confused", "rude", "no" ],
+      "change": [ 1, 1, 1, -1, -1, -1 ],
+      "toNode": [ "Mediocre", "Mediocre", "Mediocre", "Wrong Name", "Wrong Name", "Wrong Name" ],
+      "noResponse": "Wrong Name",
+      "noResponseChange": -1
     },
     {
       "name": "Pervert",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
-        "neu",
-		"neu",
-		"neg"
+        "adt3.3h",
+		"adt3.3h",
+		"adt3.3a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "salute", "continue", "confused", "rude", "no" ],
       "change": [ 0, 0, 0, -2, -2, -2 ],
       "toNode": [ "Alone time", "Alone time", "Alone time", "Envy", "Envy", "Envy" ],
       "noResponse": "Alone time",
-      "noResponseChange": 0
+      "noResponseChange": -2
     },
     {
       "name": "Nuisance",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
-        "neu",
-		"neu",
-		"neg"
+        "adt3.4h",
+		"adt3.4h",
+		"adt3.4a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 0, -2, -4, -2, -1, -4 ],
@@ -107,11 +136,16 @@
     },
     {
       "name": "Affair",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
-        "neg",
-		"neg",
-		"neg"
+        "adt4.1h",
+		"adt4.1h",
+		"adt4.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "confused", "continue", "salute", "rude" ],
       "change": [ -4, 12, 12, 12, 12, 12 ],
@@ -121,65 +155,194 @@
     },
     {
       "name": "paranoid",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
-        "pos",
-		"pos",
-		"pos"
-      ]
+        "adt4.2h",
+		"adt4.2h",
+		"adt4.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "confused", "rude", "no" ],
+      "change": [ 3, 3, 3, -1, -1, -1 ],
+      "toNode": [ "Good Terms", "Good Terms", "Good Terms", "Blackmailed", "Blackmailed", "Blackmailed" ],
+      "noResponse": "Blackmailed",
+      "noResponseChange": -1
+    },
+	{
+      "name": "Mediocre",
+      "wait": 0,
+      "dialogue": [
+        "adt4.3h",
+		"adt4.3h",
+		"adt4.3h"
+     ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ] 
+    },
+	{
+      "name": "Wrong Name",
+      "wait": 0,
+      "dialogue": [
+        "adt4.4h",
+		"adt4.4h",
+		"adt4.4h"
+     ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]  
     },
 	{
       "name": "Envy",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
-        "neu",
-		"neu",
-		"neg"
-      ]
+        "adt4.5h",
+		"adt4.5h",
+		"adt4.5a"
+     ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "confused", "rude", "no" ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
+      "toNode": [ "Incompetent", "Incompetent", "Incompetent", "Very Bad Blood", "Very Bad Blood", "Very Bad Blood" ],
+      "noResponse": "Very Bad Blood",
+      "noResponseChange": -2
     },
 	{
       "name": "Just a Hater",
-      "wait": 40,
+      "wait": 0,
       "dialogue": [
-        "neu",
-		"neu",
-		"neg"
-      ]
-    },
-	{
-      "name": "Breakup",
-      "wait": 40,
-      "dialogue": [
-        "neg",
-		"neg",
-		"neg"
+        "adt4.6h",
+		"adt4.6h",
+		"adt4.6a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
 	{
       "name": "Second Chance",
-      "wait": 40,
+      "wait": 0,
       "dialogue": [
-        "pos",
-		"pos",
-		"pos"
+        "adt5.1h",
+		"adt5.1h",
+		"adt5.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Breakup",
+      "wait": 0,
+      "dialogue": [
+        "adt5.2h",
+		"adt5.2h",
+		"adt5.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Good Terms",
+      "wait": 0,
+      "dialogue": [
+        "adt5.3h",
+		"adt5.3h",
+		"adt5.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Blackmailed",
+      "wait": 0,
+      "dialogue": [
+        "adt5.4h",
+		"adt5.4h",
+		"adt5.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Incompetent",
+      "wait": 0,
+      "dialogue": [
+        "adt5.5h",
+		"adt5.5n",
+		"adt5.5a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ]
+    },
+	{
+      "name": "Very Bad Blood",
+      "wait": 0,
+      "dialogue": [
+        "adt5.6h",
+		"adt5.6h",
+		"adt5.6a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ]
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "adt6.1h",
+        "adt6.1n",
+        "adt6.1a"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
     },
     {
       "name": "notFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "adt6.2h",
+        "adt6.2n",
+        "adt6.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3
