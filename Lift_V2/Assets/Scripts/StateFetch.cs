@@ -22,7 +22,6 @@ public class StateFetch : MonoBehaviour {
 	}
 		
 	void Update() {
-
 		if (controller1 == null)
 			controller1 = GameObject.FindGameObjectWithTag ("rightControl");
 		if (controller2 == null)
@@ -32,10 +31,10 @@ public class StateFetch : MonoBehaviour {
 		//	respondings = GameObject.FindGameObjectsWithTag ("responding");	
 
 		// test code to see if it works
-		//	if (Input.GetKeyDown (KeyCode.A)) 
-		//		waitingForGesture ();
-		//	if (Input.GetKeyDown (KeyCode.S))
-		//		stopWaitingGesture ();
+			if (Input.GetKeyDown (KeyCode.A)) 
+				waitingForGesture ();
+			if (Input.GetKeyDown (KeyCode.S))
+				stopWaitingGesture ();
 
 	}
 
@@ -56,18 +55,18 @@ public class StateFetch : MonoBehaviour {
 	//Called from AI to tell the player that now is the time for a gesture
 	public void waitingForGesture() {
         Debug.Log("WAITING FOR A GESTURE");
-		// turn on hand haptic 
-		// play a tiny particle system
-		// TODO: make it good i guess
-		controller1.GetComponent<ParticleSystem>().Play();
-		controller2.GetComponent<ParticleSystem>().Play();
+		if (controller1 != null)
+			controller1.GetComponent<ParticleSystem>().Play();
+		if (controller2 != null)
+			controller2.GetComponent<ParticleSystem>().Play();
 	}
 
 	public void stopWaitingGesture() {
         Debug.Log("NO GESTURES PLS");
-        // turn off that particle system now!!!!!!! yeah
-		controller1.GetComponent<ParticleSystem>().Stop();
-		controller2.GetComponent<ParticleSystem>().Stop();
+		if (controller1 != null)
+			controller1.GetComponent<ParticleSystem>().Stop();
+		if (controller2 != null)
+			controller2.GetComponent<ParticleSystem>().Stop();
 	}
 
 
