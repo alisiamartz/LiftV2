@@ -17,7 +17,7 @@ public class Tourist1AI : Agent {
         objLine = GameObject.FindGameObjectWithTag("tutorialLine");
         objGesture = GameObject.FindGameObjectWithTag("GestureList");
         startOver = false;
-        objLine.GetComponent<Animator>().SetBool("startOver", startOver);
+        //objLine.GetComponent<Animator>().SetBool("startOver", startOver);
         filename = "1.2Tourist.json";
         Init();
         isEndNode = false;
@@ -35,7 +35,7 @@ public class Tourist1AI : Agent {
             //This will make the list appear once the tourist leaves
             objGesture.GetComponent<Transform>().localScale = new Vector3(.57f, .57f, .57f);
         }
-        else if (currentNode.name == "Sign Language" || currentNode.name == "Sign Language...again" || currentNode.name == "Sign Language...again...and again")
+        else if (currentNode.name == "Sign Language") //|| currentNode.name == "Sign Language...again" || currentNode.name == "Sign Language...again...and again")
         {
             objLine.GetComponent<Animator>().enabled = true;
             objLine.GetComponent<Animator>().SetBool("startOver", true);

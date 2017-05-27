@@ -58,7 +58,7 @@
     },
     {
       "name": "Ancient mechanism",
-      "wait": 0,
+      "wait": 10,
       "dialogue": [
         "boss2.2h",
         "boss2.2h",
@@ -75,7 +75,7 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 0,
+      "wait": 5,
       "dialogue": [
         "boss2.3h",
         "boss2.3h",
@@ -91,7 +91,7 @@
     },
     {
       "name": "The Guests",
-      "wait": 0,
+      "wait": 5,
       "dialogue": [
         "boss3.1h",
         "boss3.1h",
@@ -107,7 +107,7 @@
     },
     {
       "name": "The first day",
-      "wait": 0,
+      "wait": 5,
       "dialogue": [
         "boss4.1h",
         "boss4.1h",
@@ -123,7 +123,7 @@
     },
     {
       "name": "Good start",
-      "wait": 0,
+      "wait": 5,
       "dialogue": [
         "boss4.2h",
         "boss4.2n",
@@ -155,7 +155,7 @@
     },
     {
       "name": "End",
-      "wait": 5,
+      "wait": 2,
       "dialogue": [
         "boss5.1h",
         "boss5.1h",

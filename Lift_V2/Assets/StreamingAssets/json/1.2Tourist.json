@@ -134,9 +134,9 @@
 	"name": "Sign Language2",
       "wait": 25,
       "dialogue": [
-        "t2.6h",
-        "t2.6h",
-        "t2.6h"
+        "t3.3h",
+        "t3.3h",
+        "t3.3h"
       ],
       "animation": [
         "talk",
@@ -153,9 +153,9 @@
 	    "name": "Sign Language2...again",
       "wait": 25,
       "dialogue": [
-        "t2.7h",
-        "t2.7h",
-        "t2.7h"
+        "t3.4h",
+        "t3.4h",
+        "t3.4h"
       ],
       "animation": [
         "talk",
@@ -172,9 +172,9 @@
 	    "name": "Sign Language2...again...and again",
       "wait": 25,
       "dialogue": [
-        "t2.8h",
-        "t2.8h",
-        "t2.8h"
+        "t3.5h",
+        "t3.5h",
+        "t3.5h"
       ],
       "animation": [
         "talk",

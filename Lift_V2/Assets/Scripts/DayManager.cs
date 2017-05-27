@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DayManager : MonoBehaviour {
+public class DayManager : MonoBehaviour
+{
 
     [Header("Patrons")]
     public string[] day1;
@@ -28,13 +29,18 @@ public class DayManager : MonoBehaviour {
     private GameObject elevatorManager;
     public doorInteraction liftableDoor;
     private GameObject leverRotator;
+    public Material skybox;
 
     private Patrons patron = new Patrons();
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
         leverRotator = GameObject.FindGameObjectWithTag("lever");
+
+        skybox.SetFloat("_Exposure", 2.4f);
+        skybox.SetFloat("_AtmosphereThickness", 0.3f);
 
         days[0] = day1; days[1] = day2; days[2] = day3; days[3] = day4; days[4] = day5;
         SteamVR_Fade.Start(Color.black, 0);
@@ -45,10 +51,17 @@ public class DayManager : MonoBehaviour {
     }
 
     //Spawns the next patron in the timeline, if at the end of a day move to next day
-    public void nextPatron() {
-        if(patronNumber < days[day-1].Length) {
+    public void nextPatron()
+    {
+        if (patronNumber < days[day - 1].Length)
+        {
 
             patronNumber += 1;
+
+            //Updates skybox to simulate different parts of the day
+            if (patronNumber == 2) { skybox.SetFloat("_AtmosphereThickness", 0.7f); }
+            if (patronNumber == 3) { skybox.SetFloat("_AtmosphereThickness", 1.0f); }
+            if (patronNumber == 4) { skybox.SetFloat("_AtmosphereThickness", 1.4f); }
 
             var patronObject = patron.fetchPatron(days[day - 1][patronNumber - 1]);
             var patronPrefab = patronObject.prefab;
@@ -70,13 +83,16 @@ public class DayManager : MonoBehaviour {
 
             //GetComponent<FloorManager>().patrons[startFloor] += 1;
         }
-        else {
+        else
+        {
             nextDay();
         }
     }
 
-    public void nextDay() {
-        if (day < 5) {
+    public void nextDay()
+    {
+        if (day < 5)
+        {
             patronNumber = 0;
             day += 1;
 
@@ -86,18 +102,22 @@ public class DayManager : MonoBehaviour {
             StartCoroutine(ExecuteAfterTime(5f + timeInBlack));
         }
         //We've reached the end of the game timeline
-        else {
-            
+        else
+        {
+
         }
     }
 
 
-    public void dayReset() {
+    public void dayReset()
+    {
         //Close the elevator door
         //Reset elevator position etc.
         leverRotator.GetComponent<LeverRotation>().resetLever();
         elevatorManager.GetComponent<ElevatorMovement>().arriveAtFloor(0);
         liftableDoor.closeDoor();
+        //Set skybox to early morning
+        skybox.SetFloat("_AtmosphereThickness", 0.3f);
 
         nextPatron();
 
@@ -105,7 +125,8 @@ public class DayManager : MonoBehaviour {
         SteamVR_Fade.Start(Color.clear, unFadeTime);
     }
 
-    IEnumerator ExecuteAfterTime(float time) {
+    IEnumerator ExecuteAfterTime(float time)
+    {
         yield return new WaitForSeconds(time);
 
         // Code to execute after the delay
