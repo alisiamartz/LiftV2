@@ -10,8 +10,10 @@ public class GenericAIv2 : Agent {
      * Does not use onNode
      */
 
-	// Use this for initialization
-	void Start () {
+    private Regex touristRegex = new Regex(@"Tourist");
+
+    // Use this for initialization
+    void Start () {
         Regex regex = new Regex(@"(\.json)$");
         if (!regex.IsMatch(filename)) throw new System.ArgumentNullException("Invalid Filename: " + filename);
         Init();
@@ -120,6 +122,9 @@ public class GenericAIv2 : Agent {
         //temp onNode
         node n = getNode();
 
+        //just for 3.1Tourist2
+        if (touristRegex.IsMatch(name) && n.name == "Divorce") info.flagDivorce();
+
         //listen only when dialogue is done
         if (timer > n.wait) {
             resetGesture(); //for hand stuff
@@ -169,7 +174,7 @@ public class GenericAIv2 : Agent {
         say();
         stopTalking();
         exit();
-        (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).setMood(name, attributes.mood);
+        info.setMood(name, attributes.mood);
         isExit = true;
     }
 
