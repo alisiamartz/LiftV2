@@ -148,6 +148,9 @@ public class PatronMovement : MonoBehaviour {
             if(gameObject.tag == "Boss") { musicID = 1; }
             if(gameObject.tag == "Business") { musicID = 2; }
             if(gameObject.tag == "Tourist") { musicID = 3; }
+            if (gameObject.tag == "Server") { musicID = 4; }
+            if (gameObject.tag == "Adultress") { musicID = 5; }
+            if (gameObject.tag == "Artist") { musicID = 6; }
             musicSource.GetComponent<musicController>().playCharacterTheme(musicID);
 
 			anim.SetBool ("elevatorHere", true);

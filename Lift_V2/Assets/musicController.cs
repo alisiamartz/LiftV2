@@ -10,6 +10,9 @@ public class musicController : MonoBehaviour {
     public AudioClip bossTheme;
     public AudioClip businessTheme;
     public AudioClip touristTheme;
+    public AudioClip serverTheme;
+    public AudioClip adultressTheme;
+    public AudioClip artistTheme;
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,6 +27,9 @@ public class musicController : MonoBehaviour {
         if(character == 1) { newClip = bossTheme; }
         if(character == 2) { newClip = businessTheme; }
         if(character == 3) { newClip = touristTheme; }
+        if (character == 4) { newClip = serverTheme; }
+        if (character == 5) { newClip = adultressTheme; }
+        if (character == 6) { newClip = artistTheme; }
 
         GetComponent<AudioSource>().clip = newClip;
         GetComponent<AudioSource>().Play();
