@@ -125,42 +125,29 @@ public class BusinessDay4AI : Agent {
     }
 
     private void say() {
-
         //do not play if dialog already played
         if (isPlayed) return;
 
-        //get correct dialoge to play (depending on state)
-        node n = currentNode;
-
-        //get modd index
+        //get mood index
         int index = 1; //neu
         if (attributes.mood < -3) index = 2; //neg
         else if (attributes.mood > 3) index = 0; //pos
 
-        //talking animation
-        animate(n.animation[index]);
-
-        //text bubble
-        bubble.text = n.dialogue[index];
-
-        //sound file
-        string dialogue = n.dialogue[index];
-
-        //stop sounds - should only be called on the start to start1 nodes or not at all
-        GameObject soundObject = GameObject.Find("_SFX_" + lastSound);
-        if (soundObject != null) soundObject.GetComponent<SoundGroup>().pingSound();
+        //get sound file
+        string dialogue = currentNode.dialogue[index];
 
         //play sound
         playDialogue(dialogue);
 
-        //add delay?
-        float i = 1;
-        float total = 0;
-        while (total < i) total += Time.deltaTime;
-
         //sets up the timer for the next node
         float audioTime = GetComponent<PatronAudio>().patronMouth.clip.length;
-        timer = audioTime + n.wait; ;
+        timer = audioTime + currentNode.wait;
+
+        //talking animation
+        animate(currentNode.animation[index], audioTime);
+
+        //text bubble
+        bubble.text = currentNode.dialogue[index];
 
         //update lastSound
         lastSound = dialogue;
@@ -168,4 +155,6 @@ public class BusinessDay4AI : Agent {
         //update isPlayed
         isPlayed = true;
     }
+
+
 }
