@@ -1,7 +1,7 @@
 {
   "agentAttr": {
     "mood": 0,
-    "goal": 0,
+    "goal": 4,
     "patience": 5
   },
   "nodes": [
@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art1.2h",
         "art1.2h",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Hotel's artist",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art2.1h",
         "art2.1h",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Critics and haters alike",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art2.2h",
         "art2.2h",
@@ -80,7 +80,7 @@
     },
     {
       "name": "Fan favorite",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art3.1h",
         "art3.1h",
@@ -99,7 +99,7 @@
     },
     {
       "name": "Tasteless",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art3.2h",
         "art3.2h",
@@ -118,7 +118,7 @@
     },
     {
       "name": "Past one's prime",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art3.3h",
         "art3.3h",
@@ -259,7 +259,7 @@
         "talk"
       ],
       "noResponse": "notFloor",
-      "noResponseChange": -2
+      "noResponseChange": -3
     }
   ]
 }

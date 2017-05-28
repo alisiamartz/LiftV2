@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "silence",
-        "silence",
-        "silence"
+        "s1.1h",
+        "s1.1h",
+        "s1.1h"
       ],
 	  "animation": [
         "",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s1.1h",
         "s1.1h",
@@ -42,7 +42,7 @@
     },
     {
       "name": "The Server",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s2.1h",
         "s2.1n",
@@ -61,7 +61,7 @@
     },
     {
       "name": "One and the Same",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s2.2h",
         "s2.2h",
@@ -80,7 +80,7 @@
     },
     {
       "name": "Clarity",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s2.3h",
         "s2.3h",
@@ -99,7 +99,7 @@
     },
     {
       "name": "Workers United",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s3.1h",
         "s3.1h",
@@ -109,11 +109,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Workers United",
+      "noResponseChange": 0
     },
     {
       "name": "Different Viewpoints",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s3.2h",
         "s3.2h",
@@ -123,11 +125,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Different Viewpoints",
+      "noResponseChange": 0
     },
     {
       "name": "Habits",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s3.3h",
         "s3.3h",
@@ -137,11 +141,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Habits",
+      "noResponseChange": 0
     },
     {
       "name": "Terrible day",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s3.4h",
         "s3.4h",
@@ -151,11 +157,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Terrible day",
+      "noResponseChange": 0
     },
     {
       "name": "Aquaintances",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s3.5h",
         "s3.5h",
@@ -165,7 +173,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Aquaintances",
+      "noResponseChange": 0
     },
     {
       "name": "End",
@@ -175,7 +185,7 @@
         "s4.1n",
         "s4.1a"
       ],
-	  "animation": [
+      "animation": [
         "",
         "",
         ""
@@ -183,7 +193,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
         "s4.2h",
         "s4.2n",

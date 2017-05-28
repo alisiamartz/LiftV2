@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "s1.1h",
-        "s1.1h",
-        "s1.1h"
+        "s2.1h",
+        "s2.1h",
+        "s2.1h"
       ],
 	  "animation": [
         "",
@@ -22,24 +22,8 @@
       "noResponseChange": 0
     },
     {
-      "name": "Start1",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ],
-	  "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "noResponse": "Earning that paycheck",
-      "noResponseChange": 0
-    },
-    {
       "name": "Earning that paycheck",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s2.1h",
         "s2.1h",
@@ -58,7 +42,7 @@
     },
     {
       "name": "Compromise",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s3.1h",
         "s3.1h",
@@ -68,11 +52,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Compromise",
+      "noResponseChange": 0
     },
     {
       "name": "Atmosphere",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s3.2h",
         "s3.2h",
@@ -82,11 +68,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Atmosphere",
+      "noResponseChange": 0
     },
     {
       "name": "Happy day",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s4.1h",
         "s4.1h",
@@ -96,11 +84,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Happy day",
+      "noResponseChange": 0
     },
     {
       "name": "Weekend",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s4.3h",
         "s4.3h",
@@ -110,7 +100,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Weekend",
+      "noResponseChange": 0
     },
 {
       "name": "End",
@@ -118,12 +110,12 @@
       "dialogue": [
         "s5.1h",
         "s5.1n",
-        "s5.1a"
+        "s5.1n"
       ],
 	  "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "",
+        "",
+        ""
       ]
     },
     {

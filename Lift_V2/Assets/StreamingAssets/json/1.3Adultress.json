@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
         "adt1.2h",
         "adt1.2h",
@@ -35,14 +35,14 @@
         "talk"
       ],
       "listen": [ "salute", "confused", "rude", "continue", "yes", "no" ],
-      "change": [ 4, -4 ],
+      "change": [ 4, 4, -4, -4, 0, 0 ],
       "toNode": [ "Nice date", "Nice date", "How to ruin a day in 30 seconds", "How to ruin a day in 30 seconds", "Employee of the month", "Employee of the month" ],
       "noResponse": "Employee of the month",
       "noResponseChange": 0
     },
     {
       "name": "How to ruin a day in 30 seconds",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
         "adt2.1h",
         "adt2.1h",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Employee of the month",
-      "wait": 60,
+      "wait": 7,
       "dialogue": [
         "adt2.2h",
         "adt2.2h",
@@ -80,7 +80,7 @@
     },
 	{
       "name": "Nice date",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
         "adt2.3h",
         "adt2.3h",
@@ -92,14 +92,14 @@
         "talk"
       ],
       "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
-      "change": [ 2, 2, -2, -2 ],
+      "change": [ 2, 2, 2, -2, -2, -2 ],
       "toNode": [ "Cinderella Story", "Cinderella Story", "Cinderella Story", "Jealous", "Jealous", "Mixed signals" ],
       "noResponse": "Mixed signals",
       "noResponseChange": -2
     },
     {
       "name": "Mixed signals",
-      "wait": 40,
+      "wait": 0,
       "dialogue": [
         "adt3.1h",
         "adt3.1h",
@@ -109,11 +109,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Mixed signals",
+      "noResponseChange": 0
     },
     {
       "name": "Perfect employee",
-      "wait": 40,
+      "wait": 0,
       "dialogue": [
         "adt3.2h",
         "adt3.2h",
@@ -123,11 +125,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Perfect employee",
+      "noResponseChange": 0
     },
 	{
       "name": "Black eye",
-      "wait": 40,
+      "wait": 0,
       "dialogue": [
         "adt3.3h",
         "adt3.3h",
@@ -137,25 +141,29 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Black eye",
+      "noResponseChange": 0
     },
     {
       "name": "Cinderella Story",
-      "wait": 40,
+      "wait": 0,
       "dialogue": [
         "adt3.4h",
         "adt3.4h",
         "adt3.4h"
       ],
-	  "animation": [
+      "animation": [
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Cinderella Story",
+      "noResponseChange": 0
     },
     {
       "name": "Jealous",
-      "wait": 40,
+      "wait": 0,
       "dialogue": [
         "adt3.5h",
         "adt3.5h",
@@ -165,7 +173,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Jealous",
+      "noResponseChange": 0
     },
     {
       "name": "End",
@@ -183,7 +193,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
         "adt4.2h",
         "adt4.2n",

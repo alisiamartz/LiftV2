@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "s1.1h",
-        "s1.1h",
-        "s1.1h"
+        "s2.3h",
+        "s2.3h",
+        "s2.3h"
       ],
 	  "animation": [
         "",
@@ -22,24 +22,8 @@
       "noResponseChange": 0
     },
     {
-      "name": "Start1",
-      "wait": 30,
-      "dialogue": [
-        "s1.1h",
-        "s1.1h",
-        "s1.1h"
-      ],
-	  "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "noResponse": "Brutal business",
-      "noResponseChange": 0
-    },
-    {
       "name": "Brutal business",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s2.3h",
         "s2.3h",
@@ -58,21 +42,23 @@
     },
     {
       "name": "Rumors",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s3.5h",
         "s3.5h",
         "s3.5h"
       ],
-	  "animation": [
+      "animation": [
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Rumors",
+      "noResponseChange": 0
     },
     {
       "name": "Spreading like an infection",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s3.6h",
         "s3.6h",
@@ -82,11 +68,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Spreading like an infection",
+      "noResponseChange": 0
     },
     {
       "name": "Cure",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s4.6h",
         "s4.6h",
@@ -114,7 +102,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
         "s5.2h",
         "s5.2n",

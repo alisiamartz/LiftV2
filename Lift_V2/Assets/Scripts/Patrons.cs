@@ -22,14 +22,23 @@ public class Patrons {
         Regex touristRegex = new Regex(@"Tourist");
         Regex bossRegex = new Regex(@"Boss");
         Regex businessRegex = new Regex(@"Business");
+        Regex adultressRegex = new Regex(@"Adultress");
+        Regex serverRegex = new Regex(@"Server");
+        Regex artistRegex = new Regex(@"Artist");
 
         GameObject touristPatron = Resources.Load("Patrons/Tourist1") as GameObject;
         GameObject bossPatron = Resources.Load("Patrons/Boss1") as GameObject;
         GameObject businessPatron = Resources.Load("Patrons/Business1") as GameObject;
+        GameObject adultressPatron = Resources.Load("Patrons/Adultress1") as GameObject;
+        GameObject serverPatron = Resources.Load("Patrons/Server1") as GameObject;
+        GameObject artistPatron = Resources.Load("Patrons/Artist1") as GameObject;
 
         if (touristRegex.IsMatch(patronName)) prefab = touristPatron;
         else if (bossRegex.IsMatch(patronName)) prefab = bossPatron;
         else if (businessRegex.IsMatch(patronName)) prefab = businessPatron;
+        else if (adultressRegex.IsMatch(patronName)) prefab = adultressPatron;
+        else if (serverRegex.IsMatch(patronName)) prefab = serverPatron;
+        else if (artistRegex.IsMatch(patronName)) prefab = artistPatron;
         else throw new System.ArgumentOutOfRangeException("PREFAB NOT FOUND, TRIED TO PASS: " + patronName);
 
         if (patronName == "Boss1") return new Patron(prefab, 0);
@@ -50,21 +59,21 @@ public class Patrons {
 
         if (patronName == "Tourist3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
-        if (patronName == "Adultress1") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Adultress1") return new Patron(prefab, 1);
 
         if (patronName == "Adultress2") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
         if (patronName == "Adultress3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
-        if (patronName == "Artist1") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Artist1") return new Patron(prefab, 2);
 
-        if (patronName == "Artist2") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Artist2") return new Patron(prefab, 5);
 
         if (patronName == "Artist3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
-        if (patronName == "Server1") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Server1") return new Patron(prefab, 6);
 
-        if (patronName == "Server2") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Server2") return new Patron(prefab, 6);
 
         if (patronName == "Server3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
@@ -179,7 +188,12 @@ public class Patrons {
 
         else if (patronName == "Adultress1")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAIv2>();
+            patronObject.GetComponent<GenericAIv2>().setFilename("1.3Adultress.json");
+            patronObject.GetComponent<GenericAIv2>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Adultress";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day1";
         }
 
         else if (patronName == "Adultress2")
@@ -194,12 +208,24 @@ public class Patrons {
 
         else if (patronName == "Artist1")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAIv2>();
+            patronObject.GetComponent<GenericAIv2>().setFilename("2.3Artist.json");
+            patronObject.GetComponent<GenericAIv2>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Artist";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day2";
         }
 
         else if (patronName == "Artist2")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAIv2>();
+            short mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
+            patronObject.GetComponent<GenericAIv2>().setMood(mood);
+            if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("4.1ArtistH.json");
+            else patronObject.GetComponent<GenericAIv2>().setFilename("4.1ArtistAN.json");
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Artist";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day4";
         }
 
         else if (patronName == "Artist3")
@@ -209,9 +235,9 @@ public class Patrons {
 
         else if (patronName == "Server1")
         {
-            patronObject.AddComponent<GenericAI>();
-            patronObject.GetComponent<GenericAI>().setFilename("1.4Server.json");
-            patronObject.GetComponent<GenericAI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
+            patronObject.AddComponent<GenericAIv2>();
+            patronObject.GetComponent<GenericAIv2>().setFilename("1.4Server.json");
+            patronObject.GetComponent<GenericAIv2>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
 
             patronObject.GetComponent<PatronAudio>().patronName = "Server";
             patronObject.GetComponent<PatronAudio>().dayName = "Day1";
@@ -219,13 +245,13 @@ public class Patrons {
 
         else if (patronName == "Server2")
         {
-            patronObject.AddComponent<GenericAI>();
+            patronObject.AddComponent<GenericAIv2>();
             string[] s = { "2.4ServerH.json", "2.4ServerN.json", "2.4ServerA.json" };
             short mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
-            patronObject.GetComponent<GenericAI>().setMood(mood);
-            if (mood > 3) patronObject.GetComponent<GenericAI>().setFilename(s[0]);
-            else if (mood < -3) patronObject.GetComponent<GenericAI>().setFilename(s[2]);
-            else patronObject.GetComponent<GenericAI>().setFilename(s[1]);
+            patronObject.GetComponent<GenericAIv2>().setMood(mood);
+            if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename(s[0]);
+            else if (mood < -3) patronObject.GetComponent<GenericAIv2>().setFilename(s[2]);
+            else patronObject.GetComponent<GenericAIv2>().setFilename(s[1]);
 
             patronObject.GetComponent<PatronAudio>().patronName = "Server";
             patronObject.GetComponent<PatronAudio>().dayName = "Day2";

@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
         "bm1.2h",
         "bm1.2h",
@@ -118,7 +118,7 @@
     },
     {
       "name": "Cat got your tongue",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm3.3h",
         "bm3.3h",
@@ -134,7 +134,7 @@
     },
     {
       "name": "Everyone's a critic",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm3.4h",
         "bm3.4n",
@@ -150,7 +150,7 @@
     },
     {
       "name": "New guy",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm3.5h",
         "bm3.5n",
@@ -166,7 +166,7 @@
     },
 	{
       "name": "Stubborn pride",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm4.1h",
         "bm4.1h",
@@ -182,7 +182,7 @@
     },
 	{
       "name": "Eye for business",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm4.2h",
         "bm4.2h",
@@ -198,7 +198,7 @@
     },
 	{
       "name": "Financial mistake",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm5.1h",
         "bm5.1h",
@@ -214,7 +214,7 @@
     },
 	{
       "name": "Business card",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm5.2h",
         "bm5.2n",
@@ -230,7 +230,7 @@
     },
 	{
       "name": "24/7 watch",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm5.3h",
         "bm5.3n",
@@ -246,7 +246,7 @@
     },
 	{
       "name": "Uneventful",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm5.4h",
         "bm5.4n",
@@ -262,7 +262,7 @@
     },
     {
       "name": "End",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "bm6.1h",
         "bm6.1n",

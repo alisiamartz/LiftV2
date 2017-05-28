@@ -9,25 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "s1.1h",
-        "s1.1h",
-        "s1.1h"
-      ],
-	  "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "noResponse": "Another day, another dollar",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "s2.2h",
+        "s2.2h",
+        "s2.2h"
       ],
 	  "animation": [
         "talk",
@@ -39,7 +23,7 @@
     },
     {
       "name": "Another day, another dollar",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s2.2h",
         "s2.2h",
@@ -58,7 +42,7 @@
     },
     {
       "name": "Ordinary",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "s3.3h",
         "s3.3h",
@@ -68,21 +52,25 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Ordinary",
+      "noResponseChange": 0
     },
     {
       "name": "Unique perspective",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "s3.4h",
         "s3.4h",
         "s3.4h"
       ],
-	  "animation": [
+      "animation": [
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+      "noResponse": "Unique perspective",
+      "noResponseChange": 0
     },
 	{
       "name": "End",
@@ -90,7 +78,7 @@
       "dialogue": [
         "s5.1h",
         "s5.1n",
-        "s5.1a"
+        "s5.1n"
       ],
 	  "animation": [
         "",
