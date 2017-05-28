@@ -41,6 +41,7 @@ public abstract class Agent : MonoBehaviour {
     private short mood;
     protected bool isWaitingForGesture;
     protected PatronAudio pa;
+    protected AIInfo info;
 
     //useful stuff
     protected string getGesture() { return gl.getGesture(); }
@@ -84,6 +85,7 @@ public abstract class Agent : MonoBehaviour {
         fm = GameObject.FindWithTag("HotelManager").GetComponent<FloorManager>();
         sf = GameObject.FindWithTag("Player").GetComponent<StateFetch>();
         pa = GetComponent<PatronAudio>();
+        info = (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo);
 
         //key nodes
         currentNode = nodeDict["Start"];

@@ -24,6 +24,8 @@ public class AIInfo : MonoBehaviour {
     private int serverMood;
     [SerializeField]
     private int artistMood;
+
+    private bool divorce = false;
     
     public void setMood(string name, int mood) {
         if (touristRegex.IsMatch(name)) touristMood = mood;
@@ -43,5 +45,9 @@ public class AIInfo : MonoBehaviour {
         else if (serverRegex.IsMatch(name)) return serverMood;
         else if (artistRegex.IsMatch(name)) return artistMood;
         else throw new System.ArgumentOutOfRangeException("PATRON NOT FOUND, TRIED TO PASS: " + name);
+    }
+
+    public void flagDivorce() {
+        divorce = true;
     }
 }

@@ -2,41 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BusinessDay4AI : Agent {
+public class TouristDay4AI : Agent {
 
-	// Use this for initialization
-	void Start () {
-        filename = "4.2Businessman.json";
+    // Use this for initialization
+    void Start() {
+        filename = "4.3Tourist.json";
         Init();
 
         //stuff
         patTimer = attributes.patience;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update() {
         if (timer > 0 && isEntered) timer -= Time.deltaTime;
 
         if (!isEntered) {
             if (enter()) {
                 isEntered = true;
             }
-        } else if (!isStart) {
+        }
+        else if (!isStart) {
             say();
             if (!isDoorOpen()) {
                 currentNode = nodeDict["Start1"];
                 isStart = true;
-            } else if (timer <= 0) {
+            }
+            else if (timer <= 0) {
                 isPlayed = false;
             }
-        } else if (!isSetup) {
+        }
+        else if (!isSetup) {
             if (timer < nodeDict["Start"].wait) {
                 isPlayed = false;
                 isSetup = true;
             }
         }
         else doState();
-	}
+    }
 
     //declarations
     private bool isEntered = false;
@@ -60,14 +63,22 @@ public class BusinessDay4AI : Agent {
         string gesture = getGesture();
 
         switch (currentNode.name) {
-            case "Start1": case "Home Value": case "Hard workers":
+            case "Start1":
+            case "Home Value":
+            case "Hard workers":
                 normal(n, gesture);
                 break;
-            case "Missed opportunity": case "Perfect for the business":
-            case "notFloor": case "Server": case "Artist": case "Other":
+            case "Missed opportunity":
+            case "Perfect for the business":
+            case "notFloor":
+            case "Server":
+            case "Artist":
+            case "Other":
                 leaveElevator();
                 break;
-            case "No Regrets": case "One Sided": case "Parasites":
+            case "No Regrets":
+            case "One Sided":
+            case "Parasites":
                 waitForFloor("Missed opportunity", "notFloor");
                 break;
             case "Cutthroat":
@@ -113,7 +124,7 @@ public class BusinessDay4AI : Agent {
             isExit = true;
         }
     }
-    
+
     private void pickFloor() {
         if (isDoorOpen()) {
             int i = getFloorNumber();
@@ -121,7 +132,8 @@ public class BusinessDay4AI : Agent {
             else if (i == 2) currentNode = nodeDict["Artist"];
             else currentNode = nodeDict["Other"];
             isPlayed = false;
-        } else if (timer <= 0) isPlayed = false;
+        }
+        else if (timer <= 0) isPlayed = false;
     }
 
     private void say() {
