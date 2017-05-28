@@ -23,7 +23,7 @@
     },
     {
       "name": "On the right path",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art2.3h",
         "art2.3h",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Validation",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art2.2n",
         "art2.2n",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Peaked",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art3.3h",
         "art3.3h",
@@ -80,7 +80,7 @@
     },
     {
       "name": "Inconvenient timing",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art3.2h",
         "art3.2h",
@@ -99,7 +99,7 @@
     },
     {
       "name": "Contract in dispute",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art3.1h",
         "art3.1n",
@@ -113,7 +113,7 @@
     },
     {
       "name": "Maturing audience",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art4.6h",
         "art4.6h",
@@ -132,7 +132,7 @@
     },
     {
       "name": "Biggest critic",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art4.5h",
         "art4.5h",
@@ -146,7 +146,7 @@
     },
     {
       "name": "Defense mechanism",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art4.2h",
         "art4.2h",
@@ -165,7 +165,7 @@
     },
     {
       "name": "Self Validation",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "art4.1h",
         "art4.1n",
@@ -184,7 +184,7 @@
     },
 	 {
       "name": "No Respect",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art4.3h",
         "art4.3h",
@@ -200,7 +200,7 @@
     },
 	 {
       "name": "Lost Hope",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art4.4h",
         "art4.4h",
@@ -216,7 +216,7 @@
     },
 	{
       "name": "Fake Confidence",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art5.1h",
         "art5.1n",
@@ -232,7 +232,7 @@
     },
 	{
       "name": "Fake Smile",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art5.2h",
         "art5.2n",
@@ -248,7 +248,7 @@
     },
 	{
       "name": "No Hard Feelings",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art5.3h",
         "art5.3n",
@@ -264,7 +264,7 @@
     },
 	{
       "name": "Being Ungrateful",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art5.4h",
         "art5.4h",
@@ -280,7 +280,7 @@
     },
 	{
       "name": "Preemptive Goodbye",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art5.5h",
         "art5.5h",
@@ -296,7 +296,7 @@
     },
 	{
       "name": "Being Grateful",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art5.6h",
         "art5.6h",
@@ -312,7 +312,7 @@
     },
 	{
       "name": "Stuck on Technicalities",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art5.7h",
         "art5.7h",
@@ -328,7 +328,7 @@
     },
 	{
       "name": "New Door Opens",
-      "wait": 30,
+      "wait": 0,
       "dialogue": [
         "art5.8h",
         "art5.8h",
