@@ -92,7 +92,7 @@
       "noResponseChange": 0
     },
 	{
-	    "name": "Sign Language...again",
+	  "name": "Sign Language...again",
       "wait": 25,
       "dialogue": [
         "t2.4h",
@@ -111,7 +111,7 @@
       "noResponseChange": 0
     },
 	{
-	    "name": "Sign Language...again...and again",
+	  "name": "Sign Language...again...and again",
       "wait": 25,
       "dialogue": [
         "t2.5h",
@@ -131,7 +131,7 @@
     },
 	{
 
-	"name": "Sign Language2",
+	  "name": "Sign Language2",
       "wait": 25,
       "dialogue": [
         "t3.3h",
@@ -150,7 +150,7 @@
       "noResponseChange": 0
     },
 	{
-	    "name": "Sign Language2...again",
+	  "name": "Sign Language2...again",
       "wait": 25,
       "dialogue": [
         "t3.4h",
@@ -169,7 +169,7 @@
       "noResponseChange": 0
     },
 	{
-	    "name": "Sign Language2...again...and again",
+	  "name": "Sign Language2...again...and again",
       "wait": 25,
       "dialogue": [
         "t3.5h",

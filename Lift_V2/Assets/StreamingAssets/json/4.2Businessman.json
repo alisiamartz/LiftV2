@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 5,
+      "wait": 7,
       "dialogue": [
         "bm1.2h",
         "bm1.2n",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Home Value",
-      "wait": 5,
+      "wait": 7,
       "dialogue": [
         "bm2.1h",
         "bm2.1n",
@@ -61,7 +61,7 @@
     },
     {
       "name": "One Sided",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm2.2h",
         "bm2.2n",
@@ -71,11 +71,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "One Sided",
+      "noResponseChange": 0
     },
     {
       "name": "No Regrets",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm2.3h",
         "bm2.3n",
@@ -85,11 +87,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "No Regrets",
+      "noResponseChange": 0
     },
     {
       "name": "Parasites",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm3.1h",
         "bm3.1n",
@@ -99,11 +103,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Parasites",
+      "noResponseChange": 0
     },
     {
       "name": "Hard workers",
-      "wait": 5,
+      "wait": 7,
       "dialogue": [
         "bm3.2h",
         "bm3.2n",
@@ -122,7 +128,7 @@
     },
     {
       "name": "Missed opportunity",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm3.3h",
         "bm3.3n",
@@ -132,11 +138,13 @@
         "",
         "",
         ""
-      ]
+      ],
+	  "noResponse": "Missed opportunity",
+      "noResponseChange": 0
     },
     {
       "name": "Diamond in the rough",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm4.1h",
         "bm4.1n",
@@ -146,11 +154,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Diamond in the rough",
+      "noResponseChange": 0
     },
     {
       "name": "Cutthroat",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm4.2h",
         "bm4.2n",
@@ -160,11 +170,13 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Cutthroat",
+      "noResponseChange": 0
     },
     {
       "name": "Server",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm5.1h",
         "bm5.1n",
@@ -174,11 +186,13 @@
         "",
         "",
         ""
-      ]
+      ],
+	  "noResponse": "Server",
+      "noResponseChange": 0
     },
     {
       "name": "Other",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm5.2h",
         "bm5.2n",
@@ -188,11 +202,13 @@
         "",
         "",
         ""
-      ]
+      ],
+	  "noResponse": "Other",
+      "noResponseChange": 0
     },
 	{
       "name": "Artist",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm5.3h",
         "bm5.3n",
@@ -202,11 +218,13 @@
         "",
         "",
         ""
-      ]
+      ],
+	  "noResponse": "Artist",
+      "noResponseChange": 0
     },
 	{
       "name": "Perfect for the business",
-      "wait": 5,
+      "wait": 0,
       "dialogue": [
         "bm5.4h",
         "bm5.4n",
@@ -216,7 +234,9 @@
         "",
         "",
         ""
-      ]
+      ],
+	  "noResponse": "Perfect for the business",
+      "noResponseChange": 0
     },
     {
       "name": "End",

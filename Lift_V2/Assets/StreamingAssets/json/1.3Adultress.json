@@ -193,7 +193,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "adt4.2h",
         "adt4.2n",

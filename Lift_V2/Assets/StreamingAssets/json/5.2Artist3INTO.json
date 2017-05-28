@@ -242,7 +242,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Not in the mood",
+      "noResponseChange": 0
     },
 	{
       "name": "Letting go",
@@ -256,7 +258,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Letting go",
+      "noResponseChange": 0
     },
 	{
       "name": "Uncertain",
@@ -270,7 +274,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Uncertain",
+      "noResponseChange": 0
     },
 	{
       "name": "Taking the long way",
@@ -284,7 +290,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Taking the long way",
+      "noResponseChange": 0
     },
 	{
       "name": "Someday",
@@ -298,7 +306,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Someday",
+      "noResponseChange": 0
     },
 	{
       "name": "Cruel irony",
@@ -331,7 +341,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Loct cause",
+      "noResponseChange": 0
     },
 	{
       "name": "Backfired choice",
@@ -364,7 +376,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Biggest regret",
+      "noResponseChange": 0
     },
 	{
       "name": "Suicide",
@@ -378,7 +392,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Suicide",
+      "noResponseChange": 0
     },
 	{
       "name": "Hard to understand",
@@ -468,7 +484,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Endless cycle",
+      "noResponseChange": 0
     },
 	{
       "name": "New beginning",
@@ -482,7 +500,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "New beginning",
+      "noResponseChange": 0
     },
 	{
       "name": "Artworks",
@@ -496,7 +516,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Artworks",
+      "noResponseChange": 0
     },
 	{
       "name": "True friend",
@@ -510,7 +532,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "True friend",
+      "noResponseChange": 0
     },
 	{
       "name": "Good friend",
@@ -524,7 +548,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Good friend",
+      "noResponseChange": 0
     },
 	{
       "name": "Real friend",
@@ -538,7 +564,9 @@
         "talk",
         "talk",
         "talk"
-      ]
+      ],
+	  "noResponse": "Real friend",
+      "noResponseChange": 0
     },
     {
       "name": "End",
@@ -556,7 +584,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "art6.2h",
         "art6.2n",
