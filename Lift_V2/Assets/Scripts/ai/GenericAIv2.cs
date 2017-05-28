@@ -108,6 +108,12 @@ public class GenericAIv2 : Agent {
     }
 
     private void doState() {
+        //temp state 2 fix
+        if (state == 2) {
+            if (!isExit) leaveEle();
+            return;
+        }
+
         //will not repeat last nodes
         if (!isEndNode || state != 0) say();
         
@@ -157,6 +163,14 @@ public class GenericAIv2 : Agent {
                 Debug.LogError("state out of range: " + state);
                 break;
         }
+    }
+
+    private void leaveEle() {
+        say();
+        stopTalking();
+        exit();
+        (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).setMood(name, attributes.mood);
+        isExit = true;
     }
 
     private node getNode() {
