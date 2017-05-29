@@ -37,6 +37,9 @@ public class PatronMovement : MonoBehaviour {
     //TIMER
     private float timer = 0;
 
+    //Adultress Only
+    private GameObject dateBoi;
+
 
 	// Use this for initialization
 	void Start () {
@@ -137,11 +140,17 @@ public class PatronMovement : MonoBehaviour {
         {
             //If Adultress on day 1 or 2, bring their date boi too
             if(gameObject.tag == "Adultress") {
-                if(transform.Find("Date1").gameObject.activeSelf == true) {
-                    transform.Find("Date1").GetComponent<dateMovement>().enterElevator();
+                var date1 = transform.Find("Date1");
+                var date2 = transform.Find("Date2");
+                if(date1.gameObject.activeSelf == true) {
+                    date1.GetComponent<dateMovement>().enterElevator();
+                    dateBoi = date1.gameObject;
+                    date1.transform.parent = null;
                 }
-                else if(transform.Find("Date2").gameObject.activeSelf == true) {
-                    transform.Find("Date2").GetComponent<dateMovement>().enterElevator();
+                else if(date2.gameObject.activeSelf == true) {
+                    date2.GetComponent<dateMovement>().enterElevator();
+                    dateBoi = date2.gameObject;
+                    date2.transform.parent = null;
                 }
             }
 
@@ -181,15 +190,9 @@ public class PatronMovement : MonoBehaviour {
     {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
-
             //If Adultress on day 1 or 2, bring their date boi too
             if (gameObject.tag == "Adultress") {
-                if (transform.Find("Date1").gameObject.activeSelf == true) {
-                    transform.Find("Date1").GetComponent<dateMovement>().leaveElevator();
-                }
-                else if (transform.Find("Date2").gameObject.activeSelf == true) {
-                    transform.Find("Date2").GetComponent<dateMovement>().leaveElevator();
-                }
+                dateBoi.GetComponent<dateMovement>().leaveElevator();
             }
 
             anim.SetBool("walkOut", true);
@@ -223,6 +226,9 @@ public class PatronMovement : MonoBehaviour {
     public void despawnPatron() {
         hotelManager.GetComponent<DayManager>().nextPatron();
         Debug.Log("Called despawn");
+        if (gameObject.tag == "Adultress"){
+            Destroy(dateBoi.gameObject);
+        }
         Destroy(this.gameObject);
     }
 
