@@ -105,6 +105,11 @@
         "art3.1n",
         "art3.1a"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+     ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 2, -2, 3, 3, 4, -2 ],
       "toNode": [ "Self Validation", "Defense mechanism", "Self Validation", "Self Validation", "Self Validation", "Defense mechanism" ],
@@ -138,6 +143,11 @@
         "art4.5h",
         "art4.5h"
       ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+     ],
       "listen": [ "yes", "continue", "salute", "confused", "no", "rude" ],
       "change": [ 2, 2, 2, -2, -2, -2 ],
       "toNode": [ "Preemptive Goodbye", "Preemptive Goodbye", "Preemptive Goodbye", "Being Grateful", "Being Grateful", "Being Grateful" ],
@@ -377,8 +387,8 @@
       "wait": 7,
       "dialogue": [
         "art6.2h",
-        "art6.2n",
-        "art6.2a"
+        "art6.2h",
+        "art6.2h"
       ],
       "animation": [
         "talk",

@@ -23,8 +23,8 @@ public class StateFetch : MonoBehaviour {
 		controller1 = GameObject.FindGameObjectWithTag ("rightControl");
 		controller2 = GameObject.FindGameObjectWithTag ("leftControl");
 
-        cont = GameObject.FindGameObjectWithTag("cont");
-        sal = GameObject.FindGameObjectWithTag("sal");
+        //cont = GameObject.FindGameObjectWithTag("cont");
+        //sal = GameObject.FindGameObjectWithTag("sal");
     }
 
     void Update() {

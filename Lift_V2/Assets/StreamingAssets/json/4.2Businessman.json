@@ -61,7 +61,7 @@
     },
     {
       "name": "One Sided",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm2.2h",
         "bm2.2n",
@@ -77,7 +77,7 @@
     },
     {
       "name": "No Regrets",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm2.3h",
         "bm2.3n",
@@ -93,7 +93,7 @@
     },
     {
       "name": "Parasites",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm3.1h",
         "bm3.1n",
@@ -128,7 +128,7 @@
     },
     {
       "name": "Missed opportunity",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm3.3h",
         "bm3.3n",
@@ -144,7 +144,7 @@
     },
     {
       "name": "Diamond in the rough",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm4.1h",
         "bm4.1n",
@@ -160,7 +160,7 @@
     },
     {
       "name": "Cutthroat",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm4.2h",
         "bm4.2n",
@@ -176,7 +176,7 @@
     },
     {
       "name": "Server",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm5.1h",
         "bm5.1n",
@@ -192,7 +192,7 @@
     },
     {
       "name": "Other",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm5.2h",
         "bm5.2n",

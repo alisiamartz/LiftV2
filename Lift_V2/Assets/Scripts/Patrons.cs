@@ -87,7 +87,7 @@ public class Patrons {
 
         if (patronName == "Server2") return new Patron(prefab, 6);
 
-        if (patronName == "Server3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Server3") return new Patron(prefab, 6);
 
         if (patronName == "Server4") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
@@ -278,7 +278,16 @@ public class Patrons {
 
         else if (patronName == "Server3")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAIv2>();
+            string[] s = { "3.4ServerH.json", "3.4ServerN.json", "3.4ServerA.json" };
+            short mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
+            patronObject.GetComponent<GenericAIv2>().setMood(mood);
+            if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename(s[0]);
+            else if (mood < -3) patronObject.GetComponent<GenericAIv2>().setFilename(s[2]);
+            else patronObject.GetComponent<GenericAIv2>().setFilename(s[1]);
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Server";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day3";
         }
 
         else if (patronName == "Server4")

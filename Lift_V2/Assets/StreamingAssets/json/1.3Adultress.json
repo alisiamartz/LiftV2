@@ -99,7 +99,7 @@
     },
     {
       "name": "Mixed signals",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt3.1h",
         "adt3.1h",
@@ -115,7 +115,7 @@
     },
     {
       "name": "Perfect employee",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt3.2h",
         "adt3.2h",
@@ -131,7 +131,7 @@
     },
 	{
       "name": "Black eye",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt3.3h",
         "adt3.3h",
@@ -147,7 +147,7 @@
     },
     {
       "name": "Cinderella Story",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt3.4h",
         "adt3.4h",
@@ -163,7 +163,7 @@
     },
     {
       "name": "Jealous",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt3.5h",
         "adt3.5h",
