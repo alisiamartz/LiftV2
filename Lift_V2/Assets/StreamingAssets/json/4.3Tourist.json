@@ -10,8 +10,8 @@
       "wait": 15,
       "dialogue": [
         "t1.1h",
-        "t1.1h",
-        "t1.1h"
+        "t1.1n",
+        "t1.1n"
       ],
       "animation": [
         "",
@@ -66,7 +66,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "waitingFloor",
+      "noResponse": "Ideal attendant",
       "noResponseChange": 0
     },
     {
@@ -87,7 +87,7 @@
     },
     {
       "name": "Facing one's fears",
-      "wait": 7,
+      "wait": 1,
       "dialogue": [
         "t2.2h",
         "t2.2h",
@@ -122,7 +122,7 @@
     },
     {
       "name": "Getting Divorced",
-      "wait": 0,
+      "wait": 1,
       "dialogue": [
         "t3.3h",
         "t3.3h",

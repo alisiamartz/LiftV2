@@ -63,7 +63,7 @@ public class Patrons {
 
         if (patronName == "Tourist2") return new Patron(prefab, 3);
 
-        if (patronName == "Tourist3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Tourist3") return new Patron(prefab, 3);
 
         if (patronName == "Adultress1") {
             prefab.transform.Find("Date1").gameObject.SetActive(true);
@@ -176,8 +176,7 @@ public class Patrons {
 
         else if (patronName == "Tourist1")
         {
-            patronObject.AddComponent<Tourist1AI>();
-            patronObject.GetComponent<Tourist1AI>().setFilename("1.2Tourist.json");
+            patronObject.AddComponent<TouristDay1AI>();
 
             patronObject.GetComponent<PatronAudio>().patronName = "Tourist";
             patronObject.GetComponent<PatronAudio>().dayName = "Day1";
@@ -195,7 +194,11 @@ public class Patrons {
 
         else if (patronName == "Tourist3")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<TouristDay4AI>();
+            patronObject.GetComponent<TouristDay4AI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Tourist";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day4";
         }
 
         else if (patronName == "Adultress1")

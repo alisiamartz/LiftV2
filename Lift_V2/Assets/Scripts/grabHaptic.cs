@@ -10,7 +10,7 @@ public class grabHaptic : MonoBehaviour {
 
     public void RumbleController(float duration, float strength, string whichHand) {
         if(strength < 0 || strength > 10) {
-            Debug.LogError("Haptic strength is set to: " + strength + " Must be set between 0 and 10");
+            Debug.LogWarning("Haptic strength is set to: " + strength + " Must be set between 0 and 10");
         }
 
         if (whichHand != "left" && whichHand != "right" && whichHand != "both") {

@@ -192,6 +192,4 @@ public class TouristDay1AI : Agent {
         //update isPlayed
         isPlayed = true;
     }
-
-
 }
