@@ -25,9 +25,9 @@
       "name": "Start1",
       "wait": 7,
       "dialogue": [
-        "s1.1h",
-        "s1.1h",
-        "s1.1h"
+        "s1.2h",
+        "s1.2h",
+        "s1.2h"
       ],
 	  "animation": [
         "talk",
@@ -92,7 +92,7 @@
         "talk"
       ],
       "listen": [ "yes", "salute", "continue", "no", "rude", "confused"  ],
-      "change": [ 4, 4, -4, -4, -4, -4 ],
+      "change": [ 4, 4, -4, 4, -4, -4 ],
       "toNode": [ "The Server", "The Server", "One and the Same", "One and the Same", "One and the Same", "One and the Same" ],
       "noResponse": "One and the Same",
       "noResponseChange": -4
