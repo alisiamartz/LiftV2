@@ -25,6 +25,8 @@ public class Patrons {
         Regex adultressRegex = new Regex(@"Adultress");
         Regex serverRegex = new Regex(@"Server");
         Regex artistRegex = new Regex(@"Artist");
+        Regex date1Regex = new Regex(@"Date1");
+        Regex date2Regex = new Regex(@"Date2");
 
         GameObject touristPatron = Resources.Load("Patrons/Tourist1") as GameObject;
         GameObject bossPatron = Resources.Load("Patrons/Boss1") as GameObject;
@@ -32,6 +34,8 @@ public class Patrons {
         GameObject adultressPatron = Resources.Load("Patrons/Adultress1") as GameObject;
         GameObject serverPatron = Resources.Load("Patrons/Server1") as GameObject;
         GameObject artistPatron = Resources.Load("Patrons/Artist1") as GameObject;
+        GameObject date1Patron = Resources.Load("Patrons/Date1") as GameObject;
+        GameObject date2Patron = Resources.Load("Patrons/Date2") as GameObject;
 
         if (touristRegex.IsMatch(patronName)) prefab = touristPatron;
         else if (bossRegex.IsMatch(patronName)) prefab = bossPatron;
@@ -39,6 +43,8 @@ public class Patrons {
         else if (adultressRegex.IsMatch(patronName)) prefab = adultressPatron;
         else if (serverRegex.IsMatch(patronName)) prefab = serverPatron;
         else if (artistRegex.IsMatch(patronName)) prefab = artistPatron;
+        else if (date1Regex.IsMatch(patronName)) prefab = date1Patron;
+        else if (date2Regex.IsMatch(patronName)) prefab = date2Patron;
         else throw new System.ArgumentOutOfRangeException("PREFAB NOT FOUND, TRIED TO PASS: " + patronName);
 
         if (patronName == "Boss1") return new Patron(prefab, 0);
@@ -59,9 +65,15 @@ public class Patrons {
 
         if (patronName == "Tourist3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
-        if (patronName == "Adultress1") return new Patron(prefab, 1);
+        if (patronName == "Adultress1") {
+            date1Patron.transform.parent = prefab.transform;
+            return new Patron(prefab, 1);
+        }
 
-        if (patronName == "Adultress2") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Adultress2") {
+            date2Patron.transform.parent = prefab.transform;
+            return new Patron(prefab, 1);
+        }
 
         if (patronName == "Adultress3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
