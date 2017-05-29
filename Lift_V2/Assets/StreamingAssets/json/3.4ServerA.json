@@ -9,72 +9,165 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s1.1h",
+        "s1.1n",
+        "s1.1a"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+	  "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Tragic upbringing",
       "noResponseChange": 0
     },
     {
       "name": "Tragic upbringing",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "s2.3h",
+        "s2.3h",
+        "s2.3h"
       ],
-      "listen": [ "yes", "continue", "no", "confused", "salute", "rude" ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
       "toNode": [ "Since Birth", "Since Birth", "Voiceless", "Since Birth", "Since Birth", "Voiceless" ],
       "noResponse": "Voiceless",
       "noResponseChange": 0
     },
     {
-      "name": "Since Birth",
-      "wait": 30,
-      "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
-    },
-    {
       "name": "Voiceless",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
+        "s3.5h",
+        "s3.5h",
+        "s3.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Dense", "Dense", "Dense", "Little wounds adding up", "Little wounds adding up", "Little wounds adding up" ],
+      "noResponse": "Little wounds adding up",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Since Birth",
+      "wait": 7,
+      "dialogue": [
+        "s3.6h",
+        "s3.6h",
+        "s3.6h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "True friend", "True friend", "True friend", "Little wounds adding up", "Little wounds adding up", "Little wounds adding up" ],
+      "noResponse": "Little wounds adding up",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Dense",
+      "wait": 7,
+      "dialogue": [
+        "s4.7h",
+        "s4.7h",
+        "s4.7h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Little wounds adding up",
+      "wait": 7,
+      "dialogue": [
+        "s4.8h",
+        "s4.8h",
+        "s4.8h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "True friend",
+      "wait": 7,
+      "dialogue": [
+        "s4.9h",
+        "s4.9h",
+        "s4.9h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s5.1h",
+        "s5.1n",
+        "s5.1a"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s5.2h",
+        "s5.2h",
+        "s5.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

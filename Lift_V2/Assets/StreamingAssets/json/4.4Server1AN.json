@@ -9,40 +9,46 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s1.1h",
+        "s1.1n",
+        "s1.1a"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 15,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+	  "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Cutting ties",
       "noResponseChange": 0
     },
     {
       "name": "Brighter future",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
+        "s2.1h",
+        "s2.1h",
+        "s2.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "A real goodbye",
+      "noResponseChange": 0
     },
     {
       "name": "Cutting ties",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "s2.2h",
+        "s2.2h",
+        "s2.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -52,20 +58,32 @@
     },
     {
       "name": "Bane of her existence",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "s2.3h",
+        "s2.3h",
+        "s2.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "Friendship",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "s2.4h",
+        "s2.4h",
+        "s2.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -73,13 +91,34 @@
       "noResponse": "Lone wolf",
       "noResponseChange": 0
     },
+	{
+      "name": "A real goodbye",
+      "wait": 7,
+      "dialogue": [
+        "s3.1h",
+        "s3.1h",
+        "s3.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
     {
       "name": "New position",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "s3.2h",
+        "s3.2h",
+        "s3.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "continue", "confused", "rude", "yes", "no", "salute" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -89,34 +128,35 @@
     },
     {
       "name": "Last straw",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
-    },
-    {
-      "name": "Strength in numbers",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "s3.3h",
+        "s3.3h",
+        "s3.3h"
       ],
-	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
-      "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Making changes", "Not worth the risk", "Making changes", "Not worth the risk", "Making changes", "Not worth the risk" ],
-      "noResponse": "Not worth the risk",
-      "noResponseChange": 0
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "Last time", "Last time", "Last time", "Not a pushover", "Not a pushover", "Not a pushover"],
+      "noResponse": "Not a pushover",
+      "noResponseChange": -1
     },
-    {
+	{
       "name": "Lone wolf",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "s3.4h",
+        "s3.4h",
+        "s3.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
 	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -125,12 +165,36 @@
       "noResponseChange": 0
     },
     {
-      "name": "Unsupportive",
-      "wait": 30,
+      "name": "Strength in numbers",
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "s3.5h",
+        "s3.5h",
+        "s3.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Making changes", "Not worth the risk", "Making changes", "Not worth the risk", "Making changes", "Not worth the risk" ],
+      "noResponse": "Not worth the risk",
+      "noResponseChange": 0
+    },
+    {
+      "name": "Unsupportive",
+      "wait": 7,
+      "dialogue": [
+        "s4.1h",
+        "s4.1h",
+        "s4.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
 	    "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -140,83 +204,390 @@
     },
 	{
       "name": "Indifferent",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
+        "s4.2h",
+        "s4.2h",
+        "s4.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "Last time", "Last time", "Last time", "Not a pushover", "Not a pushover", "Not a pushover"],
+      "noResponse": "Not a pushover",
+      "noResponseChange": -1
     },
 	{
-      "name": "Not worth the risk",
-      "wait": 30,
+      "name": "Not a pushover",
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
-    },
-	{
-      "name": "Making changes",
-      "wait": 30,
-      "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
-    },
-	{
-      "name": "Introverted",
-      "wait": 30,
-      "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
+        "s4.3h",
+        "s4.3h",
+        "s4.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "Last time", "Last time", "Last time", "Proper goodbye", "Proper goodbye", "Proper goodbye"],
+      "noResponse": "Proper goodbye",
+      "noResponseChange": -1
     },
 	{
       "name": "Different side",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "s4.4h",
+        "s4.4h",
+        "s4.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "A new perspective", "A new perspective", "A new perspective", "Carefree", "Carefree", "Carefree"],
+      "noResponse": "Carefree",
+      "noResponseChange": -1
+    },
+	{
+      "name": "Introverted",
+      "wait": 7,
+      "dialogue": [
+        "s4.5h",
+        "s4.5h",
+        "s4.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "Wrong place wrong time", "Wrong place wrong time", "Wrong place wrong time", "Proper goodbye 2", "Proper goodbye 2", "Proper goodbye 2"],
+      "noResponse": "Proper goodbye 2",
+      "noResponseChange": -1
+    },
+	{
+      "name": "Making changes",
+      "wait": 7,
+      "dialogue": [
+        "s4.6h",
+        "s4.6h",
+        "s4.6h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "Best friend", "Best friend", "Best friend", "Gather the troops", "Gather the troops", "Gather the troops"],
+      "noResponse": "Gather the troops",
+      "noResponseChange": -1
+    },
+	{
+      "name": "Not worth the risk",
+      "wait": 7,
+      "dialogue": [
+        "s4.7h",
+        "s4.7h",
+        "s4.7h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "Next time", "Next time", "Next time", "Gather the troops", "Gather the troops", "Gather the troops"],
+      "noResponse": "Gather the troops",
+      "noResponseChange": -1
     },
 	{
       "name": "Cruelest irony",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "s5.1h",
+        "s5.1n",
+        "s5.1a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "For the best", "For the best", "For the best", "Pathetic revenge", "Pathetic revenge", "Pathetic revenge"],
+      "noResponse": "Pathetic revenge",
+      "noResponseChange": -1
     },
 	{
       "name": "Backfire",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
-      ]
+        "s5.2h",
+        "s5.2h",
+        "s5.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 1, 1, 1, -1, -2, -1 ],
+      "toNode": [ "Friendless", "Friendless", "Friendless", "Pathetic revenge", "Pathetic revenge", "Pathetic revenge"],
+      "noResponse": "Pathetic revenge",
+      "noResponseChange": -1
+    },
+	{
+      "name": "Last time",
+      "wait": 7,
+      "dialogue": [
+        "s5.3h",
+        "s5.3h",
+        "s5.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Proper goodbye",
+      "wait": 7,
+      "dialogue": [
+        "s5.4h",
+        "s5.4h",
+        "s5.4h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Carefree",
+      "wait": 7,
+      "dialogue": [
+        "s5.5h",
+        "s5.5h",
+        "s5.5h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "A new perspective",
+      "wait": 7,
+      "dialogue": [
+        "s5.6h",
+        "s5.6h",
+        "s5.6h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Proper goodbye 2",
+      "wait": 7,
+      "dialogue": [
+        "s5.7h",
+        "s5.7h",
+        "s5.7h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Wrong place wrong time",
+      "wait": 7,
+      "dialogue": [
+        "s5.8h",
+        "s5.8h",
+        "s5.8h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Best friend",
+      "wait": 7,
+      "dialogue": [
+        "s5.9h",
+        "s5.9h",
+        "s5.9h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Gather the troops",
+      "wait": 7,
+      "dialogue": [
+        "s5.10h",
+        "s5.10h",
+        "s5.10h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Next time",
+      "wait": 7,
+      "dialogue": [
+        "s5.11h",
+        "s5.11h",
+        "s5.11h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "For the best",
+      "wait": 7,
+      "dialogue": [
+        "s6.1h",
+        "s6.1h",
+        "s6.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Pathetic revenge",
+      "wait": 7,
+      "dialogue": [
+        "s6.2h",
+        "s6.2h",
+        "s6.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Friendless",
+      "wait": 7,
+      "dialogue": [
+        "s6.3h",
+        "s6.3h",
+        "s6.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s7.1h",
+        "s7.1n",
+        "s7.1a"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s7.2h",
+        "s7.2h",
+        "s7.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3
