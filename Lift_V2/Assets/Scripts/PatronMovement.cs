@@ -135,7 +135,15 @@ public class PatronMovement : MonoBehaviour {
     {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
-            //Debug.Log("yes yes yes ");
+            //If Adultress on day 1 or 2, bring their date boi too
+            if(gameObject.tag == "Adultress") {
+                if(transform.Find("Date1").gameObject.activeSelf == true) {
+                    transform.Find("Date1").GetComponent<dateMovement>().enterElevator();
+                }
+                else if(transform.Find("Date2").gameObject.activeSelf == true) {
+                    transform.Find("Date2").GetComponent<dateMovement>().enterElevator();
+                }
+            }
 
             //Turn off light here
             leverRotator.GetComponent<patronWaiting>().lightOff();
@@ -173,6 +181,17 @@ public class PatronMovement : MonoBehaviour {
     {
         if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
         {
+
+            //If Adultress on day 1 or 2, bring their date boi too
+            if (gameObject.tag == "Adultress") {
+                if (transform.Find("Date1").gameObject.activeSelf == true) {
+                    transform.Find("Date1").GetComponent<dateMovement>().leaveElevator();
+                }
+                else if (transform.Find("Date2").gameObject.activeSelf == true) {
+                    transform.Find("Date2").GetComponent<dateMovement>().leaveElevator();
+                }
+            }
+
             anim.SetBool("walkOut", true);
 
             // turn off light goal light

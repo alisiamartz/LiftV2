@@ -15,6 +15,8 @@ public class FloorManager : MonoBehaviour
 
     [SerializeField]
     private GameObject elevatorWaypoint;
+    [SerializeField]
+    private GameObject dateWaypoint;
 
     //Called from elevator movement when new floor is reached
     public void loadNewFloor(int targetFloor)
@@ -35,6 +37,10 @@ public class FloorManager : MonoBehaviour
     public GameObject fetchElevatorWaypoint()
     {
         return elevatorWaypoint;
+    }
+
+    public GameObject fetchDateWaypoint() {
+        return dateWaypoint;
     }
 
     public GameObject fetchFloorWaypoint(int floorNumber)

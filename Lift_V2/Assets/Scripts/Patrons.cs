@@ -66,12 +66,12 @@ public class Patrons {
         if (patronName == "Tourist3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
 
         if (patronName == "Adultress1") {
-            date1Patron.transform.parent = prefab.transform;
+            prefab.transform.Find("Date1").gameObject.SetActive(true);
             return new Patron(prefab, 1);
         }
 
         if (patronName == "Adultress2") {
-            date2Patron.transform.parent = prefab.transform;
+            prefab.transform.Find("Date2").gameObject.SetActive(true);
             return new Patron(prefab, 1);
         }
 
