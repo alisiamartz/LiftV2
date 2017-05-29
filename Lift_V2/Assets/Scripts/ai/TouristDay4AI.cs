@@ -8,8 +8,6 @@ public class TouristDay4AI : Agent {
     void Start() {
         filename = "4.3Tourist.json";
         Init();
-
-        //stuff
         patTimer = attributes.patience;
     }
 
@@ -23,9 +21,12 @@ public class TouristDay4AI : Agent {
             }
         }
         else if (!isStart) {
-            say();
+            say(currentNode);
             if (!isDoorOpen()) {
-                currentNode = nodeDict["Start1"];
+                if (attributes.mood > 3) {
+                    currentNode = nodeDict["Delusional"];
+                    delusional = true;
+                } else currentNode = nodeDict["Facing one's fears"];
                 isStart = true;
             }
             else if (timer <= 0) {
@@ -36,6 +37,7 @@ public class TouristDay4AI : Agent {
             if (timer < nodeDict["Start"].wait) {
                 isPlayed = false;
                 isSetup = true;
+                timer = 0;
             }
         }
         else doState();
@@ -46,9 +48,11 @@ public class TouristDay4AI : Agent {
     private bool isStart = false;
     private bool isSetup = false;
     private bool isPlayed = false;
+    private bool flag = false;
+    private bool delusional = false;
+    
 
     private void doState() {
-        if (!isEndNode) say();
 
         node n = currentNode;
 
@@ -63,6 +67,26 @@ public class TouristDay4AI : Agent {
         string gesture = getGesture();
 
         switch (currentNode.name) {
+            case "Delusional":
+            case "Second visit":
+            case "Life to the fullest":
+                playDelusionalArc();
+                break;
+            case "waitingFloor":
+                if (delusional) playDelusionalEnd();
+                break;
+            case "Ideal attendant":
+                walkingOut();
+                break;
+            case "Facing one's fears":
+                playHusbandStart();
+                break;
+            case "Getting Divorced":
+                playHusbandDivorce();
+                break;
+            case "What now?":
+                break;
+            /*
             case "Start1":
             case "Home Value":
             case "Hard workers":
@@ -87,9 +111,85 @@ public class TouristDay4AI : Agent {
             case "Diamond in the rough":
                 pickFloor();
                 break;
+            */
             default:
                 break;
         }
+    }
+
+    private void playDelusionalArc() {
+        say(currentNode);
+        if (timer <= 0) {
+            currentNode = nodeDict[currentNode.noResponse];
+            isPlayed = false;
+        }
+    }
+
+    private void playDelusionalEnd() {
+        if (timer < nodeDict[lastSound].wait) {
+            if (isDoorOpen()) {
+                if (getFloorNumber() == attributes.goal) {
+                    currentNode = nodeDict["Ideal attendant"];
+                } else {
+                    if (lastSound == notFloorNode.name) {
+                        if (timer <= 0) say(notFloorNode, true);
+                    } else say(notFloorNode, true);
+                }
+            } else if (timer <= 0) {
+                say(currentNode, true);
+            }
+        }
+    }
+
+    private void playHusbandStart() {
+        say(currentNode);
+        if (info.getDivorce()) currentNode = nodeDict["What now?"];
+        else currentNode = nodeDict["Getting divorced"];
+    }
+
+    private void playHusbandDivorce() {
+        if (timer <= 0) {
+            say(currentNode, true);
+            currentNode = nodeDict["What now?"];
+        }
+    }
+
+    private void playHusbandNormal() {
+        if (timer <= nodeDict[lastSound].wait) {
+            if (isDoorOpen()) {
+                if (getFloorNumber() == attributes.goal) {
+                    currentNode = endNode;
+                } else {
+                    if (lastSound == "notFloor") {
+                        if (timer <= 0) say(notFloorNode, true);
+                    } else say(notFloorNode, true);
+                }
+            } else {
+                if (lastSound == "notFloor") {
+                    say(currentNode, true);
+                } else {
+                    string gesture = getGesture();
+                    if (currentNode.listen.Contains(gesture)) {
+                        int index = currentNode.listen.IndexOf(gesture);
+                        changeMood(currentNode.change[index]);
+                        currentNode = nodeDict[currentNode.toNode[index]];
+                    } else if (timer <= 0) {
+                        changeMood(currentNode.noResponseChange);
+                        currentNode = nodeDict[currentNode.noResponse];
+                    }
+                }
+            }
+        } else {
+            resetGesture();
+        }
+    }
+
+    private void walkingOut() {
+        say(currentNode, true);
+        stopTalking();
+        exit();
+        currentNode.name = "";
+        info.setMood(name, attributes.mood);
     }
 
     private void normal(node n, string gesture) {
@@ -136,9 +236,9 @@ public class TouristDay4AI : Agent {
         else if (timer <= 0) isPlayed = false;
     }
 
-    private void say() {
-        //do not play if dialog already played
-        if (isPlayed) return;
+    private void say(node n, bool force = false) {
+        //do not play if dialog already played -- force will play no matter what
+        if (!force && isPlayed) return;
 
         //get mood index
         int index = 1; //neu
@@ -146,20 +246,20 @@ public class TouristDay4AI : Agent {
         else if (attributes.mood > 3) index = 0; //pos
 
         //get sound file
-        string dialogue = currentNode.dialogue[index];
+        string dialogue = n.dialogue[index];
 
         //play sound
         playDialogue(dialogue);
 
         //sets up the timer for the next node
         float audioTime = GetComponent<PatronAudio>().patronMouth.clip.length;
-        timer = audioTime + currentNode.wait;
+        timer = audioTime + n.wait;
 
         //talking animation
-        animate(currentNode.animation[index], audioTime);
+        animate(n.animation[index], audioTime);
 
         //text bubble
-        bubble.text = currentNode.dialogue[index];
+        bubble.text = n.dialogue[index];
 
         //update lastSound
         lastSound = dialogue;

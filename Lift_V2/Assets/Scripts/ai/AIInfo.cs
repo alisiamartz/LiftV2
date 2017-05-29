@@ -50,4 +50,8 @@ public class AIInfo : MonoBehaviour {
     public void flagDivorce() {
         divorce = true;
     }
+
+    public bool getDivorce() {
+        return divorce;
+    }
 }

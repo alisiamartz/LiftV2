@@ -130,6 +130,7 @@ public class BossDay1AI : Agent {
         say();
         stopTalking();
         exit();
+        info.setMood(name, attributes.mood);
         state = -1;
     }
 

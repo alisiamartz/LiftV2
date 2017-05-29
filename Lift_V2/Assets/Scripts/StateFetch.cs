@@ -10,9 +10,10 @@ public class StateFetch : MonoBehaviour {
 
 //	public GameObject[] respondings;
 	public GameObject spawn1;
-	public GameObject spawn2; 
+	public GameObject spawn2;
+    public GameObject paper;
 
-	public GameObject controller1;
+    public GameObject controller1;
 	public GameObject controller2;
 
 	// Use this for initialization
@@ -32,9 +33,9 @@ public class StateFetch : MonoBehaviour {
 
 		// test code to see if it works
 			if (Input.GetKeyDown (KeyCode.A)) 
-				waitingForGesture ();
-			if (Input.GetKeyDown (KeyCode.S))
-				stopWaitingGesture ();
+				initPaper();
+		//	if (Input.GetKeyDown (KeyCode.S))
+		//		stopWaitingGesture ();
 
 	}
 
@@ -78,4 +79,12 @@ public class StateFetch : MonoBehaviour {
 		GameObject.Instantiate(Resources.Load("Objects/id"), spawn1.transform);
 		GameObject.Instantiate(Resources.Load("Objects/hat"), spawn2.transform );
 	}
+
+    public void contConf() {
+
+    }
+
+    public void salRude() {
+
+    }
 }

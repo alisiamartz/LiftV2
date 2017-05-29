@@ -8,9 +8,6 @@ public class BusinessDay4AI : Agent {
 	void Start () {
         filename = "4.2Businessman.json";
         Init();
-
-        //stuff
-        patTimer = attributes.patience;
 	}
 	
 	// Update is called once per frame
