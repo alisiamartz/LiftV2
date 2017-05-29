@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 20,
+      "wait": 15,
       "dialogue": [
         "t1.1h",
         "t1.1h",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "t1.2h",
         "t1.2h",
@@ -36,13 +36,13 @@
       ],
       "listen": [ "yes", "continue", "no", "rude", "confused", "salute" ],
       "change": [ 2, 0, -1, 0, 0, 0 ],
-      "toNode": [ "Around the world", "Another lesson", "Double checking", "Another lesson", "Another lesson", "Another lesson" ],
+      "toNode": [ "Around the world", "Another lesson", "Another lesson", "Another lesson", "Another lesson", "Another lesson" ],
       "noResponse": "Another lesson",
       "noResponseChange": 0
     },
     {
       "name": "Around the world",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
         "t2.1h",
         "t2.1h",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Double checking",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "t2.2h",
         "t2.2h",
@@ -80,11 +80,11 @@
     },
 	{
       "name": "Another lesson",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
-        "t2.3h",
-        "t2.3h",
-        "t2.3h"
+        "t1.3h",
+        "t1.3h",
+        "t1.3h"
       ],
       "animation": [
         "talk",
@@ -93,13 +93,13 @@
       ],
       "listen": [ "continue", "confused" ],
       "change": [ 2, 0 ],
-      "toNode": [ "Attention grabber", "Repeat" ],
+      "toNode": [ "Master of sign language", "Master of sign language" ],
       "noResponse": "Another lesson",
       "noResponseChange": 0
     },
     {
       "name": "Rambling",
-      "wait": 19,
+      "wait": 0,
       "dialogue": [
         "t3.1h",
         "t3.1h",
@@ -110,12 +110,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Rambling",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Today's agenda",
-      "wait": 15,
+      "wait": 0,
       "dialogue": [
         "t3.2h",
         "t3.2n",
@@ -126,12 +126,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Today's agenda",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Pause",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "t3.3h",
         "t3.3n",
@@ -150,7 +150,7 @@
     },
 	{
       "name": "Repeat",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
         "t3.4h",
         "t3.4h",
@@ -163,33 +163,33 @@
       ],
       "listen": [ "continue", "confused" ],
       "change": [ 2, 0 ],
-      "toNode": [ "Attention grabber", "Repeat" ],
+      "toNode": [ "Master of sign language", "Master of sign language" ],
       "noResponse": "Attention grabber",
       "noResponseChange": 0
     },
 	{
 
-      "name": "Attention grabber",
-      "wait": 25,
+      "name": "Master of sign language",
+      "wait": 7,
       "dialogue": [
-        "t3.5h",
-        "t3.5h",
-        "t3.5h"
+        "t1.4h",
+        "t1.4h",
+        "t1.4h"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-      "listen": [ "salute", "rude" ],
-      "change": [ 2, 0 ],
-      "toNode": [ "Courteous", "Naughty" ],
-      "noResponse": "Attention grabber",
-      "noResponseChange": 0
+      "listen": [ "yes", "continue", "no", "rude", "confused", "salute" ],
+      "change": [ 2, 2, -1, -1, 2, 2 ],
+      "toNode": [ "Around the world", "Around the world", "Double checking", "Double checking", "Around the world", "Around the world" ],
+      "noResponse": "Around the world",
+      "noResponseChange": 2
     },
     {
       "name": "Cracking",
-      "wait": 20,
+      "wait": 7,
       "dialogue": [
         "t4.1h",
         "t4.1n",
@@ -208,55 +208,55 @@
     },
     {
       "name": "Divorce",
-      "wait": 40,
+      "wait": 0,
       "dialogue": [
-        "t5.1h",
-        "t5.1h",
-        "t5.1h"
+        "t5.2h",
+        "t5.2h",
+        "t5.2h"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-      "noResponse": "No comment",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Silence",
-      "wait": 15,
+      "wait": 0,
       "dialogue": [
-        "t5.2h",
-        "t5.2n",
-        "t5.2n"
+        "t5.1h",
+        "t5.1n",
+        "t5.1n"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-      "noResponse": "Silence",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "No comment",
-      "wait": 15,
+      "wait": 0,
       "dialogue": [
-        "t5.3h",
-        "t5.3h",
-        "t5.3h"
+        "t6.1h",
+        "t6.1h",
+        "t6.1h"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-      "noResponse": "No comment",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "End",
-      "wait": 10,
+      "wait": 0,
       "dialogue": [
         "t6.1h",
         "t6.1n",
@@ -270,11 +270,11 @@
     },
     {
       "name": "notFloor",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "t6.2h",
-        "t6.2n",
-        "t6.2a"
+        "t6.2h",
+        "t6.2h"
       ],
       "animation": [
         "talk",
@@ -283,6 +283,22 @@
       ],
       "noResponse": "notFloor",
       "noResponseChange": -2
+    },
+    {
+      "name": "waitingFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     }
   ]
 }

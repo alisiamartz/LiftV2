@@ -36,7 +36,7 @@
       ],
       "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Since Birth", "Since Birth", "Voiceless", "Since Birth", "Since Birth", "Voiceless" ],
+      "toNode": [ "Since Birth", "Since Birth", "Voiceless", "Voiceless", "Since Birth", "Voiceless" ],
       "noResponse": "Voiceless",
       "noResponseChange": 0
     },
