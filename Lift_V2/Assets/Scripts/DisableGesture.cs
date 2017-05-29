@@ -6,8 +6,12 @@ using Edwon.VR;
 public class DisableGesture : MonoBehaviour {
 
 
-	// Get the VR Gesture Settings component on camera rig
-	// Enable and disable component
+    // Get the VR Gesture Settings component on camera rig
+    // Enable and disable component
+
+    void Start() {
+        turnOff(this.gameObject);
+    }
 
 	public static void turnOff(GameObject camRig) {
 		//Debug.Log ("turned off?");

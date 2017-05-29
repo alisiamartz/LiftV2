@@ -58,22 +58,33 @@ public class StateFetch : MonoBehaviour {
 		return false;
 	}
 
-	//Called from AI to tell the player that now is the time for a gesture
-	public void waitingForGesture() {
+    //Called from AI to tell the player that now is the time for a gesture
+    public void waitingForGesture() {
         Debug.Log("WAITING FOR A GESTURE");
-		if (controller1 != null)
-			controller1.GetComponent<ParticleSystem>().Play();
-		if (controller2 != null)
-			controller2.GetComponent<ParticleSystem>().Play();
-	}
+        if (controller1 != null) {
+            if (controller1.GetComponent<ParticleSystem>().isPlaying != true) {
+                controller1.GetComponent<ParticleSystem>().Play();
+            }
+        }
+        if (controller2 != null) {
+            if (controller2.GetComponent<ParticleSystem>().isPlaying != true) {
+                controller2.GetComponent<ParticleSystem>().Play();
+            }
+        }
+        Haptic.rumbleController(0.1f, 0.5f, "both");
+        DisableGesture.turnOn(this.gameObject);
+    }
 
-	public void stopWaitingGesture() {
+
+    public void stopWaitingGesture() {
         Debug.Log("NO GESTURES PLS");
 		if (controller1 != null)
 			controller1.GetComponent<ParticleSystem>().Stop();
 		if (controller2 != null)
 			controller2.GetComponent<ParticleSystem>().Stop();
-	}
+
+        DisableGesture.turnOff(this.gameObject);
+    }
 
 
 	// this is where we spawn the id and hat in the tutorial interaction
