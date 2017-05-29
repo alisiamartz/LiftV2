@@ -18,7 +18,7 @@ public class DayManager : MonoBehaviour
     [Header("Timeline")]
     [Range(1, 5)]
     public int day = 1;
-    //[Range(1, 4)]
+    [Range(1, 4)]
     [Tooltip("The number patron the game will start with. 1st Patron is 1")]
     public int patronNumber = 1;
 
