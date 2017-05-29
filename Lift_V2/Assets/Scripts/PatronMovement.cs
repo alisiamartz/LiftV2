@@ -62,9 +62,6 @@ public class PatronMovement : MonoBehaviour {
         } else
         {
             anim.SetBool("talking", false);
-            if(gameObject.tag == "Adultress") {
-                dateBoi.GetComponent<dateMovement>().talk(5);
-            }
         }
 
         if (moving)
@@ -247,8 +244,8 @@ public class PatronMovement : MonoBehaviour {
         }
         else {
             rotateTarget = playerHead;
-            rotating = true;
         }
+        rotating = true;
     }
 
     public void turnTowardsWaypoint(GameObject waypoint)
@@ -259,11 +256,20 @@ public class PatronMovement : MonoBehaviour {
 
     public void talk(float time) {
         timer = time;
+        Debug.LogWarning(time);
         anim.SetBool("talking", true);
+        if (gameObject.tag == "Adultress" && dateBoi != null)
+        {
+            dateBoi.GetComponent<dateMovement>().talk(time);
+        }
     }
     
     public void stopTalking() {
         anim.SetBool("talking", false);
+        if (gameObject.tag == "Adultress" && dateBoi != null)
+        {
+            dateBoi.GetComponent<dateMovement>().stopTalking();
+        }
     }
 
     //Called from AI whenever the mood is changed i indicates by how much

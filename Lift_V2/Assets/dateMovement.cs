@@ -17,7 +17,7 @@ public class dateMovement : MonoBehaviour {
     //For new waypoint system
     private int waypointNumber = 2;
 
-    [Range(0.5f, 5)]
+    [Range(0.4f, 5)]
     public float walkSpeed = 0.5f;
     [Range(1, 5)]
     public float rotationSpeed = 5f;
@@ -36,6 +36,8 @@ public class dateMovement : MonoBehaviour {
 
     //TIMER
     private float timer = 0;
+
+    public GameObject adultress;
 
 
     // Use this for initialization
@@ -146,12 +148,8 @@ public class dateMovement : MonoBehaviour {
         }
     }
 
-    public void wait() {
-        waiting = true;
-    }
-
     public void turnTowardsPlayer() {
-        rotateTarget = playerHead;
+        rotateTarget = adultress;
         rotating = true;
     }
 
