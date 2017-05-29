@@ -195,7 +195,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "No Respect",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	 {
@@ -211,12 +211,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Lost Hope",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Fake Confidence",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.1h",
         "art5.1n",
@@ -227,12 +227,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Fake Confidence",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Fake Smile",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.2h",
         "art5.2n",
@@ -243,12 +243,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Fake Smile",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "No Hard Feelings",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.3h",
         "art5.3n",
@@ -259,12 +259,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "No Hard Feelings",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Being Ungrateful",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.4h",
         "art5.4h",
@@ -275,12 +275,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Being Ungrateful",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Preemptive Goodbye",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.5h",
         "art5.5h",
@@ -291,12 +291,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Preemptive Goodbye",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Being Grateful",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.6h",
         "art5.6h",
@@ -307,12 +307,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Being Grateful",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Stuck on Technicalities",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.7h",
         "art5.7h",
@@ -323,12 +323,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Stuck on Technicalities",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "New Door Opens",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.8h",
         "art5.8h",
@@ -339,7 +339,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "New Door Opens",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
@@ -355,6 +355,22 @@
         "",
         ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",

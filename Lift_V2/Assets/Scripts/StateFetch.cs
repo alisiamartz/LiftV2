@@ -11,18 +11,23 @@ public class StateFetch : MonoBehaviour {
 //	public GameObject[] respondings;
 	public GameObject spawn1;
 	public GameObject spawn2;
-    public GameObject paper;
 
     public GameObject controller1;
 	public GameObject controller2;
+
+    public GameObject cont;
+    public GameObject sal;
 
 	// Use this for initialization
 	void Start () {
 		controller1 = GameObject.FindGameObjectWithTag ("rightControl");
 		controller2 = GameObject.FindGameObjectWithTag ("leftControl");
-	}
-		
-	void Update() {
+
+        cont = GameObject.FindGameObjectWithTag("cont");
+        sal = GameObject.FindGameObjectWithTag("sal");
+    }
+
+    void Update() {
 		if (controller1 == null)
 			controller1 = GameObject.FindGameObjectWithTag ("rightControl");
 		if (controller2 == null)
@@ -32,10 +37,10 @@ public class StateFetch : MonoBehaviour {
 		//	respondings = GameObject.FindGameObjectsWithTag ("responding");	
 
 		// test code to see if it works
-			//if (Input.GetKeyDown (KeyCode.A)) 
-				//initPaper();
+		//	if (Input.GetKeyDown (KeyCode.A)) 
+		//		contConf();
 		//	if (Input.GetKeyDown (KeyCode.S))
-		//		stopWaitingGesture ();
+		//		salRude ();
 
 	}
 
@@ -81,10 +86,10 @@ public class StateFetch : MonoBehaviour {
 	}
 
     public void contConf() {
-
+        cont.SetActive(true);
     }
 
     public void salRude() {
-
+        sal.SetActive(true);
     }
 }

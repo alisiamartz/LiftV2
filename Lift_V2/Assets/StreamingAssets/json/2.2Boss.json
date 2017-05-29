@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 20,
+      "wait": 15,
       "dialogue": [
         "boss1.1h",
         "boss1.1h",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 20,
+      "wait": 7,
       "dialogue": [
         "boss1.2h",
         "boss1.2h",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Important meeting",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
         "boss2.1h",
         "boss2.1h",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Cold feet",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "boss2.2h",
         "boss2.2h",
@@ -77,7 +77,7 @@
     },
     {
       "name": "Ungrateful",
-      "wait": 40,
+      "wait": 7,
       "dialogue": [
         "boss3.1h",
         "boss3.1h",
@@ -96,7 +96,7 @@
     },
     {
       "name": "Professional negotiator",
-      "wait": 20,
+      "wait": 7,
       "dialogue": [
         "boss3.2h",
         "boss3.2h",
@@ -107,12 +107,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Professional negotiator",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Sour mood",
-      "wait": 13,
+      "wait": 7,
       "dialogue": [
         "boss4.1h",
         "boss4.1h",
@@ -123,12 +123,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Sour mood",
+      "noResponse": "waitingFloor",
       "noResponseChange": -1
     },
     {
       "name": "Financial burden",
-      "wait": 13,
+      "wait": 7,
       "dialogue": [
         "boss4.2h",
         "boss4.2n",
@@ -139,16 +139,32 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Financial burden",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Quiet trip",
-      "wait": 5,
+      "wait": 7,
       "dialogue": [
         "boss4.3h",
         "boss4.3h",
         "boss4.3h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
       ],
       "animation": [
         "talk",
@@ -160,7 +176,7 @@
     },
     {
       "name": "End",
-      "wait": 10,
+      "wait": 0,
       "dialogue": [
         "boss5.1h",
         "boss5.1n",
@@ -174,7 +190,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "boss5.2h",
         "boss5.2n",

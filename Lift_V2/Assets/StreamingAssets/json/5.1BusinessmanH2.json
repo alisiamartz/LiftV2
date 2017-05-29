@@ -18,16 +18,16 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Long time coming",
+      "noResponse": "Your Choice",
       "noResponseChange": 0
     },
     {
       "name": "Your Choice",
       "wait": 7,
       "dialogue": [
-        "bm2.1hA",
-        "bm2.1hA",
-        "bm2.1hA"
+        "bm2.1hS",
+        "bm2.1hS",
+        "bm2.1hS"
       ],
 	  "animation": [
         "talk",

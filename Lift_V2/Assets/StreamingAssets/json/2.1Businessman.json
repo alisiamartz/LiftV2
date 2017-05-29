@@ -118,7 +118,7 @@
     },
     {
       "name": "Cat got your tongue",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm3.3h",
         "bm3.3h",
@@ -134,7 +134,7 @@
     },
     {
       "name": "Everyone's a critic",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm3.4h",
         "bm3.4n",
@@ -145,12 +145,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Everyone's a critic",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "New guy",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm3.5h",
         "bm3.5n",
@@ -161,12 +161,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "New guy",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Stubborn pride",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm4.1h",
         "bm4.1h",
@@ -182,7 +182,7 @@
     },
 	{
       "name": "Eye for business",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm4.2h",
         "bm4.2h",
@@ -198,7 +198,7 @@
     },
 	{
       "name": "Financial mistake",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm5.1h",
         "bm5.1h",
@@ -209,12 +209,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Financial mistake",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Business card",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm5.2h",
         "bm5.2n",
@@ -225,12 +225,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Business card",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "24/7 watch",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm5.3h",
         "bm5.3n",
@@ -241,12 +241,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "24/7 watch",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Uneventful",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "bm5.4h",
         "bm5.4n",
@@ -258,6 +258,22 @@
         "talk"
       ],
       "noResponse": "24/7 watch",
+      "noResponseChange": 0
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
