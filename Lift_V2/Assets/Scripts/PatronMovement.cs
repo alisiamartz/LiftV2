@@ -62,6 +62,9 @@ public class PatronMovement : MonoBehaviour {
         } else
         {
             anim.SetBool("talking", false);
+            if(gameObject.tag == "Adultress") {
+                dateBoi.GetComponent<dateMovement>().talk(5);
+            }
         }
 
         if (moving)
@@ -239,8 +242,13 @@ public class PatronMovement : MonoBehaviour {
 
     public void turnTowardsPlayer()
     {
-        rotateTarget = playerHead;
-        rotating = true;
+        if (gameObject.tag == "Adultress") {
+            rotateTarget = dateBoi;
+        }
+        else {
+            rotateTarget = playerHead;
+            rotating = true;
+        }
     }
 
     public void turnTowardsWaypoint(GameObject waypoint)
