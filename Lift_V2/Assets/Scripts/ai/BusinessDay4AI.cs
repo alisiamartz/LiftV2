@@ -110,7 +110,7 @@ public class BusinessDay4AI : Agent {
             isExit = true;
             if (currentNode.name == "Server") info.setBusinessPick(0);
             else if (currentNode.name == "Artist") info.setBusinessPick(1);
-            else info.setBusinessPick(3);
+            else info.setBusinessPick(2);
         }
     }
     
