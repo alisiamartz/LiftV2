@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 10,
+      "wait": 15,
       "dialogue": [
         "t1.1h",
         "t1.1h",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 31,
+      "wait": 7,
       "dialogue": [
         "t1.2h",
         "t1.2h",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Jokester",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "t2.1h",
         "t2.1h",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Conversation starter",
-      "wait": 17,
+      "wait": 7,
       "dialogue": [
         "t2.2h",
         "t2.2h",
@@ -74,7 +74,7 @@
     },
     {
       "name": "Sign Language",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
         "t2.3h",
         "t2.3h",
@@ -93,11 +93,11 @@
     },
 	{
 	  "name": "Sign Language...again",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
-        "t2.4h",
-        "t2.4h",
-        "t2.4h"
+        "t2.3n",
+        "t2.3n",
+        "t2.3n"
       ],
       "animation": [
         "talk",
@@ -112,11 +112,11 @@
     },
 	{
 	  "name": "Sign Language...again...and again",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
-        "t2.5h",
-        "t2.5h",
-        "t2.5h"
+        "t2.3a",
+        "t2.3a",
+        "t2.3a"
       ],
       "animation": [
         "talk",
@@ -132,11 +132,11 @@
 	{
 
 	  "name": "Sign Language2",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
-        "t3.3h",
-        "t3.3h",
-        "t3.3h"
+        "t3.2h",
+        "t3.2h",
+        "t3.2h"
       ],
       "animation": [
         "talk",
@@ -151,11 +151,11 @@
     },
 	{
 	  "name": "Sign Language2...again",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
-        "t3.4h",
-        "t3.4h",
-        "t3.4h"
+        "t3.2n",
+        "t3.2n",
+        "t3.2n"
       ],
       "animation": [
         "talk",
@@ -170,11 +170,11 @@
     },
 	{
 	  "name": "Sign Language2...again...and again",
-      "wait": 25,
+      "wait": 7,
       "dialogue": [
-        "t3.5h",
-        "t3.5h",
-        "t3.5h"
+        "t3.2a",
+        "t3.2a",
+        "t3.2a"
       ],
       "animation": [
         "talk",
@@ -189,7 +189,7 @@
     },
 	{
       "name": "Simple response",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "t3.1h",
         "t3.1h",
@@ -207,27 +207,8 @@
       "noResponseChange": 0
     },
     {
-      "name": "Clarification",
-      "wait": 10,
-      "dialogue": [
-        "t3.2h",
-        "t3.2h",
-        "t3.2h"
-      ],
-      "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "listen": [ "yes", "no" ],
-      "change": [ 1, 1 ],
-      "toNode": [ "Conversation starter", "Conversation starter" ],
-      "noResponse": "Awkward encounter",
-      "noResponseChange": -1
-    },
-    {
       "name": "Big day",
-      "wait": 12,
+      "wait": 7,
       "dialogue": [
         "t4.1h",
         "t4.1h",
@@ -246,11 +227,11 @@
     },
     {
       "name": "Awkward encounter",
-      "wait": 20,
+      "wait": 7,
       "dialogue": [
-        "t4.2h",
-        "t4.2h",
-        "t4.2h"
+        "t5.1n",
+        "t5.1n",
+        "t5.1n"
       ],
       "animation": [
         "talk",
@@ -262,7 +243,7 @@
     },
     {
       "name": "Work night",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "t5.1h",
         "t5.1h",
@@ -277,8 +258,22 @@
       "noResponseChange": 0
     },
     {
+      "name": "Detour",
+      "wait": 0,
+      "dialogue": [
+        "t6.2h",
+        "t6.2h",
+        "t6.2h"
+      ],
+      "animation": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
       "name": "End",
-      "wait": 10,
+      "wait": 0,
       "dialogue": [
         "t6.1h",
         "t6.1n",
@@ -292,11 +287,11 @@
     },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "t6.2h",
         "t6.2n",
-        "t6.2a"
+        "t6.2n"
       ],
       "animation": [
         "talk",

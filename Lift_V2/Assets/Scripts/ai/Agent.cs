@@ -17,7 +17,6 @@ public abstract class Agent : MonoBehaviour {
     protected Dictionary<string, node> nodeDict = new Dictionary<string, node>();
 
     //node data
-    [SerializeField]
     protected node onNode; //only used in GenericAIv1 NOT v2
     [SerializeField]
     protected node currentNode;
