@@ -211,8 +211,10 @@ public class Patrons {
         else if (patronName == "Adultress2")
         {
             patronObject.AddComponent<GenericAIv2>();
-            patronObject.GetComponent<GenericAIv2>().setFilename("3.3Adultress.json");
-            patronObject.GetComponent<GenericAIv2>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
+            int mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
+            patronObject.GetComponent<GenericAIv2>().setMood((short) mood);
+            if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("3.3AdultressH.json");
+            else patronObject.GetComponent<GenericAIv2>().setFilename("3.3AdultressAN.json");
 
             patronObject.GetComponent<PatronAudio>().patronName = "Adultress";
             patronObject.GetComponent<PatronAudio>().dayName = "Day3";

@@ -72,11 +72,8 @@ public class TouristDay4AI : Agent {
             case "Life to the fullest":
                 playDelusionalArc();
                 break;
-            case "waitingFloor":
-                if (delusional) playDelusionalEnd();
-                break;
             case "Ideal attendant":
-                walkingOut();
+                playDelusionalEnd();
                 break;
             case "Facing one's fears":
                 playHusbandStart();
@@ -84,34 +81,23 @@ public class TouristDay4AI : Agent {
             case "Getting Divorced":
                 playHusbandDivorce();
                 break;
+            case "Confrontations":
             case "What now?":
+            case "When the moment is right":
+                playHusbandNormal();
                 break;
-            /*
-            case "Start1":
-            case "Home Value":
-            case "Hard workers":
-                normal(n, gesture);
+            case "Split decision":
+                playHusbandEnd(nodeDict["Somber goodbye"], nodeDict["Losing time 2"]);
                 break;
-            case "Missed opportunity":
-            case "Perfect for the business":
-            case "notFloor":
-            case "Server":
-            case "Artist":
-            case "Other":
-                leaveElevator();
+            case "Run away":
+                playHusbandEnd(nodeDict["Never looking back"], nodeDict["Never looking back 2"]);
                 break;
-            case "No Regrets":
-            case "One Sided":
-            case "Parasites":
-                waitForFloor("Missed opportunity", "notFloor");
+            case "Sooner the better":
+                playConfrontationEnd(nodeDict["Reunited"], nodeDict["Losing time"]);
                 break;
-            case "Cutthroat":
-                waitForFloor("Perfect for the business", "notFloor");
+            case "Private manners":
+                playConfrontationEnd(nodeDict["Somber goodbye"], nodeDict["Losing time 2"]);
                 break;
-            case "Diamond in the rough":
-                pickFloor();
-                break;
-            */
             default:
                 break;
         }
@@ -126,35 +112,42 @@ public class TouristDay4AI : Agent {
     }
 
     private void playDelusionalEnd() {
-        if (timer < nodeDict[lastSound].wait) {
-            if (isDoorOpen()) {
-                if (getFloorNumber() == attributes.goal) {
-                    currentNode = nodeDict["Ideal attendant"];
-                } else {
-                    if (lastSound == notFloorNode.name) {
-                        if (timer <= 0) say(notFloorNode, true);
-                    } else say(notFloorNode, true);
-                }
-            } else if (timer <= 0) {
-                say(currentNode, true);
+        if (isDoorOpen()) {
+            if (getFloorNumber() == attributes.goal) {
+                walkingOut();
+            } else {
+                if (lastSound == notFloorNode.name) {
+                    if (timer <= 0) say(notFloorNode, true);
+                } else say(notFloorNode, true);
             }
         }
     }
 
     private void playHusbandStart() {
         say(currentNode);
-        if (info.getDivorce()) currentNode = nodeDict["What now?"];
-        else currentNode = nodeDict["Getting divorced"];
+        if  (info.getDivorce()) {
+            currentNode = nodeDict["What now?"];
+            flag = true;
+        } else currentNode = nodeDict["Getting divorced"];
     }
 
     private void playHusbandDivorce() {
         if (timer <= 0) {
             say(currentNode, true);
             currentNode = nodeDict["What now?"];
+            flag = true;
         }
     }
 
     private void playHusbandNormal() {
+        if (flag) {
+            if (timer <= 0) {
+                flag = false;
+                isPlayed = false;
+            }
+            else return;
+        }
+        say(currentNode);
         if (timer <= nodeDict[lastSound].wait) {
             if (isDoorOpen()) {
                 if (getFloorNumber() == attributes.goal) {
@@ -173,14 +166,33 @@ public class TouristDay4AI : Agent {
                         int index = currentNode.listen.IndexOf(gesture);
                         changeMood(currentNode.change[index]);
                         currentNode = nodeDict[currentNode.toNode[index]];
+                        isPlayed = false;
                     } else if (timer <= 0) {
                         changeMood(currentNode.noResponseChange);
                         currentNode = nodeDict[currentNode.noResponse];
+                        isPlayed = false;
                     }
                 }
             }
         } else {
             resetGesture();
+        }
+    }
+
+    private void playHusbandEnd(node right, node wrong) {
+        if (isDoorOpen()) {
+            if (getFloorNumber() == attributes.goal) currentNode = right;
+            else  currentNode = wrong;
+            walkingOut();
+        }
+    }
+
+    private void playConfrontationEnd(node right, node ball) {
+        if (isDoorOpen()) {
+            if (getFloorNumber() == attributes.goal) currentNode = right;
+            else if (getFloorNumber() == 2) currentNode = ball;
+            else currentNode = endNode;
+            walkingOut();
         }
     }
 
@@ -190,50 +202,6 @@ public class TouristDay4AI : Agent {
         exit();
         currentNode.name = "";
         info.setMood(name, attributes.mood);
-    }
-
-    private void normal(node n, string gesture) {
-        if (n.listen.Contains(gesture)) {
-            int index = n.listen.IndexOf(gesture);
-            changeMood(n.change[index]);
-            currentNode = nodeDict[n.toNode[index]];
-            isPlayed = false;
-        }
-        else if (timer <= 0) {
-            changeMood(n.noResponseChange);
-            currentNode = nodeDict[n.noResponse];
-            isPlayed = false;
-        }
-    }
-
-    private void waitForFloor(string right, string wrong) {
-        //true if door it open else false;
-        if (isDoorOpen()) {
-            if (getFloorNumber() == attributes.goal) currentNode = nodeDict[right];
-            else currentNode = nodeDict[wrong];
-            isPlayed = false;
-        }
-        else if (timer <= 0) isPlayed = false;
-    }
-
-    private void leaveElevator() {
-        if (!isExit) {
-            stopTalking();
-            exit();
-            (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).setMood(name, attributes.mood);
-            isExit = true;
-        }
-    }
-
-    private void pickFloor() {
-        if (isDoorOpen()) {
-            int i = getFloorNumber();
-            if (i == 6) currentNode = nodeDict["Server"];
-            else if (i == 2) currentNode = nodeDict["Artist"];
-            else currentNode = nodeDict["Other"];
-            isPlayed = false;
-        }
-        else if (timer <= 0) isPlayed = false;
     }
 
     private void say(node n, bool force = false) {
