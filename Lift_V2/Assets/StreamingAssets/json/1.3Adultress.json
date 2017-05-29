@@ -110,7 +110,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Mixed signals",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
@@ -126,7 +126,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Perfect employee",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
@@ -142,7 +142,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Black eye",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
@@ -158,7 +158,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Cinderella Story",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
@@ -174,7 +174,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Jealous",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
@@ -190,6 +190,22 @@
         "",
         ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",
