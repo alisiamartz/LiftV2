@@ -55,7 +55,7 @@
       ],
       "listen": [ "salute", "rude", "yes", "no", "continue", "confused" ],
       "change": [ 1, 1, 1, -2, -2, -2 ],
-      "toNode": [ "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless", ],
+      "toNode": [ "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless" ],
       "noResponse": "Recognized Geniusness",
       "noResponseChange": 1
     },
@@ -232,7 +232,7 @@
     },
 	{
       "name": "Not in the mood",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.1h",
         "art4.1h",
@@ -243,12 +243,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Not in the mood",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Letting go",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.2h",
         "art4.2h",
@@ -259,12 +259,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Letting go",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Uncertain",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.3h",
         "art4.3h",
@@ -275,12 +275,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Uncertain",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Taking the long way",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.4h",
         "art4.4h",
@@ -291,23 +291,23 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Taking the long way",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Someday",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.5h",
-        "art4.4h",
-        "art4.4h"
+        "art4.5h",
+        "art4.5h"
       ],
 	  "animation": [
         "talk",
         "talk",
         "talk"
       ],
-	  "noResponse": "Someday",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
@@ -315,8 +315,8 @@
       "wait": 7,
       "dialogue": [
         "art4.6h",
-        "art4.4h",
-        "art4.4h"
+        "art4.6h",
+        "art4.6h"
        ],
 	  "animation": [
         "talk",
@@ -330,8 +330,8 @@
       "noResponseChange": -1
     },
 	{
-      "name": "Loct cause",
-      "wait": 0,
+      "name": "Lost cause",
+      "wait": 7,
       "dialogue": [
         "art4.7h",
         "art4.7h",
@@ -342,7 +342,7 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Loct cause",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
@@ -366,7 +366,7 @@
     },
 	{
       "name": "Biggest regret",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.9h",
         "art4.9h",
@@ -377,12 +377,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Biggest regret",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Suicide",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "4.10h",
         "4.10h",
@@ -393,7 +393,7 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Suicide",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
@@ -474,7 +474,7 @@
     },
 	{
       "name": "Endless cycle",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.1h",
         "art5.1h",
@@ -485,12 +485,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Endless cycle",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "New beginning",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "missingdialogue",
         "missingdialogue",
@@ -501,12 +501,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "New beginning",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Artworks",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.3h",
         "art5.3h",
@@ -517,12 +517,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Artworks",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "True friend",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.4h",
         "art5.4h",
@@ -533,12 +533,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "True friend",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Good friend",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.5h",
         "art5.5h",
@@ -549,12 +549,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Good friend",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Real friend",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art5.6h",
         "art5.6h",
@@ -565,7 +565,7 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Real friend",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
     {
@@ -576,11 +576,27 @@
         "art6.1n",
         "art6.1a"
       ],
-	  "animation": [
+      "animation": [
         "",
         "",
         ""
       ]
+    },
+    {
+      "name": "waitinfFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "waitinfFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",
