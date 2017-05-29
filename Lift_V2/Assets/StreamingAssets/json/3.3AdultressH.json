@@ -174,7 +174,7 @@
     },
 	{
       "name": "Mediocre",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt4.3h",
 		"adt4.3h",
@@ -185,12 +185,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Mediocre",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Wrong Name",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt4.4h",
 		"adt4.4h",
@@ -201,7 +201,7 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Wrong Name",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
@@ -225,7 +225,7 @@
     },
 	{
       "name": "Just a Hater",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt4.6h",
 		"adt4.6h",
@@ -236,12 +236,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Just a Hater",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Second Chance",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt5.1h",
 		"adt5.1h",
@@ -252,12 +252,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Second Chance",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Breakup",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt5.2h",
 		"adt5.2h",
@@ -268,12 +268,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Breakup",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Good Terms",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt5.3h",
 		"adt5.3h",
@@ -284,12 +284,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Good Terms",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Blackmailed",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt5.4h",
 		"adt5.4h",
@@ -300,12 +300,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Blackmailed",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Incompetent",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt5.5h",
 		"adt5.5n",
@@ -316,12 +316,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Incompetent",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Very Bad Blood",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "adt5.6h",
 		"adt5.6h",
@@ -332,7 +332,7 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Very Bad Blood",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
@@ -348,6 +348,22 @@
         "",
         ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 15,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",

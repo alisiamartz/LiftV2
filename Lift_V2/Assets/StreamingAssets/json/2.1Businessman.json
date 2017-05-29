@@ -262,7 +262,7 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
         "missingdialogue",
         "missingdialogue",

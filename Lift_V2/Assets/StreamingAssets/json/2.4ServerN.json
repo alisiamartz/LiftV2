@@ -53,12 +53,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Ordinary",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Unique perspective",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s3.4h",
         "s3.4h",
@@ -69,7 +69,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Unique perspective",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
@@ -85,6 +85,22 @@
         "",
         ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 15,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",

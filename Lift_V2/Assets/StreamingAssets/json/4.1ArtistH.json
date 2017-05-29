@@ -194,7 +194,7 @@
     },
 	 {
       "name": "No Respect",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.3h",
         "art4.3h",
@@ -210,7 +210,7 @@
     },
 	 {
       "name": "Lost Hope",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.4h",
         "art4.4h",
@@ -368,7 +368,7 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
         "missingdialogue",
         "missingdialogue",

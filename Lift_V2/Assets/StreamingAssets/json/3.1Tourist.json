@@ -99,7 +99,7 @@
     },
     {
       "name": "Rambling",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "t3.1h",
         "t3.1h",
@@ -115,7 +115,7 @@
     },
     {
       "name": "Today's agenda",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "t3.2h",
         "t3.2n",
@@ -208,7 +208,7 @@
     },
     {
       "name": "Divorce",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "t5.2h",
         "t5.2h",
@@ -224,7 +224,7 @@
     },
     {
       "name": "Silence",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "t5.1h",
         "t5.1n",
@@ -240,7 +240,7 @@
     },
     {
       "name": "No comment",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "t6.1h",
         "t6.1h",
@@ -286,7 +286,7 @@
     },
     {
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
         "missingdialogue",
         "missingdialogue",

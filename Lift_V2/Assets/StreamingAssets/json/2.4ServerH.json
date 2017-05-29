@@ -42,7 +42,7 @@
     },
     {
       "name": "Compromise",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s3.1h",
         "s3.1h",
@@ -53,12 +53,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Compromise",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Atmosphere",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s3.2h",
         "s3.2h",
@@ -69,12 +69,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Atmosphere",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Happy day",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s4.1h",
         "s4.1h",
@@ -85,12 +85,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Happy day",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Weekend",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s4.3h",
         "s4.3h",
@@ -101,7 +101,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Weekend",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 {
@@ -117,6 +117,22 @@
         "",
         ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 15,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",

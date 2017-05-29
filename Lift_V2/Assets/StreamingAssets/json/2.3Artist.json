@@ -137,7 +137,7 @@
     },
 	{
       "name": "Lifted Spirit",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.1h",
         "art4.1h",
@@ -148,12 +148,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Lifted Spirit",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "New Inspiration",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.2h",
         "art4.2h",
@@ -164,12 +164,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "New Inspiration",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Blue Season",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.3h",
         "art4.3h",
@@ -180,12 +180,12 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Blue Season",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Lost Appreciation",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "art4.4h",
         "art4.4h",
@@ -196,12 +196,44 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Lost Appreciation",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
 	{
       "name": "Glory Days",
-      "wait": 0,
+      "wait": 7,
+      "dialogue": [
+        "art4.5h",
+        "art4.5h",
+        "art4.5h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Rock Bottom",
+      "wait": 7,
+      "dialogue": [
+        "art4.6h",
+        "art4.6h",
+        "art4.6h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 15,
       "dialogue": [
         "art4.5h",
         "art4.5h",
@@ -213,22 +245,6 @@
         "talk"
       ],
 	  "noResponse": "Glory Days",
-      "noResponseChange": 0
-    },
-	{
-      "name": "Rock Bottom",
-      "wait": 0,
-      "dialogue": [
-        "art4.6h",
-        "art4.6h",
-        "art4.6h"
-      ],
-      "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-	  "noResponse": "Rock Bottom",
       "noResponseChange": 0
     },
     {

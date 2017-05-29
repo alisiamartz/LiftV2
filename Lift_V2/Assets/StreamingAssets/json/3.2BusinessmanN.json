@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 4,
+      "wait": 7,
       "dialogue": [
         "bm1.2h",
         "bm1.2n",
@@ -39,7 +39,7 @@
     },
     {
       "name": "Positive start",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm2.1h",
         "bm2.1h",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Neutral start",
-      "wait": 20,
+      "wait": 7,
       "dialogue": [
         "bm2.2h",
         "bm2.2h",
@@ -77,7 +77,7 @@
     },
     {
       "name": "Negative start",
-      "wait": 23,
+      "wait": 7,
       "dialogue": [
         "bm2.3h",
         "bm2.3h",
@@ -96,7 +96,7 @@
     },
     {
       "name": "Call back",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm3.1h",
         "bm3.1n",
@@ -115,7 +115,7 @@
     },
     {
       "name": "Phase 2",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm3.2h",
         "bm3.2h",
@@ -134,7 +134,7 @@
     },
     {
       "name": "Fallout",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm3.3h",
         "bm3.3n",
@@ -150,7 +150,7 @@
     },
     {
       "name": "Ignored",
-      "wait": 3,
+      "wait": 7,
       "dialogue": [
         "bm3.4h",
         "bm3.4n",
@@ -166,7 +166,7 @@
     },
     {
       "name": "Massive fallout",
-      "wait": 21,
+      "wait": 7,
       "dialogue": [
         "bm3.5h",
         "bm3.5h",
@@ -185,7 +185,7 @@
     },
     {
       "name": "Eavesdropper",
-      "wait": 21,
+      "wait": 7,
       "dialogue": [
         "bm3.6h",
         "bm3.6h",
@@ -204,7 +204,7 @@
     },
     {
       "name": "Backlash",
-      "wait": 5,
+      "wait": 7,
       "dialogue": [
         "bm3.7h",
         "bm3.7n",
@@ -236,7 +236,7 @@
     },
     {
       "name": "Contract signing",
-      "wait": 8,
+      "wait": 7,
       "dialogue": [
         "bm4.1h",
         "bm4.1h",
@@ -252,7 +252,7 @@
     },
     {
       "name": "Plan b",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm4.2h",
         "bm4.2h",
@@ -268,7 +268,7 @@
     },
     {
       "name": "Ignored again",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm4.3h",
         "bm4.3h",
@@ -279,12 +279,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Ignored again",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Success 2",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm4.4h",
         "bm4.4n",
@@ -295,12 +295,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Success 2",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Success",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm4.5h",
         "bm4.5n",
@@ -311,12 +311,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Success",
+      "noResponse": "waitingFloor",
       "noReponseChange": 0
     },
     {
       "name": "Trying again",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm4.6h",
         "bm4.6n",
@@ -327,12 +327,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Trying again",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "End",
-      "wait": 10,
+      "wait": 0,
       "dialogue": [
         "bm5.1h",
         "bm5.1n",
@@ -344,9 +344,25 @@
         ""
       ]
     },
+	{
+      "name": "waitingFloor",
+      "wait": 15,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "bm5.2h",
         "bm5.2n",

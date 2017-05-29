@@ -160,7 +160,7 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 15,
       "dialogue": [
         "missingdialogue",
         "missingdialogue",
@@ -171,7 +171,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Quiet trip",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {

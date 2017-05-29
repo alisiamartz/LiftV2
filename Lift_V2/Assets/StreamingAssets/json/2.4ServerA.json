@@ -53,12 +53,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Rumors",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Spreading like an infection",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s3.6h",
         "s3.6h",
@@ -69,12 +69,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Spreading like an infection",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Cure",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s4.6h",
         "s4.6h",
@@ -100,9 +100,25 @@
         ""
       ]
     },
+	{
+      "name": "waitingFloor",
+      "wait": 15,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "s5.2h",
         "s5.2n",
