@@ -330,7 +330,7 @@
       "noResponseChange": -1
     },
 	{
-      "name": "Loct cause",
+      "name": "Lost cause",
       "wait": 7,
       "dialogue": [
         "art4.7h",

@@ -243,7 +243,7 @@
         "talk",
         "talk"
       ],
-	  "noResponse": "Not in the mood",
+	  "noResponse": "waitinfFloor",
       "noResponseChange": 0
     },
 	{

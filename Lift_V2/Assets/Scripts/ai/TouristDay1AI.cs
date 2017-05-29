@@ -95,7 +95,7 @@ public class TouristDay1AI : Agent {
             case 1:
                 if (isDoorOpen()) {
                     if (getFloorNumber() == attributes.goal) {
-                        currentNode = nodeDict["Souvenir"];
+                        currentNode = nodeDict["End"];
                     }
                     else {
                         currentNode = nodeDict["Detour"];

@@ -110,7 +110,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Workers United",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
@@ -126,12 +126,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Different Viewpoints",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Habits",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s3.3h",
         "s3.3h",
@@ -142,12 +142,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Habits",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Terrible day",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s3.4h",
         "s3.4h",
@@ -158,12 +158,12 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Terrible day",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
       "name": "Aquaintances",
-      "wait": 0,
+      "wait": 7,
       "dialogue": [
         "s3.5h",
         "s3.5h",
@@ -174,7 +174,7 @@
         "talk",
         "talk"
       ],
-      "noResponse": "Aquaintances",
+      "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {
@@ -191,9 +191,25 @@
         ""
       ]
     },
+	{
+      "name": "waitingFloor",
+      "wait": 15,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "s4.2h",
         "s4.2n",
