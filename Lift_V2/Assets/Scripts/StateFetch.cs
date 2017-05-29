@@ -32,8 +32,8 @@ public class StateFetch : MonoBehaviour {
 		//	respondings = GameObject.FindGameObjectsWithTag ("responding");	
 
 		// test code to see if it works
-			if (Input.GetKeyDown (KeyCode.A)) 
-				initPaper();
+			//if (Input.GetKeyDown (KeyCode.A)) 
+				//initPaper();
 		//	if (Input.GetKeyDown (KeyCode.S))
 		//		stopWaitingGesture ();
 

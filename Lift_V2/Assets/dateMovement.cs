@@ -121,8 +121,6 @@ public class dateMovement : MonoBehaviour {
             moving = true;
             state = "entering";
 
-            transform.parent = null;
-
             return true;
         }
         else {
