@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "s2.2h",
-        "s2.2h",
-        "s2.2h"
+        "s1.1h",
+        "s1.1n",
+        "s1.1a"
       ],
 	  "animation": [
         "talk",

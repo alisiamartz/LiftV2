@@ -9,31 +9,30 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s1.1h",
+        "s1.1n",
+        "s1.1a"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+	  "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Current dilemma",
       "noResponseChange": 0
     },
     {
       "name": "Current dilemma",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "s2.2h",
+        "s2.2h",
+        "s2.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "continue", "confused", "no", "salute", "rude" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -43,38 +42,132 @@
     },
     {
       "name": "Problems at home",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "s3.3h",
+        "s3.3h",
+        "s3.3h"
+       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Crashing down", "Crashing down", "Crashing down", "Long history", "Long history", "Long history" ],
+      "noResponse": "Long history",
+      "noResponseChange": 0
     },
     {
       "name": "Second job",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "s3.4h",
+        "s3.4h",
+        "s3.4h"
+       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Crashing down", "Crashing down", "Crashing down", "Attention grabber", "Attention grabber", "Attention grabber" ],
+      "noResponse": "Attention grabber",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Long history",
+      "wait": 7,
+      "dialogue": [
+        "s4.4h",
+        "s4.4h",
+        "s4.4h"
+       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Crashing down",
+      "wait": 7,
+      "dialogue": [
+        "s4.5h",
+        "s4.5h",
+        "s4.5h"
+       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ], 
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Attention grabber",
+      "wait": 7,
+      "dialogue": [
+        "s4.6h",
+        "s4.6h",
+        "s4.6h"
+       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s5.1h",
+        "s5.1n",
+        "s5.1a"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 7,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+       ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s5.2h",
+        "s5.2n",
+        "s5.2a"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

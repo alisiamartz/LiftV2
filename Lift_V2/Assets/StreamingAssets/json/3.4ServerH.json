@@ -9,31 +9,30 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s1.1h",
+        "s1.1n",
+        "s1.1a"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 30,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+	  "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "Ambitions",
       "noResponseChange": 0
     },
     {
       "name": "Ambitions",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "s2.1h",
+        "s2.1h",
+        "s2.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "listen": [ "yes", "continue", "salute", "no", "confused", "rude" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
@@ -43,38 +42,132 @@
     },
     {
       "name": "Childhood dream",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
-      ]
+        "s3.1h",
+        "s3.1h",
+        "s3.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "So Close", "So Close", "So Close", "Yet so far", "Yet so far", "Yet so far" ],
+      "noResponse": "Yet so far",
+      "noResponseChange": 0
     },
     {
       "name": "Startup",
-      "wait": 30,
+      "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
-      ]
+        "s3.2h",
+        "s3.2h",
+        "s3.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Investment", "Investment", "Investment", "Yet so far", "Yet so far", "Yet so far" ],
+      "noResponse": "Yet so far",
+      "noResponseChange": 0
+    },
+	{
+      "name": "So Close",
+      "wait": 7,
+      "dialogue": [
+        "s4.1h",
+        "s4.1h",
+        "s4.1h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Yet so far",
+      "wait": 7,
+      "dialogue": [
+        "s4.2h",
+        "s4.2h",
+        "s4.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Investment",
+      "wait": 7,
+      "dialogue": [
+        "s4.3h",
+        "s4.3h",
+        "s4.3h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s5.1h",
+        "s5.1h",
+        "s5.1h"
+      ],
+	  "animation": [
+        "",
+        "",
+        ""
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 15,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "s5.2h",
+        "s5.2h",
+        "s5.2h"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3
