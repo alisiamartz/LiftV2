@@ -91,7 +91,7 @@ public class Patrons {
 
         if (patronName == "Server3") return new Patron(prefab, 6);
 
-        if (patronName == "Server4") return new Patron(prefab, 6);
+        if (patronName == "Server4") return new Patron(prefab, 1);
 
         throw new System.ArgumentOutOfRangeException("STARTING FLOOR NOT FOUND, TRIED TO PASS: " + patronName);
     }
@@ -308,11 +308,11 @@ public class Patrons {
             short mood = (short)info.getMood(patronName);
             patronObject.GetComponent<GenericAIv2>().setMood(mood);
             if (info.getBusinessPick() == 0) {
-                if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server1H");
-                else patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server1AN");
+                if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server1H.json");
+                else patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server1AN.json");
             } else {
-                if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server2H");
-                else patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server2AN");
+                if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server2H.json");
+                else patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server2AN.json");
             }
 
             patronObject.GetComponent<PatronAudio>().patronName = "Server";

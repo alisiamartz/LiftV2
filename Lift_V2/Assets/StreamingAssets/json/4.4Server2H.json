@@ -87,7 +87,7 @@
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Strength in numbers", "Lone wolf", "Strength in numbers", "Lone wolf", "Strength in numbers", "Lone wolf", ],
+      "toNode": [ "Strength in numbers", "Lone wolf", "Strength in numbers", "Lone wolf", "Strength in numbers", "Lone wolf" ],
       "noResponse": "Lone wolf",
       "noResponseChange": 0
     },
