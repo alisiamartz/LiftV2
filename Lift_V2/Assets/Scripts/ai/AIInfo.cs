@@ -26,6 +26,8 @@ public class AIInfo : MonoBehaviour {
     private int artistMood;
 
     private bool divorce = false;
+    [SerializeField]
+    private int businessPick; //0 = artist 1 = server 3 = other
     
     public void setMood(string name, int mood) {
         if (touristRegex.IsMatch(name)) touristMood = mood;
@@ -53,5 +55,13 @@ public class AIInfo : MonoBehaviour {
 
     public bool getDivorce() {
         return divorce;
+    }
+
+    public void setBusinessPick(int i) {
+        businessPick = i;
+    }
+
+    public int getBusinessPick() {
+        return businessPick;
     }
 }

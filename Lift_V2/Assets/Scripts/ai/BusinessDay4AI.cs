@@ -108,6 +108,9 @@ public class BusinessDay4AI : Agent {
             exit();
             (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).setMood(name, attributes.mood);
             isExit = true;
+            if (currentNode.name == "Server") info.setBusinessPick(0);
+            else if (currentNode.name == "Artist") info.setBusinessPick(1);
+            else info.setBusinessPick(3);
         }
     }
     

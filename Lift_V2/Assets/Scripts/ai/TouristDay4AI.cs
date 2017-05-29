@@ -128,7 +128,7 @@ public class TouristDay4AI : Agent {
         if  (info.getDivorce()) {
             currentNode = nodeDict["What now?"];
             flag = true;
-        } else currentNode = nodeDict["Getting divorced"];
+        } else currentNode = nodeDict["Getting Divorced"];
     }
 
     private void playHusbandDivorce() {
@@ -180,6 +180,7 @@ public class TouristDay4AI : Agent {
     }
 
     private void playHusbandEnd(node right, node wrong) {
+        say(currentNode);
         if (isDoorOpen()) {
             if (getFloorNumber() == attributes.goal) currentNode = right;
             else  currentNode = wrong;
@@ -188,6 +189,7 @@ public class TouristDay4AI : Agent {
     }
 
     private void playConfrontationEnd(node right, node ball) {
+        say(currentNode);
         if (isDoorOpen()) {
             if (getFloorNumber() == attributes.goal) currentNode = right;
             else if (getFloorNumber() == 2) currentNode = ball;
@@ -230,7 +232,7 @@ public class TouristDay4AI : Agent {
         bubble.text = n.dialogue[index];
 
         //update lastSound
-        lastSound = dialogue;
+        lastSound = n.name;
 
         //update isPlayed
         isPlayed = true;

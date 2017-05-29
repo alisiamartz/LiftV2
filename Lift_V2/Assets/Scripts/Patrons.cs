@@ -59,11 +59,13 @@ public class Patrons {
 
         if (patronName == "Business3") return new Patron(prefab, 3);
 
+        if (patronName == "Business4") return new Patron(prefab, 1);
+
         if (patronName == "Tourist1") return new Patron(prefab, 1);
 
         if (patronName == "Tourist2") return new Patron(prefab, 3);
 
-        if (patronName == "Tourist3") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Tourist3") return new Patron(prefab, 3);
 
         if (patronName == "Adultress1") {
             prefab.transform.Find("Date1").gameObject.SetActive(true);
@@ -89,7 +91,7 @@ public class Patrons {
 
         if (patronName == "Server3") return new Patron(prefab, 6);
 
-        if (patronName == "Server4") throw new System.ArgumentException("NOT YET IMPLEMENTED");
+        if (patronName == "Server4") return new Patron(prefab, 6);
 
         throw new System.ArgumentOutOfRangeException("STARTING FLOOR NOT FOUND, TRIED TO PASS: " + patronName);
     }
@@ -164,11 +166,17 @@ public class Patrons {
 
         else if (patronName == "Business4") {
             patronObject.AddComponent<GenericAIv2>();
-            short mood = (short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName);
+            AIInfo info = (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo);
+            short mood = (short)info.getMood(patronName);
             patronObject.GetComponent<GenericAIv2>().setMood(mood);
-            if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH.json");
-            else if (mood < -3) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanN.json");
-            else patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanA.json");
+            if (mood > 3) {
+                int index = info.getBusinessPick();
+                if (index == 0) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH2");
+                else if (index == 1) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH1");
+                else patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH3");
+            }
+            else if (mood < -3) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanA");
+            else patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanN");
 
             patronObject.GetComponent<PatronAudio>().patronName = "BusinessMan";
             patronObject.GetComponent<PatronAudio>().dayName = "Day5";
@@ -176,8 +184,7 @@ public class Patrons {
 
         else if (patronName == "Tourist1")
         {
-            patronObject.AddComponent<Tourist1AI>();
-            patronObject.GetComponent<Tourist1AI>().setFilename("1.2Tourist.json");
+            patronObject.AddComponent<TouristDay1AI>();
 
             patronObject.GetComponent<PatronAudio>().patronName = "Tourist";
             patronObject.GetComponent<PatronAudio>().dayName = "Day1";
@@ -195,7 +202,11 @@ public class Patrons {
 
         else if (patronName == "Tourist3")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<TouristDay4AI>();
+            patronObject.GetComponent<TouristDay4AI>().setMood((short)(GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo).getMood(patronName));
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Tourist";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day4";
         }
 
         else if (patronName == "Adultress1")
@@ -292,7 +303,20 @@ public class Patrons {
 
         else if (patronName == "Server4")
         {
-            throw new System.ArgumentException("NOT YET IMPLEMENTED");
+            patronObject.AddComponent<GenericAIv2>();
+            AIInfo info = (GameObject.FindWithTag("HotelManager").GetComponent(typeof(AIInfo)) as AIInfo);
+            short mood = (short)info.getMood(patronName);
+            patronObject.GetComponent<GenericAIv2>().setMood(mood);
+            if (info.getBusinessPick() == 0) {
+                if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server1H");
+                else patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server1AN");
+            } else {
+                if (mood > 3) patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server2H");
+                else patronObject.GetComponent<GenericAIv2>().setFilename("4.4Server2AN");
+            }
+
+            patronObject.GetComponent<PatronAudio>().patronName = "Server";
+            patronObject.GetComponent<PatronAudio>().dayName = "Day4";
         }
 
         else
