@@ -1,7 +1,7 @@
 {
   "agentAttr": {
     "mood": 0,
-    "goal": 2,
+    "goal": 3,
     "patience": 10
   },
   "nodes": [
@@ -41,7 +41,7 @@
     },
     {
       "name": "First order",
-      "wait": 0,
+      "wait": 1,
       "dialogue": [
         "boss2.1h",
         "boss2.1h",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Ancient mechanism",
-      "wait": 10,
+      "wait": 3,
       "dialogue": [
         "boss2.2h",
         "boss2.2h",
@@ -75,7 +75,7 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 5,
+      "wait": 3,
       "dialogue": [
         "boss2.3h",
         "boss2.3h",
@@ -91,7 +91,7 @@
     },
     {
       "name": "The Guests",
-      "wait": 5,
+      "wait": 3,
       "dialogue": [
         "boss3.1h",
         "boss3.1h",
@@ -107,7 +107,7 @@
     },
     {
       "name": "The first day",
-      "wait": 5,
+      "wait": 3,
       "dialogue": [
         "boss4.1h",
         "boss4.1h",
@@ -123,7 +123,7 @@
     },
     {
       "name": "Good start",
-      "wait": 5,
+      "wait": 3,
       "dialogue": [
         "boss4.2h",
         "boss4.2n",
@@ -139,7 +139,7 @@
     },
     {
       "name": "Extra",
-      "wait": 5,
+      "wait": 7,
       "dialogue": [
         "boss4.3h",
         "boss4.3h",

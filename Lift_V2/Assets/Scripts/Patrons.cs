@@ -55,7 +55,7 @@ public class Patrons {
 
         if (patronName == "Business1") return new Patron(prefab, 1);
 
-        if (patronName == "Business2") return new Patron(prefab, 2);
+        if (patronName == "Business2") return new Patron(prefab, 3);
 
         if (patronName == "Business3") return new Patron(prefab, 3);
 

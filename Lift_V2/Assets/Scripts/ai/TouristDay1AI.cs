@@ -13,6 +13,7 @@ public class TouristDay1AI : Agent {
 
     private GameObject objYes;
     private GameObject objNo;
+    private GameObject gestures;
     private float ty1;
     private float ty2;
     private float ty3;
@@ -31,6 +32,7 @@ public class TouristDay1AI : Agent {
         //"Yesy" & "No" animation stuff
         objYes = GameObject.FindGameObjectWithTag("tutorialLine");
         objNo = GameObject.FindGameObjectWithTag("tutorialLine2");
+        gestures = GameObject.FindGameObjectWithTag("GestureList");
         ty1 = 12.5f;
         ty2 = 2.0f;
         ty3 = 5.0f;
@@ -49,8 +51,9 @@ public class TouristDay1AI : Agent {
             objYes.GetComponent<Animator>().SetBool("startOver", false);
             objNo.GetComponent<Animator>().enabled = false;
             objNo.GetComponent<Animator>().SetBool("startOver", false);
+            gestures.GetComponent<Transform>().localScale = new Vector3(.57f, .57f, .57f);
         }
-        if (currentNode.name == "Sign Language")
+        else if (currentNode.name == "Sign Language")
         {
             ty1 -= Time.deltaTime;
             if (ty1 <= 0.0f) {
@@ -62,7 +65,7 @@ public class TouristDay1AI : Agent {
             }
         }
 
-        if (currentNode.name == "Sign Language...again")
+        else if (currentNode.name == "Sign Language...again")
         {
             ty2 -= Time.deltaTime;
             if (ty2 <= 0.0f)
@@ -75,7 +78,7 @@ public class TouristDay1AI : Agent {
             }
         }
 
-        if (currentNode.name == "Sign Language...again...and again")
+        else if (currentNode.name == "Sign Language...again...and again")
         {
             ty3 -= Time.deltaTime;
             if (ty3 <= 0.0f)
@@ -88,7 +91,7 @@ public class TouristDay1AI : Agent {
             }
         }
 
-        if (currentNode.name == "Sign Language2")
+        else if (currentNode.name == "Sign Language2")
         {
             tn1 -= Time.deltaTime;
             objYes.GetComponent<Animator>().enabled = false;
@@ -102,7 +105,7 @@ public class TouristDay1AI : Agent {
             }
         }
 
-        if (currentNode.name == "Sign Language2...again")
+        else if (currentNode.name == "Sign Language2...again")
         {
             tn2 -= Time.deltaTime;
             if (tn2 <= 0.0f)
@@ -115,7 +118,7 @@ public class TouristDay1AI : Agent {
             }
         }
 
-        if (currentNode.name == "Sign Language2...again...and again")
+        else if (currentNode.name == "Sign Language2...again...and again")
         {
             tn3 -= Time.deltaTime;
             if (tn3 <= 0.0f)
