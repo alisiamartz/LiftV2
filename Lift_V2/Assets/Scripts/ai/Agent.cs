@@ -60,7 +60,7 @@ public abstract class Agent : MonoBehaviour {
 
     //animation
     protected void animate(string s, float time = -1) {
-        if (timer > 0) {
+        if (time > 0) {
             pm.talk(time);
         } else if (s != "") {
             pm.Invoke(s, 0);

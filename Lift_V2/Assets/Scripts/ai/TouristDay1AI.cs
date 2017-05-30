@@ -13,6 +13,7 @@ public class TouristDay1AI : Agent {
 
     private GameObject objYes;
     private GameObject objNo;
+    private GameObject gestures;
     private float ty1;
     private float ty2;
     private float ty3;
@@ -31,6 +32,7 @@ public class TouristDay1AI : Agent {
         //"Yesy" & "No" animation stuff
         objYes = GameObject.FindGameObjectWithTag("tutorialLine");
         objNo = GameObject.FindGameObjectWithTag("tutorialLine2");
+        gestures = GameObject.FindGameObjectWithTag("GestureList");
         ty1 = 12.5f;
         ty2 = 2.0f;
         ty3 = 5.0f;
@@ -49,6 +51,7 @@ public class TouristDay1AI : Agent {
             objYes.GetComponent<Animator>().SetBool("startOver", false);
             objNo.GetComponent<Animator>().enabled = false;
             objNo.GetComponent<Animator>().SetBool("startOver", false);
+            gestures.GetComponent<Transform>().localScale = new Vector3 (.57f, .57f, .57f);
         }
         if (currentNode.name == "Sign Language")
         {

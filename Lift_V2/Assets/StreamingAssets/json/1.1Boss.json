@@ -1,13 +1,13 @@
 {
   "agentAttr": {
     "mood": 0,
-    "goal": 2,
+    "goal": 3,
     "patience": 10
   },
   "nodes": [
     {
       "name": "Start",
-      "wait": 5,
+      "wait": 15,
       "dialogue": [
         "boss1.1h",
         "boss1.1h",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Ancient mechanism",
-      "wait": 10,
+      "wait": 7,
       "dialogue": [
         "boss2.2h",
         "boss2.2h",
@@ -75,7 +75,7 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 5,
+      "wait": 1,
       "dialogue": [
         "boss2.3h",
         "boss2.3h",
@@ -91,7 +91,7 @@
     },
     {
       "name": "The Guests",
-      "wait": 5,
+      "wait": 1,
       "dialogue": [
         "boss3.1h",
         "boss3.1h",
@@ -107,7 +107,7 @@
     },
     {
       "name": "The first day",
-      "wait": 5,
+      "wait": 1,
       "dialogue": [
         "boss4.1h",
         "boss4.1h",

@@ -263,7 +263,6 @@ public class PatronMovement : MonoBehaviour {
     //For the remaining gesture animations
     public void confused()
     {
-        Debug.Log("._.");
         contConf.GetComponent<TutorialLines>().enabled = true;
     }
 

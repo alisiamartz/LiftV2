@@ -17,7 +17,7 @@ public class TutorialLines : MonoBehaviour {
         y = 0f;
         z = 0f;
         z2 = 0f;
-        wait = 0f;
+        wait = 6.5f;
         gesture = 1;
 	}
 	
@@ -36,7 +36,7 @@ public class TutorialLines : MonoBehaviour {
             if (y >= 2f)
             {
                 y = 0f;
-                wait = 5f;
+                wait = 3.5f;
                 gesture = 2;
             }
             wait -= Time.deltaTime;
@@ -66,7 +66,7 @@ public class TutorialLines : MonoBehaviour {
                 y = 0f;
                 z = 0f;
                 z2 = 0f;
-                wait = 5f;
+                wait = 16.4f;
                 gesture = 1;
             }
             wait -= Time.deltaTime;

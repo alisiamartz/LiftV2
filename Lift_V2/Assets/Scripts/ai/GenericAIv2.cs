@@ -217,7 +217,9 @@ public class GenericAIv2 : Agent {
         timer = audioTime + n.wait;
 
         //talking animation
-        animate(n.animation[index], audioTime);
+        Debug.Log("THIS ANIMATION: " + n.animation[index]);
+        if (n.animation[index] == "talk") animate(n.animation[index], audioTime);
+        else animate(n.animation[index]);
 
         //text bubble
         bubble.text = n.dialogue[index];
