@@ -83,7 +83,7 @@ public class Patrons {
 
         if (patronName == "Artist2") return new Patron(prefab, 5);
 
-        if (patronName == "Artist3") return new Patron(prefab, 1); //floor 4
+        if (patronName == "Artist3") return new Patron(prefab, 4);
 
         if (patronName == "Server1") return new Patron(prefab, 6);
 
