@@ -14,6 +14,9 @@ public class PatronMovement : MonoBehaviour {
 
     private GameObject musicSource;
 
+    private GameObject contConf;
+    private GameObject saluRude;
+
     //For new waypoint system
     private int waypointNumber = 2;
 
@@ -48,7 +51,10 @@ public class PatronMovement : MonoBehaviour {
         leverRotator = GameObject.FindGameObjectWithTag("lever");
         musicSource = GameObject.FindGameObjectWithTag("musicControl");
 		anim = GetComponent<Animator> ();
-	}
+
+        contConf = GameObject.FindGameObjectWithTag("tutorialLine3");
+        saluRude = GameObject.FindGameObjectWithTag("tutorialLine4");
+    }
 
 	
 	// Update is called once per frame
@@ -254,10 +260,35 @@ public class PatronMovement : MonoBehaviour {
         rotating = true;
     }
 
+    //For the remaining gesture animations
+    public void confused()
+    {
+        Debug.Log("._.");
+        contConf.GetComponent<TutorialLines>().enabled = true;
+    }
+
+    public void notConfused()
+    {
+        contConf.GetComponent<TutorialLines>().enabled = false;
+    }
+
+    public void salute()
+    {
+        saluRude.GetComponent<TutorialLines2>().enabled = true;
+    }
+
+    public void notSalute()
+    {
+        saluRude.GetComponent<TutorialLines2>().enabled = false;
+    }
+
+
     public void talk(float time) {
         timer = time;
         Debug.LogWarning(time);
         anim.SetBool("talking", true);
+        contConf.GetComponent<TutorialLines>().enabled = false;
+        saluRude.GetComponent<TutorialLines2>().enabled = false;
         if (gameObject.tag == "Adultress" && dateBoi != null)
         {
             dateBoi.GetComponent<dateMovement>().talk(time);
