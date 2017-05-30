@@ -35,8 +35,8 @@
         "talk"
       ],
       "listen": [ "salute", "confused", "rude", "continue", "yes", "no" ],
-      "change": [ 4, 4, -4, -4, 0, 0 ],
-      "toNode": [ "Nice date", "Nice date", "How to ruin a day in 30 seconds", "How to ruin a day in 30 seconds", "Employee of the month", "Employee of the month" ],
+      "change": [ 4, 0, -4, -4, 4, 0 ],
+      "toNode": [ "Nice date", "Employee of the month", "How to ruin a day in 30 seconds", "How to ruin a day in 30 seconds", "Nice date", "Employee of the month" ],
       "noResponse": "Employee of the month",
       "noResponseChange": 0
     },
@@ -99,7 +99,7 @@
     },
     {
       "name": "Mixed signals",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
         "adt3.1h",
         "adt3.1h",
@@ -115,7 +115,7 @@
     },
     {
       "name": "Perfect employee",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
         "adt3.2h",
         "adt3.2h",
@@ -131,7 +131,7 @@
     },
 	{
       "name": "Black eye",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
         "adt3.3h",
         "adt3.3h",
@@ -147,7 +147,7 @@
     },
     {
       "name": "Cinderella Story",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
         "adt3.4h",
         "adt3.4h",
@@ -163,7 +163,7 @@
     },
     {
       "name": "Jealous",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
         "adt3.5h",
         "adt3.5h",
@@ -209,7 +209,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
         "adt4.2h",
         "adt4.2n",

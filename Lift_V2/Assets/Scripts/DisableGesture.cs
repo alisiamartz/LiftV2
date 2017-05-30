@@ -14,12 +14,12 @@ public class DisableGesture : MonoBehaviour {
     }
 
 	public static void turnOff(GameObject camRig) {
-		//Debug.Log ("turned off?");
-		camRig.GetComponent<VRGestureRig> ().enabled = false;
+		Debug.Log ("turned off?");
+		//camRig.GetComponent<VRGestureRig> ().enabled = false;
 	}
 
 	public static void turnOn(GameObject camRig) {
-		//Debug.Log ("turned on?");
+	    Debug.Log ("turned on?");
 		if (!LeverRange.inRange && !doorInteraction.handInRange && !Interactable.inRange) {
 			camRig.GetComponent<VRGestureRig> ().enabled = true;
 		}
