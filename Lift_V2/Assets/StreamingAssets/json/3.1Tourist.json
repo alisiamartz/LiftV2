@@ -35,8 +35,8 @@
         "talk"
       ],
       "listen": [ "yes", "continue", "no", "rude", "confused", "salute" ],
-      "change": [ 2, 0, -1, 0, 0, 0 ],
-      "toNode": [ "Around the world", "Another lesson", "Another lesson", "Another lesson", "Another lesson", "Another lesson" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Another lesson", "Another lesson", "Another lesson", "Another lesson", "Another lesson", "Another lesson" ],
       "noResponse": "Another lesson",
       "noResponseChange": 0
     },
