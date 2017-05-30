@@ -139,7 +139,7 @@
     },
     {
       "name": "Extra",
-      "wait": 10,
+      "wait": 5,
       "dialogue": [
         "boss4.3h",
         "boss4.3h",
@@ -155,7 +155,7 @@
     },
     {
       "name": "End",
-      "wait": 2,
+      "wait": 0,
       "dialogue": [
         "boss5.1h",
         "boss5.1h",
@@ -169,7 +169,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "boss5.2h",
         "boss5.2h",
