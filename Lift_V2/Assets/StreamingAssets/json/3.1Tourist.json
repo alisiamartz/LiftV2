@@ -87,9 +87,9 @@
         "t1.3h"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "confused",
+        "confused",
+        "confused"
       ],
       "listen": [ "continue", "confused" ],
       "change": [ 2, 0 ],
@@ -263,9 +263,9 @@
         "t6.1a"
       ],
       "animation": [
-        "",
-        "",
-        ""
+        "notConfused",
+        "notConfused",
+        "notConfused"
       ]
     },
     {

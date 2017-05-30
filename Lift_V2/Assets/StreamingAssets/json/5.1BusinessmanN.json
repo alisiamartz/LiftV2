@@ -42,7 +42,7 @@
     },
     {
       "name": "Meh",
-      "wait": 7,
+      "wait": 10,
       "dialogue": [
         "bm2.2h",
         "bm2.2h",
@@ -55,8 +55,8 @@
       ],
       "listen": [ "yes", "salute", "continue", "rude", "no", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked" ],
-      "noResponse": "notFloor",
+      "toNode": [ "Failure", "Overlooked", "Failure", "Overlooked", "Failure", "Failure" ],
+      "noResponse": "Does it matter?",
       "noResponseChange": 0
     },
     {

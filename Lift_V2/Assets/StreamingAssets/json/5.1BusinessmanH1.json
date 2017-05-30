@@ -35,7 +35,7 @@
         "talk"
       ],
       "listen": [ "yes", "salute", "continue", "rude", "no", "confused" ],
-      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "change": [ 0, 0, 0, -14, -14, -14 ],
       "toNode": [ "Two offers", "Two offers", "Two offers", "Right choice", "Right choice", "Right choice" ],
       "noResponse": "Two offers",
       "noResponseChange": 0
@@ -105,10 +105,10 @@
         "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
-      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "change": [ 0, -14, -7, -7, 0, -14 ],
       "toNode": [ "Noble sacrifice", "Blinded by greed", "Tough choice", "Tough choice", "Noble sacrifice", "Blinded by greed" ],
       "noResponse": "Tough choice",
-      "noResponseChange": 0
+      "noResponseChange": -7
     },
     {
       "name": "Overlooked",
@@ -305,11 +305,11 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+        "bm5.1h",
+        "bm5.4h",
+        "bm5.3h"
       ],
       "animation": [
         "talk",
@@ -333,7 +333,7 @@
         "talk"
       ],
       "noResponse": "notFloor",
-      "noResponseChange": -3
+      "noResponseChange": 0
     }
   ]
 }

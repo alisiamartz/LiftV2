@@ -171,7 +171,8 @@ public class GenericAIv2 : Agent {
     }
 
     private void leaveEle() {
-        say();
+        if (lastSound != "End") say(true);
+        else say();
         stopTalking();
         exit();
         info.setMood(name, attributes.mood);
@@ -193,9 +194,9 @@ public class GenericAIv2 : Agent {
         }
     }
 
-    private void say() {
+    private void say(bool force = false) {
         //do not play if dialog already played
-        if (isPlayed) return;
+        if (!force && isPlayed) return;
 
         //get correct dialoge to play (depending on state)
         node n = getNode();

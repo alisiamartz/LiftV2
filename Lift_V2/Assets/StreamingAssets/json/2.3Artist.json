@@ -233,18 +233,18 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
-        "art4.5h",
-        "art4.5h",
-        "art4.5h"
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
       ],
       "animation": [
         "talk",
         "talk",
         "talk"
       ],
-	  "noResponse": "Glory Days",
+	  "noResponse": "waitingFloor",
       "noResponseChange": 0
     },
     {

@@ -553,7 +553,7 @@
       "noResponseChange": 0
     },
 	{
-      "name": "Real friend",
+      "name": "Real hero",
       "wait": 7,
       "dialogue": [
         "art5.6h",
@@ -584,7 +584,7 @@
     },
     {
       "name": "waitinfFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "missingdialogue",
         "missingdialogue",

@@ -384,9 +384,9 @@
       "name": "Suicide",
       "wait": 7,
       "dialogue": [
-        "4.10h",
-        "4.10h",
-        "4.10h"
+        "art4.10h",
+        "art4.10h",
+        "art4.10h"
       ],
 	  "animation": [
         "talk",
@@ -584,7 +584,7 @@
     },
     {
       "name": "waitinfFloor",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "missingdialogue",
         "missingdialogue",

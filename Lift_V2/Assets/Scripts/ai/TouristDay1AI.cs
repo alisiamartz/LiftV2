@@ -11,6 +11,15 @@ public class TouristDay1AI : Agent {
      * - Different dialogue for leavintg elevator
      */
 
+    private GameObject objYes;
+    private GameObject objNo;
+    private float ty1;
+    private float ty2;
+    private float ty3;
+    private float tn1;
+    private float tn2;
+    private float tn3;
+
     // Use this for initialization
     void Start() {
         filename = "1.2Tourist.json";
@@ -18,12 +27,108 @@ public class TouristDay1AI : Agent {
         isEndNode = false;
         isExit = false;
         timer = currentNode.wait;
+
+        //"Yesy" & "No" animation stuff
+        objYes = GameObject.FindGameObjectWithTag("tutorialLine");
+        objNo = GameObject.FindGameObjectWithTag("tutorialLine2");
+        ty1 = 12.5f;
+        ty2 = 2.0f;
+        ty3 = 5.0f;
+        tn1 = 3.0f;
+        tn2 = 3.0f;
+        tn3 = 5.0f;
     }
 
     // Update is called once per frame
     void Update() {
 
-        //timer -  will not start untill walkedIn is true
+        //Calls the "Yes" & "No" animations to play exactly when they're needed 
+        if (isExit)
+        {
+            objYes.GetComponent<Animator>().enabled = false;
+            objYes.GetComponent<Animator>().SetBool("startOver", false);
+            objNo.GetComponent<Animator>().enabled = false;
+            objNo.GetComponent<Animator>().SetBool("startOver", false);
+        }
+        if (currentNode.name == "Sign Language")
+        {
+            ty1 -= Time.deltaTime;
+            if (ty1 <= 0.0f) {
+                objYes.GetComponent<Animator>().enabled = true;
+                objYes.GetComponent<Animator>().SetBool("startOver", true);
+                objYes.GetComponent<Animator>().Play("yes");
+                objYes.GetComponent<Animator>().SetBool("startOver", false);
+                ty1 = 30.0f;
+            }
+        }
+
+        if (currentNode.name == "Sign Language...again")
+        {
+            ty2 -= Time.deltaTime;
+            if (ty2 <= 0.0f)
+            {
+                objYes.GetComponent<Animator>().enabled = true;
+                objYes.GetComponent<Animator>().SetBool("startOver", true);
+                objYes.GetComponent<Animator>().Play("yes");
+                objYes.GetComponent<Animator>().SetBool("startOver", false);
+                ty2 = 30.0f;
+            }
+        }
+
+        if (currentNode.name == "Sign Language...again...and again")
+        {
+            ty3 -= Time.deltaTime;
+            if (ty3 <= 0.0f)
+            {
+                objYes.GetComponent<Animator>().enabled = true;
+                objYes.GetComponent<Animator>().SetBool("startOver", true);
+                objYes.GetComponent<Animator>().Play("yes");
+                objYes.GetComponent<Animator>().SetBool("startOver", false);
+                ty3 = 12.5f;
+            }
+        }
+
+        if (currentNode.name == "Sign Language2")
+        {
+            tn1 -= Time.deltaTime;
+            objYes.GetComponent<Animator>().enabled = false;
+            if (tn1 <= 0.0f)
+            {
+                objNo.GetComponent<Animator>().enabled = true;
+                objNo.GetComponent<Animator>().SetBool("startOver", true);
+                objNo.GetComponent<Animator>().Play("no");
+                objNo.GetComponent<Animator>().SetBool("startOver", false);
+                tn1 = 30.0f;
+            }
+        }
+
+        if (currentNode.name == "Sign Language2...again")
+        {
+            tn2 -= Time.deltaTime;
+            if (tn2 <= 0.0f)
+            {
+                objNo.GetComponent<Animator>().enabled = true;
+                objNo.GetComponent<Animator>().SetBool("startOver", true);
+                objNo.GetComponent<Animator>().Play("no");
+                objNo.GetComponent<Animator>().SetBool("startOver", false);
+                tn2 = 30.0f;
+            }
+        }
+
+        if (currentNode.name == "Sign Language2...again...and again")
+        {
+            tn3 -= Time.deltaTime;
+            if (tn3 <= 0.0f)
+            {
+                objNo.GetComponent<Animator>().enabled = true;
+                objNo.GetComponent<Animator>().SetBool("startOver", true);
+                objNo.GetComponent<Animator>().Play("no");
+                objNo.GetComponent<Animator>().SetBool("startOver", false);
+                tn3 = 12.5f;
+            }
+        }
+
+
         if (timer > 0 && walkedIn) timer -= Time.deltaTime;
 
         //waiting to walk in
