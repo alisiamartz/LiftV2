@@ -55,7 +55,7 @@
       ],
       "listen": [ "yes", "salute", "continue", "rude", "no", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Failure", "Overlooked", "Failure", "Overlooked", "Failure", "Failure" ],
+      "toNode": [ "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked", "Overlooked" ],
       "noResponse": "Does it matter?",
       "noResponseChange": 0
     },

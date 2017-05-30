@@ -63,9 +63,9 @@ public class Patrons {
 
         if (patronName == "Tourist1") return new Patron(prefab, 1);
 
-        if (patronName == "Tourist2") return new Patron(prefab, 3);
+        if (patronName == "Tourist2") return new Patron(prefab, 5);
 
-        if (patronName == "Tourist3") return new Patron(prefab, 3);
+        if (patronName == "Tourist3") return new Patron(prefab, 5);
 
         if (patronName == "Adultress1") {
             prefab.transform.Find("Date1").gameObject.SetActive(true);

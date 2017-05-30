@@ -173,6 +173,7 @@ public class GenericAIv2 : Agent {
     private void leaveEle() {
         if (lastSound != "End") say(true);
         else say();
+        stopGestures();
         stopTalking();
         exit();
         info.setMood(name, attributes.mood);
@@ -221,7 +222,7 @@ public class GenericAIv2 : Agent {
         else animate(n.animation[index]);
 
         //text bubble
-        bubble.text = n.dialogue[index];
+        //bubble.text = n.dialogue[index];
 
         //update lastSound
         lastSound = dialogue;

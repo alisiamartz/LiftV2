@@ -147,7 +147,7 @@ public class BusinessDay4AI : Agent {
         animate(currentNode.animation[index], audioTime);
 
         //text bubble
-        bubble.text = currentNode.dialogue[index];
+        //bubble.text = currentNode.dialogue[index];
 
         //update lastSound
         lastSound = dialogue;

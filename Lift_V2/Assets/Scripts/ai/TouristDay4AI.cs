@@ -229,7 +229,7 @@ public class TouristDay4AI : Agent {
         animate(n.animation[index], audioTime);
 
         //text bubble
-        bubble.text = n.dialogue[index];
+        //bubble.text = n.dialogue[index];
 
         //update lastSound
         lastSound = n.name;
