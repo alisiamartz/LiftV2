@@ -83,7 +83,7 @@ public class Patrons {
 
         if (patronName == "Artist2") return new Patron(prefab, 5);
 
-        if (patronName == "Artist3") return new Patron(prefab, 4);
+        if (patronName == "Artist3") return new Patron(prefab, 1); //floor 4
 
         if (patronName == "Server1") return new Patron(prefab, 6);
 
@@ -91,7 +91,7 @@ public class Patrons {
 
         if (patronName == "Server3") return new Patron(prefab, 6);
 
-        if (patronName == "Server4") return new Patron(prefab, 1);
+        if (patronName == "Server4") return new Patron(prefab, 6);
 
         throw new System.ArgumentOutOfRangeException("STARTING FLOOR NOT FOUND, TRIED TO PASS: " + patronName);
     }
@@ -171,12 +171,12 @@ public class Patrons {
             patronObject.GetComponent<GenericAIv2>().setMood(mood);
             if (mood > 3) {
                 int index = info.getBusinessPick();
-                if (index == 0) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH2");
-                else if (index == 1) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH1");
-                else patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH3");
+                if (index == 0) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH2.json");
+                else if (index == 1) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH1.json");
+                else patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanH3.json");
             }
-            else if (mood < -3) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanA");
-            else patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanN");
+            else if (mood < -3) patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanA.json");
+            else patronObject.GetComponent<GenericAIv2>().setFilename("5.1BusinessmanN.json");
 
             patronObject.GetComponent<PatronAudio>().patronName = "BusinessMan";
             patronObject.GetComponent<PatronAudio>().dayName = "Day5";

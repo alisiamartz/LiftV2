@@ -307,9 +307,9 @@
       "name": "waitingFloor",
       "wait": 7,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+       "bm3.5h",
+        "bm3.5h",
+        "bm3.5h"
       ],
       "animation": [
         "talk",

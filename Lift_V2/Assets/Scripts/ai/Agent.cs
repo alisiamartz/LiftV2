@@ -33,6 +33,7 @@ public abstract class Agent : MonoBehaviour {
     protected FloorManager fm;
     protected bool isExit;
     protected string lastSound;
+    [SerializeField]
     protected bool isEndNode;
     protected StateFetch sf;
     protected float patTimer;
