@@ -7,7 +7,7 @@
   "nodes": [
     {
       "name": "Start",
-      "wait": 5,
+      "wait": 15,
       "dialogue": [
         "boss1.1h",
         "boss1.1h",
@@ -75,7 +75,7 @@
     },
     {
       "name": "Day to day operations",
-      "wait": 3,
+      "wait": 1,
       "dialogue": [
         "boss2.3h",
         "boss2.3h",
@@ -91,7 +91,7 @@
     },
     {
       "name": "The Guests",
-      "wait": 3,
+      "wait": 1,
       "dialogue": [
         "boss3.1h",
         "boss3.1h",
@@ -107,7 +107,7 @@
     },
     {
       "name": "The first day",
-      "wait": 3,
+      "wait": 1,
       "dialogue": [
         "boss4.1h",
         "boss4.1h",
