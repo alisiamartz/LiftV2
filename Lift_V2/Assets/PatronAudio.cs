@@ -7,6 +7,7 @@ public class PatronAudio : MonoBehaviour {
     public AudioSource patronMouth;
     public string patronName;
     public string dayName;
+    public string currentAudio;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class PatronAudio : MonoBehaviour {
 
     public void playDialogue(string dialogue) {
         var path = "Dialogue/" + patronName + "/" + dayName + "/" + dialogue;
+        currentAudio = dialogue;
         patronMouth.clip = Resources.Load(path) as AudioClip;
         patronMouth.Play();
     }

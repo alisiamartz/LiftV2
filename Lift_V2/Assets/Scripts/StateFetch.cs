@@ -38,7 +38,7 @@ public class StateFetch : MonoBehaviour {
 
 		// test code to see if it works
 		//	if (Input.GetKeyDown (KeyCode.A)) 
-		//		contConf();
+		//		spawnHatId();
 		//	if (Input.GetKeyDown (KeyCode.S))
 		//		salRude ();
 

@@ -17,10 +17,12 @@ public class Interactable : MonoBehaviour {
 
 	public static bool inRangeID;
 	public static bool inRangeHat;
+    public static bool inRangeRing; 
 	public static bool inRange;
 	bool holding = false;
 	static bool holdingID;
 	static bool holdingHat;
+    static bool holdingRing;
 
 	public static bool wearingID;
 	public static bool wearingHat; 
@@ -75,6 +77,8 @@ public class Interactable : MonoBehaviour {
 				holdingID = true;
 			if (this.tag == "hat")
 				holdingHat = true;
+            if (this.tag == "ring")
+                holdingRing = true;
 		} else if (!holding) {
 			if (this.tag == "id") 
 				holdingID = false;

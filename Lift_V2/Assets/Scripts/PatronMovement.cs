@@ -36,6 +36,9 @@ public class PatronMovement : MonoBehaviour {
 
     //TIMER
     private float timer = 0;
+    private float adultressTimer = -99;
+    private bool talking = false;
+    private int listPoint = 0;
 
     //Adultress Only
     private GameObject dateBoi;
@@ -61,7 +64,37 @@ public class PatronMovement : MonoBehaviour {
             timer -= Time.deltaTime;
         } else
         {
-            anim.SetBool("talking", false);
+            if(gameObject.tag != "Adultress" || dateBoi == null)
+                anim.SetBool("talking", false);
+        }
+
+        //Adultress Timer
+        if (gameObject.tag == "Adultress" && dateBoi != null && talking == true) {
+            if (adultressTimer > 0) {
+                adultressTimer -= Time.deltaTime;
+            }
+            else if(adultressTimer != -99) {
+                //Check for next animation in the list
+                //Disable the one who was currently talking and enable the next
+
+                anim.SetBool("talking", false);
+                dateBoi.GetComponent<dateMovement>().stopTalking();
+
+                var animationList = hotelManager.GetComponent<talkAnimationList>().fetchAnimationList(GetComponent<PatronAudio>().currentAudio);
+                if (animationList.Count > listPoint) {
+                    var animation = animationList[listPoint];
+                    if (animation.adultress == "Adultress") {
+                        adultressTimer = animation.timeTilNext;
+                        anim.SetBool("talking", true);
+                    }
+                    else if (animation.adultress == "Date") {
+                        adultressTimer = animation.timeTilNext;
+                        dateBoi.GetComponent<dateMovement>().talk(animation.timeTilNext);
+                    }
+                    Debug.Log("List point one increased");
+                    listPoint++;
+                }
+            }
         }
 
         if (moving)
@@ -193,6 +226,11 @@ public class PatronMovement : MonoBehaviour {
             //If Adultress on day 1 or 2, bring their date boi too
             if (gameObject.tag == "Adultress") {
                 dateBoi.GetComponent<dateMovement>().leaveElevator();
+                
+                // if it's day 3 then she drops the ring boys!!!!!
+                if (hotelManager.GetComponent<DayManager>().day == 3) {
+
+                }
             }
 
             anim.SetBool("walkOut", true);
@@ -255,12 +293,16 @@ public class PatronMovement : MonoBehaviour {
     }
 
     public void talk(float time) {
-        timer = time;
-        Debug.LogWarning(time);
-        anim.SetBool("talking", true);
         if (gameObject.tag == "Adultress" && dateBoi != null)
         {
-            dateBoi.GetComponent<dateMovement>().talk(time);
+            listPoint = 0;
+            talking = true;
+            adultressTimer = 0;
+        }
+        else {
+            timer = time;
+            Debug.LogWarning(time);
+            anim.SetBool("talking", true);
         }
     }
     
@@ -269,8 +311,15 @@ public class PatronMovement : MonoBehaviour {
         if (gameObject.tag == "Adultress" && dateBoi != null)
         {
             dateBoi.GetComponent<dateMovement>().stopTalking();
+            talking = false;
         }
     }
+
+    public void ringDrop() {
+       // GameObject.
+
+    }
+
 
     //Called from AI whenever the mood is changed i indicates by how much
     public void moodChanged(int i) {
