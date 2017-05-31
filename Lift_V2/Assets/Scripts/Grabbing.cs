@@ -48,7 +48,7 @@ public class Grabbing : MonoBehaviour {
 	void Update () {
         //checks if door is open
         doorInteraction door = objDoor.GetComponent<doorInteraction>();
-        if (door.open == true) { leverTimer = 3.0f; }
+        if (door.open == true) { leverTimer = 0f; }
         else { leverTimer -= Time.deltaTime; }
         if (controller == null)
         {

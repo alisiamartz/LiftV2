@@ -23,7 +23,9 @@ public class FloorManager : MonoBehaviour
     void Start() {
         elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
 
+        floorStarts = new Vector3[floors.Length];
         for(var i = 0; i < floors.Length; i++) {
+            Debug.Log(floors.Length);
             floorStarts[i] = floors[i].transform.position;
         }
     }
@@ -37,6 +39,7 @@ public class FloorManager : MonoBehaviour
             floors[activeFloorIndex].SetActive(false);
 
             //Bring the previous floor to its original starting position
+            Debug.Log(floorStarts);
             floors[activeFloorIndex].transform.position = floorStarts[activeFloorIndex];
 
             //Turn on the next floor
@@ -76,7 +79,7 @@ public class FloorManager : MonoBehaviour
         //Floors moving while elevator movement
         var curSpeed = elevatorManager.GetComponent<ElevatorMovement>().liftSpeedCurrent;
         if (curSpeed != 0) {
-            floors[activeFloorIndex].transform.position = new Vector3(floors[activeFloorIndex].transform.position.x, floors[activeFloorIndex].transform.position.y + -curSpeed, floors[activeFloorIndex].transform.position.z);
+            floors[activeFloorIndex].transform.position = new Vector3(floors[activeFloorIndex].transform.position.x, floors[activeFloorIndex].transform.position.y + -(2 * curSpeed), floors[activeFloorIndex].transform.position.z);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
