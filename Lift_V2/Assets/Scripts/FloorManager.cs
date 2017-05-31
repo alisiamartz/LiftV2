@@ -9,14 +9,24 @@ public class FloorManager : MonoBehaviour
     public int floorPos = -1;
 
     public GameObject[] floors;                             //[] is the gameObject floor holder
-    [HideInInspector]
-    public int[] patrons = new int[7];                      //is the number of patrons waiting at each floor
+    private Vector3[] floorStarts;
+
     private int activeFloorIndex;
 
     [SerializeField]
     private GameObject elevatorWaypoint;
     [SerializeField]
     private GameObject dateWaypoint;
+
+    private GameObject elevatorManager;
+
+    void Start() {
+        elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
+
+        for(var i = 0; i < floors.Length; i++) {
+            floorStarts[i] = floors[i].transform.position;
+        }
+    }
 
     //Called from elevator movement when new floor is reached
     public void loadNewFloor(int targetFloor)
@@ -25,6 +35,9 @@ public class FloorManager : MonoBehaviour
         {
             //Turn off the previously active floor
             floors[activeFloorIndex].SetActive(false);
+
+            //Bring the previous floor to its original starting position
+            floors[activeFloorIndex].transform.position = floorStarts[activeFloorIndex];
 
             //Turn on the next floor
             floors[targetFloor].SetActive(true);
@@ -60,6 +73,12 @@ public class FloorManager : MonoBehaviour
 
     void Update()
     {
+        //Floors moving while elevator movement
+        var curSpeed = elevatorManager.GetComponent<ElevatorMovement>().liftSpeedCurrent;
+        if (curSpeed != 0) {
+            floors[activeFloorIndex].transform.position = new Vector3(floors[activeFloorIndex].transform.position.x, floors[activeFloorIndex].transform.position.y + -curSpeed, floors[activeFloorIndex].transform.position.z);
+        }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("menu");
