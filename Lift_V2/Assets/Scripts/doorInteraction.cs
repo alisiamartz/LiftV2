@@ -255,7 +255,17 @@ public class doorInteraction : MonoBehaviour
         return open;
     }
 
+    public void openDoor() {
+        Debug.Log("Open Door");
+        closing = false;
+        open = true;
+        slidingDoor2.openSlidingDoor();
+        manager.GetComponent<ElevatorMovement>().doorOpened();
+        door.transform.position = new Vector3(initX, initY, initZ);
+    }
+
     public void closeDoor() {
+        Debug.Log("Close Door");
         closing = false;
         open = false;
         slidingDoor2.closeSlidingDoor();
