@@ -56,7 +56,7 @@ public class LeverRange : MonoBehaviour {
         if (inRange)
         {
 			nearLever = true;
-            DisableGesture.turnOff(camRig);
+			camRig.GetComponent<DisableGesture>().turnOff(camRig);
 
             if (!doorOpen && timer <= 0.0f) {
                 GetComponent<LeverRotation>().startGrab(hand);
@@ -76,8 +76,8 @@ public class LeverRange : MonoBehaviour {
 
         } else {
 			nearLever = false;
-            if (!DisableGesture.isComponentEnabled(camRig)) {
-                DisableGesture.turnOn(camRig);
+			if (!camRig.GetComponent<DisableGesture>().isComponentEnabled(camRig)) {
+				camRig.GetComponent<DisableGesture>().turnOn(camRig);
             }
         }
     }

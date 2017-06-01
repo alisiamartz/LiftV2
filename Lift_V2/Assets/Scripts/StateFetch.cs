@@ -72,18 +72,21 @@ public class StateFetch : MonoBehaviour {
             }
         }
         Haptic.rumbleController(0.1f, 0.5f, "both");
-        DisableGesture.turnOn(this.gameObject);
+		GetComponent<DisableGesture>().turnOn(this.gameObject);
     }
 
-
+	DisableGesture dG;
     public void stopWaitingGesture() {
+		if (dG == null) {
+			dG = GetComponent<DisableGesture> ();
+		}
         Debug.Log("NO GESTURES PLS");
-		if (controller1 != null)
+		if (controller1 != null && controller1.GetComponent<ParticleSystem>().isPlaying)
 			controller1.GetComponent<ParticleSystem>().Stop();
-		if (controller2 != null)
+		if (controller2 != null && controller2.GetComponent<ParticleSystem>().isPlaying)
 			controller2.GetComponent<ParticleSystem>().Stop();
 
-        DisableGesture.turnOff(this.gameObject);
+		dG.turnOff(this.gameObject);
     }
 
 

@@ -61,13 +61,13 @@ public class Interactable : MonoBehaviour {
 		// pcik up when trigger is pressed
 		if (device.GetPressDown (triggerButton) && (Vector3.Distance (trackedObj.transform.position, this.transform.position) < .2f)) {
 			// parent object to controller
-			DisableGesture.turnOff (camRig);
+			camRig.GetComponent<DisableGesture>().turnOff (camRig);
 			this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 			this.transform.SetParent (trackedObj.transform);
 			holding = true;
 		} else if (!(Vector3.Distance (trackedObj.transform.position, this.transform.position) < .17f)) {
-			if (!DisableGesture.isComponentEnabled (camRig)) {
-				DisableGesture.turnOn (camRig);
+			if (!camRig.GetComponent<DisableGesture>().isComponentEnabled (camRig)) {
+				camRig.GetComponent<DisableGesture>().turnOn (camRig);
 			}
 		}
 
@@ -132,13 +132,13 @@ public class Interactable : MonoBehaviour {
 	public void attemptGrab() {
 		if (inRange) {
 			nearObj = true;
-			DisableGesture.turnOff (camRig);
+			camRig.GetComponent<DisableGesture>().turnOff (camRig);
 			holding = true;
 
 		} else {
 			nearObj = false;
-			if (!DisableGesture.isComponentEnabled (camRig)) {
-				DisableGesture.turnOn (camRig);
+			if (!camRig.GetComponent<DisableGesture>().isComponentEnabled (camRig)) {
+				camRig.GetComponent<DisableGesture>().turnOn (camRig);
 			}
 		}
 	}

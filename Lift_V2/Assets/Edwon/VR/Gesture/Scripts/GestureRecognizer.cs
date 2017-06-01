@@ -30,8 +30,12 @@ namespace Edwon.VR.Gesture
         private static bool confident = true;
         public bool isConfident;
 
-        string LeftHandSyncPrefix = Handedness.Left + "--";
-        string RightHandSyncPrefix = Handedness.Right + "--";
+		void Start() {
+			confident = true;
+		}
+
+        string LeftHandSyncPrefix = 0 + "--";
+        string RightHandSyncPrefix = 1 + "--";
 
         List<Gesture> outputs;
         Dictionary<int, string> outputDict;
@@ -133,7 +137,9 @@ namespace Edwon.VR.Gesture
 
                         if (CheckForSync(gesture))
                         {
-                            gesture = lastLeftGesture.Substring(LeftHandSyncPrefix.Length);
+							if (LeftHandSyncPrefix != null) {
+								gesture = lastLeftGesture.Substring (LeftHandSyncPrefix.Length);
+							}
                             GestureDetectedEvent(gesture, (lastLeftConfidenceValue + lastRightConfidenceValue) / 2, hand, true);
                         }
                     }

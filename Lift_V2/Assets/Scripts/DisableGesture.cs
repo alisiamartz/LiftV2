@@ -10,24 +10,29 @@ public class DisableGesture : MonoBehaviour {
     // Enable and disable component
 
     void Start() {
-        turnOff(this.gameObject);
+        //turnOff(this.gameObject);
     }
 
-	public static void turnOff(GameObject camRig) {
-		Debug.Log ("turned off?");
-		//camRig.GetComponent<VRGestureRig> ().enabled = false;
+	void Update() {
+		
 	}
 
-	public static void turnOn(GameObject camRig) {
-	    Debug.Log ("turned on?");
-		if (!LeverRange.inRange && !doorInteraction.handInRange && !Interactable.inRange) {
-			camRig.GetComponent<VRGestureRig> ().enabled = true;
+	public void turnOff(GameObject camRig) {
+	//	Debug.Log ("turned off?");
+		if (GetComponent<VRGestureRig> ().enabled == true) {
+			GetComponent<VRGestureRig> ().enabled = false;
 		}
 	}
 
-	public static bool isComponentEnabled(GameObject camRig) {
-		if (camRig.GetComponent<VRGestureRig> ().enabled) {
-			// yes enabled
+	public void turnOn(GameObject camRig) {
+	//    Debug.Log ("turned on?");
+		if (!LeverRange.inRange && !doorInteraction.handInRange && !Interactable.inRange) {
+			GetComponent<VRGestureRig> ().enabled = true;
+		}
+	}
+
+	public bool isComponentEnabled(GameObject camRig) {
+		if (GetComponent<VRGestureRig> ().enabled) {
 			return true;
 		}
 		return false;

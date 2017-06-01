@@ -221,7 +221,7 @@ public class doorInteraction : MonoBehaviour
     public void attemptGrab(GameObject hand) {
 		if (handInRange) {
 			nearDoor = true;
-			DisableGesture.turnOff (camRig);
+			camRig.GetComponent<DisableGesture>().turnOff (camRig);
 
 			//If Door Open
 			if (manager.GetComponent<ElevatorMovement>().floorPos == Mathf.Round (manager.GetComponent<ElevatorMovement> ().floorPos)) {
@@ -238,8 +238,8 @@ public class doorInteraction : MonoBehaviour
 			}
 		} else {
 			nearDoor = false;
-			if (!DisableGesture.isComponentEnabled (camRig)) {
-				DisableGesture.turnOn (camRig);
+			if (!camRig.GetComponent<DisableGesture>().isComponentEnabled (camRig)) {
+				camRig.GetComponent<DisableGesture>().turnOn (camRig);
 			}
 		}
     }
