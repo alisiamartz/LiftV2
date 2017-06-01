@@ -13,46 +13,394 @@
         "neu",
         "neg"
       ],
-      "noResponse": "Start1",
-      "noResponseChange": 0
-    },
-    {
-      "name": "Start1",
-      "wait": 15,
-      "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+	  "animation": [
+        "",
+        "",
+        ""
       ],
       "noResponse": "What comes around goes around",
       "noResponseChange": 0
     },
     {
       "name": "What comes around goes around",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "neg",
         "neg",
         "neg"
-      ]
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Fine", "Fine", "Fine", "You jerk", "You jerk", "You jerk" ],
+      "noResponse": "You jerk",
+      "noResponseChange": 0
     },
 	{
       "name": "Uniquely ordinary",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "neu",
         "neu",
         "neu"
-      ]
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "You're alright", "You're alright", "You're alright", "You're eh", "You're eh", "You're eh" ],
+      "noResponse": "You're eh",
+      "noResponseChange": 0
     },
 	{
       "name": "Spirit of the hotel",
-      "wait": 15,
+      "wait": 7,
       "dialogue": [
         "pos",
         "pos",
         "pos"
-      ]
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "That's the spirit!", "That's the spirit!", "That's the spirit!", "That's not the spirit!", "That's not the spirit!", "That's not the spirit!" ],
+      "noResponse": "That's not the spirit!",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Fine",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Flattery will get you nowhere", "Flattery will get you nowhere", "Flattery will get you nowhere", "Ya big ol doody", "Ya big ol doody", "Ya big ol doody" ],
+      "noResponse": "Ya big ol doody",
+      "noResponseChange": 0
+    },
+	{
+      "name": "You jerk",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Flattery will get you nowhere", "Flattery will get you nowhere", "Flattery will get you nowhere", "Ya big ol doody", "Ya big ol doody", "Ya big ol doody" ],
+      "noResponse": "Ya big ol doody",
+      "noResponseChange": 0
+    },
+	{
+      "name": "You're alright",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Well, this is it", "Well, this is it", "Well, this is it", "Not the greatest", "Not the greatest", "Not the greatest" ],
+      "noResponse": "Not the greatest",
+      "noResponseChange": 0
+    },
+	{
+      "name": "You're eh",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Well, this is it", "Well, this is it", "Well, this is it", "Not the greatest", "Not the greatest", "Not the greatest" ],
+      "noResponse": "Not the greatest",
+      "noResponseChange": 0
+    },
+	{
+      "name": "That's the spirit!",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "See you around", "See you around", "See you around", "We'll meet again", "We'll meet again", "We'll meet again" ],
+      "noResponse": "We'll meet again",
+      "noResponseChange": 0
+    },
+	{
+      "name": "That's not the spirit!",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "See you around", "See you around", "See you around", "We'll meet again", "We'll meet again", "We'll meet again" ],
+      "noResponse": "We'll meet again",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Flattery will get you nowhere",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "This sucks", "This sucks", "This sucks", "This really sucks", "This really sucks", "This really sucks" ],
+      "noResponse": "This really sucks",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Ya big ol doody",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "This sucks", "This sucks", "This sucks", "This really sucks", "This really sucks", "This really sucks" ],
+      "noResponse": "This really sucks",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Well, this is it",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Well", "Well", "Well", "Welp", "Welp", "Welp" ],
+      "noResponse": "Welp",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Not the greatest",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "Well", "Well", "Well", "Welp", "Welp", "Welp" ],
+      "noResponse": "Welp",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Not the greatest",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "To new beginnings!", "To new beginnings!", "To new beginnings!", "To old endings!", "To old endings!", "To old endings!" ],
+      "noResponse": "To old endings!",
+      "noResponseChange": 0
+    },
+	{
+      "name": "We'll meet again",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "yes", "salute", "continue", "no", "rude", "confused" ],
+      "change": [ 0, 0, 0, 0, 0, 0 ],
+      "toNode": [ "To new beginnings!", "To new beginnings!", "To new beginnings!", "To old endings!", "To old endings!", "To old endings!" ],
+      "noResponse": "To old endings!",
+      "noResponseChange": 0
+    },
+	{
+      "name": "This sucks",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "This really sucks",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Well",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Welp",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "To new beginnings!",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
+    },
+	{
+      "name": "To old endings!",
+      "wait": 7,
+      "dialogue": [
+        "pos",
+        "pos",
+        "pos"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "End",
@@ -62,6 +410,22 @@
         "neu",
         "neg"
       ]
+    },
+	{
+      "name": "waitingFloor",
+      "wait": 3,
+      "dialogue": [
+        "missingdialogue",
+        "missingdialogue",
+        "missingdialogue"
+      ],
+	  "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "waitingFloor",
+      "noResponseChange": 0
     },
     {
       "name": "notFloor",

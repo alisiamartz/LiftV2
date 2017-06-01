@@ -142,11 +142,11 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+        "s5.3h",
+        "s5.3n",
+        "s5.3a"
       ],
 	  "animation": [
         "talk",

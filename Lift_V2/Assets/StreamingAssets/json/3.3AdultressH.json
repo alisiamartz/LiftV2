@@ -351,11 +351,11 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+        "adt6.3h",
+        "adt6.3n",
+        "adt6.3a"
       ],
       "animation": [
         "talk",

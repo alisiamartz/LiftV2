@@ -193,11 +193,11 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+        "s4.3h",
+        "s4.3n",
+        "s4.3a"
       ],
 	  "animation": [
         "talk",

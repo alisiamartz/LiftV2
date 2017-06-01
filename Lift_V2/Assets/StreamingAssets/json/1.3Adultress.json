@@ -193,11 +193,11 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+        "adt4.3h",
+        "adt4.3n",
+        "adt4.3a"
       ],
       "animation": [
         "talk",
@@ -209,7 +209,7 @@
     },
     {
       "name": "notFloor",
-      "wait": 3,
+      "wait": 7,
       "dialogue": [
         "adt4.2h",
         "adt4.2n",
