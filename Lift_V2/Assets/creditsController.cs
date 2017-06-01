@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class creditsController : MonoBehaviour {
 
@@ -30,6 +31,7 @@ public class creditsController : MonoBehaviour {
             else {
                 //We've reached end of credits
                 liftDoor.openDoor();
+                StartCoroutine(EndCredits());
             }
         }
     }
@@ -49,5 +51,15 @@ public class creditsController : MonoBehaviour {
 
         //Set new target floor
         eleMvmt.newDoorTarget(nextFloor);
+    }
+
+    IEnumerator EndCredits() {
+        yield return new WaitForSeconds(timeOnFloor);
+
+        liftDoor.closeDoor();
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("Splash");
     }
 }
