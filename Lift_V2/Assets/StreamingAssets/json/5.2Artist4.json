@@ -51,7 +51,7 @@
       ],
       "listen": [ "salute", "rude", "yes", "no", "continue", "confused" ],
       "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless", ],
+      "toNode": [ "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless", "Recognized Geniusness", "Talentless" ],
       "noResponse": "Recognized Geniusness",
       "noResponseChange": 0
     },
