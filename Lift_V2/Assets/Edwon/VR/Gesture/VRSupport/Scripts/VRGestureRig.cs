@@ -113,6 +113,7 @@ namespace Edwon.VR
             Init();
         }
 
+
         void Init()
         {
             CreateInputHelper();
@@ -139,21 +140,7 @@ namespace Edwon.VR
                 perpTransform = new GameObject("Perpindicular Head").transform;
                 perpTransform.parent = this.transform;
             }
-            GestureTrail leftTrail = null;
-            GestureTrail rightTrail = null;
-
-            if (displayGestureTrail)
-            {
-                leftTrail = gameObject.AddComponent<GestureTrail>();
-                rightTrail = gameObject.AddComponent<GestureTrail>();
-            }
-            leftCapture = new CaptureHand(this, perpTransform, Handedness.Left, leftTrail);
-            rightCapture = new CaptureHand(this, perpTransform, Handedness.Right, rightTrail);
-
-            if (leftCapture != null && rightCapture != null)
-            {
-                SubscribeToEvents();
-            }
+            
         }
 
         void SubscribeToEvents()
@@ -181,6 +168,22 @@ namespace Edwon.VR
             //    Debug.Log(uiState);
             //}
             uiStateLast = uiState;
+
+			if (leftCapture == null && rightCapture == null) {
+				GestureTrail leftTrail = null;
+				GestureTrail rightTrail = null;
+
+				if (displayGestureTrail) {
+					leftTrail = gameObject.AddComponent<GestureTrail> ();
+					rightTrail = gameObject.AddComponent<GestureTrail> ();
+				}
+				leftCapture = new CaptureHand (this, perpTransform, Handedness.Left, leftTrail);
+				rightCapture = new CaptureHand (this, perpTransform, Handedness.Right, rightTrail);
+
+				if (leftCapture != null && rightCapture != null) {
+					SubscribeToEvents ();
+				}
+			}
 
             if (leftCapture != null)
             {

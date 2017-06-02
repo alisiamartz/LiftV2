@@ -52,7 +52,8 @@ public class dateMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+		if (playerHead == null)
+			playerHead = GameObject.FindGameObjectWithTag("MainCamera");
 
         //TIMER
         if (timer > 0) {

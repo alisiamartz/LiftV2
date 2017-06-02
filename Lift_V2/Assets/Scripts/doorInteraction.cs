@@ -39,7 +39,7 @@ public class doorInteraction : MonoBehaviour
     Vector3 frame3;
 
     public slidingDoor2 slidingDoor2;
-	public DisableGesture disableGesture;
+	//public DisableGesture disableGesture;
 
     public string doorLoopSFX;
     public string startSoundSFX;
@@ -92,6 +92,20 @@ public class doorInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (camRig == null)
+			camRig = GameObject.FindGameObjectWithTag("Player");
+		if (door == null)
+			door = GameObject.FindGameObjectWithTag("door");
+		if (doorOpen == null)
+			doorOpen = GameObject.FindGameObjectWithTag("openDoor");
+		if (rope == null)
+			rope = GameObject.FindGameObjectWithTag("rope");
+		if (manager == null)
+			manager = GameObject.FindGameObjectWithTag("ElevatorManager");
+		if (hold == null)
+			hold = GameObject.FindGameObjectWithTag("doorHold");
+
+
         if(handInRange == false)
         {
             //grabbed = false;
@@ -221,7 +235,7 @@ public class doorInteraction : MonoBehaviour
     public void attemptGrab(GameObject hand) {
 		if (handInRange) {
 			nearDoor = true;
-			camRig.GetComponent<DisableGesture>().turnOff (camRig);
+			//camRig.GetComponent<DisableGesture>().turnOff ();
 
 			//If Door Open
 			if (manager.GetComponent<ElevatorMovement>().floorPos == Mathf.Round (manager.GetComponent<ElevatorMovement> ().floorPos)) {
@@ -238,9 +252,9 @@ public class doorInteraction : MonoBehaviour
 			}
 		} else {
 			nearDoor = false;
-			if (!camRig.GetComponent<DisableGesture>().isComponentEnabled (camRig)) {
-				camRig.GetComponent<DisableGesture>().turnOn (camRig);
-			}
+			//if (!camRig.GetComponent<DisableGesture>().isComponentEnabled ()) {
+			//	camRig.GetComponent<DisableGesture>().turnOn ();
+			//}
 		}
     }
 

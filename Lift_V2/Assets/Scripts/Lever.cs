@@ -38,6 +38,8 @@ public class Lever : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!lever) lever = GameObject.FindGameObjectWithTag ("lever");
+		if (!handle) handle = GameObject.FindGameObjectWithTag ("handle");
 
 //		currValue = handle.GetComponent<NVRLever> ().CurrentValue;
 

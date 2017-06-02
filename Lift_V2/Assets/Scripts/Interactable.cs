@@ -34,7 +34,6 @@ public class Interactable : MonoBehaviour {
 	//	GLASSES
 	//}
 	public GameObject thisObj;
-
 	public GameObject hatHolder;
 	public GameObject glassesHolder;
 	public GameObject idHolder;
@@ -47,8 +46,6 @@ public class Interactable : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//trackedObj = GetComponent<SteamVR_TrackedObject>();
-
-
 		hatHolder = GameObject.FindGameObjectWithTag("hatHolder");
 		glassesHolder = GameObject.FindGameObjectWithTag("glassesHolder");
 		idHolder = GameObject.FindGameObjectWithTag("idHolder");
@@ -58,17 +55,24 @@ public class Interactable : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (camRig == null)
+			camRig = GameObject.FindGameObjectWithTag("Player");
+		if (hatHolder == null) 
+			hatHolder = GameObject.FindGameObjectWithTag("hatHolder");
+		if (idHolder == null)
+			idHolder = GameObject.FindGameObjectWithTag("idHolder");
+
 		// pcik up when trigger is pressed
 		if (device.GetPressDown (triggerButton) && (Vector3.Distance (trackedObj.transform.position, this.transform.position) < .2f)) {
 			// parent object to controller
-			camRig.GetComponent<DisableGesture>().turnOff (camRig);
+			//camRig.GetComponent<DisableGesture>().turnOff ();
 			this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 			this.transform.SetParent (trackedObj.transform);
 			holding = true;
 		} else if (!(Vector3.Distance (trackedObj.transform.position, this.transform.position) < .17f)) {
-			if (!camRig.GetComponent<DisableGesture>().isComponentEnabled (camRig)) {
-				camRig.GetComponent<DisableGesture>().turnOn (camRig);
-			}
+			//if (!camRig.GetComponent<DisableGesture>().isComponentEnabled ()) {
+			//	camRig.GetComponent<DisableGesture>().turnOn ();
+			//}
 		}
 
 		// let's check to see what you're holding though 
@@ -132,14 +136,14 @@ public class Interactable : MonoBehaviour {
 	public void attemptGrab() {
 		if (inRange) {
 			nearObj = true;
-			camRig.GetComponent<DisableGesture>().turnOff (camRig);
+			//camRig.GetComponent<DisableGesture>().turnOff ();
 			holding = true;
 
 		} else {
 			nearObj = false;
-			if (!camRig.GetComponent<DisableGesture>().isComponentEnabled (camRig)) {
-				camRig.GetComponent<DisableGesture>().turnOn (camRig);
-			}
+			//if (!camRig.GetComponent<DisableGesture>().isComponentEnabled ()) {
+			//	camRig.GetComponent<DisableGesture>().turnOn ();
+			//}
 		}
 	}
 

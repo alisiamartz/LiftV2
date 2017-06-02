@@ -18,7 +18,6 @@ public class LeverRange : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
         inRange = false;
         camRig = GameObject.FindGameObjectWithTag("Player");
 
@@ -26,16 +25,17 @@ public class LeverRange : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+		if (camRig == null)
+			camRig = GameObject.FindGameObjectWithTag("Player");
+		
 
-        if(inRange == false)
-        {
+        if(inRange == false) {
             GetComponent<LeverRotation>().grabbed = false;
         }
 	}
 
     private void OnTriggerEnter(Collider other){
-        if(other.gameObject.tag == "grabPoint")
-        {
+        if(other.gameObject.tag == "grabPoint") {
             inRange = true;
             handsColliding += 1;
         }
@@ -56,7 +56,7 @@ public class LeverRange : MonoBehaviour {
         if (inRange)
         {
 			nearLever = true;
-			camRig.GetComponent<DisableGesture>().turnOff(camRig);
+			//camRig.GetComponent<DisableGesture>().turnOff();
 
             if (!doorOpen && timer <= 0.0f) {
                 GetComponent<LeverRotation>().startGrab(hand);
@@ -76,9 +76,9 @@ public class LeverRange : MonoBehaviour {
 
         } else {
 			nearLever = false;
-			if (!camRig.GetComponent<DisableGesture>().isComponentEnabled(camRig)) {
-				camRig.GetComponent<DisableGesture>().turnOn(camRig);
-            }
+		//	if (!camRig.GetComponent<DisableGesture>().isComponentEnabled()) {
+			//	camRig.GetComponent<DisableGesture>().turnOn();
+          //  }
         }
     }
 
