@@ -52,7 +52,7 @@
       ],
       "listen": [ "salute" ],
       "change": [ 0 ],
-      "toNode": [ "Salue success" ],
+      "toNode": [ "Salute success" ],
       "noResponse": "Salute tutorial",
       "noResponseChange": 0
     },
