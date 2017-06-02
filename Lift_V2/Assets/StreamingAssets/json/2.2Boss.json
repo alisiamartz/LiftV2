@@ -35,7 +35,7 @@
         "talk"
       ],
       "noResponse": "Salute tutorial",
-      "noResponseChange": -2
+      "noResponseChange": 0
     },
 	{
       "name": "Salute tutorial",
@@ -73,7 +73,7 @@
       "noResponseChange": 0
     },
 	{
-      "name": "Salute tutorial",
+      "name": "Rude tutorial",
       "wait": 7,
       "dialogue": [
         "boss5.6h",
