@@ -103,7 +103,7 @@ namespace Edwon.VR.Gesture
             GameObject myGo = new GameObject("Trail Renderer");
             myGo.transform.parent = transform;
             myGo.transform.localPosition = Vector3.zero;
-			myGo.tag = "tr";
+			//myGo.tag = "tr";
 
             LineRenderer lineRenderer = myGo.AddComponent<LineRenderer>();
             lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
