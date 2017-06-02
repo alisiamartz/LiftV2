@@ -46,9 +46,9 @@
         "boss5.4h"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "salute",
+        "salute",
+        "salute"
       ],
       "listen": [ "salute" ],
       "change": [ 0 ],
@@ -250,9 +250,9 @@
         "boss5.1a"
       ],
       "animation": [
-        "",
-        "",
-        ""
+        "notSalute",
+        "notSalute",
+        "notSalute"
       ]
     },
     {
