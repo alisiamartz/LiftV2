@@ -13,11 +13,29 @@ public class SplashFade : MonoBehaviour {
         splashImage.canvasRenderer.SetAlpha(0.0f);
 
         FadeIn();
-        yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene(loadLevel);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadSceneAsync(loadLevel);
+        //SceneManager.LoadScene(loadLevel);
     }
 
     void FadeIn() {
-        splashImage.CrossFadeAlpha(1.0f, 1.5f, false);
+        splashImage.CrossFadeAlpha(1.0f, 2.5f, false);
     }
+    /*
+    public void StartLoading() {
+        StartCoroutine("load");
+    }
+
+    IEnumerator load() {
+        Debug.LogWarning("ASYNC LOAD STARTED - " +
+           "DO NOT EXIT PLAY MODE UNTIL SCENE LOADS... UNITY WILL CRASH");
+        async = Application.LoadLevelAsync(levelName);
+        async.allowSceneActivation = false;
+        yield return async;
+    }
+
+    public void ActivateScene() {
+        async.allowSceneActivation = true;
+    }
+    */
 }
