@@ -23,7 +23,7 @@
     },
     {
       "name": "Start1",
-      "wait": 7,
+      "wait": 0,
       "dialogue": [
         "boss1.2h",
         "boss1.2h",
@@ -34,11 +34,78 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
-      "change": [ 2, 2, 2, 2, 2, 2 ],
-      "toNode": [ "Important meeting", "Important meeting", "Important meeting", "Important meeting", "Important meeting", "Important meeting" ],
-      "noResponse": "Cold feet",
+      "noResponse": "Salute tutorial",
       "noResponseChange": -2
+    },
+	{
+      "name": "Salute tutorial",
+      "wait": 7,
+      "dialogue": [
+        "boss5.4h",
+        "boss5.4h",
+        "boss5.4h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "salute" ],
+      "change": [ 0 ],
+      "toNode": [ "Salue success" ],
+      "noResponse": "Salute tutorial",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Salute success",
+      "wait": 0,
+      "dialogue": [
+        "boss5.5h",
+        "boss5.5h",
+        "boss5.5h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Rude tutorial",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Salute tutorial",
+      "wait": 7,
+      "dialogue": [
+        "boss5.6h",
+        "boss5.6h",
+        "boss5.6h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "listen": [ "rude" ],
+      "change": [ 0 ],
+      "toNode": [ "Rude success" ],
+      "noResponse": "Rude tutorial",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Rude success",
+      "wait": 0,
+      "dialogue": [
+        "boss5.7h",
+        "boss5.7h",
+        "boss5.7h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Important meeting",
+      "noResponseChange": 0
     },
     {
       "name": "Important meeting",
