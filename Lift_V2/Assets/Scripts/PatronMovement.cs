@@ -83,7 +83,7 @@ public class PatronMovement : MonoBehaviour {
             timer -= Time.deltaTime;
         } else
         {
-            if(gameObject.tag != "Adultress" || dateBoi.gameObject.name == "Date1")
+            if(gameObject.tag != "Adultress" || dateBoi == null)
                 anim.SetBool("talking", false);
         }
 

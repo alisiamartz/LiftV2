@@ -349,7 +349,7 @@ namespace Edwon.VR
 
             if (spawnControllerModels)
             {
-                SpawnControllerModels();
+             //   SpawnControllerModels();
             }
         }
 
@@ -372,7 +372,7 @@ namespace Edwon.VR
                 else if (GestureSettings.vrType == VRType.SteamVR)
                 {
                     handLeftModel = Resources.Load(
-                        Config.PARENT_PATH + "VR Controller Art/Vive_Simple") as GameObject;
+                       Config.PARENT_PATH + "VR Controller Art/Vive_Simple") as GameObject;
                     handRightModel = Resources.Load(
                         Config.PARENT_PATH + "VR Controller Art/Vive_Simple") as GameObject;
                 }

@@ -54,9 +54,9 @@
         "talk"
       ],
       "listen": [ "yes", "no", "continue", "confused", "salute", "rude" ],
-      "change": [ 0, 0, -1, -1, -2, -2 ],
-      "toNode": [ "Nuisance", "Nuisance", "Pervert", "Pervert", "Pervert", "Pervert" ],
-      "noResponse": "Nuisance",
+      "change": [ 0, -2, -1, -1, -1, -2 ],
+      "toNode": [ "Nuisance", "Alone time", "Alone time", "Alone time", "Alone time", "Pervert" ],
+      "noResponse": "Alone time",
       "noResponseChange": 0
     },
     {

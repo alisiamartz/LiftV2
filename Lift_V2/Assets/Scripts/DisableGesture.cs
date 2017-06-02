@@ -22,7 +22,7 @@ public class DisableGesture : MonoBehaviour {
 	}
 
 	public void turnOff() {
-	//	Debug.Log ("turned off?");
+		Debug.Log ("turned off?");
 		if (GetComponent<VRGestureRig>()) {
 			VRControllerInputSteam[] cis = GetComponents<VRControllerInputSteam> ();
 			GestureTrail[] gt = GetComponents<GestureTrail> ();

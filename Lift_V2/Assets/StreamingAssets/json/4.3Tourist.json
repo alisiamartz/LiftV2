@@ -187,9 +187,6 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "yes", "no", "rude", "salute", "confused", "continue"  ],
-      "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Reunited", "Losing time", "Losing time", "Reunited", "Losing time", "Reunited" ],
       "noResponse": "Losing time",
       "noResponseChange": 0
     },
@@ -206,9 +203,6 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "yes", "no", "rude", "salute", "confused", "continue"  ],
-      "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Somber goodbye", "Losing time 2", "Losing time 2", "Somber goodbye", "Losing time 2", "Somber goodbye" ],
       "noResponse": "Losing time 2",
       "noResponseChange": 0
     },
@@ -225,9 +219,6 @@
         "talk",
         "talk"
       ],
-	    "listen": [ "yes", "no", "rude", "salute", "confused", "continue"  ],
-      "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Somber goodbye", "Losing time 2", "Losing time 2", "Somber goodbye", "Losing time 2", "Somber goodbye" ],
       "noResponse": "Losing time 2",
       "noResponseChange": 0
     },
@@ -244,9 +235,6 @@
         "talk",
         "talk"
       ],
-      "listen": [ "yes", "no", "rude", "salute", "confused", "continue" ],
-      "change": [ 0, 0, 0, 0, 0, 0 ],
-      "toNode": [ "Never looking back", "Never looking back 2", "Never looking back 2", "Never looking back", "Never looking back 2", "Never looking back" ],
       "noResponse": "Never looking back 2",
       "noResponseChange": 0
     },

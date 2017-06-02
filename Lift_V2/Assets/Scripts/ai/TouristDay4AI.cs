@@ -141,6 +141,7 @@ public class TouristDay4AI : Agent {
 
     private void playHusbandNormal() {
         if (flag) {
+            stopGestures();
             if (timer <= 0) {
                 flag = false;
                 isPlayed = false;
@@ -200,6 +201,7 @@ public class TouristDay4AI : Agent {
 
     private void walkingOut() {
         say(currentNode, true);
+        stopGestures();
         stopTalking();
         exit();
         currentNode.name = "";
