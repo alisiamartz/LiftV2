@@ -31,6 +31,8 @@ public class DayManager : MonoBehaviour
     private GameObject leverRotator;
     public Material skybox;
 
+    public string dayResetSound;
+
     private Patrons patron = new Patrons();
 
     // Use this for initialization
@@ -98,6 +100,8 @@ public class DayManager : MonoBehaviour
 
             SteamVR_Fade.Start(Color.clear, 0);
             SteamVR_Fade.Start(Color.black, fadeToBlackTime);
+
+            dayResetSound.PlaySound();
 
             StartCoroutine(ExecuteAfterTime(5f + timeInBlack));
         }
