@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DayManager : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class DayManager : MonoBehaviour
     public string dayResetSound;
 
     private Patrons patron = new Patrons();
+
+    private AsyncOperation async;
 
     // Use this for initialization
     void Start()
@@ -106,7 +109,7 @@ public class DayManager : MonoBehaviour
         //We've reached the end of the game timeline
         else
         {
-
+            StartCoroutine(toCredits());
         }
     }
 
@@ -127,8 +130,7 @@ public class DayManager : MonoBehaviour
         SteamVR_Fade.Start(Color.clear, unFadeTime);
     }
 
-    IEnumerator ExecuteAfterTime(float time)
-    {
+    IEnumerator ExecuteAfterTime(float time) {
 
         yield return new WaitForSeconds(5f);
 
@@ -138,5 +140,18 @@ public class DayManager : MonoBehaviour
 
         // Code to execute after the delay
         dayReset();
+    }
+
+    IEnumerator toCredits() {
+
+        async = SceneManager.LoadSceneAsync("credits");
+        async.allowSceneActivation = false;
+
+        SteamVR_Fade.Start(Color.clear, 0);
+        SteamVR_Fade.Start(Color.black, 5f);
+
+        yield return new WaitForSeconds(5f);
+
+        async.allowSceneActivation = true;
     }
 }
