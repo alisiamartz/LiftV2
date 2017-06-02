@@ -62,7 +62,6 @@ public class PatronMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 
         //TIMER
         if (timer > 0)
@@ -70,12 +69,12 @@ public class PatronMovement : MonoBehaviour {
             timer -= Time.deltaTime;
         } else
         {
-            if(gameObject.tag != "Adultress" || dateBoi == null)
+            if(gameObject.tag != "Adultress" || dateBoi.gameObject.name == "Date1")
                 anim.SetBool("talking", false);
         }
 
         //Adultress Timer
-        if (gameObject.tag == "Adultress" && dateBoi != null && talking == true) {
+        if (gameObject.tag == "Adultress" && dateBoi.gameObject.name == "Date1" && talking == true) {
             if (adultressTimer > 0) {
                 adultressTimer -= Time.deltaTime;
             }
@@ -316,7 +315,7 @@ public class PatronMovement : MonoBehaviour {
     }
 
     public void talk(float time) {
-        if (gameObject.tag == "Adultress" && dateBoi != null)
+        if (gameObject.tag == "Adultress" && dateBoi.gameObject.name == "Date1")
         {
             listPoint = 0;
             talking = true;
@@ -333,7 +332,7 @@ public class PatronMovement : MonoBehaviour {
     
     public void stopTalking() {
         anim.SetBool("talking", false);
-        if (gameObject.tag == "Adultress" && dateBoi != null)
+        if (gameObject.tag == "Adultress" && dateBoi.gameObject.name == "Date1")
         {
             dateBoi.GetComponent<dateMovement>().stopTalking();
             talking = false;
@@ -352,12 +351,13 @@ public class PatronMovement : MonoBehaviour {
         if(i < 0) {
             //Play Angry Animation
             transform.Find("Moods").GetComponent<MoodParticles>().angryAnimation();
-            
         }
         else if(i > 0) {
             //Play Happy Animation
             transform.Find("Moods").GetComponent<MoodParticles>().happyAnimation(i);
- 
+        }
+        if (gameObject.tag == "Adultress" && dateBoi.gameObject.name == "Date1") {
+            dateBoi.GetComponent<dateMovement>().moodChanged(i);
         }
         /*
         else {

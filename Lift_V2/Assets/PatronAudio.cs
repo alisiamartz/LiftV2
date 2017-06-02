@@ -10,6 +10,7 @@ public class PatronAudio : MonoBehaviour {
     public string currentAudio;
 
     private GameObject elevatorManager;
+    private float patronVolume;
 
 	// Use this for initialization
 	void Start () {
@@ -19,12 +20,15 @@ public class PatronAudio : MonoBehaviour {
         if (patronMouth == null) {
             Debug.LogError(gameObject.name + " does not have a mouth assigned");
         }
+        else {
+            patronVolume = patronMouth.volume;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if(elevatorManager.GetComponent<FloorManager>().doorOpen == false && GetComponent<PatronMovement>().state == "leaving") {
-            patronMouth.volume = patronMouth.volume - 0.2f;
+            patronMouth.volume = patronVolume - 0.6f;
         }
 	}
 
