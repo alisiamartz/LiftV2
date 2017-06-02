@@ -101,9 +101,7 @@ public class DayManager : MonoBehaviour
             SteamVR_Fade.Start(Color.clear, 0);
             SteamVR_Fade.Start(Color.black, fadeToBlackTime);
 
-            dayResetSound.PlaySound();
-
-            StartCoroutine(ExecuteAfterTime(5f + timeInBlack));
+            StartCoroutine(ExecuteAfterTime(timeInBlack));
         }
         //We've reached the end of the game timeline
         else
@@ -131,6 +129,11 @@ public class DayManager : MonoBehaviour
 
     IEnumerator ExecuteAfterTime(float time)
     {
+
+        yield return new WaitForSeconds(5f);
+
+        dayResetSound.PlaySound();
+
         yield return new WaitForSeconds(time);
 
         // Code to execute after the delay

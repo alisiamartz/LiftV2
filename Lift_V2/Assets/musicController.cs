@@ -5,6 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class musicController : MonoBehaviour {
 
+    [Range(0f, 1f)]
+    public float elevatorMusicVolume;
+    [Range(0f, 1f)]
+    public float themeMusicVolume;
+
+    [Space]
+
     public AudioClip elevatorMusic;
     public AudioClip mainTheme;
     public AudioClip bossTheme;
@@ -32,21 +39,15 @@ public class musicController : MonoBehaviour {
         if (character == 6) { newClip = artistTheme; }
 
         GetComponent<AudioSource>().clip = newClip;
+        GetComponent<AudioSource>().volume = themeMusicVolume;
         GetComponent<AudioSource>().Play();
 
         //StartCoroutine(ExecuteAfterTime(newClip.length));
     }
 
-    IEnumerator ExecuteAfterTime(float time) {
-        yield return new WaitForSeconds(time);
-
-        //Set the audio clip back to the elevator music
-        GetComponent<AudioSource>().clip = elevatorMusic;
-        GetComponent<AudioSource>().Play();
-    }
-
     public void characterExit() {
         GetComponent<AudioSource>().clip = elevatorMusic;
+        GetComponent<AudioSource>().volume = elevatorMusicVolume;
         GetComponent<AudioSource>().Play();
     }
 }
