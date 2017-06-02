@@ -6,21 +6,23 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class SplashFade : MonoBehaviour {
-    public Image splashImage;
     public string loadLevel;
 
+    private AsyncOperation async;
+
     IEnumerator Start() {
-        splashImage.canvasRenderer.SetAlpha(0.0f);
 
-        FadeIn();
-        yield return new WaitForSeconds(5f);
-        SceneManager.LoadSceneAsync(loadLevel);
+        async = SceneManager.LoadSceneAsync(loadLevel);
+
+        async.allowSceneActivation = false;
+
+        yield return new WaitForSeconds(10f);
+
+        async.allowSceneActivation = true;
         //SceneManager.LoadScene(loadLevel);
+
     }
 
-    void FadeIn() {
-        splashImage.CrossFadeAlpha(1.0f, 2.5f, false);
-    }
     /*
     public void StartLoading() {
         StartCoroutine("load");
