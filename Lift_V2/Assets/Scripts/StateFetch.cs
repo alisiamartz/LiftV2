@@ -37,10 +37,10 @@ public class StateFetch : MonoBehaviour {
 		//	respondings = GameObject.FindGameObjectsWithTag ("responding");	
 
 		// test code to see if it works
-		//	if (Input.GetKeyDown (KeyCode.A)) 
-		//		spawnHatId();
-		//	if (Input.GetKeyDown (KeyCode.S))
-		//		salRude ();
+		if (Input.GetKeyDown (KeyCode.A))
+			waitingForGesture ();
+		if (Input.GetKeyDown (KeyCode.S))
+			stopWaitingGesture ();
 
 	}
 
@@ -72,21 +72,17 @@ public class StateFetch : MonoBehaviour {
             }
         }
         Haptic.rumbleController(0.1f, 0.5f, "both");
-		GetComponent<DisableGesture>().turnOn(this.gameObject);
+		GetComponent<DisableGesture>().turnOn();
     }
 
-	DisableGesture dG;
+	//DisableGesture dG;
     public void stopWaitingGesture() {
-		if (dG == null) {
-			dG = GetComponent<DisableGesture> ();
-		}
-        Debug.Log("NO GESTURES PLS");
+        //Debug.Log("NO GESTURES PLS");
 		if (controller1 != null && controller1.GetComponent<ParticleSystem>().isPlaying)
 			controller1.GetComponent<ParticleSystem>().Stop();
 		if (controller2 != null && controller2.GetComponent<ParticleSystem>().isPlaying)
 			controller2.GetComponent<ParticleSystem>().Stop();
-
-		dG.turnOff(this.gameObject);
+		GetComponent<DisableGesture> ().turnOff ();
     }
 
 

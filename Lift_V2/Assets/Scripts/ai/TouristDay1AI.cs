@@ -43,6 +43,12 @@ public class TouristDay1AI : Agent {
 
     // Update is called once per frame
     void Update() {
+		if (objYes == null)
+			objYes = GameObject.FindGameObjectWithTag("tutorialLine");
+		if (objNo == null)
+			objNo = GameObject.FindGameObjectWithTag("tutorialLine2");
+		if (gestures == null)
+			gestures = GameObject.FindGameObjectWithTag("GestureList");
 
         //Calls the "Yes" & "No" animations to play exactly when they're needed 
         if (isExit)

@@ -25,11 +25,8 @@ public class Grabbing : MonoBehaviour {
     // Use this for initialization
     void Start () {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-
         lever = GameObject.FindGameObjectWithTag("lever");
-
         objDoor = GameObject.FindGameObjectWithTag("door");
-
         menu = GameObject.FindGameObjectWithTag("Menu");
 
         leverTimer = 3.0f;
@@ -46,12 +43,22 @@ public class Grabbing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (CameraHead == null)
+			CameraHead = GameObject.FindGameObjectWithTag("Player").GetComponent<SteamVR_ControllerManager>();
+		if (trackedObj == null)
+			trackedObj = GetComponent<SteamVR_TrackedObject>();
+		if (lever == null)
+			lever = GameObject.FindGameObjectWithTag("lever");
+		if (objDoor == null)
+			objDoor = GameObject.FindGameObjectWithTag("door");
+		if (menu == null) 
+			menu = GameObject.FindGameObjectWithTag("Menu");
+		
         //checks if door is open
         doorInteraction door = objDoor.GetComponent<doorInteraction>();
         if (door.open == true) { leverTimer = 0f; }
         else { leverTimer -= Time.deltaTime; }
-        if (controller == null)
-        {
+        if (controller == null) {
             return;
         }
 

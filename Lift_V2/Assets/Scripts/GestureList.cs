@@ -17,29 +17,30 @@ namespace Edwon.VR.Gesture
 
         private string lastGesture;
 
-        void Start()
-        {
-
+        void Start() {
 
         }
 
 		void Update() {
-			if (rig == null) {
-				rig = FindObjectOfType<VRGestureRig>();
-			}
-			if (playerHead == null) {
-				playerHead = rig.head;
-			}
-			if (playerHandL == null) {
-				 playerHandL = rig.handLeft;
-			}
-			if (playerHandR == null) {
-				playerHandR = rig.handRight;           
-			}
-			if (input == null) {
-				input = rig.GetInput(rig.mainHand);
+			if (GetComponent<VRGestureRig> ()) { 
+				if (rig == null) {
+					rig = FindObjectOfType<VRGestureRig> ();
+				}
+				if (playerHead == null) {
+					playerHead = GameObject.FindGameObjectWithTag ("MainCamera").transform;
+				}
+				if (playerHandL == null) {
+					playerHandL = GameObject.FindGameObjectWithTag ("leftControl").transform;
+				}
+				if (playerHandR == null) {
+					playerHandR = GameObject.FindGameObjectWithTag ("rightControl").transform;
+				}
+				if (input == null) {
+					input = rig.GetInput(Handedness.Right);
+				}
 			}
 		}
+
 
         void OnEnable()
         {

@@ -54,7 +54,6 @@ public class PatronMovement : MonoBehaviour {
         leverRotator = GameObject.FindGameObjectWithTag("lever");
         musicSource = GameObject.FindGameObjectWithTag("musicControl");
 		anim = GetComponent<Animator> ();
-
         contConf = GameObject.FindGameObjectWithTag("tutorialLine3");
         saluRude = GameObject.FindGameObjectWithTag("tutorialLine4");
     }
@@ -62,6 +61,21 @@ public class PatronMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (hotelManager == null)
+			hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
+		if (playerHead == null)
+			playerHead = GameObject.FindGameObjectWithTag("MainCamera");
+		if (leverRotator == null)
+			leverRotator = GameObject.FindGameObjectWithTag("lever");
+		if (musicSource == null)
+			musicSource = GameObject.FindGameObjectWithTag("musicControl");
+		if (anim == null)
+			anim = GetComponent<Animator> ();
+		if (leverRotator == null)
+			contConf = GameObject.FindGameObjectWithTag("tutorialLine3");
+		if (leverRotator == null)
+			saluRude = GameObject.FindGameObjectWithTag("tutorialLine4");
 
         //TIMER
         if (timer > 0)

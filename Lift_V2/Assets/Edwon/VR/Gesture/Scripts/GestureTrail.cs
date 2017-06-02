@@ -39,16 +39,18 @@ namespace Edwon.VR.Gesture
         }
 
         //******Added this function to update the color of the line properly
-        private void Update()
-        {
+        private void Update() {
+			if (currentRenderer == null)
+				currentRenderer = CreateLineRenderer(Color.magenta, Color.magenta);
+			if (objConfidence == null)
+				objConfidence = GameObject.FindGameObjectWithTag("ElevatorManager");
+			//if (confidence == null)
+				
             time += Time.deltaTime;
             limit = time - timer;
-            if (objConfidence.GetComponent<GestureRecognizer>().isConfident == true)
-            {
+            if (objConfidence.GetComponent<GestureRecognizer>().isConfident == true) {
                 confidence = true;
-            }
-            else
-            {
+            } else {
                 confidence = false;
             }
             if (color != "purple" && limit > 7.0f) { ClearTrail(); }
@@ -101,6 +103,7 @@ namespace Edwon.VR.Gesture
             GameObject myGo = new GameObject("Trail Renderer");
             myGo.transform.parent = transform;
             myGo.transform.localPosition = Vector3.zero;
+			myGo.tag = "tr";
 
             LineRenderer lineRenderer = myGo.AddComponent<LineRenderer>();
             lineRenderer.material = new Material(Shader.Find("Particles/Additive"));

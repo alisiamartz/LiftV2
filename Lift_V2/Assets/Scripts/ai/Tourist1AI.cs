@@ -28,14 +28,17 @@ public class Tourist1AI : Agent {
 
     // Update is called once per frame
     void Update() {
-        if (isExit)
-        {
+		if (objLine == null)
+			objLine = GameObject.FindGameObjectWithTag("tutorialLine");
+		if (objGesture == null)
+			objGesture = GameObject.FindGameObjectWithTag("GestureList");
+
+        if (isExit) {
             objLine.GetComponent<Animator>().enabled = false;
             objLine.GetComponent<Animator>().SetBool("startOver", false);
             //This will make the list appear once the tourist leaves
             objGesture.GetComponent<Transform>().localScale = new Vector3(.57f, .57f, .57f);
-        }
-        else if (currentNode.name == "Sign Language") //|| currentNode.name == "Sign Language...again" || currentNode.name == "Sign Language...again...and again")
+        } else if (currentNode.name == "Sign Language") //|| currentNode.name == "Sign Language...again" || currentNode.name == "Sign Language...again...and again")
         {
             objLine.GetComponent<Animator>().enabled = true;
             objLine.GetComponent<Animator>().SetBool("startOver", true);

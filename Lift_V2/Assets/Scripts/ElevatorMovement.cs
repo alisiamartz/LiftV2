@@ -50,7 +50,11 @@ public class ElevatorMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (lever == null)
+			lever = GameObject.FindGameObjectWithTag("lever");
+		if (hotelManager == null)
+			hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
+		
         //Add current speed
         floorPos += liftSpeedCurrent;
 
