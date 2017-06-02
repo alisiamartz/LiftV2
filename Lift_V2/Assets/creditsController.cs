@@ -13,8 +13,12 @@ public class creditsController : MonoBehaviour {
     private doorInteraction liftDoor;
     private ElevatorMovement eleMvmt;
 
-	// Use this for initialization
-	void Start () {
+    private bool endStarted;
+
+    private AsyncOperation async;
+
+    // Use this for initialization
+    void Start () {
         liftDoor = GameObject.FindGameObjectWithTag("door").GetComponent<doorInteraction>();
         eleMvmt = GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<ElevatorMovement>();
 
@@ -28,9 +32,10 @@ public class creditsController : MonoBehaviour {
                 nextFloor++;
                 StartCoroutine(CreditsCycle());
             }
-            else {
+            else if(endStarted == false) {
                 //We've reached end of credits
                 liftDoor.openDoor();
+                endStarted = true;
                 StartCoroutine(EndCredits());
             }
         }
@@ -54,12 +59,20 @@ public class creditsController : MonoBehaviour {
     }
 
     IEnumerator EndCredits() {
+        async = SceneManager.LoadSceneAsync("Splash");
+        async.allowSceneActivation = false;
+
         yield return new WaitForSeconds(timeOnFloor);
 
         liftDoor.closeDoor();
 
         yield return new WaitForSeconds(3f);
 
-        SceneManager.LoadScene("Splash");
+        SteamVR_Fade.Start(Color.clear, 0);
+        SteamVR_Fade.Start(Color.black, 5f);
+
+        yield return new WaitForSeconds(5f);
+
+        async.allowSceneActivation = true;
     }
 }
