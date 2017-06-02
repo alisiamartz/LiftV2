@@ -73,22 +73,6 @@
       "noResponseChange": 0
     },
     {
-      "name": "Happy day",
-      "wait": 7,
-      "dialogue": [
-        "s4.1h",
-        "s4.1h",
-        "s4.1h"
-      ],
-	  "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "noResponse": "waitingFloor",
-      "noResponseChange": 0
-    },
-    {
       "name": "Weekend",
       "wait": 7,
       "dialogue": [

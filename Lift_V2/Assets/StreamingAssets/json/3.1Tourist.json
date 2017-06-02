@@ -149,25 +149,6 @@
       "noResponseChange": -2
     },
 	{
-      "name": "Repeat",
-      "wait": 7,
-      "dialogue": [
-        "t3.4h",
-        "t3.4h",
-        "t3.4h"
-      ],
-      "animation": [
-        "talk",
-        "talk",
-        "talk"
-      ],
-      "listen": [ "continue", "confused" ],
-      "change": [ 2, 0 ],
-      "toNode": [ "Master of sign language", "Master of sign language" ],
-      "noResponse": "Attention grabber",
-      "noResponseChange": 0
-    },
-	{
 
       "name": "Master of sign language",
       "wait": 7,
