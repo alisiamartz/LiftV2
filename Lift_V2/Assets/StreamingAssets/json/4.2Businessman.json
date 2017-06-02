@@ -107,6 +107,70 @@
 	  "noResponse": "Parasites",
       "noResponseChange": 0
     },
+	{
+      "name": "Last chance",
+      "wait": 7,
+      "dialogue": [
+        "bm7.1h",
+        "bm7.1n",
+        "bm7.1a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Last chance",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Bad impressions",
+      "wait": 7,
+      "dialogue": [
+        "bm7.2h",
+        "bm7.2n",
+        "bm7.2a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Bad impressions",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Paradox",
+      "wait": 7,
+      "dialogue": [
+        "bm7.3h",
+        "bm7.3n",
+        "bm7.3a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Paradox",
+      "noResponseChange": 0
+    },
+	{
+      "name": "Point taken",
+      "wait": 7,
+      "dialogue": [
+        "bm7.4h",
+        "bm7.4n",
+        "bm7.4a"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+	  "noResponse": "Point taken",
+      "noResponseChange": 0
+    },
     {
       "name": "Hard workers",
       "wait": 7,
