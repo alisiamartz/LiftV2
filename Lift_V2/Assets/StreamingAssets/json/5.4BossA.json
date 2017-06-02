@@ -9,9 +9,9 @@
       "name": "Start",
       "wait": 15,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "boss1.1h",
+        "boss1.1h",
+        "boss1.1h"
       ],
 	  "animation": [
         "",
@@ -25,9 +25,9 @@
       "name": "What comes around goes around",
       "wait": 7,
       "dialogue": [
-        "neg",
-        "neg",
-        "neg"
+        "boss2.1h",
+        "boss2.1h",
+        "boss2.1h"
       ],
 	  "animation": [
         "talk",
@@ -44,9 +44,9 @@
       "name": "Uniquely ordinary",
       "wait": 7,
       "dialogue": [
-        "neu",
-        "neu",
-        "neu"
+        "boss2.2h",
+        "boss2.2h",
+        "boss2.2h"
       ],
 	  "animation": [
         "talk",
@@ -63,9 +63,9 @@
       "name": "Spirit of the hotel",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss2.3h",
+        "boss2.3h",
+        "boss2.3h"
       ],
 	  "animation": [
         "talk",
@@ -82,9 +82,9 @@
       "name": "Fine",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss3.1h",
+        "boss3.1h",
+        "boss3.1h"
       ],
 	  "animation": [
         "talk",
@@ -101,9 +101,9 @@
       "name": "You jerk",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss3.2h",
+        "boss3.2h",
+        "boss3.2h"
       ],
 	  "animation": [
         "talk",
@@ -120,9 +120,9 @@
       "name": "You're alright",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss3.3h",
+        "boss3.3h",
+        "boss3.3h"
       ],
 	  "animation": [
         "talk",
@@ -139,9 +139,9 @@
       "name": "You're eh",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss3.4h",
+        "boss3.4h",
+        "boss3.4h"
       ],
 	  "animation": [
         "talk",
@@ -158,9 +158,9 @@
       "name": "That's the spirit!",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss3.5h",
+        "boss3.5h",
+        "boss3.5h"
       ],
 	  "animation": [
         "talk",
@@ -177,9 +177,9 @@
       "name": "That's not the spirit!",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss3.6h",
+        "boss3.6h",
+        "boss3.6h"
       ],
 	  "animation": [
         "talk",
@@ -196,9 +196,9 @@
       "name": "Flattery will get you nowhere",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss4.1h",
+        "boss4.1h",
+        "boss4.1h"
       ],
 	  "animation": [
         "talk",
@@ -215,9 +215,9 @@
       "name": "Ya big ol doody",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss4.2h",
+        "boss4.2h",
+        "boss4.2h"
       ],
 	  "animation": [
         "talk",
@@ -234,9 +234,9 @@
       "name": "Well, this is it",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss4.3h",
+        "boss4.3h",
+        "boss4.3h"
       ],
 	  "animation": [
         "talk",
@@ -253,9 +253,9 @@
       "name": "Not the greatest",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss4.4h",
+        "boss4.4h",
+        "boss4.4h"
       ],
 	  "animation": [
         "talk",
@@ -269,12 +269,12 @@
       "noResponseChange": 0
     },
 	{
-      "name": "Not the greatest",
+      "name": "See you around",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss4.5h",
+        "boss4.5h",
+        "boss4.5h"
       ],
 	  "animation": [
         "talk",
@@ -291,9 +291,9 @@
       "name": "We'll meet again",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss4.56",
+        "boss4.56",
+        "boss4.56"
       ],
 	  "animation": [
         "talk",
@@ -310,9 +310,9 @@
       "name": "This sucks",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss5.1h",
+        "boss5.1h",
+        "boss5.1h"
       ],
 	  "animation": [
         "talk",
@@ -326,9 +326,9 @@
       "name": "This really sucks",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss5.2h",
+        "boss5.2h",
+        "boss5.2h"
       ],
 	  "animation": [
         "talk",
@@ -342,9 +342,9 @@
       "name": "Well",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss5.3h",
+        "boss5.3h",
+        "boss5.3h"
       ],
 	  "animation": [
         "talk",
@@ -358,9 +358,9 @@
       "name": "Welp",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss5.4h",
+        "boss5.4h",
+        "boss5.4h"
       ],
 	  "animation": [
         "talk",
@@ -374,9 +374,9 @@
       "name": "To new beginnings!",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss5.5h",
+        "boss5.5h",
+        "boss5.5h"
       ],
 	  "animation": [
         "talk",
@@ -390,9 +390,9 @@
       "name": "To old endings!",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "pos",
-        "pos"
+        "boss5.6h",
+        "boss5.6h",
+        "boss5.6h"
       ],
 	  "animation": [
         "talk",
@@ -406,18 +406,18 @@
       "name": "End",
       "wait": 0,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "boss6.1h",
+        "boss6.1n",
+        "boss6.1a"
       ]
     },
 	{
       "name": "waitingFloor",
       "wait": 3,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+        "boss6.3h",
+        "boss6.3n",
+        "boss6.3a"
       ],
 	  "animation": [
         "talk",
@@ -431,9 +431,9 @@
       "name": "notFloor",
       "wait": 7,
       "dialogue": [
-        "pos",
-        "neu",
-        "neg"
+        "boss6.2h",
+        "boss6.2n",
+        "boss6.2a"
       ],
       "noResponse": "notFloor",
       "noResponseChange": -3

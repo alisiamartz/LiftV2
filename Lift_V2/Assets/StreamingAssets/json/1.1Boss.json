@@ -126,8 +126,24 @@
       "wait": 3,
       "dialogue": [
         "boss4.2h",
-        "boss4.2n",
-        "boss4.2a"
+        "boss4.2h",
+        "boss4.2h"
+      ],
+      "animation": [
+        "talk",
+        "talk",
+        "talk"
+      ],
+      "noResponse": "Hat",
+      "noResponseChange": 0
+    },
+	 {
+      "name": "Hat",
+      "wait": 7,
+      "dialogue": [
+        "boss4.4h",
+        "boss4.4h",
+        "boss4.4h"
       ],
       "animation": [
         "talk",
