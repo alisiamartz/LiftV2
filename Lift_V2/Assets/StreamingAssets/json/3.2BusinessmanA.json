@@ -346,11 +346,11 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+        "bm5.3h",
+        "bm5.3n",
+        "bm5.3a"
       ],
       "animation": [
         "talk",
