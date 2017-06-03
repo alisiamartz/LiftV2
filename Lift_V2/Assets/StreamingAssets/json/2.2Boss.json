@@ -81,9 +81,9 @@
         "boss5.6h"
       ],
       "animation": [
-        "talk",
-        "talk",
-        "talk"
+        "rude",
+        "rude",
+        "rude"
       ],
       "listen": [ "rude" ],
       "change": [ 0 ],
