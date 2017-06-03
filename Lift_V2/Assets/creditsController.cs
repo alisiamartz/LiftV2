@@ -19,6 +19,9 @@ public class creditsController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        SteamVR_Fade.Start(Color.black, 0);
+        SteamVR_Fade.Start(Color.clear, 5f);
+
         liftDoor = GameObject.FindGameObjectWithTag("door").GetComponent<doorInteraction>();
         eleMvmt = GameObject.FindGameObjectWithTag("ElevatorManager").GetComponent<ElevatorMovement>();
 
