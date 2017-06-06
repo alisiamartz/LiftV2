@@ -13,17 +13,17 @@ public class AIInfo : MonoBehaviour {
     private Regex artistRegex = new Regex(@"Artist");
 
     [SerializeField]
-    private int bossMood;
+    public int bossMood;
     [SerializeField]
-    private int businessMood;
+    public int businessMood;
     [SerializeField]
-    private int touristMood;
+    public int touristMood;
     [SerializeField]
-    private int adultMood;
+    public int adultMood;
     [SerializeField]
-    private int serverMood;
+    public int serverMood;
     [SerializeField]
-    private int artistMood;
+    public int artistMood;
 
     private bool divorce = false;
     [SerializeField]

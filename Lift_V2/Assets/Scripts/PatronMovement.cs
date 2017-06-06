@@ -18,8 +18,11 @@ public class PatronMovement : MonoBehaviour {
 	private GameObject Salute;
 	private GameObject Rude;
 
-	//For new waypoint system
-	private int waypointNumber = 2;
+    private GameObject CCpaper;
+    private GameObject SRpaper;
+
+    //For new waypoint system
+    private int waypointNumber = 2;
 
 	[Range(0.5f, 5)]
 	public float walkSpeed = 0.5f;
@@ -76,13 +79,15 @@ public class PatronMovement : MonoBehaviour {
 			anim = GetComponent<Animator> ();
 		if (leverRotator == null)
 			contConf = GameObject.FindGameObjectWithTag("tutorialLine3");
-		if (leverRotator == null)
+            CCpaper = GameObject.FindGameObjectWithTag("ContConf");
+        if (leverRotator == null)
 			Salute = GameObject.FindGameObjectWithTag("tutorialLine3");
 		if (leverRotator == null)
 			Rude = GameObject.FindGameObjectWithTag("tutorialLine3");
+            SRpaper = GameObject.FindGameObjectWithTag("SalRud");
 
-		//TIMER
-		if (timer > 0)
+        //TIMER
+        if (timer > 0)
 		{
 			timer -= Time.deltaTime;
 		} else
@@ -322,26 +327,31 @@ public class PatronMovement : MonoBehaviour {
 	//For the remaining gesture animations
 	public void confused() {
 		contConf.GetComponent<TutorialLines>().enabled = true;
+        CCpaper.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 1f);
 	}
 
 	public void notConfused() {
 		contConf.GetComponent<TutorialLines>().enabled = false;
-	}
+        CCpaper.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 1f);
+    }
 
 	public void salute() {
 		Rude.GetComponent<TutorialRude>().enabled = false;
 		Salute.GetComponent<TutorialSalute>().enabled = true;
-	}
+        SRpaper.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 1f);
+    }
 
 	public void notSalute() {
 		Salute.GetComponent<TutorialSalute>().enabled = false;
 		Rude.GetComponent<TutorialRude>().enabled = false;
-	}
+        SRpaper.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 1f);
+    }
 
 	public void rude() {
 		Salute.GetComponent<TutorialSalute>().enabled = false;
 		Rude.GetComponent<TutorialRude>().enabled = true;
-	}
+        SRpaper.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 1f);
+    }
 
 	public void talk(float time) {
 		if (gameObject.tag == "Adultress" && dateBoi.gameObject.name == "Date1")

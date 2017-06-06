@@ -38,11 +38,14 @@ public class DayManager : MonoBehaviour
 
     private AsyncOperation async;
 
+    private GameObject objNews;
+
     // Use this for initialization
     void Start()
     {
         elevatorManager = GameObject.FindGameObjectWithTag("ElevatorManager");
         leverRotator = GameObject.FindGameObjectWithTag("lever");
+        objNews = GameObject.FindGameObjectWithTag("News");
 
         skybox.SetFloat("_Exposure", 2.4f);
         skybox.SetFloat("_AtmosphereThickness", 0.3f);
@@ -52,6 +55,7 @@ public class DayManager : MonoBehaviour
         SteamVR_Fade.Start(Color.clear, 10);
 
         patronNumber -= 1;
+        //objNews.GetComponent<NewsTransition>().DAY1();   
         nextPatron();
     }
 
@@ -116,6 +120,14 @@ public class DayManager : MonoBehaviour
 
     public void dayReset()
     {
+        //Do not edit or delete this code below. Will be udated very soon
+        /*
+        if (day == 2) { objNews.GetComponent<NewsTransition>().DAY2(); }
+        if (day == 3) { objNews.GetComponent<NewsTransition>().DAY3(); }
+        if (day == 4) { objNews.GetComponent<NewsTransition>().DAY4(); }
+        if (day == 5) { objNews.GetComponent<NewsTransition>().DAY5(); }
+        */
+
         //Close the elevator door
         //Reset elevator position etc.
         leverRotator.GetComponent<LeverRotation>().resetLever();
