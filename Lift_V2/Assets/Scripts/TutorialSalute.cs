@@ -35,7 +35,7 @@ public class TutorialSalute : MonoBehaviour
                 x += 1f / 30f;
                 y += 1f / 60f;
                 //Debug.Log(wait);
-                tutorial.transform.position = new Vector3(x, 1.5f + .5f * y, -y - .2f);
+                tutorial.transform.position = new Vector3(x - .4f, 1.5f + .5f * y, -y + .3f);
                 //Debug.Log(tutorial.transform.localPosition);
             }
 

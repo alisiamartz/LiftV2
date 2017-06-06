@@ -214,12 +214,15 @@ public class GenericAIv2 : Agent {
         playDialogue(dialogue);
 
         //sets up the timer for the next node
-        float audioTime = GetComponent<PatronAudio>().patronMouth.clip.length;
-        timer = audioTime + n.wait;
+        if (GetComponent<PatronAudio>().patronMouth.clip != null) {
+            float audioTime = GetComponent<PatronAudio>().patronMouth.clip.length;
 
-        //talking animation
-        if (n.animation[index] == "talk") animate(n.animation[index], audioTime);
-        else animate(n.animation[index]);
+            timer = audioTime + n.wait;
+
+            //talking animation
+            if (n.animation[index] == "talk") animate(n.animation[index], audioTime);
+            else animate(n.animation[index]);
+        }
 
         //text bubble
         //bubble.text = n.dialogue[index];

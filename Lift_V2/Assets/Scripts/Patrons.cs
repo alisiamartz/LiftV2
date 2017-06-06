@@ -69,6 +69,7 @@ public class Patrons {
 
         if (patronName == "Adultress1") {
             prefab.transform.Find("Date1").gameObject.SetActive(true);
+            prefab.transform.Find("Date2").gameObject.SetActive(false);
             return new Patron(prefab, 1);
         }
 
