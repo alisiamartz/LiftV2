@@ -227,7 +227,7 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
         "missingdialogue",
         "missingdialogue",

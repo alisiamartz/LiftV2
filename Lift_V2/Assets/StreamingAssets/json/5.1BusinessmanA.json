@@ -305,7 +305,7 @@
     },
 	{
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
         "bm6.3h",
         "bm6.3n",

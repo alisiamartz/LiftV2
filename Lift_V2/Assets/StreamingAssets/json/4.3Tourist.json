@@ -366,11 +366,11 @@
     },
     {
       "name": "waitingFloor",
-      "wait": 7,
+      "wait": 3,
       "dialogue": [
-        "missingdialogue",
-        "missingdialogue",
-        "missingdialogue"
+        "t1.1n",
+        "t1.1n",
+        "t1.1n"
       ],
       "animation": [
         "talk",
