@@ -12,10 +12,14 @@ public class Interactable : MonoBehaviour {
 	private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
 	 
 	[SerializeField]
-	public SteamVR_TrackedObject trackedObj;
-	private SteamVR_Controller.Device device { get { return SteamVR_Controller.Input((int)trackedObj.index); } }
+	public SteamVR_TrackedObject leftHand;
+	private SteamVR_Controller.Device leftDevice { get { return SteamVR_Controller.Input((int)leftHand.index); } }
 
-	public static bool inRangeID;
+    [SerializeField]
+    public SteamVR_TrackedObject rightHand;
+    private SteamVR_Controller.Device rightDevice { get { return SteamVR_Controller.Input((int)leftHand.index); } }
+
+    public static bool inRangeID;
 	public static bool inRangeHat;
     public static bool inRangeRing; 
 	public static bool inRange;
@@ -63,13 +67,13 @@ public class Interactable : MonoBehaviour {
 			idHolder = GameObject.FindGameObjectWithTag("idHolder");
 
 		// pcik up when trigger is pressed
-		if (device.GetPressDown (triggerButton) && (Vector3.Distance (trackedObj.transform.position, this.transform.position) < .2f)) {
+		if (leftDevice.GetPressDown (triggerButton) && (Vector3.Distance (leftHand.transform.position, this.transform.position) < .2f)) {
 			// parent object to controller
 			//camRig.GetComponent<DisableGesture>().turnOff ();
 			this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
-			this.transform.SetParent (trackedObj.transform);
+			this.transform.SetParent (leftHand.transform);
 			holding = true;
-		} else if (!(Vector3.Distance (trackedObj.transform.position, this.transform.position) < .17f)) {
+		} else if (!(Vector3.Distance (leftHand.transform.position, this.transform.position) < .17f)) {
 			//if (!camRig.GetComponent<DisableGesture>().isComponentEnabled ()) {
 			//	camRig.GetComponent<DisableGesture>().turnOn ();
 			//}
@@ -95,7 +99,7 @@ public class Interactable : MonoBehaviour {
 		// check where the object is
 		// if near end point, then go there
 
-		if (holding && device.GetPressUp(triggerButton)) { // || near the end location??)
+		if (holding && leftDevice.GetPressUp(triggerButton)) { // || near the end location??)
 			// unless it is near the intended location,
 			// the object will fall on the ground 
 			switch (this.tag) {

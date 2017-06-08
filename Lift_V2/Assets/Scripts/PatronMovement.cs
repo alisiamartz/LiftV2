@@ -131,8 +131,8 @@ public class PatronMovement : MonoBehaviour {
 
 		if (moving)
 		{
-			//If the floor has changed since getting off the elevator
-			if(targetWaypoint.transform.parent.gameObject.activeSelf == false) {
+			//If the door has closed on the patron
+			if(hotelManager.GetComponent<FloorManager>().doorOpen == false && state == "leaving") {
 				despawnPatron();
 				return;
 			}
