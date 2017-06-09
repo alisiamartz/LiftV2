@@ -17,7 +17,7 @@ public class Interactable : MonoBehaviour {
 
     [SerializeField]
     public SteamVR_TrackedObject rightHand;
-    private SteamVR_Controller.Device rightDevice { get { return SteamVR_Controller.Input((int)leftHand.index); } }
+    private SteamVR_Controller.Device rightDevice { get { return SteamVR_Controller.Input((int)rightHand.index); } }
 
     public static bool inRangeID;
 	public static bool inRangeHat;
@@ -68,9 +68,10 @@ public class Interactable : MonoBehaviour {
 
 		// pcik up when trigger is pressed
 		if (leftDevice.GetPressDown (triggerButton) && (Vector3.Distance (leftHand.transform.position, this.transform.position) < .2f)) {
-			// parent object to controller
-			//camRig.GetComponent<DisableGesture>().turnOff ();
-			this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
+            
+            // parent object to controller
+            //camRig.GetComponent<DisableGesture>().turnOff ();
+            this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 			this.transform.SetParent (leftHand.transform);
 			holding = true;
 		} else if (!(Vector3.Distance (leftHand.transform.position, this.transform.position) < .17f)) {
@@ -79,8 +80,21 @@ public class Interactable : MonoBehaviour {
 			//}
 		}
 
-		// let's check to see what you're holding though 
-		if (holding) {
+        if (rightDevice.GetPressDown(triggerButton) && (Vector3.Distance(rightHand.transform.position, this.transform.position) < .2f)) {
+            // parent object to controller
+            //camRig.GetComponent<DisableGesture>().turnOff ();
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            this.transform.SetParent(rightHand.transform);
+            holding = true;
+        }
+        else if (!(Vector3.Distance(rightHand.transform.position, this.transform.position) < .17f)) {
+            //if (!camRig.GetComponent<DisableGesture>().isComponentEnabled ()) {
+            //	camRig.GetComponent<DisableGesture>().turnOn ();
+            //}
+        }
+
+        // let's check to see what you're holding though 
+        if (holding) {
 			if (this.tag == "id")
 				holdingID = true;
 			if (this.tag == "hat")
@@ -99,7 +113,7 @@ public class Interactable : MonoBehaviour {
 		// check where the object is
 		// if near end point, then go there
 
-		if (holding && leftDevice.GetPressUp(triggerButton)) { // || near the end location??)
+		if (holding && (leftDevice.GetPressUp(triggerButton) || rightDevice.GetPressUp(triggerButton))) { // || near the end location??)
 			// unless it is near the intended location,
 			// the object will fall on the ground 
 			switch (this.tag) {

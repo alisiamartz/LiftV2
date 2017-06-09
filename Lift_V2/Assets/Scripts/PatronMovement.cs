@@ -47,6 +47,8 @@ public class PatronMovement : MonoBehaviour {
 	private bool talking = false;
 	private int listPoint = 0;
 
+    private bool nextSpawned = false;
+
 	//Adultress Only
 	private GameObject dateBoi;
 
@@ -131,9 +133,16 @@ public class PatronMovement : MonoBehaviour {
 
 		if (moving)
 		{
+            //If the floor has changed since getting off the elevator
+            if (targetWaypoint.transform.parent.gameObject.activeSelf == false) {
+                spawnNextPatron();
+                despawnPatron();
+                return;
+            }
+
 			//If the door has closed on the patron
 			if(hotelManager.GetComponent<FloorManager>().doorOpen == false && state == "leaving") {
-				despawnPatron();
+				spawnNextPatron();
 				return;
 			}
 
@@ -143,7 +152,9 @@ public class PatronMovement : MonoBehaviour {
 			//Make footstep noise
 			footstepTimer += Time.deltaTime;
 			if(footstepTimer >= footstepGap) {
-				footstepSound.PlaySound(transform.position);
+                if (hotelManager.GetComponent<FloorManager>().doorOpen == true) {
+                    footstepSound.PlaySound(transform.position);
+                }
 				footstepTimer = 0;
 			}
 
@@ -175,6 +186,7 @@ public class PatronMovement : MonoBehaviour {
 							waypointNumber++;
 						}
 						else {
+                            spawnNextPatron();
 							despawnPatron();
 						}
 					}
@@ -293,14 +305,21 @@ public class PatronMovement : MonoBehaviour {
 		}
 	}
 
-	public void despawnPatron() {
-		hotelManager.GetComponent<DayManager>().nextPatron();
+	public void despawnPatron() { 
 		Debug.Log("Called despawn");
 		if (gameObject.tag == "Adultress"){
 			Destroy(dateBoi.gameObject);
 		}
 		Destroy(this.gameObject);
 	}
+
+    public void spawnNextPatron() {
+        if (nextSpawned == false) {
+            hotelManager.GetComponent<DayManager>().nextPatron();
+            nextSpawned = true;
+        }
+        
+    }
 
 	public void wait()
 	{
