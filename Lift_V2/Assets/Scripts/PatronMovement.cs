@@ -215,6 +215,9 @@ public class PatronMovement : MonoBehaviour {
 	{
 		if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
 		{
+            //Tell the manager a patron is in the elevator
+            hotelManager.GetComponent<DayManager>().patronPresent = true;
+
 			//If Adultress on day 1 or 2, bring their date boi too
 			if(gameObject.tag == "Adultress") {
 				var date1 = transform.Find("Date1");
@@ -267,8 +270,11 @@ public class PatronMovement : MonoBehaviour {
 	{
 		if (hotelManager.GetComponent<FloorManager>().doorOpen == true)
 		{
-			//If Adultress on day 1 or 2, bring their date boi too
-			if (gameObject.tag == "Adultress") {
+            //Tell the manager a patron is in the elevator
+            hotelManager.GetComponent<DayManager>().patronPresent = false;
+
+            //If Adultress on day 1 or 2, bring their date boi too
+            if (gameObject.tag == "Adultress") {
 				dateBoi.GetComponent<dateMovement>().leaveElevator();
 
 				// if it's day 3 then she drops the ring boys!!!!!

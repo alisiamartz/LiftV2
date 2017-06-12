@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DayManager : MonoBehaviour
 {
+    [Header("Globals")]
+    public bool patronPresent = false;                          //If true there is a patron in the elevator
 
     [Header("Patrons")]
     public string[] day1;

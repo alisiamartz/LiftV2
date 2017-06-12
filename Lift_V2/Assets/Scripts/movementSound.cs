@@ -17,10 +17,10 @@ public class movementSound : MonoBehaviour {
     public string elevatorStopSound;
 
     [Range(0f, 1f)]
-    public float minEngineVolume;
+    public float noPatronVolume;
 
     [Range(0f, 1f)]
-    public float maxEngineVolume;
+    public float patronVolume;
 
     private GameObject activeMoveSound;
 

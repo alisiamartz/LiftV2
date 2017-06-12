@@ -12,8 +12,14 @@ public class chandelierShake : MonoBehaviour {
 
     private bool reset;
 
-	// Use this for initialization
-	void Start () {
+    [Range(0f, 1f)]
+    public float noPatronVolume;
+
+    [Range(0f, 1f)]
+    public float patronVolume;
+
+    // Use this for initialization
+    void Start () {
         hotelManager = GameObject.FindGameObjectWithTag("HotelManager");
         anim = GetComponent<Animator>();
         sound = GetComponent<AudioSource>();
@@ -23,6 +29,13 @@ public class chandelierShake : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(hotelManager.GetComponent<DayManager>().patronPresent == true) {
+            sound.volume = patronVolume;
+        }
+        else {
+            sound.volume = noPatronVolume;
+        }
+
 		//if Elevator is moving, then chandelier should be moving
         if(hotelManager.GetComponent<FloorManager>().floorPos == -1)
         {
