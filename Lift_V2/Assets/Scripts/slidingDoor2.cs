@@ -45,12 +45,13 @@ public class slidingDoor2 : MonoBehaviour
     }
 
     void Update()
-    {//----------------------------------------Only used for testing purposes, will be removed
+    {
+        /*
         if (Input.GetKey("l"))//open
             openSlidingDoor();
         if (Input.GetKey("k"))//close
             closeSlidingDoor();
-
+        */
 
         /*example of playing a sound. doesnt work well with update calling the sound multiple times (and im just trying to show proof of concept) 
          * in the code where it will actually be used, it should only called once per sound. import sound files into the AudioClips file

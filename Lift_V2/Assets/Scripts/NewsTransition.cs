@@ -5,9 +5,17 @@ using UnityEngine;
 public class NewsTransition : MonoBehaviour {
 
     public Material news;
-    public Texture day1A;
-    public Texture day1B;
-    public Texture day1C;
+    public Texture boss;
+    public Texture artist;
+    public Texture serverH;
+    public Texture serverN;
+    public Texture serverA;
+    public Texture adultressH;
+    public Texture adultressN;
+    public Texture adultressA;
+    public Texture businessH;
+    public Texture businessN;
+    public Texture businessA;
 
     private GameObject objMood;
 
@@ -18,29 +26,32 @@ public class NewsTransition : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void DAY1() {
-        Debug.Log(objMood.GetComponent<AIInfo>().bossMood);
-        if (objMood.GetComponent<AIInfo>().bossMood > 3) { news.mainTexture = day1A; }
-        else if (objMood.GetComponent<AIInfo>().bossMood < -3) { news.mainTexture = day1C; }
-        else { news.mainTexture = day1B; }
+        news.mainTexture = boss;
     }
 
     public void DAY2()
     {
-        news.mainTexture = day1A;
+        news.mainTexture = artist;
     }
 
     public void DAY3()
     {
-        news.mainTexture = day1A;
+        if (objMood.GetComponent<AIInfo>().serverMood > 3) { news.mainTexture = serverH; }
+        else if (objMood.GetComponent<AIInfo>().serverMood < -3) { news.mainTexture = serverA; }
+        else { news.mainTexture = serverN; }
     }
 
     public void DAY4()
     {
-        news.mainTexture = day1A;
+        if (objMood.GetComponent<AIInfo>().adultMood > 3) { news.mainTexture = adultressH; }
+        else if (objMood.GetComponent<AIInfo>().adultMood < -3) { news.mainTexture = adultressA; }
+        else { news.mainTexture = adultressN; }
     }
 
     public void DAY5()
     {
-        news.mainTexture = day1A;
+        if (objMood.GetComponent<AIInfo>().businessMood > 3) { news.mainTexture = businessH; }
+        else if (objMood.GetComponent<AIInfo>().businessMood < -3) { news.mainTexture = businessA; }
+        else { news.mainTexture = businessN; }
     }
 }
