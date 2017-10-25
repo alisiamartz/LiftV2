@@ -8,4 +8,14 @@ public class stateList
     {
         walking, idle, talking
     }
+
+    public enum floor
+    {
+        basement, lobby, ballroom, office, four, five, restaurant
+    }
+
+    public enum group
+    {
+        GroupA, GroupB, GroupC, GroupD
+    }
 }

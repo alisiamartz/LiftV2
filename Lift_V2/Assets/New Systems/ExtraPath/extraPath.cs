@@ -5,6 +5,8 @@ using UnityEngine;
 public class extraPath : MonoBehaviour {
     //The class for nodes which extras use as waypoints
 
+    private Mesh wireframe;
+
     public bool startNode = true;
 
     //The name of the animation an extra transitions to when they reach this node
@@ -33,15 +35,17 @@ public class extraPath : MonoBehaviour {
 
     private void OnDrawGizmos()
     {
+        if (wireframe == null)
+        {
+            GameObject extraPatron = Resources.Load("Editor/wireframe") as GameObject;
+            wireframe = extraPatron.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+            transform.localScale = extraPatron.transform.localScale;
+            transform.rotation = extraPatron.transform.rotation;
+        }
+
         Gizmos.color = new Color(1, 0, 1, 1);
-        if (startNode)
-        {
-            Gizmos.DrawCube(transform.position, new Vector3(0.15f, 0.15f, 0.15f));
-        }
-        else
-        {
-            Gizmos.DrawCube(transform.position, new Vector3(0.1f, 0.1f, 0.1f));
-        }
+
+        Gizmos.DrawWireMesh(wireframe, transform.position, transform.rotation, transform.localScale);
 
         if (nextNode)
         {
